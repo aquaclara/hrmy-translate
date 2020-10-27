@@ -1,17 +1,30 @@
 function main() {
-  const xhr = new XMLHttpRequest();
   const tlsPath =
     '/translations/' + location.pathname.replace('.html', '.json');
-  const url = chrome.runtime.getURL(tlsPath);
+  const githubUrl = `https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/${tlsPath}`;
+  const localUrl = chrome.runtime.getURL(tlsPath);
 
-  xhr.open('GET', url, true);
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', githubUrl, true);
   xhr.onreadystatechange = () => {
     if (xhr.readyState == 4 && xhr.responseText) {
       const res = JSON.parse(xhr.responseText);
       renderTranslations(res);
       appendHotLinks(tlsPath.replace('.json', '.yaml'));
     } else {
-      console.log('file does not exist');
+      console.log('File does not exist on Github');
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', localUrl, true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.responseText) {
+          const res = JSON.parse(xhr.responseText);
+          renderTranslations(res);
+          appendHotLinks(tlsPath.replace('.json', '.yaml'));
+        } else {
+          console.log(`File does not exist for '${tlsPath}'`);
+        }
+      };
+      xhr.send();
     }
   };
   xhr.send();
