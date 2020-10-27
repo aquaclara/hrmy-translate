@@ -1,30 +1,33 @@
 function main() {
-  const tlsPath =
-    '/translations/' + location.pathname.replace('.html', '.json');
+  const tlsPath = '/translations' + location.pathname.replace('.html', '.json');
   const githubUrl = `https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/${tlsPath}`;
   const localUrl = chrome.runtime.getURL(tlsPath);
 
   const xhr = new XMLHttpRequest();
   xhr.open('GET', githubUrl, true);
   xhr.onreadystatechange = () => {
-    if (xhr.readyState == 4 && xhr.responseText) {
-      const res = JSON.parse(xhr.responseText);
-      renderTranslations(res);
-      appendHotLinks(tlsPath.replace('.json', '.yaml'));
-    } else {
-      console.log('File does not exist on Github');
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', localUrl, true);
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState == 4 && xhr.responseText) {
-          const res = JSON.parse(xhr.responseText);
-          renderTranslations(res);
-          appendHotLinks(tlsPath.replace('.json', '.yaml'));
-        } else {
-          console.log(`File does not exist for '${tlsPath}'`);
-        }
-      };
-      xhr.send();
+    if (xhr.readyState == 4) {
+      if (xhr.responseText) {
+        const res = JSON.parse(xhr.responseText);
+        renderTranslations(res);
+        appendHotLinks(tlsPath.replace('.json', '.yaml'));
+      } else {
+        console.log('File does not exist on Github');
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', localUrl, true);
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4) {
+            if (xhr.responseText) {
+              const res = JSON.parse(xhr.responseText);
+              renderTranslations(res);
+              appendHotLinks(tlsPath.replace('.json', '.yaml'));
+            } else {
+              console.log(`File does not exist for '${tlsPath}'`);
+            }
+          }
+        };
+        xhr.send();
+      }
     }
   };
   xhr.send();
