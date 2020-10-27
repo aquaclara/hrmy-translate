@@ -1,0 +1,27 @@
+{
+  "name": "호리씨와 미야무라군 번역",
+  "version": "0.0.0",
+  "description": "호리씨와 미야무라군 번역 제공 예정. 비공식.",
+  "author": "aquaclara",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://dka-hero.me/hm*_*/pict_com_*.html",
+        "*://dka-hero.me/aco/*/c.html",
+        "*://dka-hero.me/pict_03/com/*/*.html"
+      ],
+      "js": ["scripts/index.js"],
+      "css": ["styles/styles.css"],
+      "all_frames": true
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "*://dka-hero.me/*",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    "translations/**/*.json"
+  ],
+  "manifest_version": 2
+}

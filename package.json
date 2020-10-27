@@ -1,0 +1,21 @@
+{
+  "name": "hrmy-translate",
+  "private": true,
+  "description": "호리씨와 미야무라군 번역 제공. 비공식.",
+  "scripts": {
+    "test": "node_modules/prettier/bin-prettier.js --check \"**/*.{js,scss}\"",
+    "fix": "node_modules/prettier/bin-prettier.js --write \"**/*.{js,scss}\"",
+    "scss": "node_modules/sass/sass.js --watch scss/:styles/",
+    "tmp": "bash -c \"file ./translations/**/*.yaml\"",
+    "parse": "yarn run parse:one; yarn run parse:two;",
+    "parse:one": "for f in translations/*/*.yaml; do yarn parse:each \"$f\"; done",
+    "parse:two": "for f in translations/*/*/*.yaml; do yarn parse:each \"$f\"; done",
+    "parse:each": "node_modules/yamljs/bin/yaml2json -s",
+    "zip": "node_modules/sass/sass.js scss/:styles/ && zip -r extension.zip scripts/ styles/ manifest.json"
+  },
+  "devDependencies": {
+    "prettier": "1.18.2",
+    "sass": "^1.22.9",
+    "yamljs": "^0.3.0"
+  }
+}
