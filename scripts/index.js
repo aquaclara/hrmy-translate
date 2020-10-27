@@ -7,7 +7,8 @@ function main() {
   xhr.open('GET', githubUrl, true);
   xhr.onreadystatechange = () => {
     if (xhr.readyState == 4) {
-      if (xhr.responseText) {
+      if (xhr.responseText && xhr.responseText != '404: Not Found') {
+        console.log(xhr.readyState + '|' + xhr.responseText);
         const res = JSON.parse(xhr.responseText);
         renderTranslations(res);
         appendHotLinks(tlsPath.replace('.json', '.yaml'));
@@ -16,7 +17,7 @@ function main() {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', localUrl, true);
         xhr.onreadystatechange = () => {
-          if (xhr.readyState == 4) {
+          if (xhr.readyState == 4 && xhr.responseText != '404: Not Found') {
             if (xhr.responseText) {
               const res = JSON.parse(xhr.responseText);
               renderTranslations(res);
