@@ -9,8 +9,8 @@ body {
   margin-left: 1em;
 
   .translation {
-    margin-top: 0;
-    margin-bottom: 0.3em;
+    margin-block-start: 0;
+    margin-block-end: .1em;
   }
 }
 
@@ -20,7 +20,7 @@ body {
   background-color: black;
   width: fit-content;
   font-size: 1.3rem;
-  padding: 0.1em 0.2em;
+  padding: 0em 0.4em;
 }
 
 .hot-links {
