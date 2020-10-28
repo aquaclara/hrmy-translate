@@ -50,7 +50,7 @@ function getBodyElement() {
 function renderTranslations(data) {
   [...document.querySelectorAll('img')].forEach(img => {
     const imageId = img.src.replace(new RegExp('https?://dka-hero.me/'), '');
-    if (imageId in data && data[imageId]) {
+    if (data && imageId in data && data[imageId]) {
       const tls = data[imageId];
 
       for (let cutIndex = 0; cutIndex < tls.length; cutIndex++) {
