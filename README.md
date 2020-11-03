@@ -16,7 +16,7 @@
 호리씨와 미야무라군은 이후 일본 만화 잡지사에 의해 새로운 작화가의 손으로 재탄생하기도 하여 이 작품은 한국에서도 정식 발매되어 인기를 끌고 있습니다.
 
 > 호리미야 - 리디북스
-https://ridibooks.com/books/505014619
+> https://ridibooks.com/books/505014619
 
 ## 호리씨와 미야무라군 번역 크롬 확장프로그램
 
@@ -31,7 +31,7 @@ https://ridibooks.com/books/505014619
 | 호리씨와 미야무라군(본편)   | 5.8% |
 | 호리씨와 미야무라군(오마케) | 0%   |
 | HERO 단편선                 | 0%   |
-| 아코와 밤비                 | 0%   |
+| 아코와 밤비                 | ~1화 |
 
 ## :wrench: 설치 방법
 
@@ -49,18 +49,12 @@ https://ridibooks.com/books/505014619
 
 6. [dka-hero.me]을 방문해 보고 싶은 만화를 봅니다.
 
-### :warning: 비공식
+### :warning: 비공식 Unofficial 非公式
 
-이 프로그램은 HERO님과 아무런 관련이 없습니다.
-모든 만화 및 대사와 관련된 권리는 HERO님에게 있습니다.
-
-### :warning: Unofficial
-
-This program is unofficial.
-
-### :warning: 非公式
-
-このプログラムは非公式であります。
+- 이 프로그램은 HERO님과 아무런 관련이 없습니다.
+  모든 만화 및 대사와 관련된 권리는 HERO님에게 있습니다.
+- This program is unofficial.
+- このプログラムは非公式であります。
 
 ---
 
