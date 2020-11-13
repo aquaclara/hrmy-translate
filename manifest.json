@@ -7,10 +7,14 @@
     {
       "matches": [
         "*://dka-hero.me/hm*_*/pict_com_*.html",
+        "*://dka-hero.me/aco/c.html",
         "*://dka-hero.me/aco/*/c.html",
         "*://dka-hero.me/pict_03/com/*/*.html"
       ],
-      "js": ["scripts/index.js"],
+      "js": [
+        "scripts/dom-util.js",
+        "scripts/index.js"
+      ],
       "css": ["styles/styles.css"],
       "all_frames": true
     }

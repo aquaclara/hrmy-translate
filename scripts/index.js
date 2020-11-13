@@ -1,81 +1,143 @@
-function main() {
-  const tlsPath = '/translations' + location.pathname.replace('.html', '.json');
-  const githubUrl = `https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/${tlsPath}`;
-  const localUrl = chrome.runtime.getURL(tlsPath);
+const tlsPath = '/translations' + location.pathname.replace('.html', '.json');
+const githubUrl = `https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/${tlsPath}`;
+const localUrl = chrome.runtime.getURL(tlsPath);
 
+function main() {
+  // Try fetching translations from Github
   const xhr = new XMLHttpRequest();
   xhr.open('GET', githubUrl, true);
   xhr.onreadystatechange = () => {
-    if (xhr.readyState == 4) {
-      if (xhr.responseText && xhr.responseText != '404: Not Found') {
-        console.log(xhr.readyState + '|' + xhr.responseText);
-        const res = JSON.parse(xhr.responseText);
-        renderTranslations(res);
-        appendHotLinks(tlsPath.replace('.json', '.yaml'));
-      } else {
-        console.log('File does not exist on Github');
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', localUrl, true);
-        xhr.onreadystatechange = () => {
-          if (xhr.readyState == 4 && xhr.responseText != '404: Not Found') {
-            if (xhr.responseText) {
-              const res = JSON.parse(xhr.responseText);
-              renderTranslations(res);
-              appendHotLinks(tlsPath.replace('.json', '.yaml'));
-            } else {
-              console.log(`File does not exist for '${tlsPath}'`);
-            }
-          }
-        };
-        xhr.send();
-      }
+    if (xhr.readyState != 4) return;
+    const res = xhr.responseText;
+    if (res != 'null' && res != '404: Not Found') {
+      handleResponse(res);
+    } else {
+      console.log('File does not exist on Github. Try reading translations from local');
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', localUrl, true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState != 4) return;
+        const res = xhr.responseText;
+        if (res != 'null' && res != '404: Not Found') {
+          handleResponse(res);
+        } else {
+          console.log(`File does not exist for '${tlsPath}'`);
+        }
+      };
+      xhr.send();
     }
   };
   xhr.send();
 }
 
-function getBodyElement() {
-  if (!this.documentBody) {
-    if (document.querySelector('frameset')) {
-      this.documentBody = document.querySelectorAll(
-        'frame'
-      )[1].contentWindow.document.body;
-    } else {
-      this.documentBody = document.body;
-    }
+function handleResponse(response) {
+  renderTranslations(JSON.parse(response));
+  appendHotLinks(tlsPath.replace('.json', '.yaml'));
+}
+
+function printNotice(opt) {
+  opt.class = ['notice', 'float'];
+
+  printCaption(opt);
+}
+
+function printTranslation(opt) {
+  opt.class = ['translation'];
+  opt.tag = 'p';
+
+  printCaption(opt);
+}
+
+/**
+ *
+ * @param {object} opt
+ */
+function printCaption(opt) {
+  opt = opt || {};
+  opt.tag = opt.tag || 'div';
+  opt.parent = opt.parent || getBodyElement();
+
+  const $caption = document.createElement(opt.tag);
+  $caption.classList.add('caption');
+  $caption.classList.add(...opt.class);
+
+  $caption.innerHTML = opt.message;
+  if (opt.color) {
+    $caption.style.color = opt.color;
   }
-  return this.documentBody;
+
+  if (opt.top) {
+    $caption.style.top = opt.top;
+  }
+  if (opt.left) {
+    $caption.style.left = opt.left;
+  }
+
+  opt.parent.appendChild($caption);
+}
+
+function getImageId(img) {
+  let url;
+
+  if (img.tagName == 'IMG') {
+    url = new URL(img.src);
+  } else if (img.tagName == 'TD') {
+    url = new URL(
+      img.attributes.background.value,
+      img.attributes.background.baseURI
+    );
+  } else {
+    console.warn(`${img.tagName} is unexpected`);
+    return null;
+  }
+
+  return url.pathname.replace(/^\//, '');
 }
 
 function renderTranslations(data) {
-  [...document.querySelectorAll('img')].forEach(img => {
-    const imageId = img.src.replace(new RegExp('https?://dka-hero.me/'), '');
-    if (data && imageId in data && data[imageId]) {
-      const tls = data[imageId];
+  for (const img of document.querySelectorAll('img, td[background]')) {
+    const imageId = getImageId(img);
+    if (!data || !(imageId in data)) {
+      continue;
+    }
 
-      for (let cutIndex = 0; cutIndex < tls.length; cutIndex++) {
+    if (data[imageId] == null || data[imageId].length == 0) {
+      printNotice({
+        message: '(제공된 번역이 아직 없습니다)' + `<!--${imageId}-->`,
+        top: getProperty(img, 'offsetTop') + 'px',
+        left: getProperty(img, 'offsetLeft') + getProperty(img, 'width') + 'px'
+      });
+    } else {
+      for (let cutIndex = 0; cutIndex < data[imageId].length; cutIndex++) {
         const $tlsGroup = document.createElement('div');
         $tlsGroup.classList.add('translation-group', 'float');
-        for (let tlsIndex = 0; tlsIndex < tls[cutIndex].length; tlsIndex++) {
-          const $tls = document.createElement('p');
-          $tls.classList.add('translation');
-          $tls.innerHTML = tls[cutIndex][tlsIndex];
-          $tlsGroup.appendChild($tls);
+        for (
+          let tlsIndex = 0;
+          tlsIndex < data[imageId][cutIndex].length;
+          tlsIndex++
+        ) {
+          const opt = {
+            tag: 'p',
+            parent: $tlsGroup
+          };
+          if (typeof data[imageId][cutIndex][tlsIndex] == 'string') {
+            opt.message = data[imageId][cutIndex][tlsIndex];
+          } else {
+            opt.message = data[imageId][cutIndex][tlsIndex]['text'];
+            opt.color = data[imageId][cutIndex][tlsIndex]['color'];
+          }
+          printTranslation(opt);
         }
         $tlsGroup.style.top =
-          img.offsetTop + (img.height / tls.length) * cutIndex + 'px';
-        $tlsGroup.style.left = img.offsetLeft + img.width + 'px';
+          getProperty(img, 'offsetTop') +
+          (getProperty(img, 'height') / data[imageId].length) * cutIndex +
+          'px';
+        $tlsGroup.style.left =
+          getProperty(img, 'offsetLeft') + getProperty(img, 'width') + 'px';
         getBodyElement().appendChild($tlsGroup);
       }
-    } else {
-      const $caption = document.createElement('div');
-      $caption.classList.add('caption', 'float');
-      $caption.innerHTML = '(제공된 번역이 아직 없습니다)';
-      $caption.style.top = img.offsetTop + 'px';
-      $caption.style.left = img.offsetLeft + img.width + 'px';
-      getBodyElement().appendChild($caption);
     }
-  });
+  }
 }
 
 function appendHotLinks(tlsPath) {
