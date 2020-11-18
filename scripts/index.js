@@ -9,7 +9,7 @@ function main() {
   xhr.onreadystatechange = () => {
     if (xhr.readyState != 4) return;
     const res = xhr.responseText;
-    if (res != 'null' && res != '404: Not Found') {
+    if (res && res != 'null' && res != '404: Not Found') {
       handleResponse(res);
     } else {
       console.log('File does not exist on Github. Try reading translations from local');
@@ -18,7 +18,7 @@ function main() {
       xhr.onreadystatechange = () => {
         if (xhr.readyState != 4) return;
         const res = xhr.responseText;
-        if (res != 'null' && res != '404: Not Found') {
+        if (res && res != 'null' && res != '404: Not Found') {
           handleResponse(res);
         } else {
           console.log(`File does not exist for '${tlsPath}'`);
