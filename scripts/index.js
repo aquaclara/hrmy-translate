@@ -12,7 +12,9 @@ function main() {
     if (res && res != 'null' && res != '404: Not Found') {
       handleResponse(res);
     } else {
-      console.log('File does not exist on Github. Try reading translations from local');
+      console.log(
+        'File does not exist on Github. Try reading translations from local'
+      );
       const xhr = new XMLHttpRequest();
       xhr.open('GET', localUrl, true);
       xhr.onreadystatechange = () => {
