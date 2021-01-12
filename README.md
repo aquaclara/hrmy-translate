@@ -1,6 +1,6 @@
 # 호리씨와 미야무라군 번역 크롬 확장프로그램
 
-![](./screenshots/main.png)
+![](https://github.com/aquaclara/hrmy-translate/raw/gh-pages/main.png)
 
 ## :warning: 비공식
 
