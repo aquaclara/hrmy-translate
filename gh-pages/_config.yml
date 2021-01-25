@@ -1,0 +1,8 @@
+
+lang: ko
+title: 호리씨와 미야무라군 번역 크롬 확장프로그램
+description: 비공식
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-architect
