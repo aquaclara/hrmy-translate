@@ -3,7 +3,7 @@ layout: default
 comments: true
 ---
 
-![](./../assets/main.png)
+![](./assets/main.png)
 
 ### ⚠️ 비공식
 
