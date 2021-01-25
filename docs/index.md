@@ -21,7 +21,7 @@ image: /assets/main.png
 
 > 호리미야 - 리디북스
 >
-> https://ridibooks.com/books/505014619
+> [https://ridibooks.com/books/505014619](https://ridibooks.com/books/505014619)
 
 ### 번역 진행도
 
