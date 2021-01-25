@@ -1,6 +1,7 @@
 ---
 layout: default
 comments: true
+image: /assets/main.png
 ---
 
 ![](./assets/main.png)
