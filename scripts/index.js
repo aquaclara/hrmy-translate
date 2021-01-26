@@ -163,9 +163,11 @@ function appendConfigureLink($parent) {
   $link.innerHTML = '&nbsp;';
   $link.onclick = e => {
     e.preventDefault();
+    const mBrowser = typeof browser === 'undefined' ? chrome : browser;
+    const version = mBrowser.runtime.getManifest().version;
     const massage =
       '설정은 준비중입니다.\n' +
-      `버전: v${chrome.runtime.getManifest().version}\n` +
+      `버전: v${version}\n` +
       '이 프로그램은 비공식입니다.\nThis program is unofficial.';
 
     alert(massage);
