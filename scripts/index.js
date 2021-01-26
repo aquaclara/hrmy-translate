@@ -67,6 +67,12 @@ function printCaption(opt) {
   if (opt.color) {
     $caption.style.color = opt.color;
   }
+  if (opt.marginTop) {
+    $caption.style.marginTop = opt.marginTop;
+  }
+  if (opt.marginLeft) {
+    $caption.style.marginLeft = opt.marginLeft;
+  }
 
   if (opt.top) {
     $caption.style.top = opt.top;
@@ -127,6 +133,7 @@ function renderTranslations(data) {
           } else {
             opt.message = data[imageId][cutIndex][tlsIndex]['text'];
             opt.color = data[imageId][cutIndex][tlsIndex]['color'];
+            opt.marginLeft = data[imageId][cutIndex][tlsIndex]['margin-left'];
           }
           printTranslation(opt);
         }
