@@ -18,3 +18,19 @@ table {
     padding: 0.5em;
   }
 }
+
+.tags {
+  padding: 0;
+  font-size: 0.9em;
+  &:before {
+    content: '태그';
+    font-weight: bold;
+  }
+
+  li {
+    display: inline-block;
+    &::before {
+      content: '#';
+    }
+  }
+}

@@ -36,6 +36,13 @@
         <section id="main-content">
           {{ content }}
 
+          {% if page.tags %}
+            <ul class="tags">
+            {% for tag in page.tags %}
+              <li>{{ tag }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
           {% if page.comments %}
             <section id="disqus_thread"></section>
           {% endif %}
