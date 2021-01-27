@@ -212,7 +212,9 @@ function appendConfigureLink($parent: Element) {
     );
     const $overlay = document.createElement('div');
     $overlay.onclick = e => {
-      util.getBodyElement().removeChild($overlay);
+      if ($overlay === e.target) {
+        util.getBodyElement().removeChild($overlay);
+      }
     };
     $overlay.classList.add('overlay');
     ReactDOM.render($dialog, $overlay);
