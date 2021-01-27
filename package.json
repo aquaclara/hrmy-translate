@@ -3,19 +3,34 @@
   "private": true,
   "description": "호리씨와 미야무라군 번역 제공. 비공식.",
   "scripts": {
-    "test": "node_modules/prettier/bin-prettier.js --check \"**/*.{js,scss}\"",
-    "fix": "node_modules/prettier/bin-prettier.js --write \"**/*.{js,scss}\"",
-    "scss": "node_modules/sass/sass.js --watch scss/:styles/",
+    "test": "yarn run prettier --check \"**/*.{js,ts,tsx,json,scss}\"",
+    "fix": "yarn run prettier --write \"**/*.{js,ts,tsx,json,scss}\"",
     "tmp": "bash -c \"file ./translations/**/*.yaml\"",
-    "parse": "yarn run parse:one; yarn run parse:two;",
+    "parse": "yarn run parse:one; yarn run parse:two",
     "parse:one": "for f in translations/*/*.yaml; do yarn parse:each \"$f\"; done",
     "parse:two": "for f in translations/*/*/*.yaml; do yarn parse:each \"$f\"; done",
     "parse:each": "node_modules/yamljs/bin/yaml2json -s",
-    "zip": "node_modules/sass/sass.js scss/:styles/ && zip -r extension.zip scripts/ styles/ manifest.json"
+    "zip": "yarn run webpack && zip -r extension.zip dist/ manifest.json"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.128",
+    "@types/firefox-webext-browser": "^82.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "css-loader": "^5.0.1",
     "prettier": "1.18.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "sass": "^1.22.9",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.14",
+    "typescript": "^4.1.3",
+    "webpack": "^5.18.0",
+    "webpack-cli": "^4.4.0",
     "yamljs": "^0.3.0"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }

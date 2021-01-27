@@ -1,3 +1,8 @@
+import util from './dom-util';
+import './scss/styles.scss';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 const tlsPath = '/translations' + location.pathname.replace('.html', '.json');
 const githubUrl = `https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/${tlsPath}`;
 const localUrl = chrome.runtime.getURL(tlsPath);
@@ -8,7 +13,7 @@ function main() {
   xhr.open('GET', githubUrl, true);
   xhr.onreadystatechange = () => {
     if (xhr.readyState != 4) return;
-    const res = xhr.responseText;
+    const res: string = xhr.responseText;
     if (res && res != 'null' && res != '404: Not Found') {
       handleResponse(res);
     } else {
@@ -32,18 +37,31 @@ function main() {
   xhr.send();
 }
 
-function handleResponse(response) {
+function handleResponse(response: string) {
   renderTranslations(JSON.parse(response));
   appendHotLinks(tlsPath.replace('.json', '.yaml'));
 }
 
-function printNotice(opt) {
+type captionOption = {
+  tag?: 'div' | 'p';
+  class?: Array<string>;
+  message?: string;
+  parent?: Element;
+
+  top?: string;
+  left?: string;
+  color?: string;
+  marginTop?: string;
+  marginLeft?: string;
+};
+
+function printNotice(opt: captionOption) {
   opt.class = ['notice', 'float'];
 
   printCaption(opt);
 }
 
-function printTranslation(opt) {
+function printTranslation(opt: captionOption) {
   opt.class = ['translation'];
   opt.tag = 'p';
 
@@ -54,10 +72,10 @@ function printTranslation(opt) {
  *
  * @param {object} opt
  */
-function printCaption(opt) {
+function printCaption(opt: captionOption) {
   opt = opt || {};
   opt.tag = opt.tag || 'div';
-  opt.parent = opt.parent || getBodyElement();
+  opt.parent = opt.parent || util.getBodyElement();
 
   const $caption = document.createElement(opt.tag);
   $caption.classList.add('caption');
@@ -84,16 +102,15 @@ function printCaption(opt) {
   opt.parent.appendChild($caption);
 }
 
-function getImageId(img) {
+function getImageId(img: HTMLImageElement) {
   let url;
 
   if (img.tagName == 'IMG') {
     url = new URL(img.src);
   } else if (img.tagName == 'TD') {
-    url = new URL(
-      img.attributes.background.value,
-      img.attributes.background.baseURI
-    );
+    // HERO uses legacy background attribute
+    const attr: any = img.attributes;
+    url = new URL(attr.background.value, attr.background.baseURI);
   } else {
     console.warn(`${img.tagName} is unexpected`);
     return null;
@@ -102,8 +119,10 @@ function getImageId(img) {
   return url.pathname.replace(/^\//, '');
 }
 
-function renderTranslations(data) {
-  for (const img of document.querySelectorAll('img, td[background]')) {
+function renderTranslations(data: any) {
+  for (const img of document.querySelectorAll(
+    'img, td[background]'
+  ) as NodeListOf<HTMLImageElement>) {
     const imageId = getImageId(img);
     if (!data || !(imageId in data)) {
       continue;
@@ -112,8 +131,11 @@ function renderTranslations(data) {
     if (data[imageId] == null || data[imageId].length == 0) {
       printNotice({
         message: '(제공된 번역이 아직 없습니다)' + `<!--${imageId}-->`,
-        top: getProperty(img, 'offsetTop') + 'px',
-        left: getProperty(img, 'offsetLeft') + getProperty(img, 'width') + 'px'
+        top: util.getProperty(img, 'offsetTop') + 'px',
+        left:
+          util.getProperty(img, 'offsetLeft') +
+          util.getProperty(img, 'width') +
+          'px'
       });
     } else {
       for (let cutIndex = 0; cutIndex < data[imageId].length; cutIndex++) {
@@ -124,7 +146,7 @@ function renderTranslations(data) {
           tlsIndex < data[imageId][cutIndex].length;
           tlsIndex++
         ) {
-          const opt = {
+          const opt: captionOption = {
             tag: 'p',
             parent: $tlsGroup
           };
@@ -138,26 +160,28 @@ function renderTranslations(data) {
           printTranslation(opt);
         }
         $tlsGroup.style.top =
-          getProperty(img, 'offsetTop') +
-          (getProperty(img, 'height') / data[imageId].length) * cutIndex +
+          util.getProperty(img, 'offsetTop') +
+          (util.getProperty(img, 'height') / data[imageId].length) * cutIndex +
           'px';
         $tlsGroup.style.left =
-          getProperty(img, 'offsetLeft') + getProperty(img, 'width') + 'px';
-        getBodyElement().appendChild($tlsGroup);
+          util.getProperty(img, 'offsetLeft') +
+          util.getProperty(img, 'width') +
+          'px';
+        util.getBodyElement().appendChild($tlsGroup);
       }
     }
   }
 }
 
-function appendHotLinks(tlsPath) {
+function appendHotLinks(tlsPath: string) {
   const $links = document.createElement('div');
   $links.classList.add('hot-links');
   appendConfigureLink($links);
   appendTranslateLink($links, tlsPath);
-  getBodyElement().appendChild($links);
+  util.getBodyElement().appendChild($links);
 }
 
-function appendConfigureLink($parent) {
+function appendConfigureLink($parent: Element) {
   const $link = document.createElement('a');
   $link.classList.add('configure');
   $link.innerHTML = '&nbsp;';
@@ -165,17 +189,44 @@ function appendConfigureLink($parent) {
     e.preventDefault();
     const mBrowser = typeof browser === 'undefined' ? chrome : browser;
     const version = mBrowser.runtime.getManifest().version;
-    const massage =
-      '설정은 준비중입니다.\n' +
-      `버전: v${version}\n` +
-      '이 프로그램은 비공식입니다.\nThis program is unofficial.';
 
-    alert(massage);
+    const massage = '';
+
+    const $dialog = (
+      <div className="dialog">
+        <p>버전: v{version}</p>
+        <p>
+          이 프로그램은 비공식입니다.
+          <br />
+          This program is unofficial.
+        </p>
+        <input
+          type="range"
+          id="font-size"
+          min="1"
+          max="11"
+          defaultValue="5"
+          onChange={event => changeFontSize(parseInt(event.target.value))}
+        />
+      </div>
+    );
+    const $overlay = document.createElement('div');
+    $overlay.classList.add('overlay');
+    ReactDOM.render($dialog, $overlay);
+    util.getBodyElement().appendChild($overlay);
   };
   $parent.appendChild($link);
 }
 
-function appendTranslateLink($parent, tlsPath) {
+function changeFontSize(size: number) {
+  for (const caption of document.querySelectorAll('.caption') as NodeListOf<
+    HTMLElement
+  >) {
+    caption.style.fontSize = `${size}mm`;
+  }
+}
+
+function appendTranslateLink($parent: Element, tlsPath: string) {
   const $link = document.createElement('a');
   $link.classList.add('translate');
   $link.href = `https://github.com/aquaclara/hrmy-translate/blob/main/${tlsPath}`;

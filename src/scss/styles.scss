@@ -60,3 +60,25 @@ body {
     }
   }
 }
+
+.overlay {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #0003;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(1px);
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+
+  .dialog {
+    background: white;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    color: #222;
+  }
+}
