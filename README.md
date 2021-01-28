@@ -14,7 +14,7 @@
 
 ## 설치
 
-https://aquaclara.github.io/hrmy-translate/ 를 참고하세요.
+(별도 페이지)[https://aquaclara.github.io/hrmy-translate/]를 참고하세요.
 
 ## 빌드
 
