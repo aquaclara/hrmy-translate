@@ -18,14 +18,14 @@ export default {
    * @param {string} property
    * @return {number} the offset top of the given element
    */
-  getProperty: (element, prop) => {
+  getProperty: (element: HTMLElement, prop: string) => {
     switch (element.tagName) {
       case 'TD':
+      case 'IMG':
         if (prop == 'width') return element.offsetWidth;
         else if (prop == 'height') return element.offsetHeight;
-        else return element.closest('table')[prop];
-      case 'IMG':
-        return element[prop];
+        else if (prop == 'offsetTop') return element.offsetTop;
+        else if (prop == 'offsetLeft') return element.offsetLeft;
       default:
         console.warn(`${element.tagName} is unexpected`);
         return null;
@@ -36,10 +36,16 @@ export default {
    * @param {HTMLElement} element
    * @return {number} the height of the given element
    */
-  getHeight: element => {
+  getHeight: (element: HTMLElement) => {
     if (element.tagName == 'TD') {
       return element.offsetHeight;
     }
-    return element.height;
+    console.log(element);
+    if (element instanceof HTMLImageElement) {
+      return element.height;
+    } else {
+      console.debug(`Unknown element: ${element}`);
+      return 0;
+    }
   }
 };

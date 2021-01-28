@@ -7,7 +7,7 @@
     {
       "matches": [
         "*://dka-hero.me/t_c.html",
-        "*://dka-hero.me/hm*_*/pict_com_*.html",
+        "*://dka-hero.me/hm*_*/*.html",
         "*://dka-hero.me/aco/c.html",
         "*://dka-hero.me/aco/*/c.html",
         "*://dka-hero.me/pict_01/*.html",
@@ -23,6 +23,6 @@
   },
   "browser_action": {},
   "permissions": ["tabs", "storage", "*://dka-hero.me/*"],
-  "web_accessible_resources": ["translations/*.json", "translations/**/*.json"],
+  "web_accessible_resources": ["translations/*.yaml", "translations/**/*.yaml"],
   "manifest_version": 2
 }
