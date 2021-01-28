@@ -20,12 +20,19 @@ export default {
    */
   getProperty: (element: HTMLElement, prop: string) => {
     switch (element.tagName) {
-      case 'TD':
       case 'IMG':
         if (prop == 'width') return element.offsetWidth;
         else if (prop == 'height') return element.offsetHeight;
         else if (prop == 'offsetTop') return element.offsetTop;
         else if (prop == 'offsetLeft') return element.offsetLeft;
+      case 'TD':
+        const table = element.closest('table');
+        if (prop == 'width') return element.offsetWidth;
+        else if (prop == 'height') return element.offsetHeight;
+        else if (prop == 'offsetTop')
+          return element.offsetTop + table.offsetTop;
+        else if (prop == 'offsetLeft')
+          return element.offsetLeft + table.offsetLeft;
       default:
         console.warn(`${element.tagName} is unexpected`);
         return null;
@@ -40,7 +47,6 @@ export default {
     if (element.tagName == 'TD') {
       return element.offsetHeight;
     }
-    console.log(element);
     if (element instanceof HTMLImageElement) {
       return element.height;
     } else {

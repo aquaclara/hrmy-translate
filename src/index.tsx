@@ -103,11 +103,11 @@ function printCaption(opt: captionOption) {
   opt.parent.appendChild($caption);
 }
 
-function getImageId(img: HTMLImageElement) {
+function getImageId(img: HTMLElement) {
   let url;
 
   if (img.tagName == 'IMG') {
-    url = new URL(img.src);
+    url = new URL((img as HTMLImageElement).src);
   } else if (img.tagName == 'TD') {
     // HERO uses legacy background attribute
     const attr: any = img.attributes;
@@ -123,7 +123,7 @@ function getImageId(img: HTMLImageElement) {
 function renderTranslations(data: any) {
   for (const img of document.querySelectorAll(
     'img, td[background]'
-  ) as NodeListOf<HTMLImageElement>) {
+  ) as NodeListOf<HTMLElement>) {
     const imageId = getImageId(img);
     if (!data || !(imageId in data)) {
       continue;
