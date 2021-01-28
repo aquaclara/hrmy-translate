@@ -210,15 +210,21 @@ function appendConfigureLink($parent: Element) {
         />
       </div>
     );
-    const $overlay = document.createElement('div');
+    let $overlay = document.querySelector('#overlay') as HTMLElement;
+    if (!$overlay) {
+      $overlay = document.createElement('div');
+      $overlay.id = 'overlay';
+      $overlay.classList.add('overlay');
     $overlay.onclick = e => {
       if ($overlay === e.target) {
-        util.getBodyElement().removeChild($overlay);
+          $overlay.style.visibility = 'hidden';
       }
     };
-    $overlay.classList.add('overlay');
     ReactDOM.render($dialog, $overlay);
     util.getBodyElement().appendChild($overlay);
+    } else {
+      $overlay.style.visibility = 'visible';
+    }
   };
   $parent.appendChild($link);
 }
