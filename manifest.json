@@ -1,6 +1,6 @@
 {
   "name": "호리씨와 미야무라군 번역",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "호리씨와 미야무라군 번역 제공 예정. 비공식.",
   "author": "aquaclara",
   "content_scripts": [
