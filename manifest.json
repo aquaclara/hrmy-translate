@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "호리씨와 미야무라군 번역 제공. 비공식.",
   "author": "aquaclara",
+  "homepage_url": "https://aquaclara.github.io/hrmy-translate/",
   "content_scripts": [
     {
       "matches": [
