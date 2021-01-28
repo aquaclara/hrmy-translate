@@ -58,7 +58,7 @@ tags:
    크롬을 쓰고 있지 않다면 [이 링크](https://www.google.com/intl/ko/chrome/)에서 설치해 주세요!!
    모바일로 이 페이지를 보고 계신 경우에도 컴퓨터로 다시 와 주세요.
 
-2. [이 링크](https://github.com/aquaclara/hrmy-translate/archive/main.zip)를 눌러 압축 파일을 받아 적당한 장소에 해제합니다.
+2. [이 링크](https://github.com/aquaclara/hrmy-translate/releases/latest/download/extension.zip)를 눌러 압축 파일을 받아 적당한 장소에 해제합니다.
 
 3. 크롬 주소창에 `chrome://extensions`을 복사해 붙여 넣습니다.
 
