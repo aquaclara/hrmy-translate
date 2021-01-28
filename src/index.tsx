@@ -200,6 +200,7 @@ function appendConfigureLink($parent: Element) {
           <br />
           This program is unofficial.
         </p>
+        <label>글자 크기 (단위: mm)</label>
         <input
           type="range"
           id="font-size"
@@ -215,13 +216,13 @@ function appendConfigureLink($parent: Element) {
       $overlay = document.createElement('div');
       $overlay.id = 'overlay';
       $overlay.classList.add('overlay');
-    $overlay.onclick = e => {
-      if ($overlay === e.target) {
+      $overlay.onclick = e => {
+        if ($overlay === e.target) {
           $overlay.style.visibility = 'hidden';
-      }
-    };
-    ReactDOM.render($dialog, $overlay);
-    util.getBodyElement().appendChild($overlay);
+        }
+      };
+      ReactDOM.render($dialog, $overlay);
+      util.getBodyElement().appendChild($overlay);
     } else {
       $overlay.style.visibility = 'visible';
     }

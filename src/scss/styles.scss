@@ -80,5 +80,14 @@ body {
     left: 0;
     padding: 1em;
     color: #222;
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input[type='range'] {
+      width: 100%;
+    }
   }
 }
