@@ -2,8 +2,9 @@ import util from './dom-util';
 import './scss/styles.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
+const yaml = require('js-yaml');
 
-const tlsPath = '/translations' + location.pathname.replace('.html', '.json');
+const tlsPath = '/translations' + location.pathname.replace('.html', '.yaml');
 const githubUrl = `https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/${tlsPath}`;
 const localUrl = chrome.runtime.getURL(tlsPath);
 
@@ -38,7 +39,7 @@ function main() {
 }
 
 function handleResponse(response: string) {
-  renderTranslations(JSON.parse(response));
+  renderTranslations(yaml.load(response));
   appendHotLinks(tlsPath.replace('.json', '.yaml'));
 }
 
