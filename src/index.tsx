@@ -1,26 +1,70 @@
-import util from './dom-util';
-import './scss/styles.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 const yaml = require('js-yaml');
+import './scss/styles.scss';
+import util from './dom-util';
+import {
+  propertiedTranslation,
+  cutTranslation,
+  imageTranslation,
+  translationFile,
+  Translation
+} from './translation';
+import { Notice } from './elements/notice';
+import {
+  translationOption,
+  Translation as TranslationElement
+} from './elements/translation';
+import { Configuration } from './widgets/configuration';
+import { HotLinks } from './widgets/hot-links';
 
 const tlsPath = '/translations' + location.pathname.replace('.html', '.yaml');
 const githubUrl = `https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/${tlsPath}`;
 const localUrl = chrome.runtime.getURL(tlsPath);
+let options: {
+  fontSize: number;
+  developmentMode: boolean;
+};
+const writerMode = true;
+let data: translationFile;
+
+function log(message: any, ...optionalParams: any[]) {
+  if (options.developmentMode) {
+    console.log(message, ...optionalParams);
+  }
+}
 
 function main() {
+  chrome.storage.sync.get(
+    {
+      fontSize: 5,
+      developmentMode: false
+    },
+    function(items) {
+      options = {
+        fontSize: items.fontSize,
+        developmentMode: items.developmentMode
+      };
+      log('Options loaded');
+      log(items);
+    }
+  );
+
   // Try fetching translations from Github
   const xhr = new XMLHttpRequest();
   xhr.open('GET', githubUrl, true);
   xhr.onreadystatechange = () => {
     if (xhr.readyState != 4) return;
     const res: string = xhr.responseText;
-    if (res && res != 'null' && res != '404: Not Found') {
+    if (
+      !options.developmentMode &&
+      res &&
+      res != 'null' &&
+      res != '404: Not Found'
+    ) {
       handleResponse(res);
     } else {
-      console.log(
-        'File does not exist on Github. Try reading translations from local'
-      );
+      log('File does not exist on Github. Try reading translations from local');
       const xhr = new XMLHttpRequest();
       xhr.open('GET', localUrl, true);
       xhr.onreadystatechange = () => {
@@ -29,7 +73,7 @@ function main() {
         if (res && res != 'null' && res != '404: Not Found') {
           handleResponse(res);
         } else {
-          console.log(`File does not exist for '${tlsPath}'`);
+          log(`File does not exist for '${tlsPath}'`);
         }
       };
       xhr.send();
@@ -39,130 +83,102 @@ function main() {
 }
 
 function handleResponse(response: string) {
-  renderTranslations(yaml.load(response));
-  appendHotLinks(tlsPath.replace('.json', '.yaml'));
+  data = yaml.load(response);
+  renderTranslations();
+  appendHotLinks();
 }
 
-type captionOption = {
-  tag?: 'div' | 'p';
-  class?: Array<string>;
-  message?: string;
-  parent?: Element;
-
-  top?: string;
-  left?: string;
-  color?: string;
-  marginTop?: string;
-  marginLeft?: string;
-};
-
-function printNotice(opt: captionOption) {
-  opt.class = ['notice', 'float'];
-
-  printCaption(opt);
+function appendHotLinks() {
+  ReactDOM.render(
+    <HotLinks
+      tlsPath={tlsPath}
+      writeMode={options.developmentMode}
+      onClickConfigure={onClickConfigure}
+      onClickSave={(event: React.MouseEvent<HTMLAnchorElement>) => {
+        const yamlText: string = yaml.dump(data, {
+          noArrayIndent: true,
+          sortKeys: true,
+          noCompatMode: true
+        });
+        const filename = tlsPath.replace(/^.*[\\\/]/, '');
+        log('yaml is ready:');
+        log(yamlText);
+        let param = {
+          url: URL.createObjectURL(
+            new Blob([yamlText], {
+              type: 'text/yaml'
+            })
+          ),
+          filename: filename
+        };
+        chrome.runtime.sendMessage(param);
+      }}
+    />,
+    util.getBodyElement().appendChild(document.createElement('div'))
+  );
 }
 
-function printTranslation(opt: captionOption) {
-  opt.class = ['translation'];
-  opt.tag = 'p';
-
-  printCaption(opt);
-}
-
-/**
- *
- * @param {object} opt
- */
-function printCaption(opt: captionOption) {
-  opt = opt || {};
-  opt.tag = opt.tag || 'div';
-  opt.parent = opt.parent || util.getBodyElement();
-
-  const $caption = document.createElement(opt.tag);
-  $caption.classList.add('caption');
-  $caption.classList.add(...opt.class);
-
-  $caption.innerHTML = opt.message;
-  if (opt.color) {
-    $caption.style.color = opt.color;
-  }
-  if (opt.marginTop) {
-    $caption.style.marginTop = opt.marginTop;
-  }
-  if (opt.marginLeft) {
-    $caption.style.marginLeft = opt.marginLeft;
-  }
-
-  if (opt.top) {
-    $caption.style.top = opt.top;
-  }
-  if (opt.left) {
-    $caption.style.left = opt.left;
-  }
-
-  opt.parent.appendChild($caption);
-}
-
-function getImageId(img: HTMLElement) {
-  let url;
-
-  if (img.tagName == 'IMG') {
-    url = new URL((img as HTMLImageElement).src);
-  } else if (img.tagName == 'TD') {
-    // HERO uses legacy background attribute
-    const attr: any = img.attributes;
-    url = new URL(attr.background.value, attr.background.baseURI);
-  } else {
-    console.warn(`${img.tagName} is unexpected`);
-    return null;
-  }
-
-  return url.pathname.replace(/^\//, '');
-}
-
-function renderTranslations(data: any) {
+function renderTranslations() {
   for (const img of document.querySelectorAll(
     'img, td[background]'
-  ) as NodeListOf<HTMLElement>) {
-    const imageId = getImageId(img);
+  ) as NodeListOf<HTMLImageElement | HTMLTableCellElement>) {
+    const imageId = util.getImageId(img);
     if (!data || !(imageId in data)) {
       continue;
     }
 
-    if (data[imageId] == null || data[imageId].length == 0) {
-      printNotice({
+    if (data[imageId] === null || data[imageId].length === 0) {
+      new Notice({
         message: '(제공된 번역이 아직 없습니다)' + `<!--${imageId}-->`,
+        fontSize: options.fontSize,
         top: util.getProperty(img, 'offsetTop') + 'px',
         left:
           util.getProperty(img, 'offsetLeft') +
           util.getProperty(img, 'width') +
           'px'
-      });
+      }).render();
     } else {
-      for (let cutIndex = 0; cutIndex < data[imageId].length; cutIndex++) {
-        const $tlsGroup = document.createElement('div');
+      const image: imageTranslation = data[imageId];
+      for (let cutIndex = 0; cutIndex < image.length; cutIndex++) {
+        const cut: cutTranslation = image[cutIndex];
+        const $tlsGroup: HTMLDivElement = document.createElement('div');
         $tlsGroup.classList.add('translation-group', 'float');
-        for (
-          let tlsIndex = 0;
-          tlsIndex < data[imageId][cutIndex].length;
-          tlsIndex++
-        ) {
-          const opt: captionOption = {
+        for (let tlsIndex = 0; tlsIndex < cut.length; tlsIndex++) {
+          const opt: translationOption = {
             tag: 'p',
-            parent: $tlsGroup
+            parent: $tlsGroup,
+            fontSize: options.fontSize,
+            writeMode: options.developmentMode
           };
-          if (typeof data[imageId][cutIndex][tlsIndex] == 'string') {
-            opt.message = data[imageId][cutIndex][tlsIndex];
-          } else {
-            opt.message = data[imageId][cutIndex][tlsIndex]['text'];
-            opt.color = data[imageId][cutIndex][tlsIndex]['color'];
-            opt.marginLeft = data[imageId][cutIndex][tlsIndex]['margin-left'];
+          if (options.developmentMode) {
+            opt.oninput = (ev: Event): any => {
+              if (ev.target instanceof HTMLInputElement) {
+                const target = ev.target as HTMLInputElement;
+                const changed = target.value;
+                log(`changed: ${[imageId, cutIndex, tlsIndex]} to ${changed}`);
+
+                target.size = changed.length * 1.5;
+                data[imageId][cutIndex][tlsIndex] = changed;
+              }
+            };
           }
-          printTranslation(opt);
+          if (typeof cut[tlsIndex] === 'string') {
+            const text = cut[tlsIndex];
+            if (!writerMode && Translation.isComment(text)) {
+              continue;
+            }
+            opt.message = text as string;
+          } else {
+            const translate = cut[tlsIndex] as propertiedTranslation;
+            opt.message = translate['text'];
+            opt.color = translate['color'];
+            opt.marginLeft = translate['margin-left'];
+          }
+          new TranslationElement(opt).render();
         }
         $tlsGroup.style.top =
           util.getProperty(img, 'offsetTop') +
-          (util.getProperty(img, 'height') / data[imageId].length) * cutIndex +
+          (util.getProperty(img, 'height') / image.length) * cutIndex +
           'px';
         $tlsGroup.style.left =
           util.getProperty(img, 'offsetLeft') +
@@ -174,78 +190,57 @@ function renderTranslations(data: any) {
   }
 }
 
-function appendHotLinks(tlsPath: string) {
-  const $links = document.createElement('div');
-  $links.classList.add('hot-links');
-  appendConfigureLink($links);
-  appendTranslateLink($links, tlsPath);
-  util.getBodyElement().appendChild($links);
-}
-
-function appendConfigureLink($parent: Element) {
-  const $link = document.createElement('a');
-  $link.classList.add('configure');
-  $link.innerHTML = '&nbsp;';
-  $link.onclick = e => {
-    e.preventDefault();
-    const mBrowser = typeof browser === 'undefined' ? chrome : browser;
-    const version = mBrowser.runtime.getManifest().version;
-
-    const massage = '';
-
-    const $dialog = (
-      <div className="dialog">
-        <p>버전: v{version}</p>
-        <p>
-          이 프로그램은 비공식입니다.
-          <br />
-          This program is unofficial.
-        </p>
-        <label>글자 크기 (단위: mm)</label>
-        <input
-          type="range"
-          id="font-size"
-          min="1"
-          max="11"
-          defaultValue="5"
-          onChange={event => changeFontSize(parseInt(event.target.value))}
-        />
-      </div>
-    );
-    let $overlay = document.querySelector('#overlay') as HTMLElement;
-    if (!$overlay) {
-      $overlay = document.createElement('div');
-      $overlay.id = 'overlay';
-      $overlay.classList.add('overlay');
-      $overlay.onclick = e => {
-        if ($overlay === e.target) {
-          $overlay.style.visibility = 'hidden';
+function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
+  event.preventDefault();
+  const mBrowser = typeof browser === 'undefined' ? chrome : browser;
+  const version = mBrowser.runtime.getManifest().version;
+  const $body = util.getBodyElement();
+  const $overlay: HTMLDivElement = document.createElement('div');
+  $body.appendChild($overlay);
+  ReactDOM.render(
+    <Configuration
+      version={version}
+      onClickOverlay={(event: React.MouseEvent<HTMLDivElement>) => {
+        if (
+          event.target instanceof Element &&
+          event.target.classList.contains('overlay')
+        ) {
+          $body.removeChild($overlay);
         }
-      };
-      ReactDOM.render($dialog, $overlay);
-      util.getBodyElement().appendChild($overlay);
-    } else {
-      $overlay.style.visibility = 'visible';
-    }
-  };
-  $parent.appendChild($link);
+      }}
+      defaultFontSize={options.fontSize}
+      onChangeFontSize={(event: React.ChangeEvent<HTMLInputElement>) => {
+        options.fontSize = parseInt(event.target.value);
+        onChangeSettings();
+      }}
+      defaultDevelopmentMode={options.developmentMode}
+      onChangeDevelopmentMode={(event: React.ChangeEvent<HTMLInputElement>) => {
+        options.developmentMode = event.target.checked;
+        onChangeSettings();
+      }}
+    />,
+    $overlay
+  );
 }
 
-function changeFontSize(size: number) {
-  for (const caption of document.querySelectorAll('.caption') as NodeListOf<
-    HTMLElement
-  >) {
-    caption.style.fontSize = `${size}mm`;
+function onChangeSettings() {
+  chrome.storage.sync.set(options, function() {
+    log('Options saved');
+    log(options);
+    // @todo Update status to let user know options were saved.
+    // var status = document.getElementById('status');
+    // status.textContent = 'Options saved.';
+    // setTimeout(function() {
+    //   status.textContent = '';
+    // }, 750);
+  });
+
+  const captions: NodeListOf<HTMLElement> = document.querySelectorAll(
+    '.caption'
+  );
+  for (const caption of captions) {
+    caption.style.fontSize = `${options.fontSize}mm`;
   }
-}
-
-function appendTranslateLink($parent: Element, tlsPath: string) {
-  const $link = document.createElement('a');
-  $link.classList.add('translate');
-  $link.href = `https://github.com/aquaclara/hrmy-translate/blob/main/${tlsPath}`;
-  $link.setAttribute('target', '_blank');
-  $link.innerHTML = '번역 수정하기';
-  $parent.appendChild($link);
 }
 
 main();

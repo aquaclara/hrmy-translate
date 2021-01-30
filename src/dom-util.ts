@@ -53,5 +53,22 @@ export default {
       console.debug(`Unknown element: ${element}`);
       return 0;
     }
+  },
+
+  getImageId: (img: HTMLImageElement | HTMLTableCellElement): string => {
+    let url;
+
+    if (img.tagName == 'IMG') {
+      url = new URL((img as HTMLImageElement).src);
+    } else if (img.tagName == 'TD') {
+      // HERO uses legacy background attribute
+      const attr: any = img.attributes;
+      url = new URL(attr.background.value, attr.background.baseURI);
+    } else {
+      console.warn(`${img.tagName} is unexpected`);
+      return null;
+    }
+
+    return url.pathname.replace(/^\//, '');
   }
 };

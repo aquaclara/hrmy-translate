@@ -23,7 +23,13 @@
     "persistent": false
   },
   "browser_action": {},
-  "permissions": ["tabs", "storage", "*://dka-hero.me/*"],
+  "permissions": [
+    "*://dka-hero.me/*",
+    "tabs",
+    "storage",
+    "downloads",
+    "clipboardWrite"
+  ],
   "web_accessible_resources": ["translations/*.yaml", "translations/**/*.yaml"],
   "manifest_version": 2
 }
