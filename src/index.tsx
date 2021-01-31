@@ -96,8 +96,7 @@ function getYaml(): string {
     sortKeys: true,
     noCompatMode: true
   });
-  // log(yamlText);
-  return yamlText;
+  return yamlText + '\n';
 }
 
 function appendHotLinks() {
