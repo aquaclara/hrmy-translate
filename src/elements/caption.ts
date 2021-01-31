@@ -1,7 +1,7 @@
 import util from '../dom-util';
 
 export interface captionOption {
-  tag?: 'div' | 'p' | 'input';
+  tag?: 'div' | 'p' | 'input' | 'a';
   class?: Array<string>;
   message?: string;
   parent?: HTMLElement;
@@ -51,6 +51,10 @@ export class Caption {
     this.beforeAppendHook($caption, opt);
 
     opt.parent.appendChild($caption);
+
+    this.afterAppendHook($caption, opt);
+
   }
   beforeAppendHook($caption: HTMLElement, opt: captionOption) {}
+  afterAppendHook($caption: HTMLElement, opt: captionOption) {}
 }

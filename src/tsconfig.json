@@ -8,5 +8,5 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["*.ts", "*.tsx"]
+  "include": ["*.js", "*.ts", "*.tsx"]
 }

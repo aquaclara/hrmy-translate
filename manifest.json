@@ -28,6 +28,7 @@
     "tabs",
     "storage",
     "downloads",
+    "clipboardRead",
     "clipboardWrite"
   ],
   "web_accessible_resources": ["translations/*.yaml", "translations/**/*.yaml"],

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+const copy = require('copy-to-clipboard');
 const yaml = require('js-yaml');
+
 import './scss/styles.scss';
 import util from './dom-util';
 import {
@@ -10,7 +12,7 @@ import {
   translationFile,
   Translation
 } from './translation';
-import { Notice } from './elements/notice';
+import { noticeOption, Notice } from './elements/notice';
 import {
   translationOption,
   Translation as TranslationElement
@@ -25,7 +27,7 @@ let options: {
   fontSize: number;
   developmentMode: boolean;
 };
-const writerMode = true;
+const editableMode = true;
 let data: translationFile;
 
 function log(message: any, ...optionalParams: any[]) {
@@ -88,37 +90,43 @@ function handleResponse(response: string) {
   appendHotLinks();
 }
 
+function getYaml(): string {
+  const yamlText = yaml.dump(data, {
+    noArrayIndent: true,
+    sortKeys: true,
+    noCompatMode: true
+  });
+  // log(yamlText);
+  return yamlText;
+}
+
 function appendHotLinks() {
   ReactDOM.render(
     <HotLinks
       tlsPath={tlsPath}
-      writeMode={options.developmentMode}
+      editableMode={options.developmentMode}
       onClickConfigure={onClickConfigure}
+      onClickCopy={(event: React.MouseEvent<HTMLAnchorElement>) => {
+        copy(getYaml());
+      }}
       onClickSave={(event: React.MouseEvent<HTMLAnchorElement>) => {
-        const yamlText: string = yaml.dump(data, {
-          noArrayIndent: true,
-          sortKeys: true,
-          noCompatMode: true
-        });
+        log('The save button clicked');
         const filename = tlsPath.replace(/^.*[\\\/]/, '');
-        log('yaml is ready:');
-        log(yamlText);
-        let param = {
+        chrome.runtime.sendMessage({
           url: URL.createObjectURL(
-            new Blob([yamlText], {
+            new Blob([getYaml()], {
               type: 'text/yaml'
             })
           ),
           filename: filename
-        };
-        chrome.runtime.sendMessage(param);
+        });
       }}
     />,
     util.getBodyElement().appendChild(document.createElement('div'))
   );
 }
 
-function renderTranslations() {
+function renderTranslations(focus?: [string, number, number]) {
   for (const img of document.querySelectorAll(
     'img, td[background]'
   ) as NodeListOf<HTMLImageElement | HTMLTableCellElement>) {
@@ -128,15 +136,25 @@ function renderTranslations() {
     }
 
     if (data[imageId] === null || data[imageId].length === 0) {
-      new Notice({
+      const opt: noticeOption = {
         message: '(제공된 번역이 아직 없습니다)' + `<!--${imageId}-->`,
         fontSize: options.fontSize,
         top: util.getProperty(img, 'offsetTop') + 'px',
         left:
           util.getProperty(img, 'offsetLeft') +
           util.getProperty(img, 'width') +
-          'px'
-      }).render();
+          'px',
+        editableMode: options.developmentMode
+      };
+      if (options.developmentMode) {
+        opt.onclick = (ev: Event): any => {
+          console.log(`clicked ${imageId}`);
+          removeTranslates();
+          data[imageId] = [['']];
+          renderTranslations();
+        };
+      }
+      new Notice(opt).render();
     } else {
       const image: imageTranslation = data[imageId];
       for (let cutIndex = 0; cutIndex < image.length; cutIndex++) {
@@ -148,23 +166,58 @@ function renderTranslations() {
             tag: 'p',
             parent: $tlsGroup,
             fontSize: options.fontSize,
-            writeMode: options.developmentMode
+            editableMode: options.developmentMode
           };
           if (options.developmentMode) {
+            if (
+              focus &&
+              focus[0] === imageId &&
+              focus[1] === cutIndex &&
+              focus[2] === tlsIndex
+            ) {
+              opt.focus = true;
+            }
             opt.oninput = (ev: Event): any => {
               if (ev.target instanceof HTMLInputElement) {
                 const target = ev.target as HTMLInputElement;
                 const changed = target.value;
                 log(`changed: ${[imageId, cutIndex, tlsIndex]} to ${changed}`);
 
-                target.size = changed.length * 1.5;
+                target.size = TranslationElement.getPreferSize(changed.length);
                 data[imageId][cutIndex][tlsIndex] = changed;
+              }
+            };
+            opt.onkeydown = (ev: KeyboardEvent): any => {
+              if (ev.target instanceof HTMLInputElement) {
+                const target = ev.target as HTMLInputElement;
+                const changed = target.value;
+                log(target.parentElement.nextSibling);
+                if (!ev.ctrlKey && ev.key === 'Enter') {
+                  log(`Enter at ${[imageId, cutIndex, tlsIndex]}`);
+                  data[imageId][cutIndex].splice(tlsIndex + 1, 0, '');
+                  removeTranslates();
+                  renderTranslations([imageId, cutIndex, tlsIndex+1]);
+                } else if (ev.ctrlKey && ev.key === 'Enter') {
+                  log(`Ctrl+Enter at ${[imageId, cutIndex, tlsIndex]}`);
+                  data[imageId].splice(cutIndex + 1, 0, ['']);
+                  removeTranslates();
+                  renderTranslations();
+                } else if (ev.key == 'Backspace' && changed.length === 0) {
+                  log(`Backspace at ${[imageId, cutIndex, tlsIndex]}`);
+                  if (data[imageId][cutIndex].length === 1) {
+                    data[imageId].splice(cutIndex, 1);
+                  } else {
+                    data[imageId][cutIndex].splice(tlsIndex, 1);
+                  }
+                  removeTranslates();
+                  renderTranslations();
+                }
               }
             };
           }
           if (typeof cut[tlsIndex] === 'string') {
             const text = cut[tlsIndex];
-            if (!writerMode && Translation.isComment(text)) {
+            if (!editableMode && Translation.isComment(text)) {
               continue;
             }
             opt.message = text as string;
@@ -188,6 +241,14 @@ function renderTranslations() {
       }
     }
   }
+}
+
+function removeTranslates() {
+  document
+    .querySelectorAll('.caption, .translation-group')
+    .forEach((e: Element) => {
+      e.remove();
+    });
 }
 
 function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
