@@ -5,6 +5,7 @@ export interface captionOption {
   class?: Array<string>;
   message?: string;
   parent?: HTMLElement;
+  href?: string;
 
   fontSize?: number;
   top?: string;
@@ -31,6 +32,9 @@ export class Caption {
 
     $caption.innerHTML = opt.message;
     $caption.style.fontSize = `${opt.fontSize}mm`;
+    if ($caption instanceof HTMLAnchorElement && opt.href) {
+      $caption.href = opt.href;
+    }
     if (opt.color) {
       $caption.style.color = opt.color;
     }

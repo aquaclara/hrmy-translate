@@ -9,6 +9,7 @@ export class Notice extends Caption {
     opt.class = ['notice', 'float'];
     if (opt.editableMode) {
       opt.tag = 'a';
+      opt.href = '#';
     }
     super(opt);
   }
