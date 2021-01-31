@@ -1,4 +1,4 @@
-export default {
+const util = {
   /**
    * @return {HTMLBodyElement}
    */
@@ -18,14 +18,23 @@ export default {
    * @param {string} property
    * @return {number} the offset top of the given element
    */
-  getProperty: (element: HTMLElement, prop: string) => {
+  getProperty: (
+    element: HTMLElement,
+    prop: 'width' | 'height' | 'offsetTop' | 'offsetLeft'
+  ): number => {
     switch (element.tagName) {
       case 'IMG':
+        const wrapperTableCell = element.closest('td');
+        if (wrapperTableCell) {
+          return util.getProperty(wrapperTableCell, prop);
+        }
         if (prop == 'width') return element.offsetWidth;
         else if (prop == 'height') return element.offsetHeight;
-        else if (prop == 'offsetTop') return element.offsetTop;
-        else if (prop == 'offsetLeft') return element.offsetLeft;
+        else {
+          return element[prop];
+        }
       case 'TD':
+      case 'TR':
         const table = element.closest('table');
         if (prop == 'width') return element.offsetWidth;
         else if (prop == 'height') return element.offsetHeight;
@@ -72,3 +81,4 @@ export default {
     return url.pathname.replace(/^\//, '');
   }
 };
+export default util;
