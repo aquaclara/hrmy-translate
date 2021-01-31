@@ -95,6 +95,20 @@ function handleResponse(response: string) {
   data = yaml.load(response);
   renderTranslations();
   appendHotLinks();
+  if (options.developmentMode) {
+    chrome.storage.local.get(
+      [location.pathname],
+      (items: { [key: string]: any }) => {
+        const storedData = items[location.pathname];
+        if (storedData) {
+          data = storedData;
+          removeTranslates();
+          renderTranslations();
+          log('The last draft is loaded');
+        }
+      }
+    );
+  }
 }
 
 function getYaml(): string {
@@ -203,6 +217,9 @@ function renderTranslations(focus?: [string, number, number]) {
 
                 target.size = TranslationElement.getPreferSize(changed.length);
                 data[imageId][cutIndex][tlsIndex] = changed;
+                chrome.storage.local.set({ [location.pathname]: data }, () => {
+                  log(`${location.pathname} is set`);
+                });
               }
             };
             opt.onkeydown = (ev: KeyboardEvent): any => {
