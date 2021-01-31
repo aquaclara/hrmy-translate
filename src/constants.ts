@@ -1,4 +1,7 @@
 export const githubUrlBase =
+  'https://github.com/aquaclara/hrmy-translate/blob/main/';
+
+export const githubRawUrlBase =
   'https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/';
 
 export const dkaHeroUrl = 'http://dka-hero.me/';

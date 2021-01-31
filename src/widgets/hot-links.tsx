@@ -1,5 +1,5 @@
 import React from 'react';
-import { githubUrlBase } from '../constants';
+import { githubRawUrlBase } from '../constants';
 
 interface PropsType {
   onClickConfigure: (event: React.MouseEvent<HTMLAnchorElement>) => void;
@@ -29,7 +29,7 @@ export class HotLinks extends React.Component<PropsType, {}> {
         )}
         <a
           className="translate"
-          href={githubUrlBase + this.props.tlsPath}
+          href={githubRawUrlBase + this.props.tlsPath}
           target="_blank"
         >
           번역 수정하기
