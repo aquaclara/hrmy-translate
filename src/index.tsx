@@ -29,6 +29,7 @@ let options: {
 };
 const editableMode = true;
 let data: translationFile;
+const imageDenyList = ['hm001_030/horimiya_01.gif'];
 
 function log(message: any, ...optionalParams: any[]) {
   if (options.developmentMode) {
@@ -72,7 +73,10 @@ function main() {
       xhr.onreadystatechange = () => {
         if (xhr.readyState != 4) return;
         const res = xhr.responseText;
-        if (res && res != 'null' && res != '404: Not Found') {
+        if (
+          options.developmentMode ||
+          (res && res != 'null' && res != '404: Not Found')
+        ) {
           handleResponse(res);
         } else {
           log(`File does not exist for '${tlsPath}'`);
@@ -130,11 +134,16 @@ function renderTranslations(focus?: [string, number, number]) {
     'img, td[background]'
   ) as NodeListOf<HTMLImageElement | HTMLTableCellElement>) {
     const imageId = util.getImageId(img);
-    if (!data || !(imageId in data)) {
+
+    if (imageDenyList.indexOf(imageId) >= 0) {
       continue;
     }
-
-    if (data[imageId] === null || data[imageId].length === 0) {
+    if (
+      !data ||
+      data[imageId] === null ||
+      data[imageId] === undefined ||
+      data[imageId].length === 0
+    ) {
       const opt: noticeOption = {
         message: '(제공된 번역이 아직 없습니다)' + `<!--${imageId}-->`,
         fontSize: options.fontSize,
@@ -149,6 +158,9 @@ function renderTranslations(focus?: [string, number, number]) {
         opt.onclick = (ev: Event): any => {
           console.log(`clicked ${imageId}`);
           removeTranslates();
+          if (!data) {
+            data = {};
+          }
           data[imageId] = [['']];
           renderTranslations([imageId, 0, 0]);
         };
