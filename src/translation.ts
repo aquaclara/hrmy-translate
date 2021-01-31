@@ -11,7 +11,6 @@ export type translationFile = {
   [key: string]: imageTranslation;
 };
 
-
 export class Translation {
   static isComment(target: translation): boolean {
     return typeof target === 'string' && target.startsWith('//');

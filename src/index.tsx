@@ -196,7 +196,7 @@ function renderTranslations(focus?: [string, number, number]) {
                   log(`Enter at ${[imageId, cutIndex, tlsIndex]}`);
                   data[imageId][cutIndex].splice(tlsIndex + 1, 0, '');
                   removeTranslates();
-                  renderTranslations([imageId, cutIndex, tlsIndex+1]);
+                  renderTranslations([imageId, cutIndex, tlsIndex + 1]);
                 } else if (ev.ctrlKey && ev.key === 'Enter') {
                   log(`Ctrl+Enter at ${[imageId, cutIndex, tlsIndex]}`);
                   data[imageId].splice(cutIndex + 1, 0, ['']);

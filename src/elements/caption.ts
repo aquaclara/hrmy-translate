@@ -53,7 +53,6 @@ export class Caption {
     opt.parent.appendChild($caption);
 
     this.afterAppendHook($caption, opt);
-
   }
   beforeAppendHook($caption: HTMLElement, opt: captionOption) {}
   afterAppendHook($caption: HTMLElement, opt: captionOption) {}
