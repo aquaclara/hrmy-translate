@@ -220,17 +220,20 @@ function renderTranslations(focus?: [string, number, number]) {
                   renderTranslations([imageId, cutIndex + 1, 0]);
                 } else if (ev.key == 'Backspace' && changed.length === 0) {
                   log(`Backspace at ${[imageId, cutIndex, tlsIndex]}`);
-                  removeTranslates();
-                  if (data[imageId][cutIndex].length === 1) {
+                  if (data[imageId][cutIndex].length != 1) {
+                    log('Delete a translate');
+                    data[imageId][cutIndex].splice(tlsIndex, 1);
+                    removeTranslates();
+                    renderTranslations([imageId, cutIndex, tlsIndex - 1]);
+                  } else if (cutIndex !== 0) {
+                    log('Delete a cut');
                     data[imageId].splice(cutIndex, 1);
+                    removeTranslates();
                     renderTranslations([
                       imageId,
                       cutIndex - 1,
                       data[imageId][cutIndex - 1].length - 1
                     ]);
-                  } else {
-                    data[imageId][cutIndex].splice(tlsIndex, 1);
-                    renderTranslations([imageId, cutIndex, tlsIndex - 1]);
                   }
                 }
               }
