@@ -20,7 +20,11 @@ import {
 import { Configuration } from './widgets/configuration';
 import { HotLinks } from './widgets/hot-links';
 
-import { license, githubUrlBase, imageDenyList } from './constants';
+import {
+  license,
+  githubRawUrlBase as githubUrlBase,
+  imageDenyList
+} from './constants';
 const tlsPath = '/translations' + location.pathname.replace('.html', '.yaml');
 const githubUrl = githubUrlBase + tlsPath;
 const localUrl = chrome.runtime.getURL(tlsPath);
