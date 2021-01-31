@@ -20,16 +20,18 @@ import {
 import { Configuration } from './widgets/configuration';
 import { HotLinks } from './widgets/hot-links';
 
+import license from './translation-license';
 const tlsPath = '/translations' + location.pathname.replace('.html', '.yaml');
 const githubUrl = `https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/${tlsPath}`;
 const localUrl = chrome.runtime.getURL(tlsPath);
+const editableMode = true;
+const imageDenyList = ['hm001_030/horimiya_01.gif'];
+
 let options: {
   fontSize: number;
   developmentMode: boolean;
 };
-const editableMode = true;
 let data: translationFile;
-const imageDenyList = ['hm001_030/horimiya_01.gif'];
 
 function log(message: any, ...optionalParams: any[]) {
   if (options.developmentMode) {
@@ -95,6 +97,10 @@ function handleResponse(response: string) {
 }
 
 function getYaml(): string {
+  const dataToParse: any = data;
+  if (!('//' in dataToParse)) {
+    dataToParse['//'] = license;
+  }
   const yamlText = yaml.dump(data, {
     noArrayIndent: true,
     sortKeys: true,
