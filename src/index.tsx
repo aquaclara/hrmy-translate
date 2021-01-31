@@ -211,7 +211,6 @@ function renderTranslations(focus?: [string, number, number]) {
               if (ev.target instanceof HTMLInputElement) {
                 const target = ev.target as HTMLInputElement;
                 const changed = target.value;
-                log(`changed: ${[imageId, cutIndex, tlsIndex]} to ${changed}`);
 
                 target.size = TranslationElement.getPreferSize(changed.length);
                 data[imageId][cutIndex][tlsIndex] = changed;
