@@ -202,7 +202,6 @@ function renderTranslations(focus?: [string, number, number]) {
               if (ev.target instanceof HTMLInputElement) {
                 const target = ev.target as HTMLInputElement;
                 const changed = target.value;
-                log(target.parentElement.nextSibling);
                 if (!ev.ctrlKey && ev.key === 'Enter') {
                   log(`Enter at ${[imageId, cutIndex, tlsIndex]}`);
                   data[imageId][cutIndex].splice(tlsIndex + 1, 0, '');
