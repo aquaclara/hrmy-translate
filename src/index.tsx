@@ -25,7 +25,11 @@ const tlsPath = '/translations' + location.pathname.replace('.html', '.yaml');
 const githubUrl = `https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/${tlsPath}`;
 const localUrl = chrome.runtime.getURL(tlsPath);
 const editableMode = true;
-const imageDenyList = ['hm001_030/horimiya_01.gif'];
+const imageDenyList = [
+  'mat/new.gif',
+  'hm001_030/horimiya_01.gif',
+  'hm001_030/horimiya_02.gif'
+];
 
 let options: {
   fontSize: number;
