@@ -15,7 +15,7 @@ export const imageDenyList = [
   'pict_02/hm/name.jpg',
   'pict_02/hm/strap_01.jpg',
   'pict_02/hm/strap_02.jpg',
-  'pict_02/hm/yuna.jpg',
+  'pict_02/hm/yuna.jpg'
 ];
 
 export const license = `이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한

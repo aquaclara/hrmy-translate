@@ -164,7 +164,9 @@ function renderTranslations(focus?: [string, number, number]) {
       data[imageId].length === 0
     ) {
       const opt: noticeOption = {
-        message: '(제공된 번역이 아직 없습니다)' + `<!--${imageId}-->`,
+        message: options.developmentMode
+          ? '(클릭하여 새 번역 추가)'
+          : '(제공된 번역이 아직 없습니다)',
         fontSize: options.fontSize,
         top: util.getProperty(img, 'offsetTop') + 'px',
         left:
