@@ -30,7 +30,11 @@ export class Translation extends Caption {
   afterAppendHook($translate: HTMLInputElement, opt: translationOption) {
     if (opt.focus) {
       $translate.focus();
-      $translate.select();
+      setTimeout(function() {
+        $translate.focus();
+        $translate.selectionStart = $translate.selectionEnd =
+          $translate.value.length;
+      }, 100);
     }
   }
 

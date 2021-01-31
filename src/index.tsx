@@ -150,7 +150,7 @@ function renderTranslations(focus?: [string, number, number]) {
           console.log(`clicked ${imageId}`);
           removeTranslates();
           data[imageId] = [['']];
-          renderTranslations();
+          renderTranslations([imageId, 0, 0]);
         };
       }
       new Notice(opt).render();
@@ -200,16 +200,21 @@ function renderTranslations(focus?: [string, number, number]) {
                   log(`Ctrl+Enter at ${[imageId, cutIndex, tlsIndex]}`);
                   data[imageId].splice(cutIndex + 1, 0, ['']);
                   removeTranslates();
-                  renderTranslations();
+                  renderTranslations([imageId, cutIndex + 1, 0]);
                 } else if (ev.key == 'Backspace' && changed.length === 0) {
                   log(`Backspace at ${[imageId, cutIndex, tlsIndex]}`);
+                  removeTranslates();
                   if (data[imageId][cutIndex].length === 1) {
                     data[imageId].splice(cutIndex, 1);
+                    renderTranslations([
+                      imageId,
+                      cutIndex - 1,
+                      data[imageId][cutIndex - 1].length - 1
+                    ]);
                   } else {
                     data[imageId][cutIndex].splice(tlsIndex, 1);
+                    renderTranslations([imageId, cutIndex, tlsIndex - 1]);
                   }
-                  removeTranslates();
-                  renderTranslations();
                 }
               }
             };
