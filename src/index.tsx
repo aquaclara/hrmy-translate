@@ -204,7 +204,7 @@ function renderTranslations(focus?: [string, number, number]) {
             tag: 'p',
             parent: $tlsGroup,
             fontSize: options.fontSize,
-            editableMode: options.editableMode
+            editableMode: options.developmentMode && options.editableMode
           };
           if (options.developmentMode && options.editableMode) {
             if (
@@ -356,12 +356,8 @@ function onChangeSettings() {
     // }, 750);
   });
 
-  const captions: NodeListOf<HTMLElement> = document.querySelectorAll(
-    '.caption'
-  );
-  for (const caption of captions) {
-    caption.style.fontSize = `${options.fontSize}mm`;
-  }
+  removeTranslates();
+  renderTranslations();
 }
 
 main();
