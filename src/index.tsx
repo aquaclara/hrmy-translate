@@ -229,11 +229,16 @@ function renderTranslations(focus?: [string, number, number]) {
               if (ev.target instanceof HTMLInputElement) {
                 const target = ev.target as HTMLInputElement;
                 const changed = target.value;
-                if (!ev.ctrlKey && ev.key === 'Enter') {
+                if (!ev.ctrlKey && !ev.shiftKey && ev.key === 'Enter') {
                   log(`Enter at ${[imageId, cutIndex, tlsIndex]}`);
                   data[imageId][cutIndex].splice(tlsIndex + 1, 0, '');
                   removeTranslates();
                   renderTranslations([imageId, cutIndex, tlsIndex + 1]);
+                } else if (!ev.ctrlKey && ev.shiftKey && ev.key === 'Enter') {
+                  log(`Shift+Enter at ${[imageId, cutIndex, tlsIndex]}`);
+                  data[imageId][cutIndex].splice(tlsIndex, 0, '');
+                  removeTranslates();
+                  renderTranslations([imageId, cutIndex, tlsIndex]);
                 } else if (ev.ctrlKey && ev.key === 'Enter') {
                   log(`Ctrl+Enter at ${[imageId, cutIndex, tlsIndex]}`);
                   data[imageId].splice(cutIndex + 1, 0, ['']);
