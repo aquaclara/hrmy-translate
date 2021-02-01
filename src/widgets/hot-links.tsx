@@ -27,6 +27,7 @@ export class HotLinks extends React.Component<PropsType, {}> {
             YAML 저장
           </a>
         )}
+        <div>이 사이트는 캡처·촬영이 금지되어 있습니다</div>
         <a
           className="translate"
           href={githubUrlBase + this.props.tlsPath}
