@@ -65,6 +65,10 @@ a.caption {
       filter: invert(1);
     }
   }
+
+  .save {
+    display: none;
+  }
 }
 .overlay {
   display: flex;
