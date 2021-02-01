@@ -115,9 +115,7 @@ function handleResponse(response: string) {
 
 function getYaml(): string {
   const dataToParse: any = data;
-  if (!('//' in dataToParse)) {
-    dataToParse['//'] = license;
-  }
+  dataToParse['//'] = license;
   const yamlText = yaml.dump(data, {
     noArrayIndent: true,
     sortKeys: true,
