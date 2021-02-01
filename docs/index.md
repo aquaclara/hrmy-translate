@@ -74,7 +74,7 @@ tags:
 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한 모든 권리를 저작권자에게 양도합니다.
 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
 만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다.
-이 모든 조항을 준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 고지하여야 합니다.
+이 모든 조항을 준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
 
 The development of this program and the translation are not related to HERO.
 The copyright holder of the original comic has all dialogue-related rights, and the translator transfers all rights to the translation to the copyright holder.
