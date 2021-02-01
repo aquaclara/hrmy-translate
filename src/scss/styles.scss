@@ -56,13 +56,13 @@ body {
       width: 1em;
     }
   }
-}
 
-a {
-  cursor: pointer;
+  a {
+    cursor: pointer;
 
-  &:hover {
-    filter: invert(1);
+    &:hover {
+      filter: invert(1);
+    }
   }
 }
 .overlay {
