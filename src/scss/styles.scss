@@ -86,6 +86,7 @@ a.caption {
     padding: 1em;
     color: #222;
     width: 30%;
+    min-height: 20%;
     box-shadow: 10px 10px 16px 0 rgb(0 0 0 / 10%);
 
     label {
@@ -96,11 +97,19 @@ a.caption {
       width: 100%;
     }
 
+    button#remove-storage {
+      display: block;
+    }
+
     #development-mode:not(:checked) {
       & ~ #editable-mode,
       & ~ label[for='editable-mode'] {
         display: none;
       }
+    }
+
+    #editable-mode:not(:checked) ~ #remove-storage {
+      display: none;
     }
   }
 }

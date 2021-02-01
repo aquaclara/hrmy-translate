@@ -48,6 +48,12 @@ export class Configuration extends React.Component<PropsType, {}> {
             onChange={this.props.onChangeEditableMode}
           />
           <label htmlFor="editable-mode">편집 모드</label>
+          <button
+            id="remove-storage"
+            onClick={() => chrome.storage.local.remove(location.pathname)}
+          >
+            편집 내용 비우기
+          </button>
 
           <p>버전: v{this.props.version}</p>
         </div>
