@@ -33,6 +33,7 @@ const editableMode = true;
 let options: {
   fontSize: number;
   developmentMode: boolean;
+  editableMode: boolean;
 };
 let data: translationFile;
 
@@ -46,12 +47,14 @@ function main() {
   chrome.storage.sync.get(
     {
       fontSize: 5,
-      developmentMode: false
+      developmentMode: false,
+      editableMode: false
     },
     function(items) {
       options = {
         fontSize: items.fontSize,
-        developmentMode: items.developmentMode
+        developmentMode: items.developmentMode,
+        editableMode: items.editableMode
       };
       log('Options loaded');
       log(items);
@@ -97,7 +100,7 @@ function handleResponse(response: string) {
   data = yaml.load(response);
   renderTranslations();
   appendHotLinks();
-  if (options.developmentMode) {
+  if (options.developmentMode && options.editableMode) {
     chrome.storage.local.get(
       [location.pathname],
       (items: { [key: string]: any }) => {
@@ -128,7 +131,7 @@ function appendHotLinks() {
   ReactDOM.render(
     <HotLinks
       tlsPath={tlsPath}
-      editableMode={options.developmentMode}
+      editableMode={options.developmentMode && options.editableMode}
       onClickConfigure={onClickConfigure}
       onClickCopy={(event: React.MouseEvent<HTMLAnchorElement>) => {
         copy(getYaml());
@@ -166,18 +169,19 @@ function renderTranslations(focus?: [string, number, number]) {
       data[imageId].length === 0
     ) {
       const opt: noticeOption = {
-        message: options.developmentMode
-          ? '(클릭하여 새 번역 추가)'
-          : '(제공된 번역이 아직 없습니다)',
+        message:
+          options.developmentMode && options.editableMode
+            ? '(클릭하여 새 번역 추가)'
+            : '(제공된 번역이 아직 없습니다)',
         fontSize: options.fontSize,
         top: util.getProperty(img, 'offsetTop') + 'px',
         left:
           util.getProperty(img, 'offsetLeft') +
           util.getProperty(img, 'width') +
           'px',
-        editableMode: options.developmentMode
+        editableMode: options.editableMode
       };
-      if (options.developmentMode) {
+      if (options.developmentMode && options.editableMode) {
         opt.onclick = (ev: Event): any => {
           console.log(`clicked ${imageId}`);
           removeTranslates();
@@ -200,9 +204,9 @@ function renderTranslations(focus?: [string, number, number]) {
             tag: 'p',
             parent: $tlsGroup,
             fontSize: options.fontSize,
-            editableMode: options.developmentMode
+            editableMode: options.editableMode
           };
-          if (options.developmentMode) {
+          if (options.developmentMode && options.editableMode) {
             if (
               focus &&
               focus[0] === imageId &&
@@ -265,7 +269,10 @@ function renderTranslations(focus?: [string, number, number]) {
           }
           if (typeof cut[tlsIndex] === 'string') {
             const text = cut[tlsIndex];
-            if (!editableMode && Translation.isComment(text)) {
+            if (
+              (!options.developmentMode || !options.editableMode) &&
+              Translation.isComment(text)
+            ) {
               continue;
             }
             opt.message = text as string;
@@ -325,6 +332,11 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
       defaultDevelopmentMode={options.developmentMode}
       onChangeDevelopmentMode={(event: React.ChangeEvent<HTMLInputElement>) => {
         options.developmentMode = event.target.checked;
+        onChangeSettings();
+      }}
+      defaultEditableMode={options.developmentMode && options.editableMode}
+      onChangeEditableMode={(event: React.ChangeEvent<HTMLInputElement>) => {
+        options.editableMode = event.target.checked;
         onChangeSettings();
       }}
     />,

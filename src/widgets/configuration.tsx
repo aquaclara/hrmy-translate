@@ -2,11 +2,13 @@ import React from 'react';
 
 interface PropsType {
   version: string;
+  onClickOverlay: (event: React.MouseEvent<HTMLDivElement>) => void;
   defaultFontSize: number;
   onChangeFontSize: (event: React.ChangeEvent<HTMLInputElement>) => void;
   defaultDevelopmentMode: boolean;
   onChangeDevelopmentMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onClickOverlay: (event: React.MouseEvent<HTMLDivElement>) => void;
+  defaultEditableMode: boolean;
+  onChangeEditableMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export class Configuration extends React.Component<PropsType, {}> {
@@ -32,15 +34,20 @@ export class Configuration extends React.Component<PropsType, {}> {
             defaultValue={this.props.defaultFontSize}
             onChange={this.props.onChangeFontSize}
           />
-          <label>
-            <input
-              type="checkbox"
-              id="development-mode"
-              defaultChecked={this.props.defaultDevelopmentMode}
-              onChange={this.props.onChangeDevelopmentMode}
-            />
-            개발자 모드
-          </label>
+          <input
+            type="checkbox"
+            id="development-mode"
+            defaultChecked={this.props.defaultDevelopmentMode}
+            onChange={this.props.onChangeDevelopmentMode}
+          />
+          <label htmlFor="development-mode">개발자 모드</label>
+          <input
+            type="checkbox"
+            id="editable-mode"
+            defaultChecked={this.props.defaultEditableMode}
+            onChange={this.props.onChangeEditableMode}
+          />
+          <label htmlFor="editable-mode">편집 모드</label>
 
           <p>버전: v{this.props.version}</p>
         </div>

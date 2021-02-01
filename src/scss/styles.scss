@@ -85,14 +85,22 @@ a.caption {
     left: 0;
     padding: 1em;
     color: #222;
+    width: 30%;
+    box-shadow: 10px 10px 16px 0 rgb(0 0 0 / 10%);
 
     label {
-      display: block;
       font-weight: bold;
     }
 
     input[type='range'] {
       width: 100%;
+    }
+
+    #development-mode:not(:checked) {
+      & ~ #editable-mode,
+      & ~ label[for='editable-mode'] {
+        display: none;
+      }
     }
   }
 }
