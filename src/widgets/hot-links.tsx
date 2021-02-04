@@ -38,7 +38,7 @@ export class HotLinks extends React.Component<PropsType, {}> {
           &nbsp;
         </a>
         <div className="caution">
-          이 사이트와 사이트 내 그림의 무단전제, 도용, 링크, 캡처, 촬영 등은
+          이 사이트 내 그림의 무단전제, 도용, 링크, 캡처, 촬영 등은
           금지되어 있으며 자세한 것은 사이트 내 안내를 따라 주세요. 이 한글
           번역은 공식이 아닙니다.
           <button
