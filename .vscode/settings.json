@@ -1,0 +1,10 @@
+{
+  "filewatcher.commands": [
+    {
+      "match": ".tsx?",
+      "isAsync": true,
+      "cmd": "yarn --cwd '${workspaceRoot}' webpack",
+      "event": "onFileChange"
+    }
+  ]
+}

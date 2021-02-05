@@ -10,7 +10,11 @@ export const imageDenyList = [
   'hm/horimiya_01.gif',
   'hm001_030/horimiya_01.gif',
   'hm001_030/horimiya_02.gif',
-  'hm01_30/horimiya/horimiya_01.gif'
+  'hm01_30/horimiya/horimiya_01.gif',
+  'hm031_060/horimiya_01.gif',
+  'hm031_060/horimiya_02.gif',
+  'hm121_150/horimiya_01.gif',
+  'hm121_150/horimiya_02.gif'
 ];
 
 export const license = `이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
