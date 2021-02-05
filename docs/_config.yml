@@ -3,6 +3,8 @@ lang: ko
 title: 호리씨와 미야무라군 번역 크롬 확장프로그램
 sub_title: 비공식
 description: dka-hero.me 만화 옆에 한국어 번역을 표시하는 비공식 구글 크롬 확장프로그램.
+show_downloads: true
+zip_url: https://github.com/aquaclara/hrmy-translate/releases/latest/download/extension.zip
 google_site_verification: h9ZrOAauwfzaQWYL1pfgqxU7kJZ_N4JQqPED6zvBgZw
 google_analytics: G-GVY1S94CWM
 
