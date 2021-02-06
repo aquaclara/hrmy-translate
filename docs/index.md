@@ -60,19 +60,9 @@ tags:
 
 ## 🔧 설치 방법
 
-1. PC+구글 크롬에서만 사용할 수 있습니다!!
-   크롬을 쓰고 있지 않다면 [이 링크](https://www.google.com/intl/ko/chrome/)에서 설치해 주세요!!
-   모바일로 이 페이지를 보고 계신 경우에도 컴퓨터로 다시 와 주세요.
+1. chrome 웹 스토어에서 [호리씨와 미야무라군 번역](https://chrome.google.com/webstore/detail/bkmdmieohkdddfiebdblemonghppbban)을 설치합니다.
 
-2. [이 링크](https://github.com/aquaclara/hrmy-translate/releases/latest/download/extension.zip)를 눌러 압축 파일을 받아 적당한 장소에 해제합니다.
-
-3. 크롬 주소창에 `chrome://extensions`을 복사해 붙여 넣습니다.
-
-4. 오른쪽 위 "개발자 모드"를 활성화합니다.
-
-5. "압축해제된 확장 프로그램을 로드" 버튼을 눌러 2에서 압축 푼 폴더를 선택합니다.
-
-6. [dka-hero.me]을 방문해 보고 싶은 만화를 봅니다.
+2. [dka-hero.me]을 방문해 보고 싶은 만화를 봅니다.
 
 ## 고지
 

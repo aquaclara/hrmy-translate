@@ -1,4 +1,4 @@
-# 호리씨와 미야무라군 번역 크롬 확장프로그램
+# 호리씨와 미야무라군 번역 크롬 확장프로그램 [![](https://img.shields.io/chrome-web-store/stars/bkmdmieohkdddfiebdblemonghppbban.svg)](https://chrome.google.com/webstore/detail/bkmdmieohkdddfiebdblemonghppbban)
 
 ![](screenshots/main.png)
 
