@@ -67,24 +67,20 @@ function main() {
   xhr.onreadystatechange = () => {
     if (xhr.readyState != 4) return;
     const res: string = xhr.responseText;
-    if (
-      !options.developmentMode &&
-      res &&
-      res != 'null' &&
-      res != '404: Not Found'
-    ) {
+    if (!options.developmentMode && res != '404: Not Found') {
       handleResponse(res);
     } else {
-      log('File does not exist on Github. Try reading translations from local');
+      log(
+        (options.developmentMode
+          ? 'File does not exist on Github.'
+          : 'Development Mode is on,') + ' Try reading translations from local'
+      );
       const xhr = new XMLHttpRequest();
       xhr.open('GET', localUrl, true);
       xhr.onreadystatechange = () => {
         if (xhr.readyState != 4) return;
         const res = xhr.responseText;
-        if (
-          options.developmentMode ||
-          (res && res != 'null' && res != '404: Not Found')
-        ) {
+        if (res != '404: Not Found') {
           handleResponse(res);
         } else {
           log(`File does not exist for '${tlsPath}'`);
