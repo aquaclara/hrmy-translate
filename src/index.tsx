@@ -136,18 +136,6 @@ function appendHotLinks() {
       onClickCopy={(event: React.MouseEvent<HTMLAnchorElement>) => {
         copy(getYaml());
       }}
-      onClickSave={(event: React.MouseEvent<HTMLAnchorElement>) => {
-        log('The save button clicked');
-        const filename = tlsPath.replace(/^.*[\\\/]/, '');
-        chrome.runtime.sendMessage({
-          url: URL.createObjectURL(
-            new Blob([getYaml()], {
-              type: 'text/yaml'
-            })
-          ),
-          filename: filename
-        });
-      }}
     />,
     util.getBodyElement().appendChild(document.createElement('div'))
   );

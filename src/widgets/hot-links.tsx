@@ -6,7 +6,6 @@ interface PropsType {
   tlsPath: string;
   editableMode?: boolean;
   onClickCopy: (event: React.MouseEvent<HTMLAnchorElement>) => void;
-  onClickSave: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 export class HotLinks extends React.Component<PropsType, {}> {
@@ -20,11 +19,6 @@ export class HotLinks extends React.Component<PropsType, {}> {
         {this.props.editableMode && (
           <a className="copy" onClick={this.props.onClickCopy}>
             YAML 복사
-          </a>
-        )}
-        {this.props.editableMode && (
-          <a className="save" onClick={this.props.onClickSave}>
-            YAML 저장
           </a>
         )}
         <a
