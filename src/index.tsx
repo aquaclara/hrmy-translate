@@ -179,7 +179,7 @@ function renderTranslations(focus?: [string, number, number]) {
           util.getProperty(img, 'offsetLeft') +
           util.getProperty(img, 'width') +
           'px',
-        editableMode: options.editableMode
+        editableMode: options.developmentMode && options.editableMode
       };
       if (options.developmentMode && options.editableMode) {
         opt.onclick = (ev: Event): any => {
