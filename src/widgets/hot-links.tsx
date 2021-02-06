@@ -16,11 +16,9 @@ export class HotLinks extends React.Component<PropsType, {}> {
   render() {
     return (
       <div className="hot-links">
-        {this.props.editableMode && (
-          <a className="copy" onClick={this.props.onClickCopy}>
-            YAML 복사
-          </a>
-        )}
+        <a className="configure" onClick={this.props.onClickConfigure}>
+          &nbsp;
+        </a>
         <a
           className="translate"
           href={githubUrlBase + this.props.tlsPath}
@@ -28,9 +26,11 @@ export class HotLinks extends React.Component<PropsType, {}> {
         >
           번역 수정하기
         </a>
-        <a className="configure" onClick={this.props.onClickConfigure}>
-          &nbsp;
-        </a>
+        {this.props.editableMode && (
+          <a className="copy" onClick={this.props.onClickCopy}>
+            YAML 복사
+          </a>
+        )}
         <div className="caution">
           이 사이트 내 그림의 무단전제, 도용, 링크, 캡처, 촬영 등은 금지되어
           있으며 자세한 것은 사이트 내 안내를 따라 주세요. 이 한글 번역은 공식이

@@ -31,7 +31,7 @@ a.caption {
   bottom: 0;
   z-index: 200;
   font-size: 4.3mm;
-  right: 2em;
+  right: 1em;
 
   .caution button {
     border: 1px solid white;
@@ -43,7 +43,7 @@ a.caption {
 
   a,
   div {
-    float: left;
+    float: right;
     display: inline;
     background-color: black;
     text-align: center;
