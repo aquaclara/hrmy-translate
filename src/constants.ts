@@ -50,7 +50,7 @@ export const imageDenyList = [
   'hm561_590/horimiya_01.gif',
   'hm561_590/horimiya_02.gif',
   'hm591_620/horimiya_01.gif',
-  'hm591_620/horimiya_02.gif',
+  'hm591_620/horimiya_02.gif'
 ];
 
 export const license = `이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
