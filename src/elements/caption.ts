@@ -10,7 +10,6 @@ export interface captionOption {
   fontSize?: number;
   top?: string;
   left?: string;
-  color?: string;
   marginTop?: string;
   marginLeft?: string;
 }
@@ -34,9 +33,6 @@ export class Caption {
     $caption.style.fontSize = `${opt.fontSize}mm`;
     if ($caption instanceof HTMLAnchorElement && opt.href) {
       $caption.href = opt.href;
-    }
-    if (opt.color) {
-      $caption.style.color = opt.color;
     }
     if (opt.marginTop) {
       $caption.style.marginTop = opt.marginTop;

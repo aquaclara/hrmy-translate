@@ -215,7 +215,25 @@ function renderTranslations(focus?: [string, number, number]) {
               if (ev.target instanceof HTMLInputElement) {
                 const target = ev.target as HTMLInputElement;
                 const changed = target.value;
-                if (!ev.ctrlKey && !ev.shiftKey && ev.key === 'Enter') {
+                // Stylizing
+                if (ev.ctrlKey && ev.key == 'i') {
+                  log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
+                  target.value += '<span class="plain"></span>';
+                  const position = target.value.length - '</span>'.length;
+                  target.setSelectionRange(position, position);
+                } else if (ev.ctrlKey && ev.key == 'b') {
+                  log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
+                  target.value += '<b></b>';
+                  const position = target.value.length - '</b>'.length;
+                  target.setSelectionRange(position, position);
+                } else if (ev.ctrlKey && ev.key == 'u') {
+                  ev.preventDefault();
+                  log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
+                  target.value += '<strong class="stroke"></strong>';
+                  const position = target.value.length - '</strong>'.length;
+                  target.setSelectionRange(position, position);
+                  // Enter
+                } else if (!ev.ctrlKey && !ev.shiftKey && ev.key === 'Enter') {
                   log(`Enter at ${[imageId, cutIndex, tlsIndex]}`);
                   data[imageId][cutIndex].splice(tlsIndex + 1, 0, '');
                   removeTranslates();
@@ -230,6 +248,7 @@ function renderTranslations(focus?: [string, number, number]) {
                   data[imageId].splice(cutIndex + 1, 0, ['']);
                   removeTranslates();
                   renderTranslations([imageId, cutIndex + 1, 0]);
+                  // Backspace
                 } else if (ev.key == 'Backspace' && changed.length === 0) {
                   log(`Backspace at ${[imageId, cutIndex, tlsIndex]}`);
                   if (data[imageId][cutIndex].length != 1) {
@@ -263,7 +282,6 @@ function renderTranslations(focus?: [string, number, number]) {
           } else {
             const translate = cut[tlsIndex] as propertiedTranslation;
             opt.message = translate['text'];
-            opt.color = translate['color'];
             opt.marginLeft = translate['margin-left'];
           }
           new TranslationElement(opt).render();

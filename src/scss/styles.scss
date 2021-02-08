@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
 body {
   position: relative;
 }
@@ -11,6 +13,38 @@ body {
   .translation {
     margin-block-start: 0;
     margin-block-end: 0.1em;
+
+    .flip {
+      display: inline-block;
+      transform: rotate(-180deg);
+    }
+
+    .stroke {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 1px;
+    }
+    strong.stroke {
+      font-weight: normal;
+      font-size: 1.2em;
+    }
+    big.stroke {
+      font-size: 1.4em;
+    }
+
+    .plain {
+      font-family: 'Nanum Pen Script', cursive;
+      font-size: 1.2em; // Nanum Pen Script is small
+      &:before {
+        content: '(';
+      }
+      &:after {
+        content: ')';
+      }
+    }
+
+    .blue {
+      color: #2c8ea6;
+    }
   }
 }
 
