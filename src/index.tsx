@@ -6,6 +6,7 @@ const yaml = require('js-yaml');
 import './scss/styles.scss';
 import util from './dom-util';
 import {
+  translationType,
   propertiedTranslation,
   cutTranslation,
   imageTranslation,
@@ -183,11 +184,22 @@ function renderTranslations(focus?: [string, number, number]) {
         const cut: cutTranslation = image[cutIndex];
         const $tlsGroup: HTMLDivElement = document.createElement('div');
         $tlsGroup.classList.add('translation-group', 'float');
+        $tlsGroup.style.fontSize = `${options.fontSize}mm`;
         for (let tlsIndex = 0; tlsIndex < cut.length; tlsIndex++) {
+          {
+            const datum = data[imageId][cutIndex][tlsIndex];
+            const text = typeof datum === 'string' ? datum : datum.text;
+            if (
+              (!options.developmentMode || !options.editableMode) &&
+              (!text || Translation.isComment(text))
+            ) {
+              continue;
+            }
+          }
           const opt: translationOption = {
             tag: 'p',
             parent: $tlsGroup,
-            fontSize: options.fontSize,
+            type: 'speech',
             editableMode: options.developmentMode && options.editableMode
           };
           if (options.developmentMode && options.editableMode) {
@@ -203,11 +215,20 @@ function renderTranslations(focus?: [string, number, number]) {
               if (ev.target instanceof HTMLInputElement) {
                 const target = ev.target as HTMLInputElement;
                 const changed = target.value;
+                const datum = data[imageId][cutIndex][tlsIndex];
 
                 target.size = TranslationElement.getPreferSize(changed.length);
-                data[imageId][cutIndex][tlsIndex] = changed;
+                if (typeof datum === 'string') {
+                  data[imageId][cutIndex][tlsIndex] = changed;
+                } else {
+                  datum.text = changed;
+                  data[imageId][cutIndex][tlsIndex] = datum;
+                }
                 chrome.storage.local.set({ [location.pathname]: data }, () => {
                   log(`${location.pathname} is set`);
+                  log(
+                    `${imageId}-${cutIndex}-${tlsIndex} is ${data[imageId][cutIndex][tlsIndex]}`
+                  );
                 });
               }
             };
@@ -215,8 +236,49 @@ function renderTranslations(focus?: [string, number, number]) {
               if (ev.target instanceof HTMLInputElement) {
                 const target = ev.target as HTMLInputElement;
                 const changed = target.value;
-                // Stylizing
-                if (ev.ctrlKey && ev.key == 'i') {
+                const types: translationType[] = [
+                  'speech',
+                  'thought',
+                  'scream',
+                  'plain',
+                  'stroke',
+                  'square',
+                  'shock'
+                ];
+                // Type
+                if (ev.ctrlKey && '1234567'.indexOf(ev.key) > -1) {
+                  ev.preventDefault();
+
+                  log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
+                  // hide datum and text
+                  const datum = data[imageId][cutIndex][tlsIndex];
+                  const text = typeof datum === 'string' ? datum : datum.text;
+                  const type = types[parseInt(ev.key) - 1];
+                  if (typeof datum === 'string') {
+                    if (type == 'speech') {
+                      data[imageId][cutIndex][tlsIndex] = text;
+                    } else {
+                      data[imageId][cutIndex][tlsIndex] = {
+                        text: text,
+                        type: type
+                      };
+                    }
+                  } else {
+                    datum.text = text;
+                    datum.type = type;
+                    data[imageId][cutIndex][tlsIndex] = datum;
+                  }
+
+                  removeTranslates();
+                  renderTranslations([imageId, cutIndex, tlsIndex]);
+                  chrome.storage.local.set(
+                    { [location.pathname]: data },
+                    () => {
+                      log(`${location.pathname} is set`);
+                    }
+                  );
+                  // Stylizing
+                } else if (ev.ctrlKey && ev.key == 'i') {
                   log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
                   target.value += '<span class="plain"></span>';
                   const position = target.value.length - '</span>'.length;
@@ -270,8 +332,10 @@ function renderTranslations(focus?: [string, number, number]) {
               }
             };
           }
+
+          const datum = data[imageId][cutIndex][tlsIndex];
+          const text = typeof datum === 'string' ? datum : datum.text;
           if (typeof cut[tlsIndex] === 'string') {
-            const text = cut[tlsIndex];
             if (
               (!options.developmentMode || !options.editableMode) &&
               Translation.isComment(text)
@@ -281,8 +345,9 @@ function renderTranslations(focus?: [string, number, number]) {
             opt.message = text as string;
           } else {
             const translate = cut[tlsIndex] as propertiedTranslation;
-            opt.message = translate['text'];
+            opt.message = text;
             opt.marginLeft = translate['margin-left'];
+            if (translate['type']) opt.type = translate['type'];
           }
           new TranslationElement(opt).render();
         }

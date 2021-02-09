@@ -25,28 +25,45 @@ hm031_060/047/hori_822.gif:
 - - 이시
 - - 카
 hm031_060/047/hori_823.gif:
-- - (헉, 헉, 헉)
-  - 어...?
-- - (헉, 헉)
-  - (뭘 하고 있지... 나는...?)
-- - '[미야무라?]'
-- - (어?)
-  - (ぎく)
+- - text: 헉, 헉, 헉
+    type: plain
+  - text: 어...?
+    type: thought
+- - text: 헉, 헉
+    type: plain
+  - text: 뭘 하고 있지... 나는...?
+    type: thought
+- - text: 미야무라?
+    type: square
+- - text: 어?
+    type: thought
+  - text: ぎく
+    type: plain
 hm031_060/047/hori_824.gif:
 - - ''
-- - 헉, 헉, 헉
+- - text: 헉, 헉, 헉
+    type: plain
 - - ''
-- - (미야무라...?)
-  - (헉, 헉)
+- - text: 미야무라...?
+    type: thought
+  - text: 헉, 헉
+    type: plain
 hm031_060/047/hori_825.gif:
 - - ''
-- - 어?
-  - 어?
-  - 어?
-  - (헉, 헉, 헉)
-- - 죽여...
-  - 어?
-  - 내가... 죽였...
+- - text: 어?
+    type: thought
+  - text: 어?
+    type: thought
+  - text: 어?
+    type: thought
+  - text: 헉, 헉, 헉
+    type: plain
+- - text: 죽여...
+    type: thought
+  - text: 어?
+    type: thought
+  - text: 내가... 죽였...
+    type: thought
 - - 뭐 해?
 hm031_060/047/hori_826.gif:
 - - .........어?
@@ -63,16 +80,21 @@ hm031_060/047/hori_827.gif:
 - - 시끄러...
 hm031_060/047/hori_828.gif:
 - - 시끄러워, 시끄러워, 시끄러워!
-  - (으으윽)
+  - text: 으으윽
+    type: plain
   - '~'
   - 윽
 - - 미안해...
 - - 미안, 해....
-- - (누가 사과한다고...)
-  - (어떻게 해결되는 일이 아니겠지...)
+- - text: 누가 사과한다고...
+    type: thought
+  - text: 어떻게 해결되는 일이 아니겠지...
+    type: thought
 hm031_060/047/hori_829.gif:
-- - '[그렇게 결국 여섯 번 미야무라를 죽였다]'
+- - text: 그렇게 결국 여섯 번 미야무라를 죽였다
+    type: square
 - - ''
 - - ''
 - - // 寝覚めの悪い朝だった
-  - '[개운치 않은 아침이었다]'
+  - text: 개운치 않은 아침이었다
+    type: square

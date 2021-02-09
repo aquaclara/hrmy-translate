@@ -29,16 +29,20 @@ hm001_030/005/hori_085.gif:
   - 남자 애야?
 - - 응...
   - 그래~ 어떤 애니?
-  - <span class="plain">아- 조금 오른쪽 위로-</span>
+  - text: 아- 조금 오른쪽 위로-
+    type: plain
 hm001_030/005/hori_086.gif:
 - - 그냥... 탐정물에 나오는 범인처럼 생긴 앤데...(시커멓다)
   - 어- 범인이라고?
-  - <span class="plain">해치웠다✨</span>
+  - text: 해치웠다✨
+    type: plain
 - - 아~ 몸이 탁 풀린다
-  - <span class="plain">추욱</span>
+  - text: 추욱
+    type: plain
   - 그럼 오늘은 엄마가 저녁 지어줄 거지?
 - - 물론이지~ 카레 하자!!
-  - (3분 카레려나...)
+  - text: 3분 카레려나...
+    type: thought
   - 그렇지 그러고 보니
 - - 그 애 이름이 뭐니?
   - 응?
@@ -48,52 +52,84 @@ hm001_030/005/hori_087.gif:
   - 미야무라?
   - 응, 미야무라...
   - 미야...
-- - (어라......?)
-  - (미야무라......!?)
-- - (어라라~!?)
+- - text: 어라......?
+    type: thought
+  - text: 미야무라......!?
+    type: thought
+- - text: 어라라~!?
+    type: thought
   - 엄마- 난 당근 빼줘-
   - 안 돼-
-- - <span class="plain">출석부</span>
+- - text: 출석부
+    type: plain
 hm001_030/005/hori_088.gif:
-- - 아, 그래... 올해부터 성만 적혀 있구나...
-  - <span class="plain">수학여행</span>
-  - <span class="plain">아-</span>
-- - (어떡해... 1년 가까이 집에 놀러오게 됐는데)
-  - (이름조차 몰랐다니...)
-  - <span class="plain">ずず</span>
+- - text: 아, 그래... 올해부터 성만 적혀 있구나...
+    type: thought
+  - text: 수학여행
+    type: plain
+  - text: 아-
+    type: plain
+- - text: 어떡해... 1년 가까이 집에 놀러오게 됐는데
+    type: thought
+  - text: 이름조차 몰랐다니...
+    type: thought
+  - text: ずず
+    type: plain
 - - 미야무라는 이름이 뭐야-?
-- - (<big>절대 못해...!!</big>)
-  - <b class="plain">본인에게!?</b>
-  - (가장 못 할 짓이야!)
+- - text: <big>절대 못해...!!</big>
+    type: thought
+  - text: <b>본인에게!?</b>
+    type: plain
+  - text: 가장 못 할 짓이야!
+    type: thought
 hm001_030/005/hori_089.gif:
-- - 미야무라- 다음 체육시간에
-  - 아마 마라톤일걸
-  - 윽- 진짜야?-
-- - (한사람쯤은 이름으로 부르지...)
-  - <span class="plain">20명이나 되면서 쓸모 없어...</span>
-  - <span class="plain">빤-</span>
-  - 으악, 호리가 들여다보고 있잖아
-  - <span class="plain">꺅- 꺅-</span>
-- - (앗, 선생님!)
-  - <span class="plain">ぶつぶつ</span>
-  - (선생님한테 물어보자!)
-  - <span class="plain">진짜 뭐 하는 거야, 부끄럽게- 듣고 있어-?</span>
-- - <span class="plain">※담임은 과학실 관리 담당</span>
-  - <big class="plain">노크하고 들어올 것!</big>
+- - text: 미야무라- 다음 체육시간에
+    type: plain
+  - text: 아마 마라톤일걸
+    type: plain
+  - text: 윽- 진짜야?-
+    type: plain
+- - text: 한사람쯤은 이름으로 부르지...
+    type: thought
+  - text: 20명이나 되면서 쓸모 없어...
+    type: plain
+  - text: 빤-
+    type: plain
+  - text: 으악, 호리가 들여다보고 있잖아
+    type: scream
+  - text: 꺅- 꺅-
+    type: plain
+- - text: 아, 선생님!
+    type: thought
+  - text: ぶつぶつ
+    type: plain
+  - text: 선생님한테 물어보자!
+    type: thought
+  - text: 진짜 뭐 하는 거야, 부끄럽게- 듣고 있어-?
+    type: plain
+- - text: ※담임은 과학실 관리 담당
+    type: plain
+  - text: <big>노크하고 들어올 것!</big>
+    type: plain
 hm001_030/005/hori_090.gif:
 - - 무슨 일이지? 호리 상담할 게 있다는 게
-  - <span class="plain">상담이라기 보다</span>
+  - text: 상담이라기 보다
+    type: plain
   - 허... 저... 사실은...
 - - 서, 설마 왕따...!? 너 왕따당하니!?
-  - <span class="plain"><big>아앗,</big> 무슨 일이야-</span>
+  - text: <big>아앗,</big> 무슨 일이야-
+    type: plain
   - 아! 아니에요!
   - 우리 반...!!!
 - - 미야무라 때문에
   - 미야무라!? 그 음침한 애 말이지!?
-  - <span class="plain">↑이 정도로</span>
-  - <span class="plain">수학 못하는 애!?</span>
+  - text: ↑이 정도로
+    type: plain
+  - text: 수학 못하는 애!?
+    type: plain
   - 아니 음침하지만!! 무슨 구분법이예요!?
-  - <span class="plain">네, 그 수학 못하는 애에요!</span>
+  - text: 네, 그 수학 못하는 애에요!
+    type: plain
   - 걔가 무슨 사고쳤구나!? 그런 거니 호리?!
 - - 아뇨, 말씀드리기 어렵지만 사실... 제가...
   - 이
@@ -101,16 +137,22 @@ hm001_030/005/hori_090.gif:
   - 아이라도 가졌니!?
   - 아닌데요 말 좀 끝까지 들어!!
 hm001_030/005/hori_091.gif:
-- - (글렀어... 저 피해망상 선생...)
-  - <span class="plain">지친다...</span>
+- - text: 글렀어... 저 피해망상 선생...
+    type: thought
+  - text: 지친다...
+    type: plain
 - - 호리? 뭐 해?
-  - <span class="plain">화장실 가?</span>
+  - text: 화장실 가?
+    type: plain
   - 엇! 마침 잘 됐다! 미야무라에 대해 물어볼 게!
 - - 난 지금 실연중이라서!!
-  - <span class="plain">↓차였다</span>
-  - <span class="plain">←찼다</span>
+  - text: ↓차였다
+    type: plain
+  - text: ←찼다
+    type: plain
   - 쓸모가 없어!
-  - <big class="stroke">탁</big>
+  - text: <big>탁</big>
+    type: stroke
 - - 성적 상위자
   - 1, 2, 3, 4, 5, 6, 7, 8
   - 과목별
@@ -118,55 +160,80 @@ hm001_030/005/hori_091.gif:
 hm001_030/005/hori_092.gif:
 - - 하다못해...
   - 그 녀석이 공부라도 좀 잘했으면...!
-- - <span class="plain">공부라도 잘했으면-!!</span>
-  - <span class="plain">? ?</span>
-  - <span class="plain">호리 공부 잘하잖아...</span>
-- - 집에 가서 문패를 본다
-  - 어 아마 맨션이라... 안 되겠는걸...
-  - <span class="plain">깨작깨작</span>
+- - text: 공부라도 잘했으면-!!
+    type: plain
+  - text: '? ?'
+    type: plain
+  - text: 호리 공부 잘하잖아...
+    type: plain
+- - text: 집에 가서 문패를 본다
+    type: thought
+  - text: 어 아마 맨션이라... 안 되겠는걸...
+    type: thought
+  - text: 깨작깨작
+    type: plain
 - - 쿄코, 엄마의 카레가 먹기 싫니~?
-  - <span class="plain">아까부터 숟가닥르오 찌르기만 하고-</span>
+  - text: 아까부터 숟가닥르오 찌르기만 하고-
+    type: plain
   - 벌써 사흘째니까
 hm001_030/005/hori_093.gif:
 - - 내일은 놀러 온대? 「미야무라」가
   - 어? 음- 글쎄-... 오지 않을까?
 - - 어머- 정말!? 어떡하지 내가 막 두근두근하네
-  - <b class="plain">꺅-</b>
+  - text: <b>꺅-</b>
+    type: plain
   - 딱히 엄마 보러 오는 건 아니거든
-- - (아, 혹시 엄마한텐 이름을 말할지도 몰라!)
-  - <span class="plain">당근...</span>
-  - <span class="plain">반짝 💡</span>
-  - <span class="plain">머리 좋다!</span>
-  - (그래, 그때 알아내면 되겠다!)
+- - text: 아, 혹시 엄마한텐 이름을 말할지도 몰라!
+    type: thought
+  - text: 당근...
+    type: plain
+  - text: 반짝 💡
+    type: plain
+  - text: 머리 좋다!
+    type: plain
+  - text: 그래, 그때 알아내면 되겠다!
+    type: thought
 - - <b>좋아!!</b>
-  - <strong class="stroke">덜컹-</strong>
-  - <span class="plain">애- 갑자기 일어서면 어떡해-</span>
-  - <span class="plain">누나, 내 당근 먹어줘!!</span>
-  - '[성질 급한 가족]'
+  - text: 덜컹-
+    type: stroke
+  - text: 애- 갑자기 일어서면 어떡해-
+    type: plain
+  - text: 누나, 내 당근 먹어줘!!
+    type: plain
+  - text: 성질 급한 가족
+    type: square
 hm001_030/005/hori_094.gif:
 - - 안녕 기다리고 있었어-!
-  - <span class="plain">어머어머, 어머어머</span>
-  - <span class="plain">와-!</span>
+  - text: 어머어머, 어머어머
+    type: plain
+  - text: 와-!
+    type: plain
   - 자자, 어서 들어오렴-!
 - - 실례합니다...
-  - <span class="plain">びくっ</span>
+  - text: びくっ
+    type: plain
 - - 이야기는 많이 들었단다
-  - <span class="plain">두근두근</span>
+  - text: 두근두근
+    type: plain
   - 그런가요...
-  - (어머니다...!!! 1년 이상 뵌 적 없는 호리의 어머니다!! 젊어..!!)
+  - 어머니다...!!! 1년 이상 뵌 적 없는 호리의 어머니다!! 젊어..!!
 - - 저, 이건 부모님이 만드시는 케이크...　○下라 그렇지만요
-  - <span class="plain">괜찮으시면</span>
+  - text: 괜찮으시면
+    type: plain
   - 어머-! 케이크 가게 하시니!?
 hm001_030/005/hori_095.gif:
 - - 아, 인사가 늦었지만
-  - (젊으셔...)
+  - text: 젊으셔...
+    type: thought
   - 미야무라 이즈미라고 합니다
 - - 이즈미 군이라고?
   - 네
-  - (젊어-!!)
+  - text: 젊어-!!
+    type: thought
   - 어머- 이름 예쁘네
 - - 미안해 여러 가지로 이야기를 나눠보고 싶지만 난 이제 또 일하러 가봐야 해서
-  - <span class="plain">달칵</span>
+  - text: 달칵
+    type: plain
   - 아, 아뇨, 저도 금방 갈 거라서...
 - - 그럴 것 없어 언제나처럼 편히 있도록 해
   - 아, 케이크 정말 고맙다
@@ -174,12 +241,17 @@ hm001_030/005/hori_096.gif:
 - - 그래서
   - 엄마는!?
 - - 그래서 일허러 가신다고...
-  - <span class="plain">딸기- 딸기 있는 거-!!</span>
-  - (이 여자가..!!)
-  - (「단둘이 얘기해 보고 싶다」던 게 정말이었나!)
+  - text: 딸기- 딸기 있는 거-!!
+    type: plain
+  - text: 이 여자가..!!
+    type: thought
+  - text: 「단둘이 얘기해 보고 싶다」던 게 정말이었나!
+    type: thought
 - - 진짜~ 초등학생처럼 이름으로 부르시지 뭐야-
-  - <span class="plain">자, 딸기-</span>
-  - '!!'
+  - text: 자, 딸기-
+    type: plain
+  - text: '!!'
+    type: scream
 - - 어
   - 뭐라고?
   - 그러니까 이름으로 부르신다고-
@@ -187,65 +259,94 @@ hm001_030/005/hori_097.gif:
 - - 그-게 아니라-!
   - 어? 아아 호칭 말이야?
 - - 「군」을 붙이시던데
-  - <span class="plain">어머니 젊으시더라-</span>
-  - '[이 남자와 한 번이라도 대화가 맞아떨어진 적이 있었던가...]'
+  - text: 어머니 젊으시더라-
+    type: plain
+  - text: 이 남자와 한 번이라도 대화가 맞아떨어진 적이 있었던가...
+    type: square
 - - 어쩐지 호리 요즘 이상한 것 같아
-  - <span class="plain">호두-</span>
+  - text: 호두-
+    type: plain
   - 어, 내가 뭐
 - - 왜- 남자 옷 갈아 입는 걸 들여다보기도 하고
   - 출석부를 노려보기도 하고
   - 앞의 건 오해야
 hm001_030/005/hori_098.gif:
 - - 아! 혹시 누군가 신경쓰이는... 그런...
-  - <span class="plain">어때</span>
+  - text: 어때
+    type: plain
 - - ''
-- - 아하하하하하 하하하하하하하
-- - 이, 이름!?
-  - 그런 걸 같고 고민하고 있었어!?
-  - <b class="plain">웃어서 배아파-</b>
+- - text: 아하하하하하 하하하하하하하
+    type: scream
+- - text: 이, 이름!?
+    type: scream
+  - text: 그런 걸 같고 고민하고 있었어!?
+    type: scream
+  - text: <b>웃어서 배아파-</b>
+    type: plain
   - ......
 hm001_030/005/hori_099.gif:
 - - 아... 그나저나.. 이름이라... 후후후
-  - <span class="plain">아, 배가</span>
+  - text: 아, 배가
+    type: plain
   - 누나 웃긴다-
-  - 본인한테 물어볼 수도 없잖아-!
-  - '[결국 물어봤다]'
+  - text: 본인한테 물어볼 수도 없잖아-!
+    type: scream
+  - text: 결국 물어봤다
+    type: square
 - - 잠깐 기다려 봐
-  - <span class="plain">휴- 웃었다, 웃었어</span>
+  - text: 휴- 웃었다, 웃었어
+    type: plain
   - 이거 좀 쓸게
-  - <span class="plain">소타- 너 진짜</span>
-  - <span class="plain">웃겨- 웃겨웃겨-</span>
+  - text: 소타- 너 진짜
+    type: plain
+  - text: 웃겨- 웃겨웃겨-
+    type: plain
 - - 자
-- - <span class="plain">미야무라 이즈미</span>
+- - text: 미야무라 이즈미
+    type: plain
 hm001_030/005/hori_100.gif:
 - - 아참 미안, 발음을 안 써 놨네
-  - <span class="plain">줘봐</span>
-  - 읽을 줄 알아!
+  - text: 줘봐
+    type: plain
+  - text: 읽을 줄 알아!
+    type: scream
 - - 일단은 받아 둘게-...
-  - <span class="plain">꾸깃</span>
+  - text: 꾸깃
+    type: plain
   - 또 잊어버릴지 모르니까
 - - 일단이야 일단
   - 그래 그래
-  - <span class="plain">어! 몽블랑 다 먹었어!!</span>
-- - (하여튼 어느 게 성인지-...)
-  - (진짜 여자 같은 이름이네...)
+  - text: 어! 몽블랑 다 먹었어!!
+    type: plain
+- - text: 하여튼 어느 게 성인지-...
+    type: thought
+  - text: 진짜 여자 같은 이름이네...
+    type: thought
 hm001_030/005/hori_101.gif:
 - - 호리 뭐 해?
   - 아아아, 아무것도 아니야-
-  - <span class="plain">ガサガサガサ</span>
+  - text: ガサガサガサ
+    type: plain
 - - 뭐? 우리 반 전원의 풀 네임?
 - - 참나, 1학년 부터 계속 같은 애들이잖아!
-  - <big><b>철썩</b></big>
+  - text: <big><b>철썩</b></big>
+    type: plain
   - 물론 모두 알고 있지!
-- - (물론 모두... 말이지...)
-  - <span class="plain">진짜- 호리 이상해-</span>
-  - <span class="plain">엇</span>
+- - text: 물론 모두... 말이지...
+    type: thought
+  - text: 진짜- 호리 이상해-
+    type: plain
+  - text: 엇
+    type: plain
 hm001_030/005/hori_102.gif:
 - - 지난 주에는 잘도 날 바보 만들었지
-  - <strong class="stroke">훗</strong>
-  - <span class="plain">※소타는 친구 집</span>
+  - text: 훗
+    type: stroke
+  - text: ※소타는 친구 집
+    type: plain
 - - 바볼 만들다니 자기 소개한 거야
-  - <span class="plain">너도 참-</span>
+  - text: 너도 참-
+    type: plain
   - 반 여자 이름도 제대로 모르는 네가...
 - - 너야말로 내 이름
   - 모르는 거 아니야!?
@@ -253,8 +354,10 @@ hm001_030/005/hori_102.gif:
   - 쿄코 아냐?
 hm001_030/005/hori_103.gif:
 - - ''
-- - '[호리는 공부 잘하면서 가끔 맹하다고 말로 하면 어차피 화낼 거니까 못 한다]'
-  - <span class="plain">뭐야, 그럼 진짜 마치 친구 이름도 모르는 나만 바보 같잖아</span>
+- - text: 호리는 공부 잘하면서 가끔 맹하다고 말로 하면 어차피 화낼 거니까 못 한다
+    type: square
+  - text: 뭐야, 그럼 진짜 마치 친구 이름도 모르는 나만 바보 같잖아
+    type: plain
 - - 어쩐지 서로 안 닮았네, 하면서 외웠어
 - - 뭐가?
   - 쿄코와 소타잖아?
@@ -262,19 +365,23 @@ hm001_030/005/hori_104.gif:
 - - 아~... 아빠 이름이 쿄스케고 엄마 이름이 유리코라서...
   - 소타는 그냥 지은 것 같지만...
 - - 어!? 그건 그렇고 너 그 꼴로 나랑 만날 때 유키랑 만나면 내 이름 부르면 안돼!!
-  - <span class="plain">깜짝</span>
+  - text: 깜짝
+    type: plain
   - 뭐!! 왜, 왜!
 - - 그게- 저 사촌 오빠라고 했으니까!
-  - (역시 바보야)
+  - 역시 바보야
   - 우와, 애매하게 들킬 것 같은 거짓말!!
 - - 그치만 그건 아마 이시카와를 통해서 바로 들킬걸!
-  - (또 그 남자..!!)
-  - (이렇게 토오루는 호리에게 미움 받는다)
+  - text: 또 그 남자..!!
+    type: thought
+  - 이렇게 토오루는 호리에게 미움 받는다
 hm001_030/005/hori_105.gif:
 - - 앗, 아마 또 학습지 전화!
-  - <span class="plain">따르르릉</span>
+  - text: 따르르릉
+    type: plain
   - 미야무라 「없다」고 말해!
-  - <span class="plain">네-</span>
+  - text: 네-
+    type: plain
 - - 그게, 지금 없는... 네!? ... 허... 저기 없으니까...
   - 네
   - 입시?
@@ -286,40 +393,51 @@ hm001_030/005/hori_105.gif:
   - 쿄...
   - 아... 네... 어휴... 저기
   - 신...
-- - (아, 모르겠다-)
+- - 아, 모르겠다-
   - 저희 집에 쿄코라는 애 자체가 없어요!!
-  - (<big><b>야!!</b></big>)
+  - <big><b>야!!</b></big>
 hm001_030/005/hori_106.gif:
-- - <span class="plain">하하하하</span>
-  - <span class="plain"><big>으악-</big></span>
-  - <span class="plain">차가워-</span>
+- - text: 하하하하
+    type: plain
+  - text: <big>으악-</big>
+    type: plain
+  - text: 차가워-
+    type: plain
 - - 어어~...  물놀이 하느냐~...
-  - <span class="plain">이웃의..</span>
-  - (엇, 안녕하세요-)
+  - text: 이웃의..
+    type: plain
+  - 엇, 안녕하세요-
 - - 그래도 그렇지 쿄코 또 대담한 차림새구나-..
   - 할아버지
   - 오- 소타도 다 컸네-
 - - 할멈 쿄코가 발게벗고 물놀이를 하네!!
-  - <span class="plain">입을 옷!! 입을 옷!!</span>
-  - <span class="plain">뭔데, 뭔데</span>
-  - <span class="plain">!?</span>
+  - text: 입을 옷!! 입을 옷!!
+    type: plain
+  - text: 뭔데, 뭔데
+    type: plain
+  - text: '!?'
+    type: plain
   - 할아버지-!!
 hm001_030/005/hori_107.gif:
 - - 엇! 큰일이야, 정전!
-  - <big class="plain">확</big>
+  - text: <big>확</big>
+    type: plain
   - 불 불!
-- - <strong class="stroke">쾅</strong>
+- - text: 쾅
+    type: stroke
   - 아야!
   - 뭔가 있지- 그... 텔레비전 불빛!
   - 라이터- 라이터!
   - 텔레비전도 안 켜지지!
-  - <strong class="stroke">덜그덕</strong>
+  - text: 덜그덕
+    type: stroke
   - 촛불은!?
   - 없어!
 - - 호리 밟았어!! 방금 다리!!
   - 뭐!?
   - 불빛-!!
-  - <strong class="stroke">우애애앵</strong>
+  - text: 우애애앵
+    type: stroke
   - 아- 진짜 라디오 어디 뒀지...
   - 소타-!!
 - - 왜 다들 구석까지 간 거야...
@@ -328,4 +446,5 @@ hm001_030/005/hori_108.gif:
 - - ''
 - - ''
 - - 어- 또 졌네
-  - (게임이 안 돼!!)
+  - text: 게임이 안 돼!!
+    type: thought

@@ -28,7 +28,8 @@ pict_02/tsuno/ochi_01.jpg:
 pict_02/tsuno/ochi_02.jpg:
 - - ''
 pict_02/tsuno/raiko.jpg:
-- - 니세츠노 라이코
+- - text: 니세츠노 라이코
+    type: plain
 pict_02/tsuno/tn.jpg:
 - - ''
 pict_02/tsuno/tno3.jpg:

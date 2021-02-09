@@ -1,18 +1,18 @@
-//: >-
-  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다\. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
-  모든 권리를 저작권자에게 양도합니다\. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다\.
-  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다\. 이 모든 조항을
-  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 고지하여야 합니다\.
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
 
-  This translation is not related to HERO\. The copyright holder of the original
+  This translation is not related to HERO. The copyright holder of the original
   comic has all dialogue-related rights, and the translator transfers all rights
-  to the translation to the copyright holder\. The translation can only be used
-  to improve the readability of HERO's website "読解アヘン"\. The copyright holder of
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
   the comic can at any time request the distributor of this translation,
-  including the translation and the deletion and modification of these clauses\.
+  including the translation and the deletion and modification of these clauses.
   In compliance with all of these provisions, the translation can be distributed
   and transformed, and all of these provisions must be notified along with the
-  translation\.
+  translation.
 
   この翻訳版の製作はHEROと何ら関連がありません。
   すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
@@ -20,17 +20,30 @@
   漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
   この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 pict_02/etc/make_01.gif:
--
-  - 호리씨와 미야무라군을 그릴 때
-  - ① 막 시작했을 때(2007년 쯤)엔 우선 이어지는 것 같은 것도 조금 의식했지만 지금(헤이세이 곧 끝나는)은 「●●하는 이야기 그려야지」 정도로 편하게 그리기 시작하고 있습니다. 하지만 모순이 많이 생기기 때문에 그닥 좋진 않다.
-  - 웬만큼 채워지지 않는 이야기 노트(A5)
-  - B6인 호리미야 북 커버를 억지로 감아서 쓰고 있다. 5권 물방울 있는 것. 귀엽다.
--
-  - ② 원고 용지는 값이 비싸기 때문에 A4 복사용지를 접어서 씁니다. 샤프와 지우개, 가능하면 자와 같은 문명의 이기도. 한 컷이 놀랄만큼 작은 정도지만 그렇게 잔뜩 그려낼 그림체도 아니기 때문에 저 자신은 이 크기가 딱 좋습니다.
-  - 가로선만 그어놓는다. 그렇지만 무언가 그릴 종이는 웬만하면 접지 않는 편이 좋다.
--
-  - ③ 3장 분을 그렸다면 스캔해서 자작 템플릿으로 맞춰 넣고 페인트 툴로 색을 채워 저장하면 끝입니다. 글자가 거의 틀려 있기 때문에 친절한 분들이 항상 가르쳐 줍니다. 감사합니다. 門(문문) 한자가 특히 어렵습니다. 그리고 책받침(⻌)도.
-  - 단지 검은 테를 두르기 위한 가늘고 긴 PSD.
-  - 템플릿.psd
-  - 종이 쪽을 밀어가면서 저장해 간다.
-pict_02/etc/make_02.gif:
+- - text: 호리씨와 미야무라군을 그릴 때
+    type: plain
+  - text: >-
+      ① 막 시작했을 때(2007년 쯤)엔 우선 이어지는 것 같은 것도 조금 의식했지만 지금(헤이세이 곧 끝나는)은 「●●하는 이야기
+      그려야지」 정도로 편하게 그리기 시작하고 있습니다. 하지만 모순이 많이 생기기 때문에 그닥 좋진 않다.
+    type: square
+  - text: 웬만큼 채워지지 않는 이야기 노트(A5)
+    type: plain
+  - text: B6인 호리미야 북 커버를 억지로 감아서 쓰고 있다. 5권 물방울 있는 것. 귀엽다.
+    type: plain
+- - text: >-
+      ② 원고 용지는 값이 비싸기 때문에 A4 복사용지를 접어서 씁니다. 샤프와 지우개, 가능하면 자와 같은 문명의 이기도. 한 컷이
+      놀랄만큼 작은 정도지만 그렇게 잔뜩 그려낼 그림체도 아니기 때문에 저 자신은 이 크기가 딱 좋습니다.
+    type: square
+  - text: 가로선만 그어놓는다. 그렇지만 무언가 그릴 종이는 웬만하면 접지 않는 편이 좋다.
+    type: plain
+- - text: >-
+      ③ 3장 분을 그렸다면 스캔해서 자작 템플릿으로 맞춰 넣고 페인트 툴로 색을 채워 저장하면 끝입니다. 글자가 거의 틀려 있기 때문에
+      친절한 분들이 항상 가르쳐 줍니다. 감사합니다. 門(문문) 한자가 특히 어렵습니다. 그리고 책받침(⻌)도.
+    type: square
+  - text: 단지 검은 테를 두르기 위한 가늘고 긴 PSD.
+    type: plain
+  - text: 템플릿.psd
+    type: plain
+  - text: 종이 쪽을 밀어가면서 저장해 간다.
+    type: plain
+pict_02/etc/make_02.gif: null

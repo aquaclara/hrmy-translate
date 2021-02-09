@@ -1,18 +1,18 @@
-//: >-
-  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다\. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
-  모든 권리를 저작권자에게 양도합니다\. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다\.
-  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다\. 이 모든 조항을
-  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 고지하여야 합니다\.
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
 
-  This translation is not related to HERO\. The copyright holder of the original
+  This translation is not related to HERO. The copyright holder of the original
   comic has all dialogue-related rights, and the translator transfers all rights
-  to the translation to the copyright holder\. The translation can only be used
-  to improve the readability of HERO's website "読解アヘン"\. The copyright holder of
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
   the comic can at any time request the distributor of this translation,
-  including the translation and the deletion and modification of these clauses\.
+  including the translation and the deletion and modification of these clauses.
   In compliance with all of these provisions, the translation can be distributed
   and transformed, and all of these provisions must be notified along with the
-  translation\.
+  translation.
 
   この翻訳版の製作はHEROと何ら関連がありません。
   すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
@@ -29,16 +29,25 @@ pict_02/april/2018_01.jpg: null
 pict_02/april/2018_02.jpg: null
 pict_02/april/2018_03.jpg: null
 pict_02/april/2018_04.jpg:
-- - 호리군과 미야무라씨
+- - text: 호리군과 미야무라씨
+    type: plain
 pict_02/april/2020_01.jpg:
-- - 작은 유키츄
-  - 히어로
+- - text: 작은 유키츄
+    type: stroke
+  - text: 히어로
+    type: stroke
 pict_02/april/2020_02.jpg:
-- - 덥썩 으적
-  - 쿠션은 순식간에 북북이에요.
-  - 「안 돼-. 또 토오루한테 혼날 거야」
-  - 「나도 아까 냉장고 코드에 발이 걸려서, 그 때 무슨 소리가 난 거야」
-  - 그러고 보니 냉장고에서 소리가 나지 않게 되었어요
-  - 꺼내 놓은 우유가 큰일이에요.
+- - text: 덥썩 으적
+    type: plain
+  - text: 쿠션은 순식간에 북북이에요.
+    type: plain
+  - text: 「안 돼-. 또 토오루한테 혼날 거야」
+    type: plain
+  - text: 「나도 아까 냉장고 코드에 발이 걸려서, 그 때 무슨 소리가 난 거야」
+    type: plain
+  - text: 그러고 보니 냉장고에서 소리가 나지 않게 되었어요
+    type: plain
+  - text: 꺼내 놓은 우유가 큰일이에요.
+    type: plain
 pict_02/april/2020_03.jpg: null
 pict_02/april/2020_04.jpg: null

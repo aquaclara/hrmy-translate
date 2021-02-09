@@ -1,18 +1,18 @@
-//: >-
-  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다\. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
-  모든 권리를 저작권자에게 양도합니다\. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다\.
-  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다\. 이 모든 조항을
-  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 고지하여야 합니다\.
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
 
-  This translation is not related to HERO\. The copyright holder of the original
+  This translation is not related to HERO. The copyright holder of the original
   comic has all dialogue-related rights, and the translator transfers all rights
-  to the translation to the copyright holder\. The translation can only be used
-  to improve the readability of HERO's website "読解アヘン"\. The copyright holder of
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
   the comic can at any time request the distributor of this translation,
-  including the translation and the deletion and modification of these clauses\.
+  including the translation and the deletion and modification of these clauses.
   In compliance with all of these provisions, the translation can be distributed
   and transformed, and all of these provisions must be notified along with the
-  translation\.
+  translation.
 
   この翻訳版の製作はHEROと何ら関連がありません。
   すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
@@ -20,20 +20,29 @@
   漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
   この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 aco/c.gif:
--
-  - 코지카 유우. 밤비. 사고매물에서 일을 하고 있다. 중졸.
-  - 아코. 밤비의 방에 나오는 괴물.
-  - 야마시로 아코. 五つ○를 다닌다. 반 아이들과 잘 어울리지 못한다.
-  - 히키 카게쿠니. 밤비의 담당. 같은 아파트에 산다. 전화에서는 ○舌.
--
-  - 스쿠와 히사시. 아코와 같은 반. 무서운 이야기에 조금 약하다.
-  - 이리후네 우타. 밤비의 예전 동급생. 영력 같은 것이 조금 있다.
-  - 코지카 하나. 리쿠와 쌍둥이, 밤비의 누나. 우동과 차가운 것을 좋아한다.
-  - 코지카 리쿠. 하나와 쌍둥이. 밤비의 형. 조금 과보호.
--
-  - 토리이 아즈사. 아코와 같은 반이었다. 그림 그리는 걸 좋아한다.
-  - 마지마 키키. 아코와 같은 반. 낯을 안 가린다.
-  - 오리가미 가쿠토. 밤비의 친구. 본가가 가깝다.
-  - 이와나가 루이. 밤비의 친구. 이리후네와는 어렸을 때부터 아는 사이.
--
-  - 호다카 카나에. 아코의 먼 친척. 몸이 약했다.
+- - text: 코지카 유우. 밤비. 사고매물에서 일을 하고 있다. 중졸.
+    type: plain
+  - text: 아코. 밤비의 방에 나오는 괴물.
+    type: plain
+  - text: 야마시로 아코. 五つ○를 다닌다. 반 아이들과 잘 어울리지 못한다.
+    type: plain
+  - text: 히키 카게쿠니. 밤비의 담당. 같은 아파트에 산다. 전화에서는 ○舌.
+    type: plain
+- - text: 스쿠와 히사시. 아코와 같은 반. 무서운 이야기에 조금 약하다.
+    type: plain
+  - text: 이리후네 우타. 밤비의 예전 동급생. 영력 같은 것이 조금 있다.
+    type: plain
+  - text: 코지카 하나. 리쿠와 쌍둥이, 밤비의 누나. 우동과 차가운 것을 좋아한다.
+    type: plain
+  - text: 코지카 리쿠. 하나와 쌍둥이. 밤비의 형. 조금 과보호.
+    type: plain
+- - text: 토리이 아즈사. 아코와 같은 반이었다. 그림 그리는 걸 좋아한다.
+    type: plain
+  - text: 마지마 키키. 아코와 같은 반. 낯을 안 가린다.
+    type: plain
+  - text: 오리가미 가쿠토. 밤비의 친구. 본가가 가깝다.
+    type: plain
+  - text: 이와나가 루이. 밤비의 친구. 이리후네와는 어렸을 때부터 아는 사이.
+    type: plain
+- - text: 호다카 카나에. 아코의 먼 친척. 몸이 약했다.
+    type: plain

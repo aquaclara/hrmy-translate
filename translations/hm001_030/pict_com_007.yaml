@@ -21,90 +21,147 @@
   この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 hm001_030/002/hori_040.gif:
 - - 고마워...
-- - <span class="plain">쪼옥</span>
-  - <strong class="stroke">휴</strong>
+- - text: 쪼옥
+    type: plain
+  - text: 휴
+    type: stroke
 - - 이게 뭐야 카페라테잖아!!
-  - <span class="plain">결국 투정함</span>
+  - text: 결국 투정함
+    type: plain
   - 어? 싫어했어...?
 - - 하여간~~
-  - <span class="plain">하지만 커피는 너무 쓰긴 해</span>
+  - text: 하지만 커피는 너무 쓰긴 해
+    type: plain
 hm001_030/002/hori_041.gif:
 - - 그럼- 소타라도 보고 올게
-  - <span class="plain">잘 자고 있으려나-</span>
+  - text: 잘 자고 있으려나-
+    type: plain
   - 응
 - - ''
-- - '[여기]'
-- - <big class="stroke">너너너너, 너무너무 놀랐</big>
-  - <span class="plain">여기 라니까 그냥 받아버렸잖아</span>
-  - <span class="plain">여기라니</span>
-  - <span class="plain">여기라니</span>
-  - <big class="stroke">네-!!!</big>
+- - text: 여기
+    type: square
+- - text: <big>너너너너, 너무너무 놀랐</big>
+    type: stroke
+  - text: 여기 라니까 그냥 받아버렸잖아
+    type: plain
+  - text: 여기라니
+    type: plain
+  - text: 여기라니
+    type: plain
+  - text: <big>네-!!!</big>
+    type: stroke
 hm001_030/002/hori_042.gif:
-- - (딱히 미야무라한테는 아무렇지 않은 일일지 모른다는 게)
-  - <span class="plain">주루룩</span>
-- - (아, 열받아...)
-  - (어쩐지)
-- - (열받아-)
-  - <span class="plain">뭐해?</span>
-  - <span class="plain">오줌 마려워서 일어남↓</span>
-  - <span class="plain">?</span>
-- - 맛있는데...
-  - <span class="plain">계속 먹음→</span>
+- - text: 딱히 미야무라한테는 아무렇지 않은 일일지 모른다는 게
+    type: thought
+  - text: 주루룩
+    type: plain
+- - text: 아, 열받아...
+    type: thought
+  - text: 어쩐지
+    type: thought
+- - text: 열받아-
+    type: thought
+  - text: 뭐해?
+    type: plain
+  - text: 오줌 마려워서 일어남↓
+    type: plain
+  - text: '?'
+    type: plain
+- - text: 맛있는데...
+    type: thought
+  - text: 계속 먹음→
+    type: plain
 hm001_030/002/hori_043.gif:
 - - 내일부터- 여름방학-
 - - 숙제만 없었으면 즐거운 여름방학...
-  - <span class="plain">그리고 추가 시험</span>
-  - <span class="plain">↙바보 두명↘</span>
+  - text: 그리고 추가 시험
+    type: plain
+  - text: ↙바보 두명↘
+    type: plain
   - 호리! 레포트 보여줘!
-  - <span class="plain">지금부터 말해 둘게!</span>
+  - text: 지금부터 말해 둘게!
+    type: plain
   - 어어-
 - - // 호리미야 1권 1화
-  - <span class="plain">아- 별 수 없지-</span>
-  - <span class="plain">내일 라이브 말야</span>
+  - text: 아- 별 수 없지-
+    type: plain
+  - text: 내일 라이브 말야
+    type: plain
   - 자 자, 할 일 끝난 사람은 바로 집에 돌아 가도록
-  - <span class="plain">탁탁</span>
-- - 메일 001
-  - 👤호리
-  - 오늘 올 거지?
-  - 12시부터 우리 가는 슈퍼에서 달걀 반값
-  - 오늘 위원회로 늦으니까
-  - 부탁해
+  - text: 탁탁
+    type: plain
+- - text: 메일 001
+    type: plain
+  - text: 👤호리
+    type: plain
+  - text: 오늘 올 거지?
+    type: plain
+  - text: 12시부터 우리 가는 슈퍼에서 달걀 반값
+    type: plain
+  - text: 오늘 위원회로 늦으니까
+    type: plain
+  - text: 부탁해
+    type: plain
 hm001_030/002/hori_044.gif:
-- - (사란 말인가)
-  - (사오란 말인가-!!)
+- - text: 사란 말인가
+    type: thought
+  - text: 사오란 말인가-!!
+    type: thought
 - - 미야무라 우리 조 레포트 있잖아
-  - (<big class="stroke">타다닷</big>)
+  - text: <big>타다닷</big>
+    type: stroke
   - 미안 나중에 자료 보내줘!
-- - (앞으로 20분-)
-- - (아, 승강구!)
-  - <span class="plain">←벗는 버릇</span>
-  - <span class="plain">ぐいっ</span>
-  - (정문보다 슈퍼랑 가까워!)
+- - text: 앞으로 20분-
+    type: thought
+- - text: 아, 승강구!
+    type: thought
+  - text: ←벗는 버릇
+    type: plain
+  - text: ぐいっ
+    type: plain
+  - text: 정문보다 슈퍼랑 가까워!
+    type: thought
 hm001_030/002/hori_045.gif:
-- - (좋아- 아무도 없다)
-- - (이대로 담장을)
-  - (<big class="stroke">철컹</big>)
-  - (<big>넘어서</big>)
-- - (어?)
+- - text: 좋아- 아무도 없다
+    type: thought
+- - text: 이대로 담장을
+    type: thought
+  - text: <big>철컹</big>
+    type: stroke
+  - text: <big>넘어서</big>
+    type: thought
+- - text: 어?
+    type: thought
   - 꺅
-  - <span class="plain">깜짝</span>
+  - text: 깜짝
+    type: plain
 - - 미안!
 hm001_030/002/hori_046.gif:
 - - 달걀 때문에!
 - - ''
-- - (호리랑 같이 사는 사람이다...!(오해))
-  - (우리 학교였구나...!)
-- - (달걀...)
-  - <span class="plain">낳는 걸까</span>
-  - (무슨 말인지...)
+- - text: 호리랑 같이 사는 사람이다...!(오해)
+    type: thought
+  - text: 우리 학교였구나...!
+    type: thought
+- - text: 달걀...
+    type: thought
+  - text: 낳는 걸까
+    type: plain
+  - text: 무슨 말인지...
+    type: thought
 hm001_030/002/hori_047.gif:
 - - 고생 시켜서 미안~
-  - <span class="plain">오늘은 오무라이스</span>
+  - text: 오늘은 오무라이스
+    type: plain
 - - 이제... 세일은 다시 안가...
-  - <span class="plain">이제 진짜 마지막 한 상자구요</span>
-  - <span class="plain">꺄아악</span>
-  - <span class="plain">잠깐만요 그거 제 거</span>
-  - <span class="plain">거기 총각 비켜 봐</span>
+  - text: 이제 진짜 마지막 한 상자구요
+    type: plain
+  - text: 꺄아악
+    type: plain
+  - text: 잠깐만요 그거 제 거
+    type: plain
+  - text: 거기 총각 비켜 봐
+    type: plain
   - 그래도 세 팩이나 샀구나 굉장하다
 - - 아
   - 음
@@ -113,14 +170,17 @@ hm001_030/002/hori_047.gif:
   - 저기
   - 만났어 우연히
 - - <sup><big class="stroke">깜짝</big></sup> 누, 누구!? 뭐? 만나?
-  - <span class="plain">퍽</span>
-  - <span class="plain">아-</span>
+  - text: 퍽
+    type: plain
+  - text: 아-
+    type: plain
   - 호리가 유키라고 부르는 사람
 hm001_030/002/hori_048.gif:
 - - 유키 말이지...!?
   - 어, 만났다고? 그 모습으로?
 - - 별 이야기를 한 건 아니지만
-  - <span class="plain">흘린다</span>
+  - text: 흘린다
+    type: plain
 - - 그렇구나-
   - 흠-
 - - 어쩐지 나, 나말고 다른 사람은 미야무라의 그런
@@ -128,7 +188,8 @@ hm001_030/002/hori_048.gif:
 hm001_030/002/hori_049.gif:
 - - ''
 - - 미안, 아무것도 아냐
-  - <span class="plain">하하</span>
+  - text: 하하
+    type: plain
   - 잊어 줘
 - - 보리차 가져올게
   - 사놓은게 아직 남았나-
@@ -138,61 +199,79 @@ hm001_030/002/hori_050.gif:
   - 나도 호리의 그런 모습이나
 - - 요리를 잘 하는 점이나 큰 소리 지르면서 화내는 거나
 - - 사실... 집에서는 아무렇게나 머리 질끈 묶고 다니는 거나
-  - <span class="plain">그리고-</span>
+  - text: 그리고-
+    type: plain
   - 저... 근육이 알차게 붙은 팔이라거나
-  - 시끄럽네요!!
+  - text: 시끄럽네요!!
+    type: scream
 - - 그런 걸 다른 사람은 보지 않았음 좋겠다- 생각은 해
-  - (그건 나도 싫어)
+  - text: 그건 나도 싫어
+    type: thought
 hm001_030/002/hori_051.gif:
 - - 어쩐지 이 시간은 우리만의 거구나- 싶기도 하고
-  - <span class="plain">무의식→</span>
+  - text: 무의식→
+    type: plain
 - - 바,
-  - <span class="plain">?</span>
+  - text: '?'
+    type: plain
   - 누나 보리차 빨리-!
 - - 바보 같은 소리 하지 마 진짜...
-  - <span class="plain">컵!</span>
+  - text: 컵!
+    type: plain
   - 바보야 진짜 바보... 정말...
 - - 바보라니...
-  - <span class="plain">확실히 머리는 나쁘지만</span>
+  - text: 확실히 머리는 나쁘지만
+    type: plain
   - 바보잖아, 바보바보
   - 미야무라는 바보
 hm001_030/002/hori_052.gif:
 - - 누나의 「바보」는 한 번 터지면 멈추질 않거든-
   - 그랬어?
-- - <span class="plain">바보바보, 바보야</span>
-  - <span class="plain">바보-</span>
-  - (......아!)
-  - <span class="plain">깜박💡</span>
-  - <span class="plain">바보바보</span>
+- - text: 바보바보, 바보야
+    type: plain
+  - text: 바보-
+    type: plain
+  - ......아!
+  - text: 깜박💡
+    type: plain
+  - text: 바보바보
+    type: plain
 - - 형아 지금 누나하고 유나하고 닮았다고 생각했지!
   - 맞아!
-- - 닮았지~~!!
-  - <span class="plain">아하하, 하하하하-</span>
-  - 앞짱구-!
+- - text: 닮았지~~!!
+    type: scream
+  - text: 아하하, 하하하하-
+    type: plain
+  - text: 앞짱구-!
+    type: scream
   - 뭐,
   - 똑같아 똑같아 똑 닮았어
   - 뭐야-
 hm001_030/002/hori_053.gif:
 - - 미야무라는 얼굴이 참 작다
-  - <span class="plain">좋네</span>
+  - text: 좋네
+    type: plain
   - 그럴려나-...
 - - 어쩐지 여장도 어울릴 것 같은데
   - 안 해
 - - ''
 - - 치, 치마
   - 싫
-  - <span class="plain">じりっ じりっ</span>
+  - text: じりっ じりっ
+    type: plain
   - 치마만이라도
   - 아니 그니까
   - 싫다고
   - 싫어
 hm001_030/002/hori_054.gif:
 - - 미야무라 더우니까 학교 아닐 때는 머리 묶고 다녀
-  - <span class="plain">의지로라도 안 자름↓</span>
+  - text: 의지로라도 안 자름↓
+    type: plain
   - 엑-
 - - ''
 - - 와-
-  - <span class="plain">시원해!</span>
+  - text: 시원해!
+    type: plain
   - 덜 덥지-
 - - 저기
   - 다음은 있지 이 치
@@ -201,30 +280,51 @@ hm001_030/002/hori_054.gif:
   - 안 입어 / 입어
   - 봐
 hm001_030/002/hori_055.gif:
-- - 오랜 만에 메일 보내! 잘 지내지?
-  - 근데 말이야- 호리 집에 사는 사람 있잖아 우리 학교 남자애잖아
-  - 다음 번에 소개 해주면 안 될까- 😆
-  - 뭐라고 하지- 그런 타입 되게 멋있지 않아?
-  - 호리는 남자친구 없댔으니까 사귀는 거 아닐테지?
-  - 유키가
-- - 어? 무슨 말이야?
-  - 미안 누굴 말하는 건지 모르겠어!
-  - 우리 집에 있는 것 아직 어린 동생 뿐이야-
-  - 아마 진짜 유키가 잘못 안 거라고 생각해
-  - 호리
-- - 야 거짓말 하지 마 숨겨봤자 다 안다고 내가 봤는 걸 - 유키
-  - 아니 그러니까 네가 잘못 본 거라니까 - 호리
-- - 계속 생각나서 잠도 못 잔다니깐 친구끼리 그럼 하다 못해 이름만이라도 알려줘 - 유키
-  - 소타라고 - 호리
-  - 아니 그건 너네 동생이고 - 유키
+- - text: 오랜 만에 메일 보내! 잘 지내지?
+    type: plain
+  - text: 근데 말이야- 호리 집에 사는 사람 있잖아 우리 학교 남자애잖아
+    type: plain
+  - text: 다음 번에 소개 해주면 안 될까- 😆
+    type: plain
+  - text: 뭐라고 하지- 그런 타입 되게 멋있지 않아?
+    type: plain
+  - text: 호리는 남자친구 없댔으니까 사귀는 거 아닐테지?
+    type: plain
+  - text: 유키가
+    type: plain
+- - text: 어? 무슨 말이야?
+    type: plain
+  - text: 미안 누굴 말하는 건지 모르겠어!
+    type: plain
+  - text: 우리 집에 있는 것 아직 어린 동생 뿐이야-
+    type: plain
+  - text: 아마 진짜 유키가 잘못 안 거라고 생각해
+    type: plain
+  - text: 호리
+    type: plain
+- - text: 야 거짓말 하지 마 숨겨봤자 다 안다고 내가 봤는 걸 - 유키
+    type: plain
+  - text: 아니 그러니까 네가 잘못 본 거라니까 - 호리
+    type: plain
+- - text: 계속 생각나서 잠도 못 잔다니깐 친구끼리 그럼 하다 못해 이름만이라도 알려줘 - 유키
+    type: plain
+  - text: 소타라고 - 호리
+    type: plain
+  - text: 아니 그건 너네 동생이고 - 유키
+    type: plain
 hm001_030/002/hori_056.gif:
-- - 호,
-  - 호리 나 어떡하지 학교 풀장이 열린대
+- - text: 호,
+    type: speech
+  - text: 호리 나 어떡하지 학교 풀장이 열린대
+    type: speech
 - - 아-...
-  - <span class="plain">그러고 보면</span>
-  - '[남학생은 1주만 수영 수업 실시]'
+  - text: 그러고 보면
+    type: plain
+  - text: 남학생은 1주만 수영 수업 실시
+    type: square
   - 온갖 걸 다 들킨단 말이야!
 - - 어떡하냐고, 이거!
 - - 미야무라, 난 네가 가끔 정말 굉장한 건지 정말 바보인 건지 모르겠어
   - 어~?
-  - '[그리고 수영 수업은 선택 가능]'
+  - text: 그리고 수영 수업은 선택 가능
+    type: square

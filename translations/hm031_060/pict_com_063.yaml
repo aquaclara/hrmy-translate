@@ -24,16 +24,19 @@ hm031_060/054/hori_921.gif:
 - - ''
 - - 가족과 싸워서 집에 있기 힘든 거잖니
 - - 예의 범절도 아는 애고
-  - '[후우......]'
+  - text: 후우......
+    type: square
 hm031_060/054/hori_922.gif:
 - - 아, 괜찮아 갈아 입을 옷은 있으니까-
 - - 그러시군요...
-  - (진짜 맘대로 하라 그래)
+  - text: 진짜 맘대로 하라 그래
+    type: thought
   - 그리고 난 여기 「빌리고 있다」는 건 확실히 할 테니까
 - - 내 생활비는 낼 거고
   - 어? 돼... 됐어, 딱히...
 - - 호리 오면 나갈 거구
-  - <span class="plain">알지</span>
+  - text: 알지
+    type: plain
   - 네가 생각하는 만큼 호리는 우리 집엔 안 오니까 말야
 hm031_060/054/hori_923.gif:
 - - 어?
@@ -43,27 +46,39 @@ hm031_060/054/hori_923.gif:
 - - 불편하게 하면 떨어뜨릴 거야
 - - 네에-
 hm031_060/054/hori_924.gif:
-- - <span class="plain">↙베개</span>
-- - <span class="plain">벽</span>
-  - (후우...)
-  - <strong class="stroke">휙</strong>
-- - <span class="plain">섬찟</span>
+- - text: ↙베개
+    type: plain
+- - text: 벽
+    type: plain
+  - 후우...
+  - text: 휙
+    type: stroke
+- - text: 섬찟
+    type: plain
   - 치카~❤️
-  - <strong class="stroke">휙</strong>
+  - text: 휙
+    type: stroke
 - - 치카 아니야아아아!!
-  - <span class="plain">데굴데굴</span>
+  - text: 데굴데굴
+    type: plain
   - 이봐 너, 코이치이이이!!
 hm031_060/054/hori_925.gif:
-- - <big class="stroke">쿵<big>
+- - text: <big>쿵<big>
+    type: stroke
   - 아야
 - - 으윽~
-  - <span class="plain">단단한 벽</span>
-  - <span class="plain">쿨-</span>
-- - <span class="plain">삐비비빅, 삐비비빅</span>
-- - <span class="plain">삐비비빅</span>
+  - text: 딱딱한 벽
+    type: plain
+  - text: 쿨-
+    type: plain
+- - text: 삐비비빅, 삐비비빅
+    type: plain
+- - text: 삐비비빅
+    type: plain
 hm031_060/054/hori_926.gif:
 - - ......
-  - <span class="plain">이불은 줬음↓</span>
+  - text: 이불은 줬음↓
+    type: plain
   - 내가 뭐 했어?
 - - ''
 - - 아
@@ -72,15 +87,21 @@ hm031_060/054/hori_927.gif:
 - - 미안, 노트 잊고 와서...
   - 좀 보여 줄래?
 - - 어-? 진짜 뭐 하는 거야~!
-  - <span class="plain flip">신도</span>
+  - text: <span class="plain flip">신도</span>
+    type: plain
 - - ''
-- - <span class="plain">꾸욱</span>
-  - <span class="plain">뽕</span>
+- - text: 꾸욱
+    type: plain
+  - text: 뽕
+    type: plain
 hm031_060/054/hori_928.gif:
-- - <span class="plain">찍, 찍, 찍</span>
-  - <span class="plain">찌익-</span>
+- - text: 찍, 찍, 찍
+    type: plain
+  - text: 찌익-
+    type: plain
 - - ''
-- - <strong class="stroke">퍽</strong>
+- - text: 퍽
+    type: stroke
   - 아-!! 모처럼 채점 해놨더니!!
 - - 빨간펜 선생님이냐구, 네가!!
   - 이대로는 낼 수도 없잖아!
@@ -97,23 +118,32 @@ hm031_060/054/hori_930.gif:
 - - ''
 - - 나를 치카랑 헷갈리면 침대에서 떨어트릴 거야
 - - 자만하지 마!! 치카랑은 하나도 안 닮았거든!!
-  - <strong class="stroke">울컥</strong>
+  - text: 울컥
+    type: stroke
   - 좋아- 그 말 잘 기억해 놔...
-- - <strong class="stroke">깜박</strong>
+- - text: 깜박
+    type: stroke
 hm031_060/054/hori_931.gif:
 - - ''
 - - 치카-
-  - <strong class="stroke">ごそり...<strong>
+  - text: ごそり...
+    type: stroke
   - <sup>💢</sup> 죽어! <sub>💢</sub>
-  - <big class="stroke">ガス</big>
-- - <span class="plain">삐비비빅</span>
-- - <span class="plain">삐비비빅</span>
+  - text: <big>ガス</big>
+    type: stroke
+- - text: 삐비비빅
+    type: plain
+- - text: 삐비비빅
+    type: plain
 hm031_060/054/hori_932.gif:
 - - 나 뭐 했어?
-  - <span class="plain">그래도 이불은 준다↓</span>
-  - '[수면부족]'
+  - text: 그래도 이불은 준다↓
+    type: plain
+  - text: 수면부족
+    type: square
 - - 그럼 갈게~
 - - 신세 많이 졌어
 - - 아니...
-  - <span class="plain">휴...</span>
+  - text: 휴...
+    type: plain
   - 나야말로... 재미 있었어...

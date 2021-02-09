@@ -23,29 +23,34 @@ hm001_030/001/hori_001.gif:
 - - // 호리미야 1권 1화
   - 누나아-
 - - ''
-- - 소타 너 어떻게 된 거야!?
+- - text: 소타 너 어떻게 된 거야!?
+    type: scream
   - 넘어졌어
-  - 저런-
+  - text: 저런-
+    type: scream
 - - 저, 저기
 hm001_030/001/hori_002.gif:
 - - 괜찮은 것 같으니 이만 실례할게요
-- - '!? <small>피어...</small>'
+- - text: '!? <small>피어...</small>'
+    type: scream
   - 아... 아뇨 잠시만이라도 들어갔다...
   - 차라도...
   - 아니...
 - - '?'
   - 다 답례라도 하고 싶으니까...
-  - 뭐야 이 사람 피어스 많아...
-  - <span class="plain">피어싱... 피... 피어...</span>
+  - 뭐야, 피어스 많다, 이 사람...
+  - text: 피어싱... 피... 피어...
+    type: plain
   - 잠시만...
 - - ''
 hm001_030/001/hori_003.gif:
 - - 미안해요
   - 아뇨... 저야말로...
 - - 개 때문에 놀라 넘어진 모양인데...
-  - <span class="plain">그때 마침 내가</span>
+  - text: 그때 마침 내가
+    type: plain
   - 그렇구나
-  - <span class="plain">구태여</span>
+  - 고마워요
   - 소타 저기 가서 놀고 있어
 - - 소타...야무진 아이던데요
   - 집 주소랑 자기 이름도 또박또박 말할 줄 알고
@@ -56,71 +61,94 @@ hm001_030/001/hori_004.gif:
   - 아니 뭘~
 - - ''
 - - 어? ...호리 맞죠? 3반의...
-  - 뭐...!
+  - text: 뭐...!
+    type: scream
 - - 호호... 호리는 호리지만...
   - 그, 그쪽도 혹시 같은 학교...?
 hm001_030/001/hori_005.gif:
 - - 갑자기 왜 그래요? 나, 같은 반의 미야무라잖아요
-- - <big>같은 반의 미야무라잖아요!?</big>
-  - <span class="plain">미안해요, 말 걸지 말아 줄래요</span>
+- - text: <big>같은 반의</big>
+    type: plain
+  - text: 미안해요, 말 걸지 말아 줄래요
+    type: plain
+  - text: <big>미야무라잖아요!?</big>
+    type: plain
 - - 머, 머리 모양이 바뀌면 인상이 바뀌네
   - 호리도요
-- - <big>호리도요</big>
-  - <span class="plain">미야무라 비켜-</span>
+- - text: <big>호리</big>
+    type: plain
+  - text: 미야무라 비켜-
+    type: plain
+  - text: <big>도요</big>
+    type: plain
 hm001_030/001/hori_006.gif:
 - - 가정적이네요~
-  - (<strong class="stroke">헤에-</strong>)
+  - text: 헤에-
+    type: scream
   - 그, 그만!
 - - 맨 얼굴은 유키한테도 타카코한테도 보인 적 없었는데...
-  - <span class="plain">하필 미야무라한테... <b>아-</b></span>
+  - text: 하필 미야무라한테... <b>아-</b>
+    type: plain
   - 형아-
 - - 퍼즐 어려워-
-  - <span class="plain">퉁</span>
+  - text: 퉁
+    type: plain
   - 어디? 어떤 게?
   - 여기-
 - - 아, 반대네~
   - 야옹이 얼굴은 여기
-  - <span class="plain">톡</span>
-  - <span class="plain">아-</span>
-  - <span class="plain">하아-</span>
+  - text: 톡
+    type: plain
+  - text: 아-
+    type: plain
+  - text: 하아-
+    type: plain
 hm001_030/001/hori_007.gif:
 - - 이건 여기?
   - 여기!
-  - <span class="plain">딱</span>
+  - text: 딱
+    type: plain
   - 맞아
   - 이야, 다 됐네
 - - 됐다-
-  - <span class="plain">야호</span>
+  - text: 야호
+    type: plain
   - 뭐야? 퍼즐?
   - 응 다 했어
 - - 있잖아 형아- 밥 먹고 가주라-
   - 음-
-  - <span class="plain">그럴 순 없어</span>
+  - text: 그럴 순 없어
+    type: plain
   - 먹고 가
 - - 부모님은 일 때문에 안 올 거고
   - 1인분 는다고 다를 것 없고
 hm001_030/001/hori_008.gif:
 - - 그럼...
-  - <span class="plain">이얏호</span>
+  - text: 이얏호
+    type: plain
 - - ''
 - - 소타, 토마토도 먹어
-  - <strong class="stroke">우웩-</strong>
+  - text: 우웩-
+    type: stroke
 - - 함박은 케첩이랑 먹으면서 토마토는 싫어해
   - 케첩이랑 토마토가 무슨 상관이야
 hm001_030/001/hori_009.gif:
 - - 케첩은 토마토로 만드는 거야
   - 으에
   - 그렇게 생각하고 다시 먹어봐
-- - <span class="plain">싫어- 똑같이 맛 없어-</span>
+- - text: 싫어- 똑같이 맛 없어-
+    type: plain
   - 하하하하
 - - 평소에도 머리 올리고 다니지 왜
   - 안경도 벗고
-  - <span class="plain">촤아</span>
+  - text: 촤아
+    type: plain
 - - 응, 하지만
   - 피어스 자국이 보일 테니까
 hm001_030/001/hori_010.gif:
 - - 호리도 화장 않는 게 더 나은데
-  - <span class="plain">첨벙-</span>
+  - text: 첨벙-
+    type: plain
   - 뭐!?
 - - 지금 표정!
   - 무슨 표정!?
@@ -129,19 +157,28 @@ hm001_030/001/hori_010.gif:
 - - 아, 그렇지만 평소 표정이 마음에 안든다는게 아니구
   - 뭐라고 할까
 hm001_030/001/hori_011.gif:
-- - (아래 속눈썹이 길구나아)
-  - (학교에선 머리랑 안경으로 가려져서 안 보였지만...)
-  - <span class="plain">촤-</span>
-  - (아니 근데 이 애는 왜 나를 그렇게 잘 아는 거지...)
+- - text: 아래 속눈썹이 길구나아
+    type: thought
+  - text: 학교에선 머리랑 안경으로 가려져서 안 보였지만...
+    type: thought
+  - text: 촤-
+    type: plain
+  - text: 아니 근데 이 애는 왜 나를 그렇게 잘 아는 거지...
+    type: thought
 - - 호리 듣고 있어?
-  - <span class="plain">설거지 끝났어</span>
+  - text: 설거지 끝났어
+    type: plain
   - 앗
-- - '[그 날은 설거지를 마치고 돌아 갔다]'
-  - <span class="plain">형아- 또 와야 돼-</span>
+- - text: 그 날은 설거지를 마치고 돌아 갔다
+    type: square
+  - text: 형아- 또 와야 돼-
+    type: plain
 - - 잘 먹고 갑니다
 hm001_030/001/hori_012.gif:
-- - '[왠지]'
-  - '[재미있었다... 미야무라였는데]'
+- - text: 왠지
+    type: square
+  - text: 재미있었다... 미야무라였는데
+    type: square
 - - 어
 - - ''
 - - 호리- 좋은 아침-

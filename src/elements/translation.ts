@@ -1,6 +1,7 @@
 import { captionOption, Caption } from './caption';
-
+import { translationType } from '../translation';
 export interface translationOption extends captionOption {
+  type: translationType;
   editableMode?: boolean;
   oninput?: (ev: Event) => any;
   onkeydown?: (ev: Event) => any;
@@ -9,7 +10,7 @@ export interface translationOption extends captionOption {
 
 export class Translation extends Caption {
   constructor(opt: translationOption) {
-    opt.class = ['translation'];
+    opt.class = ['translation', opt.type];
     opt.tag = 'p';
     if (opt.editableMode) {
       opt.tag = 'input';

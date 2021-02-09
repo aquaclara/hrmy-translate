@@ -1,7 +1,16 @@
+export type translationType =
+  | 'speech'
+  | 'thought'
+  | 'scream'
+  | 'plain'
+  | 'stroke'
+  | 'square'
+  | 'shock';
 export type propertiedTranslation = {
+  type: translationType;
   text: string;
-  color: string;
-  'margin-left': string;
+  color?: string;
+  'margin-left'?: string;
 };
 export type translation = string | propertiedTranslation;
 export type comment = string;

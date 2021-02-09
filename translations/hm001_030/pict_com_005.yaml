@@ -31,9 +31,12 @@ hm001_030/001/hori_014.gif:
 - - 좋은 아침...
 - - 여, 호리!
   - 뭐야, 미야무라랑 노는 거야? <sub><b>우웩~</b></sub>
-- - 시끄럿
-  - <span class="plain">엇</span>
-  - 미야무라 잠깐 와봐!
+- - text: 시끄럿
+    type: scream
+  - text: 엇
+    type: plain
+  - text: 미야무라 잠깐 와봐!
+    type: scream
 hm001_030/001/hori_015.gif:
 - - 이거 찾고 있었지?
 - - 아! 고마워-
@@ -44,13 +47,15 @@ hm001_030/001/hori_015.gif:
   - 내가 아니라 소타가!
   - 아, 그럼 그림책이라도 사다 줘야겠다
 hm001_030/001/hori_016.gif:
-- - <span class="plain">됐어- 괜히 돈 쓰지 않아도-</span>
+- - text: 됐어- 괜히 돈 쓰지 않아도-
+    type: plain
   - 뭐야?
   - 글쎄
-  - <span class="plain">?</span>
+  - text: '?'
+    type: plain
 - - 그 형아는-?
 - - 오늘이 금요일이니까- 내일 올 거야!
-  - 웅- 누나...
+  - 훙- 누나...
 - - 요즘은 토요일 되기 전에 부쩍 기뻐해
   - 뭐!?
 hm001_030/001/hori_017.gif:
@@ -58,28 +63,41 @@ hm001_030/001/hori_017.gif:
 - - ...그렇네
 - - 케이크 가져왔어-
 - - 어서와...
-  - <span class="plain">앗, 케이크다</span>
+  - text: 앗, 케이크다
+    type: plain
 hm001_030/001/hori_018.gif:
-- - '[그날부터]'
-- - '[쉬는 날에는 종종 온다]'
-  - <span class="plain">쭈욱쭈욱</span>
-  - '[오지 않을 때 있지만]'
-- - '[방은 미야무라가 준 물건으로 가득하다]'
-  - '[모두 소타 거긴 해도]'
+- - text: 그날부터
+    type: square
+- - text: 쉬는 날에는 종종 온다
+    type: square
+  - text: 쭈욱쭈욱
+    type: plain
+  - text: 오지 않을 때 있지만
+    type: square
+- - text: 방은 미야무라가 준 물건으로 가득하다
+    type: square
+  - text: 모두 소타 거긴 해도
+    type: square
 - - 자
 hm001_030/001/hori_019.gif:
-- - '[12월이 되고 있었다]'
+- - text: 12월이 되고 있었다
+    type: square
   - 소타한테?
-  - <span class="plain">항상 고마워</span>
+  - text: 항상 고마워
+    type: plain
 - - 호리한테
 - - 어? 나, ...나
   - 그럼 오늘은 이만 가볼게
 - - 바로 가게-?
-  - '[나에게]'
+  - text: 나에게
+    type: square
 hm001_030/001/hori_020.gif:
-- - '[줄 선물을 사온 건 처음이라]'
-- - (장식할 수 있는 반지구나-...)
-  - (예쁘네...)
+- - text: 줄 선물을 사온 건 처음이라
+    type: square
+- - text: 장식할 수 있는 반지구나-...
+    type: thought
+  - text: 예쁘네...
+    type: thought
 - - 형아는-? 누나-
   - 아휴... 오늘은 그냥 갈 건 가봐
   - 누나
@@ -93,79 +111,109 @@ hm001_030/001/hori_021.gif:
   - 눈 투성이잖아!
 hm001_030/001/hori_022.gif:
 - - 어...?
-  - <span class="plain">으- 추워-</span>
+  - text: 으- 추워-
+    type: plain
 - - 유키 왜 그래?
   - 어쩐지... 아는 사람을 본 것... 같아서...
-  - <span class="plain">그니까 대체 그렇게 비쌀 것 같은 걸!</span>
+  - text: 그니까 대체 그렇게 비쌀 것 같은 걸!
+    type: plain
 - - ''
-- - <span class="plain">풋</span>
+- - text: 풋
+    type: plain
   - 아는 애야?
 hm001_030/001/hori_023.gif:
 - - 아닌가 봐, 저렇게 촌스럽게 하고 다닐 리가 없지
-  - <span class="plain">깔깔깔</span>
-  - <span class="plain">가자 가자-</span>
+  - text: 깔깔깔
+    type: plain
+  - 가자, 가자-
   - ......
-- - '[난 소타를 돌봐야 하고 친구랑 놀라 갈 시간 같은 건 못 내니까]'
-- - '[할 수 없잖아...]'
+- - text: 난 소타를 돌봐야 하고 친구랑 놀라 갈 시간 같은 건 못 내니까
+    type: square
+- - text: 할 수 없잖아...
+    type: square
 - - 무척 애쓰고 있다는 거
 hm001_030/001/hori_024.gif:
 - - 알고 있으니까
 - - ''
-- - 누구 맘대로 바로 집에 갈려는 거야!
-  - 케이크라도 먹고 가라고!
-- - 내가 아니라 소타가-!
+- - text: 누구 맘대로 바로 집에 갈려는 거야!
+    type: scream
+  - text: 케이크라도 먹고 가라고!
+    type: scream
+- - text: 내가 아니라 소타가-!
+    type: scream
   - 응, 응
-  - <span class="plain">하하</span>
+  - text: 하하
+    type: plain
 hm001_030/001/hori_025.gif:
 - - 미야무라 뭐야? 막 비쥬얼록? 그런 거 듣고 그래?
   - 어? 아니
 - - 스피츠나... 범프 같은 거
-  - (<big><b>덜컹</b></big>)
+  - text: <big><b>덜컹</b></big>
+    type: plain
   - 헤에~
 - - 호리는 어떤 걸 들어?
 - - 애... 애니메이션...
   - 애니메이션!?
-  - <span class="plain">포켓몬 같은 거?</span>
-  - 내가 아니라 소타가아
+  - text: 포켓몬 같은 거?
+    type: plain
+  - text: 내가 아니라 소타가아
+    type: scream
 hm001_030/001/hori_026.gif:
 - - 형아 사용법 알려줘-
   - 디지털 카메라?
   - 누나도 쓸 줄 모르면서 샀어
 - - 전원 켜기, 살짝 눌렀다가 다시 세게 누르고 있는다
-  - <span class="plain">삐빅</span>
-  - <span class="plain">하-</span>
-  - <span class="plain">덜커덕, 덜커덕</span>
+  - text: 삐빅
+    type: plain
+  - text: 하-
+    type: plain
+  - text: 덜커덕, 덜커덕
+    type: plain
 - - 이렇게 줌인, 그리고 세모 버튼을 누르면 여태 찍은 걸 볼 수 있으니까
   - 화면이 어두울 때는 이걸 누르고
-  - <span class="plain">삣, 삐삣, 삣, 삣</span>
-  - <span class="plain">덜컹, 덜컹</span>
+  - text: 삣, 삐삣, 삣, 삣
+    type: plain
+  - text: 덜컹, 덜컹
+    type: plain
 - - 내 사진만 잔뜩이잖아!
-  - '[다음 날]'
-  - <span class="plain">삣삣삣 삣삣삣 삣삣삣 삣삣삣삣삣</span>
+  - text: 다음 날
+    type: square
+  - text: 삣삣삣 삣삣삣 삣삣삣 삣삣삣삣삣
+    type: plain
   - 악 눈 감았어!
-  - <span class="plain">왜 이래!</span>
+  - text: 왜 이래!
+    type: plain
   - 형아가 다 찍은 거야
 hm001_030/001/hori_027.gif:
 - - 엇, 오늘은 화장 했네-
-  - <span class="plain">안녕-</span>
-  - <span class="plain">할인 행사 시간!!</span>
+  - text: 안녕-
+    type: plain
+  - text: 할인 행사 시간!!
+    type: plain
   - 저녁 장 보러 가니까 같이 가자!
 - - 그래서 짐꾼 신세구나
-  - <span class="plain">아휴-</span>
+  - text: 아휴-
+    type: plain
   - 요즘 소타 먹는 양이 늘었거든-
 - - 누나 왔어-
-  - <span class="plain">아이쿠</span>
+  - text: 아이쿠
+    type: plain
   - 배 고파아
-  - (<strong class="storke">팟</strong>)
+  - text: 팟
+    type: stroke
   - 네- 네네
 - - 호호호, 호리 애가 있나봐-!!
-  - <span class="plain">어제 봤어-!! 남편도 있었다구-!!</span>
-  - '[다음 날]'
+  - text: 어제 봤어-!! 남편도 있었다구-!!
+    type: plain
+  - text: 다음 날
+    type: square
   - 으에에-
 hm001_030/001/hori_028.gif:
 - - 이제 나 여기 안 올 거니까
 - - 그럼 뭐 학교에서도 잘 부탁해
   - 잘 살아
-- - <span class="plain">허억, 허억, 허억</span>
-- - <span class="plain">꿈인가</span>
-  - <span class="plain">좀 놀랐다</span>
+- - text: 허억, 허억, 허억
+    type: plain
+- - text: 꿈인가
+    type: plain
+  - 좀 놀랐다↘
