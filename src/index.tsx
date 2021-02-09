@@ -278,11 +278,6 @@ function renderTranslations(focus?: [string, number, number]) {
                     }
                   );
                   // Stylizing
-                } else if (ev.ctrlKey && ev.key == 'i') {
-                  log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
-                  target.value += '<span class="plain"></span>';
-                  const position = target.value.length - '</span>'.length;
-                  target.setSelectionRange(position, position);
                 } else if (ev.ctrlKey && ev.key == 'b') {
                   log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
                   target.value += '<b></b>';
