@@ -5,6 +5,8 @@ interface PropsType {
   onClickOverlay: (event: React.MouseEvent<HTMLDivElement>) => void;
   defaultFontSize: number;
   onChangeFontSize: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  defaultApplyFont: boolean;
+  onChangeApplyFont: (event: React.ChangeEvent<HTMLInputElement>) => void;
   defaultDevelopmentMode: boolean;
   onChangeDevelopmentMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
   defaultEditableMode: boolean;
@@ -34,6 +36,13 @@ export class Configuration extends React.Component<PropsType, {}> {
             defaultValue={this.props.defaultFontSize}
             onChange={this.props.onChangeFontSize}
           />
+          <input
+            type="checkbox"
+            id="apply-font"
+            defaultChecked={this.props.defaultApplyFont}
+            onChange={this.props.onChangeApplyFont}
+          />
+          <label htmlFor="apply-font">폰트 사용</label>
           <input
             type="checkbox"
             id="development-mode"

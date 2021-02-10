@@ -1,5 +1,5 @@
 @use 'variables';
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap');
 
 .float {
   position: absolute;
@@ -56,7 +56,7 @@
     }
 
     &.thought {
-      color: $black;
+      color: variables.$black;
       background-color: white;
       border: 1px solid black;
       border-radius: 1em;
@@ -77,7 +77,7 @@
       &:before {
         width: 0.1em;
         height: 0.1em;
-        margin-left: -0.7em;
+        margin-left: -0.6em;
       }
 
       &:after {
@@ -89,7 +89,7 @@
 
     &.shock {
       $margin: 0.6em;
-      color: $black;
+      color: variables.$black;
       background-color: white;
       border-radius: 2em;
       padding: 0 0.5em;
@@ -115,7 +115,7 @@
     }
 
     &.square {
-      color: $black;
+      color: variables.$black;
       background-color: white;
       border: 1px solid black;
       padding: 0 0.4em;
@@ -123,12 +123,12 @@
 
     &.plain,
     .plain {
-      color: $black;
+      color: variables.$black;
     }
 
     &.stroke,
     .stroke {
-      color: $black;
+      color: variables.$black;
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-width: 1px;
     }
@@ -177,7 +177,13 @@ a.notice {
   padding: 0em 0.4em;
 }
 
-body.horimiya.font--Nanum-Pen-Script .translation {
-  font-family: 'Nanum Pen Script', cursive;
-  font-size: 1.2em; // Nanum Pen Script is small
+body.horimiya.apply-font {
+  .translation {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.2em; // Nanum Pen Script is small
+
+    &.stroke {
+      font-family: 'Black Han Sans', sans-serif;
+    }
+  }
 }

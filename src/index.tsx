@@ -31,11 +31,13 @@ const githubUrl = githubUrlBase + tlsPath;
 const localUrl = chrome.runtime.getURL(tlsPath);
 const editableMode = true;
 
-let options: {
+type Option = {
   fontSize: number;
+  applyFont: boolean;
   developmentMode: boolean;
   editableMode: boolean;
 };
+let options: Option;
 let data: translationFile;
 
 function log(message: any, ...optionalParams: any[]) {
@@ -48,17 +50,18 @@ function main() {
   chrome.storage.sync.get(
     {
       fontSize: 5,
+      applyFont: true,
       developmentMode: false,
       editableMode: false
     },
-    function(items) {
-      options = {
-        fontSize: items.fontSize,
-        developmentMode: items.developmentMode,
-        editableMode: items.editableMode
-      };
+    items => {
+      options = items as Option;
       log('Options loaded');
       log(items);
+
+      if (options.applyFont) {
+        util.getBodyElement().classList.add('apply-font');
+      }
     }
   );
 
@@ -91,6 +94,10 @@ function main() {
     }
   };
   xhr.send();
+
+  if (/hm\d+_\d+\/pict_com_\d+.html$/.test(location.href)) {
+    util.getBodyElement().classList.add('horimiya');
+  }
 }
 
 function handleResponse(response: string) {
@@ -389,6 +396,14 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
       defaultFontSize={options.fontSize}
       onChangeFontSize={(event: React.ChangeEvent<HTMLInputElement>) => {
         options.fontSize = parseInt(event.target.value);
+        onChangeSettings();
+      }}
+      defaultApplyFont={options.applyFont}
+      onChangeApplyFont={(event: React.ChangeEvent<HTMLInputElement>) => {
+        util
+          .getBodyElement()
+          .classList.toggle('apply-font', event.target.checked);
+        options.applyFont = event.target.checked;
         onChangeSettings();
       }}
       defaultDevelopmentMode={options.developmentMode}
