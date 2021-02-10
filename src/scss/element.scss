@@ -1,0 +1,183 @@
+@use 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+.float {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  margin-left: 1em;
+
+  .caption {
+    display: block;
+  }
+
+  .translation {
+    margin-block-start: 0;
+    margin-block-end: 0.1em;
+    width: fit-content;
+
+    &.speech,
+    &.scream {
+      background-color: white;
+      color: variables.$black;
+      border: 1px solid black;
+      border-radius: 1em;
+      padding: 0 0.5em;
+      position: relative;
+
+      $anchor-width: 8;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-left: 0;
+        border-bottom: 0;
+        border-top-width: $anchor-width + px;
+        border-right-width: $anchor-width + px;
+      }
+
+      &:before {
+        border-right-color: black;
+        margin-top: (-$anchor-width / 2) + px;
+        margin-left: -$anchor-width + px;
+      }
+
+      &:after {
+        border-right-color: white;
+        margin-top: (-$anchor-width / 2 - 1) + px;
+        margin-left: -$anchor-width + 2 + px;
+      }
+    }
+
+    &.thought {
+      color: $black;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 1em;
+      padding: 0 0.4em;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: '';
+        border: 1px solid #000;
+        background-color: #fff;
+        position: absolute;
+        border-radius: 1em;
+        left: 0;
+        bottom: 0;
+      }
+
+      &:before {
+        width: 0.1em;
+        height: 0.1em;
+        margin-left: -0.7em;
+      }
+
+      &:after {
+        width: 0.3em;
+        height: 0.3em;
+        margin-left: -0.4em;
+      }
+    }
+
+    &.shock {
+      $margin: 0.6em;
+      color: $black;
+      background-color: white;
+      border-radius: 2em;
+      padding: 0 0.5em;
+      position: relative;
+      margin: $margin;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: -$margin;
+        border-radius: 2em;
+        z-index: -1;
+        background: repeating-conic-gradient(
+          white,
+          white 4deg,
+          black 4deg 7deg
+        );
+      }
+    }
+
+    &.square {
+      color: $black;
+      background-color: white;
+      border: 1px solid black;
+      padding: 0 0.4em;
+    }
+
+    &.plain,
+    .plain {
+      color: $black;
+    }
+
+    &.stroke,
+    .stroke {
+      color: $black;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 1px;
+    }
+
+    strong.stroke {
+      font-weight: normal;
+      font-size: 1.2em;
+    }
+    big.stroke {
+      font-size: 1.4em;
+    }
+
+    .flip {
+      display: inline-block;
+      transform: rotate(-180deg);
+    }
+
+    .blue {
+      color: #2c8ea6;
+    }
+  }
+
+  input.translation {
+    &.speech {
+      border-bottom-left-radius: 0;
+    }
+
+    &.scream {
+      border: 3px dotted;
+    }
+  }
+
+  input[type='text'] {
+    font-size: inherit;
+    background-color: transparent;
+  }
+}
+
+.notice,
+a.notice {
+  color: white;
+  background-color: black;
+  width: fit-content;
+  word-break: keep-all;
+  font-size: 5mm;
+  padding: 0em 0.4em;
+}
+
+body.horimiya.font--Nanum-Pen-Script .translation {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.2em; // Nanum Pen Script is small
+}
