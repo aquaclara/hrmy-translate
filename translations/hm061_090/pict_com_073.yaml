@@ -1,0 +1,119 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm061_090/064/hori_1049.gif:
+- - // 호리미야 7권 43화
+  - 그럼 난 실험실-
+- - 바로 코앞이잖아...
+  - text: 3학년은 하급생에게 자료를 옮기는 임무
+    type: plain
+  - 토오루는 어디 갈래?
+  - 이게 더 많다~
+- - 그럼~ 내가 북으로 가겠습니다!!
+  - text: 북 ... 북쪽 교사<br>3학년 교실(2층)<br>→한 층 아래 복도<br>→특별동(2층)<br>=귀찮음
+    type: square
+  - text: 와-
+    type: plain
+  - text: 와, 멋지다-
+    type: plain
+- - 그럼 난 물리실에
+  - text: 바로 아래
+    type: shock
+  - 그럼 난 화학실!
+  - text: 바로 앞
+    type: shock
+hm061_090/064/hori_1050.gif:
+- - 아-... 날이 점점 추워지네
+- - 그렇구나
+  - 아
+- - ''
+- - ''
+hm061_090/064/hori_1051.gif:
+- - 짐을 일단 내려놓고 열
+  - text: 덜컥
+    type: stroke
+- - text: 드르르륵...
+    type: stroke
+- - text: 콰앙
+    type: stroke
+- - 호리, 「이크, 또 이랬네」하는 얼굴은 좋지만 절대 그렇게 생각 안 하지?
+  - text: 서슴없이 발로
+    type: square
+hm061_090/064/hori_1052.gif:
+- - text: 턱
+    type: stroke
+  - 휴-
+- - 호리, 지금 생각났는데 물리실 안 열지 않나?
+  - text: ※ 점심시간엔 많이 잠겨있음
+    type: plain
+- - 뭐...
+  - 그럼 10분 기다렸다가 바로 가서 두고 오지, 뭐
+  - text: 물리 담당 · 나카미네<br>곧잘 문을 잠가놓고 사라진다
+    type: plain
+  - text: 고양이 귀여워
+    type: plain
+- - ''
+hm061_090/064/hori_1053.gif:
+- - text: 이건... 혹시
+    type: square
+  - text: 그건가?
+    type: square
+- - text: 하지만 호리가 잊어버렸으면 어쩌지...
+    type: square
+- - text: 그보다 진짜 해도 될까...?
+    type: square
+- - 아! 저기
+  - 그러고 보니 있지!
+hm061_090/064/hori_1054.gif:
+- - 오늘!
+  - text: 턱
+    type: stroke
+- - text: 자료 배부 한다지 뭐야-
+    type: plain
+- - text: 턱
+    type: stroke
+- - 지금 누구한테 하는 소리야 이 <big class="stroke">멍청아</big>!!
+  - 말 끝마다 친한 척 달라 붙고 있어, <big class="stroke">좀 닥쳐!!</big>
+hm061_090/064/hori_1055.gif:
+- - text: 조용
+    type: plain
+- - text: 3학년 무서워어어어어어
+    type: shock
+- - ''
+- - text: 깡패다-!!
+    type: shock
+hm061_090/064/hori_1056.gif:
+- - text: 타다닥
+    type: plain
+  - text: 아! 도망갔네...
+    type: thought
+- - 호리-... 난 진짜 싫으니까...
+  - text: 으~
+    type: plain
+  - 소리 지르는 건 이걸로 끝...
+- - text: 웃고 있잖아-!!
+    type: shock
+- - 호리, 나... 모르겠어......
+  - text: 미안하지만...
+    type: plain
+  - text: 의문만이 남았다
+    type: square
+  - 괜찮아, 나도 잘 모르겠으니까!
