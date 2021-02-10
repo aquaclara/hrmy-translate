@@ -50,7 +50,7 @@ function main() {
   chrome.storage.sync.get(
     {
       fontSize: 5,
-      applyFont: true,
+      applyFont: false,
       developmentMode: false,
       editableMode: false
     },
