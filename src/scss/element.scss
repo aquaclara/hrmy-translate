@@ -1,5 +1,5 @@
 @use 'variables';
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&display=swap');
 
 .float {
   position: absolute;
@@ -179,10 +179,11 @@ a.notice {
 
 body.horimiya.apply-font {
   .translation {
-    font-family: 'Nanum Pen Script', cursive;
-    font-size: 1.2em; // Nanum Pen Script is small
+    font-family: 'Gaegu', cursive;
+    font-size: 1.2em;
 
-    &.stroke {
+    &.stroke,
+    .stroke {
       font-family: 'Black Han Sans', sans-serif;
     }
   }

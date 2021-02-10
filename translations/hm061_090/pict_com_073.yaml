@@ -36,10 +36,10 @@ hm061_090/064/hori_1049.gif:
     type: plain
 - - 그럼 난 물리실에
   - text: 바로 아래
-    type: shock
+    type: square
   - 그럼 난 화학실!
   - text: 바로 앞
-    type: shock
+    type: square
 hm061_090/064/hori_1050.gif:
 - - 아-... 날이 점점 추워지네
 - - 그렇구나
