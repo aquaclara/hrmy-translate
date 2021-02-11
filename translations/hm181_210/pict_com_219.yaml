@@ -1,0 +1,95 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm181_210/202/hori_2827.gif:
+- - // 호리미야 7권 49화
+  - text: 나는 센고쿠도 레미도 좋다
+    type: square
+  - text: 정말 좋아한다
+    type: square
+- - ....
+- - ....
+- - ''
+hm181_210/202/hori_2828.gif:
+- - text: 선생님
+    type: square
+  - text: 조-용
+    type: plain
+  - text: 조를 바꿔 주세요
+    type: square
+- - 그냥 섞기만 하면 돼
+- - 화났구나...
+  - text: 지금 내가 화났는지 아닌지가 무슨 상관이야!? 섞기만 하면 된다고!!
+    type: scream
+- - 센고쿠네 조는 아직도 재료만 섞고 있구나
+  - text: 굉장하다
+    type: plain
+  - 수업 다 끝나겠네
+hm181_210/202/hori_2829.gif:
+- - 잠깐, 잠깐, <b><big>레미!!</big></b> 그게 아니라 잘 보고서-
+  - 응?
+- - 레미, 그게 아니라 이거야
+  - 아아앗-!! <b><big>센고쿠</big></b> 스톱!!! 그건 지금 넣으면 안 돼, 레시피는 봤어!?
+- - 게다가 둘 다 뭐가 이렇게 <b>지저분하냐고!!</b>
+  - text: 질척질척
+    type: stroke
+- - 응?
+  - text: 달각
+    type: stroke
+  - <b><big>꺅-</big></b> 보면서 해-
+hm181_210/202/hori_2830.gif:
+- - 사쿠라 이거... 소금이라고 써 있는데 소금 맞아?
+  - text: 일단 확인
+    type: plain
+  - 소금이라고 적혀 있으면 대개는 소금이야!!!
+- - 됐어!! 센고쿠는 채소나 썰어줘!! 그 정도는 할 수 있겠지!
+  - 써...!! 썰라고?! 나더라!?
+- - ''
+- - text: 텅
+    type: plain
+hm181_210/202/hori_2831.gif:
+- - 껍질-!
+  - 아, 깜박했다
+  - 껍질 정도는 벗겨야지, 상식이잖아!!
+- - 아, 안 돼
+  - 레미는 칼 같은거 잡지 마아!! 손 베면 어떡해!!
+  - 으응~
+- - ''
+- - text: 왜...
+    type: thought
+  - text: 크기가 아무래도 같아지질 않는다
+    type: square
+hm181_210/202/hori_2832.gif:
+- - 사쿠라, 어떡하지. 이러다 레미는 시집도 못 가겠어...
+  - 사쿠라, 어떡하지. 나 같은 걸 데려갈 사람이 있을까...
+- - 괜찮아!! 그땐 너희 둘 다
+  - 내가 데려갈 테니까!!
+- - ''
+- - text: 와아아아 사쿠라- 고마워-
+    type: plain
+  - text: 사나이구나-
+    type: plain
+  - text: 됐으니까 빨리 하던 일 마쳐!!
+    type: scream
+  - text: 빨리!!
+    type: scream
+  - text: 딩- 동- 댕-
+    type: stroke

@@ -1,0 +1,154 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm061_090/089/hori_1356.gif:
+- - // 호리미야 9권 57화
+  - 지난번에 깨고 보니 한밤중이라서-...
+  - text: ※ 81화
+    type: square
+- - 하긴 뭘 먹으면 졸리지!
+  - text: 위험하지- 위험해-
+    type: plain
+  - text: ↙호리 가는 기본적으로 잠들면 안 깨움
+    type: plain
+  - 오늘은 7시에 돌아갈게
+- - 그럼 한 시간 남았네!
+  - text: 아하하하
+    type: plain
+  - 아~ 큰일이야, 벌써 졸려!
+  - 뭘 또 그럴라구-
+- - text: 6분 후
+    type: square
+  - text: 쿨-
+    type: plain
+hm061_090/089/hori_1357.gif:
+- - 아빠 귀가-!!
+  - text: 파앙-!
+    type: plain
+  - 그리고 요 앞에서 타케루를 잡아 왔어요!
+- - 아저씨, 카케루예요
+  - 그리고 벌써 9시에요
+  - text: 편의점에서 돌아가는 중
+    type: plain
+  - text: 으하하
+    type: plain
+  - 뭐, 따뜻한 거라도 마시고 있어
+- - text: 확
+    type: plain
+  - 으헉!!
+- - text: 0시
+    type: square
+  - ...?
+  - text: 늘어났어...
+    type: plain
+  - text: 쿨-
+    type: plain
+hm061_090/089/hori_1358.gif:
+- - 아니... 저, 아빠!
+  - text: 여엉차
+    type: plain
+  - 뭐야, 방금 잠들었는데-
+- - 센고쿠 언제 왔어?
+  - text: 어차피 막무가내로 끌고 왔겠지만
+    type: plain
+  - 9시?
+  - 이야기 몇 마디 하다 보니 잠들어 버리더라
+- - text: 반짝
+    type: plain
+- - 미야무라- 벌써 12시래-
+  - 어-... 어-... 어-...
+hm061_090/089/hori_1359.gif:
+- - text: 너무 자서 게다가 갑자기 깨운 탓에
+    type: plain
+  - text: 뭘 생각하도 귀찮은 상태→
+    type: plain
+- - 세이브... 던전 들어가기 전에 세이브...
+  - 응?
+  - text: 던전에 들어갈 땐 세이브를 잊지 마세요
+    type: square
+- - 알았지, 회장... 세이브 까먹으면 안 돼...
+  - 응...? 어...
+  - text: 반짝
+    type: plain
+- - 그리고... 의외로 빨리 닳으니까... MP 회복 되는 아이템을 마을에서 사두고...
+  - 응...
+  - text: 완전한 잠꼬대→
+    type: plain
+  - text: MP회복 아이템을 여럿 사 두자
+    type: square
+hm061_090/089/hori_1360.gif:
+- - ....가도 돼? 이제 출발할 수 있어?
+  - 응... 그리고 장비... 새로 들어온 동료들 것도...
+  - text: 세심함
+    type: square
+- - 전투다, 전투다!!
+  - text: 벌떡
+    type: stroke
+  - 으아아아악
+- - text: 고, 골렘이 나타났다-!!
+    type: speech
+  - 으아-
+  - text: 호리를 보고서
+    type: square
+  - 뭐라고 이 겁쟁이 용사...
+- - 회장, 침착해-!! 지금 내가 소멸 주문을...
+  - 너나 침착해-!!
+hm061_090/089/hori_1361.gif:
+- - 왔구나, 용사들!
+  - text: 확
+    type: stroke
+  - text: 동료가 되고 싶은 아저씨
+    type: square
+  - text: 참고로 보스
+    type: square
+  - 댁은 끼지 마!!
+- - 어-... 게임하는 꿈을 꿨는데...
+  - 진짜냐, 나돈데
+- - 어-!! 회장이 있네!! 어떻게!?
+  - 요 앞에서 납치당했어
+  - 우리 아빠한테
+- - 목욕도 안 하고 밥도 안 먹고
+  - 푹 잠들어 버렸어
+  - 아, 정말 목욕 안 했네
+hm061_090/089/hori_1362.gif:
+- - 걍 둘이 같이 들어가지, 번거로운데-
+  - 뭐어... 곤란해 그건...
+- - 보여줄 수 없어-...
+  - ...뭐가? 보여주면 안 될 거라도 있어?
+- - 어?! 아니...
+  - 아-!! 맞아 수학여행 땐 시간차 두고 혼자 목욕하고 그랬지!!
+- - 엥~ 그랬던가...
+  - text: 여자는 각 방 욕실, 남자는 반 전체가 대욕탕이었다
+    type: square
+  - 풀에도 안 들어가는 게 쭉 마음에 걸렸어...
+hm061_090/089/hori_1363.gif:
+- - 아
+  - text: 아하하
+    type: plain
+  - 저기 난, 워낙 갈비씨라서
+- - 미야무라가 갈비씨면
+  - 난 이미 죽은 시체야
+- - ''
+- - 어... 웃... 웃기려고 한 말 아니거든!!
+  - text: 쿠-욱 쿠쿠쿠쿡
+    type: plain
+  - text: 아하하하하 하하하하하하하
+    type: plain

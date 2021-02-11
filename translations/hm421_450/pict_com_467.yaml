@@ -1,0 +1,112 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm421_450/450/hori_5830.gif:
+- - 카레 먹어본 적 있는 사람!!
+- - ''
+- - 대체 왜!?
+  - text: 무
+    type: square
+  - text: 두부
+    type: square
+- - 센고쿠는 여차하면 무랑 생선 가져오는 거 이제 그만해-
+  - 오늘은 무 안 써?
+hm421_450/450/hori_5831.gif:
+- - 사쿠라, 미안해 벌써 점심시간인데...
+  - text: 꾸욱
+    type: plain
+  - 아
+  - text: 꽈직
+    type: plain
+  - text: 우와...
+    type: square
+- - 냄비에 들어 있는 완성품 카레밖에 본 적이 없어서...... 스타트를 어떻게 끊어야 하는지 몰라......
+  - 우선은 카레에 흔히 들어가는 채소를 가져올 것
+- - 채소를 냄비 주위에 늘어놓으면 카레가 샘솟는 거야?
+  - text: <b>파아아아아아아</b>
+    type: plain
+  - text: 카레 의식
+    type: square
+  - text: 조리를 한다고
+    type: scream
+- - 쥐는 법이-!!
+hm421_450/450/hori_5832.gif:
+- - 레미는 칼 같은 거 잡지 말라고 했잖아-!!
+  - 그치만 레미도 채소 썰고 싶은걸...
+  - 아니... 방금 그 광경이 트라우마가 될 것 같아서...
+- - text: 슥슥, 삭삭
+    type: plain
+- - 뭐야- 센고쿠 이제보니 잘하네!!
+  - 맞아, 그렇게 껍질을......
+  - text: 슥슥
+    type: plain
+- - text: 사락...
+    type: plain
+hm421_450/450/hori_5833.gif:
+- - 감자가 사라졌어......
+  - text: 사라진 감자
+    type: plain
+  - 언제까지 깎고 있는 거야!!
+- - 양파도 사라졌어......!!
+  - text: 사라진 양파
+    type: plain
+  - 왜 다 까버리냔 말이야-!!
+- - 우리 반 전체가 이걸 예상하고 카레를 조금씩 나눠줬기에 망정이지
+  - 끝나고 감사하다고 말해둬!!
+- - 레미는 밥을 담아줘
+  - 레미는 평생 요리를 못하는 걸까
+hm421_450/450/hori_5834.gif:
+- - 노력하면 언젠가는 할 수 있을 거야
+  - text: <b>화르륵</b>
+    type: plain
+  - 불 좀 봐!!
+- - 센불이라며?
+  - 센불!? 이게 센불이라고!? 대체... 뭘 한 거야!?
+  - text: 어떻게 한 거야?
+    type: plain
+  - 뭐냐니... 센 불 쪽으로 팍 하고...
+- - ↙밥 담당
+  - 죽밥↘
+- - 미, 미, 미, 미안, 미안해...
+  - text: 윽, 흑, 흑
+    type: plain
+  - 울지마, 이제... 됐으니까....
+hm421_450/450/hori_5835.gif:
+- - 뭐 어때, 죽이면!
+  - 그치?
+  - 어... 그래...!
+- - 질척질척한 죽에... 끈적끈적한 카레......
+  - text: 흑
+    type: plain
+  - 레미 때문에... 레미 때문에...
+  - text: 흑
+    type: plain
+  - 자, 이제 먹자!!
+- - 아, 맛있다- 맛있지, 레미!
+  - 응...
+- - text: 우와- 셋이서 먹으니까 맛있다-!
+    type: plain
+  - // 芯?残りまくり
+  - text: 죽이 아직도 남았네-!
+    type: plain
+  - '죽 '
+  - 같은 반이 아니라서 다행이야
+  - 응......
