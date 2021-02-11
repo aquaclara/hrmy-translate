@@ -106,11 +106,7 @@
         margin: -$margin;
         border-radius: 2em;
         z-index: -1;
-        background: repeating-conic-gradient(
-          white,
-          white 4deg,
-          black 4deg 7deg
-        );
+        background: url('../svgs/shock.svg');
       }
     }
 

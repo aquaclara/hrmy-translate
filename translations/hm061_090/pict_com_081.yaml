@@ -1,0 +1,100 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm061_090/072/hori_1144.gif:
+- - // 호리미야 7권 44화
+  - 야나기? 나 알아-
+  - 무지 잘생겼지?
+- - 1반은 교실이 너무 멀어서 볼 일이 없으니까-
+  - 유명해?
+- - 유명하달까... 뭐... 얼굴은... 응
+  - 하지만 좀 재미있긴 해
+- - 그래~ 재미있어...?
+hm061_090/072/hori_1145.gif:
+- - text: 꿍
+    type: stroke
+  - text: 아야
+    type: scream
+- - 야나기
+  - 너 안경은?
+- - 아... 저기
+  - 귀찮아서 아직... 안 샀어
+- - 하지만 그렇게 불편하진
+  - text: 쾅
+    type: stroke
+  - 야나기-!!
+hm061_090/072/hori_1146.gif:
+- - 눈이 나빠
+  - 아아주
+- - 유키랑 이야기할 땐 안경 꼈었니?
+- - 아니...
+- - ''
+hm061_090/072/hori_1147.gif:
+- - ''
+- - ''
+- - ''
+- - 저
+  - 저기
+hm061_090/072/hori_1148.gif:
+- - 누구랑 착각한 것 아냐?
+- - ....?
+- - 왜, 내 친구 중에 호리 쿄코라는 애가 있는데
+  - 나보다 키그 크고 갈색머리에 나보다... 미인이에요
+- - 그, 그 애랑 헷갈린 거 아닌가요?
+  - ...왜?
+hm061_090/072/hori_1149.gif:
+- - 아아, 혹시...
+- - 내가 눈이 나쁘니까?
+- - 안경이 망가지기 훨-씬 전부터 봐 왔으니까
+- - 네 얼굴은 알지만 그 호리란 친구의 얼굴은 몰라
+hm061_090/072/hori_1150.gif:
+- - 그... 그렇...구나
+  - 아~ 유키~
+- - 아, 미안, 얘기 중이었어?
+  - 어, 야나기
+  - text: 아- 야나기다...
+    type: thought
+  - text: 진짜 야나기
+    type: plain
+- - 마침 그쪽 이야기를 하고 있었는데
+  - 미인 친구가 있다고... 요시카와가
+- - 말했는데...
+  - text: 흐릿한 눈
+    type: square
+  - text: 빤-
+    type: plain
+  - 아, 안녕. 미야무라입니다
+hm061_090/072/hori_1151.gif:
+- - 그랬군요!
+  - 아, 이시카와도 있었네요
+  - 호리입니다
+- - 뭐...!? 그럼 이 분은...
+  - text: 빤-
+    type: plain
+  - 지난번에 만난 이시카와입니다
+- - 죄송합니다... 어, 미야무라
+  - text: 건강의 상
+    type: square
+  - 눈이 좀 나빠...
+- - 호리, 이시카와는 어디 있죠...
+  - 전데요
+  - text: 재밌다...
+    type: shock
