@@ -6,7 +6,7 @@ const yaml = require('js-yaml');
 import './scss/styles.scss';
 import util from './dom-util';
 import {
-  translationType,
+  translation,
   propertiedTranslation,
   cutTranslation,
   imageTranslation,
@@ -16,6 +16,7 @@ import {
 import { noticeOption, Notice } from './elements/notice';
 import {
   translationOption,
+  address as translationAddress,
   Translation as TranslationElement
 } from './elements/translation';
 import { Configuration } from './widgets/configuration';
@@ -29,7 +30,6 @@ import {
 const tlsPath = '/translations' + location.pathname.replace('.html', '.yaml');
 const githubUrl = githubUrlBase + tlsPath;
 const localUrl = chrome.runtime.getURL(tlsPath);
-const editableMode = true;
 
 type Option = {
   fontSize: number;
@@ -145,7 +145,18 @@ function appendHotLinks() {
   );
 }
 
-function renderTranslations(focus?: [string, number, number]) {
+function renderTranslations(focus?: translationAddress) {
+  // Handle negative index
+  if (focus) {
+    log(focus);
+    if (focus[1] < 0) {
+      focus[1] = data[focus[0]].length + focus[1];
+    }
+    if (focus[2] < 0) {
+      focus[2] = data[focus[0]][focus[1]].length + focus[2];
+    }
+  }
+
   for (const img of document.querySelectorAll(
     'img, td[background]'
   ) as NodeListOf<HTMLImageElement | HTMLTableCellElement>) {
@@ -175,24 +186,22 @@ function renderTranslations(focus?: [string, number, number]) {
       };
       if (options.developmentMode && options.editableMode) {
         opt.onclick = (ev: Event): any => {
-          console.log(`clicked ${imageId}`);
-          removeTranslates();
+          log(`clicked ${imageId}`);
           if (!data) {
             data = {};
           }
           data[imageId] = [['']];
+          removeTranslates();
           renderTranslations([imageId, 0, 0]);
         };
       }
       new Notice(opt).render();
     } else {
       const image: imageTranslation = data[imageId];
-      for (let cutIndex = 0; cutIndex < image.length; cutIndex++) {
+      for (let cutIndex: number = 0; cutIndex < image.length; cutIndex++) {
         const cut: cutTranslation = image[cutIndex];
-        const $tlsGroup: HTMLDivElement = document.createElement('div');
-        $tlsGroup.classList.add('translation-group', 'float');
-        $tlsGroup.style.fontSize = `${options.fontSize}mm`;
-        for (let tlsIndex = 0; tlsIndex < cut.length; tlsIndex++) {
+        const $tlsGroup: HTMLDivElement = newTranslationGroup();
+        for (let tlsIndex: number = 0; tlsIndex < cut.length; tlsIndex++) {
           {
             const datum = data[imageId][cutIndex][tlsIndex];
             const text = typeof datum === 'string' ? datum : datum.text;
@@ -204,20 +213,19 @@ function renderTranslations(focus?: [string, number, number]) {
             }
           }
           const opt: translationOption = {
+            datum: data[imageId][cutIndex][tlsIndex],
+            address: [imageId, cutIndex, tlsIndex],
             tag: 'p',
             parent: $tlsGroup,
             type: 'speech',
-            editableMode: options.developmentMode && options.editableMode
+            editableMode: options.developmentMode && options.editableMode,
+            focus:
+              focus &&
+              imageId === focus[0] &&
+              cutIndex === focus[1] &&
+              tlsIndex === focus[2]
           };
           if (options.developmentMode && options.editableMode) {
-            if (
-              focus &&
-              focus[0] === imageId &&
-              focus[1] === cutIndex &&
-              focus[2] === tlsIndex
-            ) {
-              opt.focus = true;
-            }
             opt.oninput = (ev: Event): any => {
               if (ev.target instanceof HTMLInputElement) {
                 const target = ev.target as HTMLInputElement;
@@ -239,99 +247,66 @@ function renderTranslations(focus?: [string, number, number]) {
                 });
               }
             };
-            opt.onkeydown = (ev: KeyboardEvent): any => {
-              if (ev.target instanceof HTMLInputElement) {
-                const target = ev.target as HTMLInputElement;
-                const changed = target.value;
-                const types: translationType[] = [
-                  'speech',
-                  'thought',
-                  'scream',
-                  'plain',
-                  'stroke',
-                  'square',
-                  'shock'
-                ];
-                // Type
-                if (ev.ctrlKey && '1234567'.indexOf(ev.key) > -1) {
-                  ev.preventDefault();
-
-                  log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
-                  // hide datum and text
-                  const datum = data[imageId][cutIndex][tlsIndex];
-                  const text = typeof datum === 'string' ? datum : datum.text;
-                  const type = types[parseInt(ev.key) - 1];
-                  if (typeof datum === 'string') {
-                    if (type == 'speech') {
-                      data[imageId][cutIndex][tlsIndex] = text;
-                    } else {
-                      data[imageId][cutIndex][tlsIndex] = {
-                        text: text,
-                        type: type
-                      };
-                    }
-                  } else {
-                    datum.text = text;
-                    datum.type = type;
-                    data[imageId][cutIndex][tlsIndex] = datum;
-                  }
-
-                  removeTranslates();
-                  renderTranslations([imageId, cutIndex, tlsIndex]);
-                  chrome.storage.local.set(
-                    { [location.pathname]: data },
-                    () => {
-                      log(`${location.pathname} is set`);
-                    }
-                  );
-                  // Stylizing
-                } else if (ev.ctrlKey && ev.key == 'b') {
-                  log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
-                  target.value += '<b></b>';
-                  const position = target.value.length - '</b>'.length;
-                  target.setSelectionRange(position, position);
-                } else if (ev.ctrlKey && ev.key == 'u') {
-                  ev.preventDefault();
-                  log(`Ctrl+${ev.key} at ${[imageId, cutIndex, tlsIndex]}`);
-                  target.value += '<strong class="stroke"></strong>';
-                  const position = target.value.length - '</strong>'.length;
-                  target.setSelectionRange(position, position);
-                  // Enter
-                } else if (!ev.ctrlKey && !ev.shiftKey && ev.key === 'Enter') {
-                  log(`Enter at ${[imageId, cutIndex, tlsIndex]}`);
-                  data[imageId][cutIndex].splice(tlsIndex + 1, 0, '');
-                  removeTranslates();
-                  renderTranslations([imageId, cutIndex, tlsIndex + 1]);
-                } else if (!ev.ctrlKey && ev.shiftKey && ev.key === 'Enter') {
-                  log(`Shift+Enter at ${[imageId, cutIndex, tlsIndex]}`);
-                  data[imageId][cutIndex].splice(tlsIndex, 0, '');
-                  removeTranslates();
-                  renderTranslations([imageId, cutIndex, tlsIndex]);
-                } else if (ev.ctrlKey && ev.key === 'Enter') {
-                  log(`Ctrl+Enter at ${[imageId, cutIndex, tlsIndex]}`);
-                  data[imageId].splice(cutIndex + 1, 0, ['']);
-                  removeTranslates();
-                  renderTranslations([imageId, cutIndex + 1, 0]);
-                  // Backspace
-                } else if (ev.key == 'Backspace' && changed.length === 0) {
-                  log(`Backspace at ${[imageId, cutIndex, tlsIndex]}`);
-                  if (data[imageId][cutIndex].length != 1) {
-                    log('Delete a translate');
-                    data[imageId][cutIndex].splice(tlsIndex, 1);
-                    removeTranslates();
-                    renderTranslations([imageId, cutIndex, tlsIndex - 1]);
-                  } else if (cutIndex !== 0) {
-                    log('Delete a cut');
-                    data[imageId].splice(cutIndex, 1);
-                    removeTranslates();
-                    renderTranslations([
-                      imageId,
-                      cutIndex - 1,
-                      data[imageId][cutIndex - 1].length - 1
-                    ]);
-                  }
-                }
+            opt.onShortcut = (
+              ctrl: boolean,
+              shift: boolean,
+              key: string,
+              text: string
+            ): boolean => {
+              let logMsg: string =
+                (ctrl ? 'Ctrl+' : '') +
+                (shift ? 'Shift+' : '') +
+                `${key} at ${[imageId, cutIndex, tlsIndex]}.`;
+              // Enter
+              if (!ctrl && !shift && key === 'Enter') {
+                data[imageId][cutIndex].splice(tlsIndex + 1, 0, '');
+                focus = [imageId, cutIndex, tlsIndex + 1];
+              } else if (!ctrl && shift && key === 'Enter') {
+                data[imageId][cutIndex].splice(tlsIndex, 0, '');
+                focus = [imageId, cutIndex, tlsIndex];
+              } else if (ctrl && key === 'Enter') {
+                data[imageId].splice(cutIndex + 1, 0, ['']);
+                focus = [imageId, cutIndex + 1, 0];
               }
+              // Backspace
+              else if (key == 'Backspace' && text.length === 0) {
+                const onlyTranslate =
+                  data[imageId][cutIndex].length == 1 && tlsIndex === 0;
+                const onlyCut = data[imageId].length == 1 && cutIndex === 0;
+                if (!onlyTranslate) {
+                  console.log('Delete a translate');
+                  data[imageId][cutIndex].splice(tlsIndex, 1);
+                  focus = [
+                    imageId,
+                    cutIndex,
+                    tlsIndex - 1 >= 0 ? tlsIndex - 1 : -1
+                  ];
+                } else if (!onlyCut) {
+                  console.log('Delete a cut');
+                  data[imageId].splice(cutIndex, 1);
+                  focus = [imageId, cutIndex - 1, -1];
+                }
+              } else {
+                // log(logMsg + ' But ignored.');
+                return false;
+              }
+              log(logMsg);
+              removeTranslates();
+              renderTranslations(focus);
+
+              // Store data
+              chrome.storage.local.set({ [location.pathname]: data }, () => {
+                console.log(`${location.pathname} is set`);
+              });
+              return true;
+            };
+            opt.changeDatum = (datum: translation): any => {
+              data[imageId][cutIndex][tlsIndex] = datum;
+
+              // Store data
+              chrome.storage.local.set({ [location.pathname]: data }, () => {
+                console.log(`${location.pathname} is set`);
+              });
             };
           }
 
@@ -365,6 +340,13 @@ function renderTranslations(focus?: [string, number, number]) {
       }
     }
   }
+}
+
+function newTranslationGroup(): HTMLDivElement {
+  const $div = document.createElement('div');
+  $div.classList.add('translation-group', 'float');
+  $div.style.fontSize = `${options.fontSize}mm`;
+  return $div;
 }
 
 function removeTranslates() {

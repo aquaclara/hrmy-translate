@@ -1,0 +1,209 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm091_120/091/hori_1380.gif:
+- - 그건 바람피는 게 아니야?
+- - 으악- 바람 난 거야, 바람!!
+- - 바람 말고는 없지 않아?
+- - 그게... 바람났다는 건가요?
+hm091_120/091/hori_1381.gif:
+- - text: <big>바람!</big>
+    type: speech
+- - text: ......큭
+    type: scream
+  - text: 빡
+    type: stroke
+  - text: 왜 나마아아안
+    type: plain
+- - 아니... 미안 어쩐지 네가 말하니까 갑자기 욱 하고 올라와서
+  - text: 담담하게
+    type: square
+  - 그래... 다행이야, 별 이유는 없어서... 내가 싫어진 줄 알았어...
+  - text: 긍정파
+    type: square
+- - 그래서 뭐라고? 메일?
+  - 응... 요 며칠 일인데...
+hm091_120/091/hori_1382.gif:
+- - text: 꾹꾹
+    type: plain
+  - text: にまにま
+    type: plain
+  - 호리 행동이 수상해...
+- - 재밌어 보이네, 호리
+  - text: ガチャ
+    type: stroke
+  - 꺄아아악 마, 맘대로 보지 마~!!
+- - 안 봤어어
+  - 윽... 그럼 됐어...
+- - 어, 이제 메일 안 해?
+  - 메, 메일 안 했어
+hm091_120/091/hori_1383.gif:
+- - text: 그런 줄 알았더니...
+    type: square
+  - text: 꾹, 꾹
+    type: plain
+- - 무슨... 게임 아닐까?
+  - text: 온라인 게임
+    type: plain
+- - 아냐... 벨이 울리면 바로 열어서 뭔가 적고
+  - 살짝 봤더니 메일이었어
+- - .......
+hm091_120/091/hori_1384.gif:
+- - text: 뭐, 뭐야- 그렇게 풀 죽을 거 없어! <b>아!</b> 내가 뭐 사 줄게! 뭐가 좋아? 아무거나 말해 봐!
+    type: speech
+- - 그럴 것 없어...
+  - 그러지 말고
+  - text: <big>그럼 코코아</big>
+    type: speech
+  - 역시 필요한 거지!!
+- - 미야무라 기운이 없네
+- - 그래?
+  - 호리 또 무슨 심한 말 한 거 아냐?
+  - 뭐-
+hm091_120/091/hori_1385.gif:
+- - 어
+  - 같이 안 있었네
+- - 응?
+  - 아까 미야무라 혼자서 집에 갔어-
+- - ......?
+- - .....싸웠어?
+hm091_120/091/hori_1386.gif:
+- - 싸운 적 없다고... 생각하는데...
+- - ''
+- - 교문에 있지- 다른 학교 남자애가 누굴 기다린대-
+- - 뭐~ 어디 어디?
+  - 어, 저거 카타기리 교복이야
+hm091_120/091/hori_1387.gif:
+- - ''
+- - ''
+- - text: 힐끔힐끔
+    type: plain
+- - text: 카타기리, 카타기리
+    type: plain
+  - text: 소곤소곤
+    type: plain
+hm091_120/091/hori_1388.gif:
+- - text: 신도 학교 무섭다...
+    type: thought
+  - text: 벌벌
+    type: plain
+  - text: 카타기리라 미안
+    type: plain
+  - 어- 미야무라! 빨리 왔네-
+- - 늦었어... 멍청아
+  - text: がしっ
+    type: plain
+  - 미, 미안해. 외롭게 만들어서...!
+  - text: 웅성웅성
+    type: plain
+- - 직접 물어 보면 되잖아!
+- - 그러는 너는 모르는 사람이랑 치카가 모텔에서 나오면 「뭐 했어?」하고 물어볼 건가
+hm091_120/091/hori_1389.gif:
+- - ...... 휴대폰은 모텔이 아닌데
+  - text: '?'
+    type: plain
+  - 그냥... 대충 그런 비슷한 거잖아, 느낌이
+- - 그리고 남자인지는 모르는 일이고~
+  - text: 새로 사귄 친구일 수도
+    type: plain
+  - 어~... 여자한테 온 메일로 그렇게 싱글벙글할까
+- - 어- 미야무라다-!
+- - ''
+hm091_120/091/hori_1390.gif:
+- - 미야무라랑 같은 반이구나-
+  - 어, 그럼 이시카와도?
+  - 와- 이시키와하고도 아는 사이구나
+- - text: 그래서
+    type: plain
+  - 무슨 얘기하고 있었어?
+  - 나 있어도 돼?
+- - 호리 이야기를 하고 있었는데
+  - text: 악-
+    type: scream
+  - 메일 말이야-
+  - text: 으악
+    type: scream
+- - 아, 미야무라도 호리한테서 메일 왔어?
+hm091_120/091/hori_1391.gif:
+- - 응?
+  - 몰랐어? 호리 이제 겨우 메일 이모티콘을 배웠거든
+- - 메일에 이모티콘?
+- - text: 좀 전까지 호리
+    type: square
+  - text: 어- 안 켜지네
+    type: plain
+  - text: ※ 코드를 안 꽂음
+    type: plain
+  - text: 안 켜져-!
+    type: plain
+  - text: ※ 배터리 다 됨
+    type: plain
+  - text: 어, 플스로 DVD도 볼 수 있어!?
+    type: plain
+  - text: ※ 2를 모름
+    type: plain
+- - 그래서- 간신히 배운 이모티콘으로 매일 나한테 메일 하고 있어
+hm091_120/091/hori_1392.gif:
+- - 어... 나한테는... 이모티콘 써서 메일 안 하는데...
+- - 그러니까 요시카와랑 연습하고 있는 거지?
+  - 뭐- 그런 것 같아!
+- - 잘 됐네, 미야무라
+  - ......
+- - 어?
+  - 뭔데?
+  - text: '?, ?'
+    type: plain
+hm091_120/091/hori_1393.gif:
+- - ''
+- - text: 꾹, 꾹
+    type: plain
+- - 재밌어 보이네
+  - text: 깜짝
+    type: plain
+  - '!'
+- - 우와, 누나 이메일 알록달록하다~!!
+  - 잠깐마안, 보지 마!!
+hm091_120/091/hori_1394.gif:
+- - 그래~ 알록달록하구나...
+  - 그리고 글자가 움직여!
+  - text: 윽
+    type: plain
+- - 이건 뭐야- 읽기 어려운 메일이네-
+  - text: 아, 좀...!!
+    type: scream
+  - text: ぱしっ
+    type: stroke
+- - text: <b>아아앗!!!</b>
+    type: speech
+  - 이거 받는 사람이 남자잖아?
+- - ......!!
+hm091_120/091/hori_1395.gif:
+- - 미야무라, 이것 좀 봐... 요시노리라고...!!
+  - text: 퍽
+    type: stroke
+  - 유키야, 바보야!!
+- - text: 휴-
+    type: plain
+- - 그래서
+- - 어떻게 됐나요, 바람은
+  - 헤어집니까
+  - 어떻게 됐습니까
+  - 어... 아니... 응... 아니~...

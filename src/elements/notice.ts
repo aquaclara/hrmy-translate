@@ -5,6 +5,8 @@ export interface noticeOption extends captionOption {
   onclick?: (ev: Event) => any;
 }
 export class Notice extends Caption {
+  opt: noticeOption;
+
   constructor(opt: noticeOption) {
     opt.class = ['notice', 'float'];
     if (opt.editableMode) {
@@ -14,9 +16,11 @@ export class Notice extends Caption {
     super(opt);
   }
 
-  beforeAppendHook($notice: HTMLInputElement, opt: noticeOption) {
-    if (opt.editableMode) {
-      $notice.onclick = opt.onclick;
+  createElement(): HTMLElement {
+    const $element = super.createElement();
+    if (this.opt.editableMode) {
+      $element.onclick = this.opt.onclick;
     }
+    return $element;
   }
 }

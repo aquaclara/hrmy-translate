@@ -16,44 +16,47 @@ export interface captionOption {
 
 export class Caption {
   opt: captionOption;
+  $element: HTMLElement;
+
   constructor(opt: captionOption) {
+    opt = opt || {};
+    opt.tag = opt.tag || 'div';
+    opt.class = opt.class || [];
+    opt.class.push('caption');
+    opt.parent = opt.parent || util.getBodyElement();
     this.opt = opt;
   }
 
-  render() {
-    const opt: captionOption = this.opt || {};
-    opt.tag = opt.tag || 'div';
-    opt.parent = opt.parent || util.getBodyElement();
+  createElement(): HTMLElement {
+    const opt = this.opt;
 
-    const $caption = document.createElement(opt.tag);
-    $caption.classList.add('caption');
-    $caption.classList.add(...opt.class);
+    const $element = document.createElement(opt.tag);
+    $element.classList.add(...opt.class);
 
-    $caption.innerHTML = opt.message;
-    $caption.style.fontSize = `${opt.fontSize}mm`;
-    if ($caption instanceof HTMLAnchorElement && opt.href) {
-      $caption.href = opt.href;
+    $element.innerHTML = opt.message;
+    $element.style.fontSize = `${opt.fontSize}mm`;
+    if ($element instanceof HTMLAnchorElement && opt.href) {
+      $element.href = opt.href;
     }
     if (opt.marginTop) {
-      $caption.style.marginTop = opt.marginTop;
+      $element.style.marginTop = opt.marginTop;
     }
     if (opt.marginLeft) {
-      $caption.style.marginLeft = opt.marginLeft;
+      $element.style.marginLeft = opt.marginLeft;
     }
 
     if (opt.top) {
-      $caption.style.top = opt.top;
+      $element.style.top = opt.top;
     }
     if (opt.left) {
-      $caption.style.left = opt.left;
+      $element.style.left = opt.left;
     }
 
-    this.beforeAppendHook($caption, opt);
-
-    opt.parent.appendChild($caption);
-
-    this.afterAppendHook($caption, opt);
+    return $element;
   }
-  beforeAppendHook($caption: HTMLElement, opt: captionOption) {}
-  afterAppendHook($caption: HTMLElement, opt: captionOption) {}
+
+  render() {
+    this.$element = this.createElement();
+    this.opt.parent.appendChild(this.$element);
+  }
 }

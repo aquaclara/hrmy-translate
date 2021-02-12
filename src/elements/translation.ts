@@ -1,42 +1,163 @@
 import { captionOption, Caption } from './caption';
-import { translationType } from '../translation';
+import {
+  translation as datum,
+  propertiedTranslation as propertiedDatum,
+  translationType
+} from '../translation';
+
+export type address = [string, number, number];
+
 export interface translationOption extends captionOption {
+  datum: datum;
+  address: address;
   type: translationType;
+  focus: boolean;
   editableMode?: boolean;
   oninput?: (ev: Event) => any;
-  onkeydown?: (ev: Event) => any;
-  focus?: boolean;
+  onShortcut?: (
+    ctrl: boolean,
+    shift: boolean,
+    key: string,
+    text: string
+  ) => boolean;
+  changeDatum?: (datum: datum) => any;
 }
 
 export class Translation extends Caption {
+  opt: translationOption;
+
   constructor(opt: translationOption) {
-    opt.class = ['translation', opt.type];
-    opt.tag = 'p';
-    if (opt.editableMode) {
-      opt.tag = 'input';
-    }
+    opt.tag = opt.editableMode ? 'input' : 'p';
+    opt.class = opt.class || [];
+    opt.class.push('translation', opt.type);
     super(opt);
+    this.opt = opt;
   }
 
-  beforeAppendHook($translate: HTMLInputElement, opt: translationOption) {
-    if (opt.editableMode) {
-      $translate.type = 'text';
-      $translate.defaultValue = opt.message;
-      $translate.size = Translation.getPreferSize(opt.message.length);
-      $translate.oninput = opt.oninput;
-      $translate.onkeydown = opt.onkeydown;
+  createElement(): HTMLElement {
+    if (!this.opt.editableMode) {
+      return super.createElement();
+    }
+
+    const $element: HTMLInputElement = super.createElement() as HTMLInputElement;
+    $element.type = 'text';
+    $element.defaultValue = this.opt.message;
+    $element.size = Translation.getPreferSize(this.opt.message.length);
+    $element.oninput = this.opt.oninput;
+    $element.onkeydown = this._onShortcut.bind(this);
+
+    return $element;
+  }
+
+  render() {
+    super.render();
+    if (this.opt.editableMode && this.opt.focus) {
+      console.log('focus');
+      const $element = this.$element as HTMLInputElement;
+      const focus = () => {
+        $element.focus();
+        $element.selectionStart = $element.selectionEnd = $element.value.length;
+      };
+      focus();
+      setTimeout(focus, 100);
     }
   }
 
-  afterAppendHook($translate: HTMLInputElement, opt: translationOption) {
-    if (opt.focus) {
-      $translate.focus();
-      setTimeout(function() {
-        $translate.focus();
-        $translate.selectionStart = $translate.selectionEnd =
-          $translate.value.length;
-      }, 100);
+  _onShortcut(ev: KeyboardEvent) {
+    if (!(ev.target instanceof HTMLInputElement)) {
+      return;
     }
+
+    const target = ev.target as HTMLInputElement;
+    if (this.opt.onShortcut(ev.ctrlKey, ev.shiftKey, ev.key, target.value)) {
+      return;
+    }
+
+    let datum = this._toPropertiedDatum(this.opt.datum);
+    let logMsg =
+      (ev.ctrlKey ? 'Ctrl+' : '') +
+      (ev.shiftKey ? 'Shift+' : '') +
+      `${ev.key} at ${this.opt.address}.`;
+    // Type
+    const types: translationType[] = [
+      'speech',
+      'thought',
+      'scream',
+      'plain',
+      'stroke',
+      'square',
+      'shock'
+    ];
+    if (ev.ctrlKey && '1234567'.indexOf(ev.key) > -1) {
+      // Suppress select tab
+      ev.preventDefault();
+      const newType = types[parseInt(ev.key) - 1];
+      this.changeType(datum.type, newType);
+      datum.type = newType;
+    }
+    // Stylizing
+    else if (ev.ctrlKey && ev.key == '.') {
+      this._stylize(target, '<big>', '</big>');
+    } else if (ev.ctrlKey && ev.key == 'b') {
+      this._stylize(target, '<b>', '</b>');
+    } else if (ev.ctrlKey && ev.key == 'u') {
+      // Suppress view source shortcut
+      ev.preventDefault();
+      this._stylize(target, '<strong class="stroke">', '</strong>');
+    } else {
+      // console.log(logMsg + ' But ignored.');
+      return;
+    }
+    console.log(logMsg);
+    target.size = Translation.getPreferSize(target.value.length);
+
+    datum.text = target.value;
+    this.opt.changeDatum(datum);
+  }
+
+  _stylize(target: HTMLInputElement, opening: string, ending: string): void {
+    const oldStart = target.selectionStart;
+    const oldEnd = target.selectionEnd;
+    const selected = target.value.substring(oldStart, oldEnd);
+    target.value =
+      target.value.slice(0, oldStart) +
+      opening +
+      selected +
+      ending +
+      target.value.slice(oldEnd);
+    console.log(
+      oldStart + opening.length,
+      ' ',
+      oldStart + (opening + selected).length
+    );
+    target.setSelectionRange(
+      oldStart + opening.length,
+      oldStart + (opening + selected).length
+    );
+  }
+
+  _toPropertiedDatum(original: datum): propertiedDatum {
+    if (typeof original === 'string') {
+      return {
+        text: original,
+        type: 'speech'
+      };
+    }
+    return original;
+  }
+
+  _minifyDatum(original: datum): datum {
+    if (typeof original === 'string') {
+      return original;
+    }
+    if (Object.keys(original).length == 2 && original.type == 'speech') {
+      return original.text;
+    }
+  }
+
+  changeType(old: string, newClass: string) {
+    this.$element.classList.remove(old);
+    this.$element.classList.add(newClass);
   }
 
   static getPreferSize(length: number): number {

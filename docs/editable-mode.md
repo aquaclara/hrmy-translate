@@ -38,3 +38,4 @@ layout: default
 | -------- | --------------------------------------------------------------------------------------------- |
 | CTRL + u | <span style="-webkit-text-stroke-width: 1px;">`<strong class="stroke">테두리</strong>`</span> |
 | CTRL + b | <b>`<b>진하게</b>`</b>                                                                        |
+| CTRL + . | <big>`<big>크게</big>`</big>                                                                  |
