@@ -25,6 +25,7 @@ export interface translationOption extends captionOption {
 
 export class Translation extends Caption {
   opt: translationOption;
+  types: translationType[];
 
   constructor(opt: translationOption) {
     opt.tag = opt.editableMode ? 'input' : 'p';
@@ -32,6 +33,15 @@ export class Translation extends Caption {
     opt.class.push('translation', opt.type);
     super(opt);
     this.opt = opt;
+    this.types = [
+      'speech',
+      'thought',
+      'scream',
+      'plain',
+      'stroke',
+      'square',
+      'shock'
+    ];
   }
 
   createElement(): HTMLElement {
@@ -78,20 +88,12 @@ export class Translation extends Caption {
       (ev.ctrlKey ? 'Ctrl+' : '') +
       (ev.shiftKey ? 'Shift+' : '') +
       `${ev.key} at ${this.opt.address}.`;
+
     // Type
-    const types: translationType[] = [
-      'speech',
-      'thought',
-      'scream',
-      'plain',
-      'stroke',
-      'square',
-      'shock'
-    ];
     if (ev.ctrlKey && '1234567'.indexOf(ev.key) > -1) {
       // Suppress select tab
       ev.preventDefault();
-      const newType = types[parseInt(ev.key) - 1];
+      const newType = this.types[parseInt(ev.key) - 1];
       this.changeType(datum.type, newType);
       datum.type = newType;
     }
@@ -158,7 +160,7 @@ export class Translation extends Caption {
   }
 
   changeType(old: string, newClass: string) {
-    this.$element.classList.remove(old);
+    this.$element.classList.remove(...this.types);
     this.$element.classList.add(newClass);
   }
 
