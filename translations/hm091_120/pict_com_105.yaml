@@ -1,0 +1,207 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm091_120/096/hori_1444.gif:
+- - // 호리미야 9권 62화
+  - 아~
+- - 초등학교 캠퍼 갔을 때야
+  - text: 센고쿠 집
+    type: square
+  - 6학년?
+  - 응
+- - 어째... 센고쿠 넌 하나도 안 변했냐...
+  - text: 힐끔 힐끔
+    type: plain
+  - 어, 그... 그런가?
+- - 어-? 회장, 그건 뭐야? 언제 건데?
+  - 아, 아무것도 아니야... 재미 없는 사진이라서...
+hm091_120/096/hori_1445.gif:
+- - text: 으아~
+    type: scream
+- - 미야무라! 그거 언제야!? 언제 거냐!?
+  - 미야무라, 우리 게임할래!? 우리 집 아직 슈퍼 패미컴 쌩쌩 돌아가! 전에 해보고 싶댔지!
+  - text: '팔락... 팔락... 팔락... 팔락... 팔락... '
+    type: plain
+- - text: 팔락...
+    type: stroke
+- - text: <big><b>푸핫!!</b></big> 어디- 회장네 어머니인 듯한 글씨로 「카케루 12세 이발 실패」라고 적혀 있는데...
+    type: speech
+  - 와~ 보고 싶다~!! 볼래! 미야무라! 센고쿠랑 바꾸자!!
+  - text: 앨범⇄센고쿠
+    type: square
+  - text: 안 돼애애애
+    type: scream
+hm091_120/096/hori_1446.gif:
+- - 와~...
+  - text: 실컷 웃었네
+    type: plain
+  - ....응?
+  - text: 살생이다-!!
+    type: plain
+- - ''
+- - text: 타악
+    type: stroke
+- - text: 팔락
+    type: plain
+hm091_120/096/hori_1447.gif:
+- - 롤리콤
+  - 아, 아니야!!
+- - 미야무라는 아래로 3살부터라면 위로 몇 살까지 커버되냐?
+  - text: 40이냐 50이냐
+    type: plain
+  - text: 유치원→?
+    type: plain
+  - 아래도 고교생으로 부탁합니다
+- - 쿄짱은 요즘도 남 앞에서 당당히 옷 갈아입어?
+- - ''
+hm091_120/096/hori_1448.gif:
+- - 여자애가 남 앞에서 갈아입겠어...?
+  - text: 고3인데
+    type: plain
+  - 어?... 아니... 하지만 쿄짱은 얼마 전까지...
+- - 1교시 체육이었잖아-!! 센고쿠, 학생회실 5분만 빌릴게-!!
+  - text: 쾅
+    type: stroke
+- - 상관 없긴 한데...
+  - 아우- 교실까지 갈 시간이 없어-!!
+- - text: 아무렇지 않게 갈아입기 시작-!!!
+    type: shock
+  - ......쿄짱 혹시 부끄럽다는 생각 안 들어?
+hm091_120/096/hori_1449.gif:
+- - 응?
+  - 센고쿠가 있든 말든 난... 목욕도 하고 화장ᄉᅠᆯㅣ도 갈 수 있는데 왜?
+- - text: 그 정도까지 아무것도 아닌 존재라니-!!!
+    type: shock
+  - text: <b>으아-</b>
+    type: speech
+  - 「미야무라 앞에선?」이라고 물어봤는데...
+- - 어...
+- - 그랬더니 「미야무라 앞에서 그딴 짓을 어떻게 해!」라며 버럭 화내더라...
+  - text: 그런 짓을 어떻게 해, 죽을래?!
+    type: scream
+  - text: 자, 잘못했습니다!!
+    type: scream
+  - 그... 그렇구나... 어쩐지 미안하네...
+hm091_120/096/hori_1450.gif:
+- - 어렸을 땐 아무렇지 않게 목욕도 같이 했지만...
+  - text: 호리 아빠가
+    type: plain
+  - text: 「흙투성이잖아, 좀 씻고 와라」라며
+    type: plain
+  - 온 가족이 다 친했나 봐-
+- - 응...?
+  - 가만... 몇 살 때더라...
+- - 유치원 때야?
+  - 아니... 자, 잠깐만 있어봐...
+- - text: 어쩐지 말도 안 되는 나이까지 같이 목욕했던 것 같은데-!!
+    type: shock
+  - text: 기억해내기 두렵다↓
+    type: plain
+  - text: ごーん
+    type: stroke
+hm091_120/096/hori_1451.gif:
+- - text: 말 못해-!!
+    type: thought
+  - 그래, 기껏해야 초등학교 1학년까지겠지-
+  - text: 아하하하하하
+    type: plain
+  - text: 그치-
+    type: plain
+  - 아하하하 하하하하하
+- - 응? 센고쿠?
+- - 아- 걔는 워낙 공기 같은 애라서-
+  - text: 공기- 공기-
+    type: plain
+  - text: 고, 공기...!!
+    type: thought
+- - ....
+  - 몇 살까지 같이 목욕했어?
+hm091_120/096/hori_1452.gif:
+- - 어- 갑자기 왜-
+  - 몇 살이긴 그야
+- - 열...
+  - text: 헉
+    type: stroke
+- - text: 어... 아- 아니... <b>일곱?</b> <b>여섯</b>이나 <b>일곱 살</b>... 전후...?
+    type: speech
+  - text: 방금 「열」이라고 했잖아-!!!
+    type: shock
+- - text: 호리, 뭐라고...? 10... 뭐? <big><b>열어섯</b></big>이라거나...?
+    type: speech
+  - text: ※1년 전
+    type: plain
+  - text: 호리는 빠른 년생이던가
+    type: plain
+  - text: 암만 그래도 <big>열여섯</big>은 아니지!!
+    type: speech
+hm091_120/096/hori_1453.gif:
+- - text: <sup>아니</sup> 비겁해!! 그건 유도심문이다!
+    type: speech
+  - 뭘 그렇게까지... 숨기고 싶다면 말 안 해도 돼
+- - 그럼 미야무라의 비밀과 바꾸기!
+  - 어? 난 비밀 같은 거 없는데-!!
+- - 뭔가 있을 거 아냐- 비밀 한두 개쯤은-
+  - 어~...
+- - text: 어떡하지- 진짜 없는데...
+    type: thought
+  - text: 음- 음-
+    type: plain
+  - text: 지나친 정직
+    type: square
+hm091_120/096/hori_1454.gif:
+- - text: 문신도 도수 없는 안경도 다 알고-...
+    type: thought
+  - text: 힐끔
+    type: plain
+- - 그 침묵이 수상해~... 거짓말을 꾸리며고 머리 굴리는 건 아니겠지
+  - 서, 설마!
+- - text: <big>아</big> 사실은 저...
+    type: speech
+  - 아야사키가 내 가슴 만진 적이... 있어...
+- - ......어떤 상환에서?
+  - text: '?'
+    type: plain
+  - text: '?'
+    type: plain
+  - text: '?'
+    type: plain
+  - text: '?'
+    type: plain
+  - 어-... 응? 뭐더라...
+  - text: 애매모호
+    type: plain
+hm091_120/096/hori_1455.gif:
+- - 미야무라, 봐봐-!! 성공했어-!!
+  - 이제 맛 없지 않아-!!
+- - 와~ 치즈케이크네-
+  - text: 냄새 좋다-
+    type: plain
+  - 있지, 안 태웠어!
+- - ......
+  - text: 냠냠
+    type: plain
+- - text: 초콜릿 맛이 나~!!!
+    type: shock
+  - text: 천잰가!?
+    type: thought
+  - text: 냠
+    type: plain
+  - 어쩐지~ 토오루가 치즈케이크 좋아하는 것 같지-

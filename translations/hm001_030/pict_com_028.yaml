@@ -60,7 +60,7 @@ hm001_030/022/hori_405.gif:
     type: stroke
   - text: 어어어-!?
     type: scream
-- - // 控
+- - '// 원문: 控'
   - text: 호리! 필요한 사진이 있으면 번호를 기다려!!
     type: scream
   - text: 바로 뜯지 마!!

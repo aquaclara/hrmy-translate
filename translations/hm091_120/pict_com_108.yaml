@@ -1,0 +1,220 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm091_120/099/hori_1480.gif:
+- - text: 안녕, 나 타니하라 마키오
+    type: square
+  - 갑작스럽지만 여긴 맥도날드
+- - text: 중학생 때 괴롭혔던 애랑 지금 밥을 먹고 있어
+    type: square
+  - text: 어쩐지 이 애랑 나는 사이 좋아진 것 같아
+    type: square
+- - text: <big>왜?</big>
+    type: speech
+- - text: 어? 보통 피하지 않아? 왜? 하는 생각이 아까부터 머리속을 어지럽게 해
+    type: square
+  - ....
+hm091_120/099/hori_1481.gif:
+- - ....미야무라, 재밌어?
+- - 재, 재밌어-
+  - text: 에헤헷
+    type: plain
+- - text: <big>뭐어어어어야 그 반응!!</big>
+    type: square
+  - text: 에헤헷!?
+    type: thought
+  - text: 이 녀석한테 나는 뭐야!?
+    type: square
+- - 그보다 왜 그렇게 즐거운 얼굴로 있는 거야, 그냥 휴대폰 같은 거 만져, 메일 같은 거 해!!
+  - text: 생글 생글
+    type: plain
+  - text: 이 분위기 뭐야. 이 분위기 뭐야.
+    type: square
+hm091_120/099/hori_1482.gif:
+- - text: 둘만 남기고 가지 마세요, 점원님 빨리 와 주세요-!! 번호 5번 손님이 지금 곤경에 처했습니다!!
+    type: square
+  - '5'
+  - text: 부들부들
+    type: plain
+- - 미, 미안해, 재미 없지?
+  - 어? 안 그래
+- - 다행이다~
+  - text: 이런 상황이 아까부터 수도 없이 반복!!!
+    type: square
+- - text: 그랬더니 아까부터 여기를 보면서 소근거리는 거기 두 명, 다 들려!!
+    type: square
+  - text: 소곤소곤, 소곤소곤
+    type: plain
+  - text: 수상해~ 저 둘~
+    type: plain
+  - text: 안 수상해!!!
+    type: square
+hm091_120/099/hori_1483.gif:
+- - 어, 요, 요즘 학교는 어때?
+  - 어... 아~... 시험도 끝났고... 지금은 조용해...
+- - text: 저기 그리고 신도가 요 전에 놀러 와서 있지, 음- 그리고 또- 이시지마랑 만났어- 담배피고 있었는데-
+    type: plain
+  - text: 어... 분명히 여자친구지... <small>이야기를 안 하네...</small>
+    type: speech
+- - 쿄...... 호리는... 잘 지내?
+  - 어?... 호리?
+- - 뭐 호리 얘기는 그래서... 아, 그보다 타니하라는 학교 어때?
+  - text: 아하
+    type: plain
+  - text: 마마마말 돌렸어-!!!
+    type: square
+hm091_120/099/hori_1484.gif:
+- - text: 뭐야!? 숨길 필요가 어딨지!? 그냥 「잘 지내」 한 마디 하면 되잖아!!
+    type: square
+  - 어~... 뭐 그냥... 그래?
+  - 흠-
+- - text: 뭐지? 설마 이 녀석 사실은 여자에겐 흥미 없는 그런 거 아니겠지...
+    type: square
+  - 아니 잠깐... 중학교 친구도 남자밖에 없고...
+- - text: 뭐야? 쿄코는 위장인가...?
+    type: square
+  - text: 사실은 신도나 그 주위랑 사귀는 거 아닐까...?  내가 이상한가!? 내가 이상한가!?
+    type: square
+- - ''
+hm091_120/099/hori_1485.gif:
+- - text: 왜 부끄러워 하는 건데에에에에에에
+    type: square
+  - text: 확-
+    type: stroke
+- - text: 바본가!? 넌 바보냐!?
+    type: square
+  - text: 꺄악-!
+    type: scream
+  - text: 그리고 여자 두 명 좋아하지 마!! ○!
+    type: square
+  - text: 점원님 치킨너겟 좀 빨리-!!
+    type: square
+  - .....
+- - 어... 하, 항상 신도랑은 뭐하고 놀아?
+  - 신도랑 말이지-... 어- 저기...
+- - 방에서 영화를 보거나~ 테트리스나~ 내가 생각한 케이크를 먹고 감상을 물어보고~
+  - 거의 항상 자고 가니까~... 밤에 식당에 가서 얘기하기도 하고~...
+hm091_120/099/hori_1486.gif:
+- - 커플-!
+  - // ※ 2012년에 방송한 연애 토크 버라이어티
+  - 아~.. 재밌겠네~...
+  - text: OK!! 브라더!! 그 이상 듣고 싶지 않아!
+    type: square
+  - 응, 타니하라도 다음에 놀러와-
+  - 어...
+- - 오늘은 이시지마는 안 왔네-?
+  - text: 그러고보니
+    type: plain
+  - text: 그만 해-!! 히카루를 끌어들이지마-!! 그 녀석은 저번 달에 막 생긴 여자친구가!!
+    type: square
+- - 미야무라... 내가 이런 거 묻긴 이상하지만... 학교... 아니 친구들이랑 잘 지내냐...?
+- - 잘 지내~!! 이렇게 타니하라랑 떠들고... 물론... 학교도...
+  - text: 난 상관 없잖아-!!!
+    type: square
+  - text: 얼른 치킨너겟만 먹고 여기서 나가자-!!!
+    type: square
+hm091_120/099/hori_1487.gif:
+- - 호리랑은 헤어졌다거나...?
+  - 응!?
+  - 아니... 어쩐지 얘기하고 싶지 않아 하는 것 같아서...
+- - 그렇지 않은데...?
+  - text: 무서울 만큼 무표정인데요-!!
+    type: square
+- - 아니... 괜히... 물어봐서 미안... 응
+  - text: ↙여자 친구 얘기를 나불나불 하는 건 안 좋다고 생각 중
+    type: plain
+  - text: 응...? 얘 분명 전에 쿄코를 때리고, 짐꾼으로 쓰고 그랬지 않았나...?
+    type: square
+- - text: 여자=시종이라고 생각하시나요...!?
+    type: square
+  - text: 치킨너겟...
+    type: thought
+hm091_120/099/hori_1488.gif:
+- - text: 아무 생각 없는 것 같은 얼굴을 하고선 시꺼먼 속내!!
+    type: square
+  - text: 일본의 미래가 어둡다!!
+    type: square
+- - 뭐야? 목 조르는 플레이나 얼굴 때리는 거 하고 그래?
+  - text: 이판사판↓
+    type: plain
+  - 아니면 그냥 평범해?
+  - text: 아니지?-!!
+    type: plain
+- - text: 깜짝
+    type: plain
+  - 그야 평범하지...
+- - text: <big>분명히 때리는 거야!!</big> 지금 좀 욱한 말투였어!! 나 지금 여자 때리고 다니는 사람이랑 이야기 하고 있어!!
+    type: square
+  - text: 길만 걸어도 「야단쳐 달라」고 하니...
+    type: thought
+  - text: 으아아아
+    type: plain
+hm091_120/099/hori_1489.gif:
+- - 아, 미야무라, 뭐 마실래? 이제 없지? 내가 살게
+  - 아, 아니야, 괜찮아!!
+- - 아니 괜찮으니까. 치킨너겟도 받아올게, 분명히 잊어버렸을 거야-
+  - 아무거나 좋아하는 거로 해
+- - 그럼 콜라...
+  - 알았어, L이지?
+  - text: 아니 <big>S</big>로
+    type: speech
+- - text: 호오, 또 <big><b>S</b></big>라니......!!!
+    type: speech
+  - text: ←이제 그런 식으로밖에 생각이 안 됨
+    type: plain
+  - text: 과연
+    type: thought
+  - text: 꿀꺽
+    type: plain
+hm091_120/099/hori_1490.gif:
+- - 치킨너겟 왜 안 나와!
+  - 죄, 죄송합니다!!
+  - 콜라 하나 주쇼
+  - 주문 받았습니다!!
+  - text: 우선 점원에게 화풀이
+    type: square
+- - '// 뜻모르겠음: ガンくれてやった'
+  - text: 그리고 아까부터 ●모호● 시끄러운 여자에게 경고해 준다
+    type: square
+- - '// 원문: 抑制'
+  - text: 콜라라도 뿌릴까 싶었지만 자제
+    type: square
+  - text: 나도 대견해
+    type: square
+  - text: M으로 했어
+    type: plain
+  - text: 고마워-
+    type: plain
+- - 그래도 타니하라랑 편하게 얘기할 수 있어서 다행이야-
+  - 진짜 미움 받고 있다고 생각했어
+hm091_120/099/hori_1491.gif:
+- - text: 방... 방긋
+    type: plain
+- - 친구가 돼서 다행이야-
+  - text: 방긋-
+    type: plain
+- - ''
+- - text: 친구부터 시작하겠다는 거냐-!!!
+    type: square
+  - text: <big><b>덜컹</b></big>
+    type: speech
+  - 타니하라!! 괜찮아!? 무슨 일이야!!
+  - 고객님

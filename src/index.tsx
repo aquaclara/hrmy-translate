@@ -264,6 +264,9 @@ function renderTranslations(focus?: translationAddress) {
               } else if (!ctrl && shift && key === 'Enter') {
                 data[imageId][cutIndex].splice(tlsIndex, 0, '');
                 focus = [imageId, cutIndex, tlsIndex];
+              } else if (ctrl && shift && key === 'Enter') {
+                data[imageId].splice(cutIndex, 0, ['']);
+                focus = [imageId, cutIndex, 0];
               } else if (ctrl && key === 'Enter') {
                 data[imageId].splice(cutIndex + 1, 0, ['']);
                 focus = [imageId, cutIndex + 1, 0];

@@ -94,7 +94,7 @@ hm001_030/025/hori_481.gif:
     type: scream
   - text: 홈쇼핑으로만 살아!!
     type: scream
-  - // 息絶えろ
+  - '// 원문: 息絶えろ'
   - text: 숨도 쉬지 마!!
     type: plain
 hm001_030/025/hori_482.gif:

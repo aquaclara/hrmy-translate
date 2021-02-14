@@ -83,7 +83,7 @@ hm001_030/029/hori_549.gif:
     type: plain
 - - text: 아-!! 호리!!
     type: scream
-  - // 手ぶら置き勉
+  - '// 원문: 手ぶら置き勉'
   - text: 책은 사물함에 두는 편→
     type: plain
   - text: 이제 다 나았어?
