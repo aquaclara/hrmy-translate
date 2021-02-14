@@ -14,6 +14,8 @@
 
 번역은 진행중에 있습니다. 진행도는 [이 링크](https://aquaclara.github.io/hrmy-translate/#%EB%B2%88%EC%97%AD-%EC%A7%84%ED%96%89%EB%8F%84)에서 확인해주세요.
 
+이 리포지토리 번역판의 번역 원칙은 [별도 페이지](https://aquaclara.github.io/hrmy-translate/translation-policy)를 참고하세요.
+
 ## 설치
 
 [별도 페이지](https://aquaclara.github.io/hrmy-translate/)를 참고하세요.
@@ -24,6 +26,7 @@
 
 - Github에 익숙한 경우 사용자가 번역을 기부할 수 있습니다. yaml 파일을 수정하여 [Pull Request] 형태로 제출해주세요.
 - 이 리포를 포크하거나, zip 파일만을 수정해 새 번역본이나 배포판을 생성할 수 있습니다.
+- 브라우저 상에서 번역을 수정할 수 있는 초보적인 기능을 제공하고 있습니다. [별도 페이지](https://aquaclara.github.io/hrmy-translate/editable-mode)를 참고하세요.
 
 ## 빌드
 
