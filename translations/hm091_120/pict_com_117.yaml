@@ -1,0 +1,178 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm091_120/106/hori_1596.gif:
+- - // 호리미야 10권 68화
+- - ''
+- - 너희들 침묵이 너무 길다
+- - 긴 게 아니라 대화가 안 이어지는 거야
+  - 카케루, 너도 이 아저씨 싫지
+  - 어?
+hm091_120/106/hori_1597.gif:
+- - 싫을 리가. 난 그냥 추억을 회상하고 있었을 뿐인데
+  - 그렇지, 카케루
+  - 네? 아... 네
+- - 추워-
+  - 아! 회장! 회장이 있네-!
+- - 어서 와라-
+  - 어서들 들어와
+- - 아니
+  - 응?
+hm091_120/106/hori_1598.gif:
+- - 왜 한쪽에 셋이나 앉아, 둘은 건너편에 앉으면 되잖아!
+  - 창문 앞이라서 춥단 말이야
+- - 회장은 말라서 틈새로 냉기가 숭숭 들어오네-
+  - text: 아하하하
+    type: plain
+  - text: 미안하다
+    type: square
+- - 미야무라는... 왜 왔지? 이 집에 하숙하니?
+  - text: 자연스럽게 들어오던데
+    type: plain
+  - 뭐 반쯤은요...
+- - 사이가 좋아서 그렇지
+  - text: 아하하 젊음이란 대단하지
+    type: plain
+  - 흠... 하긴 우리 카케루하고는 상관없는 얘기니까
+hm091_120/106/hori_1599.gif:
+- - 네?
+- - 우리 카케루에엔 여자친구 같은 건 필요 없다는 얘기야
+  - 공부에 방해되니까
+- - .....
+- - 회장, 무슨 소리야? 집엔 숨기고 있어?
+  - text: 소곤 소곤
+    type: plain
+  - 숨긴다기 보다... 말할 타이밍을 놓쳤다고 할까
+hm091_120/106/hori_1600.gif:
+- - ''
+- - 『아하... 그런 비밀이 있단 말이지...』하는 얼굴
+  - 회장, 추워? 갑자기 엄청나게 떠는데
+- - 말하지 마
+  - text: <b><big><big>어!?</big> 왜!?</big></b> 뭘 말야!?
+    type: speech
+- - 뭘?
+  - 무슨 일이지?
+hm091_120/106/hori_1601.gif:
+- - .....
+- - text: 폭탄이냐......
+    type: square
+  - text: 에에- 그냥 말해- 오래 전부터 사귀는 여자애가 있다고-
+    type: plain
+- - text: 아, 그러고보니 오늘은 아야사키 안 만났어? 어? 비밀이랬나? 미안!
+    type: plain
+  - text: 천연 폭탄이냐......
+    type: square
+- - 더 고약한 건 천연 폭탄... 너다!
+  - text: '?'
+    type: plain
+  - 난 인간인데~
+hm091_120/106/hori_1602.gif:
+- - 카케루도... 좋아하는 사람 정도 있어도 되잖아
+  - 그런 것까지 막기만 하면 갑갑하지 않겠어
+- - text: 어, 좋아, 흐름이 좋다!!
+    type: square
+  - text: 집에 돌아가서 찜찜하지 않을 정도만 돼도 좋아
+    type: thought
+- - 넌 닥치고 있어
+  - text: 닥치고
+    type: plain
+  - 우리 집 방침에 끼어들지 말고
+- - text: 어쩐지...
+    type: thought
+  - text: 이건...
+    type: thought
+  - text: 어른 대 어른이라기 보다...
+    type: thought
+hm091_120/106/hori_1603.gif:
+- - ......
+  - text: 고등학생들 싸움이야...!
+    type: thought
+  - ......
+- - 네 생각이 고리타분한 거야!
+  - 요즘 세상에 뭐냐
+- - 어따 대고 너야! 내가 두 살 위거든!?
+  - text: 위거든!?
+    type: plain
+  - 쉬는 시간마다 교무실에 불려가던 녀석이 이래라저래라 하지 마!
+- - 도시락 잊어먹고 왔을 때 내가 매점 빵도 사줬잖아
+  - 말은 똑바로 해! 80엔짜리 빵주고 나한테 100엔 받아갔잖아!!
+hm091_120/106/hori_1604.gif:
+- - 쪼잔해!!! 쪼잔한 자식!! 쿄코! 넌 이런 어른이 되지 마라!
+  - text: 20가지고!?
+    type: plain
+  - text: 사기야-!!
+    type: plain
+  - 카케루, 들었니!? 명백한 사기야-!!
+- - 아- 아- 아- 그래- 비오는 날 얕은 줄 알았던 물웅덩이가 생각보다 깊어서 무르팍까지 푹 젖은 얘기 해도 되지-!!
+  - 이미 말했잖아!!
+- - 1학년 주제에 5과목 시험보는 날 다 끝나고 방과 후에 학교에 온 바보에 비하면 양반이지!!
+  - 아니, 누가 자전거 앞바퀴를 훔쳐가서 그래
+  - text: 걸어오면 되잖아
+    type: scream
+- - 창피해...
+  - text: 제발 그만 말했으면
+    type: plain
+  - 그래? 우린 늘 이래서 별로
+hm091_120/106/hori_1605.gif:
+- - 사이가 참 좋으신가 봐요
+- - 그래, 센고쿠!! 나의 벗이여!!
+  - 벗은 얼어 죽을!! 그렇게 고등학교 때 내 품격을 뿌리채 날려놓곤!!
+- - 졸업식 때 학생회장으로서 답사를 읽을 때 타이밍 맞춰 재채기했지
+  - text: 에취
+    type: plain
+  - 킥킥킥
+  - 그래서 퇴장할 때까지 난 웃음거리였다고!!
+- - 그 재치기는 ...재학생 대표였어
+  - 그런 대표 없었어!! 뭘 그렇게 당당히!!
+hm091_120/106/hori_1606.gif:
+- - 그런 것보다 센고쿠 여자친구 얘기나 하자고
+  - text: <b><big>으</big>아아악</b> 두 분의 추억을 더 들려 주세요-!!
+    type: speech
+- - 어머- 북적북적하네
+- - ''
+- - text: 코야나기, 그렇지!? 내 평판은 늘 호리 때문에 떨어졌지!?
+    type: plain
+  - text: 쿨-
+    type: plain
+  - text: 그래, 하지만 후배들은 센고쿠를 재밌는 사람이라고 했어
+    type: plain
+  - text: 잘 됐네, 내 덕분에 오래 기억 되고
+    type: plain
+hm091_120/106/hori_1607.gif:
+- - 센고쿠, 수학여행 갔다 왔지?
+  - 선물
+  - text: 1학년→
+    type: plain
+- - text: 왜 너한테 선물을 사 줘
+    type: scream
+  - text: ←3학년
+    type: plain
+  - text: 코야나기에게서 받았을 거잖아!
+    type: scream
+- - 받긴 했는데~ 나한테도 없을까 싶어서...
+  - 뭐 들고 있어?
+  - text: 가까이 오지마, 기분 나쁘게
+    type: scream
+- - 진짜 없어?
+  - 없어!!
+  - text: 젠장!!
+    type: thought
+  - 뭐야, 재미없게
