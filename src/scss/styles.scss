@@ -1,2 +1,7 @@
 @use 'element';
-@use 'interface';
+@use 'hot-links.scss';
+@use 'overlay.scss';
+
+body {
+  position: relative;
+}

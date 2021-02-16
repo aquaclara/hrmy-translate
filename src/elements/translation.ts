@@ -165,6 +165,6 @@ export class Translation extends Caption {
   }
 
   static getPreferSize(length: number): number {
-    return Math.max(length * 1.5, 5);
+    return Math.max(length * 1.5, 1);
   }
 }

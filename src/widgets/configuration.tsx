@@ -9,8 +9,6 @@ interface PropsType {
   onChangeApplyFont: (event: React.ChangeEvent<HTMLInputElement>) => void;
   defaultDevelopmentMode: boolean;
   onChangeDevelopmentMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  defaultEditableMode: boolean;
-  onChangeEditableMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export class Configuration extends React.Component<PropsType, {}> {
@@ -50,13 +48,6 @@ export class Configuration extends React.Component<PropsType, {}> {
             onChange={this.props.onChangeDevelopmentMode}
           />
           <label htmlFor="development-mode">개발자 모드</label>
-          <input
-            type="checkbox"
-            id="editable-mode"
-            defaultChecked={this.props.defaultEditableMode}
-            onChange={this.props.onChangeEditableMode}
-          />
-          <label htmlFor="editable-mode">수정 모드</label>
           <button
             id="remove-storage"
             onClick={() => chrome.storage.local.remove(location.pathname)}

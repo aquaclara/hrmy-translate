@@ -62,6 +62,9 @@ function main() {
       if (options.applyFont) {
         util.getBodyElement().classList.add('apply-font');
       }
+      if (options.developmentMode) {
+        util.getBodyElement().classList.add('development-mode');
+      }
       if (options.developmentMode && options.editableMode) {
         util.getBodyElement().classList.add('editable-mode');
       }
@@ -141,6 +144,14 @@ function appendHotLinks() {
       onClickConfigure={onClickConfigure}
       onClickCopy={(event: React.MouseEvent<HTMLAnchorElement>) => {
         copy(getYaml());
+      }}
+      defaultEditableMode={options.developmentMode && options.editableMode}
+      onChangeEditableMode={(event: React.ChangeEvent<HTMLInputElement>) => {
+        options.editableMode = event.target.checked;
+        util
+          .getBodyElement()
+          .classList.toggle('editable-mode', options.editableMode);
+        onChangeSettings();
       }}
     />,
     util.getBodyElement().appendChild(document.createElement('div'))
@@ -396,14 +407,9 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
       defaultDevelopmentMode={options.developmentMode}
       onChangeDevelopmentMode={(event: React.ChangeEvent<HTMLInputElement>) => {
         options.developmentMode = event.target.checked;
-        onChangeSettings();
-      }}
-      defaultEditableMode={options.developmentMode && options.editableMode}
-      onChangeEditableMode={(event: React.ChangeEvent<HTMLInputElement>) => {
-        options.editableMode = event.target.checked;
         util
           .getBodyElement()
-          .classList.toggle('editable-mode', options.editableMode);
+          .classList.toggle('development-mode', event.target.checked);
         onChangeSettings();
       }}
     />,

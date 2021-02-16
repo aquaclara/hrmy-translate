@@ -1,0 +1,43 @@
+@use 'variables';
+
+.overlay {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #0003;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(1px);
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  font-size: 3mm;
+
+  .dialog {
+    background: white;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    color: variables.$black;
+    width: 30%;
+    min-height: 20%;
+    box-shadow: 10px 10px 16px 0 rgb(0 0 0 / 10%);
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type='range'] {
+      width: 100%;
+    }
+
+    #remove-storage {
+      display: block;
+
+      body:not(.editable-mode) & {
+        display: none;
+      }
+    }
+  }
+}

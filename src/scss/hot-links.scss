@@ -1,0 +1,81 @@
+@use 'variables';
+
+.hot-links {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  z-index: 200;
+  font-size: 4.3mm;
+  right: 1em;
+
+  a,
+  a:visited,
+  a:link {
+    color: white;
+  }
+
+  .cell {
+    float: right;
+    display: inline;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 0.2em 0.5em;
+    margin-left: 0.7em;
+    line-height: 1.6em;
+    text-decoration: none;
+    font-size: 1em;
+    user-select: none;
+  }
+
+  .clickable {
+    cursor: pointer;
+
+    &:hover {
+      filter: invert(1);
+    }
+  }
+
+  .cell {
+    &.configure {
+      background-color: black;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../svgs/gear.svg);
+      width: 1em;
+    }
+
+    &.editable-mode {
+      input[type='checkbox'] {
+        display: none;
+      }
+
+      body:not(.development-mode) & {
+        display: none;
+      }
+
+      body.editable-mode & .edit-button-label {
+        display: none;
+      }
+      body:not(.editable-mode) & .view-button-label {
+        display: none;
+      }
+    }
+
+    &.copy {
+      body:not(.editable-mode) & {
+        display: none;
+      }
+    }
+
+    &.caution {
+      button {
+        border: 1px solid white;
+        color: white;
+        padding-left: 0.5em;
+        background-color: black;
+        margin-left: 0.5em;
+      }
+    }
+  }
+}
