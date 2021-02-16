@@ -61,6 +61,10 @@ body {
   }
 }
 
+body:not(.editable-mode) .hot-links .copy {
+  display: none;
+}
+
 .overlay {
   display: flex;
   position: fixed;

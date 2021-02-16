@@ -62,6 +62,9 @@ function main() {
       if (options.applyFont) {
         util.getBodyElement().classList.add('apply-font');
       }
+      if (options.developmentMode && options.editableMode) {
+        util.getBodyElement().classList.add('editable-mode');
+      }
     }
   );
 
@@ -135,7 +138,6 @@ function appendHotLinks() {
   ReactDOM.render(
     <HotLinks
       tlsPath={tlsPath}
-      editableMode={options.developmentMode && options.editableMode}
       onClickConfigure={onClickConfigure}
       onClickCopy={(event: React.MouseEvent<HTMLAnchorElement>) => {
         copy(getYaml());
@@ -399,6 +401,9 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
       defaultEditableMode={options.developmentMode && options.editableMode}
       onChangeEditableMode={(event: React.ChangeEvent<HTMLInputElement>) => {
         options.editableMode = event.target.checked;
+        util
+          .getBodyElement()
+          .classList.toggle('editable-mode', options.editableMode);
         onChangeSettings();
       }}
     />,
