@@ -153,6 +153,8 @@ function appendHotLinks() {
           .classList.toggle('editable-mode', options.editableMode);
         onChangeSettings();
       }}
+      fileName={location.href.substring(location.href.lastIndexOf('/') + 1)}
+      fullFilePath={location.href}
     />,
     util.getBodyElement().appendChild(document.createElement('div'))
   );

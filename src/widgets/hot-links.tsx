@@ -7,6 +7,8 @@ interface PropsType {
   onClickCopy: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   defaultEditableMode: boolean;
   onChangeEditableMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  fileName: string;
+  fullFilePath: string;
 }
 
 export class HotLinks extends React.Component<PropsType, {}> {
@@ -17,7 +19,10 @@ export class HotLinks extends React.Component<PropsType, {}> {
   render() {
     return (
       <div className="hot-links">
-        <a className="configure clickable cell" onClick={this.props.onClickConfigure}>
+        <a
+          className="configure clickable cell"
+          onClick={this.props.onClickConfigure}
+        >
           &nbsp;
         </a>
         <a
@@ -40,6 +45,10 @@ export class HotLinks extends React.Component<PropsType, {}> {
         <a className="copy clickable cell" onClick={this.props.onClickCopy}>
           YAML 복사
         </a>
+        <div id="file-name" className="cell">
+          <span>{this.props.fileName}</span>
+          <span className="full-file-path">{this.props.fullFilePath}</span>
+        </div>
         <div className="caution cell">
           이 사이트 내 그림의 무단전제, 도용, 링크, 캡처, 촬영 등은 금지되어
           있으며 자세한 것은 사이트 내 안내를 따라 주세요. 이 한글 번역은 공식이

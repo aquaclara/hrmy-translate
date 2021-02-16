@@ -68,6 +68,24 @@
       }
     }
 
+    &#file-name {
+      user-select: text;
+      span.full-file-path {
+        display: none;
+      }
+      &:hover {
+        span.full-file-path {
+          display: inline;
+        }
+        span:not(.full-file-path) {
+          display: none;
+        }
+      }
+      body:not(.development-mode) & {
+        display: none;
+      }
+    }
+
     &.caution {
       button {
         border: 1px solid white;
