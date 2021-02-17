@@ -63,6 +63,7 @@
     }
 
     &.copy {
+      body:not(.development-mode) &,
       body:not(.editable-mode) & {
         display: none;
       }

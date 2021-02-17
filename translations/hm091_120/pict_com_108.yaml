@@ -105,7 +105,7 @@ hm091_120/099/hori_1485.gif:
     type: scream
   - text: 그리고 여자 두 명 좋아하지 마!! ○!
     type: square
-  - text: 점원님 치킨너겟 좀 빨리-!!
+  - text: 점원님 스낵 좀 빨리-!!
     type: square
   - .....
 - - 어... 하, 항상 신도랑은 뭐하고 놀아?
@@ -129,7 +129,7 @@ hm091_120/099/hori_1486.gif:
 - - 잘 지내~!! 이렇게 타니하라랑 떠들고... 물론... 학교도...
   - text: 난 상관 없잖아-!!!
     type: square
-  - text: 얼른 치킨너겟만 먹고 여기서 나가자-!!!
+  - text: 얼른 스낵만 먹고 여기서 나가자-!!!
     type: square
 hm091_120/099/hori_1487.gif:
 - - 호리랑은 헤어졌다거나...?
@@ -145,76 +145,10 @@ hm091_120/099/hori_1487.gif:
     type: square
 - - text: 여자=시종이라고 생각하시나요...!?
     type: square
-  - text: 치킨너겟...
+  - text: 스낵...
     type: thought
 hm091_120/099/hori_1488.gif:
-- - text: 아무 생각 없는 것 같은 얼굴을 하고선 시꺼먼 속내!!
+- - text: '아무 생각 없는 것 같은 얼굴을 하고 '
     type: square
   - text: 일본의 미래가 어둡다!!
     type: square
-- - 뭐야? 목 조르는 플레이나 얼굴 때리는 거 하고 그래?
-  - text: 이판사판↓
-    type: plain
-  - 아니면 그냥 평범해?
-  - text: 아니지?-!!
-    type: plain
-- - text: 깜짝
-    type: plain
-  - 그야 평범하지...
-- - text: <big>분명히 때리는 거야!!</big> 지금 좀 욱한 말투였어!! 나 지금 여자 때리고 다니는 사람이랑 이야기 하고 있어!!
-    type: square
-  - text: 길만 걸어도 「야단쳐 달라」고 하니...
-    type: thought
-  - text: 으아아아
-    type: plain
-hm091_120/099/hori_1489.gif:
-- - 아, 미야무라, 뭐 마실래? 이제 없지? 내가 살게
-  - 아, 아니야, 괜찮아!!
-- - 아니 괜찮으니까. 치킨너겟도 받아올게, 분명히 잊어버렸을 거야-
-  - 아무거나 좋아하는 거로 해
-- - 그럼 콜라...
-  - 알았어, L이지?
-  - text: 아니 <big>S</big>로
-    type: speech
-- - text: 호오, 또 <big><b>S</b></big>라니......!!!
-    type: speech
-  - text: ←이제 그런 식으로밖에 생각이 안 됨
-    type: plain
-  - text: 과연
-    type: thought
-  - text: 꿀꺽
-    type: plain
-hm091_120/099/hori_1490.gif:
-- - 치킨너겟 왜 안 나와!
-  - 죄, 죄송합니다!!
-  - 콜라 하나 주쇼
-  - 주문 받았습니다!!
-  - text: 우선 점원에게 화풀이
-    type: square
-- - '// 뜻모르겠음: ガンくれてやった'
-  - text: 그리고 아까부터 ●모호● 시끄러운 여자에게 경고해 준다
-    type: square
-- - '// 원문: 抑制'
-  - text: 콜라라도 뿌릴까 싶었지만 자제
-    type: square
-  - text: 나도 대견해
-    type: square
-  - text: M으로 했어
-    type: plain
-  - text: 고마워-
-    type: plain
-- - 그래도 타니하라랑 편하게 얘기할 수 있어서 다행이야-
-  - 진짜 미움 받고 있다고 생각했어
-hm091_120/099/hori_1491.gif:
-- - text: 방... 방긋
-    type: plain
-- - 친구가 돼서 다행이야-
-  - text: 방긋-
-    type: plain
-- - ''
-- - text: 친구부터 시작하겠다는 거냐-!!!
-    type: square
-  - text: <big><b>덜컹</b></big>
-    type: speech
-  - 타니하라!! 괜찮아!? 무슨 일이야!!
-  - 고객님
