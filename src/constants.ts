@@ -8,6 +8,10 @@ export const dkaHeroUrl = 'http://dka-hero.me/';
 
 export const imageDenyList = [
   'hm/horimiya_01.gif',
+  'hm/horimiya_02.gif',
+  'hm/horimiya_03.gif',
+  'hm/horimiya_04.gif',
+  'hm/horimiya_05.gif',
   'hm001_030/horimiya_01.gif',
   'hm001_030/horimiya_02.gif',
   'hm01_30/horimiya/horimiya_01.gif',

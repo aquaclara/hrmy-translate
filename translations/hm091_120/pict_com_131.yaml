@@ -1,0 +1,166 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm091_120/120/hori_1770.gif:
+- - // 호리미야 8권 보너스 만화
+- - text: 뭐지...? 암컷은 어떻게 대하면 좋지? 그냥 마음대로 하게 두면 되나?
+    type: thought
+  - text: 사이즈는 (중)인가...?
+    type: plain
+  - text: 걱정중
+    type: square
+- - text: 나도 앉자-
+    type: plain
+- - text: 와아...
+    type: thought
+  - text: 휴
+    type: plain
+hm091_120/120/hori_1771.gif:
+- - ''
+- - text: 책을 못 읽겠어-
+    type: plain
+  - text: 먀무라는 잘 따르는군
+    type: thought
+- - text: 후아-
+    type: plain
+- - text: 졸려
+    type: plain
+hm091_120/120/hori_1772.gif:
+- - 쿨
+- - ''
+- - text: 철푸덕
+    type: plain
+- - text: 훅- 훅-
+    type: plain
+hm091_120/120/hori_1773.gif:
+- - 나 지금부터 낮잠 잘 거니까 방해하지 마!
+- - ''
+- - text: 질질질
+    type: plain
+  - text: 어서와
+    type: plain
+- - text: 니- 니- 니니- 니- 니- ♪ ♬
+    type: plain
+hm091_120/120/hori_1774.gif:
+- - text: 휙
+    type: plain
+- - text: 어디 가, 어디 가
+    type: plain
+  - text: 어, 화, 화장실...
+    type: plain
+- - text: 누구든 좋으니까 관심 가져 달라는 거군...
+    type: thought
+  - text: 절로 가자
+    type: plain
+  - text: 응-
+    type: plain
+- - ''
+hm091_120/120/hori_1775.gif:
+- - text: (대)
+    type: plain
+- - text: 뭐지... 갑자기 「귀여움」이 사라졌네...
+    type: thought
+  - text: 흥!
+    type: plain
+- - text: 토오루! 그 두 마리 어딨어!?
+    type: plain
+  - 어... 모르는데...
+- - text: 예전에 좋아하던 여자애한테 고양이귀가 생기고... 단둘이 있게 됐는데 이 팽팽한 공기라니...
+    type: thought
+  - text: 찌릿 찌릿 찌릿
+    type: plain
+hm091_120/120/hori_1776.gif:
+- - text: 왜 꿈인데도 좋은 추억 하나 안 생기는 것인가...
+    type: thought
+  - text: <b>하</b> 이상해...
+    type: plain
+  - text: 절실
+    type: square
+- - text: 뭐야! 설마 내가 방해라도 했다는 건 아니지!!
+    type: plain
+- - 아니, 그건 아니지만
+  - text: 흠- 그럼 됐어
+    type: plain
+  - text: 태도 하고는...!
+    type: thought
+- - 슥
+  - text: 멸치
+    type: square
+hm091_120/120/hori_1777.gif:
+- - ''
+- - 먹을래?
+- - 주, 준다면 받아야지!! 버리긴 아깝고
+  - text: 솔직하지 못하긴...
+    type: thought
+- - text: (중)
+    type: plain
+  - text: (소)
+    type: plain
+hm091_120/120/hori_1778.gif:
+- - text: 같이 놀자...
+    type: plain
+- - ''
+- - text: 뭐하고 놀지
+    type: plain
+  - text: 게임!!
+    type: plain
+- - 대중소라, 균형은 잘 맞네
+  - text: 그래 그래
+    type: plain
+  - text: 사육주
+    type: square
+  - text: 잘 못하네!! 금방 질 거야!!
+    type: plain
+hm091_120/120/hori_1779.gif:
+- - ''
+- - 이봐, 센고쿠~!! 너 미야무라한테 이상한 소리한 건 아니겠지~!!
+- - 그러니까 아무 말 안 했다고
+  - 넌 항상 쓸데없는 소리만
+  - 그건 쿄짱이
+- - '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+  - '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+  - 와~ 요란하게도 싸운다~
+hm091_120/120/hori_1780.gif:
+- - 아야
+  - text: <b>슈팍</b>
+    type: speech
+- - text: <b>슈팍</b>
+    type: speech
+  - 익
+- - 싸우면 못써!
+- - ......
+  - ......
+  - 잘못했어요...
+  - text: 좋아
+    type: plain
+hm091_120/120/hori_1781.gif:
+- - text: 아침
+    type: square
+- - 어, 안경이다-
+  - 이번달 들어서 렌즈를 벌써 많이 잃어버려서요...
+- - 왜 그래?
+  - text: 방과후
+    type: square
+- - 안경 알을 잃어버려서...
+  - text: 이거 참- 부끄럽네요
+    type: plain
+  - text: 무슨 일이야!?
+    type: shock

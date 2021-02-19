@@ -1,0 +1,182 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm121_150/138/hori_1983.gif:
+- - 그러면- 아픈 할머니께 이걸 가져다 드리렴
+- - 네-!
+- - text: 난 빨간모자! 지금부터 숲에서 혼자 살고 계신 할머니 집에 갈 거야!
+    type: square
+- - 그렇지만 숲은 너무 위험해! 소문에 의하면 늑대가 나타난다는 거 있지!
+  - text: ←위기감 제로
+    type: plain
+hm121_150/138/hori_1984.gif:
+- - 있지, 어디 살아!?
+  - 혼자야!?
+  - 시간 돼!?
+  - 있지, 있지!
+- - text: 늑대가 나온다는 것 같아
+    type: square
+  - 아, 나야, 나!
+  - text: 늑대
+    type: square
+  - 나라고~ 듣고 있어!? 야!?
+- - text: 정말 무섭지? 그래도 설마 진짜 나오진 않겠지!
+    type: square
+  - text: 아, 지금 묵살!? 무시!?
+    type: scream
+  - 요시카와- 잠깐만, 들어
+  - text: 늑대 같은 게 있으면 내가
+    type: square
+- - 뭐 하냐
+hm121_150/138/hori_1985.gif:
+- - 늑대는 나야
+  - 어, 그랬어?
+  - 넌 늑대 보단 그냥 짐승이지
+- - 그럼 미야무라가 할머니 하면 어때?
+  - text: 어흥- 하고!
+    type: plain
+  - 내가 덮치러 갈게
+  - text: 너 진짜 <big><b>이만 집에 가</b></big>
+    type: speech
+- - ''
+- - 와아~ 이런 곳에 예쁜 꽃이 피어 있네~
+hm121_150/138/hori_1986.gif:
+- - 따 가자~
+- - 정말 집에 가!
+  - 괜찮잖아, 같이 가자-
+  - 정말 집에 가!
+- - ''
+- - text: 꾹꾹꾹
+    type: plain
+  - 가!
+  - 싫어-
+  - 시끄러!
+hm121_150/138/hori_1987.gif:
+- - 봐, 너 때문에 호리가 심심해 하잖아!!
+  - text: <b>がやがや</b>
+    type: speech
+  - 호리 안녕~
+  - text: 북적
+    type: square
+  - 뭐야~ 소란스럽네~
+- - 자, 빨리 덮쳐! 잡아먹어! 실컷!
+  - text: 턱
+    type: plain
+  - 실컷 먹긴... 한정식도 아니고...
+- - 네가 안 잡아먹으면 내가 잡아먹는다!
+  - 잠깐만 기다려, 늑대는 나야, 내가 먹어
+  - 넌 먹을 생각 없잖아, 내가 잡아먹을 거야
+- - 안 그래, 내가 먹을 거야
+  - 됐어, 내가 더 늑대 같으니까 내가 먹을게
+  - 왜 네가 먹어
+hm121_150/138/hori_1988.gif:
+- - 이유를 묻기야! 그럼 그 질문에 어디...
+  - text: 꽈악
+    type: plain
+  - text: <big><b>빨리 해</b></big>
+    type: speech
+- - 그치만 평소엔 늘 내가 당하는, 살해당하는 쪽이니까... 갑자기 시켜도...
+  - 무슨 말이야, 내가 암살자야?
+- - 할머니- 나 왔어- 귀여운 손주가 왔어-!!
+  - 열어 줘-
+- - 어, 유키다
+  - text: 똑똑똑똑똑똑똑
+    type: plain
+  - 알았어, 넌 호리를, 난 요시카와를
+  - text: 분담!
+    type: plain
+  - 그게 좋은 생각이라고 하는 널 때려 주고 싶다
+hm121_150/138/hori_1989.gif:
+- - 들어 갈 거야- 맘대로 들어 간다-
+  - text: 끼익-
+    type: plain
+  - 똑똑 하는 거 지쳤으니까 그냥 들어 갈 거야-
+- - .....
+  - 안녕!
+- - 이이이이이이이, 인상이 달라졌어!
+  - text: <b><big>뭐!?</big> 인상!?</b> 요시카와, 귀나 뭐 그런 거 물어봐야지!!
+    type: speech
+  - text: 가짜-!!
+    type: plain
+- - 그럼 물어볼 건데, 그 귀는 어떻게 된 일인가요?
+  - 이거 말이냐, 이건 오늘 아침에 막 생긴 거란다
+hm121_150/138/hori_1990.gif:
+- - 무슨 말도 안 되는 변명을...!!
+  - 그러니까 나한테 맡기래두~
+  - text: 외야
+    type: square
+- - 할머니, 키가 컸어?
+  - 그래? 성장기니까 말이야
+- - text: 할머니도 뭣도 아니잖아...
+    type: thought
+  - text: 할머니도 뭣도 아니잖아...
+    type: thought
+- - 늑대의 배를 갈랐습니다-
+hm121_150/138/hori_1991.gif:
+- - 총은?
+  - 총을 쓰면 미야무라 죽는다고
+  - text: 1미터
+    type: plain
+- - 그래, 호리! 총을 쓰면 미야무라 죽어!
+  - 뭐!? 어...
+- - 뭐야? 내가!?
+  - text: 읏차
+    type: plain
+  - text: 1미터
+    type: plain
+  - 내가 이상한 거야!?
+- - 하, 하지 마, 토오루!
+  - text: 아으으
+    type: plain
+  - 하지마~~~
+hm121_150/138/hori_1992.gif:
+- - text: 와... 재밌게도... 호리가 미야무라한테 뭔가 당하고 있나본데...
+    type: thought
+  - text: 음- 음-
+    type: plain
+- - 그, 그런 짓을 하면 미야무라... 내장... 장기... 창자...
+  - text: 응- 응-
+    type: plain
+- - 아-.....
+- - 으아아아아아아아악, 호리이이이, 일어나아아아아아아
+  - text: <b>흔들흔들</b>
+    type: plain
+  - 줄... 줄...
+  - 웃어!? 이 S가 웃고 있어!?
+hm121_150/138/hori_1993.gif:
+- - 오빤 좋겠다-... 아이팟 좋겠다-...
+- - text: 안 들리나 보네...
+    type: thought
+- - ''
+- - 난... 록 안 좋아해...
+hm121_150/138/hori_1994.gif:
+- - text: '// 원문: もうもまれるがまま'
+    type: speech
+  - text: ←이제 포기 상태
+    type: plain
+  - ....
+- - 이게... 나한테 있다고... 생각하면...
+- - ''
+- - 다른 사람의 마음을 내가 알 수 없는 것처럼 자신의 마음도 다른 사람에겐 알 수 없겠지...
+  - text: 상상할 수 없었다↓
+    type: plain
+  - text: 와아.. 이제 무슨 철학적인 말까지 하기 시작해...
+    type: thought
