@@ -15,8 +15,11 @@
     margin-block-start: 0;
     margin-block-end: 0.1em;
     width: fit-content;
-    max-width: 40em;
-    min-width: 5em;
+
+    body.editable-mode & {
+      max-width: 40em;
+      min-width: 5em;
+    }
 
     &.speech,
     &.scream {
