@@ -46,7 +46,7 @@ hm001_030/002/hori_030.gif:
 - - 그럼 이건 뭐게? x의 범위를 구하라
   - 하하하
   - 에, 엑스...?
-- - 그것 봐! 이런 건 기본 주의 기본이라구-
+- - 그것 봐! 이런 건 기본 중의 기본이라구-
   - 으-
   - 하하하
 hm001_030/002/hori_031.gif:
@@ -62,11 +62,11 @@ hm001_030/002/hori_031.gif:
   - text: 보건... 보건체육 주로 성교육 인체의 구조 등
     type: plain
   - 기본이 되어 있어서 그런가...
-  - 관둬, 확 때려주고 싶어지네
+  - 관둬, 확 때려주고 싶어지네-!!
 - - text: 우선 밥
     type: plain
 hm001_030/002/hori_032.gif:
-- - text: 미야무라고 오기 시작한 이후부터 소타가 음식 투정을 잘 하지 않게 된 기분이 든다
+- - text: 미야무라가 오기 시작한 이후부터 소타가 음식 투정을 잘 하지 않게 된 기분이 든다
     type: square
   - text: 생선 껍질도 먹어야지
     type: plain
@@ -79,14 +79,16 @@ hm001_030/002/hori_032.gif:
 - - 외동이야
   - text: zzz
     type: plain
-  - 헤에~
-  - 그래, 확실히 그런 느낌은 아니지...
+  - 그래~
+  - text: 그래, 확실히 그런 느낌은 아니지...
+    type: thought
 - - 있지, 소타가...
   - 말하려고 했었는데 소타가 사람을 이렇게 다른 사람을 따르는 건 드물거든
 hm001_030/002/hori_033.gif:
 - - 언제나 누나만 찾고
-  - <span class="plain stroke">모모타로</span>
-  - 생각해 보면 엄마 아빠 얘기는 잘 안하는데...
+  - text: <span class="plain stroke">모모타로</span>
+    type: plain
+  - 생각해 보면 엄마 아빠 얘기는 잘 안 하는데...
 - - 자제하는 걸까-
   - text: 몰라
     type: plain
@@ -105,9 +107,9 @@ hm001_030/002/hori_034.gif:
     type: thought
   - text: 허억
     type: plain
-  - text: 스타벅스에 가자
-    type: scream
-  - text: 가서 차가운 걸로 왕창 사마시자
+  - text: 스타벅스를 가자
+    type: thought
+  - text: 가서 차가운 걸로 왕창 사 마시자
     type: plain
 - - 우에엥-
 hm001_030/002/hori_035.gif:
@@ -120,12 +122,10 @@ hm001_030/002/hori_035.gif:
 - - 또 누나한테 도와달라고 하게?
   - 그런 걸 「시스터 콤플렉스」라고 하는 거 알아!
   - ......
-- - text: ......
-    type: thought
-  - text: 왕따...는 아닌 것 같고...
+- - text: ...... 왕따...는 아닌 것 같고...
     type: thought
 hm001_030/002/hori_036.gif:
-- - 누,
+- - 누
   - text: 훌쩍
     type: stroke
   - 누나, 아...
@@ -135,7 +135,7 @@ hm001_030/002/hori_036.gif:
     type: plain
   - text: 와아아아 형아-!!
     type: scream
-  - text: 뭐야!?
+  - text: <b>뭐야!?</b>
     type: thought
 - - text: 소타는 오렌지 쥬스 마시지?
     type: plain
@@ -147,11 +147,11 @@ hm001_030/002/hori_036.gif:
 - - 미안, 소타한테 볼일이 있니?
   - 너, 너 누구야
 hm001_030/002/hori_037.gif:
-- - text: 우리 형이다 뭐
+- - text: 우리 형이다, 뭐
     type: scream
   - text: 바보야
     type: plain
-  - text: 흠짓
+  - text: 울컥
     type: plain
   - text: 소타는 가만 있어!!
     type: scream
@@ -159,8 +159,7 @@ hm001_030/002/hori_037.gif:
 - - 오쿠야마 유나...
   - text: 중얼
     type: plain
-- - 유나라고 하는구나
-  - 이렇게 귀여운데, 좀 더 여자아이답게 굴면 더 예쁘겠다 그치?
+- - 유나라고 하는구나. 이렇게 귀여운데 좀 더 여자아이답게 굴면 더 예쁘겠다, 그치?
 hm001_030/002/hori_038.gif:
 - - text: 하나도 안 귀엽다 뭐!!
     type: scream
@@ -168,7 +167,7 @@ hm001_030/002/hori_038.gif:
     type: scream
   - text: 짱구...!?
     type: plain
-  - text: 어디서 그런 말 들었나...?
+  - text: '!? 어디서 그런 말 들었나...?'
     type: thought
 - - 여자아이는 웃으면,
   - 꽃처럼 반짝거린다?
@@ -177,12 +176,12 @@ hm001_030/002/hori_038.gif:
   - text: 꽃처럼 말이지...
     type: plain
 hm001_030/002/hori_039.gif:
-- - 그래서 소타하고 같이 있었구나 평일인데 깜짝 놀랐어
+- - 그래서 소타하고 같이 있었구나 <sub>평일인데 깜짝 놀랐어</sub>
   - text: 털썩
     type: plain
-  - text: 관심 없나봐
+  - text: 관심 없어 보이네
     type: thought
-  - text: 빤스 보이는데
+  - text: 팬티 보이는데
     type: plain
   - 응 만났지
 - - 내 음료수는...
