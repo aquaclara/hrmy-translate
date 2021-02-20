@@ -1,0 +1,118 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm181_210/191/hori_2706.gif:
+- - // 호리미야 6권 37화
+  - 호리, 나 이거 빌렸어
+  - 개가 아주 많이...
+- - 폐후령 ~3번째의 악몽~ 괜찮지?
+  - 응...
+- - text: 호리~~ 있잖아, 너무 무서운 것
+    type: plain
+  - text: 만 보면 미야무라도 꺼릴 거야~
+    type: plain
+- - ''
+hm181_210/191/hori_2707.gif:
+- - 미야무라
+  - 저 있잖아
+- - 이, 이 영화 <sub>저... 그러니까-</sub>
+  - 무서울 것- 같지... 끝까지 볼 수 있을까~
+- - 무슨 소리야, 언제나 15금 초잔혹 공포영화만 보면서~
+  - 이건 전연령인데?
+- - text: <small><b>유키-</b></small>
+    type: speech
+  - 그렇지...
+  - 과연 나는 견딜 수 있을까...
+hm181_210/191/hori_2708.gif:
+- - text: 빈말로라도 좀 무서운 티를 내는 게
+    type: plain
+  - text: 좋을 거야-
+    type: plain
+- - .......
+- - text: <big><b>으악!</b></big>
+    type: speech
+- - 와아~... 이건 진짜 무서웠어~...
+  - 응...
+  - text: <big><b>아야사키-</b></big>
+    type: thought
+hm181_210/191/hori_2709.gif:
+- - text: 손 같은 걸 잡아 보면
+    type: plain
+  - text: 괜찮지 않을까
+    type: plain
+- - text: 손...
+    type: thought
+- - ''
+- - text: 이거야
+    type: thought
+hm181_210/191/hori_2710.gif:
+- - text: 슥
+    type: plain
+  - 살짝
+- - text: <big><b>으아아아아아아</b></big>
+    type: speech
+  - text: <big><b>꺄악-!!!</b></big>
+    type: speech
+- - text: 헉 헉
+    type: plain
+  - text: 헉 헉
+    type: plain
+- - text: 그냥 사이좋게 영화를 즐기고 싶은 뿐인데......
+    type: thought
+  - text: 헉 헉 헉
+    type: plain
+  - text: 두근두근
+    type: plain
+  - text: 무서워-
+    type: plain
+  - text: 꺅, 무서워-
+    type: plain
+hm181_210/191/hori_2711.gif:
+- - 미안... 내가 겁이 많아서...
+  - 미안해...
+- - 아, 아냐... 사과하지 마...!!
+  - 딱히 미야무라 잘못이 아니라...
+- - 응... 잠시만, 미안...
+  - text: 슥
+    type: plain
+  - 혼자 있게 해줘
+- - ....
+hm181_210/191/hori_2712.gif:
+- - text: 아...
+    type: plain
+- - text: 쓱쓱
+    type: plain
+  - text: 한심해...
+    type: thought
+  - text: 놀람과 공포로 눈물→
+    type: plain
+- - text: 한편
+    type: square
+  - text: 화, 확실하게
+    type: thought
+  - text: 안절부절
+    type: plain
+  - text: 차 차 차인 거야, 차 차인 차...
+    type: thought
+- - text: 화 화화확실하게...!!
+    type: thought
+  - text: 아- 빨개-
+    type: plain

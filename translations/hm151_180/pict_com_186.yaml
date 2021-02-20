@@ -1,0 +1,209 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm151_180/169/hori_2446.gif:
+- - // 호리미야 11권 72화
+- - .......
+- - 카케루도 자고 가는 친구가 다 있나?
+  - 그 정도야 있겠지
+- - 세세세, 센고쿠!
+  - 나 로프트에서 자볼래!!
+hm151_180/169/hori_2447.gif:
+- - 알았어, 지금 치울게
+  - text: 기다려
+    type: plain
+  - 그냥 둬도 괜찮아!!
+- - 아니, 진짜 지저분해서
+  - 괜찮다니까
+  - 진짜 책이 어마어마하게 쌓여 있다니까, 낙석현장 꼴이라고
+- - 나, 난 낙석현장이 좋단 말야-!!
+  - text: <b>무슨 어거지야</b> 그래, 뭐 이우라가 좋다면 상관없지만
+    type: speech
+- - 응? 다 정했어?
+  - 난 바닥도 괜찮아
+  - 바닥 괜찮아?
+hm151_180/169/hori_2448.gif:
+- - 바닥이 좋고 자시고, 한 사람은 이미 잠들었는데
+  - text: 쿨
+    type: plain
+  - 미야무라, 빠르다!!
+- - 미야무라, 좀 비켜봐-
+  - 응-
+  - 미, 미안, 방이 좁아서
+  - 괜찮아요, 괜찮아-
+- - 더워...
+  - 으아아아!! 바보야, 벗지 마!! 지금까지의 노력이 물거품이 되잖아
+- - 뭐가?
+  - 아무것도 아냐! 잘 자라~!!
+  - 더워...
+hm151_180/169/hori_2449.gif:
+- - 잘 자...
+  - text: 헉
+    type: plain
+- - text: 내가 잘 자리가 없어......!!
+    type: shock
+  - text: 로프트(이우라), 3명분 짐, 게임기, 게임, 창문, 상자, 이시카와, 테이블, 책장, 미야무라, 책장
+    type: plain
+  - text: ↖정리 안 함 & 원래 좁음
+    type: plain
+- - text: 이시카와가... 이렇게...
+    type: thought
+  - text: 그리고 미야무라가 이렇게...
+    type: thought
+  - text: 시뮬레이션
+    type: square
+- - 이시카와...
+  - .......
+  - 잠들었어-!!
+  - text: 이시카와는 지금 고양이와 함께입니다
+    type: square
+hm151_180/169/hori_2450.gif:
+- - 미, 미야무라-
+  - .... .....
+- - text: 로프트
+    type: plain
+  - text: <big>움찔</big>
+    type: plain
+  - 모토코 너 그건......!!
+- - 뭐야, 금붕어였나...
+  - text: 뭐냐고-!!!
+    type: shock
+- - text: 어
+    type: thought
+  - text: 어떡하지
+    type: thought
+  - text: 일단 문 앞에
+    type: square
+hm151_180/169/hori_2451.gif:
+- - 이럴 줄 알았으면 평소에 방 청소 좀 해둘걸...
+  - text: 반성
+    type: square
+  - text: 더러운 마이룸
+    type: plain
+  - text: 정리좀 하고 살아-!! 바보야
+    type: plain
+  - 엄마, 잘못 했어요...
+  - text: 사죄
+    type: square
+- - 아, 아냐!! 더럽진 않아!!
+  - text: 벽과 대화하는 남자→
+    type: plain
+  - 방이 좁은 거지!! 이 책들을 보라고!!
+- - 아빠 책도 여기 있잖아!?
+  - text: 왔다 갔다
+    type: plain
+  - text: 갔다 왔다
+    type: plain
+  - 그러니 방이 좁지! 어떻게 잠잘 곳도 없냐고!!
+- - text: <big class="stroke">꾹</big>
+    type: speech
+  - 끄응-
+  - 어, 미안, 발 밟았네
+hm151_180/169/hori_2452.gif:
+- - 응? 어디 가, 이우라
+  - 화장실 좀-
+- - ......센고쿠는 안 자?
+- - ''
+- - 뭐-?
+hm151_180/169/hori_2453.gif:
+- - 말을 하지~!!!
+  - 자 다들 일어나-!!
+  - 어어어- 안 깨워도 되는데
+- - 응? 센고쿠가 잘 자리가 없다고?
+  - 말을 하지, 바보야
+  - 미안해...
+- - 내가 이리로 가고 이 꼼작 안 하는 줄무늬 덩어리를 치우...면
+  - text: 미야무라→→→
+    type: plain
+  - text: 또르르
+    type: plain
+  - 센고쿠, 몸 둘로 나눌 수 있냐?
+  - 무리지
+- - 미야무라랑 센고쿠가 로프트를 쓰면 되잖아
+  - text: 내가 참을게
+    type: plain
+  - 어, 왜
+  - ½ 더하기 ½ 하면
+  - text: 1이 됩니다
+    type: square
+hm151_180/169/hori_2454.gif:
+- - 미야무라, 위층 가자!
+  - 죄송해요
+  - 죄송하지만 오늘은 돌아갈게요, 쿄스케 씨...
+  - 야!!
+- - text: 로프트
+    type: square
+  - 헉-
+- - 힐끔
+- - text: 미야무라, 벗지 말라니까 바보야!
+    type: square
+  - text: 풀장-?...
+    type: square
+  - text: 어... 난 저쪽에서 옷 갈아입고 올게
+    type: square
+  - text: 하복이 없어서 말이야
+    type: square
+hm151_180/169/hori_2455.gif:
+- - ''
+- - text: 스윽-
+    type: plain
+- - 센고쿠, 미안, 나 휴대폰을 거기 놔뒀는-!!
+  - text: 실수투성이 이우라-!!
+    type: plain
+- - ''
+hm151_180/169/hori_2456.gif:
+- - ''
+- - 아, 미안 그러고 보니 둘로 쪼갰다 비틀었다 가루로 만들어서 하수도에 버렸지, 내 휴대폰......
+  - text: 잘 자
+    type: plain
+  - 잠깐, 잠깐, 잠깐, 잠깐, 잠깐, 잠깐 기다려!!
+- - 아니, 진짜 신경 쓰지 마
+  - 어떤 형태로든 센고쿠는 센고쿠니까...
+  - 신경 쓰일 멘트 남기고 가지 말라고!!
+- - 오해야! 내 말을 들어 봐!!
+  - text: 착하지 응?
+    type: plain
+  - 아니 이 경우는 시각정보가 100% 아니겠어...
+  - text: 흔들림 없는 사실...
+    type: plain
+  - 과신은 안 좋은 거야!
+hm151_180/169/hori_2457.gif:
+- - 난 센고쿠를 존경하고 있어, 그러니까 받아들일게
+  - ...그 뭐라고 하나, 여러 가지로...
+  - text: 이러구러
+    type: plain
+  - text: <b>얼버무리지 말고-!!</b>
+    type: speech
+- - 아니라고, 잠깐 옷을 벗겨보려 했을 뿐이야!!!
+  - '// 원문: 墓穴'
+  - text: 묫자리
+    type: square
+  - 이유가 있어서!
+  - 진짜! 그 이상도 이하도 아니야!!
+- - ......너를 존경해......
+  - text: 조금 전과는 다른 의미로
+    type: square
+  - 아아아아아, 이게 아닌데에에
+- - text: ......미야무라를 의심하는 건가-
+    type: thought
+  - 센고쿠가 똑똑하네...
+  - text: 아니라니까 이우라
+    type: plain
