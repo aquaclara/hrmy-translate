@@ -13,14 +13,14 @@ export interface translationOption extends captionOption {
   type: translationType;
   focus: boolean;
   editableMode?: boolean;
-  oninput?: (ev: Event) => any;
-  onShortcut?: (
+  oninput: (ev: Event) => any;
+  onShortcut: (
     ctrl: boolean,
     shift: boolean,
     key: string,
     text: string
   ) => boolean;
-  changeDatum?: (datum: datum) => any;
+  changeDatum: (datum: datum) => any;
 }
 
 export class Translation extends Caption {
@@ -120,8 +120,11 @@ export class Translation extends Caption {
   }
 
   _stylize(target: HTMLInputElement, opening: string, ending: string): void {
-    const oldStart = target.selectionStart;
-    const oldEnd = target.selectionEnd;
+    if (target.selectionStart === null || target.selectionEnd === null) {
+      return;
+    }
+    const oldStart: number = target.selectionStart;
+    const oldEnd: number = target.selectionEnd;
     const selected = target.value.substring(oldStart, oldEnd);
     target.value =
       target.value.slice(0, oldStart) +
@@ -157,6 +160,7 @@ export class Translation extends Caption {
     if (Object.keys(original).length == 2 && original.type == 'speech') {
       return original.text;
     }
+    return original;
   }
 
   changeType(old: string, newClass: string) {

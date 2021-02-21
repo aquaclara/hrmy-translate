@@ -1,9 +1,9 @@
 import util from '../dom-util';
 
 export interface captionOption {
-  tag?: 'div' | 'p' | 'input' | 'a';
+  tag: 'div' | 'p' | 'input' | 'a';
+  message: string;
   class?: Array<string>;
-  message?: string;
   parent?: HTMLElement;
   href?: string;
 
@@ -23,15 +23,17 @@ export class Caption {
     opt.tag = opt.tag || 'div';
     opt.class = opt.class || [];
     opt.class.push('caption');
-    opt.parent = opt.parent || util.getBodyElement();
     this.opt = opt;
+    this.$element = this.createElement();
   }
 
   createElement(): HTMLElement {
     const opt = this.opt;
 
     const $element = document.createElement(opt.tag);
-    $element.classList.add(...opt.class);
+    if (opt.class) {
+      $element.classList.add(...opt.class);
+    }
 
     $element.innerHTML = opt.message;
     $element.style.fontSize = `${opt.fontSize}mm`;
@@ -56,7 +58,6 @@ export class Caption {
   }
 
   render() {
-    this.$element = this.createElement();
-    this.opt.parent.appendChild(this.$element);
+    (this.opt.parent || util.getBodyElement()).appendChild(this.$element);
   }
 }

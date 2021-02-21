@@ -2,11 +2,14 @@ const util = {
   /**
    * @return {HTMLBodyElement}
    */
-  getBodyElement: () => {
+  getBodyElement: (): HTMLElement => {
     let documentBody;
-    if (document.querySelector('frameset')) {
-      documentBody = document.querySelectorAll('frame')[1].contentWindow
-        .document.body;
+    const frames = document.querySelectorAll('frame');
+    if (
+      document.querySelector('frameset') &&
+      frames[1].contentWindow !== null
+    ) {
+      documentBody = frames[1].contentWindow.document.body;
     } else {
       documentBody = document.body;
     }
@@ -36,6 +39,9 @@ const util = {
       case 'TD':
       case 'TR':
         const table = element.closest('table');
+        if (table === null) {
+          throw new Error('table is not found');
+        }
         if (prop == 'width') return element.offsetWidth;
         else if (prop == 'height') return element.offsetHeight;
         else if (prop == 'offsetTop')
@@ -43,8 +49,7 @@ const util = {
         else if (prop == 'offsetLeft')
           return element.offsetLeft + table.offsetLeft;
       default:
-        console.warn(`${element.tagName} is unexpected`);
-        return null;
+        throw new Error(`${element.tagName} is unexpected`);
     }
   },
 
@@ -74,8 +79,7 @@ const util = {
       const attr: any = img.attributes;
       url = new URL(attr.background.value, attr.background.baseURI);
     } else {
-      console.warn(`${img.tagName} is unexpected`);
-      return null;
+      throw new Error(`${img.tagName} is unexpected`);
     }
 
     return url.pathname.replace(/^\//, '');

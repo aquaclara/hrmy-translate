@@ -36,6 +36,14 @@ type Options = {
   applyFont: boolean;
   developmentMode: boolean;
   editableMode: boolean;
+  overwriteMode: boolean;
+};
+const defaultOptions: Options = {
+  fontSize: 5,
+  applyFont: true,
+  developmentMode: false,
+  editableMode: false,
+  overwriteMode: true
 };
 let options: Options;
 let data: translationFile;
@@ -47,30 +55,21 @@ function log(message: any, ...optionalParams: any[]) {
 }
 
 function main() {
-  const defaultOptions: Options = {
-    fontSize: 5,
-    applyFont: true,
-    developmentMode: false,
-    editableMode: false
-  }
-  chrome.storage.sync.get(
-    defaultOptions,
-    items => {
-      options = items as Options;
-      log('Options loaded');
-      log(items);
+  chrome.storage.sync.get(defaultOptions, items => {
+    options = items as Options;
+    log('Options loaded');
+    log(items);
 
-      if (options.applyFont) {
-        util.getBodyElement().classList.add('apply-font');
-      }
-      if (options.developmentMode) {
-        util.getBodyElement().classList.add('development-mode');
-      }
-      if (options.developmentMode && options.editableMode) {
+    if (options.applyFont) {
+      util.getBodyElement().classList.add('apply-font');
+    }
+    if (options.developmentMode) {
+      util.getBodyElement().classList.add('development-mode');
+      if (options.editableMode) {
         util.getBodyElement().classList.add('editable-mode');
       }
     }
-  );
+  });
 
   // Try fetching translations from Github
   const xhr = new XMLHttpRequest();
@@ -138,7 +137,7 @@ function getYaml(): string {
   return yamlText + '\n';
 }
 
-function appendHotLinks() {
+function appendHotLinks(): void {
   ReactDOM.render(
     <HotLinks
       tlsPath={tlsPath}
@@ -187,7 +186,7 @@ function renderTranslations(focus?: translationAddress) {
       data[imageId] === undefined ||
       data[imageId].length === 0
     ) {
-      const opt: noticeOption = {
+      const opt: any = {
         message:
           options.developmentMode && options.editableMode
             ? '(클릭하여 새 번역 추가)'
@@ -211,7 +210,7 @@ function renderTranslations(focus?: translationAddress) {
           renderTranslations([imageId, 0, 0]);
         };
       }
-      new Notice(opt).render();
+      new Notice(opt as noticeOption).render();
     } else {
       const image: imageTranslation = data[imageId];
       for (let cutIndex: number = 0; cutIndex < image.length; cutIndex++) {
@@ -228,7 +227,7 @@ function renderTranslations(focus?: translationAddress) {
               continue;
             }
           }
-          const opt: translationOption = {
+          const opt: any = {
             datum: data[imageId][cutIndex][tlsIndex],
             address: [imageId, cutIndex, tlsIndex],
             tag: 'p',
@@ -236,7 +235,7 @@ function renderTranslations(focus?: translationAddress) {
             type: 'speech',
             editableMode: options.developmentMode && options.editableMode,
             focus:
-              focus &&
+              focus !== undefined &&
               imageId === focus[0] &&
               cutIndex === focus[1] &&
               tlsIndex === focus[2]
@@ -345,7 +344,7 @@ function renderTranslations(focus?: translationAddress) {
             opt.marginLeft = translate['margin-left'];
             if (translate['type']) opt.type = translate['type'];
           }
-          new TranslationElement(opt).render();
+          new TranslationElement(opt as translationOption).render();
         }
         $tlsGroup.style.top =
           util.getProperty(img, 'offsetTop') +

@@ -2,7 +2,7 @@ import { captionOption, Caption } from './caption';
 
 export interface noticeOption extends captionOption {
   editableMode?: boolean;
-  onclick?: (ev: Event) => any;
+  onclick: (ev: Event) => any;
 }
 export class Notice extends Caption {
   opt: noticeOption;
@@ -14,6 +14,7 @@ export class Notice extends Caption {
       opt.href = '#';
     }
     super(opt);
+    this.opt = opt;
   }
 
   createElement(): HTMLElement {
