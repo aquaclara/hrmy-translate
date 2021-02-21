@@ -1,9 +1,11 @@
+import util from '../dom-util';
 import { captionOption, Caption } from './caption';
 import {
   translation as datum,
   propertiedTranslation as propertiedDatum,
-  translationType
-} from '../translation';
+  translationType,
+  Translation as TranslationUtil
+} from '../translation-data-model';
 
 export type address = [string, number, number];
 
@@ -12,6 +14,11 @@ export interface translationOption extends captionOption {
   address: address;
   type: translationType;
   focus: boolean;
+  overwriteMode: boolean;
+  x?: number;
+  y?: number;
+  width?: number;
+  height?: number;
   editableMode?: boolean;
   oninput: (ev: Event) => any;
   onShortcut: (
@@ -26,11 +33,15 @@ export interface translationOption extends captionOption {
 export class Translation extends Caption {
   opt: translationOption;
   types: translationType[];
+  static defaultFontSize = 24;
 
   constructor(opt: translationOption) {
-    opt.tag = opt.editableMode ? 'input' : 'p';
+    opt.tag = opt.editableMode && !opt.overwriteMode ? 'input' : 'p';
     opt.class = opt.class || [];
     opt.class.push('translation', opt.type);
+    if (opt.overwriteMode) {
+      opt.class.push('overwrite', opt.type);
+    }
     super(opt);
     this.opt = opt;
     this.types = [
@@ -45,22 +56,39 @@ export class Translation extends Caption {
   }
 
   createElement(): HTMLElement {
-    if (!this.opt.editableMode) {
-      return super.createElement();
+    const opt: translationOption = this.opt;
+
+    if (opt.overwriteMode) {
+      const $element: HTMLInputElement = super.createElement() as HTMLInputElement;
+      $element.style.left = opt.x + 'px';
+      $element.style.top = opt.y + 'px';
+      $element.style.width = opt.width + 'px';
+      $element.style.height = opt.height + 'px';
+      $element.style.fontSize =
+        (opt.fontSize ? opt.fontSize : Translation.defaultFontSize) + 'px';
+      return $element;
+    } else if (opt.editableMode) {
+      const $element: HTMLInputElement = super.createElement() as HTMLInputElement;
+      $element.type = 'text';
+      $element.defaultValue = opt.message;
+      $element.size = Translation.getPreferSize(opt.message.length);
+      $element.oninput = opt.oninput;
+      $element.onkeydown = this._onShortcut.bind(this);
+      return $element;
     }
-
-    const $element: HTMLInputElement = super.createElement() as HTMLInputElement;
-    $element.type = 'text';
-    $element.defaultValue = this.opt.message;
-    $element.size = Translation.getPreferSize(this.opt.message.length);
-    $element.oninput = this.opt.oninput;
-    $element.onkeydown = this._onShortcut.bind(this);
-
-    return $element;
+    return super.createElement();
   }
 
-  render() {
+  render(): void {
+    const opt: translationOption = this.opt;
+    if (opt.overwriteMode && TranslationUtil.isComment(opt.message)) {
+      return;
+    }
+    if (opt.overwriteMode && (!opt.x || !opt.y)) {
+      return;
+    }
     super.render();
+
     if (this.opt.editableMode && this.opt.focus) {
       console.log('focus');
       const $element = this.$element as HTMLInputElement;

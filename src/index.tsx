@@ -9,10 +9,10 @@ import {
   translation,
   propertiedTranslation,
   cutTranslation,
-  imageTranslation,
+  propertiedImageTranslation,
   translationFile,
   Translation
-} from './translation';
+} from './translation-data-model';
 import { noticeOption, Notice } from './elements/notice';
 import {
   translationOption,
@@ -43,10 +43,15 @@ const defaultOptions: Options = {
   applyFont: true,
   developmentMode: false,
   editableMode: false,
-  overwriteMode: true
+  overwriteMode: false
 };
 let options: Options;
 let data: translationFile;
+const yamlOption = {
+  noArrayIndent: true,
+  sortKeys: true,
+  noCompatMode: true
+};
 
 function log(message: any, ...optionalParams: any[]) {
   if (options.developmentMode) {
@@ -129,11 +134,7 @@ function handleResponse(response: string) {
 function getYaml(): string {
   const dataToParse: any = data;
   dataToParse['//'] = license;
-  const yamlText = yaml.dump(data, {
-    noArrayIndent: true,
-    sortKeys: true,
-    noCompatMode: true
-  });
+  const yamlText = yaml.dump(data, yamlOption);
   return yamlText + '\n';
 }
 
@@ -163,12 +164,14 @@ function appendHotLinks(): void {
 function renderTranslations(focus?: translationAddress) {
   // Handle negative index
   if (focus) {
+    const image = data[focus[0]];
+    const cuts: cutTranslation[] = Array.isArray(image) ? image : image.text;
     log(focus);
     if (focus[1] < 0) {
-      focus[1] = data[focus[0]].length + focus[1];
+      focus[1] = cuts.length + focus[1];
     }
     if (focus[2] < 0) {
-      focus[2] = data[focus[0]][focus[1]].length + focus[2];
+      focus[2] = cuts[focus[1]].length + focus[2];
     }
   }
 
@@ -184,7 +187,8 @@ function renderTranslations(focus?: translationAddress) {
       !data ||
       data[imageId] === null ||
       data[imageId] === undefined ||
-      data[imageId].length === 0
+      (Array.isArray(data[imageId]) &&
+        (data[imageId] as cutTranslation[]).length === 0)
     ) {
       const opt: any = {
         message:
@@ -200,7 +204,7 @@ function renderTranslations(focus?: translationAddress) {
         editableMode: options.developmentMode && options.editableMode
       };
       if (options.developmentMode && options.editableMode) {
-        opt.onclick = (ev: Event): any => {
+        opt.onclick = (): any => {
           log(`clicked ${imageId}`);
           if (!data) {
             data = {};
@@ -212,13 +216,90 @@ function renderTranslations(focus?: translationAddress) {
       }
       new Notice(opt as noticeOption).render();
     } else {
-      const image: imageTranslation = data[imageId];
+      const $frame = document.createElement('div');
+      $frame.classList.add('frame');
+      $frame.style.top = util.getProperty(img, 'offsetTop') + 'px';
+      $frame.style.left = util.getProperty(img, 'offsetLeft') + 'px';
+      $frame.style.width = util.getProperty(img, 'width') + 'px';
+      $frame.style.height = util.getProperty(img, 'height') + 'px';
+      util.getBodyElement().appendChild($frame);
+      if (options.overwriteMode && !Array.isArray(data[imageId])) {
+        const canvasData = (data[imageId] as propertiedImageTranslation).canvas;
+        const $canvas: HTMLCanvasElement = document.createElement('canvas');
+        $canvas.width = util.getProperty(img, 'width');
+        $canvas.height = util.getProperty(img, 'height');
+        $canvas.classList.add('overwrite');
+
+        if (options.editableMode) {
+          let $textarea: HTMLTextAreaElement | null = null;
+          $canvas.addEventListener('click', e => {
+            if ($textarea !== null) {
+              return;
+            }
+            e.preventDefault();
+            e.stopPropagation();
+            $textarea = document.createElement('textarea');
+            $textarea.classList.add('canvas-data');
+            $textarea.defaultValue = yaml.dump(canvasData, yamlOption);
+            $textarea.oninput = () => {
+              if ($textarea === null) {
+                return;
+              }
+              try {
+                const load = yaml.load($textarea.value);
+                (data[imageId] as propertiedImageTranslation).canvas = load;
+
+                removeTranslates();
+                renderTranslations();
+              } catch (e) {
+                return;
+              }
+            };
+            $textarea.onkeydown = (ev: KeyboardEvent) => {
+              if ($textarea === null) {
+                return;
+              }
+              if ((ev.ctrlKey && ev.key == 'Enter') || ev.key == 'Escape') {
+                $textarea.remove();
+                $textarea = null;
+              }
+            };
+            util.getBodyElement().appendChild($textarea);
+          });
+        }
+
+        const ctx = $canvas.getContext('2d');
+        if (ctx) {
+          for (const shape of canvasData) {
+            ctx.beginPath();
+            ctx.fillStyle = shape.color || 'white';
+            const t = shape.func;
+            if (t == 'ellipse') {
+              const [x, y, rx, ry] = shape.param;
+              ctx.ellipse(x, y, rx, ry, 0, 0, 2 * Math.PI);
+            } else if (t == 'rect') {
+              let [x, y, w, h] = shape.param;
+              ctx.rect(x, y, w, h);
+            }
+            if (options.editableMode) {
+              ctx.strokeStyle = 'red';
+              ctx.stroke();
+            } else {
+              ctx.fill();
+            }
+          }
+        }
+        $frame.appendChild($canvas);
+      }
+      const image: cutTranslation[] = Array.isArray(data[imageId])
+        ? (data[imageId] as cutTranslation[])
+        : (data[imageId] as propertiedImageTranslation).text;
       for (let cutIndex: number = 0; cutIndex < image.length; cutIndex++) {
         const cut: cutTranslation = image[cutIndex];
         const $tlsGroup: HTMLDivElement = newTranslationGroup();
         for (let tlsIndex: number = 0; tlsIndex < cut.length; tlsIndex++) {
           {
-            const datum = data[imageId][cutIndex][tlsIndex];
+            const datum = getDatum(imageId, cutIndex, tlsIndex);
             const text = typeof datum === 'string' ? datum : datum.text;
             if (
               (!options.developmentMode || !options.editableMode) &&
@@ -228,7 +309,7 @@ function renderTranslations(focus?: translationAddress) {
             }
           }
           const opt: any = {
-            datum: data[imageId][cutIndex][tlsIndex],
+            datum: getDatum(imageId, cutIndex, tlsIndex),
             address: [imageId, cutIndex, tlsIndex],
             tag: 'p',
             parent: $tlsGroup,
@@ -245,19 +326,20 @@ function renderTranslations(focus?: translationAddress) {
               if (ev.target instanceof HTMLInputElement) {
                 const target = ev.target as HTMLInputElement;
                 const changed = target.value;
-                const datum = data[imageId][cutIndex][tlsIndex];
+                const datum = getDatum(imageId, cutIndex, tlsIndex);
 
                 target.size = TranslationElement.getPreferSize(changed.length);
                 if (typeof datum === 'string') {
-                  data[imageId][cutIndex][tlsIndex] = changed;
+                  setDatum(changed, imageId, cutIndex, tlsIndex);
                 } else {
                   datum.text = changed;
-                  data[imageId][cutIndex][tlsIndex] = datum;
+                  setDatum(datum, imageId, cutIndex, tlsIndex);
                 }
                 chrome.storage.local.set({ [location.pathname]: data }, () => {
                   log(`${location.pathname} is set`);
                   log(
-                    `${imageId}-${cutIndex}-${tlsIndex} is ${data[imageId][cutIndex][tlsIndex]}`
+                    `${imageId}-${cutIndex}-${tlsIndex} is ` +
+                      getDatum(imageId, cutIndex, tlsIndex)
                   );
                 });
               }
@@ -272,28 +354,31 @@ function renderTranslations(focus?: translationAddress) {
                 (ctrl ? 'Ctrl+' : '') +
                 (shift ? 'Shift+' : '') +
                 `${key} at ${[imageId, cutIndex, tlsIndex]}.`;
+              const image: cutTranslation[] = Array.isArray(data[imageId])
+                ? (data[imageId] as cutTranslation[])
+                : (data[imageId] as propertiedImageTranslation).text;
               // Enter
               if (!ctrl && !shift && key === 'Enter') {
-                data[imageId][cutIndex].splice(tlsIndex + 1, 0, '');
+                image[cutIndex].splice(tlsIndex + 1, 0, '');
                 focus = [imageId, cutIndex, tlsIndex + 1];
               } else if (!ctrl && shift && key === 'Enter') {
-                data[imageId][cutIndex].splice(tlsIndex, 0, '');
+                image[cutIndex].splice(tlsIndex, 0, '');
                 focus = [imageId, cutIndex, tlsIndex];
               } else if (ctrl && shift && key === 'Enter') {
-                data[imageId].splice(cutIndex, 0, ['']);
+                image.splice(cutIndex, 0, ['']);
                 focus = [imageId, cutIndex, 0];
               } else if (ctrl && key === 'Enter') {
-                data[imageId].splice(cutIndex + 1, 0, ['']);
+                image.splice(cutIndex + 1, 0, ['']);
                 focus = [imageId, cutIndex + 1, 0];
               }
               // Backspace
               else if (key == 'Backspace' && text.length === 0) {
                 const onlyTranslate =
-                  data[imageId][cutIndex].length == 1 && tlsIndex === 0;
-                const onlyCut = data[imageId].length == 1 && cutIndex === 0;
+                  image[cutIndex].length == 1 && tlsIndex === 0;
+                const onlyCut = image.length == 1 && cutIndex === 0;
                 if (!onlyTranslate) {
                   console.log('Delete a translate');
-                  data[imageId][cutIndex].splice(tlsIndex, 1);
+                  image[cutIndex].splice(tlsIndex, 1);
                   focus = [
                     imageId,
                     cutIndex,
@@ -301,7 +386,7 @@ function renderTranslations(focus?: translationAddress) {
                   ];
                 } else if (!onlyCut) {
                   console.log('Delete a cut');
-                  data[imageId].splice(cutIndex, 1);
+                  image.splice(cutIndex, 1);
                   focus = [imageId, cutIndex - 1, -1];
                 }
               } else {
@@ -319,7 +404,7 @@ function renderTranslations(focus?: translationAddress) {
               return true;
             };
             opt.changeDatum = (datum: translation): any => {
-              data[imageId][cutIndex][tlsIndex] = datum;
+              setDatum(datum, imageId, cutIndex, tlsIndex);
 
               // Store data
               chrome.storage.local.set({ [location.pathname]: data }, () => {
@@ -328,7 +413,7 @@ function renderTranslations(focus?: translationAddress) {
             };
           }
 
-          const datum = data[imageId][cutIndex][tlsIndex];
+          const datum = getDatum(imageId, cutIndex, tlsIndex);
           const text = typeof datum === 'string' ? datum : datum.text;
           if (typeof cut[tlsIndex] === 'string') {
             if (
@@ -342,9 +427,25 @@ function renderTranslations(focus?: translationAddress) {
             const translate = cut[tlsIndex] as propertiedTranslation;
             opt.message = text;
             opt.marginLeft = translate['margin-left'];
-            if (translate['type']) opt.type = translate['type'];
+            opt.x = translate.x;
+            opt.y = translate.y;
+            opt.width = translate.w;
+            opt.height = translate.h;
+            if (!options.overwriteMode && translate['type']) {
+              opt.type = translate['type'];
+            }
           }
-          new TranslationElement(opt as translationOption).render();
+          opt.overwriteMode = false;
+          if (options.overwriteMode) {
+            if (options.developmentMode && options.editableMode) {
+              new TranslationElement(opt as translationOption).render();
+            }
+            opt.overwriteMode = true;
+            opt.parent = $frame;
+            new TranslationElement(opt as translationOption).render();
+          } else {
+            new TranslationElement(opt as translationOption).render();
+          }
         }
         $tlsGroup.style.top =
           util.getProperty(img, 'offsetTop') +
@@ -360,6 +461,33 @@ function renderTranslations(focus?: translationAddress) {
   }
 }
 
+function getDatum(
+  imageId: string,
+  cutIndex: number,
+  tlsIndex: number
+): translation {
+  const image = data[imageId];
+  if (Array.isArray(image)) {
+    return image[cutIndex][tlsIndex];
+  }
+  return image.text[cutIndex][tlsIndex];
+}
+
+function setDatum(
+  datum: translation,
+  imageId: string,
+  cutIndex: number,
+  tlsIndex: number
+): void {
+  const image = data[imageId];
+  if (Array.isArray(image)) {
+    (data[imageId] as cutTranslation[])[cutIndex][tlsIndex] = datum;
+  }
+  (data[imageId] as propertiedImageTranslation).text[cutIndex][
+    tlsIndex
+  ] = datum;
+}
+
 function newTranslationGroup(): HTMLDivElement {
   const $div = document.createElement('div');
   $div.classList.add('translation-group', 'float');
@@ -369,7 +497,7 @@ function newTranslationGroup(): HTMLDivElement {
 
 function removeTranslates() {
   document
-    .querySelectorAll('.caption, .translation-group')
+    .querySelectorAll('.caption, .translation-group, canvas.overwrite, .frame')
     .forEach((e: Element) => {
       e.remove();
     });
@@ -404,6 +532,13 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
           .getBodyElement()
           .classList.toggle('apply-font', event.target.checked);
         options.applyFont = event.target.checked;
+        onChangeSettings();
+      }}
+      defaultOverwriteMode={options.overwriteMode}
+      onChangeOverwriteMode={(event: React.ChangeEvent<HTMLInputElement>) => {
+        removeTranslates();
+        renderTranslations();
+        options.overwriteMode = event.target.checked;
         onChangeSettings();
       }}
       defaultDevelopmentMode={options.developmentMode}

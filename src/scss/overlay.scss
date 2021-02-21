@@ -39,5 +39,12 @@
         display: none;
       }
     }
+
+    #overwrite-mode,
+    label[for='overwrite-mode'] {
+      body:not(.development-mode) & {
+        display: none;
+      }
+    }
   }
 }

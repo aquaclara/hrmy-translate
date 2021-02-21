@@ -7,6 +7,8 @@ interface PropsType {
   onChangeFontSize: (event: React.ChangeEvent<HTMLInputElement>) => void;
   defaultApplyFont: boolean;
   onChangeApplyFont: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  defaultOverwriteMode: boolean;
+  onChangeOverwriteMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
   defaultDevelopmentMode: boolean;
   onChangeDevelopmentMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -48,6 +50,13 @@ export class Configuration extends React.Component<PropsType, {}> {
             onChange={this.props.onChangeDevelopmentMode}
           />
           <label htmlFor="development-mode">개발자 모드</label>
+          <input
+            type="checkbox"
+            id="overwrite-mode"
+            defaultChecked={this.props.defaultOverwriteMode}
+            onChange={this.props.onChangeOverwriteMode}
+          />
+          <label htmlFor="overwrite-mode">덧그리기 모드</label>
           <button
             id="remove-storage"
             onClick={() => chrome.storage.local.remove(location.pathname)}
