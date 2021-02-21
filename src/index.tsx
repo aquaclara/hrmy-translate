@@ -31,13 +31,13 @@ const tlsPath = '/translations' + location.pathname.replace('.html', '.yaml');
 const githubUrl = githubUrlBase + tlsPath;
 const localUrl = chrome.runtime.getURL(tlsPath);
 
-type Option = {
+type Options = {
   fontSize: number;
   applyFont: boolean;
   developmentMode: boolean;
   editableMode: boolean;
 };
-let options: Option;
+let options: Options;
 let data: translationFile;
 
 function log(message: any, ...optionalParams: any[]) {
@@ -47,15 +47,16 @@ function log(message: any, ...optionalParams: any[]) {
 }
 
 function main() {
+  const defaultOptions: Options = {
+    fontSize: 5,
+    applyFont: true,
+    developmentMode: false,
+    editableMode: false
+  }
   chrome.storage.sync.get(
-    {
-      fontSize: 5,
-      applyFont: true,
-      developmentMode: false,
-      editableMode: false
-    },
+    defaultOptions,
     items => {
-      options = items as Option;
+      options = items as Options;
       log('Options loaded');
       log(items);
 
