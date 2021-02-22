@@ -199,6 +199,7 @@ body.horimiya.apply-font {
   .translation {
     position: absolute;
     color: variables.$black;
+    word-break: keep-all;
     margin: 0;
     padding: 0;
     border: 1px solid transparent;
