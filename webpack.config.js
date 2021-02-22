@@ -28,8 +28,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.tsx']
   },
-  // optimization: {
-  //   minimize: false
-  // },
+  optimization: {
+    minimize: false
+  },
   plugins: [new BitBarWebpackProgressPlugin()]
 };

@@ -482,10 +482,11 @@ function setDatum(
   const image = data[imageId];
   if (Array.isArray(image)) {
     (data[imageId] as cutTranslation[])[cutIndex][tlsIndex] = datum;
+  } else {
+    (data[imageId] as propertiedImageTranslation).text[cutIndex][
+      tlsIndex
+    ] = datum;
   }
-  (data[imageId] as propertiedImageTranslation).text[cutIndex][
-    tlsIndex
-  ] = datum;
 }
 
 function newTranslationGroup(): HTMLDivElement {
