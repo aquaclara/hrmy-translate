@@ -132,6 +132,8 @@ export class Translation extends Caption {
       this._stylize(target, '<small>', '</small>');
     } else if (ev.ctrlKey && ev.key == 'b') {
       this._stylize(target, '<b>', '</b>');
+    } else if (ev.ctrlKey && ev.key == 'i' && location.href.includes('/aco/')) {
+      this._stylize(target, '<span class="blue">', '</span>');
     } else if (ev.ctrlKey && ev.key == 'u') {
       // Suppress view source shortcut
       ev.preventDefault();

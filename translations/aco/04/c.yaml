@@ -1,32 +1,258 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 aco/04/01.gif:
--
-  - (조금 있으면 「아코」를 주인공으로 하는 이야기가 시작한다)
--
-  - (1화 완결만 해왔으니까 좀 힘겹구나)
-  - (아니 기본은 1화 완결로 괜찮으려나)
-  - (주인공이 같은 사람일 뿐)
--
-  - (실제 귀신이란 건 여러모로 들어온 것과는 꽤 다르구나)
-  - (자고 일어나고, 물건을 만질 수도 있고)
--
-  - (......그리고 본인은 살아 있던 때의 기억은 없다고 말했지만)
-  - (기억 나지 않도록 무의식으로 눌러 막고 있는 것 같다)
+- - text: 조금 있으면 「아코」를 주인공으로 하는 이야기가 시작한다
+    type: square
+- - text: 1화 완결만 해왔으니까 좀 힘겹구나
+    type: thought
+  - text: 아니 기본은 1화 완결로 괜찮으려나. 주인공이 같은 사람일 뿐
+    type: thought
+- - 실제 귀신이란 건 여러모로 들어온 것과는 꽤 다르구나
+  - 자고 일어나고, 물건을 만질 수도 있고
+- - text: ......그리고 본인은 살아 있던 때의 기억은 없다고 말했지만
+    type: thought
+  - text: 기억 나지 않도록 무의식으로 눌러 막고 있는 것 같다
+    type: thought
 aco/04/02.gif:
+- - 그건 버릇이야?
+- - 입술 근처를 만지는 건, 버릇이야?
+- - 그럴지도 모르겠네
+- - 안녕
+  - 안녕
+  - '// 원문: 静まり返る'
+  - text: 심야, 조용해진 약 8시간은 모조리 아코와 이야기하는 시간이 됐다
+    type: square
 aco/04/03.gif:
+- - text: 이 건물에는 이른바 유명한 「사고 매물」로, 사건이 있었던 내 방 이외에도 오랫동안 비어 있었던 것 같다
+    type: square
+  - text: 이렇게 밤에 떠들면 소음으로 신고가 들어올지도 모르지만...... 다행이야, 다 비어 있어서
+    type: thought
+- - 그게 내가 말했던 거지? 보여줘
+  - '// 원문: 箇条書き'
+  - 괜찮은데 아직 메모만 한 거야, 이제부터 정리할 거라서
+- - text: 슥
+    type: stroke
+  - 흠-
+- - …………
 aco/04/04.gif:
+- - ......너, 안경 썼었어?
+  - 뭐?
+- - text: 앞 머리는...... 일부러 한 건지 알았지만, 안경을 쓰는 사람이 가끔 이렇게 말리지
+    type: square
+  - text: 난 안경 썼던 걸까?
+    type: plain
+  - text: '? ?'
+    type: plain
+  - text: 아니, 그냥 말해본 거야
+    type: plain
+- - ''
+- - text: 확-
+    type: stroke
 aco/04/05.gif:
+- - 왜? 이상한 게 써 있어?
+  - 아, 나는 이건 아닌 것 같아
+- - text: '○무대 (현대): 학교? 집?'
+    type: plain
+  - text: '○외관: 교복, <b>귀여움</b>, 머리 긺'
+    type: plain
+  - text: '○시대: 현대로 하고... 과'
+    type: plain
+  - 어
+- - 아니, 귀여운 편인지 예쁜 편인지로 말하면 그렇다는 거였어
+  - 아, 그런
+  - text: 저기
+    type: stroke
+  - 그래, 그래
+  - 그래, 미안해. 나도 참 과민반응을
+- - 그래, 이건 나에 대해 쓴 게 아니니까
+  - 어디까지나 이야기에 대한 거니까, 미안해
 aco/04/06.gif:
+- - text: 그렇게 얼굴이 새빨개지면서까지 부끄러워할 일인가?
+    type: thought
+  - text: 그러고 보니 요 근처에
+    type: stroke
+  - 이야기 하는 도중에 안 나왔던가? 「귀엽다」고, 농담이라도
+  - text: ' 묘지에서 있지~'
+    type: stroke
+- - text: 아니, 농담이라기 보다
+    type: thought
+  - text: 조그만 남자 애가 있어서 같이
+    type: stroke
+  - text: 축구하고 놀었거든, 교통사고였다고 그래-
+    type: stroke
+- - ''
+- - text: 역시 갔다 왔어
+    type: thought
 aco/04/07.gif:
+- - 야시로, 안녕
+  - 어... 안녕
+  - 오늘은 스쿠와랑 같이 있지 않네?
+- - 잠깐만
+- - 그렇게 늘 같이 다니는 건 아니야
+  - 그래?
+  - 뭐? 난 둘이 사귀는 줄 알았는데
+- - ...초등학교때부터 친구야
+  - text: 아- 소꿉친구구나-
+    type: plain
 aco/04/08.gif:
+- - ''
+- - 스쿠와, 그건 뭐야?
+  - 선물 받은 거
+  - 여자?
+- - 싫어하는 사람한테는 이런 거 안 주겠지?
+- - 뭐 보통은 안 주지 않겠냐?
+  - 그렇지
+  - 그보다 문화제 있지~
 aco/04/09.gif:
+- - ''
+- - ''
+- - 안녕 밤비, 있잖아 오늘 완전 보름달이야, 밝이 환...
+  - text: にゅ
+    type: stroke
+- - ............
 aco/04/10.gif:
+- - ''
+- - text: 혹시 나한테 맞춰서 항상 깨어 있었던 걸까-
+    type: thought
+- - text: 기울
+    type: stroke
+- - text: 슥
+    type: stroke
 aco/04/11.gif:
+- - text: 따뜻하다
+    type: thought
+- - text: <big>차가</big>
+    type: speech
+  - text: 섬짓
+    type: stroke
+  - text: 깜짝
+    type: stroke
+- - 어, 안녕
+  - 안, 안녕... 미안해, 깨워서
+- - 방이 너무 따뜻해서 갑자기 졸리더라고
+  - 조그만 동물 같네
+  - 나 기다렸지?
 aco/04/12.gif:
+- - 아니야
+  - text: カキカキ
+    type: stroke
+  - 와 줬는데 미안하지만 지금 담당자님께 연락을 기다리고 있어서 따로 할 일이 없어
+- - 아, 그럼 난 돌아갈...
+  - 그러니까 오늘은 뭐 할까?
+- - 뭘 한다기 보단 할 수 있는 일에 한해서지만 말이야
+  - text: すとん
+    type: stroke
+- - 으아, 차가 엄청 미적지근하네
 aco/04/13.gif:
+- - 있잖아, 그럼 나 밤비 얘기 듣고 싶어
+- - 뭐-?
+  - 계속 내가 이야기했잖아, 난 밤비에 대해선 하나도 모르는걸
+- - 뭐가......알고 싶어......?
+  - 음-.. 음-...
+  - 일은 언제부터 한 거야?
+- - ......고등학생 때부터 이렇게 작은 건 쓸 수 있게 됐고, 지금은 혼자 먹고 살 정도는 됐지?
+  - '// 원문: 家賃'
+  - text: <span class="blue">집세가 만 오천 엔이지만...</span>
+    type: thought
 aco/04/14.gif:
+- - ......흠-
+  - text: 듣고 싶은 거 종료
+    type: square
+  - text: 아, 사람에게 그다지 관심 안 가지는 편이구나
+    type: thought
+- - ...나 내가 직접 물어보는 건 잘 못하나 봐, 밤비가 직접 이야기해 봐. 장점이나 단점이나
+  - 난 면접 같은 건 질색이라 이런 일을 하는 건데...
+- - 어...... 나이는...... 19살이고...
+  - text: <big>뭐!?</big>
+    type: speech
+- - 미 미성년자였어...? 직업 갖고 일하는 사람은 다 스무살은 넘었을 거라고 생각했는데, 잘 생각하니 그렇지도 않은걸......
+  - 그랬구나
 aco/04/15.gif:
+- - ......미안해 빠른년생이라 사실은 아직 18살이야...
+  - text: どよん
+    type: stroke
+  - 왜 거짓말을 해!?
+- - 아냐, 미안해, 왠지 그냥......
+  - 어? 그럼 엄청 일찍 데뷔한 거지? 대단하다!
+- - 뭐- 고등학교를 중간에 그만 뒀지만 말이야
+- - ............
+  - ......그래? 그래도 열심히 하는 거지?
 aco/04/16.gif:
+- - 아니 그래도 한 번 들어간 고등학교는 졸업하는 게 좋아
+  - 난 죽었는데
+  - text: 잊어버린 것 같지만
+    type: stroke
+  - 아!! 그랬지, 참
+- - text: 교복을 입은 탓인가
+    type: square
+  - text: 가끔 반 친구와 얘기하는 것 같은 기분이 든다
+    type: square
+- - text: 그러고 보면 같은 반이었던 여자애 중 한 명만, 나를 별명으로 부르던 사람이 있었다
+    type: square
+  - text: 다른 여자애들은 모두 성으로 불렀는데
+    type: square
+- - text: 그 애는 제대로 졸업했을까, 착실한 편이었으니까
+    type: square
+  - ......
 aco/04/17.gif:
+- - 피곤해? 계속 컴퓨터만 보고 있으니까
+  - 어? 아, 아냐 그런 게 아니고
+- - 오늘은 이만 자고 내일 일어나. 나도 돌아갈 테니까
+  - 아니, 그래도 갈 곳 없지 않아?
+  - 난 괜찮다니까
+  - 있잖아
+- - 내가 자고 있을 때도 있겠지만 그냥 여기 있어도 돼
+- - 으, 응 ......고마워
 aco/04/18.gif:
+- - text: ......어? 지금 뭔가 이상한 말을 했나?
+    type: thought
+  - text: 벗으려고?
+    type: plain
+- - 잘 자-
+- - ......잘 자
+- - text: 자기 전에 「잘 자」라고 한 게 몇 년 만일까
+    type: square
 aco/04/19.gif:
+- - text: 이 애가 살아 있었다면-
+    type: thought
+  - text: 뒤척
+    type: stroke
+- - text: 「살아 있었다면」......? 살아 있으면 뭐?
+    type: thought
+  - text: 아니아니, 뭐? 뭐?
+    type: thought
+- - 어-?
+  - text: 뒤척
+    type: stroke
+  - text: 그 아이를 귀엽다고 생각한 것은 진짜다
+    type: square
+- - text: 그리고 그게 전해졌을 때 그 반응을 보고
+    type: square
+  - text: 다시 조금 아, 귀엽구나 하고 생각한 것도 사실이다
+    type: square
 aco/04/20.gif:
+- - 어! 그 키 홀더
+- - 스쿠와도 갖고 있었는데~!
+  - 아... 내가 준 거야, 가게에서 2개를 받아서...
+  - 뭐-? 그냥 친구라더니?
+- - 응, 친구니까
+- - 소중한 친구니까 준 거야

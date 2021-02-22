@@ -35,8 +35,9 @@ layout: default
 
 ### 글자 모양
 
-| 키       | 기능                                                                                          |
-| -------- | --------------------------------------------------------------------------------------------- |
-| CTRL + u | <span style="-webkit-text-stroke-width: 1px;">`<strong class="stroke">테두리</strong>`</span> |
-| CTRL + b | <b>`<b>진하게</b>`</b>                                                                        |
-| CTRL + . | <big>`<big>크게</big>`</big>                                                                  |
+| 키                          | 기능                                                                                          |
+| --------------------------- | --------------------------------------------------------------------------------------------- |
+| CTRL + u                    | <span style="-webkit-text-stroke-width: 1px;">`<strong class="stroke">테두리</strong>`</span> |
+| CTRL + b                    | <b>`<b>진하게</b>`</b>                                                                        |
+| CTRL + .                    | <big>`<big>크게</big>`</big>                                                                  |
+| CTRL + i(아코와 밤비에서만) | `<span class="blue"></span>`                                                                  |
