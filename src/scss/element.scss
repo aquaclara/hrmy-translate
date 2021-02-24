@@ -200,9 +200,11 @@ body.horimiya.apply-font {
     position: absolute;
     color: variables.$black;
     word-break: keep-all;
+    word-wrap: break-word;
     margin: 0;
     padding: 0;
     border: 1px solid transparent;
+
     body.editable-mode & {
       border-color: blue;
       background-color: #fffa;

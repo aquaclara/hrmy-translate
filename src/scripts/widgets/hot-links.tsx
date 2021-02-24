@@ -1,19 +1,27 @@
 import React from 'react';
-import { githubUrlBase } from '../constants';
+const copy = require('copy-to-clipboard');
+
+import TranslationDataContainer from '../interfaces/translation-data-container';
+import { GITHUB_URL_BASE } from '../constants';
 
 interface PropsType {
   onClickConfigure: (event: React.MouseEvent<HTMLAnchorElement>) => void;
-  tlsPath: string;
-  onClickCopy: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  translationDataContainer: TranslationDataContainer;
   defaultEditableMode: boolean;
   onChangeEditableMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  fileName: string;
-  fullFilePath: string;
 }
 
 export class HotLinks extends React.Component<PropsType, {}> {
+  tlsPath: string;
+  fileName: string;
+  fullFilePath: string;
+
   constructor(props: PropsType) {
     super(props);
+    this.tlsPath =
+      '/translations' + location.pathname.replace('.html', '.yaml');
+    this.fileName = location.href.substring(location.href.lastIndexOf('/') + 1);
+    this.fullFilePath = location.href;
   }
 
   render() {
@@ -27,7 +35,7 @@ export class HotLinks extends React.Component<PropsType, {}> {
         </a>
         <a
           className="translate clickable cell"
-          href={githubUrlBase + this.props.tlsPath}
+          href={GITHUB_URL_BASE + this.tlsPath}
           target="_blank"
         >
           번역 수정하기
@@ -42,12 +50,18 @@ export class HotLinks extends React.Component<PropsType, {}> {
           <span className="edit-button-label">수정</span>
           <span className="view-button-label">보기</span>
         </label>
-        <a className="copy clickable cell" onClick={this.props.onClickCopy}>
+        <a
+          className="copy clickable cell"
+          onClick={(event: React.MouseEvent<HTMLAnchorElement>): void => {
+            copy(this.props.translationDataContainer.getDataInYaml());
+            return;
+          }}
+        >
           YAML 복사
         </a>
         <div id="file-name" className="cell">
-          <span>{this.props.fileName}</span>
-          <span className="full-file-path">{this.props.fullFilePath}</span>
+          <span>{this.fileName}</span>
+          <span className="full-file-path">{this.fullFilePath}</span>
         </div>
         <div className="caution cell">
           이 사이트 내 그림의 무단전제, 도용, 링크, 캡처, 촬영 등은 금지되어

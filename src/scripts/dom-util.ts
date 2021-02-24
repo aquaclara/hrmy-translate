@@ -2,18 +2,22 @@ const util = {
   /**
    * @return {HTMLBodyElement}
    */
-  getBodyElement: (): HTMLElement => {
-    let documentBody;
+  getBodyElement: (): HTMLBodyElement => {
+    let documentBody: HTMLBodyElement;
     const frames = document.querySelectorAll('frame');
     if (
       document.querySelector('frameset') &&
       frames[1].contentWindow !== null
     ) {
-      documentBody = frames[1].contentWindow.document.body;
+      documentBody = frames[1].contentWindow.document.body as HTMLBodyElement;
     } else {
-      documentBody = document.body;
+      documentBody = document.body as HTMLBodyElement;
     }
     return documentBody;
+  },
+
+  newChildOfBody: (): HTMLElement => {
+    return util.getBodyElement().appendChild(document.createElement('div'));
   },
 
   /**

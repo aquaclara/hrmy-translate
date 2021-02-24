@@ -1,0 +1,261 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/05/01.gif:
+- - text: 어서 와-
+    type: speech
+- - 지난번에는 키 홀더 페어를 주셔서 감사했습니다
+  - 괜찮아, 아코는 늘 여러 가지를 사 가잖니
+- - 저기... 그래서... 또 다른 남자 사이즈 물건은 없을까요......?
+  - text: <span class="blue">소곤...</span>
+    type: stroke
+- - text: <big>아니에요, 그런 게 아니라, 정말</big>
+    type: speech
+aco/05/02.gif:
+- - 티셔츠나- 수건?
+  - text: 티셔츠...
+    type: thought
+- - text: <strong class="stroke">딩동-</strong>
+    type: stroke
+- - text: 알아봤을...까?
+    type: thought
+- - text: 코지마 선생님, 아마 저번 그 팬에게서 온 것 같습니다. 대단하신대요? (웃음)
+    type: square
+  - text: (웃음)할 게 아니라
+    type: thought
+  - text: 폭발물이면 어떡할 거야
+    type: stroke
+aco/05/03.gif:
+- - 유령 티셔츠
+  - text: 바스락
+    type: plain
+- - ......남자 사이즈?
+- - text: 날 알고 있어...?
+    type: thought
+  - text: 그리고 나한텐 좀 커
+    type: plain
+- - text: 이런 일을 하면서 혼자 산다는 건 친구 2~3명과 가족 정도밖에 모르는데
+    type: thought
+  - 아
+aco/05/04.gif:
+- - text: 퐁
+    type: stroke
+- - ''
+- - ''
+- - 수업 중에 스마트폰 전원은 꺼 두도록
+  - 네, 죄송합니다
+aco/05/05.gif:
+- - text: 웅성
+    type: plain
+  - text: <span class="blue">자, 조용- 그럼 오늘은 여기까지-</span>
+    type: speech
+  - text: 웅성 웅성
+    type: plain
+- - text: 시청각
+    type: plain
+  - text: 드르륵
+    type: stroke
+- - text: 탕
+    type: stroke
+- - text: 코지카
+    type: plain
+  - text: 새 메시지가 있습니다.
+    type: plain
+  - text: 친구로 추가하시겠습니까?
+    type: plain
+  - text: 예
+    type: square
+  - text: 아니오
+    type: square
+aco/05/06.gif:
+- - ''
+- - text: 톡
+    type: stroke
+  - text: 네
+    type: square
+- - text: 퐁
+    type: stroke
+- - text: 코지마
+    type: plain
+  - text: 코지마입니다
+    type: speech
+  - 슬리퍼와 티셔츠 고마워
+  - text: 야마시로
+    type: plain
+  - 처음 뵙습니다
+  - 야마시타라고 합니다
+aco/05/07.gif:
+- - text: 음-...
+    type: thought
+  - 처음 뵙습니다
+  - text: 굳어져 가는 이미지
+    type: square
+  - '// 원문: 丁寧'
+  - text: 여자......? 맞지.......? 공손한 사람이네
+    type: thought
+- - text: 코지카
+    type: plain
+  - text: 「아코」에 대해서는 어떻게 알아?
+    type: square
+  - text: 야마시로
+    type: plain
+  - 잘 설명이 어렵네요, 죄송합니다.
+  - text: 코지카
+    type: plain
+  - 넌 아코의 뭐야?
+- - ''
+- - 야마시로
+  - 당신이야말로 아코의 무엇입니까?
+aco/05/08.gif:
+- - text: 그렇게 나오겠지......
+    type: thought
+  - text: 음-
+    type: plain
+  - text: 난 그 애의 뭘까-?
+    type: plain
+  - text: 내가 그 애를 멋대로 붙잡아 놓고 있는 걸로 착각하나 봐- 아니, 절반은 그게 맞지만
+    type: thought
+- - text: 엄청 공격적으로 말했어...... 그런 말을 하려는 게 아닌데
+    type: thought
+  - text: 음-
+    type: stroke
+  - text: 화났나? 화났겠지......
+    type: thought
+- - text: 야마시로
+    type: plain
+  - 저
+  - 아코를 어떻게 생각하나요? 곤란하지는 않습니까?
+- - ''
+aco/05/09.gif:
+- - text: 코지카
+    type: plain
+  - 먼저 폐를 끼친 건 이쪽으로
+  - 항상 신세를 지고 있습니다
+- - text: 후유
+    type: square
+- - text: 어? 내가 좋아하는 것도 이상하려나......
+    type: thought
+  - text: 딩- 동- 댕-
+    type: stroke
+- - text: 야마시로
+    type: plain
+  - 수업이 곧 시작합니다
+  - 다음에 다시 연락 드리겠습니다
+aco/05/10.gif:
+- - ......학생?
+  - text: 퐁
+    type: stroke
+- - text: 미안해...
+    type: stroke
+- - ''
+- - text: 악- 실수야, 실수
+    type: thought
+  - text: 타다다
+    type: stroke
+  - text: 아니야, 「죄송합니다」하고 보내려고 했는데
+    type: thought
+aco/05/11.gif:
+- - text: 화난 건 아닌 것 같네
+    type: thought
+- - 아, 그래요?
+- - 이건 내가 가야 하는 건가
+- - text: ......와 달라고 하는 것보단
+    type: thought
+  - text: 내가 가는 게 낫겠지......
+    type: thought
+aco/05/12.gif:
+- - 야마시로, 점심 시간이야
+  - text: 딩- 동- 댕- 동-
+    type: stroke
+  - 어. 나 잠깐, 오늘은 혼자 먹을게
+- - text: 타닥
+    type: stroke
+  - 하하, 스쿠와 차였대요
+  - 야마시로는 스마트폰 게임이라도 하는 건가?
+- - 스쿠와는 야마시로의 어디가 좋아?
+  - 응?
+- - 좋아한다고?
+aco/05/13.gif:
+- - text: 야마시로
+    type: plain
+  - 기다리게 했습니다
+  - 이상한 이야기가 될지도 모르지만, 설명하겠습니다
+  - text: 퐁
+    type: stroke
+- - text: 헉
+    type: stroke
+- - 퐁
+- - text: 코지마
+    type: plain
+  - text: 흠?
+    type: stroke
+  - text: 어
+    type: thought
+aco/05/14.gif:
+- - 같은 걸 샀네
+- - text: 야마시로
+    type: plain
+  - 제 이름은 야마시로 아코입니다
+  - 이츠츠가라 고등학교에 다니고 있습니다
+  - 어디부터 얘기하면 좋을지,,
+- - text: 「아코」
+    type: thought
+  - 퐁퐁
+- - 이츠츠가라 고등학교면...... 분명히 이 근처에
+  - text: 야마시로
+    type: plain
+  - 어느 날을 기준으로<br>당신이, 코지카 선생님이 제 꿈에 나오게 되었습니다.
+  - 저는 꿈 속의 일이라고 생각하고 있었지만,<br>당신의 이름을 검색했다가 실제로 존재하는 사람이라는 것을 알게 되었습니다.
+aco/05/15.gif:
+- - ''
+- - text: 야마시로
+    type: plain
+  - 그리고,<br> 저와 당신만 알 수 있는 질문에 답을 해 주셨습니다
+  - 그래서 이게 그저 꿈이 아니라는 것을 알았습니다
+- - text: 꿈? 꿈이 먼저? 분명 내 작품이든 이름이든 어디서 듣고서~ 같은 거라고 생각했는데
+    type: thought
+  - text: 나 자체가 꿈에 나와서 찾아봤단 거야?
+    type: thought
+- - ......히키 씨, 어느 정도 알고 있었고 조금 기대는 했지만 특별히 팬은 아니었다고
+  - text: 퐁, 퐁
+    type: stroke
+aco/05/16.gif:
+- - text: 야마시로
+    type: plain
+  - 그쪽에서 신세를 지고 있는 아코의 눈을 통해서, 정말 어렴풋하지만 전 당신의 모습이나 이름을 파악할 수 있었습니다
+  - 어렴풋한 방식은 물 솦에서 수면을 통해 보는 것 같은 느낌입니다
+- - text: 코지카
+    type: plain
+  - 여기 오는 「아코」는 너 자신? 이란 거야? 동일인물이야?
+  - text: 야마시로
+    type: plain
+  - 뭐라고도 하기 어렵습니다
+- - text: 야마시로
+    type: plain
+  - 거기 아코와 이야기할 때의 당신은 즐거워 보였습니다
+  - text: 코지카
+    type: plain
+  - '?'
+  - text: 야마시로
+    type: plain
+  - 저는 다른 사람과 이야기 하는 것을 어려워 합니다
+- - text: 아, 그래서 「폐를 끼치고 있지는 않나요」「곤란하지는 않으신가요」......
+    type: thought

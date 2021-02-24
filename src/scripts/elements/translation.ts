@@ -1,18 +1,14 @@
 import util from '../dom-util';
 import { captionOption, Caption } from './caption';
-import {
-  translation as datum,
-  propertiedTranslation as propertiedDatum,
-  translationType,
-  Translation as TranslationUtil
-} from '../translation-data-model';
+import * as DataModel from '../data-models/translation';
+import { isComment } from '../data-models/comment';
 
 export type address = [string, number, number];
 
 export interface translationOption extends captionOption {
-  datum: datum;
+  datum: DataModel.DataModel;
   address: address;
-  type: translationType;
+  type: DataModel.Type;
   focus: boolean;
   overwriteMode: boolean;
   x?: number;
@@ -20,19 +16,19 @@ export interface translationOption extends captionOption {
   width?: number;
   height?: number;
   editableMode?: boolean;
-  oninput: (ev: Event) => any;
+  onInput: (ev: Event) => any;
   onShortcut: (
     ctrl: boolean,
     shift: boolean,
     key: string,
     text: string
   ) => boolean;
-  changeDatum: (datum: datum) => any;
+  changeDatum: (datum: DataModel.DataModel) => any;
 }
 
 export class Translation extends Caption {
   opt: translationOption;
-  types: translationType[];
+  types: DataModel.Type[];
   static defaultFontSize = 24;
 
   constructor(opt: translationOption) {
@@ -72,7 +68,7 @@ export class Translation extends Caption {
       $element.type = 'text';
       $element.defaultValue = opt.message;
       $element.size = Translation.getPreferSize(opt.message.length);
-      $element.oninput = opt.oninput;
+      $element.oninput = opt.onInput;
       $element.onkeydown = this._onShortcut.bind(this);
       return $element;
     }
@@ -81,7 +77,7 @@ export class Translation extends Caption {
 
   render(): void {
     const opt: translationOption = this.opt;
-    if (opt.overwriteMode && TranslationUtil.isComment(opt.message)) {
+    if (opt.overwriteMode && isComment(opt.message)) {
       return;
     }
     if (opt.overwriteMode && (!opt.x || !opt.y)) {
@@ -173,7 +169,9 @@ export class Translation extends Caption {
     );
   }
 
-  _toPropertiedDatum(original: datum): propertiedDatum {
+  _toPropertiedDatum(
+    original: DataModel.DataModel
+  ): DataModel.PropertiedDataModel {
     if (typeof original === 'string') {
       return {
         text: original,
@@ -183,7 +181,7 @@ export class Translation extends Caption {
     return original;
   }
 
-  _minifyDatum(original: datum): datum {
+  _minifyDatum(original: DataModel.DataModel): DataModel.DataModel {
     if (typeof original === 'string') {
       return original;
     }

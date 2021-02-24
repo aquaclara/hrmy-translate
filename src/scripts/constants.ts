@@ -1,12 +1,12 @@
-export const githubUrlBase =
+export const GITHUB_URL_BASE =
   'https://github.com/aquaclara/hrmy-translate/blob/main/';
 
-export const githubRawUrlBase =
+export const GITHUB_RAW_URL_BASE =
   'https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/';
 
-export const dkaHeroUrl = 'http://dka-hero.me/';
+export const DKA_HERO_URL = 'http://dka-hero.me/';
 
-export const imageDenyList = [
+export const IMAGE_DENY_LIST = [
   'hm/horimiya_01.gif',
   'hm/horimiya_02.gif',
   'hm/horimiya_03.gif',
@@ -57,7 +57,7 @@ export const imageDenyList = [
   'hm591_620/horimiya_02.gif'
 ];
 
-export const license = `이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+export const LICENSE = `이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
 모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
 만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
 준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
@@ -77,3 +77,24 @@ translation.
 翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
 漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
 この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。`;
+
+export const YAML_OPTION = {
+  noArrayIndent: true,
+  sortKeys: true,
+  noCompatMode: true
+};
+
+export type ExtensionOptions = {
+  fontSize: number;
+  applyFont: boolean;
+  developmentMode: boolean;
+  editableMode: boolean;
+  overwriteMode: boolean;
+};
+export const DEFAULT_EXTENSION_OPTIONS: ExtensionOptions = {
+  fontSize: 5,
+  applyFont: true,
+  developmentMode: false,
+  editableMode: false,
+  overwriteMode: false
+};
