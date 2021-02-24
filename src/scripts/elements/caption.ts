@@ -82,4 +82,11 @@ export class Caption {
     this.$element = this.createElement();
     this.parent.appendChild(this.$element);
   }
+
+  getElement() {
+    if (!this.$element) {
+      this.$element = this.createElement();
+    }
+    return this.$element;
+  }
 }

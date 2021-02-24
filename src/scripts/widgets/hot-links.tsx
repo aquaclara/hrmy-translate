@@ -3,6 +3,7 @@ const copy = require('copy-to-clipboard');
 
 import TranslationDataContainer from '../interfaces/translation-data-container';
 import { GITHUB_URL_BASE } from '../constants';
+import { log, init as loggerInit } from '../logger';
 
 interface PropsType {
   onClickConfigure: (event: React.MouseEvent<HTMLAnchorElement>) => void;
@@ -22,6 +23,7 @@ export class HotLinks extends React.Component<PropsType, {}> {
       '/translations' + location.pathname.replace('.html', '.yaml');
     this.fileName = location.href.substring(location.href.lastIndexOf('/') + 1);
     this.fullFilePath = location.href;
+    loggerInit();
   }
 
   render() {
@@ -53,8 +55,8 @@ export class HotLinks extends React.Component<PropsType, {}> {
         <a
           className="copy clickable cell"
           onClick={(event: React.MouseEvent<HTMLAnchorElement>): void => {
+            log('Copy button clicked');
             copy(this.props.translationDataContainer.getDataInYaml());
-            return;
           }}
         >
           YAML 복사

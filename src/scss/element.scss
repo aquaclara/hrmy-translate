@@ -198,6 +198,8 @@ body.horimiya.apply-font {
 
   .translation {
     position: absolute;
+    top: 0;
+    left: 0;
     color: variables.$black;
     word-break: keep-all;
     word-wrap: break-word;

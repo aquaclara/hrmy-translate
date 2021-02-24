@@ -7,12 +7,11 @@ export type Type =
   | 'square'
   | 'shock';
 export type PropertiedDataModel = {
-  type: Type;
   text: string;
+  type?: Type;
   x?: number;
   y?: number;
   w?: number;
-  h?: number;
   color?: string;
   'margin-left'?: string;
 };

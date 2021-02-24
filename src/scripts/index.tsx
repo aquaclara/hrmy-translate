@@ -11,6 +11,8 @@ import Util from './dom-util';
 import * as Constant from './constants';
 import { log, init as loggerInit } from './logger';
 import TranslationRenderer from './translation-renderer';
+import FileDataModel from './data-models/translation-chucks/file';
+import FileData from './translation-chuck-data';
 // Globals
 // @todo not use globals
 let options: Constant.ExtensionOptions;
@@ -89,9 +91,9 @@ function pushClassToBodyBaseOnContent(): void {
 
 function handleResponse(response: string) {
   pushClassToBodyBaseOnContent();
-  const data = yaml.load(response);
+  const data: FileDataModel = yaml.load(response);
   translationRenderer = new TranslationRenderer({
-    data: data,
+    data: new FileData(data),
     extensionOption: options
   });
   appendHotLinks(translationRenderer);
@@ -101,9 +103,9 @@ function handleResponse(response: string) {
     chrome.storage.local.get(
       [location.pathname],
       (items: { [key: string]: any }) => {
-        const storedData = items[location.pathname];
-        if (storedData) {
-          translationRenderer.setData(storedData);
+        const data = items[location.pathname];
+        if (data) {
+          translationRenderer.setData(new FileData(data));
           translationRenderer.redrawTranslations();
           log('The last draft is loaded');
         }

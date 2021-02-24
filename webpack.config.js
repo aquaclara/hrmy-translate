@@ -3,7 +3,10 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: { index: './src/scripts/index.tsx', background: './src/scripts/background.ts' },
+  entry: {
+    index: './src/scripts/index.tsx',
+    background: './src/scripts/background.ts'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'

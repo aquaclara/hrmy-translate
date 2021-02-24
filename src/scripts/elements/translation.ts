@@ -14,10 +14,10 @@ export interface translationOption extends captionOption {
   x?: number;
   y?: number;
   width?: number;
-  height?: number;
   onInput?: (ev: Event) => any;
   onShortcut?: (
     ctrl: boolean,
+    alt: boolean,
     shift: boolean,
     key: string,
     text: string
@@ -35,7 +35,7 @@ export class Translation extends Caption {
     'square',
     'shock'
   ];
-  static DEFAULT_FONT_SIZE_FOR_OVERWRITING = 24;
+  static DEFAULT_FONT_SIZE_FOR_OVERWRITING = 22;
 
   datum: DataModel.DataModel;
   address: address;
@@ -44,10 +44,10 @@ export class Translation extends Caption {
   x?: number;
   y?: number;
   width?: number;
-  height?: number;
   onInput?: (ev: Event) => any;
   onShortcut?: (
     ctrl: boolean,
+    alt: boolean,
     shift: boolean,
     key: string,
     text: string
@@ -70,7 +70,6 @@ export class Translation extends Caption {
     this.x = opt.x;
     this.y = opt.y;
     this.width = opt.width;
-    this.height = opt.height;
     this.onInput = opt.onInput;
     this.onShortcut = opt.onShortcut;
     this.changeDatum = opt.changeDatum;
@@ -83,7 +82,6 @@ export class Translation extends Caption {
       $element.style.left = this.x + 'px';
       $element.style.top = this.y + 'px';
       $element.style.width = this.width + 'px';
-      $element.style.height = this.height + 'px';
       if (this.fontSize) {
         $element.style.fontSize = this.fontSize + 'px';
       }
@@ -106,24 +104,20 @@ export class Translation extends Caption {
   }
 
   render(): void {
-    if (
-      this.overwriteMode &&
-      (isComment(String(this.message)) || !this.x || !this.y)
-    ) {
+    if (this.overwriteMode && isComment(String(this.message))) {
       return;
     }
     super.render();
 
     if (this.editableMode && this.focus) {
-      log('focus');
       if (!this.$element) {
         this.$element = this.createElement();
       }
       const $element = this.$element as HTMLInputElement;
       const focus = () => {
-        log($element);
         $element.focus();
-        $element.selectionStart = $element.selectionEnd = $element.value.length;
+        const length = $element && $element.value ? $element.value.length : 0;
+        $element.selectionStart = $element.selectionEnd = length;
       };
       focus();
       setTimeout(focus, 100);
@@ -138,8 +132,9 @@ export class Translation extends Caption {
     const target = ev.target as HTMLInputElement;
     if (
       this.onShortcut &&
-      this.onShortcut(ev.ctrlKey, ev.shiftKey, ev.key, target.value)
+      this.onShortcut(ev.ctrlKey, ev.altKey, ev.shiftKey, ev.key, target.value)
     ) {
+      ev.preventDefault();
       return;
     }
 
@@ -154,7 +149,7 @@ export class Translation extends Caption {
       // Suppress select tab
       ev.preventDefault();
       const newType = Translation.types[parseInt(ev.key) - 1];
-      this.changeType(datum.type, newType);
+      this.changeType(newType);
       datum.type = newType;
     }
     // Stylizing
@@ -225,7 +220,7 @@ export class Translation extends Caption {
     return original;
   }
 
-  changeType(old: string, newClass: string) {
+  changeType(newClass: string) {
     if (!this.$element) {
       return;
     }

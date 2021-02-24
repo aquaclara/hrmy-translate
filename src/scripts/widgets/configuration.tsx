@@ -1,4 +1,5 @@
 import React from 'react';
+import { log, init as loggerInit } from '../logger';
 
 interface PropsType {
   version: string;
@@ -16,6 +17,7 @@ interface PropsType {
 export class Configuration extends React.Component<PropsType, {}> {
   constructor(props: PropsType) {
     super(props);
+    loggerInit();
   }
 
   render() {
@@ -59,7 +61,10 @@ export class Configuration extends React.Component<PropsType, {}> {
           <label htmlFor="overwrite-mode">덧그리기 모드</label>
           <button
             id="remove-storage"
-            onClick={() => chrome.storage.local.remove(location.pathname)}
+            onClick={() => {
+              chrome.storage.local.remove(location.pathname);
+              log('removed');
+            }}
           >
             수정 캐시 비우기
           </button>

@@ -1,7 +1,7 @@
-import FileTranslationChuckDataModel from '../data-models/translation-chucks/file';
+import FileTranslationChuckData from '../translation-chuck-data';
 
 export default interface TranslationDataContainer {
-  getData(): FileTranslationChuckDataModel;
-  setData(value: FileTranslationChuckDataModel): void;
+  getData(): FileTranslationChuckData;
+  setData(value: FileTranslationChuckData): void;
   getDataInYaml(): string;
 }
