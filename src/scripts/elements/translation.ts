@@ -1,7 +1,7 @@
-import util from '../dom-util';
 import { captionOption, Caption } from './caption';
 import * as DataModel from '../data-models/translation';
 import { isComment } from '../data-models/comment';
+import { log, init as loggerInit } from '../logger';
 
 export type address = [string, number, number];
 
@@ -9,86 +9,119 @@ export interface translationOption extends captionOption {
   datum: DataModel.DataModel;
   address: address;
   type: DataModel.Type;
-  focus: boolean;
-  overwriteMode: boolean;
+  overwriteMode?: boolean;
+  focus?: boolean;
   x?: number;
   y?: number;
   width?: number;
   height?: number;
-  editableMode?: boolean;
-  onInput: (ev: Event) => any;
-  onShortcut: (
+  onInput?: (ev: Event) => any;
+  onShortcut?: (
     ctrl: boolean,
     shift: boolean,
     key: string,
     text: string
   ) => boolean;
-  changeDatum: (datum: DataModel.DataModel) => any;
+  changeDatum?: (datum: DataModel.DataModel) => any;
 }
 
 export class Translation extends Caption {
-  opt: translationOption;
-  types: DataModel.Type[];
-  static defaultFontSize = 24;
+  static types: DataModel.Type[] = [
+    'speech',
+    'thought',
+    'scream',
+    'plain',
+    'stroke',
+    'square',
+    'shock'
+  ];
+  static DEFAULT_FONT_SIZE_FOR_OVERWRITING = 24;
+
+  datum: DataModel.DataModel;
+  address: address;
+  overwriteMode?: boolean;
+  focus?: boolean;
+  x?: number;
+  y?: number;
+  width?: number;
+  height?: number;
+  onInput?: (ev: Event) => any;
+  onShortcut?: (
+    ctrl: boolean,
+    shift: boolean,
+    key: string,
+    text: string
+  ) => boolean;
+  changeDatum?: (datum: DataModel.DataModel) => any;
 
   constructor(opt: translationOption) {
-    opt.tag = opt.editableMode && !opt.overwriteMode ? 'input' : 'p';
-    opt.class = opt.class || [];
-    opt.class.push('translation', opt.type);
-    if (opt.overwriteMode) {
-      opt.class.push('overwrite', opt.type);
-    }
     super(opt);
-    this.opt = opt;
-    this.types = [
-      'speech',
-      'thought',
-      'scream',
-      'plain',
-      'stroke',
-      'square',
-      'shock'
-    ];
+    this.tag = this.editableMode && !opt.overwriteMode ? 'input' : 'p';
+    this.class.push('translation', opt.type);
+    if (opt.overwriteMode) {
+      this.class.push('overwrite');
+      this.fontSize =
+        opt.fontSize || Translation.DEFAULT_FONT_SIZE_FOR_OVERWRITING;
+    }
+    this.datum = opt.datum;
+    this.address = opt.address;
+    this.overwriteMode = opt.overwriteMode || false;
+    this.focus = opt.focus || false;
+    this.x = opt.x;
+    this.y = opt.y;
+    this.width = opt.width;
+    this.height = opt.height;
+    this.onInput = opt.onInput;
+    this.onShortcut = opt.onShortcut;
+    this.changeDatum = opt.changeDatum;
+    loggerInit();
   }
 
   createElement(): HTMLElement {
-    const opt: translationOption = this.opt;
-
-    if (opt.overwriteMode) {
+    if (this.overwriteMode) {
       const $element: HTMLInputElement = super.createElement() as HTMLInputElement;
-      $element.style.left = opt.x + 'px';
-      $element.style.top = opt.y + 'px';
-      $element.style.width = opt.width + 'px';
-      $element.style.height = opt.height + 'px';
-      $element.style.fontSize =
-        (opt.fontSize ? opt.fontSize : Translation.defaultFontSize) + 'px';
+      $element.style.left = this.x + 'px';
+      $element.style.top = this.y + 'px';
+      $element.style.width = this.width + 'px';
+      $element.style.height = this.height + 'px';
+      if (this.fontSize) {
+        $element.style.fontSize = this.fontSize + 'px';
+      }
       return $element;
-    } else if (opt.editableMode) {
+    } else if (this.editableMode) {
       const $element: HTMLInputElement = super.createElement() as HTMLInputElement;
       $element.type = 'text';
-      $element.defaultValue = opt.message;
-      $element.size = Translation.getPreferSize(opt.message.length);
-      $element.oninput = opt.onInput;
-      $element.onkeydown = this._onShortcut.bind(this);
+      $element.defaultValue = String(this.message);
+      $element.size = Translation.getPreferSize(String(this.message).length);
+      if (this.onInput) {
+        $element.oninput = this.onInput;
+      }
+      if (this._onShortcut) {
+        $element.onkeydown = this._onShortcut.bind(this);
+      }
       return $element;
+    } else {
+      return super.createElement();
     }
-    return super.createElement();
   }
 
   render(): void {
-    const opt: translationOption = this.opt;
-    if (opt.overwriteMode && isComment(opt.message)) {
-      return;
-    }
-    if (opt.overwriteMode && (!opt.x || !opt.y)) {
+    if (
+      this.overwriteMode &&
+      (isComment(String(this.message)) || !this.x || !this.y)
+    ) {
       return;
     }
     super.render();
 
-    if (this.opt.editableMode && this.opt.focus) {
-      console.log('focus');
+    if (this.editableMode && this.focus) {
+      log('focus');
+      if (!this.$element) {
+        this.$element = this.createElement();
+      }
       const $element = this.$element as HTMLInputElement;
       const focus = () => {
+        log($element);
         $element.focus();
         $element.selectionStart = $element.selectionEnd = $element.value.length;
       };
@@ -103,21 +136,24 @@ export class Translation extends Caption {
     }
 
     const target = ev.target as HTMLInputElement;
-    if (this.opt.onShortcut(ev.ctrlKey, ev.shiftKey, ev.key, target.value)) {
+    if (
+      this.onShortcut &&
+      this.onShortcut(ev.ctrlKey, ev.shiftKey, ev.key, target.value)
+    ) {
       return;
     }
 
-    let datum = this._toPropertiedDatum(this.opt.datum);
+    let datum = this._toPropertiedDatum(this.datum);
     let logMsg =
       (ev.ctrlKey ? 'Ctrl+' : '') +
       (ev.shiftKey ? 'Shift+' : '') +
-      `${ev.key} at ${this.opt.address}.`;
+      `${ev.key} at ${this.address}.`;
 
     // Type
     if (ev.ctrlKey && '1234567'.indexOf(ev.key) > -1) {
       // Suppress select tab
       ev.preventDefault();
-      const newType = this.types[parseInt(ev.key) - 1];
+      const newType = Translation.types[parseInt(ev.key) - 1];
       this.changeType(datum.type, newType);
       datum.type = newType;
     }
@@ -135,14 +171,16 @@ export class Translation extends Caption {
       ev.preventDefault();
       this._stylize(target, '<strong class="stroke">', '</strong>');
     } else {
-      // console.log(logMsg + ' But ignored.');
+      // log(logMsg + ' But ignored.');
       return;
     }
-    console.log(logMsg);
+    log(logMsg);
     target.size = Translation.getPreferSize(target.value.length);
 
     datum.text = target.value;
-    this.opt.changeDatum(datum);
+    if (this.changeDatum) {
+      this.changeDatum(datum);
+    }
   }
 
   _stylize(target: HTMLInputElement, opening: string, ending: string): void {
@@ -158,11 +196,7 @@ export class Translation extends Caption {
       selected +
       ending +
       target.value.slice(oldEnd);
-    console.log(
-      oldStart + opening.length,
-      ' ',
-      oldStart + (opening + selected).length
-    );
+    log(oldStart + opening.length, ' ', oldStart + (opening + selected).length);
     target.setSelectionRange(
       oldStart + opening.length,
       oldStart + (opening + selected).length
@@ -192,7 +226,10 @@ export class Translation extends Caption {
   }
 
   changeType(old: string, newClass: string) {
-    this.$element.classList.remove(...this.types);
+    if (!this.$element) {
+      return;
+    }
+    this.$element.classList.remove(...Translation.types);
     this.$element.classList.add(newClass);
   }
 

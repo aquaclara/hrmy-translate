@@ -1,26 +1,28 @@
 import { captionOption, Caption } from './caption';
 
 export interface noticeOption extends captionOption {
-  editableMode?: boolean;
-  onclick: (ev: Event) => any;
+  onclick?: (ev: Event) => boolean;
 }
 export class Notice extends Caption {
-  opt: noticeOption;
+  onclick?: (ev: Event) => boolean;
 
   constructor(opt: noticeOption) {
-    opt.class = ['notice', 'float'];
-    if (opt.editableMode) {
-      opt.tag = 'a';
-      opt.href = '#';
-    }
     super(opt);
-    this.opt = opt;
+    if (this.editableMode) {
+      this.tag = 'a';
+      this.href = '#';
+      this.message = '(클릭하여 새 번역 추가)';
+    } else {
+      this.message = '(제공된 번역이 아직 없습니다)';
+    }
+    this.class.push('notice', 'float');
+    this.onclick = opt.onclick;
   }
 
   createElement(): HTMLElement {
     const $element = super.createElement();
-    if (this.opt.editableMode) {
-      $element.onclick = this.opt.onclick;
+    if (this.onclick) {
+      $element.onclick = this.onclick;
     }
     return $element;
   }

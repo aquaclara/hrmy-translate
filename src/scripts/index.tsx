@@ -2,28 +2,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 const yaml = require('js-yaml');
-
 // Html elements
 import { Configuration } from './widgets/configuration';
 import { HotLinks } from './widgets/hot-links';
-
 // Etc
 import '../scss/styles.scss';
 import Util from './dom-util';
 import * as Constant from './constants';
 import { log, init as loggerInit } from './logger';
 import TranslationRenderer from './translation-renderer';
-
-// Constants
-const TLS_PATH = '/translations' + location.pathname.replace('.html', '.yaml');
-const GITHUB_URL = Constant.GITHUB_RAW_URL_BASE + TLS_PATH;
-const LOCAL_URL = chrome.runtime.getURL(TLS_PATH);
-
 // Globals
+// @todo not use globals
 let options: Constant.ExtensionOptions;
 let translationRenderer: TranslationRenderer;
 
 function main() {
+  const TLS_PATH =
+    '/translations' + location.pathname.replace('.html', '.yaml');
+  const GITHUB_URL = Constant.GITHUB_RAW_URL_BASE + TLS_PATH;
+  const LOCAL_URL = chrome.runtime.getURL(TLS_PATH);
+
   loggerInit();
   chrome.storage.sync.get(Constant.DEFAULT_EXTENSION_OPTIONS, items => {
     log('Options loaded');
@@ -91,12 +89,12 @@ function pushClassToBodyBaseOnContent(): void {
 
 function handleResponse(response: string) {
   pushClassToBodyBaseOnContent();
-  appendHotLinks();
   const data = yaml.load(response);
   translationRenderer = new TranslationRenderer({
     data: data,
     extensionOption: options
   });
+  appendHotLinks(translationRenderer);
   translationRenderer.renderTranslations();
 
   if (options.developmentMode && options.editableMode) {
@@ -114,7 +112,7 @@ function handleResponse(response: string) {
   }
 }
 
-function appendHotLinks(): void {
+function appendHotLinks(translationRenderer: TranslationRenderer): void {
   ReactDOM.render(
     <HotLinks
       translationDataContainer={translationRenderer}
@@ -126,7 +124,7 @@ function appendHotLinks(): void {
           'editable-mode',
           options.editableMode
         );
-        onChangeSettings();
+        onChangeSettings(translationRenderer);
       }}
     />,
     Util.newChildOfBody()
@@ -154,7 +152,7 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
       defaultFontSize={options.fontSize}
       onChangeFontSize={(event: React.ChangeEvent<HTMLInputElement>) => {
         options.fontSize = parseInt(event.target.value);
-        onChangeSettings();
+        onChangeSettings(translationRenderer);
       }}
       defaultApplyFont={options.applyFont}
       onChangeApplyFont={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -163,13 +161,13 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
           event.target.checked
         );
         options.applyFont = event.target.checked;
-        onChangeSettings();
+        onChangeSettings(translationRenderer);
       }}
       defaultOverwriteMode={options.overwriteMode}
       onChangeOverwriteMode={(event: React.ChangeEvent<HTMLInputElement>) => {
         translationRenderer.redrawTranslations();
         options.overwriteMode = event.target.checked;
-        onChangeSettings();
+        onChangeSettings(translationRenderer);
       }}
       defaultDevelopmentMode={options.developmentMode}
       onChangeDevelopmentMode={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -178,14 +176,14 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
           'development-mode',
           event.target.checked
         );
-        onChangeSettings();
+        onChangeSettings(translationRenderer);
       }}
     />,
     $overlay
   );
 }
 
-function onChangeSettings() {
+function onChangeSettings(translationRenderer: TranslationRenderer) {
   chrome.storage.sync.set(options, function() {
     log('Options saved');
     log(options);

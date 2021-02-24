@@ -1,16 +1,16 @@
+// Libraries
 const yaml = require('js-yaml');
-
+// Data models
 import * as TranslationDataModel from './data-models/translation';
 import FileTranslationChuckDataModel from './data-models/translation-chucks/file';
 import * as imageTranslationChuckDataModel from './data-models/translation-chucks/image';
 import CutTranslationChuckDataModel from './data-models/translation-chucks/cut';
-
+// Html elements
 import * as NoticeElement from './elements/notice';
 import * as TranslationElement from './elements/translation';
 import { isComment } from './data-models/comment';
-
+// Etc
 import TranslationDataContainer from './interfaces/translation-data-container';
-
 import Util from './dom-util';
 import * as Constant from './constants';
 import { log, init as loggerInit } from './logger';
@@ -52,7 +52,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
     }
 
     for (const img of document.querySelectorAll(
-      'img, td[background]'
+      Constant.QUERY_SELECTOR_IMAGES
     ) as NodeListOf<HTMLImageElement | HTMLTableCellElement>) {
       const imageId = Util.getImageId(img);
 
@@ -66,37 +66,28 @@ export default class TranslationRenderer implements TranslationDataContainer {
         (Array.isArray(this._data[imageId]) &&
           (this._data[imageId] as CutTranslationChuckDataModel[]).length === 0)
       ) {
-        const opt: any = {
-          message:
-            this._extensionOption.developmentMode &&
-            this._extensionOption.editableMode
-              ? '(클릭하여 새 번역 추가)'
-              : '(제공된 번역이 아직 없습니다)',
-          fontSize: this._extensionOption.fontSize,
+        const opt: NoticeElement.noticeOption = {
+          extensionOption: this._extensionOption,
           top: Util.getProperty(img, 'offsetTop') + 'px',
           left:
             Util.getProperty(img, 'offsetLeft') +
             Util.getProperty(img, 'width') +
             'px',
-          editableMode:
+          onclick:
             this._extensionOption.developmentMode &&
             this._extensionOption.editableMode
+              ? (): any => {
+                  log(`clicked ${imageId}`);
+                  if (!this._data) {
+                    this._data = {};
+                  }
+                  this._data[imageId] = [['']];
+                  this.removeTranslates();
+                  this.renderTranslations([imageId, 0, 0]);
+                }
+              : undefined
         };
-        if (
-          this._extensionOption.developmentMode &&
-          this._extensionOption.editableMode
-        ) {
-          opt.onclick = (): any => {
-            log(`clicked ${imageId}`);
-            if (!this._data) {
-              this._data = {};
-            }
-            this._data[imageId] = [['']];
-            this.removeTranslates();
-            this.renderTranslations([imageId, 0, 0]);
-          };
-        }
-        new NoticeElement.Notice(opt as NoticeElement.noticeOption).render();
+        new NoticeElement.Notice(opt).render();
       } else {
         const $frame = document.createElement('div');
         $frame.classList.add('frame');
@@ -204,15 +195,13 @@ export default class TranslationRenderer implements TranslationDataContainer {
                 continue;
               }
             }
-            const opt: any = {
+            const opt: TranslationElement.translationOption = {
+              extensionOption: this._extensionOption,
               datum: this._getDatum(imageId, cutIndex, tlsIndex),
               address: [imageId, cutIndex, tlsIndex],
               tag: 'p',
               parent: $tlsGroup,
               type: 'speech',
-              editableMode:
-                this._extensionOption.developmentMode &&
-                this._extensionOption.editableMode,
               focus:
                 focus !== undefined &&
                 imageId === focus[0] &&
@@ -244,7 +233,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
                       log(`${location.pathname} is set`);
                       log(
                         `${imageId}-${cutIndex}-${tlsIndex} is ` +
-                        this._getDatum(imageId, cutIndex, tlsIndex)
+                          this._getDatum(imageId, cutIndex, tlsIndex)
                       );
                     }
                   );
@@ -309,9 +298,12 @@ export default class TranslationRenderer implements TranslationDataContainer {
                 this.renderTranslations(focus);
 
                 // Store data
-                chrome.storage.local.set({ [location.pathname]: this._data }, () => {
-                  console.log(`${location.pathname} is set`);
-                });
+                chrome.storage.local.set(
+                  { [location.pathname]: this._data },
+                  () => {
+                    console.log(`${location.pathname} is set`);
+                  }
+                );
                 return true;
               };
               opt.changeDatum = (
@@ -320,9 +312,12 @@ export default class TranslationRenderer implements TranslationDataContainer {
                 this._setDatum(datum, imageId, cutIndex, tlsIndex);
 
                 // Store data
-                chrome.storage.local.set({ [location.pathname]: this._data }, () => {
-                  console.log(`${location.pathname} is set`);
-                });
+                chrome.storage.local.set(
+                  { [location.pathname]: this._data },
+                  () => {
+                    console.log(`${location.pathname} is set`);
+                  }
+                );
               };
             }
 
@@ -367,9 +362,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
                 opt as TranslationElement.translationOption
               ).render();
             } else {
-              new TranslationElement.Translation(
-                opt as TranslationElement.translationOption
-              ).render();
+              new TranslationElement.Translation(opt).render();
             }
           }
           $tlsGroup.style.top =

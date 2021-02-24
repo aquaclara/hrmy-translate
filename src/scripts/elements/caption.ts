@@ -1,13 +1,14 @@
-import util from '../dom-util';
+import Util from '../dom-util';
+import * as Constant from '../constants';
 
 export interface captionOption {
-  tag: 'div' | 'p' | 'input' | 'a';
-  message: string;
+  extensionOption: Constant.ExtensionOptions;
+  message?: string;
+  tag?: 'div' | 'p' | 'input' | 'a';
   class?: Array<string>;
   parent?: HTMLElement;
-  href?: string;
-
   fontSize?: number;
+  href?: string;
   top?: string;
   left?: string;
   marginTop?: string;
@@ -15,49 +16,70 @@ export interface captionOption {
 }
 
 export class Caption {
-  opt: captionOption;
-  $element: HTMLElement;
+  static defaultFontSize = 24;
+
+  extensionOption: Constant.ExtensionOptions;
+  message?: string;
+  tag: 'div' | 'p' | 'input' | 'a';
+  class: Array<string>;
+  parent: HTMLElement;
+  editableMode?: boolean;
+  href?: string;
+  fontSize: number;
+  top?: string;
+  left?: string;
+  marginTop?: string;
+  marginLeft?: string;
+  $element?: HTMLElement;
 
   constructor(opt: captionOption) {
-    opt = opt || {};
-    opt.tag = opt.tag || 'div';
-    opt.class = opt.class || [];
-    opt.class.push('caption');
-    this.opt = opt;
-    this.$element = this.createElement();
+    this.extensionOption = opt.extensionOption;
+    this.message = opt.message;
+    this.tag = opt.tag || 'div';
+    this.class = opt.class || [];
+    this.class.push('caption');
+    this.parent = opt.parent || Util.getBodyElement();
+    this.href = opt.href;
+    this.fontSize = opt.extensionOption.fontSize;
+    this.top = opt.top;
+    this.left = opt.left;
+    this.marginTop = opt.marginTop;
+    this.marginLeft = opt.marginLeft;
+    this.editableMode =
+      opt.extensionOption.developmentMode && opt.extensionOption.editableMode;
   }
 
   createElement(): HTMLElement {
-    const opt = this.opt;
-
-    const $element = document.createElement(opt.tag);
-    if (opt.class) {
-      $element.classList.add(...opt.class);
+    const $element = document.createElement(this.tag);
+    if (this.class) {
+      $element.classList.add(...this.class);
     }
 
-    $element.innerHTML = opt.message;
-    $element.style.fontSize = `${opt.fontSize}mm`;
-    if ($element instanceof HTMLAnchorElement && opt.href) {
-      $element.href = opt.href;
+    if (this.message) {
+      $element.innerHTML = this.message;
     }
-    if (opt.marginTop) {
-      $element.style.marginTop = opt.marginTop;
+    $element.style.fontSize = `${this.fontSize}mm`;
+    if ($element instanceof HTMLAnchorElement && this.href) {
+      $element.href = this.href;
     }
-    if (opt.marginLeft) {
-      $element.style.marginLeft = opt.marginLeft;
+    if (this.marginTop) {
+      $element.style.marginTop = this.marginTop;
     }
-
-    if (opt.top) {
-      $element.style.top = opt.top;
+    if (this.marginLeft) {
+      $element.style.marginLeft = this.marginLeft;
     }
-    if (opt.left) {
-      $element.style.left = opt.left;
+    if (this.top) {
+      $element.style.top = this.top;
+    }
+    if (this.left) {
+      $element.style.left = this.left;
     }
 
     return $element;
   }
 
   render() {
-    (this.opt.parent || util.getBodyElement()).appendChild(this.$element);
+    this.$element = this.createElement();
+    this.parent.appendChild(this.$element);
   }
 }
