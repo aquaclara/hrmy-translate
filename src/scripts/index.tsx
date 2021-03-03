@@ -12,7 +12,7 @@ import * as Constant from './constants';
 import { log, init as loggerInit } from './logger';
 import TranslationRenderer from './translation-renderer';
 import FileDataModel from './data-models/translation-chucks/file';
-import FileData from './translation-chuck-data';
+import FileData from './translation-chunk-data';
 // Globals
 // @todo not use globals
 let options: Constant.ExtensionOptions;

@@ -3,7 +3,7 @@ const yaml = require('js-yaml');
 // Data models
 import * as TranslationDataModel from './data-models/translation';
 import FileDataModel from './data-models/translation-chucks/file';
-import FileData from './translation-chuck-data';
+import FileData from './translation-chunk-data';
 import CutTranslationChuckDataModel from './data-models/translation-chucks/cut';
 import Mask from './data-models/mask';
 // Html elements
