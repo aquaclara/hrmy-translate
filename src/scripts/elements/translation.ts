@@ -153,10 +153,14 @@ export class Translation extends Caption {
       datum.type = newType;
     }
     // Stylizing
-    else if (ev.ctrlKey && ev.key == '.') {
-      this._stylize(target, '<big>', '</big>');
-    } else if (ev.ctrlKey && ev.key == ',') {
+    else if (ev.ctrlKey && ev.key == ',') {
+      this._stylize(target, '<sub>', '</sub>');
+    } else if (ev.ctrlKey && ev.key == '.') {
+      this._stylize(target, '<sup>', '</sup>');
+    } else if (ev.ctrlKey && ev.key == '[') {
       this._stylize(target, '<small>', '</small>');
+    } else if (ev.ctrlKey && ev.key == ']') {
+      this._stylize(target, '<big>', '</big>');
     } else if (ev.ctrlKey && ev.key == 'b') {
       this._stylize(target, '<b>', '</b>');
     } else if (ev.ctrlKey && ev.key == 'i' && location.href.includes('/aco/')) {

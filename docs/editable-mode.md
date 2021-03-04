@@ -39,7 +39,10 @@ layout: default
 | --------------------------- | --------------------------------------------------------------------------------------------- |
 | CTRL + u                    | <span style="-webkit-text-stroke-width: 1px;">`<strong class="stroke">테두리</strong>`</span> |
 | CTRL + b                    | <b>`<b>진하게</b>`</b>                                                                        |
-| CTRL + .                    | <big>`<big>크게</big>`</big>                                                                  |
+| CTRL + [                    | <small>`<small>작게</small>`</small>                                                          |
+| CTRL + ]                    | <big>`<big>크게</big>`</big>                                                                  |
+| CTRL + ,                    | <sub>`<sub>아래 첨자</sub>`</sub>                                                             |
+| CTRL + .                    | <sup>`<sup>위 첨자</sup>`</sup>                                                               |
 | CTRL + i(아코와 밤비에서만) | `<span class="blue"></span>`                                                                  |
 
 ### 덧그리기 모드
