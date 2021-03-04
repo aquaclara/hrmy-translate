@@ -1,0 +1,327 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/12/01.gif:
+- - text: 아코를 주인공으로 한 이야기를 오늘 밤 아코가 처음으로 읽었다
+    type: square
+- - text: 아직 초반이라거나 하는 여러 이유를 붙여서 그 아이가 못 읽게 했던 건
+    type: square
+  - text: 이 작품을 통해서 무언가 실마리가 잡혔으면 좋겠다고 생각했었으니까
+    type: square
+- - text: 그리고 네가 살아 있단 것, 네 본모습은 야마시타 아코라는 「너와 닮은 사람」인 것, 그 사람은 너에 대해 당혹감을 보여줬단 것
+    type: square
+    w: -1
+  - text: 이리후네라고 하는 내 친구가 여러 모로 도움을 줄 수 있을지도 모른다는 것
+    type: square
+- - text: 그런 것들을 조금씩 설명하고 있었다
+    type: square
+  - 아~~~~ 재밌었어
+aco/12/02.gif:
+- - ............응?
+  - text: 자
+    type: plain
+- - 그치만 점점 읽히기 시작하는데다 어려운 글자나 알기 어려운 표현도 없고
+  - 다음 편은 다음 주야?
+- - 그...... 내용은......
+  - text: <sup class="blue stroke ">헉</sup> 아, 미안 미안, 내용... 내용 말이지
+    type: speech
+  - 그랬지, 참. 난 야마시로 아코라는 이름인지도 모른댔지
+- - text: 그게 그걸 알아도 솔직히 그렇게...... 확 와닿지는 않지만
+    type: speech
+  - 그래도 계속 자신이 죽은 사람 같다고 느껴져?
+aco/12/03.gif:
+- - 살아 있다는 걸 알게 된 지금도, 역시 자신은 죽은 사람이라도 생각해?
+- - 응, 그래. 잘 모르겠지만 하여튼 나는 확실히 죽었어
+  - 그래......
+  - text: 그 점은 역시 변하지 않는구나...
+    type: square
+- - 나 「야마시로」의 얼굴을 보고 싶어. 나랑 닮은 거지?
+  - text: 소곤
+    type: stroke
+- - 아! 맞아, 야마시로는 사진에 찍히니까 야마시로를 찍으면 되잖아
+  - text: <big>와-</big>
+    type: speech
+  - 뭐......!? 부탁해놓고 좀 그렇지만 긴장되는데
+  - 뭐가 나아? 어떡할래?
+  - 아, 보, 보고 싶어!
+aco/12/04.gif:
+- - 그렇게 되어서, 그 애에게 어느 정도 설명을 했습니다<br>이쪽 판단으로 행동하게 되어 미안합니다
+  - text: 야마시로
+    type: plain
+  - 그래요, 지금 특별히 아무 일도 없어 괜찮습니다
+  - text: 코지카
+    type: plain
+  - 그래서
+- - text: 코지카
+    type: plain
+  - 자기 얼굴을 알지 못하는 것 같아서 야마시로의 사진을 받는 게 가능할까요?
+  - 분위기는 다르지만 얼굴은 매우 닮았다고 생각합니다
+- - text: <span class="blue">그러면 앞에 나와서 풀거니까</span>
+    type: stroke
+  - text: ............
+    type: thought
+  - text: <span class="blue">출석번호 1번 학생</span>
+    type: stroke
+- - text: ............셀카?
+    type: thought
+  - 예쁜 애들이 종종 하는 셀카라는 녀석?
+aco/12/05.gif:
+- - 그 셀카라는 녀석을 남자한테 보내? 내가? 어떤 표정으로? 웃는 얼굴? 무표정?
+  - text: <big>못해</big>
+    type: thought
+- - text: 야마시로
+    type: plain
+  - 문화제 때...... 다같이 찍을까요......
+  - text: 코지카
+    type: plain
+  - text: <span class="blue">OK</span>
+    type: stroke
+- - text: 역시 거절했어. 그래, 다른 사람에게 자기 사진을 보내는 건 싫어하는 사람도 있겠지
+    type: thought
+  - text: <big>덜컹 </big> 덜컹
+    type: stroke
+- - text: 그러고 보니 야마시로는 「아코」를 찾고 있던 데에 비해 찾고 나서는 그렇게 기뻐보이진 않았지
+    type: thought
+  - text: 덜컹
+    type: stroke
+  - text: <span class="blue">「유체이탈」이 아닐까 했지만</span>
+    type: speech
+aco/12/06.gif:
+- - text: <span class="blue">어떨까, 야마시로는 조금 느낌이 다르다고 하나</span>
+    type: square
+  - text: 저 쪽이 좀 더 수다스럽고......
+    type: square
+- - ''
+- - text: 모습과 목소리는 같지만 분위기는 다르다, 분위기가 다르긴 해도 말하는 방식은 같다고 생각해
+    type: thought
+  - text: 덜컹 덜컹
+    type: plain
+  - text: 쏴-
+    type: stroke
+  - text: 존댓말인지 아닌지만 다르지
+    type: thought
+- - 아뇨, 전 뒷모습은 잠깐 본 것 뿐이라서-
+aco/12/07.gif:
+- - 젊은 여자 애? 그 정도밖엔 모르겠네요
+  - 그래요?
+  - 처음 봤어요, 유령, 아
+- - 선생님 얘기 대로라면 유령은 아니겠네요
+  - text: 끽
+    type: stroke
+  - 그렇죠, 그 쪽은...... 이리후네가 전문일 거에요
+  - 이리후네는
+- - 선생님과 꽤 사이가 좋았나요?
+  - 네? 아니요...? 그렇지 않았지만, 오히려 저를 싫어할 거라고 생각해요
+- - 싫어할 만한 일이라도 하셨나요?
+  - 뭐어...... 했죠. 그리고 얼굴을 얻어맞았어요
+  - text: 아하하
+    type: stroke
+  - 선생님, 여자 애랑 다투기도 하는군요
+aco/12/08.gif:
+- - text: ......그런가, 그건 다툼이었을까
+    type: thought
+  - 오늘도 막차신가요?
+  - 네? 아뇨, 지금 집이에요
+- - ............집?
+  - 무슨 사내 전기 설비가 점검이 어쩌고 저쩌고 해서, 이번 주는 일찍 끝나는 것 같네요-
+- - 아... 그렇군요
+  - text: 가깝다
+    type: square
+  - text: 시카➚
+    type: stroke
+  - text: ↙히
+    type: stroke
+  - text: 누구 한 명 집에서 직접 만나는 게 낫지 않았을까......
+    type: shock
+- - 야마시로, 문화제에 친구 온다며?
+aco/12/09.gif:
+- - 시나가와가 얘기하는 걸 들었어
+- - 응......
+  - 어디 학교 사람이야?
+  - 어디......
+- - 어, 어...... 당일 스쿠와한테 소개하고 싶은데 괜찮을까......
+- - 진짜? 좋아. 아, 그래도 나는 교실에는 없을 거야
+  - 그럼 쉴 때라도 괜찮아
+aco/12/10.gif:
+- - ''
+- - 문화제......
+- - 야마시로가 문화제에 불러 줬으니까 거기서 사진 찍어 올게
+  - text: ......있잖아, 아, 아니면 미안해......
+    w: 50
+- - '?'
+  - 나 문화제는 조금 기억하고 있는데, 아마 3개 있는 건물 중 2개를 문화제에 쓸 거야. 나머지 하나는 학생들이 휴식에 쓰거나
+aco/12/11.gif:
+- - 왜 이런 게 기억났을까
+  - text: 야마시로가 받은 프린트에도 같은 게 써 있었다
+    type: square
+- - text: 외부 사람이 들어갈 수 있는 곳은 1학년 건물과 2학년 건물 뿐, 3학년 건물과 체육관은 학생 이외는 들어갈 수 없다
+    type: square
+  - 그리고
+- - 아마 우리 학교는 관련 없는 사람은 못 들어갈 거야, 그러니까 초대받았다고 해도 밤비는 못 들어갈 수도 있어
+- - ''
+aco/12/12.gif:
+- - text: <big>들어갈 수 있어</big>
+    type: speech
+  - 들어갈 수 있어......? 왜? 밤비 졸업생이야?
+  - 졸업생은 아니지만 들어갈 수 있어
+- - text: 들어갈 수 있는 이유를 설명했더니 밤비가
+    type: square
+    w: -2
+  - text: 이츠츠가라 고교 문화제
+    type: plain
+  - 밤비도 꼭 사진 찍어!
+- - ...... 야마시로의 얼굴이 보고 싶었잖아?
+  - 그렇지만 밤비가 멀끔하게 있는 것도 보고 싶어
+  - text: '?'
+    type: plain
+  - 미안하네요, 늘 멀끔하지 못해서
+- - text: 문화제 당일
+    type: square
+aco/12/13.gif:
+- - text: <span class="blue">배고파-</span>
+    type: stroke
+  - text: <span class="blue">있잖아- 2학년이 있지-</span>
+    type: stroke
+- - text: <span class="blue">선생님이 기억하실까?</span>
+    type: stroke
+  - text: <span class="blue">어디부터 갈래?</span>
+    type: stroke
+- - 하하하
+  - text: 이츠츠가라 고등
+    type: plain
+  - text: 울컥
+    type: plain
+  - ......하나도 안 이상할 텐데
+- - 야마시로가 「휴식 시간까지 적당히 시간을 보내주실 수 있을까요」라고
+  - 아무데나 돌아다녀도 돼? 딱 봐도 다른 학교 교복인데......
+aco/12/14.gif:
+- - 차라리 당당하게 있는 게 낫지 않겠어, 조심조심 걸어다니는 게 걸리는 거나 마친가지야
+  - text: <span class="blue">ぺそっ</span>
+    type: plain
+  - text: 방문객 슬리퍼
+    type: plain
+  - 검문은...... 잘 모르겠지만
+- - 생각보다 다른 학교 학생도 많고 안 걸리겠지
+  - text: 터벅 터벅 터벅
+    type: plain
+  - 아는 사람이 없어야 할 텐데
+  - 있어도 몰라
+  - text: 문예부 전시관
+    type: plain
+  - 그럴까-
+- - 이리후네는 머리 묶는 게 어울려
+- - 뭐?
+  - 어?
+  - 어? 그래?
+  - 응
+aco/12/15.gif:
+- - text: むー
+    type: stroke
+  - text: <span class="blue">그림</span>
+    type: speech
+- - 문예부랑 미술부? 원래 같은 교실에서 전시하는 거야?
+  - 학교마다 다른 거 아냐?
+  - 우리 고등학교는 문예부가 있었나?
+  - 있었던 것 같은데... 어떨른지
+- - 밤비는 어차피 아무것도 안 했지?
+  - 응
+  - text: <span class="blue">삽화</span>
+    type: speech
+  - 나도 그렇긴 해
+- - 사진도 있네
+  - text: <span class="blue">삽화 얘기는 언젠가 상담해야지</span>
+    type: speech
+aco/12/16.gif:
+- - ''
+- - 있지- 진짜 고등학생처럼 보일까......
+  - text: <span class="blue">소곤...</span>
+    type: stroke
+  - 뭘, 갑자기
+  - text: 10대니까 괜찮아
+    type: stroke
+  - 사람들이 자꾸 쳐다보는 것 같아
+- - 그냥 이 근처에서 못 보는 교복이니까 눈에 띄는 거겠지
+  - text: 아, 아니야
+    type: square
+- - text: 이건 역시 밤비가 눈에 띄는 거야
+    type: square
+  - text: 안 변했네- 그렇게, 아무것도 안 해도 사람들의 이목을 끄는 거
+    type: thought
+aco/12/17.gif:
+- - text: 그리고 본인은 아무런 신경도쓰지 않지, 그런 거
+    type: square
+  - ...후우-
+  - 왜? 벌써 피곤해?
+  - text: 어디 앉아있을래?
+    type: plain
+- - 어, 세일러복이야
+- - 세일러복이랑 블레이저 뭐가 좋아?
+  - ............ 뭐-?
+- - 생각해본 적도 없어-
+aco/12/18.gif:
+- - text: 어울리면 뭐든 좋지 않아?
+    type: plain
+- - 있잖아, 밤비. 난
+  - 지금은 어디 근무하니?
+- - 출판사에......
+  - 그렇구나, 오늘은 얼굴을 비추러 와줘서 고맙구나
+  - text: <span class="blue">드르륵</span>
+    type: speech
+  - ......최근에 이 근처에 이사와서요
+- - text: <span class="blue">여전히 키가 크구나~</span>
+    type: speech
+  - text: ぬ
+    type: plain
+aco/12/19.gif:
+- - ......응?
+- - ''
+- - ............
+  - text: <big>선생님</big>
+    type: speech
+  - text: 두근
+    type: stroke
+- - 선생님?
+  - text: <span class="blue">웅성 웅성</span>
+    type: stroke
+  - 선생님이라고?
+  - 선생님?
+  - text: <span class="blue">웅성</span>
+    type: speech
+  - 선생님?
+  - 어? 고등학생이잖아?
+  - text: <span class="blue">웅성웅성</span>
+    type: speech
+aco/12/20.gif:
+- - text: <strong class="stroke">1</strong>학년 제2회의실에서
+    type: plain
+- - 불러요
+  - 오~!
+  - text: 어?
+    type: plain
+- - 히키 군, 히키 군이잖느냐. 졸업하고 얼마만이냐?
+  - // 한자모르겠음
+  - text: 微○도 안 변했구나
+    type: stroke
+  - 네, 선생님, 아니, 네...... 재학 중에는 늘 신세를......
+- - text: 이야- 오랜만이구나, 넌 아마 문과였지
+    type: stroke
+  - 졸업생이구나, 밤비는 알았어?
+  - 몰라~~~~~ 아... 들켰어......

@@ -1,0 +1,266 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/16/01.gif:
+- - 깨끗하게 됐으니까 말이야
+  - 교복이 없는 동안 불편했지?
+- - ''
+- - 오늘은 이제부터 수업이야?
+  - 오후 안 늦었으면 좋겠네
+- - text: 아, 고등학생이라고 생각하나 봐
+    type: square
+  - 아뇨....... 네......
+  - text: 확-
+    type: plain
+aco/16/02.gif:
+- - 친구들이 너무하지
+- - 네......
+  - text: 괴롭힘이라고 생각하나 봐
+    type: square
+- - 있잖아, 어느 학교 사람이었어?
+- - 야마시로 있나요- 랬어
+  - 없다고 하니까 나가버렸어!
+aco/16/03.gif:
+- - 문화제 때는 기껏 와 줬지만 학교는 꽤 멀어서......
+  - 뭐? 그럼 여긴 그렇게 안 오겠네
+  - 그렇지...
+- - 같이 있던 머리 묶은 사람은 여자친구야?
+  - 그것까진...... 모르겠지만
+  - 그런 이야기 안 해?
+  - 응......
+- - text: 어제 코지카의 방에 이리후네도 있었지, 그런 밤중에
+    type: thought
+  - text: 난 뭘 말했는지 모르겠지만 방해였을까
+    type: thought
+- - ......그래도 내 의지로는 「그 아이」의 행동을 어떻게 할 수 없고......
+  - text: 음-
+    type: stroke
+  - 두 사람은...... 착하니까...... 내가 아무리 방해가 되어도 말 안 할 테니까
+aco/16/04.gif:
+- - ''
+- - text: <span class="blue">휴-</span>
+    type: speech
+- - text: <span class="blue">똑</span>
+    type: speech
+- - ''
+aco/16/05.gif:
+- - ''
+- - text: 여기서 사람이 죽었나
+    type: thought
+- - text: ...그래~ 여기서 사람이 죽었구나. 그래도 이제 없으니까
+    type: thought
+  - text: 암시
+    type: square
+  - 괜찮아, 집세도 싸고 욕실, 화장실도 별도고 치안도 좋고, 엄청 좋은 매물이야
+- - text: ............ 이사오고 나서 처음으로 물을 채웠어
+    type: thought
+  - text: 콩
+    type: stroke
+  - text: 항상 짧은 시간에 샤워만 하고, 욕조는 무의식적으로 피했지
+    type: thought
+aco/16/06.gif:
+- - text: <span class="blue">딩</span>동- <span class="blue">딩</span>동-
+    type: plain
+  - text: '? 택배?'
+    type: thought
+  - text: 뭔가 시켰었나?
+    type: thought
+- - 죄송하지만...... 다시 배송 오길 부탁드려요
+  - text: 어차피 시간 안에 못 나가...
+    type: stroke
+  - text: 딩-동 딩-동 딩동딩동
+    type: stroke
+- - text: <span class="blue">덜컥</span>
+    type: speech
+- - 덜컥?
+  - text: 끼-익 탕
+    type: stroke
+aco/16/07.gif:
+- - text: 끼익-
+    type: stroke
+- - ''
+- - ............
+- - 낮부터 목욕?
+aco/16/08.gif:
+- - 내, 가 화내는 거 알아? 이유
+  - text: 헉
+    type: plain
+- - 알, 어, 잠깐만... 그, 멈춰
+- - 밖에 돌아다니던 옷으로 그대로 욕조에 들어오면 안 되지......
+- - ざぶん
+  - 방금 욕조 청소했는데...
+  - 진짜 싫어......
+aco/16/09.gif:
+- - 저 빨간 서랍은 괜찮아, 그건 예전부터 준다고 했던 거니까
+- - 그래도, 저 소파는 나도 마음에 들어하던 거니까, 가져가기 전에 이야기해 줬으면 했어
+  - text: <big>아악</big> 응
+    type: speech
+- - 유, 제대로 들어
+  - 나가
+  - 들어
+  - 나가
+- - 불쾌해
+  - 누나가 화났단 건 전해졌어?
+  - 전해졌으니까 나가
+aco/16/10.gif:
+- - 어차피 오빠가 괜찮다고 했겠지, 유한테 약하니까
+  - ...... 그럼 대신 소파 사 줄게, 하나 생일에
+  - text: 첨벙
+    type: stroke
+- - 아, 아니야, 그럴 속셈으로 온 게......
+  - 됐어...... 소파를 멋대로 들고 온 건 확실히 나고. 근데 그렇다고 그렇게 나오는 건 어떤가 싶지만
+- - 배꼽
+  - 첨벙첨벙
+  - 그만해
+- - text: <sup class="stroke">어</sup> 옷이 무거워서 못 일어나겠어. 벗는 것 좀 도와 줘
+    type: speech
+  - 맘대로 해......
+aco/16/11.gif:
+- - text: 꾸깃
+    type: plain
+- - text: 비 때문에 이름이 조금 번져서...... 그래서 우리 집에 모아서 배달된 건가
+    type: thought
+  - text: <span class="blue">딩동-</span>
+    type: stroke
+  - text: ......우편함을 안 봐서 알아차리는 게 늦어졌어
+    type: thought
+- - 어
+  - text: 철컥...
+    type: plain
+- - text: ......
+    type: thought
+aco/16/12.gif:
+- - ''
+- - 죄송합니다, 씻고 계셨나요. 저, 이거......
+  - text: 구겨져서 죄송해요
+    type: plain
+  - 잘못 배달된 걸 전해드리러 왔을 뿐인데.......
+- - ......몸이라도 안 좋으신가요? 코지카 선생님
+- - ......오늘은 계속 방에 있을 테니 무슨 일 있으면 언제든 부르세요
+aco/16/13.gif:
+- - text: 방긋!
+    type: stroke
+- - text: 방긋
+    type: plain
+  - text: '?'
+    type: thought
+- - 하나, 지금 누구 왔어?
+- - 키가 큰...... 어둠 속성 같은 사람. 일부러 우편을 가져다 주러 왔어
+  - text: ' 공공요금'
+    type: plain
+  - 뭐! 아래 사는 일 관련으로 아는 사람이야. 나중에 고맙다고 말씀드려야......
+aco/16/14.gif:
+- - 이름이 뭐야?
+  - 히키 씨
+  - 몇 살?
+  - 몰라...... 아-!!!
+- - 좋네, 저 사람
+  - text: <sup>💢</sup>바닥이 물 천지잖아<sup>💢</sup>
+    type: stroke
+- - text: 헉
+    type: stroke
+  - ......하나, 어떻게 이 방에 들어온 거야?
+- - 부동산에 가서 안에서 동생이 죽었을지도 모른다고 했더니
+  - text: <span class="blue">아~ 네, 그렇겠죠</span>
+    type: speech
+  - 라더니 바로 열쇠 줬어. 왜?
+  - 그냥 연락했으면 됐을 텐데 왜 나를 한 번 죽여?
+aco/16/15.gif:
+- - 뭐 차가운 거 없어?
+  - 얼음도
+  - text: <big>없어, 하나도.</big> 이제부터 뜨거운 호지차를 넣습니다
+    type: speech
+- - ......여긴 사고 매물이야, 사람이 죽거든. 그래서 쉽게 열쇠를 건내 준 건지도 모르지
+- - 유, 무서운 이야기를 쓰고 있지?
+  - 겁쟁이면서 이상해
+  - 어렸을 때 하나가 나한테 무서운 이야기만 해 줬으니까 그렇지
+- - 나한테 이야기는 곧 무서운 이야기가 되어 버려서
+  - 그래도 일로 쓰는 건 그렇게 무서운 건 아니니까 지금 하는 것도 어딘지 좀 불가사의 종류에
+aco/16/16.gif:
+- - text: 코-
+    type: stroke
+  - text: 짜증
+    type: stroke
+- - text: 후-
+    type: plain
+  - text: 소파 때문이라기보다는 다른 무언가가 있으니까 일부러 찾아온 거겠지
+    type: thought
+- - ''
+- - ''
+aco/16/17.gif:
+- - text: 쿨- 쿨
+    type: stroke
+  - 밤비?
+- - ......? 밤비? 그래도 뭔가 다른......?
+  - text: <span class="blue">우왕 자왕</span>
+    type: plain
+  - text: '?'
+    type: plain
+  - text: <span class="blue">우왕자왕</span>
+    type: stroke
+  - '?'
+  - text: <span class="blue">우왕자왕</span>
+    type: stroke
+- - text: 좀 차갑다...
+    type: thought
+- - ''
+aco/16/18.gif:
+- - text: 덥썩
+    type: stroke
+- - '?'
+  - text: 꽉-
+    type: stroke
+  - '?'
+- - 다녀 왔어-. 하나, 얼음 있지, 항상 집에서 쓰던 게 없어서
+  - text: 탁
+    type: stroke
+- - text: 다른 <big>무슨 일이야?</big>
+    type: speech
+  - text: ぎぅー
+    type: plain
+aco/16/19.gif:
+- - 어? 밤비...? 그럼 이 밤비는 가슴이 조금 있으니까 아, 암컷 밤비일까?
+  - text: 허억- 허억-
+    type: stroke
+  - text: '?'
+    type: square
+  - text: 허억-
+    type: stroke
+  - 그, 그건 밤비가 아냐......
+- - 미안해, 시원해서 좋았어서
+- - 뭐어...... 그, 누나?
+  - text: 잘 보니까 조금 다르네......
+    type: plain
+  - 응, 오늘은 자러 왔어
+  - text: <big>자러!? 맨손으로!?</big>
+    type: speech
+- - ...... 저, 내가 어떻게...... 어떻게 보이나요?
+aco/16/20.gif:
+- - 응? 보통 여자애로 보이는데...... 아니야?
+  - 학원 끝나고 돌아가는? 이렇게 늦은 시간에 교복으로......
+- - ............
+  - 누나는 영감이 강해...?
+  - 아니, 그런 이야기는 못 들어봤는데
+- - 유의 친구니? 이름은 뭐야?
+- - ......유라고 하는군요?
+  - 친구한테 이름 안 가르쳐 주고 뭐 했어? 너희는 왜 그런 식으로 만나니?
+  - text: 후우...
+    type: stroke

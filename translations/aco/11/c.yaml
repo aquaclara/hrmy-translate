@@ -1,0 +1,280 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/11/01.gif:
+- - text: 「주인공 여자애가 귀여워요」
+    w: 50
+- - 「실제로 있으면 좋겠다-」 「유령인데도 순진하고 밝은 점이 특히 좋아요」
+- - 지금은 SNS를 통해서 출판사 계정으로 바로 감상이 오니까, 이런 걸 바로 볼 수 있지
+  - text: 난 아무 것도 안 하지만
+    type: plain
+  - 그렇구나......
+- - 부끄러워 하는 거야?
+aco/11/02.gif:
+- - 아냐, 내 얘기도 아니고, 밤비가 쓴 이야기이고
+  - 분위기 같은 건 꽤 참고했어
+- - 캐릭터 삽화라도 추가됐으면 좋았을 텐데
+  - text: 인기작이 아니면 어렵겠지-
+    type: stroke
+  - 히키 씨에게 이야기해 볼까
+- - 삽화면 설마 내 얼굴......?
+  - 그래
+  - 어떻게? 밤비밖에 내 얼굴은 못 보는데
+- - ''
+aco/11/03.gif:
+- - ''
+- - 카메라에도 거울에도 안 비치네......
+- - 난 죽고 나서 내 모습 본 적 없어. 살아 있을 때 얼굴도 기억 안 나고
+  - 어!? 그래!?
+  - 응......
+- - 밤비가 우선 내 얼굴을 그려서, 그걸 토대로 편집자님께 설명하면......
+  - text: 두근
+    type: stroke
+aco/11/04.gif:
+- - 그림은......좀 그래......
+  - 지옥 귀신을 그린 거야?
+  - 고양이야!
+  - 그래?...... 그럼 역시 문장으로 설명해야 겠네
+- - 있지, 난 어떤 얼굴을 하고 있어?
+- - 어떤......
+- - 전에도 말했지만 귀여운가 예쁜가로 나눠 말하면......
+  - 그건 진짜 크게 둘로 나눴을 때 얘기잖아?
+aco/11/05.gif:
+- - text: ............아, <big>못생겼구나?</big>
+    type: speech
+  - text: <big>그렇지 않아, 그건 진짜 아냐</big>
+    type: speech
+- - 미안해, 내가 아무 생각 없이... 신경을 쓰게 했네
+  - 아니 아니야, 내가 설명을 잘 못해서
+  - '// 원문: 濁して濁して'
+  - 단어를 이렇게... 거르고 걸러서 전해주려고 했구나
+- - 이 머리 모양도 실은 바보 같다고 생각하고 있겠지......?
+  - text: <span class="blue">!?</span>
+    type: stroke
+  - 생각 안 해, 그런 적 없어
+- - 밤비는 착하구나-
+  - 그런 말은 처음 들어
+  - 거짓말~
+aco/11/06.gif:
+- - ''
+- - ''
+- - text: 머리카락 (긺)
+    type: square
+  - text: 아아아아악~~~~!!
+    type: thought
+- - ......히키 씨
+  - text: <big>이렇게 길진 않았어</big>
+    type: speech
+  - 그렇지......
+aco/11/07.gif:
+- - text: 저기 그냥 따지려는 게 아니고, 그렇지 보통 방에 여자애 정도는 오겠지
+    type: speech
+  - text: <big>헉</big>
+    type: plain
+  - text: 뭐
+    type: plain
+- - ......확실히 여자애......는 몇 번 부르긴 했지만......
+  - text: <span class="blue">어쩐지 무서우므로, 우선은 말하지 마......</span>
+    type: speech
+  - text: 이리후네는 몰라도 야마시로는 이야기할 수 없고......
+    type: thought
+- - ...... 난 그 이제 자주 안 오는 게 나을지도 모르겠다. 이제 와서지만 밤비도 역시 신경 쓰이지?
+  - 그리고
+- - 대각선 아래라지만 새로운 사람도 이사왔고, 떠들다가 주의 받을지도 모르니까
+  - 그......
+  - text: <span class="blue">사고 매물!?</span>
+    type: speech
+  - text: 그건 아마 괜찮을 거 같은데......
+    type: thought
+aco/11/08.gif:
+- - 비밀이 너무 많아, 숨기고 싶은 일도 너무 많고
+  - 저기, 게다가...
+- - text: 이 애는 전혀 나쁜 애가 아닌데, 내 사정으로 계속 상처입히고 있어
+    type: thought
+- - 이제 추워지기도 하니까 난 진짜로 옆에 없는 게 낫겠어
+  - text: 슥
+    type: plain
+  - 아, 그래도 이 근처에 있을 테니까 보이면 말 걸어 줘. 그럼
+- - 잘......
+  - text: 으악
+    type: stroke
+  - text: 쿵
+    type: stroke
+  - text: <span class="blue">ぎょっ</span>
+    type: speech
+aco/11/09.gif:
+- - ''
+- - 어?
+- - ''
+- - ''
+aco/11/10.gif:
+- - 벽을 못 통과하겠어
+  - 어?......뭐?
+  - text: 당황하면서도 늘 그렇듯, 커텐 사이로 아침 해가 새어 들어올 쯤 그 아이는 사라졌다
+    type: square
+- - text: 코지카
+    type: plain
+  - 요즘 뭔가 새로운 일은 없나요
+- - text: 이 색깔이면 될까?
+    type: stroke
+  - text: 있잖아- 앞치마가 모자라는데
+    type: stroke
+  - text: 아, 복도에 모아 놨어
+    type: stroke
+- - text: 그거 선생님한테 물어봐야 아는 거 아냐?
+    type: stroke
+  - text: 나 오늘 아르바이트라 일찍 갈게-
+    type: plain
+aco/11/11.gif:
+- - text: 야마시로
+    type: plain
+  - 사실 코지카 씨 집에 가게 된 이후부터 꿈의 내용이 이전보다 명확히 기억나지 않아지고 있습니다
+- - text: 야마시로
+    type: plain
+  - 오히려 그 쪽에는 무언가 새로운 일은 없습니까?<br>그 쪽의 제가 뭔가 실례되는 일을 하지 않았나요?
+- - text: 코지카
+    type: plain
+  - 어제, 제 탓으로 아코에게 오해를 샀습니다
+  - 요즘 사람의 왕래가 잦은 탓에 자신은 방해가 된다고 생각하게 된 것 같습니다
+  - 그렇지 않은데
+- - text: 후-
+    type: plain
+aco/11/12.gif:
+- - text: 야마시로
+    type: plain
+  - 성가신 애네요
+  - text: 코지카
+    type: plain
+  - 아무것도 모르는 채 불안해지는 때가 있잖아요?
+  - 성가시지 않습니다, 성가시면 이렇게 상담하지 않아요
+- - text: 야마시로의 꿈이 흐릿해지고 있는 것과 그 애가 불투명?이 되어 가는 건 무슨 관련이 있는 걸까?
+    type: thought
+  - text: ガー
+    type: stroke
+  - text: カチ
+    type: plain
+- - 예를 들어 영혼이 점점 사라져 가는...... 거라면 뭐라도 알 수 있을 것 같지만 점점 선명해지는 건 무슨 까닭이지?
+  - text: ゴー
+    type: stroke
+- - text: 이리후네에게 물어보면 알려나. 아, 연락처를 안 물어봤었네. 문화제에는 잘 오려나......
+    type: thought
+  - text: ガー
+    type: stroke
+  - 목 아프다
+aco/11/13.gif:
+- - 야마시로, 잘 한다!
+  - text: 메뉴
+    type: stroke
+- - 그, 그런가......
+  - 뭐야~ 처음부터 야마시로한테 맡기면 됐잖아, 메뉴 디자인을
+  - text: '?'
+    type: plain
+- - 그래도 난 글씨가 못나서
+  - text: 뭐-? 그렇지 않은데-
+    type: plain
+  - text: <span class="blue">소곤</span>
+    type: speech
+- - 있잖아, 야마시로는 문화제 때 친구나 가족 온대?
+  - 응...... 다른 학교 친구가 2명 온대
+  - 아-
+aco/11/14.gif:
+- - 이리후네 씨에게 말해 둬자, 「요즘은 전에 비해 반 친구들과 잘 이야기하기도 잘 하고 있다」고
+  - text: <span class="blue">몇 장 복사하면 될까-</span>
+    type: speech
+- - text: ひき○り○○探しています
+    type: plain
+- - ''
+- - ''
+aco/11/15.gif:
+- - ''
+- - ''
+- - ''
+- - 히키 씨
+aco/11/16.gif:
+- - 매일 이렇게 늦으시나요?
+  - ......그렇죠
+  - 완전히 막차네요
+  - 그
+- - 지금, 잠깐, 유령 같은 게 있었는데 선생님이 아시는 유령입니까?
+- - text: <span class="blue">터벅 터벅 터벅</span>
+    type: stroke
+- - text: 터벅
+    type: stroke
+aco/11/17.gif:
+- - 어서 와-
+- - ...... 안녕, 미안해 잠깐 편의점에 갔었는데, 들어가 있었어도 됐는데
+  - 응
+- - 나 이제 아무것도 못 지나가게 돼서
+- - >-
+    있지, 밤비. 사실 난 유령이 아닐지도 몰라. 다른 유령과 내가 어딘지 다른 것도, 아침이 되면 잠이 오는 것도 내가 유령이
+    아니어서일까?
+aco/11/18.gif:
+- - 난 대체 뭘까?
+  - text: 사 <span class="blue">사 삭</span>
+    type: stroke
+- - text: <span class="blue">사</span>
+    type: speech
+- - 난 이제 밤비 일에도 아마 아무 도움도 못 될 테고 밤비에겐 밤비의 생활이 있을 거라고 생각하니까
+  - 어? 뭐? 그런 갑자기 무슨 소리야? 헤어지는 인사 같이 됐는데
+- - 그래, 나는 작별인사를 하려고 왔어...
+aco/11/19.gif:
+- - 그래!? 잘 됐다 말하러 와 줘서 덕분에 말릴 수가 있겠어
+- - ''
+- - 조금 예전에 편지가 왔던 거 기억하고 있어? 사실 그 다음에 편지를 보낸 사람이랑 만났었거든
+  - 모든 게 두렵다
+- - 보낸 사람은 야마시로 아코 ......이 이름 알아?
+aco/11/20.gif:
+- - ......아코? 나랑 같아?
+- - 널 찾고 있다가 날 찾은 것 같아. 말 안 해서 미안해. 하지만 상대방도 왜 이렇게 된 건지 모르는 것 같아서
+  - text: 마치 얼음 조각을 만지려고 하는 것 같이
+    type: square
+- - text: 부디 깨지지 않기를, 녹지 않기를
+    type: square
+  - ......밤비가 무슨 이야기를 하는지 모르겠어. 난 이대로 투명인간이 되는 거야?
+- - 모르는 일은 지금은 모르는 채여도 괜찮아. 오늘은...... 지금까지 비밀로 했던 이야기들을 발표하는 날로 해도 될까?
+aco/11/21.gif:
+- - 발표회?
+- - 발표회
+- - 초등학교 같다
+  - text: 아
+    type: square
+- - text: 그렇게 쉽게 깨지지는 않았다
+    type: square
+  - 혹시 그 긴 머리의 주인공?
+  - text: <span class="blue">철컥</span>
+    type: speech
+  - 그래, 고등학생에 매우 예의 바른 사람
+aco/11/22.gif:
+- - 밤비는 나한테 어떤 비밀을 숨겼을까~
+  - text: 그래도 강한 척하고
+    type: square
+- - text: 모든 게 두렵다
+    type: square
+  - 아, 그리고 투명인간이 아니라 나한테는 보이니까
+  - text: 어쩔 수 없다. 부서트리고 싶지 않으니까
+    type: square
+- - 컴퓨터 켜 두고 나왔었네
+- - text: ......바람 때문에 잘 안 들렸지만, 선생님은 계속 혼자 말하고 있네......
+    type: thought
+  - text: 사
+    type: stroke
+  - text: 사사삭
+    type: stroke

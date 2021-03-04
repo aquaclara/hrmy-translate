@@ -1,0 +1,239 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/08/01.gif:
+- - text: 코지카 씨에게 안겼던 것 같다
+    type: square
+- - text: 남자가 한 명 더 있었고 명함에 적힌 이름은 히키? 씨?
+    type: thought
+  - text: 그 사람은 중간에 돌아갔고... 어쩐지 요즘은 잘 기억이 안 나네 ......꿈 내용이
+    type: thought
+- - text: ...... 그리고 내가 일방적으로 안겼을 뿐이고
+    type: thought
+  - text: 응?
+    type: stroke
+  - 어쩐지 이렇게, 같이 껴안는 그런 느낌이 아녔는데...... 겨, 결례를 했나......
+- - text: 노트도 잊어버리고 오늘은 타올도 우산도 빌리고
+    type: thought
+  - text: 으-
+    type: stroke
+  - text: 아... 별꼴이야, 나. 별꼴......
+    type: thought
+aco/08/02.gif:
+- - 다음은 지습이래
+- - 점심 시간에 어디 갔다 왔어?
+  - text: 달그락
+    type: stroke
+- - 펴, 편의점. 밥을 잊어버려서
+  - 야마시로, 요즘 뭐 있었어?
+- - 초조해 보인다고 해야 하나
+aco/08/03.gif:
+- - ......문화제가 가까워져서 그런가-
+- - 어-? 문화제에 남자 친구 와? 그 니시고교?
+  - 우리 남동생도 올지 몰라~
+  - 나도 언니가 올지 모르겠어, 여기 졸업생이니까
+- - 야마시로는 누구 데려올 거야? 문화제
+- - ......아니. 다른 학교에 친한 친구도 딱히 없고, 그리고 지금은... 토리이도 쉬고 있으니까
+  - 참가만 하는 게 되려나
+aco/08/04.gif:
+- - 스쿠와도 있으니까
+- - 아, 남자는 쭉 조리실이려나?
+- - 꽤 호평이에요
+- - 이전에 짧은 이야기도 좋았었는데, 역시 주인공이 있으면 팬이 생기기 좋죠
+  - text: 호평
+    type: thought
+aco/08/05.gif:
+- - text: 「연재」라고 하는 말에 내가 이상하게 긴장하지 않도록, 아코의 이야기는 어디까지나 「단기 연재」라고 하는 형태로 시작하기로 결정되었다
+    type: square
+  - text: <span class="blue">네, 괜찮아요</span>
+    type: plain
+- - 선생님은 펜이 빠르시니까 도움이 됩니다
+  - 한 편이 짧아서 그래요
+  - text: 좋은 사람이구나.......근본은
+    type: thought
+  - text: 느릿...
+    type: plain
+- - 아
+- - ...그러고 보니 요 전번에 얘기가 꽤 늦어졌었는데 괜찮으셨나요?
+aco/08/06.gif:
+- - 네?
+  - 집에 들어가실 때 몇 시였을지 걱정되어서요... 괜한 걱정이면 죄송합니다
+- - text: <sup>아아!</sup> 전 지금 집이 없어서 회사에서 자고 있어요
+    type: speech
+- - ......네??
+  - 이런 저런 일이 있어서요- 사는 데서 쫓겨나서-
+  - text: 아하하
+    type: stroke
+  - 가, 가족들에게서요?
+- - 아뇨, 여자친구랑 동거하고 있었는데 차여서요~! 나가라고 그래서 지금 살 곳이 없습니다
+  - text: 뭐...
+    type: stroke
+  - text: 너무 명랑해......
+    type: thought
+aco/08/07.gif:
+- - text: >-
+      <sup>아하하</sup> <span class="blue">후우...</span> 진짜 살 곳도 돈도 없어요......
+      <sub>중얼</sub>
+    type: speech
+- - 저...... 월 3만으로 바로 입주 가능한 곳을 아는데요......
+- - ''
+- - text: 요괴는 진짜로 있을 것 같아......
+    type: thought
+  - text: 산에 사는 것
+    type: plain
+aco/08/08.gif:
+- - 밤비
+  - text: にゅ
+    type: stroke
+  - 으악
+- - 1층에 누가 이사왔나 봐
+  - 어, 요 전에 왔던 히키 씨야
+  - text: 두근 두근
+    type: plain
+  - 어? 그래? 왜?
+- - 무슨 여자친구랑 헤어져서 쫓겨났대
+  - text: 잘은 모르지만...
+    type: stroke
+- - text: 책장이 필요해-
+    type: stroke
+aco/08/09.gif:
+- - 밤비는 지금 여자친구 있어?
+  - 있을 것처럼 보여?
+  - 미안해...
+  - 사과는 하지 마......
+- - 여자친구가 생기면 말해, 난 방해 안 할게
+- - ''
+- - 지금처럼 사는데 가능해 보여?
+  - ......미안해
+  - 미안하다니......
+  - text: 그러고 보니
+    type: square
+aco/08/10.gif:
+- - text: 이 애는, 딱히 죽은 것도 아니지
+    type: square
+  - text: 퉁
+    type: stroke
+  - text: 원래 몸은 그냥 자고 있을 뿐이니까. 왜 자기가 죽었다고 생각하는 걸까?
+    type: square
+- - ...... 전에 여기 있었다던 유령 기억하고 있니?
+  - 응
+  - 재밌는 사람이었어
+  - text: 야마노테센 게임
+    type: stroke
+  - text: 상사에게 준 물건! <sup>자동차!!</sup>
+    type: stroke
+- - 그 <ruby>유령<rt>사람</rt></ruby>은 너랑 다른 점은 뭔가 없었다고 생각해?
+- - 아, 혹시 이야기에 쓰려고? 글쎄~
+  - 그 사람은 좀 더 희끄무레했어
+  - 금방 사라질 것 같았다고 해야 하나
+aco/08/11.gif:
+- - 물건을 움직일 때도 나처럼 바로 만지는 게 아니라
+  - 움직여라~ 하고 주문을 외는 것 같았고
+- - 그리고~ 그리고~...... 미안, 좀 더 잘 봐 뒀으면 좋알을 텐데
+  - text: 으음-
+    type: stroke
+  - text: 성실해라...
+    type: thought
+  - 아냐, 많이 도움이 됐어, 고마워
+- - text: 야마시로는 그렇게 이 아이에 대해 깊은 이야기는 하고 싶지 않아하는 것처럼 보였지, 적어도 지금은
+    type: square
+  - text: 그리고- 저기-
+    type: plain
+  - text: 그렇다고 이 채로 두는 것도 어렵고...
+    type: thought
+- - text: 아, 야마시로에게도 기사 허락을 받았어야 했어. 안 된다고 하면 히키 씨에겐 뭐라고 말하지
+    type: thought
+  - text: <span class="blue">멍-</span>
+    type: plain
+aco/08/12.gif:
+- - 아! 피곤하지?
+  - 아니, 전혀
+  - 거짓말, 눈에 초점이 없는 걸
+  - 안 피곤한데도?
+- - text: 넌 사실은 살아 있다고 말해 준다면 기뻐할까, 슬퍼할까 하는 것도 알 수 없어
+    type: square
+- - 히키 씨-
+- - 잠깐 괜찮을까요? 지금 담당하고 계신 코지카 선생님 연재 건으로요
+aco/08/13.gif:
+- - 저 분이 할 이야기가 있는 것 같아요
+- - ......저기, 어떤 분인가요?
+  - 요즘 시작한, 그, 새 코너 「진짜 무당의 실화 체험」 그 분이에요
+  - 아...  저렇게 젊은 분이셨군요
+- - 안녕하세요...... 코지카 선생님 담당인 히키입니다......
+  - text: ぬ
+    type: stroke
+  - text: 깜짝
+    type: plain
+- - 이리후네입니다
+aco/08/14.gif:
+- - 죄송해요, 이렇게 늦게. 벌써 돌아가시려던 건 아니시죠?
+  - text: 좁다
+    type: plain
+  - 아뇨, 이 시간에는 아직 다들 여러가지 하고 있을 때예요
+  - text: がたた
+    type: stroke
+- - 어...... 이름이 다르시네요
+  - 아, 일은 일할 때 이름으로 하고 있어요
+  - 그래요......
+- - ......그래서, 코지카라는 「남자」에 대해서 말인데요......
+- - 으아, 뭉쳤어
+aco/08/15.gif:
+- - 뭉쳤어~
+  - ゴリゴリ
+  - 어깨가?
+  - 어깨-
+  - 후
+  - 후후후
+- - 여기 안에 뭐가 들어 있어
+  - 뭐가?
+  - 잘 모르겠는데 강가에 조약돌 같은 거
+  - 자금자금하니까
+- - text: 손가락이 가늘어, 힘이 약하고, 적당히 차갑고
+    type: thought
+  - text: 딱 좋다......
+    type: thought
+  - text: 꾸벅
+    type: plain
+- - text: 코
+    type: plain
+aco/08/16.gif:
+- - 밤비, 일어나- 잘 거면 침대에 가서 자- 이상한 자세로 자면 몸 상해
+  - text: 흔들 흔들
+    type: plain
+- - 하여튼-
+  - text: 타다닥
+    type: stroke
+- - text: <span class="blue">질질</span>
+    type: stroke
+- - 내일 허리 아프다고 엉엉 울어도 난 몰라
+aco/08/17.gif:
+- - text: 내 나이는 모르지만, 아마 한 살이나 두 살 정도밖에는 차이가 안 나겠지
+    type: thought
+- - text: 이름도 이름 밖에는...... 밤비라고 불린다는 건 이름은 본명이겠지만, 형제는 있는 걸까
+    type: thought
+  - 고등학교는 도중에 그만 둔 것 같지만 어떤 학생이었을까
+- - 아, 코지카 선생님의 친구분이셨습니까......
+- - 네, 고등학교 친구입니다. 코지카 유와는 같은 반이었고요
+aco/08/18.gif:
+- - 그 애의 친구에게 그 애도 여기서 일하고 있다고 듣고 놀랐어요. 무서운 이야기는 싫어한다고 생각했거든요
+- - ............ 어쨌든 아까 이야기는 우선 제가 선생님께 말씀드릴 테니
+- - 네! 밤비에게 잘 전해 주세요
+- - 네 ............ ........................ 밤비?

@@ -259,3 +259,68 @@ aco/05/16.gif:
   - 저는 다른 사람과 이야기 하는 것을 어려워 합니다
 - - text: 아, 그래서 「폐를 끼치고 있지는 않나요」「곤란하지는 않으신가요」......
     type: thought
+aco/05/17.gif:
+- - 으으... 어쩐지 말투가 음침하지......
+  - text: 음-
+    type: stroke
+  - text: 퐁
+    type: speech
+  - text: 사실을 전하고 싶은 것 뿐인데 음침해져. 뭐라고 말하면 오해 없이 전달할 수 있을까
+    type: thought
+- - text: 코지카
+    type: plain
+  - 그럼 역시 당신이라고 생각합니다
+  - 어쩐지 그, 신중한 모습이 어쩐지
+  - 어쩐지 있죠
+- - text: <span class="blue">야마시로, 빨리 대답해</span>
+    type: speech
+- - text: <span class="blue">야마시로는 대화가 잘 안 이어지는구나</span>
+    type: square
+  - text: <strong class="stroke">알겠다</strong>
+    type: square
+  - text: <span class="blue">골똘히 생각하기 전에 뭐라도 말해 줬으면 하는 느낌이지</span>
+    type: speech
+aco/05/18.gif:
+- - text: 「신중한」...... ............
+    type: thought
+- - text: 코지카
+    type: plain
+  - 아, 그리고
+  - 여기 방을 보면 진짜인지 아닌지 알 수 있으려나
+  - 직접 와 볼래요?
+- - text: ............?
+    type: thought
+  - text: 아니
+    type: thought
+  - text: 어쩐지 아닌걸, 이건 꼭 <big>버, 범죄자야</big>
+    type: speech
+- - text: ......
+    type: thought
+aco/05/19.gif:
+- - 퐁퐁
+- - text: 코지카
+    type: plain
+  - 내가 사진 찍어 보내도 될까? 미안해
+  - 아니면 친구나 가족을 데리고 와도 되고
+  - 더 이상 관여하고 싶지 않다면 이제 이쪽에서 연락은 안 하겠습니다!
+- - ''
+- - text: 뭐라고 하면 좋았을까
+    type: plain
+  - 퐁
+aco/05/20.gif:
+- - text: 야마시로
+    type: plain
+  - 내일 학교가 끝난 후에 찾아뵈어도 될까요?
+- - ''
+- - 내일 학교가 끝난 후에 찾아뵈어도 될까요?
+  - text: 코지카
+    type: plain
+  - text: 기다릴 게요
+    type: stroke
+  - 주소↓
+- - text: (아마 학교 근처라고 생각해요)
+    type: speech
+  - text: 야마시로
+    type: plain
+  - text: 잘 부탁해!
+    type: stroke

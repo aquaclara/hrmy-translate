@@ -1,0 +1,260 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/07/01.gif:
+- - 이 사람이 진짜 그 히키 씨?
+- - text: <span class="blue">힐끔</span>
+    type: plain
+- - text: 比企景国
+    type: plain
+  - 아, 이거, 명함...... 어떻게 읽는 건가요?
+- - 히키, 카게쿠니입니다......
+  - text: <span class="blue">소곤</span>
+    type: speech
+  - 아- 특이한 이름이네요
+  - ......별 말씀을
+aco/07/02.gif:
+- - text: 하, 할말이~
+    type: thought
+  - text: <span class="blue">히키 카게쿠니</span>
+    type: stroke
+  - 키읔이 많네요
+- - text: <span class="blue">코지카 카노코</span>
+    type: speech
+  - 코지카 선생님 필명도요
+- - text: 조-용
+    type: stroke
+- - 1문 1답 같은 느낌이니...... 답이 어려운 질문은 답하지 않아도 괜찮습니다......
+  - 그럼... 시작하겠습니다
+aco/07/03.gif:
+- - 1문 1답이면 메일이 낫지 않았나......
+  - 나이는?
+  - 아, 저기, 감추고 싶습니다
+- - 성별...
+  - 그것도 묻어두고 싶습니다
+  - 취미는...
+  - 취...? 특별이 없으려나
+  - 좋아하는 음악은
+  - 그것도 딱히......
+- - text: 죄송해요
+    type: shock
+  - text: .......
+    type: thought
+- - 그럼... 더... 저기... 하루 일과는 어떤가요?
+  - text: 분명히 지금 생각해낸 질문...
+    type: thought
+  - 일과...... 따뜻한 차를 마시는 것......
+aco/07/04.gif:
+- - 노인장이시군요......
+  - text: <span class="blue">소곤...</span>
+    type: speech
+  - text: <sup>💢</sup><big>시끄러</big><sub>💢</sub>
+    type: plain
+- - 작은 코너여서 질문은 이런 거인데요......
+  - 다 채울 수 있을까요?
+  - 뭐... 다음에 또 몇 가지 추가로 여쭤볼지도 모르겠네요
+- - 그래서, 선생님께서 시간이 혹시 괜찮으시다면 다음 연재의 협의를 가볍게... 해보면 좋겠습니다만......
+- - 전 괜찮지만
+  - text: 지금부터? 히키 씨는 바로 돌아가는 걸가?
+    type: thought
+  - 그럼 다시 전체적인 흐름을......
+aco/07/05.gif:
+- - ''
+- - 이런 것이군요...... 그러고보니, 주인공에게 모델이 있다든가
+- - 아, 네. 외모와 말투에서 여러 모로 참고를
+  - text: 진짜 유령이라고는 못 하지
+    type: thought
+- - 네-
+aco/07/06.gif:
+- - ''
+- - 허락은 받으셨나요?
+- - 선생님?
+- - 으엑!?
+  - text: <span class="blue">빤-</span>
+    type: speech
+  - 으엑...? 피곤하신가요...?
+  - 허락 말이죠, 네 확실히 설명해 두었습니다
+aco/07/07.gif:
+- - 밤비, 이 사람은 누구야?
+  - 제 일도 내용도 알고 있고
+- - 아... 그래요, 그럼 걱정할 필요는 없겠네요
+  - text: 톡
+    type: stroke
+  - text: 명함!
+    type: thought
+- - 편집...... 히키, 히키...... 케이, 케...... 케, 케이코쿠!
+  - 카게쿠니
+- - ''
+aco/07/08.gif:
+- - 무슨...... 일이시죠......?
+  - "\f\f\f// 원문: 怪訝"
+  - 아, 특이한 이름이구나 해서요!
+  - text: 의아
+    type: square
+  - 네...... 데자뷔네요
+- - text: 보이지도 않고 들리지도 않는다......
+    type: thought
+  - text: 토도독
+    type: plain
+- - 아, 그래, 맞아. 개인적으로 하나 궁금한 게 있는데 모델이 된 분과는 어떤 사이신가요?
+  - 어떤......? 아뇨, 그냥 아는 사이입니다......
+- - 아, 뭐야. 틀림없이 여자친구라고 생각했네요
+aco/07/09.gif:
+- - ''
+- - 네? 왜요?
+  - 여자친구가 아니라면 선생님이 일방적으로 좋아하시나요? 어쩐지 꽤 사랑이 있다고 할까, 그냥 느낌이지만요
+- - ''
+- - text: 한 발, 두 발, 세 발 너무 갔어......
+    type: thought
+  - 주... 주인공이니까 어느 정도 매력적으로 쓰는 게 당연하지 않을까요?
+aco/07/10.gif:
+- - 소설이고
+- - 그냥 그런 것 뿐입니다
+- - ......그래요?
+  - 아, 죄송합니다. 이런 시간까지. 슬슬 가보겠습니다......
+- - 오늘은 일부러 와주셔서 감사했습니다
+  - 저야말로 갑자기 찾아와서...
+  - text: 끼익...
+    type: stroke
+  - 또 연락 드리겠습니다......
+aco/07/11.gif:
+- - ''
+- - 편집자님이 오셨구나
+  - 아, 응
+  - 이미지랑 달라서 놀랐어. ......그래서 있잖아
+- - text: '?'
+    type: plain
+  - text: 말해야 할까, 야마시타 아코와 만났다고
+    type: thought
+- - 아니, 오늘은 좀 빨랐네
+aco/07/12.gif:
+- - text: 무슨 이유가 있어서
+    type: square
+  - text: 너는 야마시로가 잠들어 있을 때만 활동하고 있고, 야마시타의 영혼 비슷한 것이라는 것
+    type: square
+- - 너에게 기억은 없지만 야마시로에게는 네 기억이 조금은 남아 있다는 것, 그런 것들을 이야기해야 할 지도 모르지만
+  - 그러고 보니 아까 편집자님이 말씀하셨지만
+- - 나보다 훨씬 멋있는 것 같지? 「주인공」은
+  - 뭐-?
+  - text: 지금은
+    type: square
+- - text: 아직 아무 것도 모르는 것 같으니까 괜히 이 아이의 마음을 어지럽히는 일은 피하고 싶어
+    type: square
+  - 그 사람이 너무 필요없는 말까지 한 거야
+  - text: 달그락
+    type: stroke
+aco/07/13.gif:
+- - 뭔지 신경 쓰이는걸~
+  - 좀 더 틀이 잡히면 보여줄게
+  - text: 쏴-
+    type: stroke
+- - 응. 아, 노트 떨어트렸어, 밟고 있어, 밤비
+- - text: 야마시로 아코
+    type: plain
+  - text: '!!!'
+    type: stroke
+- - text: <span class="blue">아</span>
+    type: speech
+  - text: 휙
+    type: stroke
+aco/07/14.gif:
+- - text: 폭
+    type: stroke
+- - ''
+- - 뜨거워
+  - text: 팟
+    type: stroke
+- - 아, 미안해. 중요한 노트였어?
+  - 아니 그런 건 아닌데, 그보다 뜨겁다고? 얼굴이? 괜찮아?
+aco/07/15.gif:
+- - 밤비의 가슴 복판이 뜨거워져서 놀랐어
+  - 자고 있을 때는 얼굴이 좀 따뜻한 정도였는데
+- - ......잘 때 얼굴을 만졌어?
+- - 한 번뿐이야!!
+  - 그건 딱히 괜찮지만. 어쩐지 가끔 체온 차이가 생기고 하는 건가?
+- - 그렇구나, 그럼 우리는 서로 만지거나 가까이 있기는 그다지 어렵겠네, 좀 쓸쓸하다
+aco/07/16.gif:
+- - ''
+- - 밤비가 죽으면 만질 수 있을지도 몰라~
+  - text: 와-
+    type: stroke
+  - text: 제안이 너무해
+    type: thought
+- - text: 가슴 복판이 뜨거워졌다고......
+    type: thought
+- - text: <span class="blue">똑</span>
+    type: speech
+aco/07/17.gif:
+- - text: 쏴-
+    type: stroke
+- - 오늘은 아침부터 비야. 비는 좋아, 실내에 있어도 되는 이유가 되어 주니까
+  - text: 촉촉
+    type: stroke
+- - ''
+- - text: <strong class="stroke">퐁 퐁 퐁</strong>
+    type: speech
+  - 네네, 뭐야, 뭐야
+aco/07/18.gif:
+- - 아~ 잊고 있었네!
+  - text: 야마시로
+    type: plain
+  - 죄송합니다, 제가 그곳에 일본사 노트를 두고 온 것 같습니다
+  - 혹시 지금 집
+  - 집에 계신다면 지금 찾아봬도 괜찮을까요, 오후에 바로 일본사 수업이 있어서
+- - text: 어, 오후 첫 번째로 일본사가 있다고... 혹시 지금은 점심 시간?
+    type: thought
+  - text: 내가 지금부터 뛰어서 학교로 가면 맞을지도......
+    type: thought
+- - text: 코지카
+    type: plain
+  - 학교까지 가져다 줄까?
+  - text: 야마시로
+    type: plain
+  - 그
+  - text: <span class="blue">딩동-</span>
+    type: speech
+- - text: 철컥
+    type: stroke
+aco/07/19.gif:
+- - 그 그, 그럴 건 없어요......
+  - text: <span class="blue">헉 헉 헉</span>
+    type: speech
+- - 자, 잠깐만 기다려 줘, 거기서
+  - text: 쾅
+    type: stroke
+  - 네...... 네...... 죄송해요, 제가......
+- - text: 철컥
+    type: stroke
+  - 여기
+- - 받아
+aco/07/20.gif:
+- - 다녀 와
+- - 급한 거지?
+- - 네, 다, 다녀올게요
+  - text: <span class="blue">타다닥</span>
+    type: speech
+  - 거기 미끄러우니까 조심해!
+- - text: 그래, 이럴 때 차가 있으면 편리할 텐데
+    type: thought
+  - text: 주차장은 없지만...
+    type: stroke
+  - text: ......당황한 모습은 그 애랑 닮았네
+    type: thought
