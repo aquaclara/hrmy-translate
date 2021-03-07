@@ -16,34 +16,41 @@ layout: default
 | 키                  | 기능                      |
 | ------------------- | ------------------------- |
 | 엔터                | 다음 대사 추가            |
-| SHIFT + 엔터        | 위쪽에 대사 추가          |
-| CTRL + 엔터         | 다음 컷과 대사 추가       |
-| CTRL + SHIFT + 엔터 | 위쪽에 컷과 대사 추가     |
+| Shift + 엔터        | 위쪽에 대사 추가          |
+| Ctrl + 엔터         | 다음 컷과 대사 추가       |
+| Ctrl + Shift + 엔터 | 위쪽에 컷과 대사 추가     |
 | 빈 칸에서 BACKSPACE | 해당 대사(또는 컷) 지우기 |
 
 ### 말풍선 모양
 
 | 키       | 기능                                                             |
 | -------- | ---------------------------------------------------------------- |
-| CTRL + 1 | < 일반 말풍선(기본값) )                                          |
-| CTRL + 2 | .oO( 생각 말풍선 )                                               |
-| CTRL + 3 | Σ 비명!                                                          |
-| CTRL + 4 | 말풍선 없음                                                      |
-| CTRL + 5 | <span style="-webkit-text-stroke-width: 1px;">테두리 글씨</span> |
-| CTRL + 6 | <span style="border: 1px solid black;">네모 칸</span>            |
-| CTRL + 7 | 三 독백 三                                                       |
+| Ctrl + 1 | < 일반 말풍선(기본값) )                                          |
+| Ctrl + 2 | .oO( 생각 말풍선 )                                               |
+| Ctrl + 3 | Σ 비명!                                                          |
+| Ctrl + 4 | 말풍선 없음                                                      |
+| Ctrl + 5 | <span style="-webkit-text-stroke-width: 1px;">테두리 글씨</span> |
+| Ctrl + 6 | <span style="border: 1px solid black;">네모 칸</span>            |
+| Ctrl + 7 | 三 독백 三                                                       |
 
 ### 글자 모양
 
 | 키                          | 기능                                                                                          |
 | --------------------------- | --------------------------------------------------------------------------------------------- |
-| CTRL + u                    | <span style="-webkit-text-stroke-width: 1px;">`<strong class="stroke">테두리</strong>`</span> |
-| CTRL + b                    | <b>`<b>진하게</b>`</b>                                                                        |
-| CTRL + [                    | <small>`<small>작게</small>`</small>                                                          |
-| CTRL + ]                    | <big>`<big>크게</big>`</big>                                                                  |
-| CTRL + ,                    | <sub>`<sub>아래 첨자</sub>`</sub>                                                             |
-| CTRL + .                    | <sup>`<sup>위 첨자</sup>`</sup>                                                               |
-| CTRL + i(아코와 밤비에서만) | `<span class="blue"></span>`                                                                  |
+| Ctrl + u                    | <span style="-webkit-text-stroke-width: 1px;">`<strong class="stroke">테두리</strong>`</span> |
+| Ctrl + b                    | <b>`<b>진하게</b>`</b>                                                                        |
+| Ctrl + [                    | <small>`<small>작게</small>`</small>                                                          |
+| Ctrl + ]                    | <big>`<big>크게</big>`</big>                                                                  |
+| Ctrl + ,                    | <sub>`<sub>아래 첨자</sub>`</sub>                                                             |
+| Ctrl + .                    | <sup>`<sup>위 첨자</sup>`</sup>                                                               |
+| Ctrl + i(아코와 밤비에서만) | `<span class="blue"></span>`                                                                  |
+
+### 글자 추가
+
+| 키         | 기능        |
+| ---------- | ----------- |
+| Alt + 엔터 | `<br>` 추가 |
+| Ctrl + "   | `「」` 추가 |
 
 ### 덧그리기 모드
 

@@ -227,16 +227,16 @@ export default class TranslationRenderer implements TranslationDataContainer {
                 `${key} at ${[imageId, cutIndex, tlsIndex]}.`;
               const image = this._data.getCutTranslations(imageId);
               // Enter
-              if (!ctrl && !shift && key === 'Enter') {
+              if (!alt && !ctrl && !shift && key === 'Enter') {
                 image[cutIndex].splice(tlsIndex + 1, 0, '');
                 focus = [imageId, cutIndex, tlsIndex + 1];
-              } else if (!ctrl && shift && key === 'Enter') {
+              } else if (!alt && !ctrl && shift && key === 'Enter') {
                 image[cutIndex].splice(tlsIndex, 0, '');
                 focus = [imageId, cutIndex, tlsIndex];
-              } else if (ctrl && shift && key === 'Enter') {
+              } else if (!alt && ctrl && shift && key === 'Enter') {
                 image.splice(cutIndex, 0, ['']);
                 focus = [imageId, cutIndex, 0];
-              } else if (ctrl && key === 'Enter') {
+              } else if (!alt && ctrl && key === 'Enter') {
                 image.splice(cutIndex + 1, 0, ['']);
                 focus = [imageId, cutIndex + 1, 0];
               }

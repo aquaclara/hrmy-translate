@@ -169,6 +169,12 @@ export class Translation extends Caption {
       // Suppress view source shortcut
       ev.preventDefault();
       this._stylize(target, '<strong class="stroke">', '</strong>');
+    } else if (ev.ctrlKey && ev.key == '"') {
+      // Suppress view source shortcut
+      ev.preventDefault();
+      this._stylize(target, '「', '」');
+    } else if (ev.altKey && ev.key == 'Enter') {
+      this._stylize(target, '<br>', '');
     } else {
       // log(logMsg + ' But ignored.');
       return;
