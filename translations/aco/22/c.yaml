@@ -1,0 +1,254 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/22/01.gif:
+- - text: 그러고 보면 나는 루이의 집을 알지 못한다
+    type: square
+- - text: 모여 노는 건 언제나 가쿠토의 집이었고
+    type: square
+  - text: 형제가 있는지 어떤지, 동물을 키우는지 어떤지 그런 것도 전혀
+    type: square
+- - text: <span class="blue">코지카 씨, 이름 어떻게 하시나요?</span>
+    type: speech
+  - text: <span class="blue">이름?</span>
+    type: speech
+  - text: <span class="blue">이 대로 본명으로 계속하실 수 있나요?</span>
+    type: speech
+- - text: <span class="blue">......가능하면 필명을</span>
+    type: speech
+    w: -1
+  - text: <span class="blue">벌써 생각해 두셨나요? 죄송해요, 좀 급하게...</span>
+    type: speech
+  - 아뇨! 저기...... 그게......
+aco/22/02.gif:
+- - 아, 카, 카노코, 이름은 히라가나로 카노코로
+  - 네
+- - text: <span class="blue">소설은 있지, 몇번이나 같은 페이지를 읽게 돼, 이게 누구였지, 하면서</span>
+    type: speech
+- - text: <span class="blue">가쿠토도 밤비도 술술 읽는데 말야</span>
+    type: square
+  - 얼굴에 떨어뜨리지 마
+- - text: <span class="blue">이리후네는 아마 밤비를 좋아하는 거야</span>
+    type: square
+    w: -1
+aco/22/03.gif:
+- - text: 소설을 어려워하고 이리후네를 좋아하던 루이는
+    type: square
+  - text: <span class="blue">밤비는 이리후네랑 그렇게 사이가 좋았어?</span>
+    type: speech
+  - text: 혹시라도
+    type: square
+- - text: 쭉 나를 싫어하고 있었던 게 아닐까?
+    type: square
+- - 선생님
+- - 인터넷이 느리신 게 아닌가요?
+  - text: <sup class="stroke">아니, 죄송합니다. 멍하니 있었어요</sup>
+    type: speech
+  - 잘 주무시고 계시죠?
+  - 건강해요
+  - 그럼 다행이에요
+aco/22/04.gif:
+- - 그래서, 새 이야기를 한 편 부탁드리고 싶어서
+  - 좋아요
+  - 마감도 평소대로라 동시에 진행하게 되는데요
+  - 문제 없습니다
+- - text: 지금은 내가 해야 하는 일을 하자
+    type: thought
+- - text: <span class="blue">삐 삐 삐 삐</span>
+    type: plain
+- - 열이 있네
+  - 응
+  - 오늘 학교는 쉬렴
+aco/22/05.gif:
+- - 담임 선생님께 전화하고 올게
+  - text: 물은 여기 둘게
+    type: stroke
+  - 아, 괜찮아. 반 친구한테 연락할게......
+- - 혹시 스쿠와......?
+- - ......응
+- - 괜찮지만, 그래도 그렇게
+  - 엄마, 수건 좀 가져다 줘. 땀 닦고 싶으니까
+  - 그래, 그래
+aco/22/06.gif:
+- - ''
+- - 스쿠와, 야마시로는 아직 안 왔어?
+  - 결석이래, 감기 걸린 것 같아
+  - 그렇구나, 야마시로는 오늘 당번이지?
+- - 요 전에 걷었던 노트를 교실까지 날라 달라고 선생님이 말씀하셔서
+  - 내가 갈게, 결석 이야기도 전하고 김에 겸사겸사
+- - 야마시로 결석이래
+  - 노트는?
+  - 스쿠와가 대신한대
+  - text: 어
+    type: plain
+aco/22/07.gif:
+- - text: 스쿠와
+    type: plain
+  - 야마시로, 오늘은 감기로 자고 있는 것 같아. 잘 때는 분열한다고 이리후네가 말했었는데
+  - 지금 그래?
+- - text: 분열이라니, 세포인가
+    type: thought
+  - text: 안 왔다고
+    type: stroke
+  - text: 야마시로가 감기인가, 괜찮을까
+    type: thought
+- - 감기로 자는 거면 ......안 오는 게 아닐까
+  - text: 기웃 기웃
+    type: stroke
+  - text: 긴장하면 꿈은 안 꾼다고 그랬고, 꿈을 안 꾸면 여기는 안 오는 것 같고
+    type: thought
+- - 그리고 감기로 쉰다고 했어도, 일어나 있는지도 모르고, 감기라...... 여러 모로 몸도 마음도 지친 걸까
+  - text: 탁...
+    type: stroke
+aco/22/08.gif:
+- - 아코, 엄마 잠깐 뭐 좀 사러 나갈 건데 금방 올 거니까
+  - ............
+- - 잘 자
+  - text: 끼익, 탕
+    type: stroke
+- - ''
+- - text: 후- 후-
+    type: plain
+aco/22/09.gif:
+- - ''
+- - ''
+- - ''
+- - 헉- 헉-
+aco/22/10.gif:
+- - text: 열......
+    type: thought
+- - text: <span class="blue">ちょいちょい</span>
+    type: stroke
+  - text: 후-
+    type: stroke
+- - text: 시원해서 기분이 좋은 걸까
+    type: thought
+  - text: 꽉
+    type: stroke
+- - ''
+aco/22/11.gif:
+- - ''
+- - text: 헉
+    type: plain
+  - 아코-
+- - text: <span class="blue">똑똑</span>
+    type: plain
+  - 밥 먹을 수 있어? 들어갈게
+- - text: <big>자, 잠깐만.</big> 지금...... 옷 갈아 입고 있으니까......
+    type: speech
+  - 나중에
+aco/22/12.gif:
+- - 그럼 조금 이따가 들고 갈 테니까
+  - 또, 뭔가 이마...... 식힐 게 필요해......
+  - 그래-
+- - text: ............
+    type: thought
+  - ぎっ
+  - 야마시로, 감기 걸렸구나
+- - text: 마음이 약해져서 날 불렀어? 이럴 때만
+    type: thought
+  - text: 치사한 거 아냐? 난 어쩌면 좋을지 모르게 돼
+    type: thought
+- - text: 뜨겁네
+    type: thought
+aco/22/13.gif:
+- - text: 날 싫어하는 거면 싫어하는 채로 있어
+    type: thought
+- - text: 아코는 3일쯤 모습을 보이지 않았다
+    type: square
+- - 퐁
+  - 퐁
+- - text: 코지카
+    type: plain
+  - 몸은 괜찮아?
+  - text: 야마시로
+    type: plain
+  - text: 괜찮아요<br>3일 쉬었지만 이제부터 학교예요
+    type: speech
+  - 감사합니다
+aco/22/14.gif:
+- - text: 그건 다행이야
+    type: thought
+  - text: 이 3일로 배운 건, 완전 새로 쓰는 분량은 미리 확인해야 한다는 것과, 이틀 잠을 안 자면 사람은 약간 위험해진다는 것
+    type: square
+- - text: 이건 내가 아직 젊어서 어떻게든 된 거고
+    type: thought
+  - text: 이제 수 년 후에도 이렇게 했다간 도중에 정신을 잃을 위험이 있을지 모른다는 것만 기억해야만
+    type: thought
+- - text: 부재중으로 처리해 주세요
+    type: thought
+  - text: 딩동-
+    type: stroke
+  - 밤비- 나야-
+  - text: 가쿠토인가
+    type: thought
+  - text: 딩동- 딩동-
+    type: stroke
+  - 문 열려 있어
+- - ''
+aco/22/15.gif:
+- - 밥은 챙겨 먹지?
+- - 아까 역 앞 케이크 가게에서 가쿠토랑 만났는데, 밤비 나한테 엄청 연락했었다고?
+  - 루이, 스마트폰이 물에 빠졌대
+- - ''
+- - 소나기가 내린 날이 있었잖아, 그 때 물 웅덩이에 떨어트려서, 그후론 예비 피처폰을 써서, 메시지나 전화는 전혀 몰랐어, 미안
+aco/22/16.gif:
+- - 난 이리후네랑 아무 일도 없고 몇번 우리 집에 왔던 건 진짜 일 관련이었으니까 안심해
+  - text: 여자 애는 둘이 있었습니다
+    type: stroke
+  - 어? 아, 알고 있어! 어차피 밤비는 이리후네 같은 타입은 안 맞잖아
+- - 가쿠토가 지레짐작했지?
+  - text: 여자 애가 또 있다고
+    type: stroke
+  - 그게 루이랑 같은 타이밍에 연락이 끊어졌으니까
+  - 밤비에게 사과해~
+- - ''
+- - ''
+aco/22/17.gif:
+- - 뭐야, 얘
+  - 안심한 거 아닐까
+  - 멘탈 괜찮아? 아니 잠들었나?
+- - 아! 밤비가 쓴 이야기 읽었어
+  - 난 문장 읽는 게 느려서 시간이 걸려 미안해. 밤비 대단하더라, 아직도 계속하고 있었구나
+- - 그보다 이름 말야- 그거 고등학생 때 내가 준 기념품이지? 아직도 쓰고 있었구나, 바로 바꿀 줄 알았어
+- - ......
+aco/22/18.gif:
+- - 약간 울고 있는데
+  - 밤비, 감수성이 높으니까
+  - ......그래도 이리후네한테 배려 없는 남자란 소리도 들었는데
+  - 아, 그것도 알지
+- - 사실은...... 엇그제부터 잠을 못 자서......
+  - 뭐- 안 돼. 마음이 허약해진다구, 오늘은 이만 돌아가고, 나중에 연락할게
+- - text: 꿈을 꿨다
+    type: square
+  - text: 난 고등학생이고
+    type: square
+- - text: 언제나처럼 교실에는 그 아이가 있고, 아무래도 같은 반 옆 자리로
+    type: square
+aco/22/19.gif:
+- - text: 교복이 다른데도 그냥 섞여 들어서
+    type: square
+- - text: 무언가 시시콜콜한 이야기로 한껏 들떠서
+    type: square
+- - text: 「내년에도 같은 반이 되면 좋겠다」고 네가 말해서
+    type: square
+- - text: 일어났을 때 잠시 웃어 버렸다
+    type: square

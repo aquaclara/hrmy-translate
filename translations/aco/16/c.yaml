@@ -209,9 +209,10 @@ aco/16/17.gif:
 - - text: 쿨- 쿨
     type: stroke
   - 밤비?
-- - ......? 밤비? 그래도 뭔가 다른......?
-  - text: <span class="blue">우왕 자왕</span>
-    type: plain
+- - text: ......? 밤비? 그래도 뭔가 다른......?
+    type: thought
+  - text: <span class="blue">우왕자왕</span>
+    type: stroke
   - text: '?'
     type: plain
   - text: <span class="blue">우왕자왕</span>
@@ -229,7 +230,7 @@ aco/16/18.gif:
   - text: 꽉-
     type: stroke
   - '?'
-- - 다녀 왔어-. 하나, 얼음 있지, 항상 집에서 쓰던 게 없어서
+- - 다녀 왔어-. 하나, 얼음은 있지, 항상 집에서 쓰던 게 없어서
   - text: 탁
     type: stroke
 - - text: 다른 <big>무슨 일이야?</big>
@@ -245,7 +246,7 @@ aco/16/19.gif:
   - text: 허억-
     type: stroke
   - 그, 그건 밤비가 아냐......
-- - 미안해, 시원해서 좋았어서
+- - 미안해, 시원해서 좋았거든
 - - 뭐어...... 그, 누나?
   - text: 잘 보니까 조금 다르네......
     type: plain
