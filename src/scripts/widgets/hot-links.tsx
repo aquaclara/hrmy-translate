@@ -21,9 +21,22 @@ export class HotLinks extends React.Component<PropsType, {}> {
     super(props);
     this.tlsPath =
       '/translations' + location.pathname.replace('.html', '.yaml');
-    this.fileName = location.href.substring(location.href.lastIndexOf('/') + 1);
+    this.fileName = this.getFileName();
     this.fullFilePath = location.href;
     loggerInit();
+  }
+
+  getFileName(): string {
+    const href = location.href;
+    const acoMatch = href.match(/\/aco\/(\d+)\/c\.html#?$/);
+    if (acoMatch && acoMatch[1]) {
+      return acoMatch[1];
+    }
+    const hrmyMatch = href.match(/pict_com_0*([^\/]+).html#?$/);
+    if (hrmyMatch && hrmyMatch[1]) {
+      return hrmyMatch[1];
+    }
+    return href.substring(href.lastIndexOf('/') + 1);
   }
 
   render() {
