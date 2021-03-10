@@ -40,7 +40,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
     // Handle negative index
     if (focus) {
       const cuts = this._data.getCutTranslations(focus[0]);
-      log(focus);
+      log('focus at ' + focus);
       if (focus[1] < 0) {
         focus[1] = cuts.length + focus[1];
       }
@@ -324,7 +324,9 @@ export default class TranslationRenderer implements TranslationDataContainer {
               chrome.storage.local.set(
                 { [location.pathname]: this._data.getData() },
                 () => {
-                  console.log(`${location.pathname} is set`);
+                  console.log(
+                    `${location.pathname} is set in changeDatum callback`
+                  );
                 }
               );
             };

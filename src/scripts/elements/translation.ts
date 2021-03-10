@@ -183,8 +183,9 @@ export class Translation extends Caption {
     target.size = Translation.getPreferSize(target.value.length);
 
     datum.text = target.value;
+    this.datum = datum;
     if (this.changeDatum) {
-      this.changeDatum(datum);
+      this.changeDatum(this._minifyDatum(datum));
     }
   }
 
