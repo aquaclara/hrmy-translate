@@ -175,6 +175,8 @@ export class Translation extends Caption {
       this._stylize(target, '「', '」');
     } else if (ev.altKey && ev.key == 'Enter') {
       this._stylize(target, '<br>', '');
+    } else if (ev.altKey && ev.key == '.') {
+      this._stylize(target, '...', '');
     } else {
       // log(logMsg + ' But ignored.');
       return;
