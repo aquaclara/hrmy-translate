@@ -23,6 +23,11 @@
       min-width: 5em;
     }
 
+    body.aco & {
+      color: variables.$aco-brown;
+      border-color: variables.$aco-brown;
+    }
+
     &.speech,
     &.scream {
       background-color: white;
@@ -103,6 +108,11 @@
       position: relative;
       margin: $margin;
 
+      body.aco & {
+        color: white;
+        background-color: black;
+      }
+
       &:before {
         content: '';
         position: absolute;
@@ -150,7 +160,7 @@
     }
 
     .blue {
-      color: #2c8ea6;
+      color: variables.$aco-blue;
     }
   }
 
