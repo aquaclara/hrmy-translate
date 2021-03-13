@@ -1,0 +1,333 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/43/01.gif:
+- - text: 몹시 어두운 남자라고 생각했다
+    type: square
+- - text: 그 뒷모습이, 「그럼 가게 앞에서 기다릴게요, 선생님」
+    type: square
+  - text: 하고 말한 뒤 동생이 와서 빠르게 둘이서 걸어 갔다
+    type: square
+- - text: 아, 동생 일 관련 사람이구나 하고
+    type: square
+  - text: ......그리고 어쩐지 하나가 관심이 있는 것도 이 사람이 아닐까 하고
+    type: square
+- - text: 유는 옛날부터 집에 있어도 언제나 어딘지 혼자였다
+    type: square
+  - text: 있을 뿐 일지 않는다고 할까, 말을 할 뿐 말하지 않는다고 할까
+    type: square
+aco/43/02.gif:
+- - text: 뭐, 혼자를 좋아한다고 할까
+    type: square
+- - text: 중학생 때
+    type: square
+  - <span class="blue">나, 고등학교는 리쿠랑 같은 곳이면 돼. 교복이나 이런 저런 걸 다시 쓸 수 있잖아</span>
+- - >-
+    <span class="blue">뭐-? 좀 더 좋은 곳에 갈 수 있다고 선생님이 그랬어. 그래도 다행이다, 리쿠가 1학년일 때 받아
+    둬서</span>
+  - text: 아마 이 근처에
+    type: stroke
+  - <span class="blue">그렇게 정하기야</span>
+- - text: 결국 고등학교를 그만두었다고 들었을 때도 「역시」라고 생각했다 (엄마는 질색했지만)
+    type: square
+  - text: 솔직히, 그 편이 낫다고 생각했다
+    type: square
+aco/43/03.gif:
+- - <span class="blue">그거 버릴 거야?</span>
+- - <span class="blue">어? 어...... 이제 못 입으니까 뭐..., 버릴지 팔지 누구 줄지</span>
+  - <span class="blue">흠-</span>
+- - text: 실내복이 되어 있거나
+    type: square
+  - text: 졸려
+    type: plain
+  - text: 머리 말리고 나서 자-
+    type: plain
+- - 오빠, 유한테 그거 말 했어?
+aco/43/04.gif:
+- - 어, 아직 말 안 했어
+  - 하여튼- 「내가 말할게」래서 나도 엄마도 믿고 맡겼는데
+  - 그러고 보니 나 유의 번호도 뭣도 모르고 있다고 생각이 들어서
+- - 그럼 직접 가야지
+  - 방해 안 될까?
+  - 방해 되면 「방해야」하고 바로 말할 애니까 괜찮아
+- - 아코는? 요 전, 아침에 있었는데
+- - 그러니까 낮에는 학교라니까. 게다가 지금은 ...... 제대로 집에 가고 있어
+  - 뭐~, 난 아코 보러 온 건데
+  - ......왜?
+aco/43/05.gif:
+- - 밤비는 그런 애를 좋아하는구나 싶어서
+  - 으악, 이리후네랑 같은 말을 하네
+  - text: 달그락 달그락
+    type: plain
+  - 이리후네라면 요전에 만났어
+- - 엄청 비가 온 날이 있었잖아
+  - 그래서 우산이 뒤집혀서 안쓰럽게 됐었어. 머리나 여기저기 젖고
+- - text: <span class="blue">쏴-</span>
+    type: plain
+- - ......비오는 날?
+  - 에, 혹시 도, 도와줬어? 이리후네를............
+  - 도와줬다기 보다 곤란해 보여서 손을 빌려준 거뿐이야
+aco/43/06.gif:
+- - ......
+  - 뭐야 그, 뭐라고 말하기 어려운 얼굴
+- - 그런 거보다, 밤비의 어머님은 어디로 가셨어?
+  - ............? 어디로......?
+  - 난 아직 집에 얹어 살고 있으니까 저번에 인사하러 갔거든
+  - 무슨 이야기야?
+- - 밤비네 집, 이사했지?
+- - <big>뭐어!?</big> 어, 어, 언제?
+  - 언제냐니 ......왜 몰라?
+  - '// 원문: そんな兆候微塵も'
+  - 그게 쭉 집에 안 갔고, 그런 낌새는 조금도......
+  - text: 헉
+    type: stroke
+aco/43/07.gif:
+- - <span class="blue">유, 자기 물건은 전부 가져가</span>
+  - <span class="blue">전부는 무리야, 필요 없는 건 버리지만</span>
+  - text: 컴퓨터 괜찮을까
+    type: stroke
+  - <span class="blue">......저, 지금 리쿠랑 하나 같은 방이잖아</span>
+- - <span class="blue">여긴 리쿠 방으로 할 거니까</span>
+  - text: 괜찮지?
+    type: plain
+  - <span class="blue">아~...... 그런 거면 다 치울게......</span>
+- - text: 그래도 분명 그러고 나서 바로 리쿠도 하나도 나왔으니까 설마하니 그때 이미 이사할 예정이 있었던 거 아니야?
+    type: thought
+  - text: <span class="blue">혹시 아무것도 모른 내가 다녀 왔다고 집에 가면 어쩔 거야</span>
+    type: stroke
+  - text: 어? 왜? 이사? 그리고 왜 가족 누구도 내게 그걸 말 안 했지?
+    type: thought
+- - ...............이
+  - 이
+  - 이호
+  - 아니, 이혼인지 아닌지는 몰라! 나도 「이사간다」고 밖에 안 들었어!
+  - text: 딩동-
+    type: stroke
+aco/43/08.gif:
+- - 점심 먹었어? 사왔는데
+- - <big>왜- 아무 말 안 했어!!!</big>
+  - text: ゴス
+    type: stroke
+  - 어? 뭐야? 이미 밥 먹었어!?
+  - text: 사슴이 화낼 때 모습이야
+    type: thought
+  - 아, 형, 미안해, 내가 괜한 걸
+- - 그래, 응, 이사했어...... 원래부터 아빠는 일로 집에서 멀리에 쭉 살았잖아
+- - 그래서 우리가 나가고 나서 그 넓은 맨션에 엄마 혼자가 되버렸으니까
+  - 그래서 조금 좁은 곳으로 이사한 거뿐이야. 이혼 같은 거 아니야
+aco/43/09.gif:
+- - ......코지카 가문은 이제 아무데도 없는 거야?
+  - ......없지, 이제...... 따로따로 살고 있으니까
+  - <big>코지카 가문은 이제 없는 거야?</big>
+  - 없어...
+- - 가족 일을 나쁘게 말하는 건 싫지만, 그, 저기... 우리집은 있지
+  - 엄마도 아빠도 좀... 이상해
+  - text: 이상한 사람들이지
+    type: thought
+  - 응......
+- - ......지금 말하는 것도 안 될 것 같지만 밤비의 어머니도,
+  - <small class="blue">우리 집 아이들은 세 명 모두 어딘가 이상하니까</small>
+  - 하고 말했어
+  - text: 맨션 복도에서 우리 엄마랑 서서 이야기했어
+    type: stroke
+  - 아니 진짜...... 왜 이 타이밍에 말해?
+- - 말하는 게 늦어서 미안해......
+  - 이제 됐지만 리쿠는 알바도 있고 반대 입장이었으면 나도 늦게 말했을 거 같고...
+  - 형님, 우선 전화로 전해줬으면 좋았을 텐데
+aco/43/10.gif:
+- - 유가 연락처를 안 알려주니까
+  - 뭐~!? 가족한테는 알려 줘야지. 무슨 일 있을 때 곤란하고 실제로 형님이 곤란했잖아
+  - 가쿠토, 좀 더 말해 줘
+  - 알았어......
+- - 메시지 갔지? 갔어?
+  - 왔어
+  - 퐁
+  - text: 리쿠
+    type: plain
+  - 엄마 집 주소 나중에 보낼게
+- - 퐁
+- - 하지 마, 리쿠, 자기가 생각하는 것보다 힘이 세단 말야
+  - 형님 오늘은 쉬어?
+aco/43/11.gif:
+- - 아니, 쉬는 거 끝났으니까 가야 돼. 하나가 혼자니까
+- - <span class="blue">カサ</span>
+- - 뭐라고 읽는 걸까......
+  - text: 케이?
+    type: plain
+  - text: 比企景国
+    type: plain
+- - text: 「이름, 뭐라고 읽나요?」
+    type: thought
+  - text: 라고 메시지를 보내면 한가하고 버릇없는 사람이라고 생각할까
+    type: thought
+aco/43/12.gif:
+- - text: 몇 살일까, 여자친구는 어떤 사람이었을까
+    type: thought
+  - text: 히키 씨, 누구한테나 이렇게 친절한 걸까
+    type: thought
+- - text: ............아무한테나 친절한 게 아니면 좋겠다
+    type: thought
+  - text: 어서 오세요-
+    type: plain
+  - 귀엽지 않네, ......생각하는 게
+- - 그런가,
+- - text: 이리후네가 좋아하게 된 건 루이가 아니라 가쿠토였구나
+    type: thought
+  - text: 끼익
+    type: plain
+  - text: 뭐 나하고는 상관 없지만
+    type: thought
+aco/43/13.gif:
+- - text: 후우......
+    type: thought
+  - text: きょっ
+    type: plain
+  - 바, 밤비 왜 그래, 괜찮아? 머리 아파?
+- - 괜찮아
+  - text: 안녕
+    type: plain
+  - text: 안녕
+    type: plain
+  - 진짜? 처음보는 자세였어... 열 같은 거 있는 거 아니야?
+- - 아, 없네. 다행이야
+  - text: <span class="blue">차닥</span>
+    type: stroke
+  - 차가워
+- - text: 조금씩, 만지는 데에 망설임이 없어진다, 는 느낌이 든다
+    type: square
+  - text: 그러고 보니
+    type: thought
+  - text: 읽다 만거 읽어야지
+    type: stroke
+aco/43/14.gif:
+- - text: 요 전에, 토리이가 부럽다고............
+    type: thought
+  - text: >-
+      <span class="blue">「아즈사는 좋겠다」「밤에도 낮에도 여기 올 수 있어서」「미안해」「나, 아즈사가 부러운 건지도
+      몰라」</span>
+    type: square
+- - text: 그런가...... 좋아할 때 좋아하는 곳에 가거나 하고 싶겠지......
+    type: thought
+  - text: ......어디, 가고 싶은 곳이라도 있어?
+    type: thought
+- - 어, 왜~?
+  - 그냥. 어, 그래도 밤에는 가게 같은 건 닫았겠는데
+- - ......생각해 둘게!
+aco/43/15.gif:
+- - text: 역시 놀러가고 싶어했나
+    type: thought
+  - text: 응?
+    type: thought
+- - 어?
+  - text: 야마시로
+    type: plain
+  - 안녕하세요.<br>키키가 코지카 씨를<br>할머리라고 생각하고 있어요
+  - 사인회 같은 걸 열면 깜짝 놀랄지도 모르겠네요
+- - text: 아, 깜짝이야. 지금 온 게 아니라, 저녁 때 온 걸 지금 본 거뿐이구나
+    type: thought
+  - text: ............
+    type: thought
+- - 편지, 라도
+aco/43/16.gif:
+- - 써 볼래? 야마시로에게......
+- - ''
+- - 야마, 시로, 에게
+  - text: カリカリ
+    type: plain
+  - 글씨, 처음 봤어
+- - 보지 마~~~~~~~
+  - 그래, 그래
+aco/43/17.gif:
+- - text: 조용한 밤이었어
+    type: square
+- - text: 그 아이가 펜을 끄적이는 소리와, 내가 키보드를 치는 소리와
+    type: square
+  - text: 타닥...
+    type: plain
+  - text: 세상에는 그것뿐
+    type: square
+- - text: 복사 용지와 갈색 봉투밖에 없어서, 편지라기 보다 무슨 서류 같다
+    type: square
+  - 됐다
+- - 밤비도 읽고 싶으면 읽어도 돼. 내가 없는 곳에서
+  - 그래서, 혹시 야마시로가 상처 입을만한 게 써있으면 ......버려
+aco/43/18.gif:
+- - 아침 해
+- - text: >-
+      <small>야마시로에게<br><br>처음 뵙겠습니다.<br><br>그래도 사실은 처음 뵙는 게 아니라,<br>한 번 야마시로의 방에
+      간 적이 있습니다.<br>야마시로가 감기로 자고 있었을 때입니다.<br>기억하고 있나요? 기억하지 못
+      할까요...<br><br>야마시로는, 저를 싫어한다고 우타가 그랬어요.<br>저는 야마시로를 알지 못하기 때문에<br>좋아하지도
+      싫어하지도 않습니다.<br>그래도 싫어하고 싶지는 않아요.<br><br>무언가 전하고 싶은 게 있는 건 아니지만<br>밤비가 「편지를
+      써보면 어때」하고 권했습니다.<br>음...<br>밤비의 집이 좋아요.<br>여기 살기 시작한 게 밤비라서 다행이야.<br>지금은 이
+      정도밖에 전할 게 없습니다.<br><br>그럼 안녕히.<br>아코</small>
+    type: square
+- - ''
+- - text: 처음 인상대로 역시 어딘가 신중하고 내성적이고
+    type: thought
+  - text: 문장을 쓰는 방식이 야마시로와 닮았어
+    type: thought
+aco/43/19.gif:
+- - text: 코지카
+    type: plain
+  - 건내주고 싶은 게 있는데, 오늘 학교 끝나고 괜찮을까?
+  - text: 야마시로
+    type: plain
+  - 좋아요<br>편지죠?<br>글자는 안 보였지만요
+- - text: 그런가, 아는 거구나. 항상 보던 곳에서, 라고......
+    type: thought
+  - text: 톡 톡
+    type: plain
+  - 그런가...
+- - text: 코지카 가문은 끝난 거구나......
+    type: thought
+  - text: ずんんん...
+    type: stroke
+  - text: 어제부터 사라지지 않는 쇼크
+    type: square
+- - text: 뭐, 그래도 확실히 엄마 혼자서 그 맨션은 그렇지
+    type: thought
+  - text: <span class="blue">집을 특별히 좋아하던 것도 아니고</span>
+    type: plain
+  - text: '아빠가 가끔 돌아오면 하나가 자주 어리광을 부렸다. 중학교에 올라갈 때까지 아빠도 엄마도 '
+    type: square
+aco/43/20.gif:
+- - text: 어렸을 때는 외딴집에 살았지, 전학도 갔고
+    type: thought
+  - text: 아, 미오, 미오 아직 잘 있을까
+    type: thought
+  - text: 내가 어렸을 때 이미 고령이었으니까......
+    type: thought
+- - text: 그 애에게는 이런 추억도 없는 걸까...... 문화제 일이나 학교 일이나, 파편적으로 기억할 뿐인 것 같았지
+    type: thought
+- - text: 추억이 없는 건 어떤 기분일까
+    type: thought
+  - text: 뒤척
+    type: stroke
+  - text: 계속 자신이 죽었다고 생각하고 있었고, 사라지고 싶다고 생각하고 있었고......
+    type: thought
+- - text: <span class="blue">「밤비의 집이 좋아요」</span>
+    type: square
+  - text: <span class="blue">안녕</span>
+    type: plain
+  - text: <span class="blue">안녕, 가자</span>
+    type: plain
+  - text: 그게 진심이라면, 좋겠다. 돌아갈 곳이 있는 건 좋은 거니까
+    type: thought

@@ -1,0 +1,299 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/48/01.gif:
+- - text: 아즈사의 머리는 항상 포근포근했다
+    type: square
+- - <span class="blue">으엑, 그렇게 열심히 미용실가는 거야?</span>
+  - text: <span class="blue">응, 그게<br>신경 쓰이잖아, 머리 끝이 삐치는 그런 거</span>
+    x: 1
+    y: 0
+- - <span class="blue">아코, 이거 쓰던 거지만 줄게<br>요 전에, 이 향이 좋다고 했었지?</span>
+  - <span class="blue">괜찮아? 거의 안 썼는데</span>
+  - <span class="blue">괜찮아</span>
+- - text: <span class="blue">나도 잘 해야지</span>
+    type: thought
+aco/48/02.gif:
+- - <big>으아아아아아</big>
+  - text: ぐにににに
+    type: stroke
+  - 머리도...... 부수수하고, <big>침!</big><br>게다가
+- - text: 자기 집도 아니면서 브라도 없이 편하게 있고
+    type: shock
+  - text: 확
+    type: stroke
+  - 꺄<big>아아</big>악
+- - 벗어서 아무 데나 둔 것도 아니니까 괜찮잖아
+  - 벽장 반은 내가 써도 된다고 밤비가 그랬는걸
+  - 뭐어!?<br>폐 끼치지 말라고 그랬잖아
+- - 나, 내 옷 같은 거 그렇게 많이 갖고 있지 않고<br>솔직히 두 명분이어도 텅텅 비었으니까 괜찮아
+  - text: <span class="blue">쭈뼛쭈뼛</span>
+    type: plain
+  - 그래도
+  - ......자다 일어난 것도 그냥 다 이런 느낌 아니야?
+aco/48/03.gif:
+- - 네?
+  - 친구 집에서 잔 적 없어?
+- - 야마시로, 친구 없어?
+  - 이, 이리후네 집에서 잤었지, 이 전에!
+- - ......자긴 했지만, 이리후네 씨...... 오전 중에 회의가 있다거나 해서<br>저보다 일찍 일어나서 나가버리셨으니까요
+  - 우타 말고는 친구 없어?
+  - <span class="blue">モガ</span>
+  - 그만......
+- - <big>있거든</big>
+  - text: ぐぐぐ
+    type: plain
+  - 으악-
+  - text: 든...
+    type: thought
+  - 저...... 아까부터 여기서 옷을 갈아입히려고 하고 있는데
+aco/48/04.gif:
+- - 그러면 나한테도 보일 텐데 괜찮아?
+  - text: 잊어버렸는지도 모르겠는데
+    type: stroke
+  - 「그거」, 네 몸이잖아
+  - 안돼
+  - 봐
+- - 그렇게 대단한 몸도 아니야
+  - 으-읏
+  - ズキン
+  - <big>그</big>렇......
+  - text: 「그렇지 않다」고 하는 것도 이상하지......
+    type: thought
+- - text: 부스럭
+    type: stroke
+- - text: 터벅터벅 터벅터벅
+    type: stroke
+  - '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+  - '&nbsp;&nbsp;&nbsp;&nbsp;'
+aco/48/05.gif:
+- - 누가 와 있네......
+  - text: 모자라려나...
+    type: plain
+  - text: 딩동-
+    type: stroke
+- - text: 야마시로보다 내가 친구 더 많이 있거든
+    type: stroke
+  - text: <span class="blue">나도 있거든</span>
+    type: stroke
+  - 어! 히키 씨일지도 몰라<br>자료랑 먹을 걸 가져다 준다고 아까 연락이 왔었거든
+  - 뭘까- 먹을 게-!!!
+- - text: <span class="blue">우다</span>다다
+    type: stroke
+- - 편집자님
+  - text: 팡
+    type: stroke
+  - 이크...... 오랜만이에요, 잘 지냈어요?
+aco/48/06.gif:
+- - 버, 벗, 벗기려고 해<br>억지로
+  - <span class="blue">べそ べそ べそ</span>
+  - 싫다고 했는데도<br>난 자고 있었던 것 뿐인데<br>가슴도 움켜쥐고
+- - ............
+  - 으애-앵
+  - 우다<span class="blue">다다</span>
+  - <big>악- 제가 아니, 제가 아니라요</big>
+- - 「히키 씨」
+- - ......어디서
+  - 뵀나요......?<br>아코......?
+aco/48/07.gif:
+- - 꿈에서 만났습니다
+  - ............
+- - 자, 이리로 와
+  - 자, 자
+  - 싫어
+  - 싫다고 하네요
+- - 그런 꼴로 있을 때......<br>만약 아즈사가 와서
+  - 본다면<br>부끄럽잖아......<br>어떻게 생각할지
+- - ......야마시로
+aco/48/08.gif:
+- - 아즈사는 그런 걸로 「나」를 싫어하지 않아
+  - 야마시로, 아즈사를 진짜 친구라고 생각하고 있는 거야?
+- - 왜 그렇게 벌벌 떨어<br>왜 항상 친구를 탓해
+- - 겁쟁이
+- - 야마시로
+  - 드릴게요
+aco/48/09.gif:
+- - 이 애, 이제 드릴게요<br>전 필요 없어요
+- - ''
+- - 아니, 아...... ............
+  - text: 「필요 없어」는 너무 심해......<br>하지만 거절해야 해, 왜냐면 이런
+    type: square
+- - text: 자신의 마음이 자기 생각과 다르다는 걸로<br>지금은 감정적이게 된 것뿐이겠지
+    type: square
+  - 아......
+  - text: 그래서 이렇게 마음에도 없는 말을
+    type: square
+aco/48/10.gif:
+- - text: 마음에도
+    type: square
+  - text: <strong class="stroke">じわ</strong>
+    type: plain
+  - 아
+- - 괘
+  - 괜...
+  - 괜찮아?
+- - ''
+- - ''
+aco/48/11.gif:
+- - text: 마음과 몸이 직접 만나서<br>서로 조금씩 상처입었다
+    type: square
+  - 오늘은 돌아갈게요, 죄송했습니다
+- - text: 어- 어......
+    type: square
+- - text: 후, 그랬군요
+    type: plain
+- - 저 여자애랑 싸운 거군요
+  - 갑자기 옷을 들췄어, 게다가<br>밤비 앞에서
+  - text: がささ
+    type: plain
+  - 그건...... 좀 실례네요
+aco/48/12.gif:
+- - 야마시로 팔로 가려서 아무것도 못 봤어
+  - text: 밖은 추워
+    type: plain
+  - 그래도 확 젖혔어
+  - text: 접시...
+    type: plain
+  - 확 젖혔지만 바로 확 되돌렸잖아
+- - text: ぐー
+    type: plain
+  - ............<br>......그럼 됐어
+- - 그런 때에 죄송하지만, 전자레인지와 접시 좀 쓰겠습니다
+  - text: 역시 식었어
+    type: plain
+  - text: <span class="blue">ガゴ</span>
+    type: plain
+  - 아, 네......<br>그러고 보니 저녁을 먹지 않았으니 잘 먹겠습니다
+  - text: 자기 집인가
+    type: thought
+- - 네에?...... 말씀해 주셨으면 좀 더 제대로 된 걸로 했을 텐데......
+  - text: 만두예요
+    type: plain
+  - text: 괜찮지 않나요?
+    type: plain
+  - 나은 지 얼마 안 돼서 아직 식욕이 오락가락해요
+  - 나...... 차 끓일게
+  - text: <span class="blue">달그락...</span>
+    type: stroke
+aco/48/13.gif:
+- - 아까 사람은 혹시 아코의 본체인가요?
+- - ......응<br>오늘 처음 봤어
+  - text: カチチチチ
+    type: plain
+  - 그런가요<br>전 제 마음과 만난 적 없으니 아무 말도 못 하지만
+- - 혹시 만난다면 아까 그 애와 같이<br>어쩌면 좋을지 모르게 될지도 모르겠네요
+- - text: <span class="blue">シュンシュン</span>
+    type: plain
+aco/48/14.gif:
+- - ......그런 걸까
+  - 그래도 나한테<br>이제 필요없다고 그랬어......
+  - text: 뜨거워라
+    type: plain
+  - text: <span class="blue">달칵</span>
+    type: plain
+- - 딱히 진심이 아니야
+  - 어떻게 알아?
+  - 가기 전에 울었으니까
+- - 왜 야마시로가 울어?
+  - 사실은 친해지고 싶었으니까가 아닐까?
+- - 아, 그렇구나, 아코는 안 먹는 거였죠
+  - text: 아까 그 애도 돌아갔고...
+    type: plain
+  - ......많네요
+  - text: 먹을 수 있을까
+    type: plain
+  - ............
+aco/48/15.gif:
+- - 아코에게 침대를 주셨던 건가요
+- - 그런 건 아니지만<br>먼저 자는 사람이 침대면 다음에 자는 사람이 소파 같이<br>왠지 모르게
+  - 왠지, 큰 침대에서 자고 싶대요
+- - 아니, 같이 자면 체온이 너무 달라서 도중에 깨버리는...
+  - ......선생님과 같이 자는 게 아니라<br>한 번 큰 침대를 혼자 차지하고 자고 싶대요
+- - .........어<br>............
+  - text: 확-
+    type: plain
+  - ............그런가요
+aco/48/16.gif:
+- - 죄송하네요, 설명이 부족해서
+  - 아니요......
+- - text: 토리이도 삽화를 계속하고는 있지만
+    type: square
+  - text: 상업용으로 무언가를 그린 적은 없어서<br>세세한 부분에서 작업이 멈춘 것 같다
+    type: square
+- - text: 그 때마다 히키 씨에게 연락해서,<br>적극적으로 해결하고 있다고
+    type: square
+  - text: <span class="blue">カチカチ</span>
+    type: plain
+  - text: 대견하네
+    type: thought
+  - text: 씻고 자자...
+    type: plain
+- - text: 어, 오늘 올 거 같아<br>이런 저런 일이 있었으니 올지도 몰라
+    type: thought
+aco/48/17.gif:
+- - ''
+- - 엄청 화났네...
+  - 화 안 났어
+  - 화난 사람이 하는 말이야
+- - 이걸로 알았겠지<br>밤비가 놓지 않으니까
+  - 아코짱이 기껏 와 줬는데도<br>엉망이야!
+- - 카나에 씨는 보통 어디 있다가 어디까지 보는 거야?
+  - 말 돌리지 마
+  - 아니, 나로서도<br>「전부 보고 있다」고 하면 평온하게 지낼 수가 없잖아
+aco/48/18.gif:
+- - ......전부는 전부야!<br>가끔 멍-하니 있을 때도 있지만서도
+  - 기본적으로<br>전부!
+  - text: 대충 <big>전부</big>
+    type: stroke
+  - text: 저렇게......말할 만큼 그닥 못 보는구나
+    type: thought
+- - 음-...... 그래도......<br>저런 아코짱은 처음 봤어
+- - 아코짱은 어떤 성격이냐면<br>싸우는 걸 싫어해서, 아니 귀찮아 해서
+  - 제대로 맞서지도 아무렇지도 않고<br>그냥 마는데
+- - 제대로 굴지 않으면 친구가 없어질 거야
+  - 생각에 빠지기만 하고<br>안타까운 애야
+aco/48/19.gif:
+- - 큰일이네<br>수호하는 것도
+  - 수호하는...
+  - 그만 둘 수는 없는 거야? 수호신
+- - 그러면 밤비가 지켜 줄 거야?
+  - 야마시로에게는 이미 스쿠와가 있잖아
+- - 아코 말한 거야
+- - ''
+aco/48/20.gif:
+- - text: 무슨 뜻......
+    type: thought
+  - text: 더워
+    type: plain
+  - 밤비, 안녕
+  - 안녕
+- - text: 기분이 나아졌나?
+    type: thought
+  - 어제는 소란피워서 미안해......
+  - 소란피우다 지쳐서 실컷 잤구나
+  - 응...
+- - 그래- 난, 필요 없구나-<br>그래도 밤비가 받아 줬으니까
+  - 삐졌네
+  - 삐지고도 싶어지지
+- - 그래도 나, 야마시로가 싫어지진 않았어
+  - 그래
+  - 또 와 줄까<br>혹시 안 올까
+  - 안녕 놓고 갔으니까 또 올 거야
