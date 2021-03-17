@@ -1,0 +1,330 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/54/01.gif:
+- - <span class="blue">코지카, 여자애들한테 인기 많을 거 같아</span>
+- - <span class="blue">뭐?......</span>
+  - <span class="blue">아- 맞아</span>
+  - <span class="blue">그렇지</span>
+  - <span class="blue">맞아, 맞아</span>
+  - <span class="blue">우리 반 남자애들보다 훨씬 멋있지?</span>
+- - <span class="blue">............</span>
+  - text: 나쁜 뜻이거나, 험담이나,<br>그런 게 아니라는 것은 알고 있었다
+    type: square
+  - <span class="blue">야, 또 조용해졌잖아!</span>
+  - <span class="blue">미안해</span>
+- - text: 딱 한 번, 관심 없는 남자애와 사귀었다<br>그야말로 반 여자애들에게 여봐란 듯이
+    type: square
+  - text: 고백 받고서 나도 조금은 기뻤지만<br>깔끔하게 단시간에
+    type: square
+aco/54/02.gif:
+- - <span class="blue">어, 키 큰 애가 좋다고 하지 않았어?</span>
+  - <span class="blue">누구? 뭐야?</span>
+  - <span class="blue">하나, 그 남자친구 키를 넘어서 차였다며</span>
+  - <span class="blue">어, 알고 있어, 한 번 같이 걷는 거 본 적 있어</span>
+- - <span class="blue">그런 꼬맹이 몰라</span>
+  - text: 아하하하
+    type: stroke
+  - text: 하하하하
+    type: plain
+- - text: <span class="blue">쿵</span>
+    type: plain
+- - text: <span class="blue">퍽</span>
+    type: plain
+  - 아야
+  - text: 우유 전부 쏟았어......
+    type: plain
+aco/54/03.gif:
+- - 아, 그 공원에 갔다 왔구나
+  - text: ガー
+    type: stroke
+- - 응!
+  - text: 나도 앉을래
+    type: plain
+  - 평일 낮이니까<br>그렇게 사람도 없었지?
+  - text: ガー
+    type: plain
+  - 응, 호수 둘레를 계속 걸었어
+- - 좋겠다, 교복 데이트
+  - text: 소곤소곤
+    type: plain
+  - 데, 데이트 아니야!<br>친구를 도와주고 돌아오는 길에 잠깐 걸은 것뿐이야
+  - text: 소곤소곤
+    type: plain
+- - 유, 누나한테도 한 번 더 교복 입은 거 보여줘
+  - 어? 어, 미안<br>이제 완전히 벽장 안에 둬버렸어
+aco/54/04.gif:
+- - 그 교복이 보고싶으면 리쿠한테 입혀봐
+  - text: 에어콘 필터 청소하자
+    type: plain
+  - 왜 오빠의 코스프레를 봐야 하는 건데
+  - 형이랑 밤비는 같은 고등학교였어?
+- - 응<br>나는 달랐지만
+  - 흠~<br>언니, 어떤 교복이라도 어울릴 것 같아<br>늘씬하고 다리도 길고......
+- - 고마워, 아코
+  - text: <span class="blue">탭 탭</span>
+    type: plain
+  - text: 꼬옥-
+    type: stroke
+  - 머리 떨어져, 머리......
+  - text: 탭 치고 있잖아
+    type: plain
+- - text: 전에 만난 「아르마딜로」의 전 여친은
+    type: square
+  - text: 스커트와 머리카락이 하나하나 바람에 흔들려서<br>그 때마다 화장품의 냄새가 났다
+    type: square
+aco/54/05.gif:
+- - text: 여자애는 가끔 어색해서, 사실은 친해지고 싶었지만
+    type: square
+  - text: 그래도 확실히 「부럽다」고 생각한 건 처음이었다
+    type: square
+- - 아코는 귀엽네
+  - text: 자신을 바꿀 용기도 의욕도 없으면서<br>예쁜 사람을 보고 부러워하다니
+    type: square
+- - 언니도 귀여워
+  - 어, 자기가 귀엽다고 인정했네!
+  - text: 그렇게 안 더러웠어
+    type: plain
+  - 그치만 지금 언니가 말해 줬으니까!
+- - 코지카 선생님은 귀여운 분이시죠?
+aco/54/06.gif:
+- - ''
+- - ............ ............<br>네에? 그런가요
+  - text: '?'
+    type: plain
+  - 목소리라거나
+  - 목...?<br>............그런가요
+- - 히키 씨, 이제 담당 작가랑 연애는 하지 마세요<br>저희가 신경 쓰이니까
+  - 네에......? 알겠습니다
+- - 이노우에 씨는 그런...... 그런 사람이 좋으신가요?
+  - text: 연하라고 하나
+    type: plain
+  - 좋아하는 거랑은 또 조금 다르지만요~!
+  - 이노우에 씨야말로 저희 담당 작가님께 손대지 말아 주세요......
+  - text: <span class="blue">꺅-</span>
+    type: plain
+aco/54/07.gif:
+- - 윽, 죄송해요<br>흐름이 저번 회랑 어긋낫네요
+- - ............
+  - text: 빤-
+    type: stroke
+  - 바로 수정<br>......그렇게 노려보셔도
+  - 아뇨...... 신속한 대응에 감사합니다
+  - 그래요? 그런 얼굴로 안 보이는데요
+- - 그러고 보니 아코는
+  - 누나랑 저녁 장 보고 있어요
+  - 이런 시간에
+  - 이런 시간이라니, 아직 밤 6시예요
+- - 이 즈음 6시는 충분히 깜깜해요
+aco/54/08.gif:
+- - ......뭐, 환한 길로 가라고 얘기해놨으니
+  - 그러면 괜찮겠지만<br>선생님도 설마 또 한밤 중에 나가 돌아다니시거나 하고 있지 않으시겠죠<br>이 전에 고약한 감기로
+  - 아니, 조금 열이 났던 것뿐이라니까요
+- - 어, 히키 씨 오셨었어?
+- - 아까까지<br>살짝 아쉽게 됐네
+  - text: 비 오고 시작했구나
+    type: plain
+  - text: <span class="blue">밤비, 미안해. 코트 젖었어</span>
+    type: plain
+  - text: 괜찮아
+    type: plain
+  - 아쉽다니, 딱히<br>만나 뵐 일이 있으면<br>그, 유를 도와주셔서 감사하다고 인사라도......
+- - 보고 싶으면 아래 가면 될 텐데
+  - 아니야, 아코<br>보고 싶은 게 아니라<br>또 뵐 일이 있으면,<br>혹시 그럴 일이 있으면 그렇다는 이야기야
+aco/54/09.gif:
+- - 그러니까, 보고 싶으면 보면 되잖아
+  - 어, 언니 혹시 편집자님을 <big>좋아해!?</big>
+  - <big>아니......</big> 그런......
+- - 좀 더 물어 봐 봐
+  - text: 또 아이스크림 사 오고...
+    type: plain
+  - 뭐어~ 좋아해? 왜? 어디가?
+  - <sup>어디냐니...</sup> 그게, 유나 아코한테 친절하고<br>좋은 사람이구나 싶어서, 그냥 그거 뿐이야
+- - text: 「동생 분이 조금 여자 같은 얼굴인 것 뿐이고」<br>「누나 분은 그냥」
+    type: square
+  - text: 아, 맞아- 자주 일방적으로 내 이야길 들어 주거나-
+    type: plain
+  - text: 내가 그냥 하는 말을 진지하게 받아들여서
+    type: thought
+- - text: 「누나 분은 그냥, 귀여우신 거라도 생각하는데요」
+    type: square
+  - text: 귀엽다는 건 말하자면,<br>......그 여자 분처럼
+    type: thought
+aco/54/10.gif:
+- - 언니랑 편집자님은~<br>잘 어울려, 둘 다 키가 커서
+- - 그, 그래? 어쩐지 남자 둘이서 걷는 것처럼 보일 거 같은데
+  - 그건 그대로 멋있어!
+- - 뭐, 같이 걸을 일도 없지만 말이야
+  - text: 그런가-
+    type: plain
+  - 지나가는 사람은 그렇게 깊은 생각 안 해
+  - text: 유도 아코도
+    type: square
+- - 그렇게 신경 쓰이면<br>여자애처럼 꾸미라는 말은 하지 않아
+  - text: 도와 줄게
+    type: stroke
+  - 그럼 당근 깎아 줘
+aco/54/11.gif:
+- - 안녕
+- - 나 혹시 아코랑 이야기하다가 잠들었어?
+  - 둘이 침대에서 까르르하면서 그대로 잤어
+  - text: <span class="blue">씻으니까 좋지-</span>
+    type: stroke
+  - text: <span class="blue">응-</span>
+    type: stroke
+  - text: 뭐 마실래?
+    type: plain
+  - 진짜? 미안해
+  - 난 괜찮은데 좁았지?
+- - 붙어서 잤으니까
+  - ......안 차가웠어?
+  - 난방이 따뜻해서 마침 좋았어<br>아코는 아직도 자고 있어
+- - 어, 안 되는데<br>시간이 벌써 이렇게, 빨리 가게에 가야 해
+  - text: <span class="blue">허둥지둥</span>
+    type: stroke
+  - 나도 오전에 장보러 가려고 했어
+aco/54/12.gif:
+- - 아~ 쌓였어<br>기차 운행할까?
+  - text: 게다가 조금씩 내리고-
+    type: stroke
+- - 하나 있지
+  - 어? 왜?<br>계단 조심해
+  - text: 탁 탁 탁 탁
+    type: plain
+  - 요 전에 조금 기운 없었잖아
+- - 그랬었나?
+  - 리쿠가 또 뭐라고 했어?
+  - 그런 거 아니지만
+  - ......그럼 히키 씨 때문에?
+- - 그렇게 유가 신경 쓸 일 아니야
+  - text: 끼익
+    type: stroke
+  - text: <span class="blue">잘그락...</span>
+    type: plain
+aco/54/13.gif:
+- - 안녕하세요......
+- - 안녕하세요<br>............
+  - text: 춥네요-
+    type: plain
+  - 히키 씨도 지금 출근하시나요?
+  - ......네
+- - 그럼, 난 갈 테니까
+  - 어? 그렇게 아슬아슬해?
+  - 아, 그쪽은 미끌어지기 쉬워요......
+- - 괘, 괜찮아요
+  - text: 사박 사박
+    type: plain
+  - 하나, 서두르면 위험하니까
+  - text: 사박
+    type: plain
+  - 그러지 마, 애들처럼
+  - 저, 거기 진짜 미끌어지기 좋...
+  - text: 사박사박
+    type: plain
+aco/54/14.gif:
+- - text: 미끌
+    type: plain
+- - text: 덥석
+    type: plain
+  - 이크
+- - ''
+- - text: 천천히 제자리로
+    type: square
+  - ほー
+  - 감사합...
+aco/54/15.gif:
+- - 다행이에요, 둘 다 작아서
+- - ''
+- - 히, 히키 씨 시선에서는 모두 다 작을지도 모르겠지만요<br>전 그냥 보통이거든요
+  - >-
+    ......그렇게 저, 작지는......않다고 생각하는데요......<br><big>제, 제가</big>
+    <small>작나요</small>
+  - 보통이거든요, 평균이거든요
+  - <big>어...... 작나요</big>
+  - 누나 분은, 역까지 가시나요?
+- - ......역까지 가요
+  - ......그럼 중간까지 같이 가겠네요<br>전 역 앞 가게에서 회의가 있어서......
+  - 같이......
+aco/54/16.gif:
+- - 선생님은
+  - 전 역이랑 반대지만 전 딱히 작은 게 아니거든요
+  - 그럼 오늘은 여기서 헤어지겠습니다
+- - ......아, 혹시 급한 일이 있으신가요?
+  - 아뇨
+  - 그래요......? 서두르시는 것 같아 보였는데
+  - 아니에요
+- - 눈이...... 쌓여 있는데<br>저, 서두르면 위험하니까요
+- - ......그런가요<br>그럼 천천히 갈까요
+aco/54/17.gif:
+- - ''
+- - text: 유, 요즘 5번에 1번은 답을 주는구나<br>오늘은 우동이 아니라 소바야
+    type: thought
+- - text: 하나는 먼저 아파트에 들른다고 했고
+    type: thought
+  - 아코가 있으려나<br>아코, 오늘은 같이 먹으려나
+  - ガンガタタ
+- - ガタ...
+aco/54/18.gif:
+- - 어,
+  - text: 「히키 씨」
+    type: thought
+  - 안녕하세요...... 저, 동생이
+- - 항상 신세를
+- - text: 눈 치우는 거 힘들었어- 가게 앞-
+    type: plain
+  - text: <span class="blue"><small>타다</small>다</span>다<big>다다</big>
+    type: stroke
+  - text: 내일도 온대
+    type: plain
+- - 누구야, 저 녀석~!!
+  - ざっ
+  - 시끄러...... 왜, 무슨 일이야
+aco/54/19.gif:
+- - 유의 담당 말이야, 뭐야, 그 새까만 거
+  - text: べし
+    type: plain
+  - 히키 씨? 만났어?
+  - 어? 오빠, 제대로 인사드렸어?
+- - <big>내, 내 얼굴을 보면 웃기 시작하더니<br>실례에도 정도가 있지</big>
+- - <big>그치~~~~ 웃는 게 멋있다고 있지, 내가 요 전에 말 했지</big>
+  - 왜! 나도 보고 싶었는데
+  - 숨 막힐 만큼 웃을 일도 아니지 않아!? 다 큰 어른이 다른 사람 얼굴을 보고 웃으면 안 되지 않아!?
+  - text: <span class="blue">우와-</span>
+    type: plain
+- - 게다가 쓰레기통을 찼어! <big>폭력적이야</big>
+  - 안 차면 안 닫혀<br><big>아니 근데</big>나도 보고 싶었는데
+  - 아~~~~ 짜증나~~~~
+  - 오빠, 제대로 인사 드렸어?
+aco/54/20.gif:
+- - text: 20분 후
+    type: square
+  - 히키 씨한테서 장문의 사죄 메일이 왔어
+- - 「좀 전에는 형님께 큰 실례를 범해...」
+  - 진짜야
+  - 할 수 없어, 그 사람은 우리 얼굴이 재밌는 거야
+  - text: 전혀 신경 쓰지 마세요...라고
+    type: stroke
+- - text: 야마시로의 집
+    type: square
+  - 야마시로, 잔뜩 먹었네
+- - 그만 집에 가......
+  - 미안해<br>바로 돌아가려고 했는데<br>어머님이 디저트도 먹고 가라셔서
+  - 그러니까 그 디저트도 어차피 내가 먹는...... 이제 집에 가

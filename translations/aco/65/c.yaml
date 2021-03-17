@@ -1,0 +1,336 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+aco/65/01.gif:
+- - 난 이제 보충수업 해도 돼
+  - text: 끼익
+    type: plain
+- - 그런 말 해 놓고,<br>항상 턱걸이로 통과하면서
+  - text: 진짜 턱걸이로
+    type: plain
+  - 야마시로는? 수업 쉬었던 만큼은 만회했어?
+  - text: 깜짝
+    type: stroke
+- - ......괜찮은 가정교사가 알기 쉽게 알려 주니까......<br>어쩐지 기대에는 보답을 못하고 있지만
+  - text: 어째서인지...
+    type: stroke
+  - text: 코지카인가
+    type: thought
+  - 그래~ 대학생이야?
+- - 아니...... 고등학교도 그렇게 안 다녔어
+  - 그래도 머리가 좋아<br>그냥 공부를 잘 하는 게 아니라<br>머리 회전이 빠르다고 하나
+aco/65/02.gif:
+- - 처음 보는 참고서야
+  - text: 보여줘-
+    type: plain
+  - 그 가정교사 선생님 거야
+  - text: 알았어
+    type: plain
+  - 스쿠와도 아는 사람이야?
+  - 맞아
+- - 가정교사 말이지~ 야마시로는 진지하구나...
+  - text: 코지카
+    type: plain
+- - text: 「고등학교도 그렇게 안 다닌」
+    type: square
+- - text: <span class="blue">코지카 선생님은 학교를 도중에 그만뒀다고<br>봐봐, 인터뷰에 쓰여 있어</span>
+    type: square
+  - text: <span class="blue">키키 엄청 체크하고 있구나</span>
+    type: plain
+aco/65/03.gif:
+- - 가정교사는 코지카 선생님?
+  - 응
+  - 어!
+- - <big>어!</big>
+  - 확실히 삽화는 토리이......<br>「코지카」는 보기 힘든 성이니까 필명이라고 생각했지만......
+- - 야마시로는<br>혹시 코지카 카노코 작가님이랑 아는 사이...... 였어?
+- - 어쩐지, 이리후네는 벌써 가쿠토를<br>그렇게 좋아하는 게 아니래
+aco/65/04.gif:
+- - 여자 친구랑 걷는 걸 보고,<br>식어버렸대<br>아, 전 여친인가
+  - 가엾게도
+  - ぎゅっ
+- - text: 루이는 가끔 이리후네를 「가엾다」고 한다
+    type: square
+  - 루이는 있지~......<br>이리후네랑 사귀고 싶거나 한 게 아니야?
+  - 어?<br>음-
+- - 나는 아마<br>이리후네가 즐거워하는 걸 좋아하는지도 모르겠어
+- - 이리후네가 날 좋아했으면 좋겠다거나 사귀고 싶다는 게 아니라<br>아니, 그래도, 그렇게 되면 무지 기쁘겠지만
+  - text: 송장이 안 뜯어져...
+    type: plain
+  - 그러면, 이리후네가 다른 사람이랑 사귀어도 상관 없겠구나
+aco/65/05.gif:
+- - 으아~~~~~ 싫어~~~~~
+  - 뭐야, 어느 쪽이야
+  - text: '?'
+    type: plain
+  - 싫지만, 그래도 역시 이리후네가 행복하면 난 좋아
+- - <span class="blue">그 게임, 아직도 서비스 종료 안 했구나</span>
+  - <span class="blue">나도 지웠어<br>초읽기 같은 느낌이라</span>
+  - <span class="blue">하하하</span>
+- - <span class="blue">그거 재밌지?</span>
+- - <span class="blue">나도 조금 하고 있어</span>
+  - text: 봐봐
+    type: plain
+  - <span class="blue">어, 진짜? 이리후네, 게임 같은 것도 하는구나</span>
+  - <span class="blue">캐릭터 귀엽지 않아?<br>그래도 세지는 방법? 같은 게 잘 모르겠어서</span>
+aco/65/06.gif:
+- - <span class="blue">으악, 스킬 포인트가 엄청 남아 있잖아</span>
+  - <span class="blue">스킬?</span>
+  - 루이 랭킹 레벨 무지막지하지 않아?
+- - <span class="blue">어, 세졌다! 좋았어-<br>새 장비를 받았어</span>
+  - 이렇게 하는 거구나-!!
+- - 난 좀 이상한 사람일까?
+  - 잘 모르겠지만, 뭐, 이렇게 사람이 잔뜩 있으니까<br>그렇게 생각하는 사람이 있어도 그냥 괜찮겠지
+  - 고마워
+  - text: 누가 피해보는 것도 아니고
+    type: stroke
+- - text: 좋아하는 사람의 행복이 자신의 행복이라니
+    type: square
+  - text: 탁 탁
+    type: plain
+  - text: <span class="blue">그러고 보니 아코는?</span>
+    type: plain
+  - 알바를 시작했어
+  - <span class="blue">그렇구나, 밤비 외롭지?</span>
+  - 응
+aco/65/07.gif:
+- - 여보세요? 유, 어디야?
+- - >-
+    나, 오늘 아파트 열쇠를 안 가지고 있어서<br>먹을 걸 사왔는데<br>우동 아니야! 야채나<br>이제 곧 집에 돌아가?
+    30분?<br>음-..., 그럼 현관 앞에서 기다......
+- - 어
+  - <small>왜그래</small>
+- - 아, 안녕하세요
+  - text: 끊기
+    type: square
+  - 선생님, 역 쪽에서 아코랑 쇼핑을 하고 있었으니<br>조금 걸릴 거라고......
+  - 죄송해요, 시끄러웠죠
+  - 아뇨, 전혀. 그보다
+aco/65/08.gif:
+- - 추...... 춥지 않으신가요?
+  - text: 눈
+    type: square
+  - text: <span class="blue">헉</span>
+    type: stroke
+  - text: 엷은 옷
+    type: square
+  - text: <big>더위 잘 타는 편</big>
+    type: square
+- - ''
+- - 얼어버릴 것 같아요
+  - text: 거짓말
+    type: square
+- - 저, 괜찮으시면 저희 집에서 기다려 주세요......<br>아무것도 없지만 코타츠는 있으니까
+aco/65/09.gif:
+- - text: 목도리라도 했어야 했어...
+    type: stroke
+  - 죄송해요, 불러 놓고선<br>지저분해서
+  - text: 달그락 달그락
+    type: stroke
+- - 드세요
+  - 어, 고마워요
+  - text: 탁
+    type: plain
+  - text: 가구가 없어...
+    type: thought
+  - 편히 앉으셔도 돼요
+- - 누나 분은 저희 집에 있다고, 선생님께 열락 해두겠습니다
+  - text: 오는 길에 들르시도록
+    type: stroke
+  - 죄송해요, 하나에서 열까지<br>어린애 같네요, 저......<br>아코랑 유가 웃을 거에요
+- - text: <span class="blue">공주님 침대 같아-</span>
+    type: plain
+  - text: <span class="blue">꺅- 꺅-</span>
+    type: plain
+  - text: <span class="blue">코타츠 좋다...</span>
+    type: plain
+  - text: 아무 경계심도 없이 남의 집에서 자는 2명
+    type: square
+aco/65/10.gif:
+- - 절대 그렇지 않습니다<br>누나 분은 멀쩡한 분이세요
+  - text: 잘 앉아 있고...
+    type: stroke
+  - text: '?'
+    type: plain
+  - 그......<br>그런가요, 그럼 다행이지만요
+- - 동생의 책을 내주신다니<br>고맙습니다
+  - 아뇨...... 항상 도움만 받고 있습니다<br>젊은데도 대단하세요, 선생님은
+  - 그런
+- - 그 정도 연령의 작가는 특별히 희귀한 건 아니지만......<br>저렇게까지 책임감이 강한 사람은 흔하지 않아요
+  - 다른 우선하는 게 있는 게 보통인 나이니까
+- - 가만 있어도 재미있는 이야기를 몇 개나 만들어서 가져 오시니<br>감사하지만, 몸도 걱정되니 가끔 상태를 살펴 주세면......
+  - 네, 그건 벌써<br>그 애는...
+aco/65/11.gif:
+- - 제대로 문장으로 일을 할 수 있는 거군요
+  - 다행이에요<br>......글자는 못 쓰지만 옛날부터 뭔가 쓰는 걸 좋아했던 것 같아서
+- - 어렸을 때부터 이야기를 만들기를?
+  - 아뇨, ......그,<br>아빠가 자주 책을 사 오는 분이어서......
+  - 아버님의 영향으로?
+- - 언제였지, 아직 조그마할 때였을 텐데<br>제가 엄청나게 울려버린 적이 있었어요
+- - <span class="blue">하나~~~~ 유한테 뭐라고 했지?</span>
+aco/65/12.gif:
+- - <span class="blue">설명할 생각이 하나도 없는 눈이네</span>
+- - <span class="blue">하나가 유한테 심술궂게 말했어!</span>
+  - <span class="blue">리쿠는 이렇게 말하는데</span>
+  - <span class="blue">유도 하나한테 심하게 말했어</span>
+  - <span class="blue">그래? 그래서 하나가 화난 거야?</span>
+- - <span class="blue">유가 소중히 여기던 짧은 연필,<br>하나가 써버렸단 말야</span>
+  - text: 빤
+    type: plain
+  - <span class="blue">하나, 연필 빌려달라고 제대로 말 했잖아</span>
+- - <span class="blue">............</span>
+  - <span class="blue">아니야<br>유가 「긴 거 써」하고 말했는데 하나가 짧은 걸 썼어</span>
+aco/65/13.gif:
+- - <span class="blue">유, 이야기할 수 있어?</span>
+  - text: 깜짝
+    type: plain
+  - text: <span class="blue">びしっ</span>
+    type: plain
+  - <big class="blue">유, 치사해!</big>
+  - <span class="blue">오빠 뒤에 숨어어!<br>방금까지 엉엉 울었으면서</span>
+- - <span class="blue">하나!</span>
+  - text: 아-
+    type: plain
+  - text: 아-
+    type: plain
+  - text: 아-
+    type: plain
+  - <span class="blue">봐! 유, 또 울잖아<br>하나 때문에!</span>
+  - <span class="blue">하나, 잘못, 아니......</span>
+- - <span class="blue">응? 유, 뭐? 왜 그래?</span>
+  - <span class="blue">하나, 심하게 말했지만<br>하나만 잘못 한 게 아니라<br>유도 잘못했어</span>
+  - text: 울먹울먹
+    type: plain
+- - <span class="blue">자, 유도 하나는 잘못 안 했대</span>
+  - <span class="blue">............</span>
+  - <span class="blue">그러니까, 그러니까</span>
+aco/65/14.gif:
+- - <span class="blue">지금부터 문장으로 설명하겠습니다......</span>
+  - text: 울먹 울먹
+    type: stroke
+  - text: <span class="blue">んぐぐ</span>
+    type: plain
+  - text: がささ
+    type: plain
+  - <big class="blue">어떻게 짧은 시간에 작문까지 했어!?</big>
+- - >-
+    <span class="blue">소중히 여기던 짧은 걸, 긴 걸 두는 곳에 둔 건<br>유가 잘못했지만<br>하나는 유에게 확인하지
+    않고 쓰고<br>게다가 한 번도 사과하지 않았다</span>
+  - <span class="blue">んぐっ　んぐっ</span>
+  - <span class="blue">미안해......</span>
+- - <span class="blue">이렇게 긴 문장을, 잘도 쓰고......<br>한자도 많이 외웠네</span>
+  - <span class="blue">아빠가, 아빠가,<br>말로 하기 어려울 땐 이렇게 하라고<br>종이에 써서 보여주라고</span>
+- - 아빠는 일로 그다지 집에 없어서......<br>돌아왔을 때는 항상 뭔가 사와줬어요
+  - 연필도 아마 아빠가 사준 걸 소중하게 썼던 거겠죠
+aco/65/15.gif:
+- - 화목한...... 가족......
+  - text: 약간 웃음 터질 것 같은
+    type: square
+  - 어
+- - ......발이 닿았네요<br>히키 씨, 키가 크시니까
+  - 죄송해요, ......제 혼자 떠들어서
+- - 누나 분 목소리는 아름다워서,<br>이야기가 즐거워요
+  - 아름답......<br>그렇지는 않을 것 같지만요
+- - ............ 어, 저기<br>아름다운 분이셨죠,<br>그, 일러스트레이터
+aco/65/16.gif:
+- - 이셨죠, 라니, 죽은 것처럼
+  - >-
+    <big>아!!!</big><br>아뇨 그러려던 게<br>그냥, 한 번밖에 만나뵌 적이 없어서<br>......인터넷, 인터넷에 사진을
+    올린 걸 봐서
+  - 네...
+- - 대단하죠, 그림도 그리고 본인도 예쁘고,<br>화장도 잘 하고 멋쟁이에......
+  - text: 그리고
+    type: stroke
+  - 저 같은 건, 그런 건 친하지 않아서......<br>화잔품도 치마도 안 갖고 있고......
+  - text: 아
+    type: thought
+- - 완전히 쓸모없는 걸 너무 말했어
+- - 화장품도, 치마도,<br>필요 없는 거면 괜찮지 않은가요
+aco/65/17.gif:
+- - 하하
+- - 그렇지요<br>갑자기 그런 말 해도 무안하죠
+  - 누나 분은
+- - 정장을 산 적이 없는 남자를 어떻게 생각하시나요
+- - ......정<br>네?
+  - text: '? ?'
+    type: plain
+  - 정장......?
+  - text: 옷?
+    type: plain
+  - 그 모양이나, 재질이 별로라서<br>갖고 있지 않아요, 정장은 한 벌도
+aco/65/18.gif:
+- - 그건...... 고, 곤란하지 않으신가요?<br>입어야 할 때도 있는 게......
+  - 그럴 때는 항상 체격이 비슷한 친구에게 빌려 입고 있습니다<br>매번 질색하지만요
+- - 정장은, 어쩐지 전 평생 필요 없는 물건 같은 기분이 들어요
+  - 어른 같은 느낌이 들어서 일까요
+- - ......히키 씨, 어른이시지 않나요
+  - 어른 같은 건
+- - 되고 싶지 않죠......<br>양보할 수 없어요, 이것만은......
+  - text: 후-
+    type: plain
+aco/65/19.gif:
+- - 뭐, 그래도 진짜 필요해졌을 때 살까, 정도로<br>누나 분도, 양보 안 해도 되지 않을까요
+  - text: 평소와 조금 다른,
+    type: square
+- - 느슨한 말투
+  - text: 딩동-
+    type: plain
+  - 어, 오셨네요
+- - 죄송해요, 누나가 귀찮게 해서
+  - text: <span class="blue">철컹</span>
+    type: plain
+  - 선생님 어렸을 때 이야기를 들고 있었어요
+  - 으엑......
+  - 나도 듣고 싶어! 언니-
+- - text: 히키 씨가 「양보할 수 없는 것」은, 솔직히 나는 잘 모르겠어
+    type: thought
+  - <small>밖이 벌써 눈이 내리고 있었나요?</small>
+  - <small>아직 조금 내리고 있어요</small>
+  - text: 그냥 사면 되잖아, 하고 생각해 버렸어<br>히키 씨도 아마, 비슷한 기분이겠지
+    type: thought
+  - <small>편집자님 이제 어디 가시나요?</small>
+  - <small>먹을 게 없어서</small>
+aco/65/20.gif:
+- - text: <small>「필요해졌을 때 살까 정도로」</small>
+    type: square
+  - text: 그런가, 그런 거로도 괜찮은 걸까<br>내 눈앞에 항상 있었던 불안정한 감정의 취급법은
+    type: thought
+  - <small>왠지 이제 비가 될 것 같아요</small>
+  - <small>그런가요...</small>
+- - ......그럼 먼저 돌아갈게요
+  - text: 커피 잘 마셨어요
+    type: plain
+  - 지금부터 여기서 전골을 할 건데<br>괜찮으시면 누나 분도
+  - 아뇨, 그렇게 폐를 끼칠 수는 없어서
+  - 아뇨
+- - ......선생님 솜씨가 좋으시니까
+  - text: <span class="blue">달그</span>닥
+    type: stroke
+  - 어디-
+  - <big>그,</big> 그런, 유, 자기 집처럼......
+  - text: <span class="blue">부스럭부스럭</span>
+    type: plain
+- - 히키 씨, 연장 코드가 늘 있는 곳에 없는데
+  - text: <span class="blue">부스럭부스럭</span>
+    type: stroke
+  - 어... 어제 쓰고 저쪽에
+  - 그런... 둘이서 맘대로 재료나 식기를......
+  - 어~?...
