@@ -1,0 +1,159 @@
+//: |-
+  이 번역본의 제작은 HERO님과 아무런 관련이 없습니다. 모든 대사와 관련된 권리는 원본 만화의 저작권자에게 있으며 번역자는 번역본에 대한
+  모든 권리를 저작권자에게 양도합니다. 번역본은 오로지 HERO의 사이트 "読解アヘン"의 가독성을 향상시키는 데에만 사용할 수 있습니다.
+  만화의 저작권자는 언제든 이 번역본의 배포자에게 번역본과 이 조항들의 삭제, 변경을 포함한 모든 것을 요청할 수 있습니다. 이 모든 조항을
+  준수할 때에는 번역본의 배포 및 변형이 가능하며 이 모든 조항을 번역본과 함께 포함하여야 합니다.
+
+  This translation is not related to HERO. The copyright holder of the original
+  comic has all dialogue-related rights, and the translator transfers all rights
+  to the translation to the copyright holder. The translation can only be used
+  to improve the readability of HERO's website "読解アヘン". The copyright holder of
+  the comic can at any time request the distributor of this translation,
+  including the translation and the deletion and modification of these clauses.
+  In compliance with all of these provisions, the translation can be distributed
+  and transformed, and all of these provisions must be notified along with the
+  translation.
+
+  この翻訳版の製作はHEROと何ら関連がありません。
+  すべての台詞に関する権利は原本の漫画の著作権者にあり、翻訳者は翻訳版に対するすべての権利を著作権者に譲渡します。
+  翻訳版はHEROのサイト「読解アヘン」の可読性を向上させることにのみ使用できます。
+  漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
+  この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
+hm151_180/154/hori_2251.gif:
+- - ''
+- - 유나
+- - 소타 집에 가니?
+  - 같이 갈래?
+- - 어
+hm151_180/154/hori_2252.gif:
+- - 어
+- - 사와다 아냐
+- - ''
+- - 빨리 집에 가-
+hm151_180/154/hori_2253.gif:
+- - ''
+- - ''
+- - text: 동생 같아...
+    type: thought
+- - text: 누굴까...
+    type: thought
+hm151_180/154/hori_2254.gif:
+- - ''
+- - ''
+- - 있잖아, 잇군. 방금 그 사람 잇군 동생 같아
+  - 뭐어~?
+- - 뭐어, 부정은 안 할게
+hm151_180/154/hori_2255.gif:
+- - 사람의 살은 야해 보이지 않니?
+- - ''
+- - 손목으로 보이는 사람의 살은 야해 보이지 않니?
+- - ''
+hm151_180/154/hori_2256.gif:
+- - 사람의 살이 소매에서 보이는데 게다가 살짝 땀이 젖어 있으면 야하지 않니?
+- - text: 어-... 이미 말하는 게 너무 비주류 아닌지...
+    type: thought
+  - text: 저기...
+    type: thought
+- - 어, 내일부터 교복 바뀌지...
+- - text: 그러게!!
+    type: square
+  - // 한자모르겠음
+  - text: 긴팔 스웨터 웃옷 ○옷 영문 모를 정도로 애매한 소매 접기
+    type: plain
+hm151_180/154/hori_2257.gif:
+- - text: 소매접기
+    type: square
+  - text: 덥다
+    type: plain
+- - text: 가끔 반팔, 가끔 소매 접기
+    type: square
+  - 에어콘 틀어 줘-
+- - text: 논외
+    type: square
+  - text: 어, 오늘 30도 넘었어?
+    type: plain
+  - text: 어쩐지 어지럽다 했어
+    type: plain
+- - text: 여름인데도 추워 보인다
+    type: square
+hm151_180/154/hori_2258.gif:
+- - 뭐야?
+- - text: <big>がし</big>
+    type: stroke
+  - text: '!?'
+    type: scream
+- - 아야야야야야야
+  - text: ぎちぎちぎち
+    type: plain
+  - 센고쿠는 그닥 땀이 안 나니까
+  - text: 수분도 모자라고
+    type: plain
+- - 뽀송뽀송하잖아!! 바보 아니야!?
+  - text: ぐぐぐぐ
+    type: plain
+  - 땀에 푹 젖은 것보다 낮잖아...
+  - text: 피 안 통해
+    type: plain
+hm151_180/154/hori_2259.gif:
+- - 잠깐만 미야무라 그거 걷어봐
+  - 땀이야 좀 낫겠지
+  - 뭐!?
+  - 걷을 수 있는 데까지면 되니까
+- - 어, 미야무라가 소매를 걷는대-!
+  - 뭐야, 뭐야?
+  - text: 시끌벅쩍
+    type: plain
+  - 지금- 미야무라가~
+- - 뭐- 진짜?
+  - text: 웅성웅성
+    type: plain
+  - 미야무라, 하복 입는대?
+  - text: 웅성 웅성웅성
+    type: plain
+  - 하복 갖고 있대?
+- - 싫어-!!
+  - 사람이 잔뜩 있으면 싫어-!!
+  - text: 뭐야 뭐야
+    type: plain
+hm151_180/154/hori_2260.gif:
+- - 소매만 접는 거니까!!<br>실은 반팔이 더 좋지만...
+  - text: じり... じり...
+    type: plain
+  - text: 으아아악
+    type: plain
+  - 집에서 얼마든지 입을게-!!
+- - 딱 맞았다-!! 충천 확실히 OK!! <small>하복-!!</small>
+  - text: 하아 하아
+    type: plain
+  - 어, 와타베 미안해. 없는 걸로 됐어, 방금
+- - 네? 팔뚝? 이요?
+- - 팔뚝을 좋아해요?
+  - 아니야-! 반팔로 보이는 게 좋아!
+hm151_180/154/hori_2261.gif:
+- - 반팔 반팔!! 나 반팔!!
+  - text: 자 봐!
+    type: plain
+  - 보여주고 싶어 하는 건 안 야해 보여
+- - 땀 난 팔은 오히려 싫지 않냐?
+- - 아니 땀은 야해 보여
+  - 그야 땀이잖아
+  - 무슨 머리 나쁜 주장이야......
+- - 땀이 좋아요?
+  - '// 뜻모르겠음: どうしてくん'
+  - text: 호기심천국↓
+    type: plain
+  - text: '?'
+    type: plain
+  - 건강한 거하니까~
+hm151_180/154/hori_2262.gif:
+- - 이사카와, 땀은 건강한 거래요
+  - 여자애들 하는 말은 듣지 마
+  - text: 무시해
+    type: plain
+- - 근데 땀이 나서 야해 보이기는
+  - 남자보다 여자겠지
+- - 뭐야~!! 그런 눈으로 보고 있었어!? 토오루, 저질-!!!
+  - 무슨 남녀차별!!
+- - 봐, 야나기!! 이게 요시카와의 본성이야
+  - 이시카와, 여자를 그런 눈으로 보는 건 약간...
+  - 으악, 나 미칠 것 같아!!
