@@ -39,7 +39,7 @@ hm151_180/152/hori_2229.gif:
     type: plain
   - text: 뭐, 복잡했나 보지...
     type: thought
-  - text: 피클은 싫어
+  - text: 피클 싫어
     type: plain
 - - 요시카와는 친구 이상이긴 하지만
   - 딱히 사귀거나 하는 사이는 아니야
@@ -53,7 +53,7 @@ hm151_180/152/hori_2230.gif:
     type: thought
 - - 거봐, 그 얼굴이라고, 그 얼굴~!!!
   - text: <strong class="stroke">타</strong>아악
-    type: speech
+    type: plain
   - text: <b>뭐</b>야
     type: speech
   - 놀라라아아
@@ -66,3 +66,133 @@ hm151_180/152/hori_2230.gif:
   - 좋아하지 않아?
   - 좋아!!
   - 부끄러운 멘트 날리고 있다는 자각은 해라
+hm151_180/152/hori_2231.gif:
+- - 번호표 ⑤번으로 기다려 주세요~
+- - ''
+- - text: 나왔어... 마의 ⑤......
+    type: thought
+  - text: 제대로 기억해 줘, 직원.
+    type: plain
+  - 어
+- - 타니하라<br>야
+  - text: 통!
+    type: plain
+  - <big class="stroke">으와아</big>아아 쿄쿄쿄쿄쿄쿄코!!
+hm151_180/152/hori_2232.gif:
+- - 호리, 아는 사람이야?
+  - text: 다른 학교야...!!
+    type: thought
+  - 자리 있으려나
+- - 타니하라, 혼자야?
+  - 혼자라고 할까... 포장이야...
+  - 혼자야?
+  - text: 형 도와줘!!
+    type: thought
+  - 혼자......
+- - 혼자래!!
+  - 딱 4명인데 같이 먹을래?
+  - <big>뭐</big>
+- - 다, 다섯 명이잖아!!
+  - 난 볼 일이 있어서...
+  - 제일 멀쩡해 보이는 사람이-!!
+hm151_180/152/hori_2233.gif:
+- - 타리하라라고 해?
+  - 카시 고등학교네~
+  - text: 꺄 꺄
+    type: plain
+  - text: 보통이야... 보통 여자애야...
+    type: thought
+- - 있잖아, 안쪽으로 가자~ 빨리 앉아!
+- - 어... 네
+- - ''
+hm151_180/152/hori_2234.gif:
+- - text: 벌레 생활
+    type: stroke
+  - text: 박력 넘치는 산란 장면 특집
+    type: plain
+- - text: 이상한 애...
+    type: thought
+- - 카타기리에 평범한 여학생은 있나요...?
+  - 어? <big>나?</big>
+- - text: <big>없구나-</big>
+    type: square
+  - text: 아하하, 그렇군요-
+    type: plain
+  - text: 하고 말할 수도 없고
+    type: square
+hm151_180/152/hori_2235.gif:
+- - 숨을 몰아쉬는 사람은 야해 보이지
+- - ''
+- - 숨을 몰아쉬면서도 뭔가 말 하려고 하는 사람은 야해 보이지
+- - ''
+hm151_180/152/hori_2236.gif:
+- - 숨을 몰아 쉬면서 뭔가 말하려고 하지만 결국 제대로 말 못하는 사람은 야해 보이지
+- - text: 큰일이야, 이제 없어...!!
+    type: thought
+  - 어, 어어어...
+- - 어... 다음 오래 달리기지...
+- - text: 가장 대단하게 숨을 몰아쉴 거 같은 사람 예측
+    type: square
+  - text: 금수저 피어스 치킨 근시 천연확성기
+    type: plain
+hm151_180/152/hori_2237.gif:
+- - text: 어쩐지 이 애들은 평범하게 달릴 것 같다
+    type: square
+  - text: 야나기, 역주행은 안 돼
+    type: plain
+  - text: 네!
+    type: plain
+- - text: 항상 한 바퀴 여유롭게 달린다
+    type: square
+  - text: 이우라, 5바퀴야!!
+    type: plain
+  - text: 알았어, 알았어!
+    type: plain
+- - text: 뛰기 전부터 창백
+    type: square
+- - 5바퀴나... 이제 거의 <b>달</b>이잖아, <b>우주</b>잖아...
+  - 지구 몇 바퀴 분량일까, 학교 5바퀴면...
+  - text: 삐익-
+    type: stroke
+  - text: 정렬-!!
+    type: plain
+hm151_180/152/hori_2238.gif:
+- - 어, 남자애들 뛰고 있어
+  - 오
+  - 힘내라, 힘-
+- - ''
+- - 아야사키, 센고쿠 죽을 것 같은데...
+  - text: 미야무라 느리다
+    type: plain
+  - text: 후훗♥
+    type: plain
+  - 숨 몰아쉬기 킹은 레미의 센고쿠로 결정이네
+  - 어, 경쟁이었어?
+- - text: 허억- 허억- 허억-
+    type: plain
+  - text: 20분 뒤
+    type: square
+  - text: 허억- 허억-
+    type: plain
+hm151_180/152/hori_2239.gif:
+- - 센고쿠!!
+  - ......
+  - ......응?
+  - 센고쿠 숨 차!?
+  - text: 헉- 헉- 헉-
+    type: plain
+  - 에헤...?
+  - 숨 차지- 엄청 숨 차지-!!
+  - 허억...
+- - 어쩐지 그렇게 야해 보이지 않네
+  - 현실은 그런 거야
+  - text: 하고 싶은 대로 말하기
+    type: square
+- - 야나기, 괜찮아-?
+  - 헉- 헉-
+- - 이거 1등은 야나기이려나
+  - 센고쿠, 잘 봐 둬. 저게 제대로 된 예시야
+  - 그래도 레미는 죽을 거 같은 센고쿠도 좋아~
+  - 뭐...? 아까부터 무슨 이야기해...?
+  - text: 허억 허억
+    type: plain
