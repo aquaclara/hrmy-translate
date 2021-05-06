@@ -87,6 +87,6 @@ const util = {
     }
 
     return url.pathname.replace(/^\//, '');
-  }
+  },
 };
 export default util;

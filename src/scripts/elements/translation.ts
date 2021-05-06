@@ -33,7 +33,7 @@ export class Translation extends Caption {
     'plain',
     'stroke',
     'square',
-    'shock'
+    'shock',
   ];
   static DEFAULT_FONT_SIZE_FOR_OVERWRITING = 22;
 
@@ -217,7 +217,7 @@ export class Translation extends Caption {
     if (typeof original === 'string') {
       return {
         text: original,
-        type: 'speech'
+        type: 'speech',
       };
     }
     return original;
