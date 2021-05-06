@@ -2,7 +2,7 @@ let developmentMode: boolean | null = null;
 
 export function init(): void {
   if (developmentMode === null) {
-    chrome.storage.sync.get({ developmentMode: false }, items => {
+    chrome.storage.sync.get({ developmentMode: false }, (items) => {
       developmentMode = items.developmentMode;
     });
   }

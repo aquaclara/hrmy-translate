@@ -9,7 +9,7 @@ export const GITHUB_RAW_URL_BASE =
 export const YAML_OPTION = {
   noArrayIndent: true,
   sortKeys: true,
-  noCompatMode: true
+  noCompatMode: true,
 };
 
 export type ExtensionOptions = {
@@ -25,7 +25,7 @@ export const DEFAULT_EXTENSION_OPTIONS: ExtensionOptions = {
   applyFont: true,
   developmentMode: false,
   editableMode: false,
-  overwriteMode: false
+  overwriteMode: false,
 };
 
 export const QUERY_SELECTOR_IMAGES = 'img, td[background]';
@@ -99,5 +99,5 @@ export const IMAGE_DENY_LIST = [
   'hm561_590/horimiya_01.gif',
   'hm561_590/horimiya_02.gif',
   'hm591_620/horimiya_01.gif',
-  'hm591_620/horimiya_02.gif'
+  'hm591_620/horimiya_02.gif',
 ];

@@ -77,7 +77,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
                   this.removeTranslates();
                   this.renderTranslations([imageId, 0, 0]);
                 }
-              : undefined
+              : undefined,
         };
         new NoticeElement.Notice(opt).render();
         continue;
@@ -99,7 +99,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
 
         if (this._extensionOption.editableMode) {
           let $textarea: HTMLTextAreaElement | null = null;
-          $canvas.addEventListener('click', e => {
+          $canvas.addEventListener('click', (e) => {
             if ($textarea !== null) {
               return;
             }
@@ -171,7 +171,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
               focus !== undefined &&
               imageId === focus[0] &&
               cutIndex === focus[1] &&
-              tlsIndex === focus[2]
+              tlsIndex === focus[2],
           };
           if (
             this._extensionOption.developmentMode &&
@@ -251,7 +251,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
                   focus = [
                     imageId,
                     cutIndex,
-                    tlsIndex - 1 >= 0 ? tlsIndex - 1 : -1
+                    tlsIndex - 1 >= 0 ? tlsIndex - 1 : -1,
                   ];
                 } else if (!onlyCut) {
                   console.log('Delete a cut');

@@ -25,7 +25,7 @@ function main() {
   const LOCAL_URL = chrome.runtime.getURL(TLS_PATH);
 
   loggerInit();
-  chrome.storage.sync.get(Constant.DEFAULT_EXTENSION_OPTIONS, items => {
+  chrome.storage.sync.get(Constant.DEFAULT_EXTENSION_OPTIONS, (items) => {
     log('Options loaded');
     log(items);
     options = items as Constant.ExtensionOptions;
@@ -94,7 +94,7 @@ function handleResponse(response: string) {
   const data: FileDataModel = yaml.load(response);
   translationRenderer = new TranslationRenderer({
     data: new FileData(data),
-    extensionOption: options
+    extensionOption: options,
   });
   appendHotLinks(translationRenderer);
   translationRenderer.renderTranslations();
@@ -186,7 +186,7 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
 }
 
 function onChangeSettings(translationRenderer: TranslationRenderer) {
-  chrome.storage.sync.set(options, function() {
+  chrome.storage.sync.set(options, function () {
     log('Options saved');
     log(options);
     // @todo Update status to let user know options were saved.

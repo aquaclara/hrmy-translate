@@ -54,7 +54,7 @@ export default class TranslationChuckData {
     if (Array.isArray(this.data[key])) {
       (this.data[key] as Image.PropertiedDataModel) = {
         masks: value,
-        text: this.data[key] as Cut[]
+        text: this.data[key] as Cut[],
       };
     } else {
       (this.data[key] as Image.PropertiedDataModel).masks = value;
@@ -122,7 +122,7 @@ export default class TranslationChuckData {
       translation = {
         text: translation,
         x: x,
-        y: y
+        y: y,
       };
     } else {
       translation.text;
@@ -142,7 +142,7 @@ export default class TranslationChuckData {
     if (typeof translation === 'string') {
       translation = {
         text: translation,
-        w: 50
+        w: 50,
       };
     } else {
       translation.text;
