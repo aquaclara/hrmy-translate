@@ -21,7 +21,7 @@
   この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 hm151_180/155/hori_2263.gif:
 - - // 호리미야 11권 72화
-  - 로프트 부럽다
+  - 로프트 부러워
 - - ''
 - - ''
 - - 이시카와가 ○○ 부럽다고 할 때마다 「그럼 하나 사」란 생각이 들어
@@ -61,3 +61,121 @@ hm151_180/155/hori_2265.gif:
     type: plain
   - text: 공부 모임...
     type: thought
+hm151_180/155/hori_2266.gif:
+- - ''
+- - ''
+- - 대단해! 비밀 기지 같아!
+  - 그래?
+  - ......아닌데?
+- - 센고쿠, 컴퓨터 켜져 있어~
+  - 그래?
+  - ......응...
+  - text: 귀찮아서
+    type: plain
+hm151_180/155/hori_2267.gif:
+- - 이우라, 거기 천장 낮으니까 조심해-
+- - 뭐?
+- - text: 쿵
+    type: stroke
+  - 아야야
+  - 아- 아- 진짜- 괜찮냐?
+- - 아야
+  - text: 쿵
+    type: stroke
+hm151_180/155/hori_2268.gif:
+- - .........
+- - 레미? 혹시 머리 찧었어?
+  - text: 소리가 지금
+    type: plain
+  - text: 욱신욱신
+    type: plain
+  - ......<br>...안 찧었어
+- - 센고쿠가 이렇게
+  - text: 미안해
+    type: plain
+  - 책 같은 걸 늘어 놓으니까
+- - text: 로프트에 레미가 있으니까 이상하다...
+    type: thought
+hm151_180/155/hori_2269.gif:
+- - text: 어, 아버지가 돌아왔네...
+    type: thought
+  - 끼끽
+  - text: 탕
+    type: plain
+- - 레미...
+  - text: 왜?
+    type: plain
+  - 여기 따뜻하다
+- - 따뜻한 공기가 위에 고이거든
+  - text: 환기도 안 되고
+    type: plain
+- - 흠-
+  - text: ぽすん
+    type: plain
+hm151_180/155/hori_2270.gif:
+- - 졸려졌어
+- - 더운 거 아녔어?
+- - 탕
+  - text: 철컥
+    type: plain
+  - 센고쿠도 같이 자자
+- - text: 레미가 「자자」는 건 진짜 숙면이니까...
+    type: thought
+  - text: 그리고 진짜 더워
+    type: plain
+hm151_180/155/hori_2271.gif:
+- - text: 한 가운데→
+    type: plain
+- - 아야사키
+  - 조금 좁거든요
+  - text: 아무리 나라고 해도
+    type: plain
+- - ''
+- - text: 덥다...
+    type: thought
+  - text: すうすう
+    type: plain
+hm151_180/155/hori_2272.gif:
+- - 어
+  - text: 혹
+    type: thought
+- - text: 로프트에서 혼자 머리를 찧고 「안 찧었어」......
+    type: thought
+  - text: 쿡쿡쿡...
+    type: plain
+  - '// 원문: 挙句'
+  - text: 결국엔 혹을 만들고 진짜 자...
+    type: thought
+- - 푸합 (웃음소리)
+  - 센고쿠, 시끄러워-...
+- - 혹~
+hm151_180/155/hori_2273.gif:
+- - 봐, 봐, 혹~
+  - text: 죽을 거야!
+    type: plain
+  - 슈가 조심했어야지
+- - 센고쿠, 혹!
+  - 네, 네, 아픈 거 게라우톱 히어
+  - text: get out of here.
+    type: plain
+  - 영어 번역 하면서 상대하지 말고......
+- - 공부 안 할 거면 가운데 끼지 마!!
+  - ......
+- - 센고쿠, 로프트 말고 침대로 하자
+  - 아니면 이불
+  - 왜 이우라가 쓸 생각이야
+hm151_180/155/hori_2274.gif:
+- - 센고쿠도 아까 로프트 싫다고 했잖아~
+  - text: 딸깍 딸깍
+    type: plain
+  - 싫다고 안 했어
+- - 어?
+  - 안 그랬나?
+  - 안 그랬어
+- - text: 졸려
+    type: plain
+  - text: 졌
+    type: plain
+  - text: 어
+    type: plain
+- - 말 안 했어
