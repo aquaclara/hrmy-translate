@@ -78,7 +78,8 @@ export class Translation extends Caption {
 
   createElement(): HTMLElement {
     if (this.overwriteMode) {
-      const $element: HTMLInputElement = super.createElement() as HTMLInputElement;
+      const $element: HTMLInputElement =
+        super.createElement() as HTMLInputElement;
       $element.style.left = this.x + 'px';
       $element.style.top = this.y + 'px';
       $element.style.width = this.width + 'px';
@@ -87,7 +88,8 @@ export class Translation extends Caption {
       }
       return $element;
     } else if (this.editableMode) {
-      const $element: HTMLInputElement = super.createElement() as HTMLInputElement;
+      const $element: HTMLInputElement =
+        super.createElement() as HTMLInputElement;
       $element.type = 'text';
       $element.defaultValue = String(this.message);
       $element.size = Translation.getPreferSize(String(this.message).length);
