@@ -9,7 +9,7 @@
     "zip": "yarn run webpack && zip -r extension.zip dist/ translations/ manifest.json"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.128",
+    "@types/chrome": "^0.0.173",
     "@types/firefox-webext-browser": "^82.0.0",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.0",
