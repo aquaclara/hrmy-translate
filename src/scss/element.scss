@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'variables';
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&display=swap');
 
@@ -56,13 +57,13 @@
 
       &:before {
         border-right-color: black;
-        margin-top: (-$anchor-width / 2) + px;
+        margin-top: math.div(-$anchor-width, 2) + px;
         margin-left: -$anchor-width + px;
       }
 
       &:after {
         border-right-color: white;
-        margin-top: (-$anchor-width / 2 - 1) + px;
+        margin-top: math.div(-$anchor-width, 2 - 1) + px;
         margin-left: -$anchor-width + 2 + px;
       }
     }
