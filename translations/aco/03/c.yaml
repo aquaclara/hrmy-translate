@@ -55,7 +55,7 @@ aco/03/04.gif:
     type: thought
   - text: 너구리, 개, 여우, 고양이
     type: plain
-  - text: 이름을 알고 있었을텐데. 동물 같은 이름이었던 것 같아
+  - text: 이름을 알고 있었을 텐데. 동물 같은 이름이었던 것 같아
     type: thought
 - - text: 그 날부터 계속 비슷한 꿈만 꾸네
     type: thought
@@ -67,8 +67,11 @@ aco/03/05.gif:
 - - 잘도 학교에 오네
   - 자퇴하지그래
 - - ''
-- - 어
-  - text: 사슴, 개구리, 낙타, 오리
+- - text: 어
+    type: thought
+  - text: 사슴
+    type: plain
+  - text: 개구리, 낙타, 오리
     type: plain
 aco/03/06.gif:
 - - ''
@@ -89,7 +92,7 @@ aco/03/07.gif:
     type: square
 - - text: 내가 서브할게-
     type: stroke
-- - text: ......찾았다, 아마 이 사람이야. 아마 내가 어디선가 이 사람 이름을 본 적이 있는 걸까?
+- - text: ......찾았다, 아마 이 사람이야.<br>아마 내가 어디선가 이 사람 이름을 본 적이 있는 걸까?
     type: thought
   - text: 하루 한 번의 무서움 - 코지카 카노코
     type: plain
@@ -114,8 +117,8 @@ aco/03/08.gif:
 aco/03/09.gif:
 - - text: OPEN
     type: plain
-- - 어서오세요- 어
-- - 아코, 오랜만이야~ 그거 귀엽지? 집에서 신으려고?
+- - 어서오세요-<br>어
+- - 아코, 오랜만이야~<br>그거 귀엽지? 집에서 신으려고?
   - 아니 제 게 아니고, 그... 선물로...
 - - 저... 남자한테 이건 별로일까요?
   - 응? 남자친구?
@@ -132,9 +135,9 @@ aco/03/11.gif:
     type: thought
   - text: 괜한 걸 적어서 작가님한테 전해지지 않으면 소용 없고...
     type: thought
-- - text: 게다가 내가 잘못 안 거면 민망할테고
+- - text: 게다가 내가 잘못 안 거면 민망할 테고
     type: thought
-  - text: 아니 잘못 아는 거지, 그래도......
+  - text: 아니 아니겠지, 그래도......
     type: thought
 - - text: WITE STORE
     type: plain
