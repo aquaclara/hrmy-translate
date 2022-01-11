@@ -37,22 +37,23 @@ aco/05/02.gif:
     type: stroke
 - - text: 알아봤을...까?
     type: thought
-- - text: 코지마 선생님, 아마 저번 그 팬에게서 온 것 같습니다. 대단하신대요? (웃음)
+- - text: 코시카 선생님, 아마 저번 그 팬에게서 온 것 같습니다. 대단하신대요? (웃음)
     type: square
   - text: (웃음)할 게 아니라
     type: thought
   - text: 폭발물이면 어떡할 거야
     type: stroke
 aco/05/03.gif:
-- - 유령 티셔츠
+- - text: 유령 티셔츠
+    type: thought
   - text: 바스락
     type: plain
 - - ......남자 사이즈?
-- - text: 날 알고 있어...?
+- - text: 날 알고 있나...?
     type: thought
   - text: 그리고 나한텐 좀 커
     type: plain
-- - text: 이런 일을 하면서 혼자 산다는 건 친구 2~3명과 가족 정도밖에 모르는데
+- - text: 이런 일을 하면서 혼자 산다는 건<br>친구 2~3명과 가족 정도밖에 모르는데
     type: thought
   - 아
 aco/05/04.gif:
@@ -65,8 +66,7 @@ aco/05/04.gif:
 aco/05/05.gif:
 - - text: 웅성
     type: plain
-  - text: <span class="blue">자, 조용- 그럼 오늘은 여기까지-</span>
-    type: speech
+  - <span class="blue">자, 조용-<br>그럼 오늘은 여기까지-</span>
   - text: 웅성 웅성
     type: plain
 - - text: 시청각
@@ -93,9 +93,9 @@ aco/05/06.gif:
     type: square
 - - text: 퐁
     type: stroke
-- - text: 코지마
+- - text: 코지카
     type: plain
-  - text: 코지마입니다
+  - text: 코지카입니다
     type: speech
   - 슬리퍼와 티셔츠 고마워
   - text: 야마시로
@@ -203,7 +203,7 @@ aco/05/13.gif:
 - - text: 헉
     type: stroke
 - - 퐁
-- - text: 코지마
+- - text: 코시카
     type: plain
   - text: 흠?
     type: stroke
