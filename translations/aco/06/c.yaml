@@ -31,9 +31,9 @@ aco/06/01.gif:
     type: plain
   - text: 가 멈추지 않는다
     type: square
-- - text: 삐리리릭
+- - text: 삐리<span class="blue">리릭</span>
     type: plain
-  - text: 삐리리릭
+  - text: 삐리<span class="blue">리릭</span>
     type: plain
   - text: 깜짝
     type: plain
@@ -47,29 +47,34 @@ aco/06/02.gif:
 - - 시작도 전에 잘린 거죠?
   - 아, 괜찮아요. 그쪽은 문제 없습니다
 - - 후우, 네? 이 인터뷰?
-  - text: 끄적끄적
+  - text: <span class="blue">끄적끄적</span>
     type: stroke
   - 아, 신인작가에게 질문 코너가 있어서...... 다음이 제 차례라구요
-- - 그래서 <ruby>출판사<rt>여기</rt></ruby>까지 와달라고 하기에도 좀 멀고, 코지카 선생님 댁 근처에 카페라도 있을까 하고요
+- - >-
+    그래서 <ruby>출판사<rt>여기</rt></ruby>까지 와달라고 하기에도 좀 멀고,<br>코지카 선생님 댁 근처에 카페라도 있을까
+    하고요
   - 네?
 aco/06/03.gif:
 - - text: 히키 씨를 본단 말이야?
     type: thought
   - 아뇨, 주변은 주택가에 상점가뿐이라서 딱히 그런 가게는...
   - text: <span class="blue">그보다 이사오고 난 후로 그다지 밖에 나가지 않았고...</span>
-    type: speech
+    type: plain
 - - 저희 집도 괜찮은데요
   - 같이 열심히 하죠!!
   - text: 굳어지는 이미지
     type: square
-  - 호쾌→
-  - 네, 오늘? 저녁? 괜찮아요. 네, 그럼
+  - text: 호쾌→
+    type: plain
+  - 네, 오늘? 저녁? 괜찮아요.<br>네, 그럼
 - - ''
 - - text: 하루에 두 명이나 처음보는 사람이 우리 집에 온다고?
     type: thought
-  - 이제 안 반쯤 방에서 사는 사람
+  - text: 이제 안 반쯤 방에서 사는 사람
+    type: square
 aco/06/04.gif:
-- - 시간은 안 겹치겠지만...... 어쩐지 진정이 안 되네-
+- - text: 시간은 안 겹치겠지만......<br>어쩐지 진정이 안 되네-
+    type: thought
   - text: 윽-
     type: plain
   - text: 그러고 보니 어제는 그 애도 안 왔지
@@ -78,20 +83,26 @@ aco/06/04.gif:
     type: stroke
 - - text: 긴장해서 그렇게 못 잤어
     type: thought
-  - 꿈도 안 꿨고...
-- - 「코지카 씨」......
+  - text: 집에 가자-
+    type: stroke
+  - text: 꿈도 안 꿨고...
+    type: thought
+- - text: 「코지카 씨」......
+    type: thought
   - text: ● 커튼은 갈색<br>● 벽은 하양<br>● 머그...는 가는
     type: plain
   - text: 시계↘
     type: plain
-  - ↖PC
-  - 컴퓨터로 일을 하고, 소파가 있고 안 쪽에 욕실이 있고, 창문 쪽에 식물이 있고
+  - text: ↖PC
+    type: plain
+  - text: 컴퓨터로 일을 하고,<br>소파가 있고 안 쪽에 욕실이 있고, 창문 쪽에 식물이 있고
+    type: thought
 aco/06/05.gif:
 - - text: ...... 좋아, 가자
     type: thought
   - text: 달그락
     type: plain
-  - text: 너무 늦어도 그러니가......
+  - text: 너무 늦어도 그러니까......
     type: thought
 - - text: 코
     type: plain
@@ -106,12 +117,12 @@ aco/06/05.gif:
   - text: 정지
     type: square
 aco/06/06.gif:
-- - text: 큰일날 뻔했네, 역시 자버렸어...
+- - text: 큰일날 뻔했네, 역시 자버렸어...<br>알람 맞춰 놔서 다행이야......
     type: thought
-  - 알람 맞춰 놔서 다행이야......
-  - text: <strong class="stroke">두근 두근 두근 두근</strong>
-    type: speech
-  - 아직 안 왔지? 야마시로
+  - text: <strong class="stroke blue">두근 두근 두근 두근</strong>
+    type: plain
+  - text: 아직 안 왔지? 야마시로
+    type: thought
 - - text: 드륵
     type: plain
   - text: 아, 얼굴
@@ -120,7 +131,7 @@ aco/06/06.gif:
     type: thought
   - text: 바람 세다
     type: thought
-- - 퐁
+- - <big>퐁</big>
   - text: 야마시로
     type: plain
   - 지금 밑에
@@ -130,17 +141,17 @@ aco/06/07.gif:
 - - 안녕하세요...
 - - text: 같은 목소리다
     type: square
-  - 안녕, 아! 2층은 안쪽이에요
-  - 네
+  - 안녕,<br>아! 2층은 안쪽이에요
+  - <big>네</big>
 aco/06/08.gif:
 - - ''
 - - text: 으음-...
     type: thought
   - text: 조용해
     type: thought
-  - 야마 시로...
+  - 야마<br>시로...
 - - text: <span class="blue">빤</span>
-    type: speech
+    type: plain
 - - ''
 aco/06/09.gif:
 - - ''
@@ -148,13 +159,14 @@ aco/06/09.gif:
 - - 와, 대단해, 이 방이야
   - text: 식물, 책장?, 창문, 하얀 머그컵
     type: plain
-  - 컴퓨터, 책 등, 욕실, 검은색, 의자, 샤워, 거울, 샴푸 같은?
-- - ......아까 학교에서 거렸어요, 생각나는 만큼 생각해서......
+  - text: 컴퓨터, 책 등, 욕실, 검은색, 의자, 샤워, 거울, 샴푸 같은?
+    type: plain
+- - ......아까 학교에서 그렸어요,<br>생각나는 만큼 생각해서......
 aco/06/10.gif:
 - - 와- 그럼 역시 이 방에 오고 있는 여자애는......
   - text: 팔랑
     type: stroke
-- - text: 치우질 않는 산더미 같은 상자들(여기저기)
+- - text: 치우질 않는 산더미 같은 상자들(여기저기)→
     type: plain
 - - text: ............
     type: thought
@@ -162,16 +174,16 @@ aco/06/10.gif:
 - - 어... 그래, 어떠려나, 생김새가 다르거든
   - 네?
 aco/06/11.gif:
-- - 나도 그런 데는 빠삭하지 않지만, 너의 그 애의 공통점은 앞머리와 목소리 정도고......
+- - 나도 그런 데는 빠삭하지 않지만,<br>너의 그 애의 공통점은 앞머리와 목소리 정도고......
 - - 야마시로는 좀... 다른 타입이라고 해야 하나
   - text: 이 쯤에 머리를 묶고 있었고
     type: plain
 - - ''
-- - 그, 래, 요... 그건...
+- - 그<br>래<br>요... 그건...
   - 쌍둥이는 아니지?
   - 전... 외동이에요
 aco/06/12.gif:
-- - 그래도 닮긴 했지만, 저쪽이 좀더 수다스럽지
+- - 그래도 닮긴 했지만,<br>저쪽이 좀더 수다스럽지
   - text: 그래
     type: plain
 - - ''
@@ -179,7 +191,7 @@ aco/06/12.gif:
   - text: 부스럭
     type: plain
   - 아, 아니 나야말로
-- - 어, 어
+- - 어<br>어
   - text: <span class="blue">후두둑</span>
     type: plain
 aco/06/13.gif:
@@ -193,7 +205,7 @@ aco/06/14.gif:
 - - 그, 그럼 아무때나
 - - text: 텅
     type: stroke
-- - text: 긴장한 것 뿐이었나 봐...... 하긴 당황할 만하지, 모르는 사람 집에 와서 잘 모르는 이야기를 하고
+- - text: 긴장한 것 뿐이었나 봐......<br>하긴 당황할 만하지, 모르는 사람 집에 와서 잘 모르는 이야기를 하고
     type: thought
   - text: 요즘은 나도 모든 게 너무 바빠서
     type: thought
@@ -204,12 +216,12 @@ aco/06/14.gif:
   - text: 야마시로 아코
     type: plain
 aco/06/15.gif:
-- - text: 아까 이것저것 떨어뜨렸을 때 테이블 밑에 들어갔구나, 내일 쓰는 거면 어떡하지......
+- - text: 아까 이것저것 떨어뜨렸을 때 테이블 밑에 들어갔구나,<br>내일 쓰는 거면 어떡하지......
     type: thought
   - text: 흐익- 일본사라고 써 있어, 오랜만이다
     type: stroke
   - text: <span class="blue">딩동</span>
-    type: speech
+    type: plain
 - - text: 다행이다, 알아차리고 돌아왔어......
     type: thought
   - 야마...
@@ -228,17 +240,18 @@ aco/06/17.gif:
 - - text: 이크, 무슨 잡상인이야
     type: thought
   - text: <span class="blue">두근 두근</span>
-    type: speech
+    type: plain
   - text: 보통은 좀 더 안 무섭게 생긴 사람을 쓰잖아
     type: thought
-- - 그보다 야마시로는 괜찮았으려나...
+- - text: 그보다 야마시로는 괜찮았으려나...
+    type: thought
   - text: 찰칵
     type: stroke
 - - ''
 aco/06/18.gif:
 - - ......여기 복도는 좁네요
 - - 어쩐...... 일로......
-  - 아, 약속 시간보다 좀 빨랐나요, 전화를 할 걸 그랬습니다, 죄송합니다.
+  - 아, 약속 시간보다 좀 빨랐나요,<br>전화를 할 걸 그랬습니다, 죄송합니다.
 - - ......히키 씨
 - - 항상 신세지고 있습니다
   - 코지카 선생님
@@ -249,13 +262,13 @@ aco/06/19.gif:
   - 어이쿠......
   - text: 툭
     type: stroke
-- - 아아, 죄송합니다, 짐을 전혀 안 치워둬서...
-  - 아뇨, 저야말로. 몸이 커서......
+- - 아아, 죄송합니다,<br>짐을 전혀 안 치워둬서...
+  - 아뇨, 저야말로.<br>몸이 커서......
 - - text: 크다고 해야 하나, 길다고 해야 하나......
     type: thought
 aco/06/20.gif:
 - - 오늘은 인사도 드릴 겸… 원래라면 이보다 일찍 이렇게 해서 찾아뵀어야 했는데요......
-  - text: 소곤 소곤 소곤 소곤
+  - text: <span class="blue">소곤 소곤 소곤 소곤</span>
     type: stroke
   - 저희 쪽 사정으로 늦어져서 정말 죄송......
 - - text: <big>뭐라고?</big>
@@ -275,7 +288,7 @@ aco/06/20.gif:
     type: stroke
   - 감사합니다...
 - - 입에 맞으시면 좋겠는데....
-  - text: 히키
+  - text: 히키 카게
     type: plain
-  - text: 이 사람이 이제껏 만남을 피해왔던 이유가 오늘 왜인지 알 것만 같다......
+  - text: 이 사람이 이제껏 만남을 피해왔던 이유가<br>오늘 왜인지 알 것만 같다......
     type: square
