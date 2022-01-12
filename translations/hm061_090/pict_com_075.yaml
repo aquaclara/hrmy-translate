@@ -58,9 +58,7 @@ hm061_090/066/hori_1073.gif:
     type: square
 - - text: 내 앞에서는 강한 체한다
     type: square
-- - text: 약한 부분이 많은
-    type: square
-  - text: 내가 좋아하는 사람
+- - text: 약한 부분이 많은<br>내가 좋아하는 사람
     type: square
 - - text: 아
     type: square
@@ -70,9 +68,11 @@ hm061_090/066/hori_1074.gif:
 - - 센고쿠... 이... 이거 떼줘
   - .....
 - - 무서워-
-- - 「나도 무서워-」... 하는 얼굴이네
+- - text: 「나도 무서워-」... 하는 얼굴이네
+    type: square
 hm061_090/066/hori_1075.gif:
-- - 그래도
+- - text: 그래도
+    type: square
 - - text: 툭
     type: plain
 - - text: 무척 놀랐다
@@ -106,7 +106,7 @@ hm061_090/066/hori_1078.gif:
     type: square
 hm061_090/066/hori_1079.gif:
 - - text: 아뇽하세이우라!
-    type: square
+    type: shock
   - text: '?→'
     type: plain
   - 질문 가무사하므니다
