@@ -63,7 +63,7 @@
 
       &:after {
         border-right-color: white;
-        margin-top: math.div(-$anchor-width, 2 - 1) + px;
+        margin-top: math.div(-$anchor-width, 2) - 1 + px;
         margin-left: -$anchor-width + 2 + px;
       }
     }
