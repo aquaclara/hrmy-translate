@@ -306,16 +306,14 @@ function EpisodePicker(props: {
 
   return (
     <div className="episode-picker">
-      <label>
-        보고 있는 만화
-        <select
-          value={series}
-          onChange={(event) => choose(event.target.value as Series, 1)}
-        >
-          <option value="horimiya">호리씨와 미야무라군</option>
-          <option value="aco">아코와 밤비</option>
-        </select>
-      </label>
+      <select
+        aria-label="만화"
+        value={series}
+        onChange={(event) => choose(event.target.value as Series, 1)}
+      >
+        <option value="horimiya">호리씨와 미야무라군</option>
+        <option value="aco">아코와 밤비</option>
+      </select>
       <div className="episode-number">
         <button
           type="button"
