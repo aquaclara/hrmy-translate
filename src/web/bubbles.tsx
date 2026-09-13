@@ -39,6 +39,7 @@ type Drag = {
   x: number;
   y: number;
   w: number;
+  h: number;
   moved: boolean;
 };
 
@@ -85,6 +86,7 @@ export function TranslationView(props: Props) {
       x: origin.x,
       y: origin.y,
       w: bubble.width / props.scale,
+      h: bubble.height / props.scale,
       moved: false,
     });
   }
@@ -106,6 +108,7 @@ export function TranslationView(props: Props) {
         x: Math.round(drag.x),
         y: Math.round(drag.y),
         w: Math.max(40, Math.round(drag.w + dx)),
+        h: Math.max(20, Math.round(drag.h + dy)),
       });
     }
   }
@@ -169,6 +172,10 @@ export function TranslationView(props: Props) {
                             props_.w !== undefined
                               ? props_.w * props.scale
                               : undefined,
+                          height:
+                            props_.h !== undefined
+                              ? props_.h * props.scale
+                              : undefined,
                         }
                       : {};
                     if (props_.background !== undefined) {
@@ -185,7 +192,10 @@ export function TranslationView(props: Props) {
                           className={`line ${type}`}
                           style={
                             placed
-                              ? { backgroundColor: lineStyle.backgroundColor }
+                              ? {
+                                  backgroundColor: lineStyle.backgroundColor,
+                                  height: lineStyle.height,
+                                }
                               : lineStyle
                           }
                           onPointerDown={(event) =>

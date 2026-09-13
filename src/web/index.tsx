@@ -468,6 +468,7 @@ function App() {
       delete datum.x;
       delete datum.y;
       delete datum.w;
+      delete datum.h;
       delete datum.background;
     } else {
       Object.assign(datum, patch);
