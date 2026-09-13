@@ -20,6 +20,7 @@ type Props = {
   edit: boolean;
   contentLeft: number;
   firstImage: number | null;
+  series: 'horimiya' | 'aco';
   onEdit?: (address: Address, patch: Patch) => void;
 };
 
@@ -175,7 +176,7 @@ export function TranslationView(props: Props) {
   return (
     <div
       ref={root}
-      className={`translation-view${positioned ? ' positioned' : ''}${props.edit ? ' editing' : ''}`}
+      className={`translation-view ${props.series}${positioned ? ' positioned' : ''}${props.edit ? ' editing' : ''}`}
     >
       {keys.map((key, order) => {
         const cuts = props.data.getCutTranslations(key);
@@ -240,7 +241,7 @@ export function TranslationView(props: Props) {
                         style={placed ? lineStyle : undefined}
                       >
                         <Line
-                          className={`line ${type}${placed && props_.h !== undefined ? ' fixed' : ''}`}
+                          className={`line ${type}${placed && props_.h !== undefined ? ' fixed' : ''}${props_.vertical ? ' vertical' : ''}`}
                           style={
                             placed
                               ? {
@@ -294,6 +295,17 @@ export function TranslationView(props: Props) {
                               }
                             >
                               배경 없음
+                            </button>
+                            <button
+                              type="button"
+                              aria-pressed={props_.vertical === true}
+                              onClick={() =>
+                                props.onEdit?.(address, {
+                                  vertical: !props_.vertical,
+                                })
+                              }
+                            >
+                              세로
                             </button>
                             <button
                               type="button"

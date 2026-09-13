@@ -211,6 +211,30 @@ nav {
       overflow: visible;
       line-height: 1.25;
     }
+
+    .line.vertical {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      width: auto;
+    }
+
+    .line.vertical.fixed {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .translation-view.horimiya {
+    font-size: 1.2em;
+
+    .line {
+      font-family: 'Gaegu', cursive;
+    }
+
+    .line.stroke,
+    .line .stroke {
+      font-family: 'Black Han Sans', sans-serif;
+    }
   }
 
   &.editing {

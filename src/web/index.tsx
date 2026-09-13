@@ -470,11 +470,13 @@ function App() {
       delete datum.w;
       delete datum.h;
       delete datum.size;
+      delete datum.vertical;
       delete datum.background;
     } else {
       Object.assign(datum, patch);
       if (datum.size !== undefined && datum.size < 0.3) datum.size = 0.3;
       if (datum.size === 1) delete datum.size;
+      if (datum.vertical === false) delete datum.vertical;
     }
     const keys = Object.keys(datum).filter((key) => key !== 'text');
     data.setTranslation(
@@ -703,6 +705,7 @@ function App() {
                   edit={edit}
                   contentLeft={mobile ? 0 : MENU_WIDTH}
                   firstImage={info?.first ?? null}
+                  series={page ? seriesOf(page) : 'horimiya'}
                   onEdit={applyEdit}
                 />
               </div>
@@ -733,6 +736,7 @@ function App() {
                     edit={false}
                     contentLeft={mobile ? 0 : MENU_WIDTH}
                     firstImage={info?.first ?? null}
+                    series={page ? seriesOf(page) : 'horimiya'}
                   />
                 )}
               </div>
