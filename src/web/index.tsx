@@ -123,7 +123,6 @@ function AddressBar(props: {
       <input
         type="text"
         inputMode="url"
-        placeholder={`${SITE_HOST} 를 입력`}
         value={props.value}
         onChange={(event) => props.onChange(event.target.value)}
         autoCapitalize="off"
@@ -296,7 +295,6 @@ function EpisodePicker(props: {
               min={1}
               max={last}
               value={current ?? ''}
-              placeholder="몇 화"
               onChange={(event) => choose(Number(event.target.value))}
             />
             화
