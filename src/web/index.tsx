@@ -591,6 +591,25 @@ function App() {
               {message && <p className="message">{message}</p>}
             </div>
           </div>
+          {overlay && translation.status === 'loaded' && (
+            <div
+              className="bubbles"
+              style={
+                {
+                  top: browserHeaderHeight,
+                  '--scale': String(scale),
+                } as React.CSSProperties
+              }
+            >
+              <TranslationView
+                data={translation.data}
+                layout={layout}
+                scale={scale}
+                overlay={overlay}
+                contentLeft={mobile ? 0 : MENU_WIDTH}
+              />
+            </div>
+          )}
           <Viewer
             key={visit}
             src={url.href}
@@ -625,7 +644,20 @@ function App() {
                 onPointerCancel={onTitlePointerUp}
                 onClick={onTitleClick}
               >
-                {overlay ? '번역 창으로 되돌리기' : '번역 창'}
+                번역 창
+                {overlay && (
+                  <button
+                    type="button"
+                    className="restore"
+                    onPointerDown={(event) => event.stopPropagation()}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      setOverlay(false);
+                    }}
+                  >
+                    되돌리기
+                  </button>
+                )}
               </div>
               <div className="controls">
                 <p className="note">
@@ -640,35 +672,40 @@ function App() {
                 {mobile && <FitPicker value={fit} onChange={chooseFit} />}
               </div>
             </div>
-            <div
-              className="translations"
-              style={{
-                minHeight: height ?? undefined,
-                marginTop: overlay
-                  ? browserHeaderHeight
-                  : Math.max(0, browserHeaderHeight - panelHeaderHeight),
-              }}
-            >
-              {translation.status === 'loading' && (
-                <p className="status">불러오는 중…</p>
-              )}
-              {translation.status === 'missing' && (
-                <p className="status">이 화의 번역이 없습니다.</p>
-              )}
-              {translation.status === 'loaded' && (
-                <TranslationView
-                  data={translation.data}
-                  layout={layout}
-                  scale={scale}
-                  overlay={overlay}
-                  contentLeft={mobile ? 0 : MENU_WIDTH}
-                />
-              )}
-            </div>
-            <section className="license">
-              <h3>번역본 이용 조건</h3>
-              <pre>{LICENSE}</pre>
-            </section>
+            {!overlay && (
+              <div
+                className="translations"
+                style={{
+                  minHeight: height ?? undefined,
+                  marginTop: Math.max(
+                    0,
+                    browserHeaderHeight - panelHeaderHeight,
+                  ),
+                }}
+              >
+                {translation.status === 'loading' && (
+                  <p className="status">불러오는 중…</p>
+                )}
+                {translation.status === 'missing' && (
+                  <p className="status">이 화의 번역이 없습니다.</p>
+                )}
+                {translation.status === 'loaded' && (
+                  <TranslationView
+                    data={translation.data}
+                    layout={layout}
+                    scale={scale}
+                    overlay={false}
+                    contentLeft={mobile ? 0 : MENU_WIDTH}
+                  />
+                )}
+              </div>
+            )}
+            {!overlay && (
+              <section className="license">
+                <h3>번역본 이용 조건</h3>
+                <pre>{LICENSE}</pre>
+              </section>
+            )}
           </aside>
         )}
       </div>

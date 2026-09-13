@@ -84,54 +84,52 @@ nav {
 }
 
 .overlay {
-  .browser {
-    overflow: visible;
-  }
-
   .panel {
-    position: absolute;
-    left: $gap;
-    right: $gap;
-    top: 0;
-    background: none;
-    border: none;
-    border-radius: 0;
-    overflow: hidden;
-    pointer-events: none;
+    order: -1;
   }
 
-  .panel .header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
+  .browser {
+    position: relative;
+    z-index: 1;
+    margin-top: calc(#{$radius} * -1 - #{$gap});
   }
 
   .panel .title-bar {
-    pointer-events: auto;
-    cursor: pointer;
-    border: 1px solid #c8c8c8;
-    border-radius: 0 $radius 0 $radius;
-    padding: 0.35rem 1rem;
+    position: relative;
+  }
+
+  .panel .restore {
+    position: absolute;
+    right: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.1rem 0.6rem;
+    border: 1px solid variables.$black;
+    border-radius: 1rem;
     background-color: variables.$black;
     color: white;
+    font-size: 0.75rem;
+    cursor: pointer;
   }
+}
 
-  .panel .controls,
-  .panel .license {
-    display: none;
-  }
-
-  .translations {
-    padding: 0;
-  }
+.bubbles {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  pointer-events: none;
+  font-size: calc(0.75rem + 0.25rem * var(--scale));
 
   .translation-view {
-    font-size: calc(0.75rem + 0.25rem * var(--scale));
+    padding: 0;
 
     .cut {
+      position: absolute;
       left: auto;
       right: auto;
+      margin: 0;
       padding-left: 0;
       border-left: none;
     }
@@ -644,11 +642,6 @@ nav {
 
   .license {
     padding: 0.4rem 0.3rem;
-  }
-
-  .overlay .panel {
-    left: 0;
-    right: 0;
   }
 }
 
