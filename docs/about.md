@@ -157,6 +157,9 @@ In compliance with all of these provisions, the translation can be distributed a
 | 콘택트렌즈  | 콘택트 렌즈 |                       |
 | 한 번       | 한번        | 구분 없이 모든 경우에 |
 
+<details>
+<summary>디버그 정보</summary>
+
 ## 수정 모드 사용법
 
 웹 버전에는 아직 없습니다.
@@ -217,3 +220,5 @@ In compliance with all of these provisions, the translation can be distributed a
 | 위 아래 방향키       | 말풍선 폭 조정   |
 | Alt + 방향키         | 말풍선 이동      |
 | Alt + Shift + 방향키 | 말풍선 많이 이동 |
+
+</details>
