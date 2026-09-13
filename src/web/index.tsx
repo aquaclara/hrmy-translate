@@ -189,6 +189,11 @@ function App() {
           onChange={setInput}
           onSubmit={() => navigate(input)}
         />
+        <nav>
+          <a href="about.html">소개</a>
+          <a href="translation-policy.html">번역 원칙</a>
+          <a href="https://github.com/aquaclara/hrmy-translate">GitHub</a>
+        </nav>
         {error && <p className="error">{error}</p>}
       </header>
       <main>

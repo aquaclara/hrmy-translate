@@ -5,3 +5,6 @@ extension/translations/
 extension.zip
 web/dist/
 web/translations/
+web/about.html
+web/translation-policy.html
+web/editable-mode.html

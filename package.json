@@ -16,6 +16,7 @@
     "@types/react-dom": "^19.3.0",
     "esbuild": "^0.28.2",
     "js-yaml": "^4.3.2",
+    "marked": "^18.0.13",
     "prettier": "^3.9.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",

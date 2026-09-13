@@ -31,6 +31,52 @@ header {
   border-bottom: 1px solid #ddd;
 }
 
+nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+
+  a {
+    color: #666;
+  }
+}
+
+header nav {
+  margin-top: 0.4rem;
+}
+
+body.page {
+  height: auto;
+  background-color: white;
+
+  nav {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  article {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1rem 1rem 3rem;
+    line-height: 1.7;
+
+    img {
+      max-width: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+}
+
 .address-bar {
   display: flex;
   gap: 0.5rem;
