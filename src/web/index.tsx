@@ -22,6 +22,7 @@ const MENU_WIDTH = 188;
 const BUBBLE_GAP = 8;
 const BUBBLE_COLUMN = 220;
 const DRAG_THRESHOLD = 60;
+const OVERLAY_INSET = 8;
 
 type Episodes = { [episode: string]: string };
 type Series = 'horimiya' | 'aco';
@@ -573,8 +574,11 @@ function App() {
           className="browser"
           style={{
             marginTop: overlay
-              ? 0
+              ? panelHeaderHeight + OVERLAY_INSET
               : Math.max(0, panelHeaderHeight - browserHeaderHeight),
+            marginLeft: overlay ? OVERLAY_INSET : undefined,
+            marginRight: overlay ? OVERLAY_INSET : undefined,
+            marginBottom: overlay ? OVERLAY_INSET : undefined,
           }}
         >
           <div className="header" ref={browserHeader}>

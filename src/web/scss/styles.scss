@@ -85,13 +85,25 @@ nav {
 
 .overlay {
   .panel {
-    order: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $gap;
+    right: $gap;
+    z-index: 2;
+    background: none;
+    pointer-events: none;
+  }
+
+  .panel .header {
+    background-color: white;
+    border-bottom: 1px solid #c8c8c8;
+    pointer-events: auto;
   }
 
   .browser {
     position: relative;
     z-index: 1;
-    margin-top: calc(#{$radius} * -1 - #{$gap});
   }
 
   .panel .title-bar {
@@ -642,6 +654,11 @@ nav {
 
   .license {
     padding: 0.4rem 0.3rem;
+  }
+
+  .overlay .panel {
+    left: 0;
+    right: 0;
   }
 }
 
