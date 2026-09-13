@@ -1,31 +1,25 @@
+name: Release
+
 on:
   push:
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'v*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Build
-        run: |
-          yarn --dev
-          yarn run zip
-      - uses: actions/create-release@v1
-        id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          draft: false
-          prerelease: false
-      - uses: actions/upload-release-asset@v1
+          node-version: 22
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn run zip
+      - run: gh release create "$GITHUB_REF_NAME" extension.zip --title "$GITHUB_REF_NAME"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./extension.zip
-          asset_name: extension.zip
-          asset_content_type: application/zip
+          GH_TOKEN: ${{ github.token }}
