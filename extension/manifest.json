@@ -1,4 +1,5 @@
 {
+  "manifest_version": 3,
   "name": "호리씨와 미야무라군 번역",
   "version": "0.1.10",
   "description": "호리씨와 미야무라군 번역 제공. 비공식.",
@@ -21,11 +22,16 @@
     }
   ],
   "background": {
-    "scripts": ["dist/background.js"],
-    "persistent": false
+    "service_worker": "dist/background.js",
+    "scripts": ["dist/background.js"]
   },
-  "browser_action": {},
-  "permissions": ["*://dka-hero.me/*", "storage", "clipboardWrite"],
-  "web_accessible_resources": ["translations/*.yaml", "translations/**/*.yaml"],
-  "manifest_version": 2
+  "action": {},
+  "permissions": ["storage", "clipboardWrite"],
+  "host_permissions": ["*://dka-hero.me/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["translations/*.yaml", "translations/**/*.yaml"],
+      "matches": ["*://dka-hero.me/*"]
+    }
+  ]
 }
