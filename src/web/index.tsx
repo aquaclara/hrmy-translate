@@ -354,6 +354,17 @@ function App() {
   });
   const [panelOpen, setPanelOpen] = useState(true);
   const [scale, setScale] = useState(1);
+  const chrome = useRef<HTMLDivElement>(null);
+  const [chromeHeight, setChromeHeight] = useState(0);
+
+  useEffect(() => {
+    const element = chrome.current!;
+    const observer = new ResizeObserver(() =>
+      setChromeHeight(element.offsetHeight),
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     fetchJson<Episodes>('episodes.json', {}).then((loaded) => {
@@ -423,9 +434,23 @@ function App() {
           </button>
         )}
       </nav>
+      {onSite && (
+        <div className="controls">
+          <p className="note">
+            사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요. 그러면
+            번역이 나옵니다.
+          </p>
+          <EpisodePicker
+            episodes={episodes}
+            page={page}
+            onChange={choosePage}
+          />
+          {mobile && <FitPicker value={fit} onChange={chooseFit} />}
+        </div>
+      )}
       <div className="workspace">
         <div className="browser">
-          <div className="chrome">
+          <div className="chrome" ref={chrome}>
             <AddressBar
               value={input}
               onChange={setInput}
@@ -454,19 +479,7 @@ function App() {
           )}
         </div>
         {onSite && panelOpen && (
-          <aside className="panel">
-            <div className="controls">
-              <p className="note">
-                사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요.
-                그러면 번역이 나옵니다.
-              </p>
-              <EpisodePicker
-                episodes={episodes}
-                page={page}
-                onChange={choosePage}
-              />
-              {mobile && <FitPicker value={fit} onChange={chooseFit} />}
-            </div>
+          <aside className="panel" style={{ paddingTop: chromeHeight }}>
             <div
               className="translations"
               style={{ minHeight: height ?? undefined }}

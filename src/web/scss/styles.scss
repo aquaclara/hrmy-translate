@@ -46,39 +46,28 @@ nav {
 }
 
 .browser,
-.panel {
-  display: contents;
-}
-
-.chrome,
-.viewer,
-.empty,
-.controls,
-.translations,
-.license {
+.panel,
+.controls {
   background-color: white;
   border: 1px solid #c8c8c8;
+  border-radius: $radius;
+  overflow: hidden;
 }
 
-.chrome,
+.browser,
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .controls {
-  border-radius: $radius $radius 0 0;
-  border-bottom: none;
-}
-
-.viewer,
-.empty,
-.license {
-  border-radius: 0 0 $radius $radius;
-}
-
-.translations {
-  border-top: none;
-  border-bottom: none;
+  margin: 0 $gap $gap;
 }
 
 .chrome {
   padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
 }
 
 .address-bar {
@@ -112,6 +101,7 @@ nav {
 }
 
 .viewer {
+  flex: 1;
   position: relative;
   overflow: hidden;
   background-color: $lime;
@@ -156,6 +146,7 @@ nav {
 }
 
 .empty {
+  flex: 1;
   padding: 2rem 1rem;
   line-height: 1.6;
 
@@ -230,19 +221,6 @@ nav {
     transition:
       left $anim-time,
       opacity $anim-time;
-  }
-}
-
-.empty {
-  flex: 1;
-  padding: 2rem 1rem;
-  max-width: 40rem;
-  margin: 0 auto;
-  line-height: 1.6;
-
-  .caution {
-    font-size: 0.85rem;
-    color: #666;
   }
 }
 
@@ -342,6 +320,7 @@ nav {
 }
 
 .translations {
+  flex: 1;
   position: relative;
   padding: 0 1rem;
   line-height: 1.5;
@@ -467,14 +446,15 @@ nav {
     padding: 0 0.4rem 0.4rem;
   }
 
-  .controls,
-  .translations,
-  .license {
+  .controls {
+    margin: 0 0.4rem 0.4rem;
+    padding: 0.5rem;
     font-size: 0.85rem;
   }
 
-  .controls {
-    padding: 0.5rem;
+  .translations,
+  .license {
+    font-size: 0.85rem;
   }
 
   .translations {
@@ -496,37 +476,22 @@ nav {
     grid-template-columns: minmax(0, $browser-width) $panel-width;
     justify-content: center;
   }
+
+  .with-panel .controls {
+    width: calc(#{$browser-width} + #{$panel-width} + #{$gap});
+    max-width: calc(100% - #{$gap} * 2);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
 }
 
 .workspace {
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto auto auto;
-  align-items: start;
-}
-
-.chrome {
-  grid-column: 1;
-  grid-row: 1;
+  align-items: stretch;
 }
 
 .viewer,
 .empty {
-  grid-column: 1;
-  grid-row: 2 / span 2;
   min-height: calc(100dvh - 8rem);
-}
-
-.controls {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.translations {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.license {
-  grid-column: 2;
-  grid-row: 3;
 }
