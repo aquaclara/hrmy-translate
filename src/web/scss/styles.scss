@@ -11,14 +11,14 @@ $fab-size: 3.5rem;
 $fab-margin: 1rem;
 $anim-time: 500ms;
 $lime: #cfff00;
-$desktop: #008080;
+$desktop: linear-gradient(160deg, #4a6fa5, #2c3e50);
 
 html,
 body {
   margin: 0;
   font-family: sans-serif;
   color: variables.$black;
-  background-color: $desktop;
+  background: $desktop;
 }
 
 .app {
@@ -114,6 +114,7 @@ nav {
 }
 
 .taskbar-item {
+  margin-left: auto;
   padding: 0.2rem 0.7rem;
   border: 1px solid variables.$black;
   border-radius: 0.2rem;
