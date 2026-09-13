@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TranslationDataContainer from '../interfaces/translation-data-container';
-import { GITHUB_URL_BASE } from '../constants';
+import { GITHUB_URL_BASE } from '../../shared/constants';
 import { log, init as loggerInit } from '../logger';
 
 interface PropsType {

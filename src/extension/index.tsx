@@ -7,11 +7,11 @@ import { Configuration } from './widgets/configuration';
 import { HotLinks } from './widgets/hot-links';
 // Etc
 import Util from './dom-util';
-import * as Constant from './constants';
+import * as Constant from '../shared/constants';
 import { log, init as loggerInit } from './logger';
 import TranslationRenderer from './translation-renderer';
-import FileDataModel from './data-models/translation-chucks/file';
-import FileData from './translation-chunk-data';
+import FileDataModel from '../shared/data-models/translation-chucks/file';
+import FileData from '../shared/translation-chunk-data';
 // Globals
 // @todo not use globals
 let options: Constant.ExtensionOptions;

@@ -1,5 +1,5 @@
 import Util from '../dom-util';
-import * as Constant from '../constants';
+import * as Constant from '../../shared/constants';
 
 export interface captionOption {
   extensionOption: Constant.ExtensionOptions;

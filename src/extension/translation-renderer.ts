@@ -1,19 +1,19 @@
 // Libraries
 import yaml from 'js-yaml';
 // Data models
-import * as TranslationDataModel from './data-models/translation';
-import FileDataModel from './data-models/translation-chucks/file';
-import FileData from './translation-chunk-data';
-import CutTranslationChuckDataModel from './data-models/translation-chucks/cut';
-import Mask from './data-models/mask';
+import * as TranslationDataModel from '../shared/data-models/translation';
+import FileDataModel from '../shared/data-models/translation-chucks/file';
+import FileData from '../shared/translation-chunk-data';
+import CutTranslationChuckDataModel from '../shared/data-models/translation-chucks/cut';
+import Mask from '../shared/data-models/mask';
 // Html elements
 import * as NoticeElement from './elements/notice';
 import * as TranslationElement from './elements/translation';
-import { isComment } from './data-models/comment';
+import { isComment } from '../shared/data-models/comment';
 // Etc
 import TranslationDataContainer from './interfaces/translation-data-container';
 import Util from './dom-util';
-import * as Constant from './constants';
+import * as Constant from '../shared/constants';
 import { log, init as loggerInit } from './logger';
 
 export interface TranslationRendererOption {

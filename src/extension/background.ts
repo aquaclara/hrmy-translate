@@ -1,4 +1,4 @@
-import { DKA_HERO_URL } from './constants';
+import { DKA_HERO_URL } from '../shared/constants';
 
 chrome.browserAction.onClicked.addListener(() => {
   chrome.tabs.create({ url: DKA_HERO_URL, active: true });

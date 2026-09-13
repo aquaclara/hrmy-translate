@@ -1,4 +1,4 @@
-import FileTranslationChuckData from '../translation-chunk-data';
+import FileTranslationChuckData from '../../shared/translation-chunk-data';
 
 export default interface TranslationDataContainer {
   getData(): FileTranslationChuckData;

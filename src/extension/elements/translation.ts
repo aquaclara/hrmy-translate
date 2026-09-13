@@ -1,6 +1,6 @@
 import { captionOption, Caption } from './caption';
-import * as DataModel from '../data-models/translation';
-import { isComment } from '../data-models/comment';
+import * as DataModel from '../../shared/data-models/translation';
+import { isComment } from '../../shared/data-models/comment';
 import { log, init as loggerInit } from '../logger';
 
 export type address = [string, number, number];

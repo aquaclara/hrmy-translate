@@ -4,10 +4,10 @@
   "description": "호리씨와 미야무라군 번역 제공. 비공식.",
   "scripts": {
     "build": "node build.mjs",
-    "typecheck": "tsc --project src/scripts/tsconfig.json",
+    "typecheck": "tsc",
     "test": "prettier --check \"**/*.{js,ts,tsx,json,scss}\"",
     "fix": "prettier --write \"**/*.{js,ts,tsx,json,scss}\"",
-    "zip": "npm run build && zip -r extension.zip dist/ translations/ manifest.json"
+    "zip": "npm run build && cd extension && zip -qr ../extension.zip ."
   },
   "devDependencies": {
     "@types/chrome": "^0.2.9",

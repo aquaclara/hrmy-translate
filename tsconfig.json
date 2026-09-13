@@ -10,5 +10,5 @@
     "types": ["chrome"],
     "esModuleInterop": true
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
