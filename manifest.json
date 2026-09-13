@@ -16,7 +16,8 @@
         "*://dka-hero.me/pict_03/com/*/*.html"
       ],
       "js": ["dist/index.js"],
-      "all_frames": true
+      "all_frames": true,
+      "css": ["dist/index.css"]
     }
   ],
   "background": {

@@ -1,12 +1,11 @@
 // Libraries
 import React from 'react';
-import ReactDOM from 'react-dom';
-const yaml = require('js-yaml');
+import { createRoot } from 'react-dom/client';
+import yaml from 'js-yaml';
 // Html elements
 import { Configuration } from './widgets/configuration';
 import { HotLinks } from './widgets/hot-links';
 // Etc
-import '../scss/styles.scss';
 import Util from './dom-util';
 import * as Constant from './constants';
 import { log, init as loggerInit } from './logger';
@@ -25,6 +24,7 @@ function main() {
   const LOCAL_URL = chrome.runtime.getURL(TLS_PATH);
 
   loggerInit();
+  loadFonts();
   chrome.storage.sync.get(Constant.DEFAULT_EXTENSION_OPTIONS, (items) => {
     log('Options loaded');
     log(items);
@@ -44,7 +44,7 @@ function main() {
       log(
         (options.developmentMode
           ? 'File does not exist on Github.'
-          : 'Development Mode is on,') + ' Try reading translations from local'
+          : 'Development Mode is on,') + ' Try reading translations from local',
       );
       const xhr = new XMLHttpRequest();
       xhr.open('GET', LOCAL_URL, true);
@@ -63,8 +63,15 @@ function main() {
   xhr.send();
 }
 
+function loadFonts(): void {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = Constant.FONTS_URL;
+  document.head.appendChild(link);
+}
+
 function pushClassesToBodyBaseOnOptions(
-  options: Constant.ExtensionOptions
+  options: Constant.ExtensionOptions,
 ): void {
   const bodyClasses = [];
   if (options.applyFont) {
@@ -91,7 +98,7 @@ function pushClassToBodyBaseOnContent(): void {
 
 function handleResponse(response: string) {
   pushClassToBodyBaseOnContent();
-  const data: FileDataModel = yaml.load(response);
+  const data = yaml.load(response) as FileDataModel;
   translationRenderer = new TranslationRenderer({
     data: new FileData(data),
     extensionOption: options,
@@ -109,13 +116,13 @@ function handleResponse(response: string) {
           translationRenderer.redrawTranslations();
           log('The last draft is loaded');
         }
-      }
+      },
     );
   }
 }
 
 function appendHotLinks(translationRenderer: TranslationRenderer): void {
-  ReactDOM.render(
+  createRoot(Util.newChildOfBody()).render(
     <HotLinks
       translationDataContainer={translationRenderer}
       defaultEditableMode={options.developmentMode && options.editableMode}
@@ -124,23 +131,22 @@ function appendHotLinks(translationRenderer: TranslationRenderer): void {
         options.editableMode = event.target.checked;
         Util.getBodyElement().classList.toggle(
           'editable-mode',
-          options.editableMode
+          options.editableMode,
         );
         onChangeSettings(translationRenderer);
       }}
     />,
-    Util.newChildOfBody()
   );
 }
 
 function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
   event.preventDefault();
-  const mBrowser = typeof browser === 'undefined' ? chrome : browser;
-  const version = mBrowser.runtime.getManifest().version;
+  const version = chrome.runtime.getManifest().version;
   const $body = Util.getBodyElement();
   const $overlay: HTMLDivElement = document.createElement('div');
   $body.appendChild($overlay);
-  ReactDOM.render(
+  const root = createRoot($overlay);
+  root.render(
     <Configuration
       version={version}
       onClickOverlay={(event: React.MouseEvent<HTMLDivElement>) => {
@@ -148,6 +154,7 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
           event.target instanceof Element &&
           event.target.classList.contains('overlay')
         ) {
+          root.unmount();
           $body.removeChild($overlay);
         }
       }}
@@ -160,7 +167,7 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
       onChangeApplyFont={(event: React.ChangeEvent<HTMLInputElement>) => {
         Util.getBodyElement().classList.toggle(
           'apply-font',
-          event.target.checked
+          event.target.checked,
         );
         options.applyFont = event.target.checked;
         onChangeSettings(translationRenderer);
@@ -176,12 +183,11 @@ function onClickConfigure(event: React.MouseEvent<HTMLAnchorElement>) {
         options.developmentMode = event.target.checked;
         Util.getBodyElement().classList.toggle(
           'development-mode',
-          event.target.checked
+          event.target.checked,
         );
         onChangeSettings(translationRenderer);
       }}
     />,
-    $overlay
   );
 }
 

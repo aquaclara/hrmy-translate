@@ -52,7 +52,7 @@ export default class TranslationChuckData {
 
   setMaskDataForKey(key: string, value: Mask[]): void {
     if (Array.isArray(this.data[key])) {
-      (this.data[key] as Image.PropertiedDataModel) = {
+      this.data[key] = {
         masks: value,
         text: this.data[key] as Cut[],
       };
@@ -78,14 +78,14 @@ export default class TranslationChuckData {
   getTranslation(
     imageId: string,
     cutIndex: number,
-    tlsIndex: number
+    tlsIndex: number,
   ): Translation.DataModel {
     return this.getCutTranslations(imageId)[cutIndex][tlsIndex];
   }
   getTranslationString(
     imageId: string,
     cutIndex: number,
-    tlsIndex: number
+    tlsIndex: number,
   ): Translation.DataModel {
     const tr = this.getCutTranslations(imageId)[cutIndex][tlsIndex];
     if (typeof tr == 'string') {
@@ -98,7 +98,7 @@ export default class TranslationChuckData {
     imageId: string,
     cutIndex: number,
     tlsIndex: number,
-    datum: Translation.DataModel
+    datum: Translation.DataModel,
   ): void {
     const image = this.data[imageId];
     if (Array.isArray(image)) {
@@ -115,7 +115,7 @@ export default class TranslationChuckData {
     cutIndex: number,
     tlsIndex: number,
     x: number,
-    y: number
+    y: number,
   ) {
     let translation = this.getTranslation(imageId, cutIndex, tlsIndex);
     if (typeof translation === 'string') {
@@ -136,7 +136,7 @@ export default class TranslationChuckData {
     imageId: string,
     cutIndex: number,
     tlsIndex: number,
-    x: number
+    x: number,
   ) {
     let translation = this.getTranslation(imageId, cutIndex, tlsIndex);
     if (typeof translation === 'string') {

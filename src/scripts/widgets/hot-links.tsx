@@ -1,5 +1,4 @@
 import React from 'react';
-const copy = require('copy-to-clipboard');
 
 import TranslationDataContainer from '../interfaces/translation-data-container';
 import { GITHUB_URL_BASE } from '../constants';
@@ -69,7 +68,9 @@ export class HotLinks extends React.Component<PropsType, {}> {
           className="copy clickable cell"
           onClick={(event: React.MouseEvent<HTMLAnchorElement>): void => {
             log('Copy button clicked');
-            copy(this.props.translationDataContainer.getDataInYaml());
+            navigator.clipboard.writeText(
+              this.props.translationDataContainer.getDataInYaml(),
+            );
           }}
         >
           YAML 복사

@@ -1,5 +1,5 @@
 // Libraries
-const yaml = require('js-yaml');
+import yaml from 'js-yaml';
 // Data models
 import * as TranslationDataModel from './data-models/translation';
 import FileDataModel from './data-models/translation-chucks/file';
@@ -50,7 +50,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
     }
 
     for (const img of document.querySelectorAll(
-      Constant.QUERY_SELECTOR_IMAGES
+      Constant.QUERY_SELECTOR_IMAGES,
     ) as NodeListOf<HTMLImageElement | HTMLTableCellElement>) {
       const imageId = Util.getImageId(img);
 
@@ -109,7 +109,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
             $textarea.classList.add('canvas-data');
             $textarea.defaultValue = yaml.dump(
               maskData,
-              Constant.YAML_OPTION
+              Constant.YAML_OPTION,
             ) as string;
             $textarea.oninput = () => {
               if ($textarea === null) {
@@ -149,7 +149,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
             const datum = this._data.getTranslation(
               imageId,
               cutIndex,
-              tlsIndex
+              tlsIndex,
             );
             const text = typeof datum === 'string' ? datum : datum.text;
             if (
@@ -184,18 +184,18 @@ export default class TranslationRenderer implements TranslationDataContainer {
                 const datum = this._data.getTranslation(
                   imageId,
                   cutIndex,
-                  tlsIndex
+                  tlsIndex,
                 );
 
                 target.size = TranslationElement.Translation.getPreferSize(
-                  changed.length
+                  changed.length,
                 );
                 if (typeof datum === 'string') {
                   this._data.setTranslation(
                     imageId,
                     cutIndex,
                     tlsIndex,
-                    changed
+                    changed,
                   );
                 } else {
                   datum.text = changed;
@@ -207,9 +207,9 @@ export default class TranslationRenderer implements TranslationDataContainer {
                     log(`${location.pathname} is set`);
                     log(
                       `${imageId}-${cutIndex}-${tlsIndex} is ` +
-                        this._data.getTranslation(imageId, cutIndex, tlsIndex)
+                        this._data.getTranslation(imageId, cutIndex, tlsIndex),
                     );
-                  }
+                  },
                 );
               }
             };
@@ -218,7 +218,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
               alt: boolean,
               shift: boolean,
               key: string,
-              text: string
+              text: string,
             ): boolean => {
               let logMsg: string =
                 (ctrl ? 'Ctrl+' : '') +
@@ -264,7 +264,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
                   cutIndex,
                   tlsIndex,
                   0,
-                  shift ? 5 : 1
+                  shift ? 5 : 1,
                 );
                 focus = [imageId, cutIndex, tlsIndex];
               } else if (alt && key == 'ArrowUp') {
@@ -273,7 +273,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
                   cutIndex,
                   tlsIndex,
                   0,
-                  shift ? -5 : -1
+                  shift ? -5 : -1,
                 );
                 focus = [imageId, cutIndex, tlsIndex];
               } else if (alt && key == 'ArrowLeft') {
@@ -282,7 +282,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
                   cutIndex,
                   tlsIndex,
                   shift ? -5 : -1,
-                  0
+                  0,
                 );
                 focus = [imageId, cutIndex, tlsIndex];
               } else if (alt && key == 'ArrowRight') {
@@ -291,7 +291,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
                   cutIndex,
                   tlsIndex,
                   shift ? 5 : 1,
-                  0
+                  0,
                 );
                 focus = [imageId, cutIndex, tlsIndex];
               } else if (!ctrl && !alt && !shift && key == 'ArrowUp') {
@@ -313,7 +313,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
                 { [location.pathname]: this._data.getData() },
                 () => {
                   console.log(`${location.pathname} is set`);
-                }
+                },
               );
               return true;
             };
@@ -325,9 +325,9 @@ export default class TranslationRenderer implements TranslationDataContainer {
                 { [location.pathname]: this._data.getData() },
                 () => {
                   console.log(
-                    `${location.pathname} is set in changeDatum callback`
+                    `${location.pathname} is set in changeDatum callback`,
                   );
-                }
+                },
               );
             };
           }
@@ -363,13 +363,13 @@ export default class TranslationRenderer implements TranslationDataContainer {
               this._extensionOption.editableMode
             ) {
               new TranslationElement.Translation(
-                opt as TranslationElement.translationOption
+                opt as TranslationElement.translationOption,
               ).render();
             }
             opt.overwriteMode = true;
             opt.parent = $frame;
             new TranslationElement.Translation(
-              opt as TranslationElement.translationOption
+              opt as TranslationElement.translationOption,
             ).render();
           } else {
             new TranslationElement.Translation(opt).render();
@@ -423,7 +423,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
   removeTranslates() {
     document
       .querySelectorAll(
-        '.caption, .translation-group, canvas.overwrite, .frame'
+        '.caption, .translation-group, canvas.overwrite, .frame',
       )
       .forEach((e: Element) => {
         e.remove();

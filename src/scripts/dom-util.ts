@@ -27,7 +27,7 @@ const util = {
    */
   getProperty: (
     element: HTMLElement,
-    prop: 'width' | 'height' | 'offsetTop' | 'offsetLeft'
+    prop: 'width' | 'height' | 'offsetTop' | 'offsetLeft',
   ): number => {
     switch (element.tagName) {
       case 'IMG':

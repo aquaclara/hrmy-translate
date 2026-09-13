@@ -1,5 +1,8 @@
 export const DKA_HERO_URL = 'http://dka-hero.me/';
 
+export const FONTS_URL =
+  'https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&display=swap';
+
 export const GITHUB_URL_BASE =
   'https://github.com/aquaclara/hrmy-translate/blob/main/';
 

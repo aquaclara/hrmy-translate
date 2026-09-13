@@ -20,7 +20,7 @@ export interface translationOption extends captionOption {
     alt: boolean,
     shift: boolean,
     key: string,
-    text: string
+    text: string,
   ) => boolean;
   changeDatum?: (datum: DataModel.DataModel) => any;
 }
@@ -50,7 +50,7 @@ export class Translation extends Caption {
     alt: boolean,
     shift: boolean,
     key: string,
-    text: string
+    text: string,
   ) => boolean;
   changeDatum?: (datum: DataModel.DataModel) => any;
 
@@ -209,12 +209,12 @@ export class Translation extends Caption {
     log(oldStart + opening.length, ' ', oldStart + (opening + selected).length);
     target.setSelectionRange(
       oldStart + opening.length,
-      oldStart + (opening + selected).length
+      oldStart + (opening + selected).length,
     );
   }
 
   _toPropertiedDatum(
-    original: DataModel.DataModel
+    original: DataModel.DataModel,
   ): DataModel.PropertiedDataModel {
     if (typeof original === 'string') {
       return {

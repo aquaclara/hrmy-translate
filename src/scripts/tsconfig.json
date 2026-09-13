@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
     "strict": true,
-    "module": "es6",
-    "target": "es6",
+    "noEmit": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "es2020",
     "jsx": "react",
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "types": ["chrome"],
+    "esModuleInterop": true
   },
-  "include": ["*.js", "*.ts", "*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
