@@ -7,7 +7,8 @@
     "typecheck": "tsc",
     "test": "prettier --check \"**/*.{js,ts,tsx,json,scss}\"",
     "fix": "prettier --write \"**/*.{js,ts,tsx,json,scss}\"",
-    "index-episodes": "node scripts/index-episodes.mjs"
+    "index-episodes": "node scripts/index-episodes.mjs",
+    "dev": "node build.mjs && node scripts/serve.mjs"
   },
   "devDependencies": {
     "@types/chrome": "^0.2.9",
