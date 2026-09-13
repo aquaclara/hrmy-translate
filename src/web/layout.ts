@@ -1,13 +1,19 @@
-export type Layout = { top: number; pitch: number; height: number };
+export type Layout = {
+  top: number;
+  left: number;
+  width: number;
+  pitch: number;
+  height: number;
+};
 
 const LAYOUTS: { pattern: RegExp; layout: Layout }[] = [
   {
     pattern: /^hm\d+_\d+\/pict_com_\d+\.html$/,
-    layout: { top: 60, pitch: 1021, height: 1009 },
+    layout: { top: 60, left: 4, width: 350, pitch: 1021, height: 1009 },
   },
   {
     pattern: /^aco\/\d+\/c\.html$/,
-    layout: { top: 34, pitch: 1173, height: 1173 },
+    layout: { top: 34, left: 8, width: 420, pitch: 1173, height: 1173 },
   },
 ];
 
