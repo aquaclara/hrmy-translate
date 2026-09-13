@@ -10,6 +10,7 @@ import { documentHeight, Layout, layoutFor } from './layout';
 
 const SITE_HOST = 'dka-hero.me';
 const SITE_ENTRANCE = `https://${SITE_HOST}/`;
+const HOME_URL = new URL('about.html', location.href);
 const PAGE_KEY = 'page';
 const FIT_KEY = 'fit';
 const FIT_WIDTHS = [350, 420, 600];
@@ -17,8 +18,6 @@ const FIT_MARGIN = 16;
 const SPLASH_WIDTH = 600;
 const ACO_LAST = 24;
 const MOBILE_QUERY = '(max-width: 60rem)';
-const CAUTION =
-  '이 사이트 내 그림의 무단전재, 도용, 링크, 캡처, 촬영 등은 금지되어 있으며 자세한 것은 사이트 내 안내를 따라 주십시오. 이 한글 번역은 공식이 아닙니다.';
 
 type Episodes = { [episode: string]: string };
 type Series = 'horimiya' | 'aco';
@@ -89,6 +88,10 @@ function useMediaQuery(query: string): boolean {
   return matches;
 }
 
+function isFrameset(win: Window | null): boolean {
+  return win !== null && win.length === 2 && win.frames[0].length === 0;
+}
+
 function seriesOf(page: string): Series {
   return /^aco\//.test(page) ? 'aco' : 'horimiya';
 }
@@ -110,6 +113,7 @@ function AddressBar(props: {
   value: string;
   onChange: (value: string) => void;
   onSubmit: () => void;
+  onHome: () => void;
 }) {
   return (
     <form
@@ -119,6 +123,24 @@ function AddressBar(props: {
         props.onSubmit();
       }}
     >
+      <button
+        type="button"
+        className="back"
+        aria-label="뒤로"
+        onClick={() => history.back()}
+      />
+      <button
+        type="button"
+        className="forward"
+        aria-label="앞으로"
+        onClick={() => history.forward()}
+      />
+      <button
+        type="button"
+        className="home"
+        aria-label="홈페이지"
+        onClick={props.onHome}
+      />
       <input
         type="text"
         inputMode="url"
@@ -135,6 +157,8 @@ function AddressBar(props: {
 
 function Viewer(props: {
   src: string;
+  home: boolean;
+  splash: boolean;
   fit: number;
   mobile: boolean;
   docHeight: number | null;
@@ -168,6 +192,7 @@ function Viewer(props: {
   } as React.CSSProperties;
   const classes = ['viewer'];
   if (props.mobile) classes.push('mobile');
+  if (props.splash && !entered) classes.push('splash');
   if (active) classes.push('entered');
   if (menuOpen) classes.push('menu-open');
   if (tall) classes.push('tall');
@@ -179,8 +204,9 @@ function Viewer(props: {
         src={props.src}
         title={props.src}
         onLoad={(event) => {
-          const frames = event.currentTarget.contentWindow?.length ?? 0;
-          setEntered(frames > 0);
+          setEntered(
+            !props.home && isFrameset(event.currentTarget.contentWindow),
+          );
           setMenuOpen(false);
         }}
       />
@@ -343,8 +369,8 @@ function FitPicker(props: { value: number; onChange: (fit: number) => void }) {
 
 function App() {
   const mobile = useMediaQuery(MOBILE_QUERY);
-  const [input, setInput] = useState('');
-  const [url, setUrl] = useState<URL | null>(null);
+  const [input, setInput] = useState(HOME_URL.href);
+  const [url, setUrl] = useState<URL>(HOME_URL);
   const [message, setMessage] = useState<string | null>(null);
   const [episodes, setEpisodes] = useState<Episodes>({});
   const [page, setPage] = useState<string | null>(() => loadStored(PAGE_KEY));
@@ -355,16 +381,19 @@ function App() {
   const [panelOpen, setPanelOpen] = useState(true);
   const [scale, setScale] = useState(1);
   const chrome = useRef<HTMLDivElement>(null);
+  const controls = useRef<HTMLDivElement>(null);
   const [chromeHeight, setChromeHeight] = useState(0);
+  const [controlsHeight, setControlsHeight] = useState(0);
 
   useEffect(() => {
-    const element = chrome.current!;
-    const observer = new ResizeObserver(() =>
-      setChromeHeight(element.offsetHeight),
-    );
-    observer.observe(element);
+    const observer = new ResizeObserver(() => {
+      setChromeHeight(chrome.current?.offsetHeight ?? 0);
+      setControlsHeight(controls.current?.offsetHeight ?? 0);
+    });
+    observer.observe(chrome.current!);
+    if (controls.current) observer.observe(controls.current);
     return () => observer.disconnect();
-  }, []);
+  }, [panelOpen]);
 
   useEffect(() => {
     fetchJson<Episodes>('episodes.json', {}).then((loaded) => {
@@ -380,6 +409,12 @@ function App() {
   }, [page]);
 
   function enter(text: string) {
+    if (text.trim() === HOME_URL.href) {
+      setMessage(null);
+      setInput(HOME_URL.href);
+      setUrl(new URL(HOME_URL.href));
+      return;
+    }
     const target = parseUrl(text);
     if (target === null) return;
     if (target.hostname === SITE_HOST) {
@@ -407,7 +442,7 @@ function App() {
     store(FIT_KEY, String(next));
   }
 
-  const onSite = url !== null;
+  const onSite = true;
   const layout = page ? layoutFor(page) : null;
   const images =
     translation.status === 'loaded'
@@ -420,8 +455,6 @@ function App() {
   return (
     <div className={`app${onSite && panelOpen ? ' with-panel' : ''}`}>
       <nav>
-        <a href="about.html">소개</a>
-        <a href="translation-policy.html">번역 원칙</a>
         <a href="https://github.com/aquaclara/hrmy-translate">GitHub</a>
         {onSite && (
           <button
@@ -434,55 +467,52 @@ function App() {
           </button>
         )}
       </nav>
-      {onSite && (
-        <div className="controls">
-          <p className="note">
-            사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요. 그러면
-            번역이 나옵니다.
-          </p>
-          <EpisodePicker
-            episodes={episodes}
-            page={page}
-            onChange={choosePage}
-          />
-          {mobile && <FitPicker value={fit} onChange={chooseFit} />}
-        </div>
-      )}
       <div className="workspace">
-        <div className="browser">
+        <div
+          className="browser"
+          style={{ marginTop: Math.max(0, controlsHeight - chromeHeight) }}
+        >
+          <div className="title-bar">만화 보는 창</div>
           <div className="chrome" ref={chrome}>
             <AddressBar
               value={input}
               onChange={setInput}
               onSubmit={() => enter(input)}
+              onHome={() => enter(HOME_URL.href)}
             />
             {message && <p className="message">{message}</p>}
           </div>
-          {url === null && (
-            <div className="empty">
-              <p>
-                주소창에 <code>{SITE_HOST}</code> 를 넣으면 만화 사이트가 여기에
-                열립니다. 사이트에서 만화를 고른 다음, 번역 창에서도 같은 화를
-                고르면 한국어 번역이 나옵니다.
-              </p>
-              <p className="caution">{CAUTION}</p>
-            </div>
-          )}
-          {url !== null && (
-            <Viewer
-              src={url.href}
-              fit={fit}
-              mobile={mobile}
-              docHeight={docHeight}
-              onScale={setScale}
-            />
-          )}
+          <Viewer
+            src={url.href}
+            home={url.href === HOME_URL.href}
+            splash={url.hostname === SITE_HOST}
+            fit={fit}
+            mobile={mobile}
+            docHeight={docHeight}
+            onScale={setScale}
+          />
         </div>
         {onSite && panelOpen && (
-          <aside className="panel" style={{ paddingTop: chromeHeight }}>
+          <aside className="panel">
+            <div className="title-bar">번역 창</div>
+            <div className="controls" ref={controls}>
+              <p className="note">
+                사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요.
+                그러면 번역이 나옵니다.
+              </p>
+              <EpisodePicker
+                episodes={episodes}
+                page={page}
+                onChange={choosePage}
+              />
+              {mobile && <FitPicker value={fit} onChange={chooseFit} />}
+            </div>
             <div
               className="translations"
-              style={{ minHeight: height ?? undefined }}
+              style={{
+                minHeight: height ?? undefined,
+                marginTop: Math.max(0, chromeHeight - controlsHeight),
+              }}
             >
               {translation.status === 'loading' && (
                 <p className="status">불러오는 중…</p>

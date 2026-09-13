@@ -46,8 +46,7 @@ nav {
 }
 
 .browser,
-.panel,
-.controls {
+.panel {
   background-color: white;
   border: 1px solid #c8c8c8;
   border-radius: $radius;
@@ -61,8 +60,14 @@ nav {
   min-width: 0;
 }
 
-.controls {
-  margin: 0 $gap $gap;
+.title-bar {
+  padding: 0.35rem 0.75rem;
+  background-color: #efefef;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
 }
 
 .chrome {
@@ -73,6 +78,29 @@ nav {
 .address-bar {
   display: flex;
   gap: 0.5rem;
+
+  .back,
+  .forward,
+  .home {
+    flex: none;
+    width: 2.2rem;
+    border: 1px solid #bbb;
+    border-radius: 0.3rem;
+    background: white center / 50% no-repeat;
+    cursor: pointer;
+  }
+
+  .back {
+    background-image: url('../svgs/back.svg');
+  }
+
+  .forward {
+    background-image: url('../svgs/forward.svg');
+  }
+
+  .home {
+    background-image: url('../svgs/home.svg');
+  }
 
   input {
     flex: 1;
@@ -118,7 +146,7 @@ nav {
   transform-origin: 0 0;
   transition: transform $anim-time;
 
-  .viewer.mobile:not(.entered) & {
+  .viewer.mobile.splash & {
     width: calc(100% / var(--splash-scale));
     height: calc(100% / var(--splash-scale));
     transform: scale(var(--splash-scale));
@@ -143,22 +171,6 @@ nav {
 .viewer.tall {
   height: calc(var(--doc-height) * var(--scale));
   min-height: 0;
-}
-
-.empty {
-  flex: 1;
-  padding: 2rem 1rem;
-  line-height: 1.6;
-
-  p {
-    max-width: 40rem;
-    margin: 0 auto 1em;
-  }
-
-  .caution {
-    font-size: 0.85rem;
-    color: #666;
-  }
 }
 
 .scrim {
@@ -447,7 +459,6 @@ nav {
   }
 
   .controls {
-    margin: 0 0.4rem 0.4rem;
     padding: 0.5rem;
     font-size: 0.85rem;
   }
@@ -476,14 +487,6 @@ nav {
     grid-template-columns: minmax(0, $browser-width) $panel-width;
     justify-content: center;
   }
-
-  .with-panel .controls {
-    width: calc(#{$browser-width} + #{$panel-width} + #{$gap});
-    max-width: calc(100% - #{$gap} * 2);
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-  }
 }
 
 .workspace {
@@ -491,7 +494,37 @@ nav {
   align-items: stretch;
 }
 
-.viewer,
-.empty {
+.viewer {
   min-height: calc(100dvh - 8rem);
+}
+
+body.page {
+  background-color: white;
+
+  nav {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  article {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1rem 1rem 3rem;
+    line-height: 1.7;
+
+    img {
+      max-width: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.2rem 0.6rem;
+    }
+  }
 }
