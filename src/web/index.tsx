@@ -105,14 +105,9 @@ function store(key: string, value: string) {
 
 type Offset = { x: number; y: number };
 
-function offsetKey(page: string): string {
-  return `${OFFSET_KEY}:${page}`;
-}
-
-function loadOffset(page: string | null): Offset {
-  if (page === null) return { x: 0, y: 0 };
+function loadOffset(): Offset {
   try {
-    const stored = JSON.parse(loadStored(offsetKey(page)) ?? '');
+    const stored = JSON.parse(loadStored(OFFSET_KEY) ?? '');
     if (typeof stored.x === 'number' && typeof stored.y === 'number') {
       return { x: stored.x, y: stored.y };
     }
@@ -423,7 +418,7 @@ function App() {
     dx: number;
     dy: number;
   } | null>(null);
-  const [offset, setOffset] = useState<Offset>(() => loadOffset(page));
+  const [offset, setOffset] = useState<Offset>(loadOffset);
   const browserHeader = useRef<HTMLDivElement>(null);
   const panelHeader = useRef<HTMLDivElement>(null);
   const [browserHeaderHeight, setBrowserHeaderHeight] = useState(0);
@@ -504,7 +499,7 @@ function App() {
 
   function moveTo(next: Offset) {
     setOffset(next);
-    if (page !== null) store(offsetKey(page), JSON.stringify(next));
+    store(OFFSET_KEY, JSON.stringify(next));
   }
 
   const panelTransform = overlay
@@ -555,7 +550,6 @@ function App() {
   function choosePage(next: string) {
     setPage(next);
     store(PAGE_KEY, next);
-    setOffset(loadOffset(next));
   }
 
   function chooseFit(next: number) {

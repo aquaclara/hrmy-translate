@@ -8,7 +8,6 @@ const PAGES = [
 ];
 
 function pageHtml(title, body, comments) {
-  const nav = '<a href="./" target="_top">브라우저</a>';
   const disqus = comments
     ? `<section id="disqus_thread"></section>
     <script>
@@ -39,7 +38,6 @@ function pageHtml(title, body, comments) {
     </script>
   </head>
   <body class="page">
-    <nav>${nav}</nav>
     <article>
     <h1>${title}</h1>
 ${body}
