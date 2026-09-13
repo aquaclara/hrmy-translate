@@ -1,13 +1,12 @@
 {
   "name": "hrmy-translate",
   "private": true,
-  "description": "호리씨와 미야무라군 번역 제공. 비공식.",
+  "description": "호리씨와 미야무라군 번역. 비공식.",
   "scripts": {
     "build": "node build.mjs",
     "typecheck": "tsc",
     "test": "prettier --check \"**/*.{js,ts,tsx,json,scss}\"",
     "fix": "prettier --write \"**/*.{js,ts,tsx,json,scss}\"",
-    "zip": "npm run build && cd extension && zip -qr ../extension.zip .",
     "index-episodes": "node scripts/index-episodes.mjs"
   },
   "devDependencies": {

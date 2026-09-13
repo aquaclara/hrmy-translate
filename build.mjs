@@ -109,15 +109,15 @@ async function listPages() {
 }
 
 await buildCss(
-  'src/extension/scss/styles.scss',
-  'src/extension/scss',
-  'extension/dist/index.css',
+  'src/legacy/scss/styles.scss',
+  'src/legacy/scss',
+  'legacy/dist/index.css',
 );
 await buildJs(
-  ['src/extension/index.tsx', 'src/extension/background.ts'],
-  'extension/dist',
+  ['src/legacy/index.tsx', 'src/legacy/background.ts'],
+  'legacy/dist',
 );
-await cp('translations', 'extension/translations', { recursive: true });
+await cp('translations', 'legacy/translations', { recursive: true });
 
 await buildCss('src/web/scss/styles.scss', 'src/web/scss', 'web/dist/web.css');
 await buildJs([{ in: 'src/web/index.tsx', out: 'web' }], 'web/dist');

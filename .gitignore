@@ -1,8 +1,7 @@
 # Dependency directories
 node_modules/
-extension/dist/
-extension/translations/
-extension.zip
+legacy/dist/
+legacy/translations/
 web/dist/
 web/translations/
 web/about.html
