@@ -40,6 +40,7 @@ nav {
 
 .workspace {
   flex: 1;
+  position: relative;
   display: grid;
   gap: $gap;
   padding: 0 $gap $gap;
@@ -68,6 +69,81 @@ nav {
   font-weight: bold;
   color: #555;
   text-align: center;
+}
+
+.panel .title-bar {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.overlay .workspace,
+.overlay.with-panel .workspace {
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
+}
+
+.overlay {
+  .browser {
+    overflow: visible;
+  }
+
+  .panel {
+    position: absolute;
+    left: $gap;
+    right: $gap;
+    top: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .panel .header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .panel .title-bar {
+    pointer-events: auto;
+    border: 1px solid #c8c8c8;
+    border-radius: 0 $radius 0 $radius;
+    padding: 0.35rem 1rem;
+  }
+
+  .panel .controls,
+  .panel .license {
+    display: none;
+  }
+
+  .translations {
+    padding: 0;
+  }
+
+  .translation-view {
+    font-size: calc(1rem * var(--scale));
+
+    .cut {
+      left: auto;
+      right: auto;
+      padding-left: 0;
+      border-left: none;
+      max-width: 22em;
+    }
+
+    .line {
+      background-color: white;
+      font-size: 1em;
+      margin-bottom: 0.2em;
+
+      &.placed {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .chrome {
@@ -169,6 +245,7 @@ nav {
 }
 
 .viewer.tall {
+  flex: none;
   height: calc(var(--doc-height) * var(--scale));
   min-height: 0;
 }
@@ -565,6 +642,11 @@ nav {
 
   .license {
     padding: 0.4rem 0.3rem;
+  }
+
+  .overlay .panel {
+    left: 0;
+    right: 0;
   }
 }
 

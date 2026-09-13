@@ -18,6 +18,9 @@ const FIT_MARGIN = 16;
 const SPLASH_WIDTH = 600;
 const ACO_LAST = 24;
 const MOBILE_QUERY = '(max-width: 60rem)';
+const MENU_WIDTH = 188;
+const BUBBLE_GAP = 8;
+const DRAG_THRESHOLD = 60;
 
 type Episodes = { [episode: string]: string };
 type Series = 'horimiya' | 'aco';
@@ -111,11 +114,26 @@ function episodeOf(page: string, episodes: Episodes): number | null {
 
 function AddressBar(props: {
   value: string;
+  current: string;
   mobile: boolean;
   onChange: (value: string) => void;
   onSubmit: () => void;
   onHome: () => void;
 }) {
+  const input = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'l') {
+        event.preventDefault();
+        input.current?.focus();
+        input.current?.select();
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
   return (
     <form
       className="address-bar"
@@ -147,10 +165,20 @@ function AddressBar(props: {
         onClick={props.onHome}
       />
       <input
+        ref={input}
         type="text"
         inputMode="url"
+        enterKeyHint="go"
         value={props.value}
         onChange={(event) => props.onChange(event.target.value)}
+        onFocus={(event) => event.target.select()}
+        onMouseUp={(event) => event.preventDefault()}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            props.onChange(props.current);
+            event.currentTarget.blur();
+          }
+        }}
         autoCapitalize="off"
         autoCorrect="off"
         spellCheck={false}
@@ -240,25 +268,34 @@ function TranslationView(props: {
   data: FileData;
   layout: Layout | null;
   scale: number;
+  overlay: boolean;
+  contentLeft: number;
 }) {
   const keys = Object.keys(props.data.getData()).filter((key) => key !== '//');
-  const positioned = props.layout !== null;
+  const layout = props.layout;
+  const positioned = layout !== null;
+  const imageLeft = layout ? props.contentLeft + layout.left : 0;
   return (
     <div className={`translation-view${positioned ? ' positioned' : ''}`}>
       {keys.map((key, imageIndex) => {
         const cuts = props.data.getCutTranslations(key);
+        const imageTop = layout ? layout.top + imageIndex * layout.pitch : 0;
         return (
           <section key={key} className="image">
             {cuts.map((cut, cutIndex) => {
-              const top =
-                props.layout === null
-                  ? undefined
-                  : (props.layout.top +
-                      imageIndex * props.layout.pitch +
-                      (props.layout.height / cuts.length) * cutIndex) *
-                    props.scale;
+              const cutTop = layout
+                ? imageTop + (layout.height / cuts.length) * cutIndex
+                : 0;
+              const cutLeft = props.overlay
+                ? (imageLeft + layout!.width + BUBBLE_GAP) * props.scale
+                : 0;
+              const style: React.CSSProperties = {};
+              if (layout) {
+                style.top = cutTop * props.scale;
+                if (props.overlay) style.left = cutLeft;
+              }
               return (
-                <div key={cutIndex} className="cut" style={{ top }}>
+                <div key={cutIndex} className="cut" style={style}>
                   {cut.map((line, lineIndex) => {
                     const text = typeof line === 'string' ? line : line.text;
                     if (!text || isComment(text)) return null;
@@ -266,10 +303,34 @@ function TranslationView(props: {
                       typeof line === 'string'
                         ? 'speech'
                         : line.type || 'speech';
+                    const placed =
+                      props.overlay &&
+                      layout &&
+                      typeof line !== 'string' &&
+                      line.x !== undefined &&
+                      line.y !== undefined;
+                    const lineStyle: React.CSSProperties = placed
+                      ? {
+                          position: 'absolute',
+                          left:
+                            (imageLeft + (line as { x: number }).x) *
+                              props.scale -
+                            cutLeft,
+                          top:
+                            (imageTop + (line as { y: number }).y) *
+                              props.scale -
+                            cutTop * props.scale,
+                          width:
+                            (line as { w?: number }).w !== undefined
+                              ? (line as { w: number }).w * props.scale
+                              : undefined,
+                        }
+                      : {};
                     return (
                       <p
                         key={lineIndex}
-                        className={`line ${type}`}
+                        className={`line ${type}${placed ? ' placed' : ''}`}
+                        style={lineStyle}
                         dangerouslySetInnerHTML={{ __html: text }}
                       />
                     );
@@ -374,6 +435,7 @@ function App() {
   const mobile = useMediaQuery(MOBILE_QUERY);
   const [input, setInput] = useState(HOME_URL.href);
   const [url, setUrl] = useState<URL>(HOME_URL);
+  const [visit, setVisit] = useState(0);
   const [message, setMessage] = useState<string | null>(null);
   const [episodes, setEpisodes] = useState<Episodes>({});
   const [page, setPage] = useState<string | null>(() => loadStored(PAGE_KEY));
@@ -383,20 +445,39 @@ function App() {
   });
   const [panelOpen, setPanelOpen] = useState(true);
   const [scale, setScale] = useState(1);
-  const chrome = useRef<HTMLDivElement>(null);
-  const controls = useRef<HTMLDivElement>(null);
-  const [chromeHeight, setChromeHeight] = useState(0);
-  const [controlsHeight, setControlsHeight] = useState(0);
+  const [overlay, setOverlay] = useState(false);
+  const [drag, setDrag] = useState<{ start: number; dx: number } | null>(null);
+  const browserHeader = useRef<HTMLDivElement>(null);
+  const panelHeader = useRef<HTMLDivElement>(null);
+  const [browserHeaderHeight, setBrowserHeaderHeight] = useState(0);
+  const [panelHeaderHeight, setPanelHeaderHeight] = useState(0);
 
   useEffect(() => {
     const observer = new ResizeObserver(() => {
-      setChromeHeight(chrome.current?.offsetHeight ?? 0);
-      setControlsHeight(controls.current?.offsetHeight ?? 0);
+      setBrowserHeaderHeight(browserHeader.current?.offsetHeight ?? 0);
+      setPanelHeaderHeight(panelHeader.current?.offsetHeight ?? 0);
     });
-    observer.observe(chrome.current!);
-    if (controls.current) observer.observe(controls.current);
+    observer.observe(browserHeader.current!);
+    if (panelHeader.current) observer.observe(panelHeader.current);
     return () => observer.disconnect();
-  }, [panelOpen]);
+  }, [panelOpen, overlay]);
+
+  function onTitlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
+    event.currentTarget.setPointerCapture(event.pointerId);
+    setDrag({ start: event.clientX, dx: 0 });
+  }
+
+  function onTitlePointerMove(event: React.PointerEvent<HTMLDivElement>) {
+    if (drag === null) return;
+    setDrag({ start: drag.start, dx: event.clientX - drag.start });
+  }
+
+  function onTitlePointerUp() {
+    if (drag === null) return;
+    if (!overlay && drag.dx < -DRAG_THRESHOLD) setOverlay(true);
+    if (overlay && drag.dx > DRAG_THRESHOLD) setOverlay(false);
+    setDrag(null);
+  }
 
   useEffect(() => {
     fetchJson<Episodes>('episodes.json', {}).then((loaded) => {
@@ -412,6 +493,7 @@ function App() {
   }, [page]);
 
   function enter(text: string) {
+    setVisit(visit + 1);
     if (text.trim() === HOME_URL.href) {
       setMessage(null);
       setInput(HOME_URL.href);
@@ -456,7 +538,9 @@ function App() {
   const height = docHeight === null ? null : docHeight * scale;
 
   return (
-    <div className={`app${onSite && panelOpen ? ' with-panel' : ''}`}>
+    <div
+      className={`app${onSite && panelOpen ? ' with-panel' : ''}${overlay ? ' overlay' : ''}`}
+    >
       <nav>
         {onSite && (
           <button
@@ -472,20 +556,28 @@ function App() {
       <div className="workspace">
         <div
           className="browser"
-          style={{ marginTop: Math.max(0, controlsHeight - chromeHeight) }}
+          style={{
+            marginTop: overlay
+              ? 0
+              : Math.max(0, panelHeaderHeight - browserHeaderHeight),
+          }}
         >
-          <div className="title-bar">가상 브라우저</div>
-          <div className="chrome" ref={chrome}>
-            <AddressBar
-              value={input}
-              mobile={mobile}
-              onChange={setInput}
-              onSubmit={() => enter(input)}
-              onHome={() => enter(HOME_URL.href)}
-            />
-            {message && <p className="message">{message}</p>}
+          <div className="header" ref={browserHeader}>
+            <div className="title-bar">가상 브라우저</div>
+            <div className="chrome">
+              <AddressBar
+                value={input}
+                current={url.href}
+                mobile={mobile}
+                onChange={setInput}
+                onSubmit={() => enter(input)}
+                onHome={() => enter(HOME_URL.href)}
+              />
+              {message && <p className="message">{message}</p>}
+            </div>
           </div>
           <Viewer
+            key={visit}
             src={url.href}
             home={url.href === HOME_URL.href}
             splash={url.hostname === SITE_HOST}
@@ -496,25 +588,48 @@ function App() {
           />
         </div>
         {onSite && panelOpen && (
-          <aside className="panel">
-            <div className="title-bar">번역 창</div>
-            <div className="controls" ref={controls}>
-              <p className="note">
-                사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요.
-                그러면 번역이 나옵니다.
-              </p>
-              <EpisodePicker
-                episodes={episodes}
-                page={page}
-                onChange={choosePage}
-              />
-              {mobile && <FitPicker value={fit} onChange={chooseFit} />}
+          <aside
+            className="panel"
+            style={
+              {
+                '--scale': String(scale),
+                transform:
+                  drag && drag.dx !== 0
+                    ? `translateX(${drag.dx}px)`
+                    : undefined,
+              } as React.CSSProperties
+            }
+          >
+            <div className="header" ref={panelHeader}>
+              <div
+                className="title-bar"
+                onPointerDown={onTitlePointerDown}
+                onPointerMove={onTitlePointerMove}
+                onPointerUp={onTitlePointerUp}
+                onPointerCancel={onTitlePointerUp}
+              >
+                번역 창
+              </div>
+              <div className="controls">
+                <p className="note">
+                  사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요.
+                  그러면 번역이 나옵니다.
+                </p>
+                <EpisodePicker
+                  episodes={episodes}
+                  page={page}
+                  onChange={choosePage}
+                />
+                {mobile && <FitPicker value={fit} onChange={chooseFit} />}
+              </div>
             </div>
             <div
               className="translations"
               style={{
                 minHeight: height ?? undefined,
-                marginTop: Math.max(0, chromeHeight - controlsHeight),
+                marginTop: overlay
+                  ? browserHeaderHeight
+                  : Math.max(0, browserHeaderHeight - panelHeaderHeight),
               }}
             >
               {translation.status === 'loading' && (
@@ -528,6 +643,8 @@ function App() {
                   data={translation.data}
                   layout={layout}
                   scale={scale}
+                  overlay={overlay}
+                  contentLeft={mobile ? 0 : MENU_WIDTH}
                 />
               )}
             </div>
