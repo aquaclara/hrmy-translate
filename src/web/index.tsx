@@ -24,7 +24,8 @@ const MENU_WIDTH = 188;
 const DRAG_THRESHOLD = 60;
 const OVERLAY_INSET = 8;
 
-type EpisodeInfo = { page: string; images: number; first: number | null };
+type PageInfo = { page: string; images: number; first: number | null };
+type EpisodeInfo = { pages: PageInfo[] };
 type Episodes = {
   horimiya: { [episode: string]: EpisodeInfo };
   aco: { [episode: string]: EpisodeInfo };
@@ -139,10 +140,11 @@ function seriesOf(page: string): Series {
   return /^aco\//.test(page) ? 'aco' : 'horimiya';
 }
 
-function infoOf(page: string, episodes: Episodes): EpisodeInfo | null {
+function infoOf(page: string, episodes: Episodes): PageInfo | null {
   for (const series of [episodes.horimiya, episodes.aco]) {
     for (const info of Object.values(series)) {
-      if (info.page === page) return info;
+      const found = info.pages.find((item) => item.page === page);
+      if (found) return found;
     }
   }
   return null;
@@ -151,7 +153,7 @@ function infoOf(page: string, episodes: Episodes): EpisodeInfo | null {
 function episodeOf(page: string, episodes: Episodes): number | null {
   const series = seriesOf(page) === 'aco' ? episodes.aco : episodes.horimiya;
   for (const [episode, info] of Object.entries(series)) {
-    if (info.page === page) return Number(episode);
+    if (info.pages.some((item) => item.page === page)) return Number(episode);
   }
   return null;
 }
@@ -323,10 +325,14 @@ function EpisodePicker(props: {
   const last = lastOf(series);
   const current = props.page ? episodeOf(props.page, props.episodes) : null;
 
+  const pages =
+    current !== null ? (props.episodes[series][current]?.pages ?? []) : [];
+  const pageIndex = pages.findIndex((item) => item.page === props.page);
+
   function choose(target: Series, episode: number) {
     const info = props.episodes[target][episode];
     if (info === undefined) return;
-    props.onChange(info.page);
+    props.onChange(info.pages[0].page);
   }
 
   return (
@@ -373,6 +379,20 @@ function EpisodePicker(props: {
           </span>
         )}
       </div>
+      {pages.length > 1 && (
+        <div className="page-index" role="group" aria-label="쪽">
+          {pages.map((item, index) => (
+            <button
+              key={item.page}
+              type="button"
+              aria-pressed={index === pageIndex}
+              onClick={() => props.onChange(item.page)}
+            >
+              {index + 1}쪽
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -520,7 +540,7 @@ function App() {
     fetchJson<Episodes>('episodes.json', NO_EPISODES).then((loaded) => {
       setEpisodes(loaded);
       if (page === null && loaded.horimiya[1])
-        choosePage(loaded.horimiya[1].page);
+        choosePage(loaded.horimiya[1].pages[0].page);
     });
   }, []);
 
