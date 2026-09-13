@@ -19,8 +19,17 @@ type Props = {
   overlay: boolean;
   edit: boolean;
   contentLeft: number;
+  firstImage: number | null;
   onEdit?: (address: Address, patch: Patch) => void;
 };
+
+function imageIndex(key: string, order: number, first: number | null): number {
+  if (first === null) return order;
+  const number = key.match(/(\d+)\.(?:gif|jpg|png)$/);
+  if (!number) return order;
+  const index = Number(number[1]) - first;
+  return index >= 0 ? index : order;
+}
 
 type Drag = {
   address: Address;
@@ -114,9 +123,10 @@ export function TranslationView(props: Props) {
       ref={root}
       className={`translation-view${positioned ? ' positioned' : ''}${props.edit ? ' editing' : ''}`}
     >
-      {keys.map((key, imageIndex) => {
+      {keys.map((key, order) => {
         const cuts = props.data.getCutTranslations(key);
-        const imageTop = layout ? layout.top + imageIndex * layout.pitch : 0;
+        const index = imageIndex(key, order, props.firstImage);
+        const imageTop = layout ? layout.top + index * layout.pitch : 0;
         return (
           <section key={key} className="image">
             {cuts.map((cut, cutIndex) => {

@@ -9,7 +9,7 @@ export type Layout = {
 const LAYOUTS: { pattern: RegExp; layout: Layout }[] = [
   {
     pattern: /^hm\d+_\d+\/pict_com_\d+\.html$/,
-    layout: { top: 60, left: 4, width: 350, pitch: 1021, height: 1009 },
+    layout: { top: 71, left: 4, width: 350, pitch: 1021, height: 1009 },
   },
   {
     pattern: /^aco\/\d+\/c\.html$/,
@@ -17,7 +17,7 @@ const LAYOUTS: { pattern: RegExp; layout: Layout }[] = [
   },
 ];
 
-const TAIL = 400;
+const TAIL = 500;
 
 export function layoutFor(page: string): Layout | null {
   return LAYOUTS.find((entry) => entry.pattern.test(page))?.layout ?? null;

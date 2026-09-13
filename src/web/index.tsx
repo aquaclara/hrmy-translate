@@ -19,13 +19,17 @@ const DRAFT_KEY = 'draft';
 const FIT_WIDTHS = [350, 420, 600];
 const FIT_MARGIN = 16;
 const SPLASH_WIDTH = 600;
-const ACO_LAST = 24;
 const MOBILE_QUERY = '(max-width: 60rem)';
 const MENU_WIDTH = 188;
 const DRAG_THRESHOLD = 60;
 const OVERLAY_INSET = 8;
 
-type Episodes = { [episode: string]: string };
+type EpisodeInfo = { page: string; images: number; first: number | null };
+type Episodes = {
+  horimiya: { [episode: string]: EpisodeInfo };
+  aco: { [episode: string]: EpisodeInfo };
+};
+const NO_EPISODES: Episodes = { horimiya: {}, aco: {} };
 type Series = 'horimiya' | 'aco';
 type Translation =
   | { status: 'idle' }
@@ -140,15 +144,19 @@ function seriesOf(page: string): Series {
   return /^aco\//.test(page) ? 'aco' : 'horimiya';
 }
 
-function acoPage(episode: number): string {
-  return `aco/${String(episode).padStart(2, '0')}/c.html`;
+function infoOf(page: string, episodes: Episodes): EpisodeInfo | null {
+  for (const series of [episodes.horimiya, episodes.aco]) {
+    for (const info of Object.values(series)) {
+      if (info.page === page) return info;
+    }
+  }
+  return null;
 }
 
 function episodeOf(page: string, episodes: Episodes): number | null {
-  const aco = page.match(/^aco\/0*(\d+)\/c\.html$/);
-  if (aco) return Number(aco[1]);
-  for (const [episode, path] of Object.entries(episodes)) {
-    if (path === page) return Number(episode);
+  const series = seriesOf(page) === 'aco' ? episodes.aco : episodes.horimiya;
+  for (const [episode, info] of Object.entries(series)) {
+    if (info.page === page) return Number(episode);
   }
   return null;
 }
@@ -316,17 +324,14 @@ function EpisodePicker(props: {
 }) {
   const series: Series = props.page ? seriesOf(props.page) : 'horimiya';
   const lastOf = (target: Series) =>
-    target === 'aco'
-      ? ACO_LAST
-      : Math.max(0, ...Object.keys(props.episodes).map(Number));
+    Math.max(0, ...Object.keys(props.episodes[target]).map(Number));
   const last = lastOf(series);
   const current = props.page ? episodeOf(props.page, props.episodes) : null;
 
   function choose(target: Series, episode: number) {
-    if (episode < 1 || episode > lastOf(target)) return;
-    props.onChange(
-      target === 'aco' ? acoPage(episode) : props.episodes[episode],
-    );
+    const info = props.episodes[target][episode];
+    if (info === undefined) return;
+    props.onChange(info.page);
   }
 
   return (
@@ -369,7 +374,7 @@ function EpisodePicker(props: {
         </button>
         {series === 'aco' && (
           <span className="hint">
-            {ACO_LAST}화까지만 사이트에서 볼 수 있습니다.
+            {last}화까지만 사이트에서 볼 수 있습니다.
           </span>
         )}
       </div>
@@ -401,7 +406,7 @@ function App() {
   const [url, setUrl] = useState<URL>(HOME_URL);
   const [visit, setVisit] = useState(0);
   const [message, setMessage] = useState<string | null>(null);
-  const [episodes, setEpisodes] = useState<Episodes>({});
+  const [episodes, setEpisodes] = useState<Episodes>(NO_EPISODES);
   const [page, setPage] = useState<string | null>(() => loadStored(PAGE_KEY));
   const [fit, setFit] = useState<number>(loadFit);
   const [translation, setTranslation] = useState<Translation>({
@@ -509,9 +514,10 @@ function App() {
       : undefined;
 
   useEffect(() => {
-    fetchJson<Episodes>('episodes.json', {}).then((loaded) => {
+    fetchJson<Episodes>('episodes.json', NO_EPISODES).then((loaded) => {
       setEpisodes(loaded);
-      if (page === null && loaded[1]) choosePage(loaded[1]);
+      if (page === null && loaded.horimiya[1])
+        choosePage(loaded.horimiya[1].page);
     });
   }, []);
 
@@ -559,11 +565,13 @@ function App() {
 
   const onSite = true;
   const layout = page ? layoutFor(page) : null;
+  const info = page ? infoOf(page, episodes) : null;
   const images =
-    translation.status === 'loaded'
+    info?.images ??
+    (translation.status === 'loaded'
       ? Object.keys(translation.data.getData()).filter((key) => key !== '//')
           .length
-      : 0;
+      : 0);
   const docHeight = layout && images ? documentHeight(layout, images) : null;
   const height = docHeight === null ? null : docHeight * scale;
 
@@ -696,6 +704,7 @@ function App() {
                   overlay={overlay}
                   edit={edit}
                   contentLeft={mobile ? 0 : MENU_WIDTH}
+                  firstImage={info?.first ?? null}
                   onEdit={applyEdit}
                 />
               </div>
@@ -725,6 +734,7 @@ function App() {
                     overlay={false}
                     edit={false}
                     contentLeft={mobile ? 0 : MENU_WIDTH}
+                    firstImage={info?.first ?? null}
                   />
                 )}
               </div>
