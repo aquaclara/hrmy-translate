@@ -3,3 +3,5 @@ node_modules/
 extension/dist/
 extension/translations/
 extension.zip
+web/dist/
+web/translations/

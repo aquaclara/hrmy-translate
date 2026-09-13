@@ -1,0 +1,255 @@
+@use '../../shared/variables';
+
+$header-height: 3rem;
+$drawer-width: 24rem;
+$drawer-height: 45dvh;
+$wide: 60rem;
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+  color: variables.$black;
+  background-color: #f4f4f4;
+}
+
+#app,
+.app {
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  flex: none;
+  padding: 0.5rem;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.address-bar {
+  display: flex;
+  gap: 0.5rem;
+
+  input {
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #bbb;
+    border-radius: 0.3rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.4rem 0.9rem;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: variables.$black;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.error {
+  margin: 0.5rem 0 0;
+  color: #b00020;
+}
+
+main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  position: relative;
+}
+
+.frame {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background-color: white;
+}
+
+.empty {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  line-height: 1.6;
+
+  .caution {
+    font-size: 0.85rem;
+    color: #666;
+  }
+}
+
+.drawer {
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: white;
+  padding: 0.75rem 1rem;
+  line-height: 1.5;
+
+  .note,
+  .status {
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  details > summary {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .page-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    max-height: 12rem;
+    overflow-y: auto;
+
+    button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0.3rem 0.4rem;
+      border: none;
+      background: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+
+  .license pre {
+    white-space: pre-wrap;
+    font-size: 0.75rem;
+    color: #666;
+  }
+}
+
+.translation-view {
+  .image {
+    margin: 1rem 0;
+
+    h3 {
+      margin: 0 0 0.5rem;
+      font-size: 0.8rem;
+      color: #999;
+      font-weight: normal;
+    }
+  }
+
+  .cut {
+    margin: 0 0 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid #ddd;
+  }
+
+  .line {
+    margin: 0 0 0.3rem;
+    width: fit-content;
+    word-break: keep-all;
+
+    &.speech,
+    &.scream {
+      background-color: white;
+      border: 1px solid variables.$black;
+      border-radius: 1em;
+      padding: 0.1em 0.6em;
+    }
+
+    &.scream {
+      border-style: dotted;
+      border-width: 2px;
+    }
+
+    &.thought {
+      border: 1px dashed variables.$black;
+      border-radius: 1em;
+      padding: 0.1em 0.6em;
+    }
+
+    &.square {
+      border: 1px solid variables.$black;
+      padding: 0.1em 0.4em;
+    }
+
+    &.shock {
+      background-color: variables.$black;
+      color: white;
+      border-radius: 1em;
+      padding: 0.1em 0.6em;
+    }
+
+    &.stroke,
+    .stroke {
+      font-weight: bold;
+    }
+
+    .blue {
+      color: variables.$aco-blue;
+    }
+
+    .flip {
+      display: inline-block;
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.drawer-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: variables.$black;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+}
+
+@media (max-width: $wide) {
+  .drawer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: $drawer-height;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 8px rgb(0 0 0 / 10%);
+    transform: translateY(100%);
+    transition: transform 300ms;
+  }
+
+  .drawer-open .drawer {
+    transform: none;
+  }
+
+  .drawer-open .drawer-toggle {
+    bottom: calc(#{$drawer-height} + 1rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (min-width: $wide) {
+  .drawer {
+    flex: none;
+    width: $drawer-width;
+    border-left: 1px solid #ddd;
+  }
+
+  .app:not(.drawer-open) .drawer {
+    display: none;
+  }
+}
