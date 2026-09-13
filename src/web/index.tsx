@@ -140,6 +140,19 @@ function seriesOf(page: string): Series {
   return /^aco\//.test(page) ? 'aco' : 'horimiya';
 }
 
+function maxDocumentHeight(episodes: Episodes): number | null {
+  let max = 0;
+  for (const series of [episodes.horimiya, episodes.aco]) {
+    for (const info of Object.values(series)) {
+      for (const item of info.pages) {
+        const layout = layoutFor(item.page);
+        if (layout) max = Math.max(max, documentHeight(layout, item.images));
+      }
+    }
+  }
+  return max > 0 ? max : null;
+}
+
 function infoOf(page: string, episodes: Episodes): PageInfo | null {
   for (const series of [episodes.horimiya, episodes.aco]) {
     for (const info of Object.values(series)) {
@@ -588,13 +601,7 @@ function App() {
   const onSite = true;
   const layout = page ? layoutFor(page) : null;
   const info = page ? infoOf(page, episodes) : null;
-  const images =
-    info?.images ??
-    (translation.status === 'loaded'
-      ? Object.keys(translation.data.getData()).filter((key) => key !== '//')
-          .length
-      : 0);
-  const docHeight = layout && images ? documentHeight(layout, images) : null;
+  const docHeight = maxDocumentHeight(episodes);
   const height = docHeight === null ? null : docHeight * scale;
 
   return (
