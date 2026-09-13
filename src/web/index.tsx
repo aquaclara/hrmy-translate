@@ -259,8 +259,8 @@ function Drawer(props: {
   return (
     <aside className="drawer">
       <p className="note">
-        이 도구는 프레임 안에서 어느 페이지를 보고 있는지 알 수 없습니다.
-        사이트 메뉴로 이동한 뒤, 보고 있는 화를 여기서 골라 주세요.
+        사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요. 그러면
+        번역이 나옵니다.
       </p>
       <PagePicker
         pages={props.pages}
@@ -310,15 +310,13 @@ function App() {
   function enter(text: string) {
     const target = parseSiteUrl(text);
     if (target === null) {
-      setMessage(
-        `이 브라우저는 ${SITE_HOST} 만 엽니다. 원본 사이트를 그대로 띄우고 옆에 번역을 보여주는 보조 도구입니다.`,
-      );
+      setMessage(`여기서는 ${SITE_HOST} 만 열 수 있습니다.`);
       return;
     }
     setMessage(
       isEntrance(target)
         ? null
-        : '사이트 운영자의 의도대로 입구부터 들어갑니다. 보고 싶은 만화는 사이트 메뉴에서 골라 주세요.',
+        : '만화 사이트는 첫 화면부터 들어갑니다. 보고 싶은 만화는 사이트 안에서 골라 주세요.',
     );
     setInput(SITE_ENTRANCE);
     setBrowsing(true);
@@ -357,9 +355,9 @@ function App() {
         ) : (
           <div className="empty">
             <p>
-              주소창에 <code>{SITE_HOST}</code> 를 입력하면 원본 사이트가 이
-              안에 열립니다. 사이트 메뉴로 만화를 고른 뒤, 옆의 번역 서랍에서
-              같은 화를 고르면 한국어 번역이 표시됩니다.
+              주소창에 <code>{SITE_HOST}</code> 를 넣으면 만화 사이트가 여기에
+              열립니다. 사이트에서 만화를 고른 다음, 번역 창에서도 같은 화를
+              고르면 한국어 번역이 나옵니다.
             </p>
             <p className="caution">{CAUTION}</p>
           </div>
