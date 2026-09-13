@@ -233,6 +233,10 @@ export function TranslationView(props: Props) {
                     if (props_.background !== undefined) {
                       lineStyle.backgroundColor = props_.background;
                     }
+                    const rotation =
+                      props_.rotate !== undefined
+                        ? `rotate(${props_.rotate}deg)`
+                        : undefined;
                     const isSelected = sameAddress(selected, address);
                     return (
                       <div
@@ -247,8 +251,9 @@ export function TranslationView(props: Props) {
                               ? {
                                   backgroundColor: lineStyle.backgroundColor,
                                   height: lineStyle.height,
+                                  transform: rotation,
                                 }
-                              : lineStyle
+                              : { ...lineStyle, transform: rotation }
                           }
                           html={text}
                           fixed={placed && props_.h !== undefined}
@@ -306,6 +311,29 @@ export function TranslationView(props: Props) {
                               }
                             >
                               세로
+                            </button>
+                            <button
+                              type="button"
+                              aria-label="왼쪽으로 기울이기"
+                              onClick={() =>
+                                props.onEdit?.(address, {
+                                  rotate: (props_.rotate ?? 0) - 5,
+                                })
+                              }
+                            >
+                              ↺
+                            </button>
+                            <span className="size">{props_.rotate ?? 0}°</span>
+                            <button
+                              type="button"
+                              aria-label="오른쪽으로 기울이기"
+                              onClick={() =>
+                                props.onEdit?.(address, {
+                                  rotate: (props_.rotate ?? 0) + 5,
+                                })
+                              }
+                            >
+                              ↻
                             </button>
                             <button
                               type="button"
