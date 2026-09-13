@@ -5,25 +5,10 @@ import { compile } from 'sass';
 
 const PAGES = [
   { source: 'docs/about.md', out: 'about.html', title: '소개', comments: true },
-  {
-    source: 'docs/translation-policy.md',
-    out: 'translation-policy.html',
-    title: '번역 원칙',
-  },
-  {
-    source: 'docs/editable-mode.md',
-    out: 'editable-mode.html',
-    title: '수정 모드',
-  },
 ];
 
 function pageHtml(title, body, comments) {
-  const nav = [
-    ['./', '브라우저'],
-    ...PAGES.map((page) => [page.out, page.title]),
-  ]
-    .map(([href, text]) => `<a href="${href}">${text}</a>`)
-    .join('');
+  const nav = '<a href="./" target="_top">브라우저</a>';
   const disqus = comments
     ? `<section id="disqus_thread"></section>
     <script>
