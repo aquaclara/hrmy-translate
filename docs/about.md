@@ -54,6 +54,9 @@ In compliance with all of these provisions, the translation can be distributed a
 
 [dka-hero.me]: http://dka-hero.me/
 
+<details>
+<summary>번역 원칙</summary>
+
 ## 번역 원칙
 
 번역은 학산문화사 호리미야(서현아 역)와 가장 유사하게 하는 것이 목표.
@@ -156,6 +159,8 @@ In compliance with all of these provisions, the translation can be distributed a
 | 지난번      | 지난 번     |                       |
 | 콘택트렌즈  | 콘택트 렌즈 |                       |
 | 한 번       | 한번        | 구분 없이 모든 경우에 |
+
+</details>
 
 <details>
 <summary>디버그 정보</summary>
