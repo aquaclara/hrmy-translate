@@ -111,6 +111,7 @@ function episodeOf(page: string, episodes: Episodes): number | null {
 
 function AddressBar(props: {
   value: string;
+  mobile: boolean;
   onChange: (value: string) => void;
   onSubmit: () => void;
   onHome: () => void;
@@ -123,18 +124,22 @@ function AddressBar(props: {
         props.onSubmit();
       }}
     >
-      <button
-        type="button"
-        className="back"
-        aria-label="뒤로"
-        onClick={() => history.back()}
-      />
-      <button
-        type="button"
-        className="forward"
-        aria-label="앞으로"
-        onClick={() => history.forward()}
-      />
+      {!props.mobile && (
+        <button
+          type="button"
+          className="back"
+          aria-label="뒤로"
+          onClick={() => history.back()}
+        />
+      )}
+      {!props.mobile && (
+        <button
+          type="button"
+          className="forward"
+          aria-label="앞으로"
+          onClick={() => history.forward()}
+        />
+      )}
       <button
         type="button"
         className="home"
@@ -476,6 +481,7 @@ function App() {
           <div className="chrome" ref={chrome}>
             <AddressBar
               value={input}
+              mobile={mobile}
               onChange={setInput}
               onSubmit={() => enter(input)}
               onHome={() => enter(HOME_URL.href)}
