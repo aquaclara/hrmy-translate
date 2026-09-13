@@ -6,6 +6,7 @@ import FileData from '../shared/translation-chunk-data';
 import { isComment } from '../shared/data-models/comment';
 import { LICENSE } from '../shared/constants';
 import { translationPathFor } from '../shared/translation-path';
+import { documentHeight, Layout, layoutFor } from './layout';
 
 const SITE_HOST = 'dka-hero.me';
 const SITE_ENTRANCE = `https://${SITE_HOST}/`;
@@ -20,20 +21,20 @@ const CAUTION =
   '이 사이트 내 그림의 무단전재, 도용, 링크, 캡처, 촬영 등은 금지되어 있으며 자세한 것은 사이트 내 안내를 따라 주십시오. 이 한글 번역은 공식이 아닙니다.';
 
 type Episodes = { [episode: string]: string };
-type Series = 'horimiya' | 'aco' | 'short';
+type Series = 'horimiya' | 'aco';
 type Translation =
   | { status: 'idle' }
   | { status: 'loading' }
   | { status: 'missing' }
   | { status: 'loaded'; data: FileData };
-type Browsing = 'idle' | 'site' | 'blocked';
 
-function parseSiteUrl(input: string): URL | null {
+function parseUrl(input: string): URL | null {
   const text = input.trim();
   if (text === '') return null;
   try {
     const url = new URL(/^[a-z]+:\/\//i.test(text) ? text : `https://${text}`);
-    return url.hostname === SITE_HOST ? url : null;
+    if (url.protocol === 'http:') url.protocol = 'https:';
+    return url;
   } catch {
     return null;
   }
@@ -89,9 +90,7 @@ function useMediaQuery(query: string): boolean {
 }
 
 function seriesOf(page: string): Series {
-  if (/^aco\//.test(page)) return 'aco';
-  if (/^pict_01\//.test(page)) return 'short';
-  return 'horimiya';
+  return /^aco\//.test(page) ? 'aco' : 'horimiya';
 }
 
 function acoPage(episode: number): string {
@@ -134,7 +133,13 @@ function AddressBar(props: {
   );
 }
 
-function Viewer(props: { fit: number; mobile: boolean }) {
+function Viewer(props: {
+  src: string;
+  fit: number;
+  mobile: boolean;
+  docHeight: number | null;
+  onScale: (scale: number) => void;
+}) {
   const viewer = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
   const [entered, setEntered] = useState(false);
@@ -148,22 +153,31 @@ function Viewer(props: { fit: number; mobile: boolean }) {
   }, []);
 
   const fit = Math.max(props.fit + FIT_MARGIN, width);
+  const scale = width / fit;
+  useEffect(() => {
+    props.onScale(scale);
+  }, [scale]);
+
+  const active = entered;
+  const tall = active && props.docHeight !== null;
   const style = {
     '--fit': `${fit}px`,
-    '--scale': String(width / fit),
+    '--scale': String(scale),
     '--splash-scale': String(Math.min(1, width / SPLASH_WIDTH)),
+    '--doc-height': tall ? `${props.docHeight}px` : undefined,
   } as React.CSSProperties;
   const classes = ['viewer'];
   if (props.mobile) classes.push('mobile');
-  if (entered) classes.push('entered');
+  if (active) classes.push('entered');
   if (menuOpen) classes.push('menu-open');
+  if (tall) classes.push('tall');
 
   return (
     <div ref={viewer} className={classes.join(' ')} style={style}>
       <iframe
         className="frame"
-        src={SITE_ENTRANCE}
-        title={SITE_HOST}
+        src={props.src}
+        title={props.src}
         onLoad={(event) => {
           const frames = event.currentTarget.contentWindow?.length ?? 0;
           setEntered(frames > 0);
@@ -178,7 +192,7 @@ function Viewer(props: { fit: number; mobile: boolean }) {
           onClick={() => setMenuOpen(false)}
         />
       )}
-      {props.mobile && entered && (
+      {active && props.mobile && (
         <button
           type="button"
           className="fab"
@@ -191,58 +205,71 @@ function Viewer(props: { fit: number; mobile: boolean }) {
   );
 }
 
-function TranslationView(props: { data: FileData }) {
+function TranslationView(props: {
+  data: FileData;
+  layout: Layout | null;
+  scale: number;
+}) {
   const keys = Object.keys(props.data.getData()).filter((key) => key !== '//');
+  const positioned = props.layout !== null;
   return (
-    <div className="translation-view">
-      {keys.map((key) => (
-        <section key={key} className="image">
-          <h3>{key.substring(key.lastIndexOf('/') + 1)}</h3>
-          {props.data.getCutTranslations(key).map((cut, cutIndex) => (
-            <div key={cutIndex} className="cut">
-              {cut.map((line, lineIndex) => {
-                const text = typeof line === 'string' ? line : line.text;
-                if (!text || isComment(text)) return null;
-                const type =
-                  typeof line === 'string' ? 'speech' : line.type || 'speech';
-                return (
-                  <p
-                    key={lineIndex}
-                    className={`line ${type}`}
-                    dangerouslySetInnerHTML={{ __html: text }}
-                  />
-                );
-              })}
-            </div>
-          ))}
-        </section>
-      ))}
+    <div className={`translation-view${positioned ? ' positioned' : ''}`}>
+      {keys.map((key, imageIndex) => {
+        const cuts = props.data.getCutTranslations(key);
+        return (
+          <section key={key} className="image">
+            {cuts.map((cut, cutIndex) => {
+              const top =
+                props.layout === null
+                  ? undefined
+                  : (props.layout.top +
+                      imageIndex * props.layout.pitch +
+                      (props.layout.height / cuts.length) * cutIndex) *
+                    props.scale;
+              return (
+                <div key={cutIndex} className="cut" style={{ top }}>
+                  {cut.map((line, lineIndex) => {
+                    const text = typeof line === 'string' ? line : line.text;
+                    if (!text || isComment(text)) return null;
+                    const type =
+                      typeof line === 'string'
+                        ? 'speech'
+                        : line.type || 'speech';
+                    return (
+                      <p
+                        key={lineIndex}
+                        className={`line ${type}`}
+                        dangerouslySetInnerHTML={{ __html: text }}
+                      />
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </section>
+        );
+      })}
     </div>
   );
 }
 
 function EpisodePicker(props: {
   episodes: Episodes;
-  shorts: string[];
   page: string | null;
   onChange: (page: string) => void;
 }) {
-  const [series, setSeries] = useState<Series>(() =>
-    props.page ? seriesOf(props.page) : 'horimiya',
-  );
-  const last =
-    series === 'aco'
+  const series: Series = props.page ? seriesOf(props.page) : 'horimiya';
+  const lastOf = (target: Series) =>
+    target === 'aco'
       ? ACO_LAST
       : Math.max(0, ...Object.keys(props.episodes).map(Number));
-  const current =
-    props.page && seriesOf(props.page) === series
-      ? episodeOf(props.page, props.episodes)
-      : null;
+  const last = lastOf(series);
+  const current = props.page ? episodeOf(props.page, props.episodes) : null;
 
-  function choose(episode: number) {
-    if (episode < 1 || episode > last) return;
+  function choose(target: Series, episode: number) {
+    if (episode < 1 || episode > lastOf(target)) return;
     props.onChange(
-      series === 'aco' ? acoPage(episode) : props.episodes[episode],
+      target === 'aco' ? acoPage(episode) : props.episodes[episode],
     );
   }
 
@@ -252,68 +279,46 @@ function EpisodePicker(props: {
         보고 있는 만화
         <select
           value={series}
-          onChange={(event) => setSeries(event.target.value as Series)}
+          onChange={(event) => choose(event.target.value as Series, 1)}
         >
           <option value="horimiya">호리씨와 미야무라군</option>
           <option value="aco">아코와 밤비</option>
-          <option value="short">단편</option>
         </select>
       </label>
-      {series === 'short' ? (
+      <div className="episode-number">
+        <button
+          type="button"
+          aria-label="이전 화"
+          disabled={current === null || current <= 1}
+          onClick={() => choose(series, (current ?? 1) - 1)}
+        >
+          −
+        </button>
         <label>
-          제목
-          <select
-            value={
-              props.page && seriesOf(props.page) === 'short' ? props.page : ''
-            }
-            onChange={(event) => props.onChange(event.target.value)}
-          >
-            <option value="" disabled>
-              선택
-            </option>
-            {props.shorts.map((page) => (
-              <option key={page} value={page}>
-                {page.replace(/^pict_01\//, '').replace(/\.html$/, '')}
-              </option>
-            ))}
-          </select>
+          <input
+            type="number"
+            inputMode="numeric"
+            min={1}
+            max={last}
+            value={current ?? ''}
+            onChange={(event) => choose(series, Number(event.target.value))}
+          />
+          화
         </label>
-      ) : (
-        <div className="episode-number">
-          <button
-            type="button"
-            aria-label="이전 화"
-            disabled={current === null || current <= 1}
-            onClick={() => choose((current ?? 1) - 1)}
-          >
-            −
-          </button>
-          <label>
-            <input
-              type="number"
-              inputMode="numeric"
-              min={1}
-              max={last}
-              value={current ?? ''}
-              onChange={(event) => choose(Number(event.target.value))}
-            />
-            화
-          </label>
-          <button
-            type="button"
-            aria-label="다음 화"
-            disabled={current === null || current >= last}
-            onClick={() => choose((current ?? 0) + 1)}
-          >
-            +
-          </button>
-          {series === 'aco' && (
-            <span className="hint">
-              {ACO_LAST}화까지만 사이트에서 볼 수 있습니다.
-            </span>
-          )}
-        </div>
-      )}
+        <button
+          type="button"
+          aria-label="다음 화"
+          disabled={current === null || current >= last}
+          onClick={() => choose(series, (current ?? 0) + 1)}
+        >
+          +
+        </button>
+        {series === 'aco' && (
+          <span className="hint">
+            {ACO_LAST}화까지만 사이트에서 볼 수 있습니다.
+          </span>
+        )}
+      </div>
     </div>
   );
 }
@@ -321,7 +326,7 @@ function EpisodePicker(props: {
 function FitPicker(props: { value: number; onChange: (fit: number) => void }) {
   return (
     <div className="fit-picker" role="group" aria-label="만화 폭">
-      만화 폭
+      <span className="label">만화 폭</span>
       {FIT_WIDTHS.map((width) => (
         <button
           key={width}
@@ -336,67 +341,25 @@ function FitPicker(props: { value: number; onChange: (fit: number) => void }) {
   );
 }
 
-function Drawer(props: {
-  episodes: Episodes;
-  shorts: string[];
-  page: string | null;
-  translation: Translation;
-  fit: number;
-  mobile: boolean;
-  onChangePage: (page: string) => void;
-  onChangeFit: (fit: number) => void;
-}) {
-  return (
-    <aside className="drawer">
-      <p className="note">
-        사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요. 그러면
-        번역이 나옵니다.
-      </p>
-      <EpisodePicker
-        episodes={props.episodes}
-        shorts={props.shorts}
-        page={props.page}
-        onChange={props.onChangePage}
-      />
-      {props.mobile && (
-        <FitPicker value={props.fit} onChange={props.onChangeFit} />
-      )}
-      {props.translation.status === 'loading' && (
-        <p className="status">불러오는 중…</p>
-      )}
-      {props.translation.status === 'missing' && (
-        <p className="status">이 화의 번역이 없습니다.</p>
-      )}
-      {props.translation.status === 'loaded' && (
-        <TranslationView data={props.translation.data} />
-      )}
-      <section className="license">
-        <h3>번역본 이용 조건</h3>
-        <pre>{LICENSE}</pre>
-      </section>
-    </aside>
-  );
-}
-
 function App() {
   const mobile = useMediaQuery(MOBILE_QUERY);
   const [input, setInput] = useState('');
-  const [browsing, setBrowsing] = useState<Browsing>('idle');
+  const [url, setUrl] = useState<URL | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [episodes, setEpisodes] = useState<Episodes>({});
-  const [shorts, setShorts] = useState<string[]>([]);
   const [page, setPage] = useState<string | null>(() => loadStored(PAGE_KEY));
   const [fit, setFit] = useState<number>(loadFit);
   const [translation, setTranslation] = useState<Translation>({
     status: 'idle',
   });
-  const [drawerOpen, setDrawerOpen] = useState(true);
+  const [panelOpen, setPanelOpen] = useState(true);
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    fetchJson<Episodes>('episodes.json', {}).then(setEpisodes);
-    fetchJson<string[]>('translations/index.json', []).then((pages) =>
-      setShorts(pages.filter((item) => seriesOf(item) === 'short')),
-    );
+    fetchJson<Episodes>('episodes.json', {}).then((loaded) => {
+      setEpisodes(loaded);
+      if (page === null && loaded[1]) choosePage(loaded[1]);
+    });
   }, []);
 
   useEffect(() => {
@@ -406,19 +369,21 @@ function App() {
   }, [page]);
 
   function enter(text: string) {
-    const target = parseSiteUrl(text);
-    if (target === null) {
-      setMessage(null);
-      setBrowsing('blocked');
+    const target = parseUrl(text);
+    if (target === null) return;
+    if (target.hostname === SITE_HOST) {
+      setMessage(
+        isEntrance(target)
+          ? null
+          : '만화 사이트는 첫 화면부터 들어갑니다. 보고 싶은 만화는 사이트 안에서 골라 주세요.',
+      );
+      setInput(SITE_ENTRANCE);
+      setUrl(new URL(SITE_ENTRANCE));
       return;
     }
-    setMessage(
-      isEntrance(target)
-        ? null
-        : '만화 사이트는 첫 화면부터 들어갑니다. 보고 싶은 만화는 사이트 안에서 골라 주세요.',
-    );
-    setInput(SITE_ENTRANCE);
-    setBrowsing('site');
+    setMessage(null);
+    setInput(target.href);
+    setUrl(target);
   }
 
   function choosePage(next: string) {
@@ -431,64 +396,102 @@ function App() {
     store(FIT_KEY, String(next));
   }
 
-  const onSite = browsing === 'site';
+  const onSite = url !== null;
+  const layout = page ? layoutFor(page) : null;
+  const images =
+    translation.status === 'loaded'
+      ? Object.keys(translation.data.getData()).filter((key) => key !== '//')
+          .length
+      : 0;
+  const docHeight = layout && images ? documentHeight(layout, images) : null;
+  const height = docHeight === null ? null : docHeight * scale;
+
   return (
-    <div
-      className={`app${onSite ? ' browsing' : ''}${drawerOpen ? ' drawer-open' : ''}`}
-    >
-      <header>
-        <AddressBar
-          value={input}
-          onChange={setInput}
-          onSubmit={() => enter(input)}
-        />
-        <nav>
-          <a href="about.html">소개</a>
-          <a href="translation-policy.html">번역 원칙</a>
-          <a href="https://github.com/aquaclara/hrmy-translate">GitHub</a>
-        </nav>
-        {message && <p className="message">{message}</p>}
-      </header>
-      <main>
-        {browsing === 'idle' && (
-          <div className="empty">
-            <p>
-              주소창에 <code>{SITE_HOST}</code> 를 넣으면 만화 사이트가 여기에
-              열립니다. 사이트에서 만화를 고른 다음, 번역 창에서도 같은 화를
-              고르면 한국어 번역이 나옵니다.
-            </p>
-            <p className="caution">{CAUTION}</p>
-          </div>
-        )}
-        {browsing === 'blocked' && (
-          <div className="blocked">
-            <p>여기서는 {SITE_HOST} 만 열 수 있습니다.</p>
-          </div>
-        )}
-        {onSite && <Viewer fit={fit} mobile={mobile} />}
+    <div className={`app${onSite && panelOpen ? ' with-panel' : ''}`}>
+      <nav>
+        <a href="about.html">소개</a>
+        <a href="translation-policy.html">번역 원칙</a>
+        <a href="https://github.com/aquaclara/hrmy-translate">GitHub</a>
         {onSite && (
-          <Drawer
-            episodes={episodes}
-            shorts={shorts}
-            page={page}
-            translation={translation}
-            fit={fit}
-            mobile={mobile}
-            onChangePage={choosePage}
-            onChangeFit={chooseFit}
-          />
+          <button
+            type="button"
+            className="panel-toggle"
+            aria-expanded={panelOpen}
+            onClick={() => setPanelOpen(!panelOpen)}
+          >
+            번역
+          </button>
         )}
-      </main>
-      {onSite && (
-        <button
-          type="button"
-          className="drawer-toggle"
-          aria-expanded={drawerOpen}
-          onClick={() => setDrawerOpen(!drawerOpen)}
-        >
-          번역
-        </button>
-      )}
+      </nav>
+      <div className="workspace">
+        <div className="browser">
+          <div className="chrome">
+            <AddressBar
+              value={input}
+              onChange={setInput}
+              onSubmit={() => enter(input)}
+            />
+            {message && <p className="message">{message}</p>}
+          </div>
+          {url === null && (
+            <div className="empty">
+              <p>
+                주소창에 <code>{SITE_HOST}</code> 를 넣으면 만화 사이트가 여기에
+                열립니다. 사이트에서 만화를 고른 다음, 번역 창에서도 같은 화를
+                고르면 한국어 번역이 나옵니다.
+              </p>
+              <p className="caution">{CAUTION}</p>
+            </div>
+          )}
+          {url !== null && (
+            <Viewer
+              src={url.href}
+              fit={fit}
+              mobile={mobile}
+              docHeight={docHeight}
+              onScale={setScale}
+            />
+          )}
+        </div>
+        {onSite && panelOpen && (
+          <aside className="panel">
+            <div className="controls">
+              <p className="note">
+                사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요.
+                그러면 번역이 나옵니다.
+              </p>
+              <EpisodePicker
+                episodes={episodes}
+                page={page}
+                onChange={choosePage}
+              />
+              {mobile && <FitPicker value={fit} onChange={chooseFit} />}
+            </div>
+            <div
+              className="translations"
+              style={{ minHeight: height ?? undefined }}
+            >
+              {translation.status === 'loading' && (
+                <p className="status">불러오는 중…</p>
+              )}
+              {translation.status === 'missing' && (
+                <p className="status">이 화의 번역이 없습니다.</p>
+              )}
+              {translation.status === 'loaded' && (
+                <TranslationView
+                  data={translation.data}
+                  layout={layout}
+                  scale={scale}
+                />
+              )}
+            </div>
+            <section className="license">
+              <h3>번역본 이용 조건</h3>
+              <pre>{LICENSE}</pre>
+            </section>
+          </aside>
+        )}
+      </div>
     </div>
   );
 }
