@@ -1,9 +1,13 @@
 @use '../../shared/variables';
 
-$header-height: 3rem;
 $drawer-width: 24rem;
 $drawer-height: 45dvh;
 $wide: 60rem;
+$menu-width: 188px;
+$fab-size: 3.5rem;
+$fab-margin: 1rem;
+$anim-time: 500ms;
+$lime: #cfff00;
 
 html,
 body {
@@ -17,6 +21,7 @@ body {
 #app,
 .app {
   height: 100%;
+  height: 100dvh;
 }
 
 .app {
@@ -26,7 +31,7 @@ body {
 
 header {
   flex: none;
-  padding: 0.5rem;
+  padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 0.5rem 0.5rem;
   background-color: white;
   border-bottom: 1px solid #ddd;
 }
@@ -114,11 +119,104 @@ main {
   position: relative;
 }
 
-.frame {
+.viewer {
   flex: 1;
   min-width: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: $lime;
+}
+
+.frame {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   border: none;
-  background-color: white;
+  background-color: $lime;
+  transform-origin: 0 0;
+  transition: transform $anim-time;
+
+  .viewer:not(.entered) & {
+    width: calc(100% / var(--splash-scale));
+    height: calc(100% / var(--splash-scale));
+    transform: scale(var(--splash-scale));
+    transition: none;
+  }
+
+  .viewer.entered & {
+    width: calc(#{$menu-width} + var(--fit));
+    height: calc(100% / var(--scale));
+    transform: scale(var(--scale)) translateX(calc(#{$menu-width} * -1));
+  }
+
+  .viewer.menu-open & {
+    transform: scale(var(--scale));
+  }
+}
+
+.scrim {
+  position: absolute;
+  left: calc(#{$menu-width} * var(--scale));
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  display: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 0;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+
+  .viewer.menu-open & {
+    display: block;
+  }
+}
+
+.fab {
+  position: absolute;
+  left: $fab-margin;
+  bottom: calc(#{$fab-margin} + env(safe-area-inset-bottom, 0px));
+  z-index: 10;
+  width: $fab-size;
+  height: $fab-size;
+  background-color: variables.$black;
+  background-image: url('../svgs/menu.svg');
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 1;
+  transition:
+    left $anim-time,
+    opacity 5000ms;
+
+  .viewer.entered & {
+    opacity: 5%;
+  }
+
+  .viewer.menu-open & {
+    left: calc(#{$menu-width} * var(--scale) + #{$fab-margin});
+    opacity: 1;
+  }
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+    transition:
+      left $anim-time,
+      opacity $anim-time;
+  }
 }
 
 .empty {
@@ -163,6 +261,29 @@ main {
       min-width: 0;
       font-size: 1rem;
       padding: 0.3rem;
+    }
+  }
+
+  .fit-picker {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+
+    button {
+      font-size: 0.9rem;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid #bbb;
+      border-radius: 0.3rem;
+      background-color: white;
+      cursor: pointer;
+
+      &[aria-pressed='true'] {
+        background-color: variables.$black;
+        border-color: variables.$black;
+        color: white;
+      }
     }
   }
 

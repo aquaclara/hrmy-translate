@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import yaml from 'js-yaml';
 import FileDataModel from '../shared/data-models/translation-chucks/file';
@@ -11,6 +11,10 @@ import { pageLabelFor } from '../shared/page-label';
 const SITE_HOST = 'dka-hero.me';
 const SITE_ENTRANCE = `https://${SITE_HOST}/`;
 const PAGE_KEY = 'page';
+const FIT_KEY = 'fit';
+const FIT_WIDTHS = [350, 420, 600];
+const FIT_MARGIN = 16;
+const SPLASH_WIDTH = 600;
 const CAUTION =
   '이 사이트 내 그림의 무단전재, 도용, 링크, 캡처, 촬영 등은 금지되어 있으며 자세한 것은 사이트 내 안내를 따라 주십시오. 이 한글 번역은 공식이 아닙니다.';
 
@@ -50,18 +54,23 @@ async function fetchPageList(): Promise<string[]> {
   return response.ok ? ((await response.json()) as string[]) : [];
 }
 
-function loadPage(): string | null {
+function loadStored(key: string): string | null {
   try {
-    return localStorage.getItem(PAGE_KEY);
+    return localStorage.getItem(key);
   } catch {
     return null;
   }
 }
 
-function savePage(page: string) {
+function store(key: string, value: string) {
   try {
-    localStorage.setItem(PAGE_KEY, page);
+    localStorage.setItem(key, value);
   } catch {}
+}
+
+function loadFit(): number {
+  const stored = Number(loadStored(FIT_KEY));
+  return FIT_WIDTHS.includes(stored) ? stored : FIT_WIDTHS[1];
 }
 
 function groupOf(page: string): string {
@@ -95,6 +104,61 @@ function AddressBar(props: {
       />
       <button type="submit">이동</button>
     </form>
+  );
+}
+
+function Viewer(props: { fit: number }) {
+  const viewer = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
+  const [entered, setEntered] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const element = viewer.current!;
+    const observer = new ResizeObserver(() => setWidth(element.clientWidth));
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  const fit = Math.max(props.fit + FIT_MARGIN, width);
+  const style = {
+    '--fit': `${fit}px`,
+    '--scale': String(width / fit),
+    '--splash-scale': String(Math.min(1, width / SPLASH_WIDTH)),
+  } as React.CSSProperties;
+
+  return (
+    <div
+      ref={viewer}
+      className={`viewer${entered ? ' entered' : ''}${menuOpen ? ' menu-open' : ''}`}
+      style={style}
+    >
+      <iframe
+        className="frame"
+        src={SITE_ENTRANCE}
+        title={SITE_HOST}
+        onLoad={(event) => {
+          const frames = event.currentTarget.contentWindow?.length ?? 0;
+          setEntered(frames > 0);
+          setMenuOpen(false);
+        }}
+      />
+      <button
+        type="button"
+        className="scrim"
+        aria-label="메뉴 닫기"
+        onClick={() => setMenuOpen(false)}
+      />
+      {entered && (
+        <button
+          type="button"
+          className="fab"
+          aria-label="메뉴"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        />
+      )}
+    </div>
   );
 }
 
@@ -166,23 +230,44 @@ function PagePicker(props: {
   );
 }
 
+function FitPicker(props: { value: number; onChange: (fit: number) => void }) {
+  return (
+    <div className="fit-picker" role="group" aria-label="만화 폭">
+      만화 폭
+      {FIT_WIDTHS.map((width) => (
+        <button
+          key={width}
+          type="button"
+          aria-pressed={props.value === width}
+          onClick={() => props.onChange(width)}
+        >
+          {width}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function Drawer(props: {
   pages: string[];
   page: string | null;
   translation: Translation;
-  onChange: (page: string) => void;
+  fit: number;
+  onChangePage: (page: string) => void;
+  onChangeFit: (fit: number) => void;
 }) {
   return (
     <aside className="drawer">
       <p className="note">
-        이 도구는 프레임 안에서 어느 페이지를 보고 있는지 알 수 없습니다. 사이트
-        메뉴로 이동한 뒤, 보고 있는 화를 여기서 골라 주세요.
+        이 도구는 프레임 안에서 어느 페이지를 보고 있는지 알 수 없습니다.
+        사이트 메뉴로 이동한 뒤, 보고 있는 화를 여기서 골라 주세요.
       </p>
       <PagePicker
         pages={props.pages}
         value={props.page}
-        onChange={props.onChange}
+        onChange={props.onChangePage}
       />
+      <FitPicker value={props.fit} onChange={props.onChangeFit} />
       {props.translation.status === 'loading' && (
         <p className="status">불러오는 중…</p>
       )}
@@ -205,7 +290,8 @@ function App() {
   const [browsing, setBrowsing] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [pages, setPages] = useState<string[]>([]);
-  const [page, setPage] = useState<string | null>(loadPage);
+  const [page, setPage] = useState<string | null>(() => loadStored(PAGE_KEY));
+  const [fit, setFit] = useState<number>(loadFit);
   const [translation, setTranslation] = useState<Translation>({
     status: 'idle',
   });
@@ -240,7 +326,12 @@ function App() {
 
   function choosePage(next: string) {
     setPage(next);
-    savePage(next);
+    store(PAGE_KEY, next);
+  }
+
+  function chooseFit(next: number) {
+    setFit(next);
+    store(FIT_KEY, String(next));
   }
 
   return (
@@ -262,7 +353,7 @@ function App() {
       </header>
       <main>
         {browsing ? (
-          <iframe className="frame" src={SITE_ENTRANCE} title={SITE_HOST} />
+          <Viewer fit={fit} />
         ) : (
           <div className="empty">
             <p>
@@ -278,7 +369,9 @@ function App() {
             pages={pages}
             page={page}
             translation={translation}
-            onChange={choosePage}
+            fit={fit}
+            onChangePage={choosePage}
+            onChangeFit={chooseFit}
           />
         )}
       </main>
