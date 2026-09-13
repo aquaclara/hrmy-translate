@@ -11,13 +11,14 @@ $fab-size: 3.5rem;
 $fab-margin: 1rem;
 $anim-time: 500ms;
 $lime: #cfff00;
+$desktop: #008080;
 
 html,
 body {
   margin: 0;
   font-family: sans-serif;
   color: variables.$black;
-  background-color: #e9e9e9;
+  background-color: $desktop;
 }
 
 .app {
@@ -72,9 +73,54 @@ nav {
 }
 
 .panel .title-bar {
+  position: relative;
   cursor: grab;
   touch-action: none;
   user-select: none;
+}
+
+.window-buttons {
+  position: absolute;
+  right: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 0.2rem;
+
+  button {
+    width: 1.5rem;
+    height: 1.3rem;
+    border: 1px solid #bbb;
+    border-radius: 0.2rem;
+    background: white center / 60% no-repeat;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+
+  .minimize {
+    background-image: url('../svgs/minimize.svg');
+  }
+
+  .maximize {
+    background-image: url('../svgs/maximize.svg');
+  }
+
+  .restore {
+    background-image: url('../svgs/restore.svg');
+  }
+}
+
+.taskbar-item {
+  padding: 0.2rem 0.7rem;
+  border: 1px solid variables.$black;
+  border-radius: 0.2rem;
+  background-color: white;
+  color: variables.$black;
+  font-size: 0.85rem;
+  cursor: pointer;
 }
 
 .overlay .workspace,
@@ -105,30 +151,10 @@ nav {
     position: relative;
     z-index: 1;
   }
-
-  .panel .title-bar {
-    position: relative;
-  }
-
-  .panel .restore {
-    position: absolute;
-    right: 0.4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0.1rem 0.6rem;
-    border: 1px solid variables.$black;
-    border-radius: 1rem;
-    background-color: variables.$black;
-    color: white;
-    font-size: 0.75rem;
-    cursor: pointer;
-  }
 }
 
 .bubbles {
   position: absolute;
-  left: 0;
-  right: 0;
   bottom: 0;
   z-index: 2;
   pointer-events: none;
@@ -146,14 +172,25 @@ nav {
       border-left: none;
     }
 
-    .line {
+    .line,
+    .line.speech,
+    .line.scream,
+    .line.thought,
+    .line.square,
+    .line.shock,
+    .line.stroke {
       background-color: white;
+      color: variables.$black;
+      border: 1px solid variables.$black;
+      border-radius: 1em;
+      padding: 0.1em 0.6em;
       font-size: 1em;
-      margin-bottom: 0.2em;
+      font-weight: normal;
+      margin: 0 0 0.2em;
+    }
 
-      &.placed {
-        margin: 0;
-      }
+    .line.placed {
+      margin: 0;
     }
   }
 }
@@ -521,22 +558,6 @@ nav {
       display: inline-block;
       transform: rotate(-180deg);
     }
-  }
-}
-
-.panel-toggle {
-  margin-left: auto;
-  padding: 0.2rem 0.7rem;
-  border: 1px solid variables.$black;
-  border-radius: 1rem;
-  background-color: white;
-  color: variables.$black;
-  font-size: 0.85rem;
-  cursor: pointer;
-
-  &[aria-expanded='true'] {
-    background-color: variables.$black;
-    color: white;
   }
 }
 

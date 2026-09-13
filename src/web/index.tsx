@@ -455,8 +455,13 @@ function App() {
   const [panelOpen, setPanelOpen] = useState(true);
   const [scale, setScale] = useState(1);
   const [overlay, setOverlay] = useState(false);
-  const [drag, setDrag] = useState<{ start: number; dx: number } | null>(null);
-  const dragged = useRef(false);
+  const [drag, setDrag] = useState<{
+    startX: number;
+    startY: number;
+    dx: number;
+    dy: number;
+  } | null>(null);
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
   const browserHeader = useRef<HTMLDivElement>(null);
   const panelHeader = useRef<HTMLDivElement>(null);
   const [browserHeaderHeight, setBrowserHeaderHeight] = useState(0);
@@ -474,26 +479,34 @@ function App() {
 
   function onTitlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
     event.currentTarget.setPointerCapture(event.pointerId);
-    setDrag({ start: event.clientX, dx: 0 });
+    setDrag({ startX: event.clientX, startY: event.clientY, dx: 0, dy: 0 });
   }
 
   function onTitlePointerMove(event: React.PointerEvent<HTMLDivElement>) {
     if (drag === null) return;
-    setDrag({ start: drag.start, dx: event.clientX - drag.start });
+    setDrag({
+      ...drag,
+      dx: event.clientX - drag.startX,
+      dy: event.clientY - drag.startY,
+    });
   }
 
   function onTitlePointerUp() {
     if (drag === null) return;
-    dragged.current = Math.abs(drag.dx) > 5;
-    if (!overlay && drag.dx < -DRAG_THRESHOLD) setOverlay(true);
-    if (overlay && drag.dx > DRAG_THRESHOLD) setOverlay(false);
+    if (overlay) {
+      setOffset({ x: offset.x + drag.dx, y: offset.y + drag.dy });
+    } else if (drag.dx < -DRAG_THRESHOLD) {
+      setOverlay(true);
+      setOffset({ x: 0, y: 0 });
+    }
     setDrag(null);
   }
 
-  function onTitleClick() {
-    if (overlay && !dragged.current) setOverlay(false);
-    dragged.current = false;
-  }
+  const panelTransform = overlay
+    ? `translate(${offset.x + (drag?.dx ?? 0)}px, ${offset.y + (drag?.dy ?? 0)}px)`
+    : drag && drag.dx !== 0
+      ? `translateX(${drag.dx}px)`
+      : undefined;
 
   useEffect(() => {
     fetchJson<Episodes>('episodes.json', {}).then((loaded) => {
@@ -558,14 +571,13 @@ function App() {
       className={`app${onSite && panelOpen ? ' with-panel' : ''}${overlay ? ' overlay' : ''}`}
     >
       <nav>
-        {onSite && (
+        {onSite && !panelOpen && (
           <button
             type="button"
-            className="panel-toggle"
-            aria-expanded={panelOpen}
-            onClick={() => setPanelOpen(!panelOpen)}
+            className="taskbar-item"
+            onClick={() => setPanelOpen(true)}
           >
-            번역
+            번역 창
           </button>
         )}
       </nav>
@@ -595,25 +607,6 @@ function App() {
               {message && <p className="message">{message}</p>}
             </div>
           </div>
-          {overlay && translation.status === 'loaded' && (
-            <div
-              className="bubbles"
-              style={
-                {
-                  top: browserHeaderHeight,
-                  '--scale': String(scale),
-                } as React.CSSProperties
-              }
-            >
-              <TranslationView
-                data={translation.data}
-                layout={layout}
-                scale={scale}
-                overlay={overlay}
-                contentLeft={mobile ? 0 : MENU_WIDTH}
-              />
-            </div>
-          )}
           <Viewer
             key={visit}
             src={url.href}
@@ -632,10 +625,7 @@ function App() {
             style={
               {
                 '--scale': String(scale),
-                transform:
-                  drag && drag.dx !== 0
-                    ? `translateX(${drag.dx}px)`
-                    : undefined,
+                transform: panelTransform,
               } as React.CSSProperties
             }
           >
@@ -646,22 +636,28 @@ function App() {
                 onPointerMove={onTitlePointerMove}
                 onPointerUp={onTitlePointerUp}
                 onPointerCancel={onTitlePointerUp}
-                onClick={onTitleClick}
               >
                 번역 창
-                {overlay && (
+                <div
+                  className="window-buttons"
+                  onPointerDown={(event) => event.stopPropagation()}
+                >
                   <button
                     type="button"
-                    className="restore"
-                    onPointerDown={(event) => event.stopPropagation()}
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      setOverlay(false);
+                    className="minimize"
+                    aria-label="최소화"
+                    onClick={() => setPanelOpen(false)}
+                  />
+                  <button
+                    type="button"
+                    className={overlay ? 'restore' : 'maximize'}
+                    aria-label={overlay ? '이전 크기로' : '최대화'}
+                    onClick={() => {
+                      setOverlay(!overlay);
+                      setOffset({ x: 0, y: 0 });
                     }}
-                  >
-                    되돌리기
-                  </button>
-                )}
+                  />
+                </div>
               </div>
               <div className="controls">
                 <p className="note">
@@ -676,6 +672,24 @@ function App() {
                 {mobile && <FitPicker value={fit} onChange={chooseFit} />}
               </div>
             </div>
+            {overlay && translation.status === 'loaded' && (
+              <div
+                className="bubbles"
+                style={{
+                  top: panelHeaderHeight + OVERLAY_INSET + browserHeaderHeight,
+                  left: OVERLAY_INSET,
+                  right: OVERLAY_INSET,
+                }}
+              >
+                <TranslationView
+                  data={translation.data}
+                  layout={layout}
+                  scale={scale}
+                  overlay={overlay}
+                  contentLeft={mobile ? 0 : MENU_WIDTH}
+                />
+              </div>
+            )}
             {!overlay && (
               <div
                 className="translations"
