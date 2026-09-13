@@ -9,28 +9,37 @@ import { translationPathFor } from '../shared/translation-path';
 import { pageLabelFor } from '../shared/page-label';
 
 const SITE_HOST = 'dka-hero.me';
+const SITE_ENTRANCE = `https://${SITE_HOST}/`;
+const PAGE_KEY = 'page';
 const CAUTION =
   '이 사이트 내 그림의 무단전재, 도용, 링크, 캡처, 촬영 등은 금지되어 있으며 자세한 것은 사이트 내 안내를 따라 주십시오. 이 한글 번역은 공식이 아닙니다.';
 
-type Loaded = { status: 'loaded'; data: FileData };
 type Translation =
-  { status: 'idle' } | { status: 'loading' } | { status: 'missing' } | Loaded;
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'missing' }
+  | { status: 'loaded'; data: FileData };
 
 function parseSiteUrl(input: string): URL | null {
   const text = input.trim();
   if (text === '') return null;
   try {
     const url = new URL(/^[a-z]+:\/\//i.test(text) ? text : `https://${text}`);
-    if (url.hostname !== SITE_HOST) return null;
-    url.protocol = 'https:';
-    return url;
+    return url.hostname === SITE_HOST ? url : null;
   } catch {
     return null;
   }
 }
 
-async function fetchTranslation(pathname: string): Promise<Translation> {
-  const response = await fetch(translationPathFor(pathname).replace(/^\//, ''));
+function isEntrance(url: URL): boolean {
+  return (
+    (url.pathname === '/' || url.pathname === '/index.html') &&
+    url.search === ''
+  );
+}
+
+async function fetchTranslation(page: string): Promise<Translation> {
+  const response = await fetch(translationPathFor(`/${page}`).slice(1));
   if (!response.ok) return { status: 'missing' };
   const data = yaml.load(await response.text()) as FileDataModel;
   return { status: 'loaded', data: new FileData(data) };
@@ -39,6 +48,26 @@ async function fetchTranslation(pathname: string): Promise<Translation> {
 async function fetchPageList(): Promise<string[]> {
   const response = await fetch('translations/index.json');
   return response.ok ? ((await response.json()) as string[]) : [];
+}
+
+function loadPage(): string | null {
+  try {
+    return localStorage.getItem(PAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function savePage(page: string) {
+  try {
+    localStorage.setItem(PAGE_KEY, page);
+  } catch {}
+}
+
+function groupOf(page: string): string {
+  if (/^hm\d+_\d+\//.test(page)) return '호리씨와 미야무라군';
+  if (/^aco\//.test(page)) return '아코와 밤비';
+  return '기타';
 }
 
 function AddressBar(props: {
@@ -57,7 +86,7 @@ function AddressBar(props: {
       <input
         type="text"
         inputMode="url"
-        placeholder={`${SITE_HOST} 주소를 입력`}
+        placeholder={`${SITE_HOST} 를 입력`}
         value={props.value}
         onChange={(event) => props.onChange(event.target.value)}
         autoCapitalize="off"
@@ -99,45 +128,66 @@ function TranslationView(props: { data: FileData }) {
   );
 }
 
-function PageList(props: {
+function PagePicker(props: {
   pages: string[];
-  onSelect: (page: string) => void;
+  value: string | null;
+  onChange: (page: string) => void;
 }) {
+  const groups = new Map<string, string[]>([
+    ['호리씨와 미야무라군', []],
+    ['아코와 밤비', []],
+    ['기타', []],
+  ]);
+  for (const page of props.pages) {
+    const group = groupOf(page);
+    groups.set(group, [...(groups.get(group) ?? []), page]);
+  }
   return (
-    <details className="page-list">
-      <summary>번역이 있는 페이지</summary>
-      <ul>
-        {props.pages.map((page) => (
-          <li key={page}>
-            <button type="button" onClick={() => props.onSelect(page)}>
-              {pageLabelFor(page)}
-            </button>
-          </li>
+    <label className="page-picker">
+      보고 있는 화
+      <select
+        value={props.value ?? ''}
+        onChange={(event) => props.onChange(event.target.value)}
+      >
+        <option value="" disabled>
+          선택
+        </option>
+        {[...groups].map(([group, pages]) => (
+          <optgroup key={group} label={group}>
+            {pages.map((page) => (
+              <option key={page} value={page}>
+                {pageLabelFor(page)}
+              </option>
+            ))}
+          </optgroup>
         ))}
-      </ul>
-    </details>
+      </select>
+    </label>
   );
 }
 
 function Drawer(props: {
-  url: URL;
-  translation: Translation;
   pages: string[];
-  onSelect: (page: string) => void;
+  page: string | null;
+  translation: Translation;
+  onChange: (page: string) => void;
 }) {
   return (
     <aside className="drawer">
       <p className="note">
-        {pageLabelFor(props.url.pathname.replace(/^\//, ''))} — 프레임 안에서
-        링크로 이동한 페이지는 여기에 반영되지 않습니다. 주소를 직접 입력하거나
-        목록에서 고르세요.
+        이 도구는 프레임 안에서 어느 페이지를 보고 있는지 알 수 없습니다. 사이트
+        메뉴로 이동한 뒤, 보고 있는 화를 여기서 골라 주세요.
       </p>
-      <PageList pages={props.pages} onSelect={props.onSelect} />
+      <PagePicker
+        pages={props.pages}
+        value={props.page}
+        onChange={props.onChange}
+      />
       {props.translation.status === 'loading' && (
         <p className="status">불러오는 중…</p>
       )}
       {props.translation.status === 'missing' && (
-        <p className="status">이 페이지의 번역이 없습니다.</p>
+        <p className="status">이 화의 번역이 없습니다.</p>
       )}
       {props.translation.status === 'loaded' && (
         <TranslationView data={props.translation.data} />
@@ -152,72 +202,87 @@ function Drawer(props: {
 
 function App() {
   const [input, setInput] = useState('');
-  const [url, setUrl] = useState<URL | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [browsing, setBrowsing] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const [pages, setPages] = useState<string[]>([]);
+  const [page, setPage] = useState<string | null>(loadPage);
   const [translation, setTranslation] = useState<Translation>({
     status: 'idle',
   });
-  const [pages, setPages] = useState<string[]>([]);
   const [drawerOpen, setDrawerOpen] = useState(true);
 
   useEffect(() => {
     fetchPageList().then(setPages);
   }, []);
 
-  function navigate(text: string) {
+  useEffect(() => {
+    if (page === null) return;
+    setTranslation({ status: 'loading' });
+    fetchTranslation(page).then(setTranslation);
+  }, [page]);
+
+  function enter(text: string) {
     const target = parseSiteUrl(text);
     if (target === null) {
-      setError(
+      setMessage(
         `이 브라우저는 ${SITE_HOST} 만 엽니다. 원본 사이트를 그대로 띄우고 옆에 번역을 보여주는 보조 도구입니다.`,
       );
       return;
     }
-    setError(null);
-    setInput(target.href);
-    setUrl(target);
-    setTranslation({ status: 'loading' });
-    fetchTranslation(target.pathname).then(setTranslation);
+    setMessage(
+      isEntrance(target)
+        ? null
+        : '사이트 운영자의 의도대로 입구부터 들어갑니다. 보고 싶은 만화는 사이트 메뉴에서 골라 주세요.',
+    );
+    setInput(SITE_ENTRANCE);
+    setBrowsing(true);
+  }
+
+  function choosePage(next: string) {
+    setPage(next);
+    savePage(next);
   }
 
   return (
     <div
-      className={`app${url ? ' browsing' : ''}${drawerOpen ? ' drawer-open' : ''}`}
+      className={`app${browsing ? ' browsing' : ''}${drawerOpen ? ' drawer-open' : ''}`}
     >
       <header>
         <AddressBar
           value={input}
           onChange={setInput}
-          onSubmit={() => navigate(input)}
+          onSubmit={() => enter(input)}
         />
         <nav>
           <a href="about.html">소개</a>
           <a href="translation-policy.html">번역 원칙</a>
           <a href="https://github.com/aquaclara/hrmy-translate">GitHub</a>
         </nav>
-        {error && <p className="error">{error}</p>}
+        {message && <p className="message">{message}</p>}
       </header>
       <main>
-        {url ? (
-          <iframe className="frame" src={url.href} title={SITE_HOST} />
+        {browsing ? (
+          <iframe className="frame" src={SITE_ENTRANCE} title={SITE_HOST} />
         ) : (
           <div className="empty">
             <p>
               주소창에 <code>{SITE_HOST}</code> 를 입력하면 원본 사이트가 이
-              안에 열리고, 번역이 있는 페이지에서는 옆에 번역 서랍이 나타납니다.
+              안에 열립니다. 사이트 메뉴로 만화를 고른 뒤, 옆의 번역 서랍에서
+              같은 화를 고르면 한국어 번역이 표시됩니다.
             </p>
             <p className="caution">{CAUTION}</p>
           </div>
         )}
-        {url && (
+        {browsing && (
           <Drawer
-            url={url}
-            translation={translation}
             pages={pages}
-            onSelect={(page) => navigate(`https://${SITE_HOST}/${page}`)}
+            page={page}
+            translation={translation}
+            onChange={choosePage}
           />
         )}
       </main>
-      {url && (
+      {browsing && (
         <button
           type="button"
           className="drawer-toggle"
