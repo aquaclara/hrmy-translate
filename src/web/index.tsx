@@ -4,9 +4,10 @@ import yaml from 'js-yaml';
 import FileDataModel from '../shared/data-models/translation-chucks/file';
 import FileData from '../shared/translation-chunk-data';
 import { isComment } from '../shared/data-models/comment';
-import { LICENSE } from '../shared/constants';
 import { translationPathFor } from '../shared/translation-path';
-import { documentHeight, Layout, layoutFor } from './layout';
+import { documentHeight, layoutFor } from './layout';
+import { Address, BUBBLE_COLUMN, Patch, TranslationView } from './bubbles';
+import { LICENSE, YAML_OPTION } from '../shared/constants';
 
 const SITE_HOST = 'dka-hero.me';
 const SITE_ENTRANCE = `https://${SITE_HOST}/`;
@@ -14,14 +15,13 @@ const HOME_URL = new URL('about.html', location.href);
 const PAGE_KEY = 'page';
 const FIT_KEY = 'fit';
 const OFFSET_KEY = 'offset';
+const DRAFT_KEY = 'draft';
 const FIT_WIDTHS = [350, 420, 600];
 const FIT_MARGIN = 16;
 const SPLASH_WIDTH = 600;
 const ACO_LAST = 24;
 const MOBILE_QUERY = '(max-width: 60rem)';
 const MENU_WIDTH = 188;
-const BUBBLE_GAP = 8;
-const BUBBLE_COLUMN = 220;
 const DRAG_THRESHOLD = 60;
 const OVERLAY_INSET = 8;
 
@@ -57,11 +57,32 @@ async function fetchJson<T>(path: string, fallback: T): Promise<T> {
   return response.ok ? ((await response.json()) as T) : fallback;
 }
 
+function draftKey(page: string): string {
+  return `${DRAFT_KEY}:${page}`;
+}
+
+function loadDraft(page: string): FileDataModel | null {
+  try {
+    const stored = loadStored(draftKey(page));
+    return stored === null ? null : (JSON.parse(stored) as FileDataModel);
+  } catch {
+    return null;
+  }
+}
+
 async function fetchTranslation(page: string): Promise<Translation> {
+  const draft = loadDraft(page);
+  if (draft !== null) return { status: 'loaded', data: new FileData(draft) };
   const response = await fetch(translationPathFor(`/${page}`).slice(1));
   if (!response.ok) return { status: 'missing' };
   const data = yaml.load(await response.text()) as FileDataModel;
   return { status: 'loaded', data: new FileData(data) };
+}
+
+function toYaml(data: FileData): string {
+  const document: FileDataModel = { ...data.getData() };
+  document['//'] = LICENSE as unknown as FileDataModel[string];
+  return yaml.dump(document, YAML_OPTION) + '\n';
 }
 
 function loadStored(key: string): string | null {
@@ -288,90 +309,6 @@ function Viewer(props: {
   );
 }
 
-function TranslationView(props: {
-  data: FileData;
-  layout: Layout | null;
-  scale: number;
-  overlay: boolean;
-  contentLeft: number;
-}) {
-  const keys = Object.keys(props.data.getData()).filter((key) => key !== '//');
-  const layout = props.layout;
-  const positioned = layout !== null;
-  const imageLeft = layout ? props.contentLeft + layout.left : 0;
-  return (
-    <div className={`translation-view${positioned ? ' positioned' : ''}`}>
-      {keys.map((key, imageIndex) => {
-        const cuts = props.data.getCutTranslations(key);
-        const imageTop = layout ? layout.top + imageIndex * layout.pitch : 0;
-        return (
-          <section key={key} className="image">
-            {cuts.map((cut, cutIndex) => {
-              const cutTop = layout
-                ? imageTop + (layout.height / cuts.length) * cutIndex
-                : 0;
-              const cutLeft = props.overlay
-                ? (imageLeft + layout!.width + BUBBLE_GAP) * props.scale
-                : 0;
-              const style: React.CSSProperties = {};
-              if (layout) {
-                style.top = cutTop * props.scale;
-                if (props.overlay) {
-                  style.left = cutLeft;
-                  style.width = (BUBBLE_COLUMN - BUBBLE_GAP * 2) * props.scale;
-                }
-              }
-              return (
-                <div key={cutIndex} className="cut" style={style}>
-                  {cut.map((line, lineIndex) => {
-                    const text = typeof line === 'string' ? line : line.text;
-                    if (!text || isComment(text)) return null;
-                    const type =
-                      typeof line === 'string'
-                        ? 'speech'
-                        : line.type || 'speech';
-                    const placed =
-                      props.overlay &&
-                      layout &&
-                      typeof line !== 'string' &&
-                      line.x !== undefined &&
-                      line.y !== undefined;
-                    const lineStyle: React.CSSProperties = placed
-                      ? {
-                          position: 'absolute',
-                          left:
-                            (imageLeft + (line as { x: number }).x) *
-                              props.scale -
-                            cutLeft,
-                          top:
-                            (imageTop + (line as { y: number }).y) *
-                              props.scale -
-                            cutTop * props.scale,
-                          width:
-                            (line as { w?: number }).w !== undefined
-                              ? (line as { w: number }).w * props.scale
-                              : undefined,
-                        }
-                      : {};
-                    return (
-                      <p
-                        key={lineIndex}
-                        className={`line ${type}${placed ? ' placed' : ''}`}
-                        style={lineStyle}
-                        dangerouslySetInnerHTML={{ __html: text }}
-                      />
-                    );
-                  })}
-                </div>
-              );
-            })}
-          </section>
-        );
-      })}
-    </div>
-  );
-}
-
 function EpisodePicker(props: {
   episodes: Episodes;
   page: string | null;
@@ -395,7 +332,7 @@ function EpisodePicker(props: {
   return (
     <div className="episode-picker">
       <select
-        aria-label="만화"
+        aria-label="작품"
         value={series}
         onChange={(event) => choose(event.target.value as Series, 1)}
       >
@@ -442,8 +379,8 @@ function EpisodePicker(props: {
 
 function FitPicker(props: { value: number; onChange: (fit: number) => void }) {
   return (
-    <div className="fit-picker" role="group" aria-label="만화 폭">
-      <span className="label">만화 폭</span>
+    <div className="fit-picker" role="group" aria-label="폭">
+      <span className="label">폭</span>
       {FIT_WIDTHS.map((width) => (
         <button
           key={width}
@@ -473,6 +410,8 @@ function App() {
   const [panelOpen, setPanelOpen] = useState(true);
   const [scale, setScale] = useState(1);
   const [overlay, setOverlay] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [, setVersion] = useState(0);
   const [drag, setDrag] = useState<{
     startX: number;
     startY: number;
@@ -519,6 +458,45 @@ function App() {
     setDrag(null);
   }
 
+  function applyEdit(address: Address, patch: Patch) {
+    if (translation.status !== 'loaded' || page === null) return;
+    const data = translation.data;
+    const current = data.getTranslation(address.key, address.cut, address.line);
+    const datum =
+      typeof current === 'string' ? { text: current } : { ...current };
+    if (patch.reset) {
+      delete datum.x;
+      delete datum.y;
+      delete datum.w;
+      delete datum.background;
+    } else {
+      Object.assign(datum, patch);
+    }
+    const keys = Object.keys(datum).filter((key) => key !== 'text');
+    data.setTranslation(
+      address.key,
+      address.cut,
+      address.line,
+      keys.length === 0 ? datum.text : datum,
+    );
+    store(draftKey(page), JSON.stringify(data.getData()));
+    setVersion((version) => version + 1);
+  }
+
+  function copyYaml() {
+    if (translation.status !== 'loaded') return;
+    navigator.clipboard.writeText(toYaml(translation.data));
+  }
+
+  function discardDraft() {
+    if (page === null) return;
+    try {
+      localStorage.removeItem(draftKey(page));
+    } catch {}
+    setTranslation({ status: 'loading' });
+    fetchTranslation(page).then(setTranslation);
+  }
+
   function moveTo(next: Offset) {
     setOffset(next);
     if (page !== null) store(offsetKey(page), JSON.stringify(next));
@@ -557,7 +535,7 @@ function App() {
       setMessage(
         isEntrance(target)
           ? null
-          : '만화 사이트는 첫 화면부터 들어갑니다. 보고 싶은 만화는 사이트 안에서 골라 주세요.',
+          : '사이트는 첫 화면부터 들어갑니다. 보고 싶은 화는 사이트 안에서 골라 주세요.',
       );
       setInput(SITE_ENTRANCE);
       setUrl(new URL(SITE_ENTRANCE));
@@ -681,7 +659,7 @@ function App() {
               </div>
               <div className="controls">
                 <p className="note">
-                  사이트에서 만화를 고른 다음, 여기서도 같은 화를 골라 주세요.
+                  사이트에서 화를 고른 다음, 여기서도 같은 화를 골라 주세요.
                   그러면 번역이 나옵니다.
                 </p>
                 <EpisodePicker
@@ -690,11 +668,21 @@ function App() {
                   onChange={choosePage}
                 />
                 {mobile && <FitPicker value={fit} onChange={chooseFit} />}
+                {edit && (
+                  <div className="edit-tools">
+                    <button type="button" onClick={copyYaml}>
+                      YAML 복사
+                    </button>
+                    <button type="button" onClick={discardDraft}>
+                      초안 지우기
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
             {overlay && translation.status === 'loaded' && (
               <div
-                className="bubbles"
+                className={`bubbles${edit ? ' editing' : ''}`}
                 style={{
                   top: panelHeaderHeight + OVERLAY_INSET + browserHeaderHeight,
                   left: OVERLAY_INSET,
@@ -706,7 +694,9 @@ function App() {
                   layout={layout}
                   scale={scale}
                   overlay={overlay}
+                  edit={edit}
                   contentLeft={mobile ? 0 : MENU_WIDTH}
+                  onEdit={applyEdit}
                 />
               </div>
             )}
@@ -733,6 +723,7 @@ function App() {
                     layout={layout}
                     scale={scale}
                     overlay={false}
+                    edit={false}
                     contentLeft={mobile ? 0 : MENU_WIDTH}
                   />
                 )}
@@ -747,6 +738,22 @@ function App() {
           </aside>
         )}
       </div>
+      {onSite && (
+        <footer className="desk">
+          <button
+            type="button"
+            className="edit-toggle"
+            aria-pressed={edit}
+            onClick={() => {
+              const next = !edit;
+              setEdit(next);
+              if (next) setOverlay(true);
+            }}
+          >
+            {edit ? '수정 모드 끝' : '수정 모드'}
+          </button>
+        </footer>
+      )}
     </div>
   );
 }

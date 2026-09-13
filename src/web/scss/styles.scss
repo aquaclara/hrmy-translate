@@ -159,7 +159,7 @@ nav {
   bottom: 0;
   z-index: 2;
   pointer-events: none;
-  font-size: calc(0.75rem + 0.25rem * var(--scale));
+  font-size: calc(16px * var(--scale));
 
   .translation-view {
     padding: 0;
@@ -173,6 +173,18 @@ nav {
       border-left: none;
     }
 
+    .bubble {
+      position: relative;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 0 0.2em;
+
+      &.placed {
+        margin: 0;
+        max-width: none;
+      }
+    }
+
     .line,
     .line.speech,
     .line.scream,
@@ -182,16 +194,98 @@ nav {
     .line.stroke {
       background-color: white;
       color: variables.$black;
-      border: 1px solid variables.$black;
+      border: none;
       border-radius: 1em;
       padding: 0.1em 0.6em;
       font-size: 1em;
       font-weight: normal;
-      margin: 0 0 0.2em;
+      margin: 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+
+  &.editing {
+    .line {
+      pointer-events: auto;
+      cursor: move;
+      outline: 1px dashed rgb(0 0 0 / 35%);
+      touch-action: none;
     }
 
-    .line.placed {
-      margin: 0;
+    .bubble.selected .line {
+      outline: 2px solid #1e88e5;
+    }
+
+    .grip {
+      position: absolute;
+      right: -0.3em;
+      bottom: -0.3em;
+      width: 0.8em;
+      height: 0.8em;
+      background-color: #1e88e5;
+      border-radius: 0.15em;
+      cursor: ew-resize;
+      pointer-events: auto;
+      touch-action: none;
+    }
+
+    .bubble-tools {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      z-index: 3;
+      display: flex;
+      gap: 0.25rem;
+      margin-top: 0.25rem;
+      padding: 0.25rem;
+      background-color: white;
+      border: 1px solid #bbb;
+      border-radius: 0.3rem;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+      pointer-events: auto;
+      font-size: 12px;
+      white-space: nowrap;
+
+      button {
+        font-size: 12px;
+        padding: 0.1rem 0.4rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.edit-tools {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+
+  button {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid #bbb;
+    border-radius: 0.3rem;
+    background-color: white;
+    cursor: pointer;
+  }
+}
+
+.desk {
+  padding: 0.5rem $gap;
+
+  .edit-toggle {
+    padding: 0.25rem 0.7rem;
+    border: 1px solid rgb(255 255 255 / 50%);
+    border-radius: 0.3rem;
+    background: none;
+    color: rgb(255 255 255 / 80%);
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    &[aria-pressed='true'] {
+      background-color: white;
+      color: variables.$black;
     }
   }
 }
@@ -681,6 +775,10 @@ nav {
   .overlay .panel {
     left: 0;
     right: 0;
+  }
+
+  .desk {
+    display: none;
   }
 }
 
