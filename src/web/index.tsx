@@ -13,6 +13,7 @@ const SITE_ENTRANCE = `https://${SITE_HOST}/`;
 const HOME_URL = new URL('about.html', location.href);
 const PAGE_KEY = 'page';
 const FIT_KEY = 'fit';
+const OFFSET_KEY = 'offset';
 const FIT_WIDTHS = [350, 420, 600];
 const FIT_MARGIN = 16;
 const SPLASH_WIDTH = 600;
@@ -75,6 +76,23 @@ function store(key: string, value: string) {
   try {
     localStorage.setItem(key, value);
   } catch {}
+}
+
+type Offset = { x: number; y: number };
+
+function offsetKey(page: string): string {
+  return `${OFFSET_KEY}:${page}`;
+}
+
+function loadOffset(page: string | null): Offset {
+  if (page === null) return { x: 0, y: 0 };
+  try {
+    const stored = JSON.parse(loadStored(offsetKey(page)) ?? '');
+    if (typeof stored.x === 'number' && typeof stored.y === 'number') {
+      return { x: stored.x, y: stored.y };
+    }
+  } catch {}
+  return { x: 0, y: 0 };
 }
 
 function loadFit(): number {
@@ -461,7 +479,7 @@ function App() {
     dx: number;
     dy: number;
   } | null>(null);
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [offset, setOffset] = useState<Offset>(() => loadOffset(page));
   const browserHeader = useRef<HTMLDivElement>(null);
   const panelHeader = useRef<HTMLDivElement>(null);
   const [browserHeaderHeight, setBrowserHeaderHeight] = useState(0);
@@ -494,12 +512,16 @@ function App() {
   function onTitlePointerUp() {
     if (drag === null) return;
     if (overlay) {
-      setOffset({ x: offset.x + drag.dx, y: offset.y + drag.dy });
+      moveTo({ x: offset.x + drag.dx, y: offset.y + drag.dy });
     } else if (drag.dx < -DRAG_THRESHOLD) {
       setOverlay(true);
-      setOffset({ x: 0, y: 0 });
     }
     setDrag(null);
+  }
+
+  function moveTo(next: Offset) {
+    setOffset(next);
+    if (page !== null) store(offsetKey(page), JSON.stringify(next));
   }
 
   const panelTransform = overlay
@@ -549,6 +571,7 @@ function App() {
   function choosePage(next: string) {
     setPage(next);
     store(PAGE_KEY, next);
+    setOffset(loadOffset(next));
   }
 
   function chooseFit(next: number) {
@@ -652,10 +675,7 @@ function App() {
                     type="button"
                     className={overlay ? 'restore' : 'maximize'}
                     aria-label={overlay ? '이전 크기로' : '최대화'}
-                    onClick={() => {
-                      setOverlay(!overlay);
-                      setOffset({ x: 0, y: 0 });
-                    }}
+                    onClick={() => setOverlay(!overlay)}
                   />
                 </div>
               </div>
