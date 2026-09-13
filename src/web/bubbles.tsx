@@ -158,8 +158,8 @@ export function TranslationView(props: Props) {
       props.onEdit?.(drag.address, {
         x: Math.round(drag.x),
         y: Math.round(drag.y),
-        w: Math.max(40, Math.round(drag.w + dx)),
-        h: Math.max(20, Math.round(drag.h + dy)),
+        w: Math.max(1, Math.round(drag.w + dx)),
+        h: Math.max(1, Math.round(drag.h + dy)),
       });
     }
   }
