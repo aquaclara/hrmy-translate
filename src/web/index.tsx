@@ -12,6 +12,22 @@ import { LICENSE, YAML_OPTION } from '../shared/constants';
 const SITE_HOST = 'dka-hero.me';
 const SITE_ENTRANCE = `https://${SITE_HOST}/`;
 const HOME_URL = new URL('about.html', location.href);
+const HASH_PARAM = 'url';
+
+function urlFromHash(): string | null {
+  const hash = location.hash.replace(/^#/, '');
+  if (hash === '') return null;
+  const params = new URLSearchParams(hash);
+  return params.get(HASH_PARAM) ?? decodeURIComponent(hash);
+}
+
+function updateHash(url: URL | null) {
+  const hash =
+    url === null || url.href === HOME_URL.href
+      ? ''
+      : `#${HASH_PARAM}=${encodeURIComponent(url.href)}`;
+  history.replaceState(null, '', location.pathname + location.search + hash);
+}
 const PAGE_KEY = 'page';
 const FIT_KEY = 'fit';
 const OFFSET_KEY = 'offset';
@@ -550,6 +566,17 @@ function App() {
       : undefined;
 
   useEffect(() => {
+    const requested = urlFromHash();
+    if (requested !== null) enter(requested);
+    const onHashChange = () => {
+      const next = urlFromHash();
+      if (next !== null) enter(next);
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  useEffect(() => {
     fetchJson<Episodes>('episodes.json', NO_EPISODES).then((loaded) => {
       setEpisodes(loaded);
       if (page === null && loaded.horimiya[1])
@@ -569,6 +596,7 @@ function App() {
       setMessage(null);
       setInput(HOME_URL.href);
       setUrl(new URL(HOME_URL.href));
+      updateHash(null);
       return;
     }
     const target = parseUrl(text);
@@ -581,11 +609,13 @@ function App() {
       );
       setInput(SITE_ENTRANCE);
       setUrl(new URL(SITE_ENTRANCE));
+      updateHash(new URL(SITE_ENTRANCE));
       return;
     }
     setMessage(null);
     setInput(target.href);
     setUrl(target);
+    updateHash(target);
   }
 
   function choosePage(next: string) {
