@@ -20,6 +20,7 @@ const ACO_LAST = 24;
 const MOBILE_QUERY = '(max-width: 60rem)';
 const MENU_WIDTH = 188;
 const BUBBLE_GAP = 8;
+const BUBBLE_COLUMN = 220;
 const DRAG_THRESHOLD = 60;
 
 type Episodes = { [episode: string]: string };
@@ -192,6 +193,7 @@ function Viewer(props: {
   src: string;
   home: boolean;
   splash: boolean;
+  overlay: boolean;
   fit: number;
   mobile: boolean;
   docHeight: number | null;
@@ -209,7 +211,10 @@ function Viewer(props: {
     return () => observer.disconnect();
   }, []);
 
-  const fit = Math.max(props.fit + FIT_MARGIN, width);
+  const fit = Math.max(
+    props.fit + FIT_MARGIN + (props.overlay ? BUBBLE_COLUMN : 0),
+    width,
+  );
   const scale = width / fit;
   useEffect(() => {
     props.onScale(scale);
@@ -292,7 +297,10 @@ function TranslationView(props: {
               const style: React.CSSProperties = {};
               if (layout) {
                 style.top = cutTop * props.scale;
-                if (props.overlay) style.left = cutLeft;
+                if (props.overlay) {
+                  style.left = cutLeft;
+                  style.width = (BUBBLE_COLUMN - BUBBLE_GAP * 2) * props.scale;
+                }
               }
               return (
                 <div key={cutIndex} className="cut" style={style}>
@@ -447,6 +455,7 @@ function App() {
   const [scale, setScale] = useState(1);
   const [overlay, setOverlay] = useState(false);
   const [drag, setDrag] = useState<{ start: number; dx: number } | null>(null);
+  const dragged = useRef(false);
   const browserHeader = useRef<HTMLDivElement>(null);
   const panelHeader = useRef<HTMLDivElement>(null);
   const [browserHeaderHeight, setBrowserHeaderHeight] = useState(0);
@@ -474,9 +483,15 @@ function App() {
 
   function onTitlePointerUp() {
     if (drag === null) return;
+    dragged.current = Math.abs(drag.dx) > 5;
     if (!overlay && drag.dx < -DRAG_THRESHOLD) setOverlay(true);
     if (overlay && drag.dx > DRAG_THRESHOLD) setOverlay(false);
     setDrag(null);
+  }
+
+  function onTitleClick() {
+    if (overlay && !dragged.current) setOverlay(false);
+    dragged.current = false;
   }
 
   useEffect(() => {
@@ -579,6 +594,7 @@ function App() {
           <Viewer
             key={visit}
             src={url.href}
+            overlay={overlay}
             home={url.href === HOME_URL.href}
             splash={url.hostname === SITE_HOST}
             fit={fit}
@@ -607,8 +623,9 @@ function App() {
                 onPointerMove={onTitlePointerMove}
                 onPointerUp={onTitlePointerUp}
                 onPointerCancel={onTitlePointerUp}
+                onClick={onTitleClick}
               >
-                번역 창
+                {overlay ? '번역 창으로 되돌리기' : '번역 창'}
               </div>
               <div className="controls">
                 <p className="note">

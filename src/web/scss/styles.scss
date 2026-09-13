@@ -96,7 +96,7 @@ nav {
     background: none;
     border: none;
     border-radius: 0;
-    overflow: visible;
+    overflow: hidden;
     pointer-events: none;
   }
 
@@ -109,9 +109,12 @@ nav {
 
   .panel .title-bar {
     pointer-events: auto;
+    cursor: pointer;
     border: 1px solid #c8c8c8;
     border-radius: 0 $radius 0 $radius;
     padding: 0.35rem 1rem;
+    background-color: variables.$black;
+    color: white;
   }
 
   .panel .controls,
@@ -124,14 +127,13 @@ nav {
   }
 
   .translation-view {
-    font-size: calc(1rem * var(--scale));
+    font-size: calc(0.75rem + 0.25rem * var(--scale));
 
     .cut {
       left: auto;
       right: auto;
       padding-left: 0;
       border-left: none;
-      max-width: 22em;
     }
 
     .line {
