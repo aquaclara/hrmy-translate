@@ -202,7 +202,11 @@ nav {
       margin: 0;
       box-sizing: border-box;
       width: 100%;
-      overflow: visible;
+    }
+
+    .line.fixed {
+      overflow: hidden;
+      line-height: 1.25;
     }
   }
 

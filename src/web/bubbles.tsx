@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import FileData from '../shared/translation-chunk-data';
 import * as TranslationModel from '../shared/data-models/translation';
 import { isComment } from '../shared/data-models/comment';
@@ -42,6 +42,55 @@ type Drag = {
   h: number;
   moved: boolean;
 };
+
+const MIN_FONT = 0.4;
+
+function Line(props: {
+  className: string;
+  style: React.CSSProperties;
+  html: string;
+  fixed: boolean;
+  scale: number;
+  onPointerDown: (event: React.PointerEvent<HTMLElement>) => void;
+  onPointerMove: (event: React.PointerEvent<HTMLElement>) => void;
+  onPointerUp: () => void;
+}) {
+  const element = useRef<HTMLParagraphElement>(null);
+
+  useLayoutEffect(() => {
+    const line = element.current;
+    if (line === null) return;
+    line.style.fontSize = '';
+    if (!props.fixed) return;
+    let size = 1;
+    const overflows = () =>
+      line.scrollHeight > line.clientHeight + 1 ||
+      line.scrollWidth > line.clientWidth + 1;
+    while (overflows() && size > MIN_FONT) {
+      size -= 0.05;
+      line.style.fontSize = `${size}em`;
+    }
+  }, [
+    props.html,
+    props.style.width,
+    props.style.height,
+    props.scale,
+    props.fixed,
+  ]);
+
+  return (
+    <p
+      ref={element}
+      className={props.className}
+      style={props.style}
+      onPointerDown={props.onPointerDown}
+      onPointerMove={props.onPointerMove}
+      onPointerUp={props.onPointerUp}
+      onPointerCancel={props.onPointerUp}
+      dangerouslySetInnerHTML={{ __html: props.html }}
+    />
+  );
+}
 
 function sameAddress(a: Address | null, b: Address): boolean {
   return a !== null && a.key === b.key && a.cut === b.cut && a.line === b.line;
@@ -188,8 +237,8 @@ export function TranslationView(props: Props) {
                         className={`bubble${placed ? ' placed' : ''}${isSelected ? ' selected' : ''}`}
                         style={placed ? lineStyle : undefined}
                       >
-                        <p
-                          className={`line ${type}`}
+                        <Line
+                          className={`line ${type}${placed && props_.h !== undefined ? ' fixed' : ''}`}
                           style={
                             placed
                               ? {
@@ -198,13 +247,14 @@ export function TranslationView(props: Props) {
                                 }
                               : lineStyle
                           }
+                          html={text}
+                          fixed={placed && props_.h !== undefined}
+                          scale={props.scale}
                           onPointerDown={(event) =>
                             startDrag(event, address, 'move', imageTop)
                           }
                           onPointerMove={moveDrag}
                           onPointerUp={endDrag}
-                          onPointerCancel={endDrag}
-                          dangerouslySetInnerHTML={{ __html: text }}
                         />
                         {props.edit && (
                           <span
