@@ -8,6 +8,7 @@ import { HotLinks } from './widgets/hot-links';
 // Etc
 import Util from './dom-util';
 import * as Constant from '../shared/constants';
+import { translationPathFor } from '../shared/translation-path';
 import { log, init as loggerInit } from './logger';
 import TranslationRenderer from './translation-renderer';
 import FileDataModel from '../shared/data-models/translation-chucks/file';
@@ -18,8 +19,7 @@ let options: Constant.ExtensionOptions;
 let translationRenderer: TranslationRenderer;
 
 function main() {
-  const TLS_PATH =
-    '/translations' + location.pathname.replace('.html', '.yaml');
+  const TLS_PATH = translationPathFor(location.pathname);
   const GITHUB_URL = Constant.GITHUB_RAW_URL_BASE + TLS_PATH;
   const LOCAL_URL = chrome.runtime.getURL(TLS_PATH);
 

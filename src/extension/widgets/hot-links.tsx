@@ -2,6 +2,7 @@ import React from 'react';
 
 import TranslationDataContainer from '../interfaces/translation-data-container';
 import { GITHUB_URL_BASE } from '../../shared/constants';
+import { translationPathFor } from '../../shared/translation-path';
 import { log, init as loggerInit } from '../logger';
 
 interface PropsType {
@@ -18,8 +19,7 @@ export class HotLinks extends React.Component<PropsType, {}> {
 
   constructor(props: PropsType) {
     super(props);
-    this.tlsPath =
-      '/translations' + location.pathname.replace('.html', '.yaml');
+    this.tlsPath = translationPathFor(location.pathname);
     this.fileName = this.getFileName();
     this.fullFilePath = location.href;
     loggerInit();
