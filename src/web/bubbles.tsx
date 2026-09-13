@@ -34,13 +34,15 @@ function imageIndex(key: string, order: number, first: number | null): number {
 
 type Drag = {
   address: Address;
-  mode: 'move' | 'resize';
+  mode: 'move' | 'resize' | 'rotate';
   startX: number;
   startY: number;
   x: number;
   y: number;
   w: number;
   h: number;
+  centerX: number;
+  centerY: number;
   moved: boolean;
 };
 
@@ -129,6 +131,10 @@ export function TranslationView(props: Props) {
     const bubble = (
       mode === 'move' ? event.currentTarget : event.currentTarget.parentElement!
     ).getBoundingClientRect();
+    const box =
+      mode === 'move'
+        ? bubble
+        : event.currentTarget.parentElement!.getBoundingClientRect();
     const origin = toContent(bubble.left, bubble.top, imageTop);
     setDrag({
       address,
@@ -139,6 +145,8 @@ export function TranslationView(props: Props) {
       y: origin.y,
       w: bubble.width / props.scale,
       h: bubble.height / props.scale,
+      centerX: box.left + box.width / 2,
+      centerY: box.top + box.height / 2,
       moved: false,
     });
   }
@@ -149,6 +157,20 @@ export function TranslationView(props: Props) {
     const dy = (event.clientY - drag.startY) / props.scale;
     if (Math.abs(dx) + Math.abs(dy) < 2 && !drag.moved) return;
     drag.moved = true;
+    if (drag.mode === 'rotate') {
+      const angle =
+        (Math.atan2(
+          event.clientY - drag.centerY,
+          event.clientX - drag.centerX,
+        ) *
+          180) /
+          Math.PI +
+        90;
+      props.onEdit?.(drag.address, {
+        rotate: Math.round(((angle + 180) % 360) - 180),
+      });
+      return;
+    }
     if (drag.mode === 'move') {
       props.onEdit?.(drag.address, {
         x: Math.round(drag.x + dx),
@@ -267,6 +289,17 @@ export function TranslationView(props: Props) {
                         />
                         {props.edit && (
                           <span
+                            className="rotor"
+                            onPointerDown={(event) =>
+                              startDrag(event, address, 'rotate', imageTop)
+                            }
+                            onPointerMove={moveDrag}
+                            onPointerUp={endDrag}
+                            onPointerCancel={endDrag}
+                          />
+                        )}
+                        {props.edit && (
+                          <span
                             className="grip"
                             onPointerDown={(event) =>
                               startDrag(event, address, 'resize', imageTop)
@@ -312,29 +345,7 @@ export function TranslationView(props: Props) {
                             >
                               세로
                             </button>
-                            <button
-                              type="button"
-                              aria-label="왼쪽으로 기울이기"
-                              onClick={() =>
-                                props.onEdit?.(address, {
-                                  rotate: (props_.rotate ?? 0) - 5,
-                                })
-                              }
-                            >
-                              ↺
-                            </button>
                             <span className="size">{props_.rotate ?? 0}°</span>
-                            <button
-                              type="button"
-                              aria-label="오른쪽으로 기울이기"
-                              onClick={() =>
-                                props.onEdit?.(address, {
-                                  rotate: (props_.rotate ?? 0) + 5,
-                                })
-                              }
-                            >
-                              ↻
-                            </button>
                             <button
                               type="button"
                               aria-label="글자 작게"
