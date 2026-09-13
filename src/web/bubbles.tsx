@@ -50,6 +50,7 @@ function Line(props: {
   style: React.CSSProperties;
   html: string;
   fixed: boolean;
+  size: number;
   scale: number;
   onPointerDown: (event: React.PointerEvent<HTMLElement>) => void;
   onPointerMove: (event: React.PointerEvent<HTMLElement>) => void;
@@ -60,9 +61,9 @@ function Line(props: {
   useLayoutEffect(() => {
     const line = element.current;
     if (line === null) return;
-    line.style.fontSize = '';
+    let size = props.size;
+    line.style.fontSize = `${size}em`;
     if (!props.fixed) return;
-    let size = 1;
     const overflows = () =>
       line.scrollHeight > line.clientHeight + 1 ||
       line.scrollWidth > line.clientWidth + 1;
@@ -76,6 +77,7 @@ function Line(props: {
     props.style.height,
     props.scale,
     props.fixed,
+    props.size,
   ]);
 
   return (
@@ -249,6 +251,7 @@ export function TranslationView(props: Props) {
                           }
                           html={text}
                           fixed={placed && props_.h !== undefined}
+                          size={props_.size ?? 1}
                           scale={props.scale}
                           onPointerDown={(event) =>
                             startDrag(event, address, 'move', imageTop)
@@ -291,6 +294,37 @@ export function TranslationView(props: Props) {
                               }
                             >
                               배경 없음
+                            </button>
+                            <button
+                              type="button"
+                              aria-label="글자 작게"
+                              onClick={() =>
+                                props.onEdit?.(address, {
+                                  size:
+                                    Math.round(
+                                      ((props_.size ?? 1) - 0.1) * 10,
+                                    ) / 10,
+                                })
+                              }
+                            >
+                              A−
+                            </button>
+                            <span className="size">
+                              {Math.round((props_.size ?? 1) * 100)}%
+                            </span>
+                            <button
+                              type="button"
+                              aria-label="글자 크게"
+                              onClick={() =>
+                                props.onEdit?.(address, {
+                                  size:
+                                    Math.round(
+                                      ((props_.size ?? 1) + 0.1) * 10,
+                                    ) / 10,
+                                })
+                              }
+                            >
+                              A+
                             </button>
                             <button
                               type="button"

@@ -469,9 +469,12 @@ function App() {
       delete datum.y;
       delete datum.w;
       delete datum.h;
+      delete datum.size;
       delete datum.background;
     } else {
       Object.assign(datum, patch);
+      if (datum.size !== undefined && datum.size < 0.3) datum.size = 0.3;
+      if (datum.size === 1) delete datum.size;
     }
     const keys = Object.keys(datum).filter((key) => key !== 'text');
     data.setTranslation(

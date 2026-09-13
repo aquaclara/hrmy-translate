@@ -7,6 +7,7 @@ export type PropertiedDataModel = {
   y?: number;
   w?: number;
   h?: number;
+  size?: number;
   color?: string;
   background?: string;
   'margin-left'?: string;

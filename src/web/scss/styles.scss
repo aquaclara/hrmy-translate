@@ -205,6 +205,8 @@ nav {
     }
 
     .line.fixed {
+      display: grid;
+      align-content: center;
       overflow: visible;
       line-height: 1.25;
     }
@@ -256,6 +258,12 @@ nav {
         font-size: 12px;
         padding: 0.1rem 0.4rem;
         cursor: pointer;
+      }
+
+      .size {
+        align-self: center;
+        min-width: 2.5em;
+        text-align: center;
       }
     }
   }
