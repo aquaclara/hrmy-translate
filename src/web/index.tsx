@@ -460,7 +460,6 @@ function App() {
   return (
     <div className={`app${onSite && panelOpen ? ' with-panel' : ''}`}>
       <nav>
-        <a href="https://github.com/aquaclara/hrmy-translate">GitHub</a>
         {onSite && (
           <button
             type="button"
@@ -477,7 +476,7 @@ function App() {
           className="browser"
           style={{ marginTop: Math.max(0, controlsHeight - chromeHeight) }}
         >
-          <div className="title-bar">만화 보는 창</div>
+          <div className="title-bar">가상 브라우저</div>
           <div className="chrome" ref={chrome}>
             <AddressBar
               value={input}

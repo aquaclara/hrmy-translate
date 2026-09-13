@@ -28,6 +28,10 @@
 | HERO 단편선                 | 0%                    |
 | 아코와 밤비                 | ~69화                 |
 
+## 소스 코드와 번역 데이터
+
+번역 파일과 이 페이지의 소스 코드는 [GitHub 리포지토리](https://github.com/aquaclara/hrmy-translate)에 있습니다. 번역 기여는 그곳으로 Pull Request를 보내 주세요.
+
 ## 고지
 
 이 프로그램과 번역본의 제작은 HERO님과 아무런 관련이 없습니다.
