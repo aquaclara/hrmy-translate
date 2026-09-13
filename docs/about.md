@@ -25,7 +25,7 @@
 | --------------------------- | --------------------- |
 | 호리씨와 미야무라군(본편)   | 일부 효과음 등 미번역 |
 | 호리씨와 미야무라군(오마케) | 141~160               |
-| HERO 단편선                 | 0%                    |
+| HERO 단편                   | 0%                    |
 | 아코와 밤비                 | ~69화                 |
 
 ## 소스 코드와 번역 데이터
@@ -56,8 +56,6 @@ In compliance with all of these provisions, the translation can be distributed a
 
 <details>
 <summary>번역 원칙</summary>
-
-## 번역 원칙
 
 번역은 학산문화사 호리미야(서현아 역)와 가장 유사하게 하는 것이 목표.
 
