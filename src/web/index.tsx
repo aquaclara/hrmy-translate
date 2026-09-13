@@ -12,21 +12,18 @@ import { LICENSE, YAML_OPTION } from '../shared/constants';
 const SITE_HOST = 'dka-hero.me';
 const SITE_ENTRANCE = `https://${SITE_HOST}/`;
 const HOME_URL = new URL('about.html', location.href);
-const HASH_PARAM = 'url';
+const URL_PARAM = 'url';
 
-function urlFromHash(): string | null {
-  const hash = location.hash.replace(/^#/, '');
-  if (hash === '') return null;
-  const params = new URLSearchParams(hash);
-  return params.get(HASH_PARAM) ?? decodeURIComponent(hash);
+function urlFromQuery(): string | null {
+  return new URLSearchParams(location.search).get(URL_PARAM);
 }
 
-function updateHash(url: URL | null) {
-  const hash =
+function updateQuery(url: URL | null) {
+  const query =
     url === null || url.href === HOME_URL.href
       ? ''
-      : `#${HASH_PARAM}=${encodeURIComponent(url.href)}`;
-  history.replaceState(null, '', location.pathname + location.search + hash);
+      : `?${URL_PARAM}=${encodeURIComponent(url.href)}`;
+  history.replaceState(null, '', location.pathname + query + location.hash);
 }
 const PAGE_KEY = 'page';
 const FIT_KEY = 'fit';
@@ -566,14 +563,8 @@ function App() {
       : undefined;
 
   useEffect(() => {
-    const requested = urlFromHash();
+    const requested = urlFromQuery();
     if (requested !== null) enter(requested);
-    const onHashChange = () => {
-      const next = urlFromHash();
-      if (next !== null) enter(next);
-    };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
   useEffect(() => {
@@ -596,7 +587,7 @@ function App() {
       setMessage(null);
       setInput(HOME_URL.href);
       setUrl(new URL(HOME_URL.href));
-      updateHash(null);
+      updateQuery(null);
       return;
     }
     const target = parseUrl(text);
@@ -609,13 +600,13 @@ function App() {
       );
       setInput(SITE_ENTRANCE);
       setUrl(new URL(SITE_ENTRANCE));
-      updateHash(new URL(SITE_ENTRANCE));
+      updateQuery(new URL(SITE_ENTRANCE));
       return;
     }
     setMessage(null);
     setInput(target.href);
     setUrl(target);
-    updateHash(target);
+    updateQuery(target);
   }
 
   function choosePage(next: string) {
