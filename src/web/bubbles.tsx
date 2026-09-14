@@ -296,13 +296,7 @@ export function TranslationView(props: Props) {
     event.preventDefault();
     event.stopPropagation();
     event.currentTarget.setPointerCapture(event.pointerId);
-    const bubble = (
-      mode === 'move' ? event.currentTarget : event.currentTarget.parentElement!
-    ).getBoundingClientRect();
-    const box =
-      mode === 'move'
-        ? bubble
-        : event.currentTarget.parentElement!.getBoundingClientRect();
+    const bubble = event.currentTarget.parentElement!.getBoundingClientRect();
     const origin = toContent(bubble.left, bubble.top, imageTop);
     setDrag({
       address,
@@ -314,8 +308,8 @@ export function TranslationView(props: Props) {
       y: origin.y,
       w: bubble.width / props.scale,
       h: bubble.height / props.scale,
-      centerX: box.left + box.width / 2,
-      centerY: box.top + box.height / 2,
+      centerX: bubble.left + bubble.width / 2,
+      centerY: bubble.top + bubble.height / 2,
       moved: false,
     });
   }
