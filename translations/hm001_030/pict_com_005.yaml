@@ -573,342 +573,350 @@ hm001_030/001/hori_024.gif:
     x: 61
     y: 916
 hm001_030/001/hori_025.gif:
-- - h: 161
-    radius: 52
-    text: 미야무라는 뭐야? 막 비쥬얼록? 그런 거 듣고 그래?
-    w: 102
-    x: 221
-    y: 93
-  - h: 62
-    text: 어? 아니
-    w: 56
-    x: 21
-    y: 96
-- - h: 111
-    radius: 56
-    text: 스피츠나... 범프 같은 거
-    w: 90
-    x: 244
-    y: 335
-  - h: 97
-    radius: 0
-    rotate: -8
-    size: 2
-    text: <big><b>덜컹</b></big>
-    type: plain
-    vertical: true
-    w: 28
-    x: 160
-    y: 458
-  - h: 32
-    text: 헤에
-    w: 38
-    x: 38
-    y: 351
-- - h: 125
-    radius: 80
-    text: 호리는 어떤 걸 들어?
-    w: 74
-    x: 257
-    y: 599
-- - h: 107
-    radius: 80
-    text: 애... 애니메이션...
-    w: 54
-    x: 270
-    y: 853
-  - h: 85
-    radius: 80
-    text: 애니메이션!?
-    w: 62
-    x: 162
-    y: 844
-  - background: '#4ccde4'
-    h: 92
-    rotate: -21
-    text: 포켓몬 같은 거?
-    type: plain
-    w: 45
-    x: 95
-    y: 848
-  - h: 118
-    text: 내가 아니라 소타가아
-    type: scream
-    w: 64
-    x: 14
-    y: 950
+  top: 12408
+  text:
+  - - h: 161
+      radius: 52
+      text: 미야무라는 뭐야? 막 비쥬얼록? 그런 거 듣고 그래?
+      w: 102
+      x: 221
+      y: 8
+    - h: 62
+      text: 어? 아니
+      w: 56
+      x: 21
+      y: 11
+  - - h: 111
+      radius: 56
+      text: 스피츠나... 범프 같은 거
+      w: 90
+      x: 244
+      y: 250
+    - h: 97
+      radius: 0
+      rotate: -8
+      size: 2
+      text: <big><b>덜컹</b></big>
+      type: plain
+      vertical: true
+      w: 28
+      x: 160
+      y: 373
+    - h: 32
+      text: 헤에
+      w: 38
+      x: 38
+      y: 266
+  - - h: 125
+      radius: 80
+      text: 호리는 어떤 걸 들어?
+      w: 74
+      x: 257
+      y: 514
+  - - h: 107
+      radius: 80
+      text: 애... 애니메이션...
+      w: 54
+      x: 270
+      y: 768
+    - h: 85
+      radius: 80
+      text: 애니메이션!?
+      w: 62
+      x: 162
+      y: 759
+    - background: '#4ccde4'
+      h: 92
+      rotate: -21
+      text: 포켓몬 같은 거?
+      type: plain
+      w: 45
+      x: 95
+      y: 763
+    - h: 118
+      text: 내가 아니라 소타가아
+      type: scream
+      w: 64
+      x: 14
+      y: 865
 hm001_030/001/hori_026.gif:
-- - h: 111
-    radius: 28
-    text: 형아 사용법 알려줘-
-    w: 66
-    x: 241
-    y: 117
-  - h: 88
-    radius: 61
-    text: 디지털 카메라?
-    w: 44
-    x: 56
-    y: 110
-  - h: 121
-    text: 누나도 쓸 줄 모르면서 샀어
-    w: 67
-    x: 10
-    y: 217
-- - h: 125
-    radius: 37
-    text: 전원 켜기, 살짝 눌렀다가 다시 세게 누르고 있는다
-    w: 105
-    x: 229
-    y: 354
-  - background: '#c6e51b'
-    h: 34
-    rotate: -15
-    text: 삐빅
-    type: plain
-    w: 37
-    x: 170
-    y: 390
-  - text: 하-
-    type: plain
-    w: 51
-    x: 106
-    y: 366
-  - text: 덜커덕, 덜커덕
-    type: plain
-    w: 132
-    x: 92
-    y: 470
-- - h: 129
-    text: 이렇게 줌인, 그리고 세모 버튼을 누르면 여태 찍은 걸 볼 수 있으니까
-    w: 80
-    x: 248
-    y: 607
-  - h: 93
-    text: 화면이 어두울 때는 이걸 누르고
-    w: 82
-    x: 125
-    y: 605
-  - background: '#c6e51b'
-    h: 34
-    radius: 80
-    text: 삣,
-    type: plain
-    w: 20
-    x: 214
-    y: 713
-  - background: '#c6e51b'
-    h: 49
-    text: 삐삣,
-    w: 23
-    x: 191
-    y: 749
-  - background: '#c6e51b'
-    h: 56
-    text: 삣, 삣
-    w: 26
-    x: 155
-    y: 788
-  - h: 92
-    rotate: -11
-    text: 덜컹, 덜컹
-    type: plain
-    w: 42
-    x: 6
-    y: 664
-- - h: 121
-    text: 내 사진만 잔뜩이잖아!
-    w: 58
-    x: 268
-    y: 864
-  - h: 58
-    radius: 0
-    text: 다음 날
-    type: square
-    w: 31
-    x: 186
-    y: 869
-  - h: 61
-    radius: 20
-    text: 삣삣삣 삣삣삣 삣삣삣 삣삣삣삣삣
-    type: plain
-    w: 67
-    x: 160
-    y: 943
-  - h: 51
-    text: 악 눈 감았어!
-    w: 32
-    x: 103
-    y: 924
-  - background: '#c6e51b'
-    h: 36
-    radius: 80
-    rotate: -10
-    text: 왜 이래!
-    type: plain
-    w: 31
-    x: 127
-    y: 979
-  - h: 123
-    text: 형아가 다 찍은 거야
-    w: 79
-    x: 8
-    y: 968
+  top: 13446
+  text:
+  - - h: 111
+      radius: 28
+      text: 형아 사용법 알려줘-
+      w: 66
+      x: 241
+      y: 15
+    - h: 88
+      radius: 61
+      text: 디지털 카메라?
+      w: 44
+      x: 56
+      y: 8
+    - h: 121
+      text: 누나도 쓸 줄 모르면서 샀어
+      w: 67
+      x: 10
+      y: 115
+  - - h: 125
+      radius: 37
+      text: 전원 켜기, 살짝 눌렀다가 다시 세게 누르고 있는다
+      w: 105
+      x: 229
+      y: 252
+    - background: '#c6e51b'
+      h: 34
+      rotate: -15
+      text: 삐빅
+      type: plain
+      w: 37
+      x: 170
+      y: 288
+    - text: 하-
+      type: plain
+      w: 51
+      x: 106
+      y: 264
+    - text: 덜커덕, 덜커덕
+      type: plain
+      w: 132
+      x: 92
+      y: 368
+  - - h: 129
+      text: 이렇게 줌인, 그리고 세모 버튼을 누르면 여태 찍은 걸 볼 수 있으니까
+      w: 80
+      x: 248
+      y: 505
+    - h: 93
+      text: 화면이 어두울 때는 이걸 누르고
+      w: 82
+      x: 125
+      y: 503
+    - background: '#c6e51b'
+      h: 34
+      radius: 80
+      text: 삣,
+      type: plain
+      w: 20
+      x: 214
+      y: 611
+    - background: '#c6e51b'
+      h: 49
+      text: 삐삣,
+      w: 23
+      x: 191
+      y: 647
+    - background: '#c6e51b'
+      h: 56
+      text: 삣, 삣
+      w: 26
+      x: 155
+      y: 686
+    - h: 92
+      rotate: -11
+      text: 덜컹, 덜컹
+      type: plain
+      w: 42
+      x: 6
+      y: 562
+  - - h: 121
+      text: 내 사진만 잔뜩이잖아!
+      w: 58
+      x: 268
+      y: 762
+    - h: 58
+      radius: 0
+      text: 다음 날
+      type: square
+      w: 31
+      x: 186
+      y: 767
+    - h: 61
+      radius: 20
+      text: 삣삣삣 삣삣삣 삣삣삣 삣삣삣삣삣
+      type: plain
+      w: 67
+      x: 160
+      y: 841
+    - h: 51
+      text: 악 눈 감았어!
+      w: 32
+      x: 103
+      y: 822
+    - background: '#c6e51b'
+      h: 36
+      radius: 80
+      rotate: -10
+      text: 왜 이래!
+      type: plain
+      w: 31
+      x: 127
+      y: 877
+    - h: 123
+      text: 형아가 다 찍은 거야
+      w: 79
+      x: 8
+      y: 866
 hm001_030/001/hori_027.gif:
-- - h: 99
-    text: 어, 오늘은 화장 했네-
-    w: 49
-    x: 280
-    y: 133
-  - background: '#f8a67a'
-    h: 61
-    text: 안녕
-    type: plain
-    w: 30
-    x: 216
-    y: 175
-  - h: 78
-    radius: 40
-    text: 할인 행사 시간!!
-    type: plain
-    w: 39
-    x: 149
-    y: 141
-  - h: 127
-    text: 저녁 장 보러 가는데- 같이 가자!
-    w: 71
-    x: 19
-    y: 129
-- - h: 98
-    text: 그래서 짐꾼 신세구나
-    w: 57
-    x: 271
-    y: 378
-  - background: '#f8a67a'
-    h: 22
-    text: 아휴
-    type: plain
-    w: 32
-    x: 148
-    y: 387
-  - h: 122
-    radius: 80
-    text: 요즘 소타 먹는 양이 늘었거든-
-    w: 61
-    x: 4
-    y: 368
-- - h: 66
-    text: 누나 왔어
-    w: 44
-    x: 290
-    y: 639
-  - background: '#f8a67a'
-    h: 28
-    text: 이크
-    type: plain
-    w: 40
-    x: 219
-    y: 681
-  - h: 70
-    radius: 80
-    text: 배 고파아
-    w: 58
-    x: 137
-    y: 627
-  - h: 87
-    rotate: -17
-    size: 1.7
-    text: 팍
-    type: stroke
-    w: 32
-    x: 130
-    y: 724
-  - h: 87
-    text: 네- 네네
-    w: 45
-    x: 20
-    y: 772
-- - h: 98
-    radius: 0
-    text: 호호호리 애가 있나봐-!!
-    w: 80
-    x: 239
-    y: 884
-  - h: 71
-    radius: 18
-    rotate: -21
-    text: 어제 봤어
-    type: plain
-    w: 46
-    x: 184
-    y: 928
-  - h: 73
-    rotate: -20
-    text: 남편도 있었다구
-    w: 27
-    x: 157
-    y: 945
-  - h: 49
-    radius: 0
-    text: 다음 날
-    type: square
-    w: 36
-    x: 128
-    y: 885
-  - h: 112
-    text: 으에에-
-    w: 35
-    x: 29
-    y: 883
+  top: 14487
+  text:
+  - - h: 99
+      text: 어, 오늘은 화장 했네-
+      w: 49
+      x: 280
+      y: 11
+    - background: '#f8a67a'
+      h: 61
+      text: 안녕
+      type: plain
+      w: 30
+      x: 216
+      y: 53
+    - h: 78
+      radius: 40
+      text: 할인 행사 시간!!
+      type: plain
+      w: 39
+      x: 149
+      y: 19
+    - h: 127
+      text: 저녁 장 보러 가는데- 같이 가자!
+      w: 71
+      x: 19
+      y: 7
+  - - h: 98
+      text: 그래서 짐꾼 신세구나
+      w: 57
+      x: 271
+      y: 256
+    - background: '#f8a67a'
+      h: 22
+      text: 아휴
+      type: plain
+      w: 32
+      x: 148
+      y: 265
+    - h: 122
+      radius: 80
+      text: 요즘 소타 먹는 양이 늘었거든-
+      w: 61
+      x: 4
+      y: 246
+  - - h: 66
+      text: 누나 왔어
+      w: 44
+      x: 290
+      y: 517
+    - background: '#f8a67a'
+      h: 28
+      text: 이크
+      type: plain
+      w: 40
+      x: 219
+      y: 559
+    - h: 70
+      radius: 80
+      text: 배 고파아
+      w: 58
+      x: 137
+      y: 505
+    - h: 87
+      rotate: -17
+      size: 1.7
+      text: 팍
+      type: stroke
+      w: 32
+      x: 130
+      y: 602
+    - h: 87
+      text: 네- 네네
+      w: 45
+      x: 20
+      y: 650
+  - - h: 98
+      radius: 0
+      text: 호호호리 애가 있나봐-!!
+      w: 80
+      x: 239
+      y: 762
+    - h: 71
+      radius: 18
+      rotate: -21
+      text: 어제 봤어
+      type: plain
+      w: 46
+      x: 184
+      y: 806
+    - h: 73
+      rotate: -20
+      text: 남편도 있었다구
+      w: 27
+      x: 157
+      y: 823
+    - h: 49
+      radius: 0
+      text: 다음 날
+      type: square
+      w: 36
+      x: 128
+      y: 763
+    - h: 112
+      text: 으에에-
+      w: 35
+      x: 29
+      y: 761
 hm001_030/001/hori_028.gif:
-- - h: 142
-    radius: 80
-    text: 이제 나 여기 안 올 거니까
-    w: 72
-    x: 241
-    y: 152
-- - h: 132
-    radius: 78
-    text: 그럼 뭐 학교에서도 잘 부탁해
-    w: 64
-    x: 250
-    y: 392
-  - h: 90
-    radius: 41
-    text: 잘 살아
-    w: 40
-    x: 18
-    y: 469
-- - background: '#c6e51b'
-    h: 18
-    text: 허억
-    type: plain
-    w: 34
-    x: 115
-    y: 659
-  - h: 17
-    rotate: -7
-    text: 허억
-    w: 36
-    x: 90
-    y: 712
-  - h: 27
-    rotate: -15
-    text: 허억
-    w: 50
-    x: 64
-    y: 764
-- - h: 38
-    text: 꿈인가
-    type: plain
-    w: 31
-    x: 207
-    y: 1001
-  - background: '#c6e51b'
-    h: 71
-    radius: 22
-    text: 좀 놀랐다
-    w: 48
-    x: 52
-    y: 918
+  top: 15525
+  text:
+  - - h: 142
+      radius: 80
+      text: 이제 나 여기 안 올 거니까
+      w: 72
+      x: 241
+      y: 13
+  - - h: 132
+      radius: 78
+      text: 그럼 뭐 학교에서도 잘 부탁해
+      w: 64
+      x: 250
+      y: 253
+    - h: 90
+      radius: 41
+      text: 잘 살아
+      w: 40
+      x: 18
+      y: 330
+  - - background: '#c6e51b'
+      h: 18
+      text: 허억
+      type: plain
+      w: 34
+      x: 115
+      y: 520
+    - h: 17
+      rotate: -7
+      text: 허억
+      w: 36
+      x: 90
+      y: 573
+    - h: 27
+      rotate: -15
+      text: 허억
+      w: 50
+      x: 64
+      y: 625
+  - - h: 38
+      text: 꿈인가
+      type: plain
+      w: 31
+      x: 207
+      y: 862
+    - background: '#c6e51b'
+      h: 71
+      radius: 22
+      text: 좀 놀랐다
+      w: 48
+      x: 52
+      y: 779
 
