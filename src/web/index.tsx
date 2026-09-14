@@ -735,6 +735,15 @@ function App() {
                   className="window-buttons"
                   onPointerDown={(event) => event.stopPropagation()}
                 >
+                  {overlay && (offset.x !== 0 || offset.y !== 0) && (
+                    <button
+                      type="button"
+                      className="recenter"
+                      aria-label="위치 초기화"
+                      title="위치 초기화"
+                      onClick={() => moveTo({ x: 0, y: 0 })}
+                    />
+                  )}
                   <button
                     type="button"
                     className="minimize"
