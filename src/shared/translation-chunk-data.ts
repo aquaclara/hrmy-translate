@@ -110,6 +110,27 @@ export default class TranslationChuckData {
     }
   }
 
+  insertTranslation(
+    imageId: string,
+    cutIndex: number,
+    tlsIndex: number,
+    datum: Translation.DataModel = '',
+  ): void {
+    this.getCutTranslations(imageId)[cutIndex].splice(tlsIndex, 0, datum);
+  }
+
+  removeTranslation(imageId: string, cutIndex: number, tlsIndex: number): void {
+    this.getCutTranslations(imageId)[cutIndex].splice(tlsIndex, 1);
+  }
+
+  insertCut(imageId: string, cutIndex: number): void {
+    this.getCutTranslations(imageId).splice(cutIndex, 0, ['']);
+  }
+
+  removeCut(imageId: string, cutIndex: number): void {
+    this.getCutTranslations(imageId).splice(cutIndex, 1);
+  }
+
   moveTranslation(
     imageId: string,
     cutIndex: number,

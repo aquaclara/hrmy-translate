@@ -246,6 +246,38 @@ nav {
       touch-action: none;
     }
 
+    .line-editor {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 8em;
+      min-height: 2.6em;
+      padding: 0.1em 0.4em;
+      border: 2px solid #1e88e5;
+      border-radius: 0.3em;
+      background-color: white;
+      font: inherit;
+      font-size: 1em;
+      line-height: 1.25;
+      resize: both;
+      pointer-events: auto;
+    }
+
+    .add-image {
+      position: absolute;
+      width: 1.6em;
+      height: 1.6em;
+      margin-left: -1.6em;
+      border: 2px solid #1e88e5;
+      border-radius: 50%;
+      background-color: white;
+      color: #1e88e5;
+      font-size: 1em;
+      line-height: 1;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
     .bubble.selected .line {
       outline: 2px solid #1e88e5;
     }

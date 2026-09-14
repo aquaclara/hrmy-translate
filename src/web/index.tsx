@@ -6,7 +6,7 @@ import FileData from '../shared/translation-chunk-data';
 import { isComment } from '../shared/data-models/comment';
 import { translationPathFor } from '../shared/translation-path';
 import { documentHeight, layoutFor } from './layout';
-import { Address, Patch, TranslationView } from './bubbles';
+import { Address, Patch, Structure, TranslationView } from './bubbles';
 import { LICENSE, YAML_OPTION } from '../shared/constants';
 
 const SITE_HOST = 'dka-hero.me';
@@ -525,14 +525,53 @@ function App() {
       if (datum.rotate === 0) delete datum.rotate;
     }
     const keys = Object.keys(datum).filter((key) => key !== 'text');
+    if (datum.type === 'speech') delete datum.type;
     data.setTranslation(
       address.key,
       address.cut,
       address.line,
-      keys.length === 0 ? datum.text : datum,
+      keys.length === 0 ||
+        (keys.length === 1 && datum.type === undefined && keys[0] === 'type')
+        ? datum.text
+        : datum,
     );
     store(draftKey(page), JSON.stringify(data.getData()));
     setVersion((version) => version + 1);
+  }
+
+  function changeStructure(change: Structure): Address | null {
+    if (translation.status !== 'loaded' || page === null) return null;
+    const data = translation.data;
+    let next: Address | null = null;
+    if (change.op === 'addImage') {
+      data.createEmptyImageForKey(change.key);
+      next = { key: change.key, cut: 0, line: 0 };
+    } else if (change.op === 'insertLine') {
+      const { key, cut, line } = change.address;
+      const index = change.before ? line : line + 1;
+      data.insertTranslation(key, cut, index);
+      next = { key, cut, line: index };
+    } else if (change.op === 'insertCut') {
+      const { key, cut } = change.address;
+      const index = change.before ? cut : cut + 1;
+      data.insertCut(key, index);
+      next = { key, cut: index, line: 0 };
+    } else {
+      const { key, cut, line } = change.address;
+      const cuts = data.getCutTranslations(key);
+      if (cuts[cut].length > 1) {
+        data.removeTranslation(key, cut, line);
+        const target = Math.max(0, line - 1);
+        next = { key, cut, line: target };
+      } else if (cuts.length > 1) {
+        data.removeCut(key, cut);
+        const target = Math.max(0, cut - 1);
+        next = { key, cut: target, line: cuts[target].length - 1 };
+      }
+    }
+    store(draftKey(page), JSON.stringify(data.getData()));
+    setVersion((version) => version + 1);
+    return next;
   }
 
   function copyYaml() {
@@ -750,8 +789,10 @@ function App() {
                   edit={edit}
                   contentLeft={mobile ? 0 : MENU_WIDTH}
                   firstImage={info?.first ?? null}
+                  imageCount={info?.images ?? 0}
                   series={page ? seriesOf(page) : 'horimiya'}
                   onEdit={applyEdit}
+                  onStructure={changeStructure}
                 />
               </div>
             )}
@@ -781,6 +822,7 @@ function App() {
                     edit={false}
                     contentLeft={mobile ? 0 : MENU_WIDTH}
                     firstImage={info?.first ?? null}
+                    imageCount={info?.images ?? 0}
                     series={page ? seriesOf(page) : 'horimiya'}
                   />
                 )}

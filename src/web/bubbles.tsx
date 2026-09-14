@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import FileData from '../shared/translation-chunk-data';
 import * as TranslationModel from '../shared/data-models/translation';
 import { isComment } from '../shared/data-models/comment';
@@ -11,6 +11,52 @@ export type Address = { key: string; cut: number; line: number };
 export type Patch = Partial<TranslationModel.PropertiedDataModel> & {
   reset?: boolean;
 };
+export type Structure =
+  | { op: 'insertLine'; address: Address; before: boolean }
+  | { op: 'insertCut'; address: Address; before: boolean }
+  | { op: 'removeLine'; address: Address }
+  | { op: 'addImage'; key: string };
+
+const TYPES: TranslationModel.Type[] = [
+  'speech',
+  'thought',
+  'scream',
+  'plain',
+  'stroke',
+  'square',
+  'shock',
+];
+
+const WRAPS: { [key: string]: [string, string] } = {
+  u: ['<strong class="stroke">', '</strong>'],
+  b: ['<b>', '</b>'],
+  '[': ['<small>', '</small>'],
+  ']': ['<big>', '</big>'],
+  ',': ['<sub>', '</sub>'],
+  '.': ['<sup>', '</sup>'],
+  i: ['<span class="blue">', '</span>'],
+  '"': ['「', '」'],
+};
+
+function wrapSelection(
+  input: HTMLTextAreaElement,
+  open: string,
+  close: string,
+): string {
+  const { value, selectionStart, selectionEnd } = input;
+  return (
+    value.slice(0, selectionStart) +
+    open +
+    value.slice(selectionStart, selectionEnd) +
+    close +
+    value.slice(selectionEnd)
+  );
+}
+
+function insertAt(input: HTMLTextAreaElement, text: string): string {
+  const { value, selectionStart, selectionEnd } = input;
+  return value.slice(0, selectionStart) + text + value.slice(selectionEnd);
+}
 
 type Props = {
   data: FileData;
@@ -20,9 +66,66 @@ type Props = {
   edit: boolean;
   contentLeft: number;
   firstImage: number | null;
+  imageCount: number;
   series: 'horimiya' | 'aco';
   onEdit?: (address: Address, patch: Patch) => void;
+  onStructure?: (change: Structure) => Address | null;
 };
+
+function keyForIndex(keys: string[], first: number | null, index: number) {
+  if (first === null || keys.length === 0) return null;
+  const sample = keys[0].match(/^(.*?)(\d+)(\.(?:gif|jpg|png))$/);
+  if (!sample) return null;
+  return (
+    sample[1] +
+    String(first + index).padStart(sample[2].length, '0') +
+    sample[3]
+  );
+}
+
+function Editor(props: {
+  address: Address;
+  value: string;
+  style: React.CSSProperties;
+  onChange: (text: string) => void;
+  onKey: (
+    event: React.KeyboardEvent<HTMLTextAreaElement>,
+    input: HTMLTextAreaElement,
+  ) => boolean;
+  onDone: () => void;
+}) {
+  const input = useRef<HTMLTextAreaElement>(null);
+  useEffect(() => {
+    const element = input.current;
+    if (element === null) return;
+    element.focus();
+    element.setSelectionRange(element.value.length, element.value.length);
+  }, []);
+  return (
+    <textarea
+      ref={input}
+      className="line-editor"
+      style={props.style}
+      value={props.value}
+      rows={2}
+      onChange={(event) => props.onChange(event.target.value)}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          props.onDone();
+          return;
+        }
+        if (props.onKey(event, event.currentTarget)) event.preventDefault();
+      }}
+      onBlur={props.onDone}
+      onPointerDown={(event) => event.stopPropagation()}
+    />
+  );
+}
+
+function layoutOf(layout: Layout | null): Layout | null {
+  return layout;
+}
 
 function imageIndex(key: string, order: number, first: number | null): number {
   if (first === null) return order;
@@ -58,6 +161,7 @@ function Line(props: {
   onPointerDown: (event: React.PointerEvent<HTMLElement>) => void;
   onPointerMove: (event: React.PointerEvent<HTMLElement>) => void;
   onPointerUp: () => void;
+  onDoubleClick: () => void;
 }) {
   const element = useRef<HTMLParagraphElement>(null);
 
@@ -92,6 +196,7 @@ function Line(props: {
       onPointerMove={props.onPointerMove}
       onPointerUp={props.onPointerUp}
       onPointerCancel={props.onPointerUp}
+      onDoubleClick={props.onDoubleClick}
       dangerouslySetInnerHTML={{ __html: props.html }}
     />
   );
@@ -105,7 +210,65 @@ export function TranslationView(props: Props) {
   const root = useRef<HTMLDivElement>(null);
   const [drag, setDrag] = useState<Drag | null>(null);
   const [selected, setSelected] = useState<Address | null>(null);
+  const [editing, setEditing] = useState<Address | null>(null);
   const keys = Object.keys(props.data.getData()).filter((key) => key !== '//');
+  const indexOf = (key: string) =>
+    imageIndex(key, keys.indexOf(key), props.firstImage);
+  const missing: number[] = [];
+  if (props.edit && props.overlay && layoutOf(props.layout)) {
+    const used = new Set(keys.map(indexOf));
+    for (let i = 0; i < props.imageCount; i++)
+      if (!used.has(i)) missing.push(i);
+  }
+
+  function textOf(address: Address): string {
+    const datum = props.data.getTranslation(
+      address.key,
+      address.cut,
+      address.line,
+    );
+    return typeof datum === 'string' ? datum : datum.text;
+  }
+
+  function handleKey(
+    event: React.KeyboardEvent<HTMLTextAreaElement>,
+    input: HTMLTextAreaElement,
+    address: Address,
+  ): boolean {
+    const mod = event.ctrlKey || event.metaKey;
+    if (event.key === 'Enter' && event.altKey) {
+      props.onEdit?.(address, { text: insertAt(input, '<br>') });
+      return true;
+    }
+    if (event.key === 'Enter') {
+      const next = props.onStructure?.(
+        mod
+          ? { op: 'insertCut', address, before: event.shiftKey }
+          : { op: 'insertLine', address, before: event.shiftKey },
+      );
+      if (next) setEditing(next);
+      return true;
+    }
+    if (event.key === 'Backspace' && input.value === '') {
+      const next = props.onStructure?.({ op: 'removeLine', address });
+      setEditing(next ?? null);
+      return true;
+    }
+    if (mod && /^[1-7]$/.test(event.key)) {
+      props.onEdit?.(address, { type: TYPES[Number(event.key) - 1] });
+      return true;
+    }
+    if (event.altKey && event.key === '.') {
+      props.onEdit?.(address, { text: insertAt(input, '...') });
+      return true;
+    }
+    if (mod && WRAPS[event.key]) {
+      const [open, close] = WRAPS[event.key];
+      props.onEdit?.(address, { text: wrapSelection(input, open, close) });
+      return true;
+    }
+    return false;
+  }
   const layout = props.layout;
   const positioned = layout !== null;
   const imageLeft = layout ? props.contentLeft + layout.left : 0;
@@ -229,8 +392,9 @@ export function TranslationView(props: Props) {
                 <div key={cutIndex} className="cut" style={style}>
                   {cut.map((line, lineIndex) => {
                     const text = typeof line === 'string' ? line : line.text;
-                    if (!text || isComment(text)) return null;
                     const address = { key, cut: cutIndex, line: lineIndex };
+                    if (isComment(text)) return null;
+                    if (!text && !sameAddress(editing, address)) return null;
                     const props_: Partial<TranslationModel.PropertiedDataModel> =
                       typeof line === 'string' ? {} : line;
                     const type = props_.type || 'speech';
@@ -268,38 +432,60 @@ export function TranslationView(props: Props) {
                         ? `rotate(${props_.rotate}deg)`
                         : undefined;
                     const isSelected = sameAddress(selected, address);
+                    const isEditing = sameAddress(editing, address);
                     return (
                       <div
                         key={lineIndex}
                         className={`bubble${placed ? ' placed' : ''}${isSelected ? ' selected' : ''}`}
                         style={placed ? lineStyle : undefined}
                       >
-                        <Line
-                          className={`line ${type}${placed && props_.h !== undefined ? ' fixed' : ''}${props_.vertical ? ' vertical' : ''}`}
-                          style={
-                            placed
-                              ? {
-                                  backgroundColor: lineStyle.backgroundColor,
-                                  height: lineStyle.height,
-                                  transform: rotation,
-                                  borderRadius: radius,
-                                }
-                              : {
-                                  ...lineStyle,
-                                  transform: rotation,
-                                  borderRadius: radius,
-                                }
-                          }
-                          html={text}
-                          fixed={placed && props_.h !== undefined}
-                          size={props_.size ?? 1}
-                          scale={props.scale}
-                          onPointerDown={(event) =>
-                            startDrag(event, address, 'move', imageTop)
-                          }
-                          onPointerMove={moveDrag}
-                          onPointerUp={endDrag}
-                        />
+                        {isEditing ? (
+                          <Editor
+                            address={address}
+                            value={text}
+                            style={{
+                              width: lineStyle.width,
+                              height: lineStyle.height,
+                            }}
+                            onChange={(value) =>
+                              props.onEdit?.(address, { text: value })
+                            }
+                            onKey={(event, input) =>
+                              handleKey(event, input, address)
+                            }
+                            onDone={() => setEditing(null)}
+                          />
+                        ) : (
+                          <Line
+                            className={`line ${type}${placed && props_.h !== undefined ? ' fixed' : ''}${props_.vertical ? ' vertical' : ''}`}
+                            style={
+                              placed
+                                ? {
+                                    backgroundColor: lineStyle.backgroundColor,
+                                    height: lineStyle.height,
+                                    transform: rotation,
+                                    borderRadius: radius,
+                                  }
+                                : {
+                                    ...lineStyle,
+                                    transform: rotation,
+                                    borderRadius: radius,
+                                  }
+                            }
+                            html={text}
+                            fixed={placed && props_.h !== undefined}
+                            size={props_.size ?? 1}
+                            scale={props.scale}
+                            onPointerDown={(event) =>
+                              startDrag(event, address, 'move', imageTop)
+                            }
+                            onPointerMove={moveDrag}
+                            onPointerUp={endDrag}
+                            onDoubleClick={() =>
+                              props.edit && setEditing(address)
+                            }
+                          />
+                        )}
                         {props.edit && (
                           <span
                             className="rotor"
@@ -422,6 +608,29 @@ export function TranslationView(props: Props) {
               );
             })}
           </section>
+        );
+      })}
+      {missing.map((index) => {
+        const key = keyForIndex(keys, props.firstImage, index);
+        if (key === null || props.layout === null) return null;
+        const layout = props.layout;
+        return (
+          <button
+            key={index}
+            type="button"
+            className="add-image"
+            style={{
+              left: (imageLeft + layout.width - BUBBLE_GAP) * props.scale,
+              top:
+                (layout.top + index * layout.pitch + BUBBLE_GAP) * props.scale,
+            }}
+            onClick={() => {
+              const next = props.onStructure?.({ op: 'addImage', key });
+              if (next) setEditing(next);
+            }}
+          >
+            +
+          </button>
         );
       })}
     </div>
