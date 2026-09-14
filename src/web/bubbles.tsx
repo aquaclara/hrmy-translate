@@ -551,7 +551,7 @@ export function TranslationView(props: Props) {
                                 type="range"
                                 min={0}
                                 max={80}
-                                value={props_.radius ?? 16}
+                                value={props_.radius ?? 80}
                                 onChange={(event) =>
                                   props.onEdit?.(address, {
                                     radius: Number(event.target.value),
