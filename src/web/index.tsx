@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import yaml from 'js-yaml';
 import FileDataModel from '../shared/data-models/translation-chucks/file';
@@ -29,6 +29,10 @@ const PAGE_KEY = 'page';
 const FIT_KEY = 'fit';
 const OFFSET_KEY = 'offset';
 const WINDOW_KEY = 'window';
+const FLIP_DURATION = 250;
+
+type Motion = { dx: number; dy: number; from: number; to: number };
+type Flip = { phase: 'start' | 'running'; browser?: Motion; panel?: Motion };
 const DRAFT_KEY = 'draft';
 const FIT_WIDTHS = [350, 420, 600];
 const FIT_MARGIN = 16;
@@ -478,6 +482,72 @@ function App() {
   const [offset, setOffset] = useState<Offset>(loadOffset);
   const browserHeader = useRef<HTMLDivElement>(null);
   const panelHeader = useRef<HTMLDivElement>(null);
+  const browserBox = useRef<HTMLDivElement>(null);
+  const panelBox = useRef<HTMLElement>(null);
+  const flipFrom = useRef<{
+    browser: DOMRect | null;
+    panel: DOMRect | null;
+  } | null>(null);
+  const [flip, setFlip] = useState<Flip | null>(null);
+
+  function switchOverlay(next: boolean) {
+    if (next === overlay) return;
+    flipFrom.current = {
+      browser: browserBox.current?.getBoundingClientRect() ?? null,
+      panel: panelBox.current?.getBoundingClientRect() ?? null,
+    };
+    setOverlay(next);
+  }
+
+  useLayoutEffect(() => {
+    const from = flipFrom.current;
+    if (from === null) return;
+    flipFrom.current = null;
+    const next: Flip = { phase: 'start' };
+    const boxes = { browser: browserBox.current, panel: panelBox.current };
+    for (const name of ['browser', 'panel'] as const) {
+      const element = boxes[name];
+      const before = from[name];
+      if (!element || !before) continue;
+      const after = element.getBoundingClientRect();
+      const shiftX = name === 'panel' && overlay ? offset.x : 0;
+      const shiftY = name === 'panel' && overlay ? offset.y : 0;
+      next[name] = {
+        dx: before.left - after.left + shiftX,
+        dy: before.top - after.top + shiftY,
+        from: before.width,
+        to: after.width,
+      };
+    }
+    setFlip(next);
+  }, [overlay]);
+
+  useEffect(() => {
+    if (flip === null) return;
+    if (flip.phase === 'running') {
+      const timer = setTimeout(() => setFlip(null), FLIP_DURATION);
+      return () => clearTimeout(timer);
+    }
+    const frame = requestAnimationFrame(() =>
+      requestAnimationFrame(() => setFlip({ ...flip, phase: 'running' })),
+    );
+    return () => cancelAnimationFrame(frame);
+  }, [flip]);
+
+  function flipStyle(
+    name: 'browser' | 'panel',
+    finalTransform?: string,
+  ): React.CSSProperties {
+    const motion = flip?.[name];
+    if (!flip || !motion) return { transform: finalTransform };
+    return flip.phase === 'start'
+      ? {
+          transform: `translate(${motion.dx}px, ${motion.dy}px)`,
+          width: motion.from,
+        }
+      : { transform: finalTransform ?? 'none', width: motion.to };
+  }
+  const flipping = flip?.phase === 'running';
   const [browserHeaderHeight, setBrowserHeaderHeight] = useState(0);
   const [panelHeaderHeight, setPanelHeaderHeight] = useState(0);
 
@@ -510,7 +580,7 @@ function App() {
     if (overlay) {
       moveTo({ x: offset.x + drag.dx, y: offset.y + drag.dy });
     } else if (drag.dx < -DRAG_THRESHOLD) {
-      setOverlay(true);
+      switchOverlay(true);
     }
     setDrag(null);
   }
@@ -580,7 +650,7 @@ function App() {
   function toggleEdit() {
     const next = !edit;
     setEdit(next);
-    if (next) setOverlay(true);
+    if (next) switchOverlay(true);
   }
 
   useEffect(() => {
@@ -735,11 +805,13 @@ function App() {
       </nav>
       <div className="workspace">
         <div
-          className="browser"
+          className={`browser${flipping ? ' flipping' : ''}`}
+          ref={browserBox}
           style={{
             marginTop: overlay
               ? panelHeaderHeight
               : Math.max(0, panelHeaderHeight - browserHeaderHeight),
+            ...flipStyle('browser'),
           }}
         >
           <div className="header" ref={browserHeader}>
@@ -770,11 +842,12 @@ function App() {
         </div>
         {onSite && panelOpen && (
           <aside
-            className="panel"
+            className={`panel${flipping ? ' flipping' : ''}`}
+            ref={panelBox}
             style={
               {
                 '--scale': String(scale),
-                transform: panelTransform,
+                ...flipStyle('panel', panelTransform),
               } as React.CSSProperties
             }
           >
@@ -810,7 +883,7 @@ function App() {
                     type="button"
                     className={overlay ? 'restore' : 'maximize'}
                     aria-label={overlay ? '이전 크기로' : '최대화'}
-                    onClick={() => setOverlay(!overlay)}
+                    onClick={() => switchOverlay(!overlay)}
                   />
                 </div>
               </div>

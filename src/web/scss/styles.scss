@@ -61,6 +61,11 @@ nav {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  &.flipping {
+    transition:
+      transform 250ms ease,
+      width 250ms ease;
+  }
 }
 
 .title-bar {
