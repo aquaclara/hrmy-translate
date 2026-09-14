@@ -1,4 +1,3 @@
-import Mask from './data-models/mask';
 import * as Image from './data-models/translation-chucks/image';
 import Cut from './data-models/translation-chucks/cut';
 import * as Translation from './data-models/translation';
@@ -41,15 +40,6 @@ export default class TranslationChuckData {
     this.data[key] = [['']];
   }
 
-  // Mask functions
-
-  getMaskDataForKey(key: string): Mask[] {
-    if (Array.isArray(this.data[key])) {
-      return [];
-    }
-    return (this.data[key] as Image.PropertiedDataModel).masks ?? [];
-  }
-
   getImageTop(key: string): number | undefined {
     const image = this.data[key];
     if (image === undefined || image === null || Array.isArray(image)) {
@@ -66,22 +56,9 @@ export default class TranslationChuckData {
       return;
     }
     if (top === undefined) {
-      delete image.top;
-      if (image.masks === undefined) this.data[key] = image.text;
+      this.data[key] = image.text;
     } else {
-      const { top: _, ...rest } = image;
-      this.data[key] = { top, ...rest };
-    }
-  }
-
-  setMaskDataForKey(key: string, value: Mask[]): void {
-    if (Array.isArray(this.data[key])) {
-      this.data[key] = {
-        masks: value,
-        text: this.data[key] as Cut[],
-      };
-    } else {
-      (this.data[key] as Image.PropertiedDataModel).masks = value;
+      this.data[key] = { top, text: image.text };
     }
   }
 

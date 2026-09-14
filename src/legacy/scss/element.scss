@@ -204,9 +204,6 @@ body.horimiya.apply-font {
 
 .frame {
   position: absolute;
-  canvas.overwrite {
-    z-index: 50;
-  }
 
   .translation {
     position: absolute;
@@ -224,11 +221,4 @@ body.horimiya.apply-font {
       background-color: #fffa;
     }
   }
-}
-
-textarea.canvas-data {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
 }

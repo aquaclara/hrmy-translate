@@ -5,7 +5,6 @@ import * as TranslationDataModel from '../shared/data-models/translation';
 import FileDataModel from '../shared/data-models/translation-chucks/file';
 import FileData from '../shared/translation-chunk-data';
 import CutTranslationChuckDataModel from '../shared/data-models/translation-chucks/cut';
-import Mask from '../shared/data-models/mask';
 // Html elements
 import * as NoticeElement from './elements/notice';
 import * as TranslationElement from './elements/translation';
@@ -90,56 +89,6 @@ export default class TranslationRenderer implements TranslationDataContainer {
       $frame.style.width = Util.getProperty(img, 'width') + 'px';
       $frame.style.height = Util.getProperty(img, 'height') + 'px';
       Util.getBodyElement().appendChild($frame);
-      if (this._extensionOption.overwriteMode) {
-        const maskData = this._data.getMaskDataForKey(imageId);
-        const $canvas: HTMLCanvasElement = document.createElement('canvas');
-        $canvas.width = Util.getProperty(img, 'width');
-        $canvas.height = Util.getProperty(img, 'height');
-        $canvas.classList.add('overwrite');
-
-        if (this._extensionOption.editableMode) {
-          let $textarea: HTMLTextAreaElement | null = null;
-          $canvas.addEventListener('click', (e) => {
-            if ($textarea !== null) {
-              return;
-            }
-            e.preventDefault();
-            e.stopPropagation();
-            $textarea = document.createElement('textarea');
-            $textarea.classList.add('canvas-data');
-            $textarea.defaultValue = yaml.dump(
-              maskData,
-              Constant.YAML_OPTION,
-            ) as string;
-            $textarea.oninput = () => {
-              if ($textarea === null) {
-                return;
-              }
-              try {
-                const load = yaml.load($textarea.value) as Mask[];
-                this._data.setMaskDataForKey(imageId, load);
-                this.redrawTranslations();
-              } catch (e) {
-                return;
-              }
-            };
-            $textarea.onkeydown = (ev: KeyboardEvent) => {
-              if ($textarea === null) {
-                return;
-              }
-              if ((ev.ctrlKey && ev.key == 'Enter') || ev.key == 'Escape') {
-                $textarea.remove();
-                $textarea = null;
-              }
-            };
-            Util.getBodyElement().appendChild($textarea);
-          });
-        }
-
-        const ctx = $canvas.getContext('2d');
-        this.drawMasks(maskData, ctx);
-        $frame.appendChild($canvas);
-      }
       const image = this._data.getCutTranslations(imageId);
       for (let cutIndex: number = 0; cutIndex < image.length; cutIndex++) {
         const cut: CutTranslationChuckDataModel = image[cutIndex];
@@ -388,31 +337,6 @@ export default class TranslationRenderer implements TranslationDataContainer {
     }
   }
 
-  drawMasks(maskData: Mask[], ctx: CanvasRenderingContext2D | null): void {
-    if (ctx === null) {
-      return;
-    }
-
-    for (const mask of maskData) {
-      ctx.beginPath();
-      ctx.fillStyle = mask.color || 'white';
-      const t = mask.func;
-      if (t == 'ellipse') {
-        const [x, y, rx, ry] = mask.param;
-        ctx.ellipse(x, y, rx, ry, 0, 0, 2 * Math.PI);
-      } else if (t == 'rect') {
-        let [x, y, w, h] = mask.param;
-        ctx.rect(x, y, w, h);
-      }
-      if (this._extensionOption.editableMode) {
-        ctx.strokeStyle = 'red';
-        ctx.stroke();
-      } else {
-        ctx.fill();
-      }
-    }
-  }
-
   newTranslationGroup(): HTMLDivElement {
     const $div = document.createElement('div');
     $div.classList.add('translation-group', 'float');
@@ -422,9 +346,7 @@ export default class TranslationRenderer implements TranslationDataContainer {
 
   removeTranslates() {
     document
-      .querySelectorAll(
-        '.caption, .translation-group, canvas.overwrite, .frame',
-      )
+      .querySelectorAll('.caption, .translation-group, .frame')
       .forEach((e: Element) => {
         e.remove();
       });
