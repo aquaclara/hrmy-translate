@@ -539,6 +539,24 @@ function App() {
     setVersion((version) => version + 1);
   }
 
+  function toggleEdit() {
+    const next = !edit;
+    setEdit(next);
+    if (next) setOverlay(true);
+  }
+
+  useEffect(() => {
+    if (mobile) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'F2') {
+        event.preventDefault();
+        toggleEdit();
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [mobile, edit]);
+
   function changeStructure(change: Structure): Address | null {
     if (translation.status !== 'loaded' || page === null) return null;
     const data = translation.data;
@@ -852,11 +870,8 @@ function App() {
             type="button"
             className="edit-toggle"
             aria-pressed={edit}
-            onClick={() => {
-              const next = !edit;
-              setEdit(next);
-              if (next) setOverlay(true);
-            }}
+            onClick={toggleEdit}
+            title="F2"
           >
             {edit ? '수정 모드 끝' : '수정 모드'}
           </button>
