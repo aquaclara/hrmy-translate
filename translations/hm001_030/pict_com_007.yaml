@@ -20,311 +20,1201 @@
   漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
   この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 hm001_030/002/hori_040.gif:
-- - 고마워...
-- - text: 쪼옥
+- - h: 125
+    text: 고마워...
+    w: 72
+    x: 261
+    y: 81
+- - h: 37
+    text: 쪼옥
     type: plain
-  - text: 휴
+    w: 40
+    x: 281
+    y: 340
+  - h: 47
+    radius: 12
+    size: 1.5
+    text: 휴
     type: stroke
-- - 이게 뭐야 카페라테잖아!!
-  - text: 결국 투정함
+    w: 33
+    x: 64
+    y: 506
+- - h: 157
+    radius: 13
+    text: 이게 뭐야 카페라테잖아!!
+    w: 81
+    x: 258
+    y: 578
+  - background: '#c6e51b'
+    text: 결국 투정함
     type: plain
-  - 어? 싫어했어...?
-- - 하여간~~
-  - text: 하지만 커피는 너무 쓰긴 해
+    w: 110
+    x: 167
+    y: 801
+  - h: 91
+    radius: 60
+    text: 어? 싫어했어...?
+    w: 70
+    x: 85
+    y: 573
+- - h: 83
+    text: 하여간~~
+    w: 62
+    x: 268
+    y: 840
+  - background: '#c6e51b'
+    h: 222
+    rotate: 9
+    text: 하지만 커피는 너무 쓰긴 해
     type: plain
+    w: 56
+    x: 19
+    y: 828
 hm001_030/002/hori_041.gif:
-- - 그럼- 소타라도 보고 올게
-  - text: 잘 자고 있으려나-
+- - h: 150
+    radius: 38
+    text: 그럼- 소타라도 보고 올게
+    w: 111
+    x: 207
+    y: 73
+  - background: '#c6e51b'
+    h: 123
+    rotate: -1
+    text: 잘 자고 있으려나-
     type: plain
-  - 응
+    w: 55
+    x: 125
+    y: 75
+  - h: 32
+    text: 응
+    w: 21
+    x: 33
+    y: 79
 - - ''
-- - text: 여기
+- - h: 48
+    text: 여기
     type: square
-- - text: <big>너너너너, 너무너무 놀랐</big>
+    w: 33
+    x: 132
+    y: 598
+- - background: '#d21915'
+    h: 216
+    radius: 8
+    text: <big>너너너너, 너무너무 놀랐</big>
     type: stroke
-  - text: 여기 라니까 그냥 받아버렸잖아
+    w: 87
+    x: 248
+    y: 824
+  - background: '#d21915'
+    h: 209
+    text: 여기 라니까 그냥 받아버렸잖아
     type: plain
-  - text: 여기라니
+    w: 49
+    x: 191
+    y: 827
+  - background: '#d21915'
+    h: 76
+    text: 여기라니<br>여기라니
     type: plain
-  - text: 여기라니
-    type: plain
-  - text: <big>네-!!!</big>
+    w: 42
+    x: 128
+    y: 979
+  - h: 132
+    size: 2
+    text: <big>네</big>
     type: stroke
+    vertical: true
+    w: 56
+    x: 14
+    y: 827
 hm001_030/002/hori_042.gif:
-- - text: 딱히 미야무라한테는 아무렇지 않은 일일지 모른다는 게
+- - radius: 80
+    text: 딱히 미야무라한테는 아무렇지 않은 일일지 모른다는 게
     type: thought
-  - text: 주루룩
+    w: 150
+    x: 180
+    y: 73
+  - h: 129
+    text: 주루룩
     type: plain
-- - text: 아, 열받아...
+    w: 34
+    x: 60
+    y: 103
+- - h: 121
+    text: 아, 열받아...
     type: thought
-  - text: 어쩐지
+    w: 75
+    x: 241
+    y: 317
+  - h: 119
+    text: 어쩐지
     type: thought
-- - text: 열받아-
+    w: 36
+    x: 6
+    y: 404
+- - h: 133
+    text: 열받아-
     type: thought
-  - text: 뭐해?
+    w: 31
+    x: 231
+    y: 600
+  - background: '#c6e51b'
+    h: 131
+    text: 뭐해?
     type: plain
-  - text: 오줌 마려워서 일어남↓
+    w: 46
+    x: 106
+    y: 615
+  - h: 52
+    rotate: -20
+    text: 오줌 마려워서 일어남
     type: plain
-  - text: '?'
-    type: plain
-- - text: 맛있는데...
+    w: 51
+    x: 20
+    y: 581
+- - h: 88
+    text: 맛있는데...
     type: thought
-  - text: 계속 먹음→
+    vertical: true
+    w: 24
+    x: 189
+    y: 871
+  - h: 54
+    text: 계속 먹음
     type: plain
+    w: 47
+    x: 14
+    y: 900
 hm001_030/002/hori_043.gif:
-- - 내일부터- 여름방학-
-- - 숙제만 없었으면 즐거운 여름방학...
-  - text: 그리고 추가 시험
+- - h: 121
+    text: 내일부터- 여름방학-
+    w: 66
+    x: 249
+    y: 73
+- - h: 143
+    text: 숙제만 없었으면 즐거운 여름방학...
+    w: 106
+    x: 232
+    y: 306
+  - h: 75
+    text: 그리고 추가 시험
     type: plain
-  - text: ↙바보 두명↘
+    w: 55
+    x: 281
+    y: 469
+  - h: 67
+    rotate: 17
+    text: 바보 두 명
     type: plain
-  - 호리! 리포트 보여줘!
-  - text: 지금부터 말해 둘게!
+    w: 14
+    x: 194
+    y: 343
+  - h: 75
+    radius: 20
+    text: 호리! 리포트 보여줘!
+    w: 70
+    x: 117
+    y: 307
+  - h: 69
+    rotate: -9
+    text: 지금부터 말해 둘게!
     type: plain
-  - 어어-
+    w: 37
+    x: 58
+    y: 314
+  - h: 81
+    text: 어어-
+    w: 37
+    x: 12
+    y: 462
 - - // 호리미야 1권 1화
-  - text: 아- 별 수 없지-
+  - h: 125
+    rotate: -13
+    text: 아- 별 수 없지-
     type: plain
-  - text: 내일 라이브 말야
+    w: 38
+    x: 284
+    y: 575
+  - h: 108
+    rotate: -15
+    text: 내일 라이브 말야
     type: plain
-  - 자 자, 할 일 끝난 사람은 바로 집에 돌아 가도록
-  - text: 탁탁
+    w: 39
+    x: 247
+    y: 682
+  - h: 115
+    text: 자 자, 할 일 끝난 사람은 바로 집에 돌아 가도록
+    w: 87
+    x: 103
+    y: 572
+  - h: 70
+    rotate: 10
+    text: 탁탁
     type: plain
-- - text: 메일 001
+    vertical: true
+    w: 23
+    x: 128
+    y: 738
+- - background: '#eac2c2'
+    h: 14
+    radius: 0
+    rotate: -30
+    text: 메일
     type: plain
-  - text: 👤호리
+    w: 43
+    x: 58
+    y: 952
+  - background: '#eac2c2'
+    h: 22
+    radius: 0
+    rotate: -34
+    text: 호리
     type: plain
-  - text: 오늘 올 거지?
+    w: 51
+    x: 88
+    y: 958
+  - h: 25
+    radius: 0
+    rotate: -32
+    text: 오늘 올 거지?
     type: plain
-  - text: 12시부터 우리 가는 슈퍼에서 달걀 반값
+    w: 121
+    x: 98
+    y: 955
+  - background: '#f2dddd'
+    h: 70
+    radius: 0
+    rotate: -28
+    text: 12시부터 우리 가는 슈퍼에서 달걀 반값<br>오늘 위원회로 늦으니까
     type: plain
-  - text: 오늘 위원회로 늦으니까
+    w: 202
+    x: 94
+    y: 972
+  - background: '#f2dddd'
+    rotate: -26
+    text: 부탁해
     type: plain
-  - text: 부탁해
-    type: plain
+    w: 75
+    x: 159
+    y: 1053
 hm001_030/002/hori_044.gif:
-- - text: 사란 말인가
+- - h: 105
+    text: 사란 말인가
     type: thought
-  - text: 사오란 말인가-!!
+    w: 68
+    x: 272
+    y: 73
+  - h: 111
+    text: 사오란 말인가-!!
     type: thought
-- - 미야무라 우리 조 리포트 있잖아
-  - text: <big>타다닷</big>
+    w: 60
+    x: 13
+    y: 100
+- - h: 102
+    text: 미야무라 우리 조 리포트 있잖아
+    w: 90
+    x: 232
+    y: 313
+  - background: '#ffffff'
+    h: 131
+    rotate: -16
+    size: 1.9
+    text: <big>타다닷</big>
     type: stroke
-  - 미안 나중에 자료 보내줘!
-- - text: 앞으로 20분-
+    vertical: true
+    w: 82
+    x: 70
+    y: 434
+  - h: 90
+    radius: 0
+    text: 미안 나중에 자료 보내줘!
+    w: 82
+    x: 6
+    y: 314
+- - h: 118
+    text: 앞으로 20분-
     type: thought
-- - text: 아, 승강구!
+    w: 49
+    x: 267
+    y: 577
+- - h: 126
+    text: 아, 승강구!
     type: thought
-  - text: ←벗는 버릇
+    w: 46
+    x: 253
+    y: 841
+  - h: 71
+    rotate: -9
+    text: 벗는 버릇
     type: plain
-  - text: ぐいっ
+    w: 22
+    x: 282
+    y: 992
+  - h: 48
+    rotate: -8
+    text: ぐいっ
     type: plain
-  - text: 정문보다 슈퍼랑 가까워!
+    w: 33
+    x: 196
+    y: 930
+  - h: 151
+    text: 정문보다 슈퍼랑 가까워!
     type: thought
+    w: 56
+    x: 8
+    y: 848
 hm001_030/002/hori_045.gif:
-- - text: 좋아- 아무도 없다
+- - h: 88
+    text: 좋아- 아무도 없다
     type: thought
-- - text: 이대로 담장을
+    w: 71
+    x: 255
+    y: 80
+- - h: 73
+    text: 이대로 담장을
     type: thought
-  - text: <big>철컹</big>
+    w: 53
+    x: 261
+    y: 323
+  - h: 72
+    size: 2.7
+    text: <strong class="stroke">철</strong>
     type: stroke
-  - text: <big>넘어서</big>
+    w: 65
+    x: 57
+    y: 328
+  - h: 60
+    size: 2.7
+    text: <strong class="stroke">컹</strong>
+    w: 90
+    x: 229
+    y: 411
+  - h: 91
+    text: <big>넘어서</big>
     type: thought
-- - text: 어?
+    w: 64
+    x: 20
+    y: 433
+- - h: 55
+    text: 어?
     type: thought
-  - 꺅
-  - text: 깜짝
+    w: 50
+    x: 271
+    y: 587
+  - h: 42
+    text: 꺅
+    w: 39
+    x: 64
+    y: 595
+  - h: 55
+    text: 깜짝
     type: plain
-- - 미안!
+    w: 24
+    x: 88
+    y: 674
+- - h: 72
+    text: 미안!
+    w: 46
+    x: 267
+    y: 847
 hm001_030/002/hori_046.gif:
-- - 달걀 때문에!
+- - h: 103
+    text: 달걀 때문에!
+    w: 49
+    x: 273
+    y: 74
 - - ''
-- - text: 호리랑 같이 사는 사람이다...!(오해)
+- - h: 157
+    text: 호리랑 같이 사는 사람이다...!(오해)
     type: thought
-  - text: 우리 학교였구나...!
+    w: 95
+    x: 216
+    y: 564
+  - h: 128
+    text: 우리 학교였구나...!
     type: thought
-- - text: 달걀...
+    w: 58
+    x: 3
+    y: 568
+- - h: 79
+    text: 달걀...
     type: thought
-  - text: 낳는 걸까
+    w: 25
+    x: 278
+    y: 847
+  - h: 88
+    rotate: -13
+    text: 낳는 걸까
     type: plain
-  - text: 무슨 말인지...
+    w: 36
+    x: 133
+    y: 851
+  - h: 104
+    text: 무슨 말인지...
     type: thought
+    w: 46
+    x: 39
+    y: 892
 hm001_030/002/hori_047.gif:
-- - 고생 시켜서 미안~
-  - text: 오늘은 오무라이스
+- - h: 77
+    text: 고생 시켜서 미안~
+    w: 51
+    x: 247
+    y: 96
+  - h: 81
+    rotate: -10
+    text: 오늘은 오무라이스
     type: plain
-- - 이제... 세일은 다시 안가...
-  - text: 이제 진짜 마지막 한 상자구요
+    w: 52
+    x: 68
+    y: 117
+- - h: 90
+    text: 이제... 세일은 다시 안가...
+    w: 74
+    x: 240
+    y: 310
+  - background: '#c6e51b'
+    h: 53
+    text: 이제 진짜 마지막 한 상자구요
     type: plain
-  - text: 꺄아악
+    w: 127
+    x: 90
+    y: 309
+  - background: '#c6e51b'
+    h: 21
+    rotate: -9
+    text: 꺄아악
     type: plain
-  - text: 잠깐만요 그거 제 거
+    w: 61
+    x: 93
+    y: 368
+  - background: '#c6e51b'
+    h: 23
+    rotate: -14
+    text: 잠깐만요 그거 제 거
     type: plain
-  - text: 거기 총각 비켜 봐
+    w: 121
+    x: 105
+    y: 380
+  - background: '#c6e51b'
+    h: 47
+    rotate: -18
+    text: 거기 총각 비켜 봐
     type: plain
-  - 그래도 세 팩이나 샀구나 굉장하다
-- - 아
-  - 음
-  - 그러고 보니 그
-  - 응
-  - 저기
-  - 만났어 우연히
-- - <sup><big class="stroke">깜짝</big></sup> 누, 누구!? 뭐? 만나?
-  - text: 퍽
+    w: 98
+    x: 135
+    y: 399
+  - h: 87
+    text: 그래도 세 팩이나 샀구나 굉장하다
+    w: 75
+    x: 5
+    y: 310
+- - text: 아
+    w: 39
+    x: 278
+    y: 587
+  - h: 36
+    text: 음
+    w: 25
+    x: 293
+    y: 640
+  - h: 100
+    text: 그러고 보니 그
+    w: 68
+    x: 217
+    y: 679
+  - h: 60
+    text: 저기
+    w: 40
+    x: 184
+    y: 575
+  - h: 50
+    text: 응
+    w: 24
+    x: 87
+    y: 567
+  - h: 38
+    text: 저기
+    w: 30
+    x: 103
+    y: 756
+  - h: 74
+    text: 만났어 우연히
+    w: 64
+    x: 24
+    y: 667
+- - h: 95
+    size: 1.7
+    text: <sup><big class="stroke">깜짝</big></sup>
+    vertical: true
+    w: 39
+    x: 295
+    y: 837
+  - h: 111
+    text: 누, 누구!? 뭐? 만나?
+    w: 63
+    x: 227
+    y: 853
+  - h: 34
+    text: 퍽
     type: plain
-  - text: 아-
+    w: 21
+    x: 156
+    y: 980
+  - h: 27
+    text: 아
     type: plain
-  - 호리가 유키라고 부르는 사람
+    w: 20
+    x: 124
+    y: 952
+  - h: 88
+    text: 호리가 유키라고 부르는 사람
+    w: 106
+    x: 12
+    y: 826
 hm001_030/002/hori_048.gif:
-- - 유키 말이지...!?
-  - 어, 만났다고? 그 모습으로?
-- - 별 이야기를 한 건 아니지만
-  - text: 흘린다
+- - h: 93
+    text: 유키 말이지...!?
+    w: 62
+    x: 261
+    y: 73
+  - h: 130
+    text: 어, 만났다고? 그 모습으로?
+    w: 69
+    x: 23
+    y: 84
+- - h: 139
+    text: 별 이야기를 한 건 아니지만
+    w: 81
+    x: 258
+    y: 306
+  - h: 62
+    text: 흘린다
     type: plain
-- - 그렇구나-
-  - 흠-
-- - 어쩐지 나, 나말고 다른 사람은 미야무라의 그런
-  - 모습을 보지 않았음 좋겠다 싶어-
+    w: 25
+    x: 175
+    y: 380
+- - h: 110
+    text: 그렇구나-
+    w: 52
+    x: 281
+    y: 567
+  - h: 81
+    text: 흠-
+    w: 28
+    x: 22
+    y: 700
+- - h: 185
+    radius: 37
+    text: 어쩐지 나, 나말고 다른 사람은 미야무라의 그런
+    w: 105
+    x: 233
+    y: 827
+  - h: 166
+    radius: 16
+    text: 모습을 보지 않았음 좋겠다 싶어-
+    w: 54
+    x: 6
+    y: 829
 hm001_030/002/hori_049.gif:
 - - ''
-- - 미안, 아무것도 아냐
-  - text: 하하
+- - h: 129
+    text: 미안, 아무것도 아냐
+    w: 88
+    x: 248
+    y: 299
+  - h: 29
+    text: 하하
     type: plain
-  - 잊어 줘
-- - 보리차 가져올게
-  - 사놓은게 아직 남았나-
-- - 형은 안 먹어?
+    w: 29
+    x: 117
+    y: 344
+  - h: 82
+    text: 잊어 줘
+    w: 47
+    x: 34
+    y: 403
+- - h: 101
+    text: 보리차 가져올게
+    w: 88
+    x: 254
+    y: 559
+  - h: 100
+    text: 사놓은게 아직 남았나-
+    w: 74
+    x: 35
+    y: 627
+- - h: 106
+    text: 형은 안 먹어?
+    w: 102
+    x: 241
+    y: 823
 hm001_030/002/hori_050.gif:
-- - 호리, 저기...
-  - 나도 호리의 그런 모습이나
-- - 요리를 잘 하는 점이나 큰 소리 지르면서 화내는 거나
-- - 사실... 집에서는 아무렇게나 머리 질끈 묶고 다니는 거나
-  - text: 그리고-
+- - h: 68
+    text: 호리, 저기...
+    w: 63
+    x: 262
+    y: 86
+  - h: 160
+    text: 나도 호리의 그런 모습이나
+    w: 70
+    x: 30
+    y: 94
+- - h: 181
+    text: 요리를 잘 하는 점이나 큰 소리 지르면서 화내는 거나
+    w: 103
+    x: 234
+    y: 324
+- - h: 132
+    text: 사실... 집에서는 아무렇게나 머리 질끈 묶고 다니는 거나
+    w: 106
+    x: 228
+    y: 581
+  - h: 49
+    text: 그리고-
     type: plain
-  - 저... 근육이 알차게 붙은 팔이라거나
-  - text: 시끄럽네요!!
+    w: 21
+    x: 192
+    y: 608
+  - h: 76
+    radius: 0
+    text: 저... 근육이 알차게 붙은 팔이라거나
+    w: 71
+    x: 19
+    y: 586
+  - h: 117
+    text: 시끄럽네요!!
     type: scream
-- - 그런 걸 다른 사람은 보지 않았음 좋겠다- 생각은 해
-  - text: 그건 나도 싫어
+    w: 51
+    x: 31
+    y: 702
+- - h: 149
+    radius: 40
+    text: 그런 걸 다른 사람은 보지 않았음 좋겠다- 생각은 해
+    w: 119
+    x: 217
+    y: 842
+  - h: 80
+    text: 그건 나도 싫어
     type: thought
+    w: 58
+    x: 10
+    y: 849
 hm001_030/002/hori_051.gif:
-- - 어쩐지 이 시간은 우리만의 거구나- 싶기도 하고
-  - text: 무의식→
+- - h: 141
+    text: 어쩐지 이 시간은 우리만의 거구나- 싶기도 하고
+    w: 135
+    x: 203
+    y: 77
+  - h: 84
+    text: 무의식
     type: plain
-- - 바,
-  - text: '?'
+    w: 34
+    x: 35
+    y: 134
+- - h: 72
+    radius: 0
+    text: 바,
+    w: 41
+    x: 273
+    y: 329
+  - h: 95
+    radius: 12
+    text: 누나 보리차 빨리-!
+    w: 73
+    x: 42
+    y: 469
+- - h: 148
+    text: 바보 같은 소리 하지 마 진짜...
+    w: 107
+    x: 229
+    y: 576
+  - h: 44
+    radius: 0
+    text: 컵!
     type: plain
-  - 누나 보리차 빨리-!
-- - 바보 같은 소리 하지 마 진짜...
-  - text: 컵!
+    w: 18
+    x: 189
+    y: 672
+  - h: 93
+    radius: 0
+    text: 바보야 진짜 바보... 정말...
+    w: 63
+    x: 12
+    y: 586
+- - h: 108
+    text: 바보라니...
+    w: 58
+    x: 279
+    y: 849
+  - h: 94
+    rotate: -10
+    text: 확실히 머리는 나쁘지만
     type: plain
-  - 바보야 진짜 바보... 정말...
-- - 바보라니...
-  - text: 확실히 머리는 나쁘지만
-    type: plain
-  - 바보잖아, 바보바보
-  - 미야무라는 바보
+    w: 70
+    x: 183
+    y: 859
+  - h: 119
+    text: 바보잖아, 바보바보
+    w: 60
+    x: 50
+    y: 842
+  - h: 102
+    text: 미야무라는 바보
+    w: 38
+    x: 4
+    y: 885
 hm001_030/002/hori_052.gif:
-- - 누나의 「바보」는 한 번 터지면 멈추질 않거든-
-  - 그랬어?
-- - text: 바보바보, 바보야
+- - h: 143
+    radius: 16
+    text: 누나의 「바보」는 한 번 터지면 멈추질 않거든-
+    w: 99
+    x: 240
+    y: 72
+  - h: 93
+    text: 그랬어?
+    w: 36
+    x: 45
+    y: 74
+- - h: 139
+    text: 바보바보, 바보야
     type: plain
-  - text: 바보-
+    w: 66
+    x: 253
+    y: 315
+  - h: 117
+    text: 바보-
     type: plain
-  - ......아!
-  - text: 깜박💡
+    w: 36
+    x: 137
+    y: 310
+  - h: 94
+    text: ......아!
+    w: 28
+    x: 82
+    y: 333
+  - h: 32
+    radius: 0
+    rotate: -18
+    text: 깜박
     type: plain
-  - text: 바보바보
+    w: 29
+    x: 79
+    y: 456
+  - h: 79
+    text: 바보바보
     type: plain
-- - 형아 지금 누나하고 유나하고 닮았다고 생각했지!
-  - 맞아!
-- - text: 닮았지~~!!
+    w: 38
+    x: 17
+    y: 366
+- - h: 192
+    radius: 33
+    text: 형아 지금 누나하고 유나하고 닮았다고 생각했지!
+    w: 132
+    x: 207
+    y: 565
+  - h: 80
+    text: 맞아!
+    w: 53
+    x: 28
+    y: 563
+- - h: 236
+    text: 닮았지~~!!
     type: scream
-  - text: 아하하, 하하하하-
+    w: 71
+    x: 265
+    y: 829
+  - background: '#c6e51b'
+    h: 114
+    rotate: -21
+    text: 아하하, 하하하하-
     type: plain
-  - text: 앞짱구-!
+    w: 64
+    x: 185
+    y: 833
+  - h: 81
+    rotate: -23
+    text: 앞짱구-!
     type: scream
-  - 뭐,
-  - 똑같아 똑같아 똑 닮았어
-  - 뭐야-
+    w: 52
+    x: 192
+    y: 977
+  - h: 34
+    text: 뭐,
+    w: 30
+    x: 129
+    y: 831
+  - background: '#c6e51b'
+    h: 68
+    rotate: -9
+    text: 똑같아
+    w: 37
+    x: 134
+    y: 954
+  - background: '#c6e51b'
+    h: 70
+    radius: 13
+    rotate: -17
+    text: 똑같아 똑 닮았어
+    w: 51
+    x: 90
+    y: 987
+  - h: 82
+    text: 뭐야-
+    w: 19
+    x: 21
+    y: 949
 hm001_030/002/hori_053.gif:
-- - 미야무라는 얼굴이 참 작다
-  - text: 좋네
+- - h: 120
+    radius: 31
+    text: 미야무라는 얼굴이 참 작다
+    w: 86
+    x: 252
+    y: 141
+  - background: '#c6e51b'
+    h: 40
+    rotate: -6
+    text: 좋네
     type: plain
-  - 그럴려나-...
-- - 어쩐지 여장도 어울릴 것 같은데
-  - 안 해
+    w: 40
+    x: 173
+    y: 184
+  - h: 84
+    text: 그럴려나-...
+    w: 50
+    x: 29
+    y: 138
+- - h: 139
+    text: 어쩐지 여장도 어울릴 것 같은데
+    w: 103
+    x: 234
+    y: 374
+  - h: 91
+    text: 안 해
+    w: 58
+    x: 22
+    y: 376
 - - ''
-- - 치, 치마
-  - 싫
-  - text: じりっ じりっ
+- - h: 39
+    text: 치,
+    w: 25
+    x: 302
+    y: 892
+  - h: 82
+    rotate: 13
+    text: 치마
+    w: 38
+    x: 282
+    y: 970
+  - text: 싫
+    w: 39
+    x: 153
+    y: 894
+  - h: 72
+    text: じりっ
     type: plain
-  - 치마만이라도
-  - 아니 그니까
-  - 싫다고
-  - 싫어
+    vertical: true
+    w: 22
+    x: 314
+    y: 1050
+  - h: 45
+    rotate: -18
+    text: じりっ
+    w: 45
+    x: 202
+    y: 1084
+  - h: 75
+    text: 치마만이라도
+    w: 46
+    x: 125
+    y: 1015
+  - h: 79
+    rotate: -11
+    text: 아니 그니까
+    w: 45
+    x: 65
+    y: 1047
+  - h: 87
+    text: 싫다고
+    w: 36
+    x: 28
+    y: 965
+  - h: 48
+    text: 싫어
+    w: 37
+    x: 15
+    y: 1070
 hm001_030/002/hori_054.gif:
-- - 미야무라 더우니까 학교 아닐 때는 머리 묶고 다녀
-  - text: 의지로라도 안 자름↓
+- - h: 125
+    radius: 44
+    text: 미야무라 더우니까 학교 아닐 때는 머리 묶고 다녀
+    w: 135
+    x: 183
+    y: 155
+  - background: '#c6e51b'
+    h: 61
+    radius: 0
+    text: 의지로라도 안 자름
     type: plain
+    w: 53
+    x: 40
+    y: 158
   - 엑-
 - - ''
-- - 와-
-  - text: 시원해!
+- - h: 76
+    text: 와-
+    w: 39
+    x: 281
+    y: 643
+  - h: 48
+    text: 시원해!
     type: plain
-  - 덜 덥지-
-- - 저기
-  - 다음은 있지 이 치
-  - 윽... / 치마
-  - 싫어...  / 같은 걸
-  - 안 입어 / 입어
-  - 봐
+    w: 28
+    x: 260
+    y: 726
+  - h: 74
+    text: 덜 덥지-
+    w: 57
+    x: 10
+    y: 653
+- - h: 40
+    text: 저기
+    w: 36
+    x: 290
+    y: 907
+  - h: 78
+    text: 다음은 있지
+    w: 34
+    x: 285
+    y: 981
+  - h: 53
+    text: 이 치
+    w: 34
+    x: 252
+    y: 1010
+  - h: 48
+    text: 윽...
+    w: 33
+    x: 208
+    y: 905
+  - h: 89
+    text: 치마
+    w: 32
+    x: 197
+    y: 1032
+  - h: 56
+    text: 싫어...
+    w: 32
+    x: 61
+    y: 949
+  - h: 80
+    rotate: -17
+    text: 같은 걸
+    w: 29
+    x: 65
+    y: 1039
+  - h: 83
+    rotate: -10
+    text: 안 입어
+    w: 29
+    x: 16
+    y: 950
+  - h: 49
+    rotate: -10
+    text: 입어
+    w: 27
+    x: 12
+    y: 1051
+  - text: 봐
+    w: 39
+    x: 16
+    y: 1117
 hm001_030/002/hori_055.gif:
-- - text: 오랜 만에 메일 보내! 잘 지내지?
+- - background: '#c6e51b'
+    h: 63
+    radius: 0
+    text: 오랜 만에 메일 보내! 잘 지내지?<br>근데 말이야- 호리 집에 사는 사람 있잖아 우리 학교 남자애잖아
     type: plain
-  - text: 근데 말이야- 호리 집에 사는 사람 있잖아 우리 학교 남자애잖아
+    w: 238
+    x: 48
+    y: 175
+  - ''
+  - background: '#c6e51b'
+    h: 64
+    radius: 0
+    text: 다음 번에 소개 해주면 안 될까-&gt;&lt;<br>뭐라고 하지- 그런 타입 되게 멋있지 않아?
     type: plain
-  - text: 다음 번에 소개 해주면 안 될까- 😆
+    w: 241
+    x: 47
+    y: 241
+  - background: '#c6e51b'
+    h: 76
+    radius: 0
+    text: 호리는 남자친구 없댔으니까 사귀는 거 아닐 테지?
+    w: 192
+    x: 46
+    y: 305
+  - background: '#c6e51b'
+    text: 유키가
     type: plain
-  - text: 뭐라고 하지- 그런 타입 되게 멋있지 않아?
+    w: 70
+    x: 148
+    y: 372
+- - text: ''
     type: plain
-  - text: 호리는 남자친구 없댔으니까 사귀는 거 아닐테지?
+  - background: '#c6e51b'
+    h: 48
+    radius: 0
+    text: 어? 무슨 말이야?<br>미안 누굴 말하는 건지 모르겠어!
     type: plain
-  - text: 유키가
+    w: 263
+    x: 46
+    y: 426
+  - background: '#c6e51b'
+    h: 122
+    radius: 0
+    text: 우리 집에 있는 것 아직 어린 동생 뿐이야-<br>아마 진짜 유키가 잘못 안 거라고 생각해
+    w: 212
+    x: 44
+    y: 480
+  - background: '#c6e51b'
+    h: 30
+    text: 호리
     type: plain
-- - text: 어? 무슨 말이야?
+    w: 37
+    x: 114
+    y: 620
+- - background: '#c6e51b'
+    h: 75
+    radius: 0
+    text: 야 거짓말 하지 마 숨겨봤자 다 안다고 내가 봤는 걸
     type: plain
-  - text: 미안 누굴 말하는 건지 모르겠어!
+    w: 178
+    x: 41
+    y: 685
+  - background: '#c6e51b'
+    h: 24
+    text: 유키
+    w: 39
+    x: 118
+    y: 769
+  - background: '#c6e51b'
+    h: 37
+    radius: 0
+    text: 아니 그러니까 네가 잘못 본 거라니까
     type: plain
-  - text: 우리 집에 있는 것 아직 어린 동생 뿐이야-
+    w: 136
+    x: 44
+    y: 813
+  - background: '#c6e51b'
+    h: 29
+    radius: 80
+    text: 호리
+    w: 40
+    x: 110
+    y: 866
+- - background: '#c6e51b'
+    h: 83
+    radius: 0
+    text: 계속 생각나서 잠도 못 잔다니깐 친구끼리 그럼 하다 못해 이름만이라도 알려줘
     type: plain
-  - text: 아마 진짜 유키가 잘못 안 거라고 생각해
+    w: 279
+    x: 31
+    y: 926
+  - background: '#c6e51b'
+    h: 22
+    text: 유키
+    w: 26
+    x: 123
+    y: 1011
+  - background: '#c6e51b'
+    h: 21
+    radius: 0
+    text: 소타라고
     type: plain
-  - text: 호리
+    w: 116
+    x: 25
+    y: 1054
+  - background: '#c6e51b'
+    h: 30
+    text: 호리
+    w: 35
+    x: 95
+    y: 1080
+  - background: '#c6e51b'
+    h: 49
+    radius: 0
+    text: 아니 그건 너네 동생이고
     type: plain
-- - text: 야 거짓말 하지 마 숨겨봤자 다 안다고 내가 봤는 걸 - 유키
-    type: plain
-  - text: 아니 그러니까 네가 잘못 본 거라니까 - 호리
-    type: plain
-- - text: 계속 생각나서 잠도 못 잔다니깐 친구끼리 그럼 하다 못해 이름만이라도 알려줘 - 유키
-    type: plain
-  - text: 소타라고 - 호리
-    type: plain
-  - text: 아니 그건 너네 동생이고 - 유키
-    type: plain
+    w: 171
+    x: 27
+    y: 1114
+  - background: '#c6e51b'
+    h: 21
+    text: 유키
+    w: 34
+    x: 128
+    y: 1158
 hm001_030/002/hori_056.gif:
 - - text: 호,
-    type: speech
-  - text: 호리 나 어떡하지 학교 풀장이 열린대
-    type: speech
-- - 아-...
-  - text: 그러고 보면
+    w: 45
+    x: 267
+    y: 194
+  - h: 139
+    text: 호리 나 어떡하지 학교 풀장이 열린대
+    w: 72
+    x: 25
+    y: 251
+- - h: 81
+    text: 아-...
+    w: 60
+    x: 269
+    y: 429
+  - h: 54
+    text: 그러고 보면
     type: plain
-  - text: 남학생은 1주만 수영 수업 실시
+    w: 30
+    x: 215
+    y: 606
+  - background: '#c6e51b'
+    h: 95
+    radius: 0
+    text: ※남학생은 1주만 수영 수업 실시
     type: square
-  - 온갖 걸 다 들킨단 말이야!
-- - 어떡하냐고, 이거!
-- - 미야무라, 난 네가 가끔 정말 굉장한 건지 정말 바보인 건지 모르겠어
-  - 어~?
-  - text: 그리고 수영 수업은 선택 가능
+    w: 84
+    x: 150
+    y: 434
+  - ''
+  - h: 155
+    radius: 11
+    text: 온갖 걸 다 들킨단 말이야!
+    w: 58
+    x: 53
+    y: 493
+- - background: '#ffffff'
+    h: 93
+    radius: 0
+    text: 어떡하냐고, 이거!
+    w: 88
+    x: 246
+    y: 684
+- - h: 147
+    radius: 0
+    text: 미야무라, 난 네가 가끔 정말 굉장한 건지 정말 바보인 건지 모르겠어
+    w: 171
+    x: 156
+    y: 948
+  - h: 83
+    text: 어~?
+    w: 34
+    x: 50
+    y: 944
+  - background: '#c6e51b'
+    h: 116
+    radius: 0
+    text: 그리고 수영 수업은 선택 가능
     type: square
+    w: 63
+    x: 3
+    y: 1069
+
