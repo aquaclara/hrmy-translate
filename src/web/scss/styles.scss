@@ -152,6 +152,10 @@ nav {
     pointer-events: none;
   }
 
+  .panel .line {
+    pointer-events: auto;
+  }
+
   .panel .header {
     background-color: white;
     border-bottom: 1px solid #c8c8c8;
