@@ -645,11 +645,8 @@ function App() {
           className="browser"
           style={{
             marginTop: overlay
-              ? panelHeaderHeight + OVERLAY_INSET
+              ? panelHeaderHeight
               : Math.max(0, panelHeaderHeight - browserHeaderHeight),
-            marginLeft: overlay ? OVERLAY_INSET : undefined,
-            marginRight: overlay ? OVERLAY_INSET : undefined,
-            marginBottom: overlay ? OVERLAY_INSET : undefined,
           }}
         >
           <div className="header" ref={browserHeader}>
@@ -742,9 +739,9 @@ function App() {
               <div
                 className={`bubbles${edit ? ' editing' : ''}`}
                 style={{
-                  top: panelHeaderHeight + OVERLAY_INSET + browserHeaderHeight,
-                  left: OVERLAY_INSET,
-                  right: OVERLAY_INSET,
+                  top: panelHeaderHeight + browserHeaderHeight,
+                  left: -OVERLAY_INSET,
+                  right: -OVERLAY_INSET,
                 }}
               >
                 <TranslationView
