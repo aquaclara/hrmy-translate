@@ -6,7 +6,7 @@ import FileData from '../shared/translation-chunk-data';
 import { isComment } from '../shared/data-models/comment';
 import { translationPathFor } from '../shared/translation-path';
 import { documentHeight, layoutFor } from './layout';
-import { Address, BUBBLE_COLUMN, Patch, TranslationView } from './bubbles';
+import { Address, Patch, TranslationView } from './bubbles';
 import { LICENSE, YAML_OPTION } from '../shared/constants';
 
 const SITE_HOST = 'dka-hero.me';
@@ -282,10 +282,7 @@ function Viewer(props: {
     return () => observer.disconnect();
   }, []);
 
-  const fit = Math.max(
-    props.fit + FIT_MARGIN + (props.overlay ? BUBBLE_COLUMN : 0),
-    width,
-  );
+  const fit = Math.max(props.fit + FIT_MARGIN, width);
   const scale = width / fit;
   useEffect(() => {
     props.onScale(scale);

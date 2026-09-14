@@ -5,7 +5,7 @@ import { isComment } from '../shared/data-models/comment';
 import { Layout } from './layout';
 
 export const BUBBLE_GAP = 8;
-export const BUBBLE_COLUMN = 220;
+export const DEFAULT_BUBBLE_WIDTH = 150;
 
 export type Address = { key: string; cut: number; line: number };
 export type Patch = Partial<TranslationModel.PropertiedDataModel> & {
@@ -211,14 +211,18 @@ export function TranslationView(props: Props) {
                 ? imageTop + (layout.height / cuts.length) * cutIndex
                 : 0;
               const cutLeft = props.overlay
-                ? (imageLeft + layout!.width + BUBBLE_GAP) * props.scale
+                ? (imageLeft +
+                    layout!.width -
+                    DEFAULT_BUBBLE_WIDTH -
+                    BUBBLE_GAP) *
+                  props.scale
                 : 0;
               const style: React.CSSProperties = {};
               if (layout) {
                 style.top = cutTop * props.scale;
                 if (props.overlay) {
                   style.left = cutLeft;
-                  style.width = (BUBBLE_COLUMN - BUBBLE_GAP * 2) * props.scale;
+                  style.width = DEFAULT_BUBBLE_WIDTH * props.scale;
                 }
               }
               return (
