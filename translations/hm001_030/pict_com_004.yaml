@@ -20,45 +20,6 @@
   漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
   この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 hm001_030/001/hori_001.gif:
-  masks:
-  - func: rect
-    param:
-    - 290
-    - 40
-    - 40
-    - 130
-  - func: ellipse
-    param:
-    - 280
-    - 570
-    - 27
-    - 53
-    - 0
-  - func: rect
-    param:
-    - 290
-    - 520
-    - 40
-    - 145
-  - func: ellipse
-    param:
-    - 123
-    - 552
-    - 20
-    - 40
-    - 0
-  - func: rect
-    param:
-    - 45
-    - 630
-    - 33
-    - 108
-  - func: rect
-    param:
-    - 290
-    - 770
-    - 30
-    - 90
   text:
   - - // 호리미야 1권 1화
     - h: 153
@@ -358,11 +319,11 @@ hm001_030/001/hori_006.gif:
     x: 244
     y: 8
   - background: '#ffffff'
-    h: 64
+    h: 60
     text: 헤에
     type: stroke
     vertical: true
-    w: 24
+    w: 27
     x: 191
     y: 55
   - h: 48
@@ -555,18 +516,21 @@ hm001_030/001/hori_008.gif:
     w: 72
     x: 234
     y: 528
-  - h: 34
+  - h: 38
+    radius: 11
+    rotate: -7
     text: 우웩
     type: stroke
-    w: 48
-    x: 134
-    y: 589
-- - h: 148
-    radius: 80
+    vertical: true
+    w: 42
+    x: 131
+    y: 582
+- - h: 150
+    radius: 27
     text: 함박은 케첩이랑 먹으면서 토마토는 싫어해
-    w: 81
+    w: 85
     x: 232
-    y: 782
+    y: 780
   - h: 134
     text: 케첩이랑 토마토가 무슨 상관이야
     w: 67
@@ -711,12 +675,13 @@ hm001_030/001/hori_011.gif:
     x: 250
     y: 9
   - background: '#c6e51b'
-    h: 29
+    h: 33
+    radius: 9
     text: 촤
     type: plain
-    w: 29
-    x: 211
-    y: 201
+    w: 33
+    x: 207
+    y: 197
   - h: 185
     radius: 53
     text: 근데 이 애는 왜 나를 이렇게 잘 아는 걸까...
@@ -730,12 +695,12 @@ hm001_030/001/hori_011.gif:
     w: 81
     x: 254
     y: 267
-  - h: 74
+  - h: 68
     text: 설거지 끝났어
     type: plain
-    w: 26
-    x: 192
-    y: 296
+    w: 28
+    x: 190
+    y: 302
   - h: 51
     size: 1.5
     text: 헉
