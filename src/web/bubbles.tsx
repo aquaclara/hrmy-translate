@@ -135,9 +135,13 @@ function imageIndex(key: string, order: number, first: number | null): number {
   return index >= 0 ? index : order;
 }
 
+type Corner = 'nw' | 'ne' | 'sw' | 'se';
+const CORNERS: Corner[] = ['nw', 'ne', 'sw', 'se'];
+
 type Drag = {
   address: Address;
   mode: 'move' | 'resize' | 'rotate';
+  corner: Corner;
   startX: number;
   startY: number;
   x: number;
@@ -286,6 +290,7 @@ export function TranslationView(props: Props) {
     address: Address,
     mode: Drag['mode'],
     imageTop: number,
+    corner: Corner = 'se',
   ) {
     if (!props.edit) return;
     event.preventDefault();
@@ -302,6 +307,7 @@ export function TranslationView(props: Props) {
     setDrag({
       address,
       mode,
+      corner,
       startX: event.clientX,
       startY: event.clientY,
       x: origin.x,
@@ -341,11 +347,15 @@ export function TranslationView(props: Props) {
         w: Math.round(drag.w),
       });
     } else {
+      const west = drag.corner === 'nw' || drag.corner === 'sw';
+      const north = drag.corner === 'nw' || drag.corner === 'ne';
+      const w = Math.max(1, Math.round(west ? drag.w - dx : drag.w + dx));
+      const h = Math.max(1, Math.round(north ? drag.h - dy : drag.h + dy));
       props.onEdit?.(drag.address, {
-        x: Math.round(drag.x),
-        y: Math.round(drag.y),
-        w: Math.max(1, Math.round(drag.w + dx)),
-        h: Math.max(1, Math.round(drag.h + dy)),
+        x: Math.round(west ? drag.x + drag.w - w : drag.x),
+        y: Math.round(north ? drag.y + drag.h - h : drag.y),
+        w,
+        h,
       });
     }
   }
@@ -501,17 +511,25 @@ export function TranslationView(props: Props) {
                             onPointerCancel={endDrag}
                           />
                         )}
-                        {props.edit && (
-                          <span
-                            className="grip"
-                            onPointerDown={(event) =>
-                              startDrag(event, address, 'resize', imageTop)
-                            }
-                            onPointerMove={moveDrag}
-                            onPointerUp={endDrag}
-                            onPointerCancel={endDrag}
-                          />
-                        )}
+                        {props.edit &&
+                          CORNERS.map((corner) => (
+                            <span
+                              key={corner}
+                              className={`grip ${corner}`}
+                              onPointerDown={(event) =>
+                                startDrag(
+                                  event,
+                                  address,
+                                  'resize',
+                                  imageTop,
+                                  corner,
+                                )
+                              }
+                              onPointerMove={moveDrag}
+                              onPointerUp={endDrag}
+                              onPointerCancel={endDrag}
+                            />
+                          ))}
                         {props.edit && isSelected && (
                           <span
                             className="bubble-tools"
