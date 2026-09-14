@@ -285,13 +285,14 @@ hm001_030/001/hori_005.gif:
     x: 234
     y: 12
 - - background: '#e24a4a'
-    h: 224
+    h: 219
+    rotate: -3
     size: 1.6
     text: <big>같은 반의</big>
     type: plain
     vertical: true
-    w: 56
-    x: 273
+    w: 40
+    x: 289
     y: 266
   - background: '#c6e41b'
     h: 102
@@ -301,15 +302,15 @@ hm001_030/001/hori_005.gif:
     w: 56
     x: 91
     y: 353
-  - background: '#d54646'
-    h: 223
+  - background: '#e24a4a'
+    h: 191
     size: 1.7
-    text: <big>미야무라잖아요!?</big>
+    text: 미야무라잖아요
     type: plain
     vertical: true
-    w: 79
-    x: 9
-    y: 270
+    w: 45
+    x: 29
+    y: 264
 - - h: 167
     radius: 72
     text: 머, 머리 모양이 바뀌면 인상이 바뀌네-
@@ -323,12 +324,12 @@ hm001_030/001/hori_005.gif:
     x: 23
     y: 509
 - - background: '#e24a4a'
-    h: 144
-    size: 1.6
+    h: 148
+    size: 2.6
     text: <big>호리</big>
     type: plain
     vertical: true
-    w: 61
+    w: 71
     x: 264
     y: 776
   - background: '#c6e51b'
@@ -341,27 +342,29 @@ hm001_030/001/hori_005.gif:
     x: 82
     y: 770
   - background: '#e24a4a'
-    h: 112
-    size: 1.6
+    h: 136
+    size: 2.7
     text: <big>도요</big>
     type: plain
     vertical: true
-    w: 51
-    x: 21
+    w: 61
+    x: 15
     y: 792
 hm001_030/001/hori_006.gif:
-- - h: 134
+- - h: 157
     radius: 80
     text: 가정적이네요~
-    w: 89
-    x: 247
-    y: 19
-  - h: 72
-    text: 헤에-
+    w: 98
+    x: 244
+    y: 8
+  - background: '#ffffff'
+    h: 64
+    text: 헤에
     type: stroke
-    w: 48
-    x: 182
-    y: 65
+    vertical: true
+    w: 24
+    x: 191
+    y: 55
   - h: 48
     radius: 66
     text: 그,
@@ -375,11 +378,12 @@ hm001_030/001/hori_006.gif:
     x: 27
     y: 84
 - - h: 150
+    radius: 24
     text: 맨 얼굴은 유키한테도 타카코한테도 보인 적 없었는데...
     w: 93
-    x: 237
-    y: 271
-  - h: 99
+    x: 242
+    y: 273
+  - h: 88
     text: 하필 미야무라한테... <b>아-</b>
     type: plain
     w: 57
@@ -387,15 +391,16 @@ hm001_030/001/hori_006.gif:
     y: 267
   - h: 99
     radius: 57
+    rotate: -6
     text: 형아-
     w: 42
     x: 119
-    y: 270
-- - h: 127
+    y: 267
+- - h: 131
     text: 퍼즐 어려워-
-    w: 59
-    x: 263
-    y: 520
+    w: 80
+    x: 255
+    y: 521
   - h: 39
     text: 퉁
     type: plain
@@ -407,21 +412,21 @@ hm001_030/001/hori_006.gif:
     w: 69
     x: 21
     y: 520
-  - h: 85
+  - h: 94
     text: 여기-
-    w: 46
+    w: 58
     x: 38
-    y: 666
-- - h: 160
+    y: 657
+- - h: 159
     radius: 58
     text: 아, 반대네~
-    w: 71
-    x: 242
-    y: 767
-  - h: 88
+    w: 96
+    x: 236
+    y: 768
+  - h: 83
     text: 야옹이 얼굴은 여기
-    w: 62
-    x: 118
+    w: 78
+    x: 113
     y: 772
   - text: 톡
     type: plain
@@ -524,10 +529,10 @@ hm001_030/001/hori_007.gif:
     w: 64
     x: 268
     y: 771
-  - h: 211
+  - h: 205
     text: 1인분 는다고 다를 것 없고
-    w: 52
-    x: 19
+    w: 70
+    x: 10
     y: 780
 hm001_030/001/hori_008.gif:
 - - h: 65
@@ -578,46 +583,49 @@ hm001_030/001/hori_009.gif:
     w: 44
     x: 134
     y: 9
-  - h: 143
+  - h: 148
     radius: 52
     text: 그렇게 생각하고 다시 먹어봐
-    w: 56
-    x: 17
+    w: 66
+    x: 7
     y: 23
 - - background: '#c6e51b'
-    h: 51
+    h: 54
+    radius: 0
     rotate: 11
     text: 싫어
     type: plain
-    w: 33
-    x: 267
-    y: 281
+    w: 39
+    x: 273
+    y: 283
   - background: '#c6e51b'
     h: 82
+    radius: 24
     rotate: 12
     text: 똑같이 맛 없어
-    w: 52
-    x: 212
-    y: 288
+    w: 50
+    x: 211
+    y: 289
   - ''
   - background: '#c6e51b'
-    h: 59
+    h: 67
     radius: 80
     rotate: -7
     text: 하하하하
     vertical: true
-    w: 30
+    w: 33
     x: 95
     y: 315
-- - h: 106
+- - h: 112
+    radius: 44
     text: ...평소에도 머리 올리고 다니지 왜
-    w: 99
-    x: 222
+    w: 121
+    x: 210
     y: 519
-  - h: 83
+  - h: 86
     text: 안경도 벗고
-    w: 43
-    x: 53
+    w: 54
+    x: 42
     y: 528
   - h: 32
     text: 촤아
@@ -625,9 +633,9 @@ hm001_030/001/hori_009.gif:
     w: 43
     x: 70
     y: 643
-- - h: 45
+- - h: 46
     text: 응,
-    w: 27
+    w: 31
     x: 271
     y: 780
   - h: 52
@@ -641,18 +649,18 @@ hm001_030/001/hori_009.gif:
     x: 23
     y: 772
 hm001_030/001/hori_010.gif:
-- - h: 124
+- - h: 131
     radius: 73
     text: 호리도 화장 않는 게 더 나은데
-    w: 97
+    w: 98
     x: 237
     y: 12
-  - h: 72
+  - h: 75
     rotate: 9
     text: 첨벙|
     type: plain
     vertical: true
-    w: 33
+    w: 30
     x: 142
     y: 61
   - ''
@@ -669,20 +677,22 @@ hm001_030/001/hori_010.gif:
   - h: 95
     text: 무슨 표정!?
     w: 63
-    x: 18
+    x: 16
     y: 352
 - - h: 123
+    radius: 34
     text: 계속해서 필요해서 웃는다는 느낌이니까
     w: 100
     x: 225
     y: 521
   - h: 117
+    radius: 27
     text: 화내기도 하는 이런 얼굴
     w: 64
     x: 3
     y: 642
 - - h: 134
-    radius: 44
+    radius: 28
     text: 아, 그렇지만 평소 얼굴이 마음에 안든다는 게 아니고
     w: 133
     x: 192
@@ -694,6 +704,7 @@ hm001_030/001/hori_010.gif:
     y: 882
 hm001_030/001/hori_011.gif:
 - - h: 204
+    radius: 31
     text: 아래 속눈썹이 길구나아 학교에선 머리랑 안경으로 가려져서 안 보였지만...
     type: thought
     w: 87
@@ -713,22 +724,24 @@ hm001_030/001/hori_011.gif:
     w: 76
     x: 2
     y: 9
-- - h: 83
+- - h: 98
+    radius: 48
     text: 호리 듣고 있어?
-    w: 58
-    x: 260
-    y: 273
+    w: 81
+    x: 254
+    y: 267
   - h: 74
     text: 설거지 끝났어
     type: plain
     w: 26
     x: 192
     y: 296
-  - h: 34
+  - h: 51
+    size: 1.5
     text: 헉
-    w: 33
-    x: 24
-    y: 276
+    w: 35
+    x: 21
+    y: 266
 - - h: 122
     radius: 0
     text: 그 날은 설거지를 마치고 돌아 갔다
@@ -737,13 +750,13 @@ hm001_030/001/hori_011.gif:
     x: 233
     y: 521
   - background: '#c6e51b'
-    h: 85
+    h: 100
     rotate: -16
     text: 형아- 또 와야 돼-
     type: plain
-    w: 69
-    x: 31
-    y: 524
+    w: 60
+    x: 42
+    y: 522
 - - h: 127
     radius: 66
     text: 식사 고마웠어요
@@ -758,11 +771,11 @@ hm001_030/001/hori_012.gif:
     w: 32
     x: 286
     y: 25
-  - h: 134
+  - h: 140
     radius: 0
     text: 재미있었다... 미야무라였는데
     type: square
-    w: 74
+    w: 76
     x: 4
     y: 113
 - - text: 어
