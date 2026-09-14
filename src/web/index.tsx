@@ -313,10 +313,10 @@ function Viewer(props: {
         src={props.src}
         title={props.src}
         onLoad={(event) => {
-          setEntered(
-            !props.home && isFrameset(event.currentTarget.contentWindow),
-          );
-          setMenuOpen(false);
+          const frameset =
+            !props.home && isFrameset(event.currentTarget.contentWindow);
+          setEntered(frameset);
+          setMenuOpen(frameset);
         }}
       />
       {props.mobile && (
