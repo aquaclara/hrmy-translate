@@ -28,6 +28,7 @@ function updateQuery(url: URL | null) {
 const PAGE_KEY = 'page';
 const FIT_KEY = 'fit';
 const OFFSET_KEY = 'offset';
+const WINDOW_KEY = 'window';
 const DRAFT_KEY = 'draft';
 const FIT_WIDTHS = [350, 420, 600];
 const FIT_MARGIN = 16;
@@ -127,6 +128,15 @@ function loadOffset(): Offset {
     }
   } catch {}
   return { x: 0, y: 0 };
+}
+
+function loadWindow(): { open: boolean; overlay: boolean } {
+  try {
+    const stored = JSON.parse(loadStored(WINDOW_KEY) ?? '');
+    return { open: stored.open !== false, overlay: stored.overlay === true };
+  } catch {
+    return { open: true, overlay: false };
+  }
 }
 
 function loadFit(): number {
@@ -450,9 +460,13 @@ function App() {
   const [translation, setTranslation] = useState<Translation>({
     status: 'idle',
   });
-  const [panelOpen, setPanelOpen] = useState(true);
+  const [panelOpen, setPanelOpen] = useState(() => loadWindow().open);
   const [scale, setScale] = useState(1);
-  const [overlay, setOverlay] = useState(false);
+  const [overlay, setOverlay] = useState(() => loadWindow().overlay);
+
+  useEffect(() => {
+    store(WINDOW_KEY, JSON.stringify({ open: panelOpen, overlay }));
+  }, [panelOpen, overlay]);
   const [edit, setEdit] = useState(false);
   const [, setVersion] = useState(0);
   const [drag, setDrag] = useState<{
