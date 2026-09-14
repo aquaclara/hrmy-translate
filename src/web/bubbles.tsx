@@ -305,6 +305,7 @@ export function TranslationView(props: Props) {
     address: Address,
     mode: Drag['mode'],
     line: Partial<TranslationModel.PropertiedDataModel>,
+    imageTop: number,
     corner: Corner = 'se',
   ) {
     if (!props.edit) return;
@@ -313,14 +314,15 @@ export function TranslationView(props: Props) {
     event.currentTarget.setPointerCapture(event.pointerId);
     const wrapper = event.currentTarget.parentElement!;
     const bubble = wrapper.getBoundingClientRect();
+    const box = root.current!.getBoundingClientRect();
     setDrag({
       address,
       mode,
       corner,
       startX: event.clientX,
       startY: event.clientY,
-      x: line.x ?? 0,
-      y: line.y ?? 0,
+      x: line.x ?? (bubble.left - box.left) / props.scale - imageLeft,
+      y: line.y ?? (bubble.top - box.top) / props.scale - imageTop,
       w: wrapper.offsetWidth / props.scale,
       h: wrapper.offsetHeight / props.scale,
       angle: line.rotate ?? 0,
@@ -585,7 +587,13 @@ export function TranslationView(props: Props) {
                             size={props_.size ?? 1}
                             scale={props.scale}
                             onPointerDown={(event) =>
-                              startDrag(event, address, 'move', props_)
+                              startDrag(
+                                event,
+                                address,
+                                'move',
+                                props_,
+                                imageTop,
+                              )
                             }
                             onPointerMove={moveDrag}
                             onPointerUp={endDrag}
@@ -598,7 +606,13 @@ export function TranslationView(props: Props) {
                           <span
                             className="rotor"
                             onPointerDown={(event) =>
-                              startDrag(event, address, 'rotate', props_)
+                              startDrag(
+                                event,
+                                address,
+                                'rotate',
+                                props_,
+                                imageTop,
+                              )
                             }
                             onPointerMove={moveDrag}
                             onPointerUp={endDrag}
@@ -616,6 +630,7 @@ export function TranslationView(props: Props) {
                                   address,
                                   'resize',
                                   props_,
+                                  imageTop,
                                   corner,
                                 )
                               }
