@@ -47,7 +47,31 @@ export default class TranslationChuckData {
     if (Array.isArray(this.data[key])) {
       return [];
     }
-    return (this.data[key] as Image.PropertiedDataModel).masks;
+    return (this.data[key] as Image.PropertiedDataModel).masks ?? [];
+  }
+
+  getImageTop(key: string): number | undefined {
+    const image = this.data[key];
+    if (image === undefined || image === null || Array.isArray(image)) {
+      return undefined;
+    }
+    return image.top;
+  }
+
+  setImageTop(key: string, top: number | undefined): void {
+    const image = this.data[key];
+    if (image === undefined || image === null) return;
+    if (Array.isArray(image)) {
+      if (top !== undefined) this.data[key] = { top, text: image };
+      return;
+    }
+    if (top === undefined) {
+      delete image.top;
+      if (image.masks === undefined) this.data[key] = image.text;
+    } else {
+      const { top: _, ...rest } = image;
+      this.data[key] = { top, ...rest };
+    }
   }
 
   setMaskDataForKey(key: string, value: Mask[]): void {

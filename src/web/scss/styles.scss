@@ -288,6 +288,29 @@ nav {
       opacity: 0.55;
     }
 
+    .baseline {
+      position: absolute;
+      height: 0;
+      border-top: 2px dashed #e53935;
+      cursor: ns-resize;
+      pointer-events: auto;
+      touch-action: none;
+
+      .tab {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 0 0.4em;
+        border-radius: 0.3em 0.3em 0 0;
+        background-color: #e53935;
+        color: white;
+        font: 12px sans-serif;
+        line-height: 1.4;
+        white-space: nowrap;
+        cursor: move;
+      }
+    }
+
     .rotor {
       position: absolute;
       left: 50%;

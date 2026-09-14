@@ -70,6 +70,20 @@ type Props = {
   series: 'horimiya' | 'aco';
   onEdit?: (address: Address, patch: Patch) => void;
   onStructure?: (change: Structure) => Address | null;
+  onImageTop?: (
+    key: string,
+    top: number,
+    from: number,
+    together: boolean,
+  ) => void;
+};
+
+type BaselineDrag = {
+  key: string;
+  together: boolean;
+  startY: number;
+  top: number;
+  current: number;
 };
 
 function keyForIndex(keys: string[], first: number | null, index: number) {
@@ -221,6 +235,7 @@ function sameAddress(a: Address | null, b: Address): boolean {
 export function TranslationView(props: Props) {
   const root = useRef<HTMLDivElement>(null);
   const [drag, setDrag] = useState<Drag | null>(null);
+  const [baselineDrag, setBaselineDrag] = useState<BaselineDrag | null>(null);
   const [selected, setSelected] = useState<Address | null>(null);
   const [editing, setEditing] = useState<Address | null>(null);
   const keys = Object.keys(props.data.getData()).filter((key) => key !== '//');
@@ -367,6 +382,44 @@ export function TranslationView(props: Props) {
     }
   }
 
+  function startBaselineDrag(
+    event: React.PointerEvent<HTMLElement>,
+    key: string,
+    top: number,
+    together: boolean,
+  ) {
+    if (!props.edit) return;
+    event.preventDefault();
+    event.stopPropagation();
+    event.currentTarget.setPointerCapture(event.pointerId);
+    setBaselineDrag({
+      key,
+      together,
+      startY: event.clientY,
+      top,
+      current: top,
+    });
+  }
+
+  function moveBaselineDrag(event: React.PointerEvent<HTMLElement>) {
+    if (baselineDrag === null) return;
+    const top = Math.round(
+      baselineDrag.top + (event.clientY - baselineDrag.startY) / props.scale,
+    );
+    if (top === baselineDrag.current) return;
+    props.onImageTop?.(
+      baselineDrag.key,
+      top,
+      baselineDrag.current,
+      baselineDrag.together,
+    );
+    baselineDrag.current = top;
+  }
+
+  function endBaselineDrag() {
+    setBaselineDrag(null);
+  }
+
   function endDrag() {
     if (drag === null) return;
     if (!drag.moved && drag.mode === 'move') {
@@ -383,9 +436,40 @@ export function TranslationView(props: Props) {
       {keys.map((key, order) => {
         const cuts = props.data.getCutTranslations(key);
         const index = imageIndex(key, order, props.firstImage);
-        const imageTop = layout ? layout.top + index * layout.pitch : 0;
+        const imageTop = layout
+          ? (props.data.getImageTop(key) ?? layout.top + index * layout.pitch)
+          : 0;
         return (
           <section key={key} className="image">
+            {props.edit && positioned && props.overlay && (
+              <div
+                className="baseline"
+                style={{
+                  left: imageLeft * props.scale,
+                  top: imageTop * props.scale,
+                  width: layout.width * props.scale,
+                }}
+                onPointerDown={(event) =>
+                  startBaselineDrag(event, key, imageTop, false)
+                }
+                onPointerMove={moveBaselineDrag}
+                onPointerUp={endBaselineDrag}
+                onPointerCancel={endBaselineDrag}
+              >
+                <span
+                  className="tab"
+                  title="대사와 함께 옮기기"
+                  onPointerDown={(event) =>
+                    startBaselineDrag(event, key, imageTop, true)
+                  }
+                  onPointerMove={moveBaselineDrag}
+                  onPointerUp={endBaselineDrag}
+                  onPointerCancel={endBaselineDrag}
+                >
+                  {key.replace(/^.*\//, '')} {imageTop}
+                </span>
+              </div>
+            )}
             {cuts.map((cut, cutIndex) => {
               const cutTop = layout
                 ? imageTop + (layout.height / cuts.length) * cutIndex

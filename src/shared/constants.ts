@@ -9,9 +9,13 @@ export const GITHUB_URL_BASE =
 export const GITHUB_RAW_URL_BASE =
   'https://raw.githubusercontent.com/aquaclara/hrmy-translate/main/';
 
+const FIRST_KEYS = ['top'];
+
 export const YAML_OPTION = {
   noArrayIndent: true,
-  sortKeys: true,
+  sortKeys: (a: string, b: string) =>
+    Number(FIRST_KEYS.includes(b)) - Number(FIRST_KEYS.includes(a)) ||
+    a.localeCompare(b),
   noCompatMode: true,
 };
 

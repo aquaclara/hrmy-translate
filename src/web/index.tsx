@@ -553,6 +553,30 @@ function App() {
     setVersion((version) => version + 1);
   }
 
+  function applyImageTop(
+    key: string,
+    top: number,
+    from: number,
+    together: boolean,
+  ) {
+    if (translation.status !== 'loaded' || page === null) return;
+    const data = translation.data;
+    data.setImageTop(key, top);
+    if (!together) {
+      data.getCutTranslations(key).forEach((cut, cutIndex) => {
+        cut.forEach((line, lineIndex) => {
+          if (typeof line === 'string' || line.y === undefined) return;
+          data.setTranslation(key, cutIndex, lineIndex, {
+            ...line,
+            y: line.y + from - top,
+          });
+        });
+      });
+    }
+    store(draftKey(page), JSON.stringify(data.getData()));
+    setVersion((version) => version + 1);
+  }
+
   function toggleEdit() {
     const next = !edit;
     setEdit(next);
@@ -833,6 +857,7 @@ function App() {
                   imageCount={info?.images ?? 0}
                   series={page ? seriesOf(page) : 'horimiya'}
                   onEdit={applyEdit}
+                  onImageTop={applyImageTop}
                   onStructure={changeStructure}
                 />
               </div>
