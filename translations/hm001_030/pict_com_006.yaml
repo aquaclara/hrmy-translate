@@ -408,12 +408,14 @@ hm001_030/002/hori_035.gif:
     x: 22
     y: 8
   - background: '#e8ad7d'
-    h: 66
+    h: 80
     rotate: 6
-    text: <big>처억</big>
+    size: 1.8
+    text: <strong class="stroke">처억</stroke>
     type: stroke
-    w: 51
-    x: 4
+    vertical: true
+    w: 53
+    x: 3
     y: 154
 - - h: 130
     radius: 27
@@ -451,7 +453,7 @@ hm001_030/002/hori_036.gif:
     y: 19
   - background: '#e8ad7d'
     h: 79
-    rotate: 21
+    rotate: 13
     size: 1.8
     text: 훌쩍
     type: stroke
@@ -468,11 +470,11 @@ hm001_030/002/hori_036.gif:
     w: 36
     x: 62
     y: 112
-- - h: 158
+- - h: 160
     radius: 17
     text: 소타, 뭐하냐- 집에 가자-!!
     type: scream
-    w: 87
+    w: 106
     x: 229
     y: 255
   - h: 67
@@ -637,12 +639,12 @@ hm001_030/002/hori_038.gif:
     y: 796
 hm001_030/002/hori_039.gif:
 - - background: '#ffffff'
-    h: 100
+    h: 107
     text: 그래서 소타하고 같이 있었구나 <sub>평일인데 깜짝 놀랐어</sub>
-    w: 131
-    x: 207
-    y: 13
-  - h: 39
+    w: 133
+    x: 209
+    y: 3
+  - h: 37
     rotate: -10
     text: 털썩
     type: plain
@@ -650,13 +652,13 @@ hm001_030/002/hori_039.gif:
     x: 182
     y: 76
   - background: '#c6e51b'
-    h: 76
+    h: 77
     rotate: 5
     text: 관심 없어 보이네
     type: thought
-    w: 21
-    x: 132
-    y: 33
+    w: 23
+    x: 130
+    y: 32
   - h: 71
     text: 팬티 보이는데
     type: plain
@@ -674,13 +676,14 @@ hm001_030/002/hori_039.gif:
     w: 59
     x: 278
     y: 247
-  - h: 62
+  - h: 77
+    radius: 35
     rotate: -23
     text: 어, 설마... 없다...는 건...
     type: plain
-    w: 76
-    x: 168
-    y: 269
+    w: 74
+    x: 173
+    y: 268
   - h: 59
     text: 뜨끔
     type: plain
