@@ -61,80 +61,109 @@ hm001_030/001/hori_001.gif:
     - 90
   text:
   - - // 호리미야 1권 1화
-    - h: 140
+    - h: 153
+      radius: 58
       text: 누나아-
-      w: 47
-      x: 287
-      y: 26
+      w: 57
+      x: 281
+      y: 21
   - - ''
-  - - h: 146
+  - - h: 148
+      size: 1.2
       text: 소타 너 어떻게 된 거야!?
       type: scream
-      w: 67
-      x: 260
+      w: 70
+      x: 259
       y: 514
-    - h: 63
+    - h: 64
+      radius: 80
       text: 넘어졌어
-      w: 40
-      x: 101
-      y: 519
-    - h: 29
-      text: 저런-
+      w: 52
+      x: 95
+      y: 517
+    - h: 37
+      text: 저런
       type: scream
-      w: 40
+      vertical: true
+      w: 39
       x: 38
       y: 629
-  - - h: 75
+    - ''
+  - - h: 90
+      size: 1.1
       text: 저, 저기
-      w: 40
-      x: 282
-      y: 779
+      w: 51
+      x: 281
+      y: 775
 hm001_030/001/hori_002.gif:
-- - h: 137
+- - h: 144
+    radius: 37
     text: 괜찮은 것 같으니 이만 실례할게요
-    w: 64
-    x: 270
-    y: 22
-- - h: 42
-    text: '!? <small>피어...</small>'
+    w: 81
+    x: 255
+    y: 16
+- - h: 31
+    radius: 0
+    size: 0.9
+    text: 피어
     type: scream
-    w: 40
-    x: 269
-    y: 276
-  - h: 100
+    vertical: true
+    w: 20
+    x: 281
+    y: 273
+  - ''
+  - h: 108
+    radius: 44
     text: 아... 아뇨 잠시만이라도 들어갔다...
-    w: 77
+    w: 89
     x: 199
-    y: 326
-  - h: 95
-    text: 차라도...
-    w: 40
-    x: 59
-    y: 377
+    y: 322
+  - h: 85
+    radius: 14
+    size: 1.3
+    text: 차라도
+    vertical: true
+    w: 27
+    x: 65
+    y: 371
   - h: 51
+    radius: 34
     text: 아니...
-    w: 40
-    x: 8
-    y: 407
-- - '?'
-  - h: 94
+    w: 48
+    x: 4
+    y: 411
+  - ''
+- - h: 115
+    radius: 80
     text: 다 답례라도 하고 싶으니까...
-    w: 63
-    x: 238
-    y: 625
-  - h: 91
+    w: 75
+    x: 231
+    y: 621
+  - h: 104
+    radius: 38
     text: 뭐야, 피어스 많다, 이 사람...
     type: thought
-    w: 58
-    x: 59
-    y: 518
+    w: 73
+    x: 55
+    y: 514
   - background: '#c6e41b'
-    h: 115
-    text: 피어싱... 피... 피어...
+    h: 73
+    rotate: -5
+    text: 피어싱... 피...
     type: plain
-    w: 41
-    x: 7
-    y: 520
+    vertical: true
+    w: 42
+    x: -1
+    y: 529
+  - h: 30
+    radius: 0
+    rotate: -15
+    text: 피어
+    vertical: true
+    w: 27
+    x: 14
+    y: 601
+  - ''
   - h: 78
     text: 잠시만...
     w: 40
@@ -142,248 +171,608 @@ hm001_030/001/hori_002.gif:
     y: 655
 - - ''
 hm001_030/001/hori_003.gif:
-- - h: 85
+- - h: 88
+    radius: 80
     text: 미안해요
     w: 40
-    x: 287
-    y: 41
-  - h: 95
+    x: 282
+    y: 45
+  - h: 111
+    radius: 80
     text: 아뇨... 저야말로...
-    w: 48
-    x: 48
-    y: 38
-- - h: 127
+    w: 77
+    x: 36
+    y: 28
+- - h: 123
+    radius: 80
     text: 개 때문에 놀라 넘어진 모양인데...
-    w: 57
-    x: 273
-    y: 270
+    w: 68
+    x: 263
+    y: 271
   - background: '#c6e41b'
     h: 72
     text: 그때 마침 내가
     type: plain
     w: 40
-    x: 198
-    y: 263
-  - h: 52
+    x: 197
+    y: 267
+  - h: 54
+    radius: 80
     text: 고마워요
     type: plain
-    w: 40
-    x: 192
-    y: 364
-  - h: 69
+    w: 27
+    x: 189
+    y: 365
+  - h: 80
+    radius: 80
     text: 그렇구나
-    w: 40
-    x: 124
-    y: 262
+    w: 44
+    x: 123
+    y: 258
   - h: 114
     text: 소타 저기 가서 놀고 있어
     w: 68
-    x: 4
-    y: 263
-- - h: 115
+    x: 7
+    y: 264
+- - h: 128
+    radius: 36
     text: 소타...야무진 아이던데요
-    w: 87
-    x: 248
-    y: 525
-  - h: 127
+    w: 88
+    x: 246
+    y: 517
+  - h: 142
+    radius: 80
     text: 집 주소랑 자기 이름도 또박또박 말할 줄 알고
-    w: 74
-    x: 20
-    y: 528
+    w: 96
+    x: 14
+    y: 515
 - - h: 80
+    radius: 50
     text: 아, 아뇨 무슨...
     w: 62
-    x: 262
-    y: 766
-  - h: 110
+    x: 263
+    y: 765
+  - h: 121
+    radius: 64
     text: 하도 덤벙대고 개구쟁이 짓만 해서
-    w: 59
-    x: 20
-    y: 771
+    w: 89
+    x: 8
+    y: 770
 hm001_030/001/hori_004.gif:
-- - h: 157
+- - h: 174
+    radius: 80
     text: 그나저나 집안일을 도맡아 하는게 굉장하네, 다시 봤어요, 호리
-    w: 119
-    x: 184
-    y: 15
-  - h: 87
+    w: 161
+    x: 170
+    y: 2
+  - h: 102
+    radius: 80
     text: 아니 뭘~
-    w: 42
-    x: 7
-    y: 17
+    w: 35
+    x: 11
+    y: 12
 - - ''
-- - h: 140
+- - h: 145
+    radius: 80
     text: 어? ...호리 맞죠? 3반의...
-    w: 94
-    x: 221
-    y: 514
-  - h: 71
+    w: 119
+    x: 217
+    y: 516
+  - h: 83
+    radius: 58
     text: 뭐...!
     type: scream
-    w: 43
+    w: 46
     x: 15
     y: 523
-- - h: 86
+- - h: 107
+    radius: 80
     text: 호 호... 호리는 호리지만...
-    w: 63
-    x: 255
-    y: 774
-  - h: 169
+    w: 51
+    x: 261
+    y: 765
+  - h: 152
+    radius: 80
     text: 그... 그쪽도 혹시 같은 학교...?
-    w: 45
-    x: 198
-    y: 786
+    w: 63
+    x: 192
+    y: 794
 hm001_030/001/hori_005.gif:
-- - h: 127
+- - h: 144
+    radius: 80
     text: 갑자기 왜 그래요? 나, 같은 반의 미야무라잖아요
-    w: 88
-    x: 242
-    y: 18
+    w: 102
+    x: 234
+    y: 12
 - - background: '#e24a4a'
     h: 224
+    size: 1.6
     text: <big>같은 반의</big>
     type: plain
+    vertical: true
     w: 56
-    x: 277
-    y: 272
+    x: 273
+    y: 266
   - background: '#c6e41b'
-    h: 110
+    h: 102
+    rotate: -17
     text: 미안해요, 말 걸지 말아 줄래요
     type: plain
-    w: 83
-    x: 77
-    y: 361
+    w: 56
+    x: 91
+    y: 353
   - background: '#d54646'
-    h: 202
+    h: 223
+    size: 1.7
     text: <big>미야무라잖아요!?</big>
     type: plain
-    w: 67
-    x: 13
-    y: 274
-- - h: 149
+    vertical: true
+    w: 79
+    x: 9
+    y: 270
+- - h: 167
+    radius: 72
     text: 머, 머리 모양이 바뀌면 인상이 바뀌네-
-    w: 93
-    x: 236
-    y: 530
-  - h: 96
+    w: 117
+    x: 226
+    y: 522
+  - h: 113
+    radius: 80
     text: 호리도요
-    w: 40
-    x: 40
-    y: 528
-- - h: 144
+    w: 61
+    x: 23
+    y: 509
+- - background: '#e24a4a'
+    h: 144
+    size: 1.6
     text: <big>호리</big>
     type: plain
+    vertical: true
     w: 61
-    x: 269
-    y: 778
-  - h: 137
+    x: 264
+    y: 776
+  - background: '#c6e51b'
+    h: 146
+    rotate: -11
     text: 미야무라 비켜-
     type: plain
-    w: 43
-    x: 74
-    y: 771
-  - h: 112
+    vertical: true
+    w: 26
+    x: 82
+    y: 770
+  - background: '#e24a4a'
+    h: 112
+    size: 1.6
     text: <big>도요</big>
     type: plain
+    vertical: true
     w: 51
     x: 21
     y: 792
 hm001_030/001/hori_006.gif:
-- - 가정적이네요~
-  - text: 헤에-
+- - h: 134
+    radius: 80
+    text: 가정적이네요~
+    w: 89
+    x: 247
+    y: 19
+  - h: 72
+    text: 헤에-
     type: stroke
-  - 그, 그만...!
-- - 맨 얼굴은 유키한테도 타카코한테도 보인 적 없었는데...
-  - text: 하필 미야무라한테... <b>아-</b>
+    w: 48
+    x: 182
+    y: 65
+  - h: 48
+    radius: 66
+    text: 그,
+    w: 24
+    x: 39
+    y: 25
+  - h: 85
+    radius: 80
+    text: 그만...!
+    w: 51
+    x: 27
+    y: 84
+- - h: 150
+    text: 맨 얼굴은 유키한테도 타카코한테도 보인 적 없었는데...
+    w: 93
+    x: 237
+    y: 271
+  - h: 99
+    text: 하필 미야무라한테... <b>아-</b>
     type: plain
-  - 형아-
-- - 퍼즐 어려워-
-  - text: 퉁
+    w: 57
+    x: 171
+    y: 267
+  - h: 99
+    radius: 57
+    text: 형아-
+    w: 42
+    x: 119
+    y: 270
+- - h: 127
+    text: 퍼즐 어려워-
+    w: 59
+    x: 263
+    y: 520
+  - h: 39
+    text: 퉁
     type: plain
-  - 어디? 어떤 게?
-  - 여기-
-- - 아, 반대네~
-  - 야옹이 얼굴은 여기
+    w: 25
+    x: 175
+    y: 652
+  - h: 62
+    text: 어디? 어떤 게?
+    w: 69
+    x: 21
+    y: 520
+  - h: 85
+    text: 여기-
+    w: 46
+    x: 38
+    y: 666
+- - h: 160
+    radius: 58
+    text: 아, 반대네~
+    w: 71
+    x: 242
+    y: 767
+  - h: 88
+    text: 야옹이 얼굴은 여기
+    w: 62
+    x: 118
+    y: 772
   - text: 톡
     type: plain
+    w: 39
+    x: 144
+    y: 892
   - text: 아-
     type: plain
-  - text: 하아-
+    w: 51
+    x: 97
+    y: 874
+  - radius: 36
+    rotate: -14
+    text: 하아
     type: plain
+    vertical: true
+    w: 56
+    x: 2
+    y: 802
 hm001_030/001/hori_007.gif:
-- - 이건 여기?
-  - 여기!
-  - text: 딱
+- - background: '#ffffff'
+    h: 87
+    radius: 76
+    text: 이건 여기?
+    w: 44
+    x: 290
+    y: 46
+  - h: 49
+    text: 여기!
+    w: 42
+    x: 209
+    y: 52
+  - background: '#c6e51b'
+    h: 41
+    rotate: -15
+    text: 딱
     type: plain
-  - 맞아. 이야, 다 됐네
-- - 됐다-
-  - text: 야호
+    w: 24
+    x: 212
+    y: 177
+  - h: 104
+    text: 맞아.
+    w: 36
+    x: 77
+    y: 21
+  - h: 135
+    text: 이야, 다 됐네
+    w: 58
+    x: 18
+    y: 59
+- - h: 85
+    radius: 64
+    text: 됐다-
+    w: 50
+    x: 287
+    y: 279
+  - h: 49
+    text: 야호
     type: plain
-  - 뭐야? 퍼즐?
-  - 응, 다 했어
-- - 있잖아, 형아- 밥 먹고 가주라-
-  - 어-?
-  - text: 그럴 순 없어
+    w: 36
+    x: 267
+    y: 376
+  - h: 60
+    radius: 33
+    text: 뭐야? 퍼즐?
+    w: 54
+    x: 80
+    y: 269
+  - h: 77
+    text: 응, 다 했어
+    w: 48
+    x: 34
+    y: 422
+- - h: 115
+    radius: 58
+    text: 있잖아, 형아- 밥 먹고 가주라-
+    w: 102
+    x: 227
+    y: 516
+  - h: 58
+    text: 어-?
+    w: 40
+    x: 134
+    y: 524
+  - h: 67
+    rotate: -16
+    text: 그럴 순 없어
     type: plain
-  - 먹고 가
-- - 부모님은 일 때문에 안 올 거고
-  - 1인분 는다고 다를 것 없고
+    w: 56
+    x: 60
+    y: 540
+  - h: 93
+    text: 먹고 가
+    w: 62
+    x: 16
+    y: 637
+- - h: 179
+    radius: 80
+    text: 부모님은 일 때문에 안 올 거고
+    w: 64
+    x: 268
+    y: 771
+  - h: 211
+    text: 1인분 는다고 다를 것 없고
+    w: 52
+    x: 19
+    y: 780
 hm001_030/001/hori_008.gif:
-- - 그럼...
-  - text: 이얏호
+- - h: 65
+    radius: 80
+    text: 그럼...
+    w: 51
+    x: 193
+    y: 33
+  - background: '#c6e51b'
+    h: 55
+    text: 이얏호
     type: plain
+    w: 43
+    x: 126
+    y: 88
 - - ''
-- - 소타, 토마토도 먹어
-  - text: 우웩-
+- - h: 123
+    radius: 80
+    text: 소타, 토마토도 먹어
+    w: 72
+    x: 234
+    y: 528
+  - h: 34
+    text: 우웩
     type: stroke
-- - 함박은 케첩이랑 먹으면서 토마토는 싫어해
-  - 케첩이랑 토마토가 무슨 상관이야
+    w: 48
+    x: 134
+    y: 589
+- - h: 148
+    radius: 80
+    text: 함박은 케첩이랑 먹으면서 토마토는 싫어해
+    w: 81
+    x: 232
+    y: 782
+  - h: 134
+    text: 케첩이랑 토마토가 무슨 상관이야
+    w: 67
+    x: 3
+    y: 768
 hm001_030/001/hori_009.gif:
-- - 케첩은 토마토로 만드는 거야
-  - 으엑-
-  - 그렇게 생각하고 다시 먹어봐
-- - text: 싫어- 똑같이 맛 없어-
+- - h: 128
+    text: 케첩은 토마토로 만드는 거야
+    w: 88
+    x: 239
+    y: 12
+  - h: 63
+    text: 으엑-
+    w: 44
+    x: 134
+    y: 9
+  - h: 143
+    radius: 52
+    text: 그렇게 생각하고 다시 먹어봐
+    w: 56
+    x: 17
+    y: 23
+- - background: '#c6e51b'
+    h: 51
+    rotate: 11
+    text: 싫어
     type: plain
-  - 하하하하
-- - ...평소에도 머리 올리고 다니지 왜
-  - 안경도 벗고
-  - text: 촤아-
+    w: 33
+    x: 267
+    y: 281
+  - background: '#c6e51b'
+    h: 82
+    rotate: 12
+    text: 똑같이 맛 없어
+    w: 52
+    x: 212
+    y: 288
+  - ''
+  - background: '#c6e51b'
+    h: 59
+    radius: 80
+    rotate: -7
+    text: 하하하하
+    vertical: true
+    w: 30
+    x: 95
+    y: 315
+- - h: 106
+    text: ...평소에도 머리 올리고 다니지 왜
+    w: 99
+    x: 222
+    y: 519
+  - h: 83
+    text: 안경도 벗고
+    w: 43
+    x: 53
+    y: 528
+  - h: 32
+    text: 촤아
     type: plain
-- - 응, 하지만
-  - 피어스 자국이 보일 테니까
+    w: 43
+    x: 70
+    y: 643
+- - h: 45
+    text: 응,
+    w: 27
+    x: 271
+    y: 780
+  - h: 52
+    text: 하지만
+    w: 39
+    x: 232
+    y: 795
+  - h: 119
+    text: 피어스 자국이 보일 테니까
+    w: 59
+    x: 23
+    y: 772
 hm001_030/001/hori_010.gif:
-- - 호리도 화장 않는 게 더 나은데
-  - text: 첨벙-
+- - h: 124
+    radius: 73
+    text: 호리도 화장 않는 게 더 나은데
+    w: 97
+    x: 237
+    y: 12
+  - h: 72
+    rotate: 9
+    text: 첨벙|
     type: plain
-  - 뭐!?
-- - 지금 표정!
-  - 무슨 표정!?
-- - 계속해서 필요해서 웃는다는 느낌이니까
-  - 화내기도 하는 이런 얼굴
-- - 아, 그렇지만 평소 얼굴이 마음에 안든다는 게 아니고
-  - 뭐라고 할까
+    vertical: true
+    w: 33
+    x: 142
+    y: 61
+  - ''
+  - h: 73
+    text: 뭐!?
+    w: 38
+    x: 16
+    y: 20
+- - h: 96
+    text: 지금 표정!
+    w: 49
+    x: 275
+    y: 272
+  - h: 95
+    text: 무슨 표정!?
+    w: 63
+    x: 18
+    y: 352
+- - h: 123
+    text: 계속해서 필요해서 웃는다는 느낌이니까
+    w: 100
+    x: 225
+    y: 521
+  - h: 117
+    text: 화내기도 하는 이런 얼굴
+    w: 64
+    x: 3
+    y: 642
+- - h: 134
+    radius: 44
+    text: 아, 그렇지만 평소 얼굴이 마음에 안든다는 게 아니고
+    w: 133
+    x: 192
+    y: 779
+  - h: 116
+    text: 뭐라고 할까
+    w: 43
+    x: 12
+    y: 882
 hm001_030/001/hori_011.gif:
-- - text: 아래 속눈썹이 길구나아 학교에선 머리랑 안경으로 가려져서 안 보였지만...
+- - h: 204
+    text: 아래 속눈썹이 길구나아 학교에선 머리랑 안경으로 가려져서 안 보였지만...
     type: thought
-  - text: 촤-
+    w: 87
+    x: 250
+    y: 9
+  - background: '#c6e51b'
+    h: 29
+    text: 촤
     type: plain
-  - text: 근데 이 애는 왜 나를 이렇게 잘 아는 걸까...
+    w: 29
+    x: 211
+    y: 201
+  - h: 185
+    radius: 53
+    text: 근데 이 애는 왜 나를 이렇게 잘 아는 걸까...
     type: thought
-- - 호리 듣고 있어?
-  - text: 설거지 끝났어
+    w: 76
+    x: 2
+    y: 9
+- - h: 83
+    text: 호리 듣고 있어?
+    w: 58
+    x: 260
+    y: 273
+  - h: 74
+    text: 설거지 끝났어
     type: plain
-  - 헉
-- - text: 그 날은 설거지를 마치고 돌아 갔다
+    w: 26
+    x: 192
+    y: 296
+  - h: 34
+    text: 헉
+    w: 33
+    x: 24
+    y: 276
+- - h: 122
+    radius: 0
+    text: 그 날은 설거지를 마치고 돌아 갔다
     type: square
-  - text: 형아- 또 와야 돼-
+    w: 97
+    x: 233
+    y: 521
+  - background: '#c6e51b'
+    h: 85
+    rotate: -16
+    text: 형아- 또 와야 돼-
     type: plain
-- - 식사 고마웠어요
+    w: 69
+    x: 31
+    y: 524
+- - h: 127
+    radius: 66
+    text: 식사 고마웠어요
+    w: 63
+    x: 233
+    y: 770
 hm001_030/001/hori_012.gif:
-- - text: 왠지
+- - h: 68
+    radius: 0
+    text: 왠지
     type: square
-  - text: 재미있었다... 미야무라였는데
+    w: 32
+    x: 286
+    y: 25
+  - h: 134
+    radius: 0
+    text: 재미있었다... 미야무라였는데
     type: square
-- - 어
+    w: 74
+    x: 4
+    y: 113
+- - text: 어
+    w: 39
+    x: 245
+    y: 301
 - - ''
-- - 안녕- 호리-
+- - h: 94
+    text: 안녕- 호리-
+    w: 60
+    x: 252
+    y: 771
 
