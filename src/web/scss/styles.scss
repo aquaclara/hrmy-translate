@@ -278,8 +278,10 @@ nav {
       pointer-events: auto;
     }
 
-    .bubble.selected .line {
+    .bubble.selected .line,
+    .bubble.dragging .line {
       outline: 2px solid #1e88e5;
+      opacity: 0.55;
     }
 
     .rotor {
