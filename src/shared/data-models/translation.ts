@@ -10,6 +10,7 @@ export type PropertiedDataModel = {
   size?: number;
   vertical?: boolean;
   rotate?: number;
+  radius?: number;
   color?: string;
   background?: string;
   'margin-left'?: string;

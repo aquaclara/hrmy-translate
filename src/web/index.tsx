@@ -518,6 +518,7 @@ function App() {
       delete datum.size;
       delete datum.vertical;
       delete datum.rotate;
+      delete datum.radius;
       delete datum.background;
     } else {
       Object.assign(datum, patch);

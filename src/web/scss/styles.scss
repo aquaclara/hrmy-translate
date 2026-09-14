@@ -306,6 +306,16 @@ nav {
         min-width: 2.5em;
         text-align: center;
       }
+
+      .radius {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        input {
+          width: 5rem;
+        }
+      }
     }
   }
 }

@@ -255,6 +255,10 @@ export function TranslationView(props: Props) {
                     if (props_.background !== undefined) {
                       lineStyle.backgroundColor = props_.background;
                     }
+                    const radius =
+                      props_.radius !== undefined
+                        ? props_.radius * props.scale
+                        : undefined;
                     const rotation =
                       props_.rotate !== undefined
                         ? `rotate(${props_.rotate}deg)`
@@ -274,8 +278,13 @@ export function TranslationView(props: Props) {
                                   backgroundColor: lineStyle.backgroundColor,
                                   height: lineStyle.height,
                                   transform: rotation,
+                                  borderRadius: radius,
                                 }
-                              : { ...lineStyle, transform: rotation }
+                              : {
+                                  ...lineStyle,
+                                  transform: rotation,
+                                  borderRadius: radius,
+                                }
                           }
                           html={text}
                           fixed={placed && props_.h !== undefined}
@@ -346,6 +355,20 @@ export function TranslationView(props: Props) {
                               세로
                             </button>
                             <span className="size">{props_.rotate ?? 0}°</span>
+                            <label className="radius">
+                              모서리
+                              <input
+                                type="range"
+                                min={0}
+                                max={80}
+                                value={props_.radius ?? 16}
+                                onChange={(event) =>
+                                  props.onEdit?.(address, {
+                                    radius: Number(event.target.value),
+                                  })
+                                }
+                              />
+                            </label>
                             <button
                               type="button"
                               aria-label="글자 작게"
