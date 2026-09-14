@@ -783,7 +783,18 @@ nav {
 
     &.stroke,
     .stroke {
-      font-weight: bold;
+      color: variables.$black;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 1px;
+    }
+
+    strong.stroke {
+      font-weight: normal;
+      font-size: 1.2em;
+    }
+
+    big.stroke {
+      font-size: 1.4em;
     }
 
     .blue {
