@@ -148,10 +148,18 @@ type Drag = {
   y: number;
   w: number;
   h: number;
+  angle: number;
   centerX: number;
   centerY: number;
   moved: boolean;
 };
+
+function rotateVector(x: number, y: number, degrees: number) {
+  const radians = (degrees * Math.PI) / 180;
+  const cos = Math.cos(radians);
+  const sin = Math.sin(radians);
+  return { x: x * cos - y * sin, y: x * sin + y * cos };
+}
 
 const MIN_FONT = 0.4;
 
@@ -277,37 +285,30 @@ export function TranslationView(props: Props) {
   const positioned = layout !== null;
   const imageLeft = layout ? props.contentLeft + layout.left : 0;
 
-  function toContent(clientX: number, clientY: number, imageTop: number) {
-    const box = root.current!.getBoundingClientRect();
-    return {
-      x: (clientX - box.left) / props.scale - imageLeft,
-      y: (clientY - box.top) / props.scale - imageTop,
-    };
-  }
-
   function startDrag(
     event: React.PointerEvent<HTMLElement>,
     address: Address,
     mode: Drag['mode'],
-    imageTop: number,
+    line: Partial<TranslationModel.PropertiedDataModel>,
     corner: Corner = 'se',
   ) {
     if (!props.edit) return;
     event.preventDefault();
     event.stopPropagation();
     event.currentTarget.setPointerCapture(event.pointerId);
-    const bubble = event.currentTarget.parentElement!.getBoundingClientRect();
-    const origin = toContent(bubble.left, bubble.top, imageTop);
+    const wrapper = event.currentTarget.parentElement!;
+    const bubble = wrapper.getBoundingClientRect();
     setDrag({
       address,
       mode,
       corner,
       startX: event.clientX,
       startY: event.clientY,
-      x: origin.x,
-      y: origin.y,
-      w: bubble.width / props.scale,
-      h: bubble.height / props.scale,
+      x: line.x ?? 0,
+      y: line.y ?? 0,
+      w: wrapper.offsetWidth / props.scale,
+      h: wrapper.offsetHeight / props.scale,
+      angle: line.rotate ?? 0,
       centerX: bubble.left + bubble.width / 2,
       centerY: bubble.top + bubble.height / 2,
       moved: false,
@@ -343,11 +344,23 @@ export function TranslationView(props: Props) {
     } else {
       const west = drag.corner === 'nw' || drag.corner === 'sw';
       const north = drag.corner === 'nw' || drag.corner === 'ne';
-      const w = Math.max(1, Math.round(west ? drag.w - dx : drag.w + dx));
-      const h = Math.max(1, Math.round(north ? drag.h - dy : drag.h + dy));
+      const local = rotateVector(dx, dy, -drag.angle);
+      const w = Math.max(
+        1,
+        Math.round(west ? drag.w - local.x : drag.w + local.x),
+      );
+      const h = Math.max(
+        1,
+        Math.round(north ? drag.h - local.y : drag.h + local.y),
+      );
+      const shift = rotateVector(
+        ((west ? -1 : 1) * (w - drag.w)) / 2,
+        ((north ? -1 : 1) * (h - drag.h)) / 2,
+        drag.angle,
+      );
       props.onEdit?.(drag.address, {
-        x: Math.round(west ? drag.x + drag.w - w : drag.x),
-        y: Math.round(north ? drag.y + drag.h - h : drag.y),
+        x: Math.round(drag.x + drag.w / 2 + shift.x - w / 2),
+        y: Math.round(drag.y + drag.h / 2 + shift.y - h / 2),
         w,
         h,
       });
@@ -443,7 +456,11 @@ export function TranslationView(props: Props) {
                         className={`bubble${placed ? ' placed' : ''}${isSelected ? ' selected' : ''}${drag !== null && sameAddress(drag.address, address) ? ' dragging' : ''}`}
                         style={
                           placed
-                            ? { ...lineStyle, backgroundColor: undefined }
+                            ? {
+                                ...lineStyle,
+                                backgroundColor: undefined,
+                                transform: rotation,
+                              }
                             : undefined
                         }
                       >
@@ -471,7 +488,6 @@ export function TranslationView(props: Props) {
                                 ? {
                                     backgroundColor: lineStyle.backgroundColor,
                                     height: lineStyle.height,
-                                    transform: rotation,
                                     borderRadius: radius,
                                   }
                                 : {
@@ -485,7 +501,7 @@ export function TranslationView(props: Props) {
                             size={props_.size ?? 1}
                             scale={props.scale}
                             onPointerDown={(event) =>
-                              startDrag(event, address, 'move', imageTop)
+                              startDrag(event, address, 'move', props_)
                             }
                             onPointerMove={moveDrag}
                             onPointerUp={endDrag}
@@ -498,7 +514,7 @@ export function TranslationView(props: Props) {
                           <span
                             className="rotor"
                             onPointerDown={(event) =>
-                              startDrag(event, address, 'rotate', imageTop)
+                              startDrag(event, address, 'rotate', props_)
                             }
                             onPointerMove={moveDrag}
                             onPointerUp={endDrag}
@@ -515,7 +531,7 @@ export function TranslationView(props: Props) {
                                   event,
                                   address,
                                   'resize',
-                                  imageTop,
+                                  props_,
                                   corner,
                                 )
                               }
