@@ -437,7 +437,11 @@ export function TranslationView(props: Props) {
                       <div
                         key={lineIndex}
                         className={`bubble${placed ? ' placed' : ''}${isSelected ? ' selected' : ''}${drag !== null && sameAddress(drag.address, address) ? ' dragging' : ''}`}
-                        style={placed ? lineStyle : undefined}
+                        style={
+                          placed
+                            ? { ...lineStyle, backgroundColor: undefined }
+                            : undefined
+                        }
                       >
                         {isEditing ? (
                           <Editor
