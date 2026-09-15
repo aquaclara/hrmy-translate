@@ -839,6 +839,7 @@ function App() {
             docHeight={docHeight}
             onScale={setScale}
           />
+          {edit && <div className="pointer-shield" />}
         </div>
         {onSite && panelOpen && (
           <aside

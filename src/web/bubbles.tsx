@@ -583,12 +583,6 @@ export function TranslationView(props: Props) {
         });
       }
     };
-    const onPointerDown = (event: PointerEvent) => {
-      if (keyDrag.current?.kind !== 'pick') return;
-      event.preventDefault();
-      event.stopPropagation();
-      endKeyDrag();
-    };
     const onKeyDown = (event: KeyboardEvent) => {
       if (isTyping() || event.ctrlKey || event.metaKey) return;
       const { selected, addresses } = latest.current;
@@ -610,17 +604,15 @@ export function TranslationView(props: Props) {
         return;
       }
       if (selected === null) return;
-      if (event.key === ' ') {
-        event.preventDefault();
-        if (event.repeat) return;
-        if (keyDrag.current?.kind === 'pick') endKeyDrag();
-        else if (keyDrag.current === null) startKeyDrag('pick', selected);
-        return;
-      }
-      if (event.key === '1' || event.key === '2') {
+      const kinds: { [key: string]: KeyDrag['kind'] } = {
+        '1': 'pick',
+        '2': 'box',
+        '3': 'resize',
+      };
+      if (kinds[event.key]) {
         event.preventDefault();
         if (event.repeat || keyDrag.current !== null) return;
-        startKeyDrag(event.key === '1' ? 'box' : 'resize', selected);
+        startKeyDrag(kinds[event.key], selected);
         return;
       }
       if (event.key === '[' || event.key === ']') {
@@ -662,19 +654,18 @@ export function TranslationView(props: Props) {
       const current = keyDrag.current;
       if (current === null) return;
       if (
-        (event.key === '1' && current.kind === 'box') ||
-        (event.key === '2' && current.kind === 'resize')
+        (event.key === '1' && current.kind === 'pick') ||
+        (event.key === '2' && current.kind === 'box') ||
+        (event.key === '3' && current.kind === 'resize')
       ) {
         endKeyDrag();
       }
     };
     document.addEventListener('pointermove', onPointerMove);
-    document.addEventListener('pointerdown', onPointerDown, true);
     document.addEventListener('keydown', onKeyDown);
     document.addEventListener('keyup', onKeyUp);
     return () => {
       document.removeEventListener('pointermove', onPointerMove);
-      document.removeEventListener('pointerdown', onPointerDown, true);
       document.removeEventListener('keydown', onKeyDown);
       document.removeEventListener('keyup', onKeyUp);
     };

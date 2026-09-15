@@ -985,6 +985,13 @@ nav {
   min-height: calc(100dvh - 8rem);
 }
 
+
+.browser .pointer-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 body.page {
   background: white;
 
