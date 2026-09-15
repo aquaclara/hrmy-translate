@@ -78,6 +78,17 @@ type Props = {
   ) => void;
 };
 
+type KeyDrag = {
+  kind: 'pick' | 'box' | 'resize';
+  address: Address;
+  startX: number;
+  startY: number;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+};
+
 type BaselineDrag = {
   key: string;
   together: boolean;
@@ -430,6 +441,249 @@ export function TranslationView(props: Props) {
     setDrag(null);
   }
 
+  function imageTopOf(key: string): number {
+    if (!layout) return 0;
+    return (
+      props.data.getImageTop(key) ?? layout.top + indexOf(key) * layout.pitch
+    );
+  }
+
+  function boxOf(address: Address) {
+    const datum = props.data.getTranslation(
+      address.key,
+      address.cut,
+      address.line,
+    );
+    const line: Partial<TranslationModel.PropertiedDataModel> =
+      typeof datum === 'string' ? {} : datum;
+    const element =
+      root.current?.querySelector<HTMLElement>('.bubble.selected');
+    const bubble = element?.getBoundingClientRect();
+    const box = root.current?.getBoundingClientRect();
+    return {
+      x:
+        line.x ??
+        (bubble && box
+          ? (bubble.left - box.left) / props.scale - imageLeft
+          : 0),
+      y:
+        line.y ??
+        (bubble && box
+          ? (bubble.top - box.top) / props.scale - imageTopOf(address.key)
+          : 0),
+      w: line.w ?? (element ? element.offsetWidth / props.scale : 0),
+      h: line.h ?? (element ? element.offsetHeight / props.scale : 0),
+      rotate: line.rotate ?? 0,
+    };
+  }
+
+  function toContent(clientX: number, clientY: number, key: string) {
+    const box = root.current!.getBoundingClientRect();
+    return {
+      x: (clientX - box.left) / props.scale - imageLeft,
+      y: (clientY - box.top) / props.scale - imageTopOf(key),
+    };
+  }
+
+  const addresses: Address[] = [];
+  for (const key of keys) {
+    props.data.getCutTranslations(key).forEach((cut, cutIndex) => {
+      cut.forEach((line, lineIndex) => {
+        const text = typeof line === 'string' ? line : line.text;
+        if (!isComment(text) && text) {
+          addresses.push({ key, cut: cutIndex, line: lineIndex });
+        }
+      });
+    });
+  }
+
+  const pointer = useRef({ x: 0, y: 0 });
+  const keyDrag = useRef<KeyDrag | null>(null);
+  const [keyDragging, setKeyDragging] = useState(false);
+  const latest = useRef({ selected, editing, addresses, boxOf, toContent });
+  latest.current = { selected, editing, addresses, boxOf, toContent };
+
+  function startKeyDrag(kind: KeyDrag['kind'], address: Address) {
+    const box = latest.current.boxOf(address);
+    const start = pointer.current;
+    if (kind === 'box') {
+      const origin = latest.current.toContent(start.x, start.y, address.key);
+      box.x = Math.round(origin.x);
+      box.y = Math.round(origin.y);
+      box.w = 1;
+      box.h = 1;
+      props.onEdit?.(address, { x: box.x, y: box.y, w: 1, h: 1 });
+    }
+    keyDrag.current = {
+      kind,
+      address,
+      startX: start.x,
+      startY: start.y,
+      ...box,
+    };
+    setKeyDragging(true);
+  }
+
+  function endKeyDrag() {
+    keyDrag.current = null;
+    setKeyDragging(false);
+  }
+
+  function cancelKeyDrag() {
+    const current = keyDrag.current;
+    if (current === null) return;
+    props.onEdit?.(current.address, {
+      x: current.x,
+      y: current.y,
+      w: current.w,
+      h: current.h,
+    });
+    endKeyDrag();
+  }
+
+  useEffect(() => {
+    if (!props.edit) return;
+    const isTyping = () => {
+      const tag = document.activeElement?.tagName;
+      return (
+        latest.current.editing !== null ||
+        tag === 'INPUT' ||
+        tag === 'TEXTAREA' ||
+        tag === 'SELECT'
+      );
+    };
+    const onPointerMove = (event: PointerEvent) => {
+      pointer.current = { x: event.clientX, y: event.clientY };
+      const current = keyDrag.current;
+      if (current === null) return;
+      const dx = (event.clientX - current.startX) / props.scale;
+      const dy = (event.clientY - current.startY) / props.scale;
+      if (current.kind === 'pick') {
+        props.onEdit?.(current.address, {
+          x: Math.round(current.x + dx),
+          y: Math.round(current.y + dy),
+          w: Math.round(current.w),
+        });
+      } else if (current.kind === 'resize') {
+        props.onEdit?.(current.address, {
+          w: Math.max(1, Math.round(current.w + dx)),
+          h: Math.max(1, Math.round(current.h + dy)),
+        });
+      } else {
+        const point = latest.current.toContent(
+          event.clientX,
+          event.clientY,
+          current.address.key,
+        );
+        props.onEdit?.(current.address, {
+          x: Math.round(Math.min(current.x, point.x)),
+          y: Math.round(Math.min(current.y, point.y)),
+          w: Math.max(1, Math.round(Math.abs(point.x - current.x))),
+          h: Math.max(1, Math.round(Math.abs(point.y - current.y))),
+        });
+      }
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      if (keyDrag.current?.kind !== 'pick') return;
+      event.preventDefault();
+      event.stopPropagation();
+      endKeyDrag();
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (isTyping() || event.ctrlKey || event.metaKey) return;
+      const { selected, addresses } = latest.current;
+      if (event.key === 'Tab') {
+        if (addresses.length === 0) return;
+        event.preventDefault();
+        const at = selected
+          ? addresses.findIndex((address) => sameAddress(selected, address))
+          : -1;
+        const step = event.shiftKey ? -1 : 1;
+        setSelected(
+          addresses[(at + step + addresses.length) % addresses.length],
+        );
+        return;
+      }
+      if (event.key === 'Escape' && keyDrag.current !== null) {
+        event.preventDefault();
+        cancelKeyDrag();
+        return;
+      }
+      if (selected === null) return;
+      if (event.key === ' ') {
+        event.preventDefault();
+        if (event.repeat) return;
+        if (keyDrag.current?.kind === 'pick') endKeyDrag();
+        else if (keyDrag.current === null) startKeyDrag('pick', selected);
+        return;
+      }
+      if (event.key === 'b' || event.key === 's') {
+        event.preventDefault();
+        if (event.repeat || keyDrag.current !== null) return;
+        startKeyDrag(event.key === 'b' ? 'box' : 'resize', selected);
+        return;
+      }
+      if (event.key === '[' || event.key === ']') {
+        event.preventDefault();
+        const box = latest.current.boxOf(selected);
+        const turn = (event.key === ']' ? 5 : -5) * (event.shiftKey ? 3 : 1);
+        props.onEdit?.(selected, {
+          rotate: Math.round(
+            ((((box.rotate + turn + 180) % 360) + 360) % 360) - 180,
+          ),
+        });
+        return;
+      }
+      const arrows: { [key: string]: [number, number] } = {
+        ArrowLeft: [-1, 0],
+        ArrowRight: [1, 0],
+        ArrowUp: [0, -1],
+        ArrowDown: [0, 1],
+      };
+      const arrow = arrows[event.key];
+      if (!arrow) return;
+      event.preventDefault();
+      const amount = event.shiftKey ? 10 : 1;
+      const box = latest.current.boxOf(selected);
+      if (event.altKey) {
+        props.onEdit?.(selected, {
+          w: Math.max(1, Math.round(box.w + arrow[0] * amount)),
+          h: Math.max(1, Math.round(box.h + arrow[1] * amount)),
+        });
+      } else {
+        props.onEdit?.(selected, {
+          x: Math.round(box.x + arrow[0] * amount),
+          y: Math.round(box.y + arrow[1] * amount),
+          w: Math.round(box.w),
+        });
+      }
+    };
+    const onKeyUp = (event: KeyboardEvent) => {
+      const current = keyDrag.current;
+      if (current === null) return;
+      if (
+        (event.key === 'b' && current.kind === 'box') ||
+        (event.key === 's' && current.kind === 'resize')
+      ) {
+        endKeyDrag();
+      }
+    };
+    document.addEventListener('pointermove', onPointerMove);
+    document.addEventListener('pointerdown', onPointerDown, true);
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('keyup', onKeyUp);
+    return () => {
+      document.removeEventListener('pointermove', onPointerMove);
+      document.removeEventListener('pointerdown', onPointerDown, true);
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('keyup', onKeyUp);
+    };
+  }, [props.edit, props.scale]);
+
+  useEffect(() => {
+    if (!props.edit) endKeyDrag();
+  }, [props.edit]);
+
   return (
     <div
       ref={root}
@@ -539,7 +793,7 @@ export function TranslationView(props: Props) {
                     return (
                       <div
                         key={lineIndex}
-                        className={`bubble${placed ? ' placed' : ''}${isSelected ? ' selected' : ''}${drag !== null && sameAddress(drag.address, address) ? ' dragging' : ''}`}
+                        className={`bubble${placed ? ' placed' : ''}${isSelected ? ' selected' : ''}${(drag !== null && sameAddress(drag.address, address)) || (keyDragging && keyDrag.current !== null && sameAddress(keyDrag.current.address, address)) ? ' dragging' : ''}`}
                         style={
                           placed
                             ? {
