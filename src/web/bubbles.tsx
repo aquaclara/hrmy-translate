@@ -617,10 +617,10 @@ export function TranslationView(props: Props) {
         else if (keyDrag.current === null) startKeyDrag('pick', selected);
         return;
       }
-      if (event.key === 'b' || event.key === 's') {
+      if (event.key === '1' || event.key === '2') {
         event.preventDefault();
         if (event.repeat || keyDrag.current !== null) return;
-        startKeyDrag(event.key === 'b' ? 'box' : 'resize', selected);
+        startKeyDrag(event.key === '1' ? 'box' : 'resize', selected);
         return;
       }
       if (event.key === '[' || event.key === ']') {
@@ -662,8 +662,8 @@ export function TranslationView(props: Props) {
       const current = keyDrag.current;
       if (current === null) return;
       if (
-        (event.key === 'b' && current.kind === 'box') ||
-        (event.key === 's' && current.kind === 'resize')
+        (event.key === '1' && current.kind === 'box') ||
+        (event.key === '2' && current.kind === 'resize')
       ) {
         endKeyDrag();
       }

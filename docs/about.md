@@ -225,8 +225,8 @@ In compliance with all of these provisions, the translation can be distributed a
 | [ ]                   | 5° 회전 (Shift: 15°)                               |
 | Tab / Shift + Tab     | 다음 / 이전 말풍선 선택                            |
 | Space                 | 집기·놓기. 버튼을 누르지 않아도 마우스를 따라옵니다 |
-| b (누른 채로)         | 마우스 위치를 왼쪽 위 모서리로 상자를 그리기       |
-| s (누른 채로)         | 마우스 움직임만큼 폭·높이 조정                     |
-| Esc                   | 집기·b·s 취소                                      |
+| 1 (누른 채로)         | 마우스 위치를 왼쪽 위 모서리로 상자를 그리기       |
+| 2 (누른 채로)         | 마우스 움직임만큼 폭·높이 조정                     |
+| Esc                   | 집기·1·2 취소                                      |
 
 </details>
