@@ -79,7 +79,7 @@ type Props = {
 };
 
 type KeyDrag = {
-  kind: 'pick' | 'box' | 'resize';
+  kind: 'pick' | 'box' | 'resize' | 'corner' | 'rotate';
   address: Address;
   startX: number;
   startY: number;
@@ -87,6 +87,10 @@ type KeyDrag = {
   y: number;
   w: number;
   h: number;
+  rotate: number;
+  corner: Corner;
+  centerX: number;
+  centerY: number;
 };
 
 type BaselineDrag = {
@@ -165,17 +169,11 @@ const CORNERS: Corner[] = ['nw', 'ne', 'sw', 'se'];
 
 type Drag = {
   address: Address;
-  mode: 'move' | 'resize' | 'rotate';
-  corner: Corner;
   startX: number;
   startY: number;
   x: number;
   y: number;
   w: number;
-  h: number;
-  angle: number;
-  centerX: number;
-  centerY: number;
   moved: boolean;
 };
 
@@ -314,10 +312,8 @@ export function TranslationView(props: Props) {
   function startDrag(
     event: React.PointerEvent<HTMLElement>,
     address: Address,
-    mode: Drag['mode'],
     line: Partial<TranslationModel.PropertiedDataModel>,
     imageTop: number,
-    corner: Corner = 'se',
   ) {
     if (!props.edit) return;
     event.preventDefault();
@@ -328,17 +324,11 @@ export function TranslationView(props: Props) {
     const box = root.current!.getBoundingClientRect();
     setDrag({
       address,
-      mode,
-      corner,
       startX: event.clientX,
       startY: event.clientY,
       x: line.x ?? (bubble.left - box.left) / props.scale - imageLeft,
       y: line.y ?? (bubble.top - box.top) / props.scale - imageTop,
       w: wrapper.offsetWidth / props.scale,
-      h: wrapper.offsetHeight / props.scale,
-      angle: line.rotate ?? 0,
-      centerX: bubble.left + bubble.width / 2,
-      centerY: bubble.top + bubble.height / 2,
       moved: false,
     });
   }
@@ -349,50 +339,11 @@ export function TranslationView(props: Props) {
     const dy = (event.clientY - drag.startY) / props.scale;
     if (Math.abs(dx) + Math.abs(dy) < 2 && !drag.moved) return;
     drag.moved = true;
-    if (drag.mode === 'rotate') {
-      const angle =
-        (Math.atan2(
-          event.clientY - drag.centerY,
-          event.clientX - drag.centerX,
-        ) *
-          180) /
-          Math.PI +
-        90;
-      props.onEdit?.(drag.address, {
-        rotate: Math.round(((angle + 180) % 360) - 180),
-      });
-      return;
-    }
-    if (drag.mode === 'move') {
-      props.onEdit?.(drag.address, {
-        x: Math.round(drag.x + dx),
-        y: Math.round(drag.y + dy),
-        w: Math.round(drag.w),
-      });
-    } else {
-      const west = drag.corner === 'nw' || drag.corner === 'sw';
-      const north = drag.corner === 'nw' || drag.corner === 'ne';
-      const local = rotateVector(dx, dy, -drag.angle);
-      const w = Math.max(
-        1,
-        Math.round(west ? drag.w - local.x : drag.w + local.x),
-      );
-      const h = Math.max(
-        1,
-        Math.round(north ? drag.h - local.y : drag.h + local.y),
-      );
-      const shift = rotateVector(
-        ((west ? -1 : 1) * (w - drag.w)) / 2,
-        ((north ? -1 : 1) * (h - drag.h)) / 2,
-        drag.angle,
-      );
-      props.onEdit?.(drag.address, {
-        x: Math.round(drag.x + drag.w / 2 + shift.x - w / 2),
-        y: Math.round(drag.y + drag.h / 2 + shift.y - h / 2),
-        w,
-        h,
-      });
-    }
+    props.onEdit?.(drag.address, {
+      x: Math.round(drag.x + dx),
+      y: Math.round(drag.y + dy),
+      w: Math.round(drag.w),
+    });
   }
 
   function startBaselineDrag(
@@ -435,7 +386,7 @@ export function TranslationView(props: Props) {
 
   function endDrag() {
     if (drag === null) return;
-    if (!drag.moved && drag.mode === 'move') {
+    if (!drag.moved) {
       setSelected(sameAddress(selected, drag.address) ? null : drag.address);
     }
     setDrag(null);
@@ -448,7 +399,7 @@ export function TranslationView(props: Props) {
     );
   }
 
-  function boxOf(address: Address) {
+  function boxOf(address: Address, wrapper?: HTMLElement) {
     const datum = props.data.getTranslation(
       address.key,
       address.cut,
@@ -457,7 +408,7 @@ export function TranslationView(props: Props) {
     const line: Partial<TranslationModel.PropertiedDataModel> =
       typeof datum === 'string' ? {} : datum;
     const element =
-      root.current?.querySelector<HTMLElement>('.bubble.selected');
+      wrapper ?? root.current?.querySelector<HTMLElement>('.bubble.selected');
     const bubble = element?.getBoundingClientRect();
     const box = root.current?.getBoundingClientRect();
     return {
@@ -503,9 +454,15 @@ export function TranslationView(props: Props) {
   const latest = useRef({ selected, editing, addresses, boxOf, toContent });
   latest.current = { selected, editing, addresses, boxOf, toContent };
 
-  function startKeyDrag(kind: KeyDrag['kind'], address: Address) {
-    const box = latest.current.boxOf(address);
+  function startKeyDrag(
+    kind: KeyDrag['kind'],
+    address: Address,
+    wrapper?: HTMLElement,
+    corner: Corner = 'se',
+  ) {
+    const box = latest.current.boxOf(address, wrapper);
     const start = pointer.current;
+    const bubble = wrapper?.getBoundingClientRect();
     if (kind === 'box') {
       const origin = latest.current.toContent(start.x, start.y, address.key);
       box.x = Math.round(origin.x);
@@ -520,6 +477,9 @@ export function TranslationView(props: Props) {
       startX: start.x,
       startY: start.y,
       ...box,
+      corner,
+      centerX: bubble ? bubble.left + bubble.width / 2 : 0,
+      centerY: bubble ? bubble.top + bubble.height / 2 : 0,
     };
     setKeyDragging(true);
   }
@@ -537,8 +497,24 @@ export function TranslationView(props: Props) {
       y: current.y,
       w: current.w,
       h: current.h,
+      rotate: current.rotate,
     });
     endKeyDrag();
+  }
+
+  function grabHandle(
+    event: React.PointerEvent<HTMLElement>,
+    address: Address,
+    kind: 'corner' | 'rotate',
+    corner: Corner = 'se',
+  ) {
+    if (!props.edit) return;
+    event.preventDefault();
+    event.stopPropagation();
+    if (keyDrag.current !== null) return;
+    pointer.current = { x: event.clientX, y: event.clientY };
+    setSelected(address);
+    startKeyDrag(kind, address, event.currentTarget.parentElement!, corner);
   }
 
   useEffect(() => {
@@ -569,6 +545,41 @@ export function TranslationView(props: Props) {
           w: Math.max(1, Math.round(current.w + dx)),
           h: Math.max(1, Math.round(current.h + dy)),
         });
+      } else if (current.kind === 'rotate') {
+        const angle =
+          (Math.atan2(
+            event.clientY - current.centerY,
+            event.clientX - current.centerX,
+          ) *
+            180) /
+            Math.PI +
+          90;
+        props.onEdit?.(current.address, {
+          rotate: Math.round(((angle + 180) % 360) - 180),
+        });
+      } else if (current.kind === 'corner') {
+        const west = current.corner === 'nw' || current.corner === 'sw';
+        const north = current.corner === 'nw' || current.corner === 'ne';
+        const local = rotateVector(dx, dy, -current.rotate);
+        const w = Math.max(
+          1,
+          Math.round(west ? current.w - local.x : current.w + local.x),
+        );
+        const h = Math.max(
+          1,
+          Math.round(north ? current.h - local.y : current.h + local.y),
+        );
+        const shift = rotateVector(
+          ((west ? -1 : 1) * (w - current.w)) / 2,
+          ((north ? -1 : 1) * (h - current.h)) / 2,
+          current.rotate,
+        );
+        props.onEdit?.(current.address, {
+          x: Math.round(current.x + current.w / 2 + shift.x - w / 2),
+          y: Math.round(current.y + current.h / 2 + shift.y - h / 2),
+          w,
+          h,
+        });
       } else {
         const point = latest.current.toContent(
           event.clientX,
@@ -582,6 +593,13 @@ export function TranslationView(props: Props) {
           h: Math.max(1, Math.round(Math.abs(point.y - current.y))),
         });
       }
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      const kind = keyDrag.current?.kind;
+      if (kind !== 'corner' && kind !== 'rotate') return;
+      event.preventDefault();
+      event.stopPropagation();
+      endKeyDrag();
     };
     const onKeyDown = (event: KeyboardEvent) => {
       if (isTyping() || event.ctrlKey || event.metaKey) return;
@@ -662,10 +680,12 @@ export function TranslationView(props: Props) {
       }
     };
     document.addEventListener('pointermove', onPointerMove);
+    document.addEventListener('pointerdown', onPointerDown, true);
     document.addEventListener('keydown', onKeyDown);
     document.addEventListener('keyup', onKeyUp);
     return () => {
       document.removeEventListener('pointermove', onPointerMove);
+      document.removeEventListener('pointerdown', onPointerDown, true);
       document.removeEventListener('keydown', onKeyDown);
       document.removeEventListener('keyup', onKeyUp);
     };
@@ -832,13 +852,7 @@ export function TranslationView(props: Props) {
                             size={props_.size ?? 1}
                             scale={props.scale}
                             onPointerDown={(event) =>
-                              startDrag(
-                                event,
-                                address,
-                                'move',
-                                props_,
-                                imageTop,
-                              )
+                              startDrag(event, address, props_, imageTop)
                             }
                             onPointerMove={moveDrag}
                             onPointerUp={endDrag}
@@ -851,17 +865,8 @@ export function TranslationView(props: Props) {
                           <span
                             className="rotor"
                             onPointerDown={(event) =>
-                              startDrag(
-                                event,
-                                address,
-                                'rotate',
-                                props_,
-                                imageTop,
-                              )
+                              grabHandle(event, address, 'rotate')
                             }
-                            onPointerMove={moveDrag}
-                            onPointerUp={endDrag}
-                            onPointerCancel={endDrag}
                           />
                         )}
                         {props.edit &&
@@ -870,18 +875,8 @@ export function TranslationView(props: Props) {
                               key={corner}
                               className={`grip ${corner}`}
                               onPointerDown={(event) =>
-                                startDrag(
-                                  event,
-                                  address,
-                                  'resize',
-                                  props_,
-                                  imageTop,
-                                  corner,
-                                )
+                                grabHandle(event, address, 'corner', corner)
                               }
-                              onPointerMove={moveDrag}
-                              onPointerUp={endDrag}
-                              onPointerCancel={endDrag}
                             />
                           ))}
                         {props.edit && isSelected && (
