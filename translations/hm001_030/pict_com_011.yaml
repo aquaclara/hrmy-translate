@@ -20,111 +20,401 @@
   漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
   この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 hm001_030/006/hori_109.gif:
-- - ''
-- - ''
-- - 와아형아 이거 봐봐!
-  - text: 란●셀
-    type: plain
-  - 앗, 이거! 뭐였지! 앗, 생각이 안나, 말이 생각이 안 나!
-  - 초등학교에서 등에 매는 거-!!
-  - text: 여기까진 생각나는데-
-    type: plain
-- - 란도셀!
-  - text: 어디까지 바보야!!
-    type: plain
-  - text: 아
-    type: plain
-  - text: 개운타-
-    type: plain
-  - 소타 어서 다가자!
+  top: 102
+  text:
+  - - ''
+  - - ''
+  - - h: 142
+      text: 와아형아 이거 봐봐!
+      w: 70
+      x: 273
+      y: 495
+    - h: 111
+      text: 란●셀
+      type: plain
+      w: 46
+      x: 214
+      y: 506
+    - h: 132
+      radius: 25
+      text: 앗, 이거! 뭐였지! 앗, 생각이 안나, 말이 생각이 안 나!
+      w: 85
+      x: 81
+      y: 502
+    - h: 159
+      radius: 26
+      text: 초등학교에서 등에 매는 거-!!
+      w: 55
+      x: 24
+      y: 522
+    - h: 66
+      rotate: -17
+      text: 여기까진 생각나는데-
+      type: plain
+      w: 50
+      x: 78
+      y: 690
+  - - h: 125
+      text: 란도셀!
+      w: 57
+      x: 277
+      y: 758
+    - h: 92
+      radius: 16
+      text: 어디까지 바보야!!
+      type: plain
+      w: 59
+      x: 201
+      y: 761
+    - text: 아
+      type: plain
+      w: 39
+      x: 141
+      y: 772
+    - h: 81
+      text: 개운타-
+      type: plain
+      w: 54
+      x: 40
+      y: 775
+    - h: 117
+      text: 소타 어서 다가자!
+      w: 68
+      x: 33
+      y: 880
 hm001_030/006/hori_110.gif:
-- - 조금 있으면 초등학교 입학 시즌이잖아 란도셀에 들떠서는...
-  - 어..!! 벌써 그런 나이!?
-- - 그래- 머리도 길어서 덥수룩하니까 빨리 잘라야...
-- - 그래... 나도 늙는구나......
-  - text: 앗, 눈물이...
-    type: plain
-  - text: <b>쏴-</b>
-    type: plain
-  - text: 그건 양파
-    type: plain
-  - 아직 열 일곱이면서... 아니 나랑 나이 같잖아...
-- - 누나, 누구 왔어-
-  - text: <b>멈칫</b>
-    type: plain
-  - 응? 택배인가?
+  top: 1123
+  text:
+  - - h: 170
+      radius: 30
+      text: 조금 있으면 초등학교 입학 시즌이잖아 란도셀에 들떠서는...
+      w: 77
+      x: 257
+      y: 5
+    - h: 133
+      text: 어..!! 벌써 그런 나이!?
+      w: 68
+      x: 12
+      y: 96
+  - - h: 158
+      radius: 18
+      text: 그래- 머리도 길어서 덥수룩하니까 빨리 잘라야...
+      w: 108
+      x: 10
+      y: 249
+  - - h: 104
+      text: 그래... 나도 늙는구나......
+      w: 86
+      x: 250
+      y: 497
+    - h: 51
+      text: 앗, 눈물이...
+      type: plain
+      w: 48
+      x: 187
+      y: 495
+    - background: '#c6e51b'
+      h: 32
+      text: <b>쏴</b>
+      type: plain
+      w: 29
+      x: 153
+      y: 563
+    - background: '#c6e51b'
+      h: 56
+      text: 그건 양파
+      type: plain
+      w: 39
+      x: 122
+      y: 500
+    - h: 161
+      text: 아직 열 일곱이면서... 아니 나랑 나이 같잖아...
+      w: 60
+      x: 35
+      y: 501
+  - - h: 122
+      text: 누나, 누구 왔어-
+      w: 79
+      x: 260
+      y: 767
+    - h: 61
+      text: <b>멈칫</b>
+      type: plain
+      w: 38
+      x: 157
+      y: 915
+    - h: 127
+      text: 응? 택배인가?
+      w: 59
+      x: 15
+      y: 760
 hm001_030/006/hori_111.gif:
-- - 어?
-  - 집에 없나요?
-- - 어-... 잠깐 밖에... 미안해요...
-- - 잠깐만-... 왜 유키가 온거야-!!
-  - 나, 나도 몰라!!
-- - 어, 으음- 오늘은 늦을.. 것 같다고
-  - 어떡할래요?
-  - 아하
+  top: 2144
+  text:
+  - - h: 48
+      text: 어?
+      w: 36
+      x: 287
+      y: 25
+    - h: 95
+      text: 집에 없나요?
+      w: 64
+      x: 26
+      y: 88
+  - - h: 74
+      text: 어-... 잠깐 밖에...
+      w: 79
+      x: 252
+      y: 255
+    - h: 94
+      text: 미안해요...
+      w: 50
+      x: 49
+      y: 314
+  - - h: 176
+      radius: 30
+      text: 잠깐만-... 왜 유키가 온거야-!!
+      w: 67
+      x: 265
+      y: 503
+    - h: 91
+      radius: 0
+      text: 나, 나도 몰라!!
+      w: 48
+      x: 61
+      y: 500
+  - - h: 140
+      text: 어, 으음- 오늘은 늦을.. 것 같다고
+      w: 90
+      x: 246
+      y: 757
+    - h: 100
+      text: 어떡할래요?
+      w: 46
+      x: 59
+      y: 762
+    - h: 55
+      text: 아하
+      w: 28
+      x: 13
+      y: 915
 hm001_030/006/hori_112.gif:
-- - 그, 그럼 괜찮아요- 오늘은.. 돌아갈 게요
-- - 저기
-  - 네
-- - 여,
-  - 여,
-  - 여자 친구 있으신가요?
-- - 아니.. 없어요...
-  - text: '?, ?'
-    type: plain
-  - '!'
-  - 앗!! 저기... 그럼..!!
+  top: 3164
+  text:
+  - - h: 139
+      text: 그, 그럼 괜찮아요- 오늘은.. 돌아갈 게요
+      w: 111
+      x: 220
+      y: 6
+  - - h: 48
+      text: 저기
+      w: 51
+      x: 267
+      y: 249
+    - text: 네
+      w: 39
+      x: 23
+      y: 258
+  - - h: 49
+      text: 여,
+      w: 39
+      x: 273
+      y: 503
+    - h: 41
+      text: 여,
+      w: 44
+      x: 67
+      y: 519
+    - h: 113
+      text: 여자 친구 있으신가요?
+      w: 82
+      x: 18
+      y: 598
+  - - h: 95
+      text: 아니.. 없어요...
+      w: 53
+      x: 267
+      y: 765
+    - h: 67
+      text: 앗!!
+      w: 36
+      x: 133
+      y: 841
+    - h: 97
+      text: 저기... 그럼..!!
+      w: 55
+      x: 81
+      y: 856
 hm001_030/006/hori_113.gif:
-- - 성함이 어떻게 되세요?...
-- - ''
-- - 요즘 여기 자주 오네~ 쟤...
-  - 널 보러 오는 거야
-- - 어, 그런가?
-  - text: '?'
-    type: plain
-  - text: 왜?
-    type: plain
-  - 그보다... 이름 말인데...
+  top: 4186
+  text:
+  - - h: 131
+      text: 성함이 어떻게 되세요?...
+      w: 100
+      x: 233
+      y: 8
+  - - ''
+  - - h: 155
+      text: 요즘 여기 자주 오네~ 쟤...
+      w: 74
+      x: 261
+      y: 500
+    - h: 121
+      text: 널 보러 오는 거야
+      w: 85
+      x: 17
+      y: 508
+  - - h: 117
+      text: 어, 그런가?
+      w: 57
+      x: 283
+      y: 761
+    - text: ''
+      type: plain
+    - h: 48
+      rotate: -14
+      text: 왜?
+      type: plain
+      w: 25
+      x: 284
+      y: 888
+    - h: 79
+      text: 그보다... 이름 말인데...
+      w: 56
+      x: 39
+      y: 760
 hm001_030/006/hori_114.gif:
-- - 누구야, <big>코노하</big>가
-  - text: >-
-      <big>해골닌자</big> <big class="stroke">코노하</big>
-    type: plain
-  - text: 주간 시노비 연재중★★★ 닌닌★★★
-    type: plain
-  - 오늘 아침에 본 만화 주인공......!!
-- - 필살기는 「순간백골화」
-  - text: 그러면 가겠소
-    type: plain
-  - text: 코노하의 술
-    type: square
-  - text: 상대를 한방에 백골로 만든다! 다만 연발이 안 되는 것이 약점! 포위당했을 때 사용하면 위험하다!!
-    type: square
-  - 무섭다고!! 그런 걸 사람들이 매주 보는 거야!?
-- - 언제 호리한테도 빌려 줄게
-  - 됐거든
-  - 와-...
-- - text: 딩- 동-
-    type: plain
+  top: 5206
+  text:
+  - - h: 151
+      radius: 18
+      text: 누구야, <big>코노하</big>가
+      w: 44
+      x: 296
+      y: 9
+    - background: '#c6e51b'
+      h: 68
+      radius: 17
+      rotate: -21
+      size: 1.5
+      text: <big>해골닌자</big> <big class="stroke">코노하</big>
+      type: plain
+      w: 119
+      x: 168
+      y: 99
+    - background: '#c6e51b'
+      h: 38
+      radius: 0
+      rotate: -18
+      text: 주간 시노비 연재중★★★ 닌닌★★★
+      type: plain
+      w: 74
+      x: 186
+      y: 180
+    - h: 156
+      text: 오늘 아침에 본 만화 주인공......!!
+      w: 86
+      x: 33
+      y: 10
+  - - h: 133
+      text: 필살기는 「순간백골화」
+      w: 69
+      x: 272
+      y: 248
+    - background: '#c6e51b'
+      h: 79
+      rotate: -14
+      text: 그러면 가겠소
+      type: plain
+      w: 47
+      x: 117
+      y: 273
+    - h: 17
+      radius: 0
+      text: 코노하의 술
+      type: square
+      w: 75
+      x: 108
+      y: 429
+    - h: 38
+      radius: 20
+      text: 상대를 한방에 백골로 만든다! 다만 연발이 안 되는 것이 약점! 포위당했을 때 사용하면 위험하다!!
+      type: square
+      w: 176
+      x: 95
+      y: 454
+    - h: 85
+      radius: 20
+      size: 1.1
+      text: 무섭다고!!
+      w: 110
+      x: 4
+      y: 245
+    - h: 82
+      text: 그런 걸 사람들이 매주 보는 거야!?
+      w: 63
+      x: 3
+      y: 333
+  - - background: '#c6e51b'
+      h: 72
+      text: 언제 호리한테도 빌려 줄게
+      w: 68
+      x: 271
+      y: 507
+    - background: '#c6e51b'
+      h: 76
+      text: 됐거든
+      w: 37
+      x: 249
+      y: 572
+    - background: '#c6e51b'
+      h: 61
+      rotate: -5
+      text: 와|...
+      vertical: true
+      w: 26
+      x: 91
+      y: 537
+  - - background: '#4ccde4'
+      h: 106
+      radius: 17
+      rotate: -8
+      size: 1.5
+      text: 딩-
+      type: plain
+      w: 81
+      x: 241
+      y: 793
+    - background: '#4ccde4'
+      h: 55
+      radius: 16
+      rotate: -19
+      size: 1.4
+      text: 동-
+      w: 79
+      x: 249
+      y: 897
 hm001_030/006/hori_115.gif:
-- - text: 아련 아련
-    type: plain
-- - 유키! ...야
-  - text: 똑, 딱
-    type: plain
-  - 있지 전번에 호리 집에 갔었는데~...
-- - 그랬더니~ 호리네 <strong class="stroke">코노하</strong> 오빠하고 말야~
-  - 말 해봤다~
-  - text: 히힛
-    type: plain
-- - 앞치마 했었어~!!
-  - text: 꺄악
-    type: stroke
-  - text: 미칠 것 같아-
-    type: plain
-  - text: 코노하...!!
-    type: thought
-  - 서브 이렇게 괜찮지!? 간다!!
+  top: 6229
+  text:
+  - - text: 아련 아련
+      type: plain
+  - - 유키! ...야
+    - text: 똑, 딱
+      type: plain
+    - 있지 전번에 호리 집에 갔었는데~...
+  - - 그랬더니~ 호리네 <strong class="stroke">코노하</strong> 오빠하고 말야~
+    - 말 해봤다~
+    - text: 히힛
+      type: plain
+  - - 앞치마 했었어~!!
+    - text: 꺄악
+      type: stroke
+    - text: 미칠 것 같아-
+      type: plain
+    - text: 코노하...!!
+      type: thought
+    - 서브 이렇게 괜찮지!? 간다!!
 hm001_030/006/hori_116.gif:
 - - 미야무라, 있잖아-...
   - text: 똑딱, 똑딱
@@ -438,3 +728,4 @@ hm001_030/006/hori_136.gif:
 - - <big><b>응?</b></big> 토오루 오늘 학교 왔었어?
   - text: 호리 안에서 토오루는 결국 「있는 지 없는 지 잘 모르겠는 반 친구」로
     type: square
+
