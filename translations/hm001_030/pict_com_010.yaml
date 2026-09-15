@@ -20,431 +20,1795 @@
   漫画の著作権者は、いつでもこの翻訳版の配布者に対し、翻訳版とこれらの条項の削除、変更を含むすべてを要請することができます。
   この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 hm001_030/005/hori_085.gif:
-- - 응?
-  - 그래?
-- - 응! 계속 놀러 와!
-  - 그래~ 잘 됐구나~
-- - 반 친구?
-  - 어? 응...
-  - 남자 애야?
-- - 응...
-  - 그래~ 어떤 애니?
-  - text: 아- 조금 오른쪽 위로-
-    type: plain
+  top: 102
+  text:
+  - - h: 51
+      text: 응?
+      w: 34
+      x: 270
+      y: 55
+    - h: 95
+      text: 그래?
+      w: 55
+      x: 63
+      y: 91
+  - - h: 132
+      radius: 35
+      text: 응! 계속 놀러 와!
+      w: 93
+      x: 236
+      y: 289
+    - h: 107
+      text: 그래~ 잘 됐구나~
+      w: 58
+      x: 28
+      y: 281
+  - - h: 107
+      text: 반 친구?
+      w: 53
+      x: 282
+      y: 549
+    - h: 57
+      text: 어? 응...
+      w: 48
+      x: 96
+      y: 535
+    - h: 91
+      text: 남자 애야?
+      w: 52
+      x: 51
+      y: 645
+  - - h: 61
+      text: 응...
+      w: 42
+      x: 285
+      y: 792
+    - h: 105
+      text: 그래~ 어떤 애니?
+      w: 78
+      x: 91
+      y: 791
+    - h: 137
+      radius: 23
+      text: 아- 조금 오른쪽 위로-
+      type: plain
+      w: 63
+      x: 14
+      y: 850
 hm001_030/005/hori_086.gif:
-- - 그냥... 탐정물에 나오는 범인처럼 생긴 앤데...(시커멓다)
-  - 어- 범인이라고?
-  - text: 해치웠다✨
-    type: plain
-- - 아~ 몸이 탁 풀린다
-  - text: 추욱
-    type: plain
-  - 그럼 오늘은 엄마가 저녁 지어줄 거지?
-- - 물론이지~ 카레 하자!!
-  - text: 3분 카레려나...
-    type: thought
-  - 그렇지 그러고 보니
-- - 그 애 이름이 뭐니?
-  - 응?
-  - 범인 말이야
+  top: 1124
+  text:
+  - - h: 168
+      text: 그냥... 탐정물에 나오는 범인처럼 생긴 앤데...(시커멓다)
+      w: 130
+      x: 207
+      y: 5
+    - h: 94
+      text: 어- 범인이라고?
+      w: 73
+      x: 12
+      y: 13
+    - background: '#c6e51b'
+      h: 39
+      text: 해치
+      type: plain
+      vertical: true
+      w: 20
+      x: 51
+      y: 127
+    - background: '#c6e51b'
+      h: 45
+      radius: 0
+      text: 웠다
+      vertical: true
+      w: 13
+      x: 1
+      y: 109
+  - - h: 139
+      text: 아~ 몸이 탁 풀린다
+      w: 65
+      x: 267
+      y: 263
+    - rotate: -18
+      text: 추욱
+      type: plain
+      w: 55
+      x: 166
+      y: 393
+    - h: 141
+      text: 그럼 오늘은 엄마가 저녁 지어줄 거지?
+      w: 90
+      x: 33
+      y: 262
+  - - h: 114
+      text: 물론이지~ 카레 하자!!
+      w: 71
+      x: 262
+      y: 512
+    - h: 71
+      text: 3분 카레려나...
+      type: thought
+      w: 51
+      x: 101
+      y: 514
+    - h: 82
+      text: 그렇지 그러고 보니
+      w: 72
+      x: 17
+      y: 628
+  - - h: 170
+      text: 그 애 이름이 뭐니?
+      w: 65
+      x: 268
+      y: 775
+    - h: 46
+      text: 응?
+      w: 34
+      x: 130
+      y: 771
+    - h: 83
+      text: 범인 말이야
+      w: 53
+      x: 25
+      y: 886
 hm001_030/005/hori_087.gif:
-- - 성은... 미야무라고...
-  - 미야무라?
-  - 응, 미야무라...
-  - 미야...
-- - text: 어라......?
-    type: thought
-  - text: 미야무라......!?
-    type: thought
-- - text: 어라라~!?
-    type: thought
-  - 엄마- 난 당근 빼줘-
-  - 안 돼-
-- - text: 출석부
-    type: plain
+  top: 2145
+  text:
+  - - h: 105
+      text: 성은... 미야무라고...
+      w: 84
+      x: 252
+      y: 11
+    - h: 99
+      text: 미야무라?
+      w: 47
+      x: 146
+      y: 10
+    - h: 85
+      text: 응, 미야무라...
+      w: 89
+      x: 18
+      y: 82
+    - h: 56
+      text: 미야...
+      w: 45
+      x: 32
+      y: 185
+  - - h: 179
+      size: 1.2
+      text: 어라......?
+      type: thought
+      w: 98
+      x: 243
+      y: 271
+    - h: 129
+      radius: 0
+      size: 1.2
+      text: 미야무라......!?
+      type: thought
+      w: 93
+      x: 3
+      y: 263
+  - - h: 115
+      text: 어라라~!?
+      type: thought
+      w: 41
+      x: 266
+      y: 539
+    - h: 112
+      text: 엄마- 난 당근 빼줘-
+      w: 65
+      x: 92
+      y: 513
+    - h: 79
+      text: 안 돼-
+      w: 34
+      x: 12
+      y: 514
+  - - h: 26
+      radius: 2
+      rotate: -43
+      text: 출석부
+      type: plain
+      w: 98
+      x: 70
+      y: 852
 hm001_030/005/hori_088.gif:
-- - text: 아, 그래... 올해부터 성만 적혀 있구나...
-    type: thought
-  - text: 수학여행
-    type: plain
-  - text: 아-
-    type: plain
-- - text: 어떡해... 1년 가까이 집에 놀러오게 됐는데
-    type: thought
-  - text: 이름조차 몰랐다니...
-    type: thought
-  - text: ずず
-    type: plain
-- - 미야무라는 이름이 뭐야-?
-- - text: <big>절대 못해...!!</big>
-    type: thought
-  - text: <b>본인에게!?</b>
-    type: plain
-  - text: 가장 못 할 짓이야!
-    type: thought
+  top: 3165
+  text:
+  - - h: 165
+      text: 아, 그래... 올해부터 성만 적혀 있구나...
+      type: thought
+      w: 110
+      x: 221
+      y: 11
+    - background: '#c6e51b'
+      h: 47
+      radius: 0
+      rotate: 16
+      text: 수학여행
+      type: plain
+      vertical: true
+      w: 19
+      x: 166
+      y: 145
+    - background: '#c6e51b'
+      h: 31
+      text: 아
+      type: plain
+      w: 28
+      x: 100
+      y: 37
+  - - h: 124
+      radius: 39
+      text: 어떡해... 1년 가까이 집에 놀러오게 됐는데
+      type: thought
+      w: 85
+      x: 244
+      y: 265
+    - h: 137
+      text: 이름조차 몰랐다니...
+      type: thought
+      w: 83
+      x: 1
+      y: 270
+    - background: '#c6e51b'
+      h: 51
+      text: ずず
+      type: plain
+      w: 45
+      x: 68
+      y: 446
+  - - h: 124
+      text: 미야무라는 이름이 뭐야-?
+      w: 99
+      x: 233
+      y: 518
+  - - h: 234
+      radius: 20
+      size: 2
+      text: <big>절대 못해...!!</big>
+      type: thought
+      w: 85
+      x: 253
+      y: 767
+    - h: 97
+      text: <b>본인에게!?</b>
+      type: plain
+      w: 47
+      x: 105
+      y: 892
+    - h: 130
+      radius: 29
+      text: 가장 못 할 짓이야!
+      type: thought
+      w: 66
+      x: 40
+      y: 767
 hm001_030/005/hori_089.gif:
-- - text: 미야무라- 다음 체육시간에
+- - h: 126
+    text: 미야무라- 다음 체육시간에
     type: plain
-  - text: 아마 마라톤일걸
+    w: 50
+    x: 257
+    y: 66
+  - h: 40
+    text: 아마
     type: plain
-  - text: 윽- 진짜야?-
+    w: 53
+    x: 60
+    y: 87
+  - h: 43
+    text: 마라톤일걸
+    w: 66
+    x: 16
+    y: 118
+  - h: 92
+    rotate: -13
+    text: 윽- 진짜야?-
     type: plain
-- - text: 한사람쯤은 이름으로 부르지...
+    w: 38
+    x: 16
+    y: 155
+- - h: 139
+    radius: 31
+    text: 한사람쯤은 이름으로 부르지...
     type: thought
-  - text: 20명이나 되면서 쓸모 없어...
+    w: 93
+    x: 244
+    y: 299
+  - background: '#4ccde4'
+    h: 97
+    rotate: 27
+    text: 20명이나 되면서 쓸모 없어...
     type: plain
-  - text: 빤-
+    w: 64
+    x: 248
+    y: 452
+  - background: '#4ccde4'
+    h: 28
+    text: 빤
     type: plain
-  - text: 으악, 호리가 들여다보고 있잖아
+    w: 25
+    x: 157
+    y: 293
+  - h: 169
+    text: 으악, 호리가 들여다보고 있잖아
     type: scream
-  - text: 꺅- 꺅-
+    w: 63
+    x: 26
+    y: 291
+  - h: 33
+    text: 꺅- 꺅-
     type: plain
-- - text: 아, 선생님!
+    w: 57
+    x: 4
+    y: 493
+- - h: 94
+    radius: 18
+    text: 아, 선생님!
     type: thought
-  - text: ぶつぶつ
+    w: 33
+    x: 280
+    y: 568
+  - h: 62
+    text: ぶつぶつ
     type: plain
-  - text: 선생님한테 물어보자!
+    w: 24
+    x: 231
+    y: 565
+  - h: 69
+    radius: 17
+    text: 선생님한테 물어보자!
     type: thought
-  - text: 진짜 뭐 하는 거야, 부끄럽게- 듣고 있어-?
+    w: 37
+    x: 203
+    y: 681
+  - h: 86
+    rotate: -15
+    text: 진짜 뭐 하는 거야, 부끄럽게-
     type: plain
-- - text: ※담임은 과학실 관리 담당
+    w: 60
+    x: 87
+    y: 580
+  - h: 114
+    rotate: -19
+    text: 듣고 있어-?
+    w: 29
+    x: 57
+    y: 585
+- - background: '#4ccde4'
+    h: 180
+    text: ※담임은 과학실 관리 담당
     type: plain
-  - text: <big>노크하고 들어올 것!</big>
+    w: 78
+    x: 246
+    y: 804
+  - h: 145
+    text: <big>노크하고 들어올 것!</big>
     type: plain
+    w: 68
+    x: 47
+    y: 861
 hm001_030/005/hori_090.gif:
-- - 무슨 일이지? 호리 상담할 게 있다는 게
-  - text: 상담이라기 보다
-    type: plain
-  - 허... 저... 사실은...
-- - 서, 설마 왕따...!? 너 왕따당하니!?
-  - text: <big>아앗,</big> 무슨 일이야-
-    type: plain
-  - 아! 아니에요!
-  - 우리 반...!!!
-- - 미야무라 때문에
-  - 미야무라!? 그 음침한 애 말이지!?
-  - text: ↑이 정도로
-    type: plain
-  - text: 수학 못하는 애!?
-    type: plain
-  - 아니 음침하지만!! 무슨 구분법이에요!?
-  - text: 네, 그 수학 못하는 애예요!
-    type: plain
-  - 걔가 무슨 사고쳤구나!? 그런 거니 호리?!
-- - 아뇨, 말씀드리기 어렵지만 사실... 제가...
-  - 이
-  - 아이!?
-  - 아이라도 가졌니!?
-  - 아닌데요 말 좀 끝까지 들어!!
+  top: 5207
+  text:
+  - - h: 176
+      text: 무슨 일이지? 호리 상담할 게 있다는 게
+      w: 97
+      x: 226
+      y: 6
+    - background: '#4ccde4'
+      h: 88
+      text: 상담이라기 보다
+      type: plain
+      w: 26
+      x: 142
+      y: 33
+    - h: 112
+      text: 허... 저... 사실은...
+      w: 80
+      x: 13
+      y: 13
+  - - h: 121
+      radius: 40
+      text: 서, 설마 왕따...!? 너 왕따당하니!?
+      w: 93
+      x: 238
+      y: 262
+    - h: 69
+      text: <big>아앗,</big> 무슨 일이야-
+      type: plain
+      w: 44
+      x: 174
+      y: 281
+    - h: 93
+      text: 아! 아니에요!
+      w: 57
+      x: 96
+      y: 261
+    - h: 98
+      text: 우리 반...!!!
+      w: 54
+      x: 19
+      y: 389
+  - - h: 177
+      text: 미야무라 때문에
+      w: 48
+      x: 287
+      y: 522
+    - h: 131
+      text: 미야무라!? 그 음침한 애 말이지!?
+      w: 50
+      x: 217
+      y: 547
+    - h: 28
+      text: 이 정도로
+      type: plain
+      w: 34
+      x: 164
+      y: 650
+    - h: 68
+      text: 수학 못하는 애!?
+      type: plain
+      w: 52
+      x: 180
+      y: 694
+    - h: 166
+      text: 아니 음침하지만!! 무슨 구분법이에요!?
+      w: 54
+      x: 94
+      y: 521
+    - h: 48
+      text: 네, 그 수학 못하는 애예요!
+      type: plain
+      w: 77
+      x: 97
+      y: 703
+    - h: 170
+      text: 걔가 무슨 사고쳤구나!? 그런 거니 호리?!
+      w: 64
+      x: 19
+      y: 588
+  - - h: 132
+      radius: 27
+      text: 아뇨, 말씀드리기 어렵지만 사실... 제가...
+      w: 93
+      x: 244
+      y: 779
+    - h: 27
+      text: 이
+      w: 21
+      x: 179
+      y: 772
+    - h: 61
+      text: 아이!?
+      w: 31
+      x: 142
+      y: 790
+    - h: 97
+      text: 아이라도 가졌니!?
+      w: 44
+      x: 94
+      y: 853
+    - h: 175
+      text: 아닌데요 말 좀 끝까지 들어!!
+      w: 56
+      x: 3
+      y: 819
 hm001_030/005/hori_091.gif:
-- - text: 글렀어... 저 피해망상 선생...
-    type: thought
-  - text: 지친다...
-    type: plain
-- - 호리? 뭐 해?
-  - text: 화장실 가?
-    type: plain
-  - 엇! 마침 잘 됐다! 미야무라에 대해 물어볼 게!
-- - 난 지금 실연중이라서!!
-  - text: ↓차였다
-    type: plain
-  - text: ←찼다
-    type: plain
-  - 쓸모가 없어!
-  - text: <big>탁</big>
-    type: stroke
-- - 성적 상위자
-  - 1, 2, 3, 4, 5, 6, 7, 8
-  - 과목별
-  - 1반
+  top: 6230
+  text:
+  - - h: 160
+      text: 글렀어... 저 피해망상 선생...
+      type: thought
+      w: 75
+      x: 233
+      y: 27
+    - h: 128
+      rotate: -14
+      text: 지친다...
+      type: plain
+      w: 45
+      x: 60
+      y: 53
+  - - h: 139
+      text: 호리? 뭐 해?
+      w: 50
+      x: 288
+      y: 266
+    - h: 56
+      rotate: -20
+      text: 화장실 가?
+      type: plain
+      w: 20
+      x: 202
+      y: 315
+    - h: 174
+      text: 엇! 마침 잘 됐다! 미야무라에 대해 물어볼 게!
+      w: 69
+      x: 41
+      y: 259
+  - - h: 174
+      text: 난 지금 실연중이라서!!
+      w: 83
+      x: 256
+      y: 515
+    - background: '#4ccde4'
+      h: 48
+      text: 차였다
+      type: plain
+      w: 27
+      x: 202
+      y: 518
+    - background: '#4ccde4'
+      h: 41
+      text: 찼다
+      type: plain
+      w: 28
+      x: 135
+      y: 515
+    - h: 88
+      radius: 19
+      text: 쓸모가 없어!
+      w: 29
+      x: 20
+      y: 513
+    - h: 98
+      size: 4.3
+      text: 탁
+      type: stroke
+      w: 81
+      x: 6
+      y: 645
+  - - background: '#4ccde4'
+      h: 100
+      text: 성적 상위자
+      vertical: true
+      w: 37
+      x: 223
+      y: 806
+    - background: '#4ccde4'
+      h: 26
+      rotate: 2
+      text: 8, 7, 6, 5, 4, 3, 2, 1
+      w: 195
+      x: 15
+      y: 808
+    - background: '#4ccde4'
+      h: 60
+      text: 과목별
+      vertical: true
+      w: 29
+      x: 229
+      y: 928
+    - background: '#4ccde4'
+      h: 37
+      text: 1반
+      w: 27
+      x: 192
+      y: 925
 hm001_030/005/hori_092.gif:
-- - 하다못해...
-  - 그 녀석이 공부라도 좀 잘했으면...!
-- - text: 공부라도 잘했으면-!!
-    type: plain
-  - text: '? ?'
-    type: plain
-  - text: 호리 공부 잘하잖아...
-    type: plain
-- - text: 집에 가서 문패를 본다
-    type: thought
-  - text: 어 아마 맨션이라... 안 되겠는걸...
-    type: thought
-  - text: 깨작깨작
-    type: plain
-- - 쿄코, 엄마의 카레가 먹기 싫니~?
-  - text: 아까부터 숟가닥르오 찌르기만 하고-
-    type: plain
-  - 벌써 사흘째니까
+  top: 7250
+  text:
+  - - h: 86
+      text: 하다못해...
+      w: 48
+      x: 257
+      y: 63
+    - h: 141
+      text: 그 녀석이 공부라도 좀 잘했으면...!
+      w: 66
+      x: 32
+      y: 78
+  - - h: 148
+      rotate: -23
+      text: 공부라도 잘했으면-!!
+      type: plain
+      w: 56
+      x: 225
+      y: 265
+    - h: 78
+      radius: 22
+      rotate: -31
+      text: 호리 공부 잘하잖아...
+      type: plain
+      w: 61
+      x: 24
+      y: 425
+  - - h: 150
+      text: 집에 가서 문패를 본다
+      type: thought
+      w: 69
+      x: 264
+      y: 516
+    - h: 53
+      text: 어 아마 맨션이라...
+      type: thought
+      w: 59
+      x: 44
+      y: 517
+    - h: 60
+      radius: 12
+      text: 안 되겠는걸...
+      w: 79
+      x: 22
+      y: 561
+    - h: 50
+      text: 깨작깨작
+      type: plain
+      w: 35
+      x: 88
+      y: 675
+  - - h: 108
+      text: 쿄코, 엄마의 카레가 먹기 싫니~?
+      w: 111
+      x: 203
+      y: 766
+    - background: '#c6e51b'
+      h: 83
+      rotate: -17
+      text: 아까부터 숟가닥으로 찌르기만 하고-
+      type: plain
+      w: 69
+      x: 115
+      y: 774
+    - h: 127
+      text: 벌써 사흘째니까
+      w: 70
+      x: 25
+      y: 850
 hm001_030/005/hori_093.gif:
-- - 내일은 놀러 온대? 「미야무라」가
-  - 어? 음- 글쎄-... 오지 않을까?
-- - 어머- 정말!? 어떡하지 내가 막 두근두근하네
-  - text: <b>꺅-</b>
-    type: plain
-  - 딱히 엄마 보러 오는 건 아니거든
-- - text: 아, 혹시 엄마한텐 이름을 말할지도 몰라!
-    type: thought
-  - text: 당근...
-    type: plain
-  - text: 반짝 💡
-    type: plain
-  - text: 머리 좋다!
-    type: plain
-  - text: 그래, 그때 알아내면 되겠다!
-    type: thought
-- - <b>좋아!!</b>
-  - text: 덜컹-
-    type: stroke
-  - text: 애- 갑자기 일어서면 어떡해-
-    type: plain
-  - text: 누나, 내 당근 먹어줘!!
-    type: plain
-  - text: 성질 급한 가족
-    type: square
+  top: 8269
+  text:
+  - - h: 151
+      text: 내일은 놀러 온대? 「미야무라」가
+      w: 89
+      x: 248
+      y: 13
+    - h: 125
+      radius: 32
+      text: 어? 음- 글쎄-... 오지 않을까?
+      w: 90
+      x: 7
+      y: 8
+  - - h: 155
+      text: 어머- 정말!? 어떡하지 내가 막 두근두근하네
+      w: 101
+      x: 233
+      y: 257
+    - background: '#c6e51b'
+      h: 37
+      rotate: -20
+      text: <b>꺅</b>
+      type: plain
+      w: 18
+      x: 130
+      y: 333
+    - h: 116
+      radius: 25
+      text: 딱히 엄마 보러 오는 건 아니거든
+      w: 74
+      x: 49
+      y: 246
+  - - h: 150
+      text: 아, 혹시 엄마한텐 이름을 말할지도 몰라!
+      type: thought
+      w: 75
+      x: 255
+      y: 510
+    - h: 37
+      rotate: -15
+      text: 당근...
+      type: plain
+      w: 39
+      x: 209
+      y: 693
+    - h: 50
+      text: 반짝
+      type: plain
+      w: 18
+      x: 120
+      y: 511
+    - h: 64
+      rotate: -16
+      text: 머리 좋다!
+      type: plain
+      w: 35
+      x: 104
+      y: 566
+    - h: 177
+      text: 그래, 그때 알아내면 되겠다!
+      type: thought
+      w: 69
+      x: 8
+      y: 508
+  - - h: 81
+      size: 1.3
+      text: <b>좋아!!</b>
+      w: 67
+      x: 248
+      y: 759
+    - background: '#c6e51b'
+      h: 192
+      rotate: -24
+      size: 1.8
+      text: 덜컹|
+      type: stroke
+      vertical: true
+      w: 69
+      x: 202
+      y: 793
+    - background: '#c6e51b'
+      h: 186
+      rotate: -29
+      text: 애- 갑자기 일어서면 어떡해-
+      type: plain
+      w: 43
+      x: 137
+      y: 785
+    - background: '#c6e51b'
+      h: 127
+      rotate: -38
+      text: 누나, 내 당근 먹어줘!!
+      type: plain
+      w: 53
+      x: 82
+      y: 852
+    - h: 27
+      radius: 9
+      rotate: -9
+      text: 성질 급한 가족
+      type: square
+      w: 98
+      x: 11
+      y: 767
 hm001_030/005/hori_094.gif:
-- - 안녕 기다리고 있었어-!
-  - text: 어머어머, 어머어머
-    type: plain
-  - text: 와-!
-    type: plain
-  - 자자, 어서 들어오렴-!
-- - 실례합니다...
-  - text: びくっ
-    type: plain
-- - 이야기는 많이 들었단다
-  - text: 두근두근
-    type: plain
-  - 그런가요...
-  - 어머니다...!!! 1년 이상 뵌 적 없는 호리의 어머니다!! 젊어..!!
-- - 저, 이건 부모님이 만드시는 케이크...　○下라 그렇지만요
-  - text: 괜찮으시면
-    type: plain
-  - 어머-! 케이크 가게 하시니!?
+  top: 9292
+  text:
+  - - h: 133
+      text: 안녕 기다리고 있었어-!
+      w: 80
+      x: 260
+      y: 3
+    - background: '#c6e51b'
+      h: 57
+      text: 어머어머
+      type: plain
+      vertical: true
+      w: 18
+      x: 214
+      y: 9
+    - background: '#c6e51b'
+      h: 51
+      text: 어머어머
+      w: 29
+      x: 112
+      y: 10
+    - h: 43
+      text: 와-!
+      type: plain
+      w: 29
+      x: 106
+      y: 129
+    - h: 135
+      text: 자자, 어서 들어오렴-!
+      w: 70
+      x: 17
+      y: 8
+  - - h: 85
+      text: 실례합니다...
+      w: 70
+      x: 264
+      y: 257
+    - h: 49
+      text: びくっ
+      type: plain
+      w: 29
+      x: 91
+      y: 319
+  - - h: 129
+      text: 이야기는 많이 들었단다
+      w: 59
+      x: 276
+      y: 506
+    - h: 39
+      rotate: -12
+      text: 두근두근
+      type: plain
+      w: 39
+      x: 269
+      y: 666
+    - h: 82
+      text: 그런가요...
+      w: 37
+      x: 141
+      y: 505
+    - h: 209
+      radius: 19
+      text: 어머니다...!!! 1년 이상 뵌 적 없는 호리의 어머니다!! 젊어..!!
+      w: 72
+      x: 6
+      y: 506
+  - - h: 136
+      text: 저, 이건 부모님이 만드시는 케이크...　○下라 그렇지만요
+      w: 112
+      x: 223
+      y: 766
+    - h: 49
+      rotate: -11
+      text: 괜찮으시면
+      type: plain
+      w: 25
+      x: 162
+      y: 765
+    - h: 124
+      radius: 21
+      text: 어머-! 케이크 가게 하시니!?
+      w: 76
+      x: 7
+      y: 764
 hm001_030/005/hori_095.gif:
-- - 아, 인사가 늦었지만
-  - text: 젊으셔...
-    type: thought
-  - 미야무라 이즈미라고 합니다
-- - 이즈미 군이라고?
-  - 네
-  - text: 젊어-!!
-    type: thought
-  - 어머- 이름 예쁘네
-- - 미안해 여러 가지로 이야기를 나눠보고 싶지만 난 이제 또 일하러 가봐야 해서
-  - text: 달칵
-    type: plain
-  - 아, 아뇨, 저도 금방 갈 거라서...
-- - 그럴 것 없어 언제나처럼 편히 있도록 해
-  - 아, 케이크 정말 고맙다
+  top: 10313
+  text:
+  - - h: 54
+      rotate: -6
+      text: 아, 인사가 늦었지만
+      w: 46
+      x: 269
+      y: 11
+    - h: 71
+      text: 젊으셔...
+      type: thought
+      w: 27
+      x: 101
+      y: 151
+    - h: 127
+      text: 미야무라 이즈미라고 합니다
+      w: 66
+      x: 21
+      y: 34
+  - - h: 118
+      text: 이즈미 군이라고?
+      w: 73
+      x: 262
+      y: 247
+    - h: 44
+      text: 네
+      w: 30
+      x: 109
+      y: 261
+    - h: 78
+      text: 젊어-!!
+      type: thought
+      w: 32
+      x: 39
+      y: 255
+    - h: 119
+      text: 어머- 이름 예쁘네
+      w: 85
+      x: 10
+      y: 345
+  - - h: 171
+      radius: 35
+      text: 미안해 여러 가지로 이야기를 나눠보고 싶지만 난 이제 또 일하러 가봐야 해서
+      w: 119
+      x: 200
+      y: 507
+    - h: 81
+      text: 달칵
+      type: plain
+      w: 30
+      x: 115
+      y: 621
+    - h: 146
+      text: 아, 아뇨, 저도 금방 갈 거라서...
+      w: 61
+      x: 12
+      y: 509
+  - - h: 121
+      text: 그럴 것 없어 언제나처럼 편히 있도록 해
+      w: 123
+      x: 188
+      y: 771
+    - h: 140
+      text: 아, 케이크 정말 고맙다
+      w: 87
+      x: 28
+      y: 831
 hm001_030/005/hori_096.gif:
-- - 그래서
-  - 엄마는!?
-- - 그래서 일허러 가신다고...
-  - text: 딸기- 딸기 있는 거-!!
-    type: plain
-  - text: 이 여자가..!!
-    type: thought
-  - text: 「단둘이 얘기해 보고 싶다」던 게 정말이었나!
-    type: thought
-- - 진짜~ 초등학생처럼 이름으로 부르시지 뭐야-
-  - text: 자, 딸기-
-    type: plain
-  - text: '!!'
-    type: scream
-- - 어
-  - 뭐라고?
-  - 그러니까 이름으로 부르신다고-
+  top: 11334
+  text:
+  - - h: 41
+      text: 그래서
+      w: 40
+      x: 270
+      y: 17
+    - h: 76
+      text: 엄마는!?
+      w: 65
+      x: 43
+      y: 107
+  - - h: 93
+      text: 그래서 일하러 가신다고...
+      w: 91
+      x: 241
+      y: 250
+    - h: 141
+      rotate: -16
+      text: 딸기- 딸기 있는 거-!!
+      type: plain
+      w: 68
+      x: 155
+      y: 254
+    - h: 117
+      text: 이 여자가..!!
+      type: thought
+      w: 47
+      x: 63
+      y: 245
+    - h: 135
+      radius: 25
+      text: 「단둘이 얘기해 보고 싶다」던 게 정말이었나!
+      type: thought
+      w: 71
+      x: 4
+      y: 333
+  - - h: 113
+      radius: 47
+      text: 진짜~ 초등학생처럼 이름으로 부르시지 뭐야-
+      w: 125
+      x: 205
+      y: 511
+    - h: 82
+      rotate: -23
+      text: 자, 딸기-
+      type: plain
+      w: 62
+      x: 119
+      y: 513
+  - - h: 38
+      size: 1.2
+      text: 어
+      w: 42
+      x: 274
+      y: 764
+    - h: 69
+      text: 뭐라고?
+      w: 42
+      x: 270
+      y: 866
+    - h: 107
+      text: 그러니까 이름으로 부르신다고-
+      w: 72
+      x: 23
+      y: 766
 hm001_030/005/hori_097.gif:
-- - 그-게 아니라-!
-  - 어? 아아 호칭 말이야?
-- - 「군」을 붙이시던데
-  - text: 어머니 젊으시더라-
-    type: plain
-  - text: 이 남자와 한 번이라도 대화가 맞아떨어진 적이 있었던가...
-    type: square
-- - 어쩐지 호리 요즘 이상한 것 같아
-  - text: 호두-
-    type: plain
-  - 어, 내가 뭐
-- - 왜- 남자 옷 갈아 입는 걸 들여다보기도 하고
-  - 출석부를 노려보기도 하고
-  - 앞의 건 오해야
+  top: 12355
+  text:
+  - - h: 170
+      text: 그-게 아니라-!
+      w: 51
+      x: 283
+      y: 4
+    - h: 113
+      text: 어? 아아 호칭 말이야?
+      w: 68
+      x: 16
+      y: 4
+  - - h: 100
+      text: 「군」을 붙이시던데
+      w: 64
+      x: 271
+      y: 238
+    - h: 95
+      rotate: -17
+      text: 어머니 젊으시더라-
+      type: plain
+      w: 58
+      x: 198
+      y: 269
+    - h: 166
+      radius: 0
+      text: 이 남자와 한 번이라도 대화가 맞아떨어진 적이 있었던가...
+      type: square
+      w: 88
+      x: 12
+      y: 246
+  - - h: 143
+      text: 어쩐지 호리 요즘 이상한 것 같아
+      w: 68
+      x: 265
+      y: 492
+    - h: 74
+      text: 호두-
+      type: plain
+      w: 38
+      x: 186
+      y: 582
+    - h: 93
+      text: 어, 내가 뭐
+      w: 70
+      x: 108
+      y: 498
+  - - h: 121
+      radius: 26
+      text: 왜- 남자 옷 갈아 입는 걸 들여다보기도 하고
+      w: 86
+      x: 249
+      y: 757
+    - h: 133
+      text: 출석부를 노려보기도 하고
+      w: 63
+      x: 174
+      y: 750
+    - h: 158
+      text: 앞의 건 오해야
+      w: 93
+      x: 5
+      y: 758
 hm001_030/005/hori_098.gif:
-- - 아! 혹시 누군가 신경쓰이는... 그런...
-  - text: 어때
-    type: plain
-- - ''
-- - text: 아하하하하하 하하하하하하하
-    type: scream
-- - text: 이, 이름!?
-    type: scream
-  - text: 그런 걸 같고 고민하고 있었어!?
-    type: scream
-  - text: <b>웃어서 배아파-</b>
-    type: plain
-  - ......
+  top: 13376
+  text:
+  - - h: 127
+      radius: 42
+      text: 아! 혹시 누군가 신경쓰이는... 그런...
+      w: 98
+      x: 237
+      y: 3
+    - h: 66
+      rotate: -23
+      text: 어때
+      type: plain
+      w: 46
+      x: 59
+      y: 63
+  - - ''
+  - - h: 150
+      radius: 0
+      size: 1.2
+      text: 아하하하하하<br>하하하하하하하
+      type: scream
+      vertical: true
+      w: 49
+      x: 77
+      y: 574
+  - - h: 120
+      text: 이, 이름!?
+      type: scream
+      w: 47
+      x: 291
+      y: 757
+    - h: 129
+      radius: 4
+      text: 그런 걸 같고 고민하고 있었어!?
+      type: scream
+      w: 59
+      x: 161
+      y: 755
+    - h: 112
+      rotate: -20
+      size: 1.5
+      text: <b>웃어서 배아파-</b>
+      type: plain
+      w: 61
+      x: 156
+      y: 889
 hm001_030/005/hori_099.gif:
-- - 아... 그나저나.. 이름이라... 후후후
-  - text: 아, 배가
-    type: plain
-  - 누나 웃긴다-
-  - text: 본인한테 물어볼 수도 없잖아-!
-    type: scream
-  - text: 결국 물어봤다
-    type: square
-- - 잠깐 기다려 봐
-  - text: 휴- 웃었다, 웃었어
-    type: plain
-  - 이거 좀 쓸게
-  - text: 소타- 너 진짜
-    type: plain
-  - text: 웃겨- 웃겨웃겨-
-    type: plain
-- - 자
-- - text: 미야무라 이즈미
-    type: plain
+  top: 14397
+  text:
+  - - h: 99
+      text: 아... 그나저나.. 이름이라...
+      w: 76
+      x: 257
+      y: 3
+    - background: '#c6e51b'
+      h: 48
+      radius: 14
+      rotate: -8
+      text: 후후후
+      vertical: true
+      w: 18
+      x: 233
+      y: 24
+    - h: 53
+      text: 아, 배가
+      type: plain
+      w: 31
+      x: 236
+      y: 96
+    - h: 88
+      text: 누나 웃긴다-
+      w: 57
+      x: 149
+      y: 9
+    - h: 118
+      radius: 6
+      text: 본인한테 물어볼 수도 없잖아-!
+      type: scream
+      w: 70
+      x: 16
+      y: 6
+    - h: 74
+      radius: 0
+      text: 결국 물어봤다
+      type: square
+      w: 64
+      x: 4
+      y: 147
+  - - h: 79
+      text: 잠깐 기다려 봐
+      w: 64
+      x: 254
+      y: 242
+    - h: 91
+      rotate: -7
+      text: 휴- 웃었다, 웃었어
+      type: plain
+      w: 46
+      x: 166
+      y: 242
+    - h: 89
+      text: 이거 좀 쓸게
+      w: 51
+      x: 120
+      y: 383
+    - h: 53
+      rotate: 24
+      text: 소타- 너 진짜
+      type: plain
+      w: 65
+      x: 62
+      y: 242
+    - h: 70
+      rotate: 12
+      text: 웃겨- 웃겨웃겨-
+      type: plain
+      w: 46
+      x: 57
+      y: 364
+  - - h: 58
+      text: 자
+      w: 26
+      x: 295
+      y: 501
 hm001_030/005/hori_100.gif:
-- - 아참 미안, 발음을 안 써 놨네
-  - text: 줘봐
-    type: plain
-  - text: 읽을 줄 알아!
-    type: scream
-- - 일단은 받아 둘게-...
-  - text: 꾸깃
-    type: plain
-  - 또 잊어버릴지 모르니까
-- - 일단이야 일단
-  - 그래 그래
-  - text: 어! 몽블랑 다 먹었어!!
-    type: plain
-- - text: 하여튼 어느 게 성인지-...
-    type: thought
-  - text: 진짜 여자 같은 이름이네...
-    type: thought
+  top: 15417
+  text:
+  - - h: 117
+      text: 아참 미안, 발음을 안 써 놨네
+      w: 82
+      x: 249
+      y: 6
+    - h: 54
+      rotate: -11
+      text: 줘봐
+      type: plain
+      w: 31
+      x: 144
+      y: 94
+    - h: 86
+      radius: 16
+      text: 읽을 줄 알아!
+      type: scream
+      w: 46
+      x: 44
+      y: 9
+  - - h: 110
+      text: 일단은 받아 둘게-...
+      w: 81
+      x: 253
+      y: 249
+    - h: 49
+      text: 꾸깃
+      type: plain
+      w: 30
+      x: 210
+      y: 340
+    - h: 114
+      text: 또 잊어버릴지 모르니까
+      w: 61
+      x: 36
+      y: 303
+  - - h: 53
+      text: 일단이야
+      w: 35
+      x: 171
+      y: 572
+    - h: 65
+      text: 일단
+      w: 30
+      x: 139
+      y: 588
+    - h: 62
+      text: 그래 그래
+      w: 24
+      x: 69
+      y: 600
+    - h: 108
+      rotate: -22
+      text: 어! 몽블랑 다 먹었어!!
+      type: plain
+      w: 57
+      x: 13
+      y: 635
+  - - h: 114
+      text: 하여튼 어느 게 성인지-...
+      type: thought
+      w: 83
+      x: 224
+      y: 755
+    - h: 132
+      text: 진짜 여자 같은 이름이네...
+      type: thought
+      w: 59
+      x: 20
+      y: 762
 hm001_030/005/hori_101.gif:
-- - 호리 뭐 해?
-  - 아아아, 아무것도 아니야-
-  - text: ガサガサガサ
-    type: plain
-- - 뭐? 우리 반 전원의 풀 네임?
-- - 참나, 1학년 부터 계속 같은 애들이잖아!
-  - text: <big><b>철썩</b></big>
-    type: plain
-  - 물론 모두 알고 있지!
-- - text: 물론 모두... 말이지...
-    type: thought
-  - text: 진짜- 호리 이상해-
-    type: plain
-  - text: 엇
-    type: plain
+  top: 16437
+  text:
+  - - h: 134
+      text: 호리 뭐 해?
+      w: 58
+      x: 276
+      y: 11
+    - h: 122
+      text: 아아아, 아무것도 아니야-
+      w: 64
+      x: 44
+      y: 7
+    - h: 76
+      text: ガサガサガサ
+      type: plain
+      w: 59
+      x: 55
+      y: 157
+  - - h: 138
+      text: 뭐? 우리 반 전원의 풀 네임?
+      w: 79
+      x: 251
+      y: 248
+  - - h: 157
+      radius: 50
+      text: 참나, 1학년 부터 계속 같은 애들이잖아!
+      w: 113
+      x: 215
+      y: 499
+    - h: 109
+      rotate: -20
+      size: 1.4
+      text: <big><b>철썩</b></big>
+      type: plain
+      vertical: true
+      w: 35
+      x: 149
+      y: 552
+    - h: 118
+      text: 물론 모두 알고 있지!
+      w: 77
+      x: 39
+      y: 501
+  - - h: 108
+      text: 물론 모두... 말이지...
+      type: thought
+      w: 64
+      x: 215
+      y: 759
+    - h: 83
+      radius: 31
+      rotate: -15
+      text: 진짜- 호리 이상해-
+      type: plain
+      w: 77
+      x: 191
+      y: 893
+    - background: '#4ccde4'
+      h: 31
+      rotate: -14
+      text: 엇
+      type: plain
+      w: 30
+      x: 19
+      y: 815
 hm001_030/005/hori_102.gif:
-- - 지난 주에는 잘도 날 바보 만들었지
-  - text: 훗
-    type: stroke
-  - text: ※소타는 친구 집
-    type: plain
-- - 바볼 만들다니 자기 소개한 거야
-  - text: 너도 참-
-    type: plain
-  - 반 여자 이름도 제대로 모르는 네가...
-- - 너야말로 내 이름
-  - 모르는 거 아니야!?
-- - 알지
-  - 쿄코 아냐?
+  top: 17460
+  text:
+  - - h: 156
+      text: 지난 주에는 잘도 날 바보 만들었지
+      w: 73
+      x: 263
+      y: 13
+    - h: 48
+      rotate: -26
+      text: 훗
+      type: stroke
+      w: 40
+      x: 74
+      y: 35
+    - background: '#c6e51b'
+      h: 131
+      text: ※소타는 친구 집
+      type: plain
+      w: 53
+      x: 4
+      y: 9
+  - - h: 150
+      text: 바볼 만들다니 자기 소개한 거야
+      w: 85
+      x: 254
+      y: 248
+    - h: 76
+      rotate: -14
+      text: 너도 참-
+      type: plain
+      w: 25
+      x: 179
+      y: 340
+    - h: 149
+      text: 반 여자 이름도 제대로 모르는 네가...
+      w: 103
+      x: 3
+      y: 237
+  - - h: 102
+      text: 너야말로 내 이름
+      w: 63
+      x: 266
+      y: 502
+    - h: 135
+      text: 모르는 거 아니야!?
+      w: 58
+      x: 34
+      y: 587
+  - - h: 98
+      text: 알지
+      w: 45
+      x: 281
+      y: 764
+    - h: 120
+      text: 쿄코 아냐?
+      w: 70
+      x: 26
+      y: 755
 hm001_030/005/hori_103.gif:
-- - ''
-- - text: 호리는 공부 잘하면서 가끔 맹하다고 말로 하면 어차피 화낼 거니까 못 한다
-    type: square
-  - text: 뭐야, 그럼 진짜 마치 친구 이름도 모르는 나만 바보 같잖아
-    type: plain
-- - 어쩐지 서로 안 닮았네, 하면서 외웠어
-- - 뭐가?
-  - 쿄코와 소타잖아?
+  top: 18480
+  text:
+  - - ''
+  - - h: 196
+      radius: 0
+      text: 호리는 공부 잘하면서 가끔 맹하다고 말로 하면 어차피 화낼 거니까 못 한다
+      type: square
+      w: 150
+      x: 183
+      y: 254
+    - h: 81
+      radius: 8
+      text: 뭐야, 그럼 진짜 마치 친구 이름도 모르는 나만 바보 같잖아
+      type: plain
+      w: 111
+      x: 19
+      y: 252
+  - - h: 153
+      text: 어쩐지 서로 안 닮았네, 하면서 외웠어
+      w: 84
+      x: 246
+      y: 500
+  - - h: 59
+      text: 뭐가?
+      w: 52
+      x: 270
+      y: 772
+    - h: 150
+      text: 쿄코와 소타잖아?
+      w: 61
+      x: 53
+      y: 757
 hm001_030/005/hori_104.gif:
-- - 아~... 아빠 이름이 쿄스케고 엄마 이름이 유리코라서...
-  - 소타는 그냥 지은 것 같지만...
-- - 어!? 그건 그렇고 너 그 꼴로 나랑 만날 때 유키랑 만나면 내 이름 부르면 안돼!!
-  - text: 깜짝
-    type: plain
-  - 뭐!! 왜, 왜!
-- - 그게- 저 사촌 오빠라고 했으니까!
-  - 역시 바보야
-  - 우와, 애매하게 들킬 것 같은 거짓말!!
-- - 그치만 그건 아마 이시카와를 통해서 바로 들킬걸!
-  - text: 또 그 남자..!!
-    type: thought
-  - 이렇게 토오루는 호리에게 미움 받는다
+  top: 19501
+  text:
+  - - h: 134
+      radius: 27
+      text: 아~... 아빠 이름이 쿄스케고 엄마 이름이 유리코라서...
+      w: 85
+      x: 245
+      y: 10
+    - h: 129
+      radius: 32
+      text: 소타는 그냥 지은 것 같지만...
+      w: 90
+      x: 13
+      y: 10
+  - - radius: 21
+      text: 어!? 그건 그렇고 너 그 꼴로 나랑 만날 때 유키랑 만나면 내 이름 부르면 안돼!!
+      w: 150
+      x: 176
+      y: 245
+    - h: 51
+      text: 깜짝
+      type: plain
+      w: 36
+      x: 107
+      y: 331
+    - h: 117
+      text: 뭐!! 왜, 왜!
+      w: 72
+      x: 10
+      y: 245
+  - - h: 108
+      radius: 14
+      text: 그게- 저 사촌 오빠라고 했으니까!
+      w: 92
+      x: 244
+      y: 500
+    - h: 57
+      text: 역시 바보야
+      w: 30
+      x: 124
+      y: 677
+    - h: 161
+      text: 우와, 애매하게 들킬 것 같은 거짓말!!
+      w: 84
+      x: 4
+      y: 500
+  - - h: 106
+      radius: 0
+      text: 그치만 그건 아마 이시카와를 통해서 바로 들킬걸!
+      w: 90
+      x: 242
+      y: 756
+    - h: 84
+      radius: 16
+      text: 또 그 남자..!!
+      type: thought
+      w: 67
+      x: 36
+      y: 755
+    - h: 125
+      radius: 0
+      text: 이렇게 토오루는 호리에게 미움 받는다
+      w: 81
+      x: 6
+      y: 874
 hm001_030/005/hori_105.gif:
-- - 앗, 아마 또 학습지 전화!
-  - text: 따르르릉
-    type: plain
-  - 미야무라 「없다」고 말해!
-  - text: 네-
-    type: plain
-- - 그게, 지금 없는... 네!? ... 허... 저기 없으니까...
-  - 네
-  - 입시?
-  - 그러나까요, 끊을게요, 네?
-  - 아니 쿄코 없어요...
-  - 휴우...
-- - 막무가내시네요- 그러니까 쿄코 없어요
-  - 네, 그러니까요
-  - 쿄...
-  - 아... 네... 어휴... 저기
-  - 신...
-- - 아, 모르겠다-
-  - 저희 집에 쿄코라는 애 자체가 없어요!!
-  - <big><b>야!!</b></big>
+  top: 20830
+  text:
+  - - h: 153
+      text: 앗, 아마 또 학습지 전화!
+      w: 82
+      x: 241
+      y: 7
+    - background: '#c6e51b'
+      h: 96
+      rotate: 46
+      text: 따르르릉
+      type: plain
+      vertical: true
+      w: 32
+      x: 266
+      y: 154
+    - h: 79
+      radius: 25
+      text: 미야무라 「없다」고 말해!
+      w: 95
+      x: 49
+      y: 7
+    - h: 57
+      rotate: -18
+      text: 네-
+      type: plain
+      w: 24
+      x: 10
+      y: 25
+  - - h: 137
+      text: 그게, 지금 없는... 네!? ... 허... 저기 없으니까...
+      w: 101
+      x: 232
+      y: 242
+    - h: 36
+      text: 네
+      w: 26
+      x: 178
+      y: 271
+    - h: 55
+      text: 입시?
+      w: 34
+      x: 141
+      y: 330
+    - h: 84
+      text: 그러나까요, 끊을게요, 네?
+      w: 42
+      x: 109
+      y: 240
+    - h: 44
+      text: 허?
+      w: 28
+      x: 73
+      y: 257
+    - h: 106
+      text: 아니 쿄코 없어요...
+      w: 48
+      x: 30
+      y: 281
+    - h: 54
+      text: 휴우...
+      w: 36
+      x: 44
+      y: 416
+  - - h: 108
+      text: 막무가내시네요- 그러니까 쿄코 없어요
+      w: 106
+      x: 231
+      y: 510
+    - h: 94
+      text: 네, 그러니까요
+      w: 81
+      x: 121
+      y: 504
+    - h: 41
+      text: 쿄...
+      w: 29
+      x: 116
+      y: 605
+    - h: 101
+      text: 아... 네... 어휴... 저기
+      w: 68
+      x: 24
+      y: 536
+    - h: 40
+      text: 신...
+      w: 40
+      x: 54
+      y: 662
+  - - h: 140
+      rotate: -4
+      text: 아, 모르겠다-
+      w: 25
+      x: 298
+      y: 759
+    - h: 177
+      text: 저희 집에 쿄코라는 애 자체가 없어요!!
+      w: 58
+      x: 211
+      y: 759
+    - h: 148
+      size: 1.8
+      text: <big><b>야!!</b></big>
+      w: 61
+      x: 18
+      y: 763
 hm001_030/005/hori_106.gif:
-- - text: 하하하하
-    type: plain
-  - text: <big>으악-</big>
-    type: plain
-  - text: 차가워-
-    type: plain
-- - 어어~...  물놀이 하느냐~...
-  - text: 이웃의..
-    type: plain
-  - 엇, 안녕하세요-
-- - 그래도 그렇지 쿄코 또 대담한 차림새구나-..
-  - 할아버지
-  - 오- 소타도 다 컸네-
-- - 할멈 쿄코가 발게벗고 물놀이를 하네!!
-  - text: 입을 옷!! 입을 옷!!
-    type: plain
-  - text: 뭔데, 뭔데
-    type: plain
-  - text: '!?'
-    type: plain
-  - 할아버지-!!
+  top: 21870
+  text:
+  - - background: '#a5eafb'
+      h: 70
+      text: 하하하하
+      type: plain
+      vertical: true
+      w: 29
+      x: 217
+      y: 5
+    - background: '#a5eafb'
+      h: 74
+      rotate: 20
+      text: <big>으악-</big>
+      type: plain
+      w: 41
+      x: 168
+      y: 5
+    - background: '#a5eafb'
+      h: 49
+      rotate: 18
+      text: 차가워-
+      type: plain
+      w: 37
+      x: 132
+      y: 6
+  - - h: 119
+      text: 어어~...  물놀이 하느냐~...
+      w: 42
+      x: 295
+      y: 243
+    - h: 82
+      text: 이웃의..
+      type: plain
+      w: 23
+      x: 149
+      y: 374
+    - h: 110
+      text: 엇, 안녕하세요-
+      w: 64
+      x: 48
+      y: 244
+  - - h: 124
+      radius: 28
+      text: 그래도 그렇지 쿄코 또 대담한 차림새구나-..
+      w: 80
+      x: 254
+      y: 502
+    - h: 84
+      text: 할아버지
+      w: 51
+      x: 104
+      y: 502
+    - h: 121
+      text: 오- 소타도 다 컸네-
+      w: 84
+      x: 5
+      y: 631
+  - - h: 141
+      radius: 21
+      text: 할멈 쿄코가 발게벗고 물놀이를 하네!!
+      w: 120
+      x: 214
+      y: 760
+    - background: '#a5eafb'
+      h: 87
+      rotate: -14
+      text: 입을 옷!! 입을 옷!!
+      type: plain
+      w: 49
+      x: 141
+      y: 764
+    - h: 53
+      rotate: -14
+      text: 뭔데, 뭔데
+      type: plain
+      w: 51
+      x: 147
+      y: 900
+    - h: 175
+      text: 할아버지-!!
+      w: 81
+      x: 13
+      y: 762
 hm001_030/005/hori_107.gif:
-- - 엇! 큰일이야, 정전!
-  - text: <big>확</big>
-    type: plain
-  - 불 불!
-- - text: 쾅
-    type: stroke
-  - 아야!
-  - 뭔가 있지- 그... 텔레비전 불빛!
-  - 라이터- 라이터!
-  - 텔레비전도 안 켜지지!
-  - text: 덜그덕
-    type: stroke
-  - 촛불은!?
-  - 없어!
-- - 호리 밟았어!! 방금 다리!!
-  - 뭐!?
-  - 불빛-!!
-  - text: 우애애앵
-    type: stroke
-  - 아- 진짜 라디오 어디 뒀지...
-  - 소타-!!
-- - 왜 다들 구석까지 간 거야...
+  top: 22910
+  text:
+  - - h: 114
+      text: 엇! 큰일이야, 정전!
+      w: 62
+      x: 254
+      y: 24
+    - background: '#7d8b2d'
+      h: 99
+      rotate: -14
+      size: 3
+      text: '<span style="color: white">확</span>'
+      type: plain
+      w: 113
+      x: 126
+      y: 80
+    - background: '#7d8b2d'
+      h: 64
+      text: 불 불!
+      w: 44
+      x: 49
+      y: 39
+  - - background: '#7d8b2d'
+      h: 106
+      rotate: 11
+      size: 3.2
+      text: 쾅
+      type: stroke
+      w: 53
+      x: 277
+      y: 246
+    - background: '#7d8b2d'
+      h: 46
+      text: 아야!
+      w: 29
+      x: 291
+      y: 352
+    - background: '#7d8b2d'
+      h: 112
+      radius: 28
+      text: 뭔가 있지- 그... 텔레비전 불빛!
+      w: 70
+      x: 195
+      y: 251
+    - background: '#7d8b2d'
+      h: 84
+      text: 라이터- 라이터!
+      w: 37
+      x: 154
+      y: 374
+    - background: '#7d8b2d'
+      h: 92
+      text: 텔레비전도 안 켜지지!
+      w: 56
+      x: 100
+      y: 248
+    - background: '#7d8b2d'
+      h: 93
+      radius: 25
+      text: 덜그덕
+      type: stroke
+      w: 72
+      x: 13
+      y: 257
+    - background: '#7d8b2d'
+      h: 97
+      rotate: -5
+      text: 촛불은!?
+      w: 36
+      x: 76
+      y: 355
+    - background: '#7d8b2d'
+      h: 51
+      text: 없어!
+      w: 32
+      x: 26
+      y: 374
+  - - background: '#7d8b2d'
+      h: 79
+      radius: 23
+      text: 호리 밟았어!! 방금 다리!!
+      w: 89
+      x: 227
+      y: 496
+    - background: '#7d8b2d'
+      h: 58
+      text: 뭐!?
+      w: 30
+      x: 233
+      y: 601
+    - background: '#7d8b2d'
+      h: 111
+      rotate: -10
+      text: 불빛-!!
+      w: 28
+      x: 154
+      y: 517
+    - background: '#7d8b2d'
+      h: 69
+      rotate: -26
+      size: 1.9
+      text: 우애애
+      type: stroke
+      vertical: true
+      w: 41
+      x: 64
+      y: 501
+    - background: '#7d8b2d'
+      h: 49
+      rotate: -27
+      size: 1.9
+      text: 앵
+      type: stroke
+      w: 40
+      x: 128
+      y: 628
+    - background: '#7d8b2d'
+      h: 144
+      text: 아- 진짜 라디오 어디 뒀지...
+      w: 62
+      x: 54
+      y: 590
+    - background: '#7d8b2d'
+      h: 75
+      text: 소타-!!
+      w: 37
+      x: 19
+      y: 523
+  - - h: 101
+      text: 왜 다들 구석까지 간 거야...
+      w: 66
+      x: 174
+      y: 774
 hm001_030/005/hori_108.gif:
-- - // 호리미야 5권 34화
-- - ''
-- - ''
-- - 어- 또 졌네
-  - text: 게임이 안 돼!!
-    type: thought
+  top: 23948
+  text:
+  - - // 호리미야 5권 34화
+  - - ''
+  - - ''
+  - - h: 112
+      text: 어- 또 졌네
+      w: 64
+      x: 241
+      y: 762
+    - h: 157
+      text: 게임이 안 돼!!
+      type: thought
+      w: 65
+      x: 15
+      y: 762
+
