@@ -88,10 +88,35 @@ type KeyDrag = {
   w: number;
   h: number;
   rotate: number;
-  corner: Corner;
+  corner: Corner | null;
   centerX: number;
   centerY: number;
 };
+
+function resizedFrom(current: KeyDrag, dx: number, dy: number) {
+  const west = current.corner === 'nw' || current.corner === 'sw';
+  const north = current.corner === 'nw' || current.corner === 'ne';
+  const local = rotateVector(dx, dy, -current.rotate);
+  const w = Math.max(
+    1,
+    Math.round(west ? current.w - local.x : current.w + local.x),
+  );
+  const h = Math.max(
+    1,
+    Math.round(north ? current.h - local.y : current.h + local.y),
+  );
+  const shift = rotateVector(
+    ((west ? -1 : 1) * (w - current.w)) / 2,
+    ((north ? -1 : 1) * (h - current.h)) / 2,
+    current.rotate,
+  );
+  return {
+    x: Math.round(current.x + current.w / 2 + shift.x - w / 2),
+    y: Math.round(current.y + current.h / 2 + shift.y - h / 2),
+    w,
+    h,
+  };
+}
 
 type BaselineDrag = {
   key: string;
@@ -458,7 +483,7 @@ export function TranslationView(props: Props) {
     kind: KeyDrag['kind'],
     address: Address,
     wrapper?: HTMLElement,
-    corner: Corner = 'se',
+    corner: Corner | null = null,
   ) {
     const box = latest.current.boxOf(address, wrapper);
     const start = pointer.current;
@@ -540,11 +565,12 @@ export function TranslationView(props: Props) {
           y: Math.round(current.y + dy),
           w: Math.round(current.w),
         });
-      } else if (current.kind === 'resize') {
-        props.onEdit?.(current.address, {
-          w: Math.max(1, Math.round(current.w + dx)),
-          h: Math.max(1, Math.round(current.h + dy)),
-        });
+      } else if (current.kind === 'resize' || current.kind === 'corner') {
+        if (current.corner === null) {
+          if (Math.abs(dx) + Math.abs(dy) < 3) return;
+          current.corner = `${dy < 0 ? 'n' : 's'}${dx < 0 ? 'w' : 'e'}`;
+        }
+        props.onEdit?.(current.address, resizedFrom(current, dx, dy));
       } else if (current.kind === 'rotate') {
         const angle =
           (Math.atan2(
@@ -556,29 +582,6 @@ export function TranslationView(props: Props) {
           90;
         props.onEdit?.(current.address, {
           rotate: Math.round(((angle + 180) % 360) - 180),
-        });
-      } else if (current.kind === 'corner') {
-        const west = current.corner === 'nw' || current.corner === 'sw';
-        const north = current.corner === 'nw' || current.corner === 'ne';
-        const local = rotateVector(dx, dy, -current.rotate);
-        const w = Math.max(
-          1,
-          Math.round(west ? current.w - local.x : current.w + local.x),
-        );
-        const h = Math.max(
-          1,
-          Math.round(north ? current.h - local.y : current.h + local.y),
-        );
-        const shift = rotateVector(
-          ((west ? -1 : 1) * (w - current.w)) / 2,
-          ((north ? -1 : 1) * (h - current.h)) / 2,
-          current.rotate,
-        );
-        props.onEdit?.(current.address, {
-          x: Math.round(current.x + current.w / 2 + shift.x - w / 2),
-          y: Math.round(current.y + current.h / 2 + shift.y - h / 2),
-          w,
-          h,
         });
       } else {
         const point = latest.current.toContent(
