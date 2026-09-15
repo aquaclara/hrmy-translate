@@ -527,6 +527,19 @@ export function TranslationView(props: Props) {
     endKeyDrag();
   }
 
+  function hoveredBubble(): { address: Address; element: HTMLElement } | null {
+    const { x, y } = pointer.current;
+    const element = document
+      .elementFromPoint(x, y)
+      ?.closest<HTMLElement>('.bubble[data-address]');
+    if (!element || !root.current?.contains(element)) return null;
+    const [cut, line, ...key] = element.dataset.address!.split(':');
+    return {
+      address: { key: key.join(':'), cut: Number(cut), line: Number(line) },
+      element,
+    };
+  }
+
   function grabHandle(
     event: React.PointerEvent<HTMLElement>,
     address: Address,
@@ -624,18 +637,22 @@ export function TranslationView(props: Props) {
         cancelKeyDrag();
         return;
       }
-      if (selected === null) return;
       const kinds: { [key: string]: KeyDrag['kind'] } = {
         '1': 'pick',
         '2': 'box',
         '3': 'resize',
       };
       if (kinds[event.key]) {
+        const hovered = hoveredBubble();
+        const target = hovered?.address ?? selected;
+        if (target === null) return;
         event.preventDefault();
         if (event.repeat || keyDrag.current !== null) return;
-        startKeyDrag(kinds[event.key], selected);
+        if (hovered) setSelected(hovered.address);
+        startKeyDrag(kinds[event.key], target, hovered?.element);
         return;
       }
+      if (selected === null) return;
       if (event.key === '[' || event.key === ']') {
         event.preventDefault();
         const box = latest.current.boxOf(selected);
@@ -808,6 +825,7 @@ export function TranslationView(props: Props) {
                       <div
                         key={lineIndex}
                         className={`bubble${placed ? ' placed' : ''}${isSelected ? ' selected' : ''}${(drag !== null && sameAddress(drag.address, address)) || (keyDragging && keyDrag.current !== null && sameAddress(keyDrag.current.address, address)) ? ' dragging' : ''}`}
+                        data-address={`${cutIndex}:${lineIndex}:${key}`}
                         style={
                           placed
                             ? {
