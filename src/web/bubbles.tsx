@@ -763,9 +763,10 @@ export function TranslationView(props: Props) {
                 : 0;
               const cutLeft = props.overlay
                 ? (imageLeft +
-                    layout!.width -
-                    DEFAULT_BUBBLE_WIDTH -
-                    BUBBLE_GAP) *
+                    layout!.width +
+                    (props.edit
+                      ? BUBBLE_GAP
+                      : -DEFAULT_BUBBLE_WIDTH - BUBBLE_GAP)) *
                   props.scale
                 : 0;
               const style: React.CSSProperties = {};
