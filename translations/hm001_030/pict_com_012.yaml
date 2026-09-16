@@ -21,52 +21,214 @@
   この全ての条項を遵守する場合、翻訳版の配布及び変形が可能であり、この全ての条項を翻訳版と共に告知しなければなりません。
 hm001_030/007/hori_137.gif:
 - - // 호리미야 2권 10화
-  - 아, 유키랑 같은 반이야!!
-  - 1반
-  - text: 반 배정
+  - h: 122
+    radius: 0
+    text: 아, 유키랑 같은 반이야!!
+    w: 64
+    x: 251
+    y: 47
+  - h: 56
+    radius: 0
+    text: 1반!
+    w: 28
+    x: 169
+    y: 48
+  - h: 27
+    radius: 0
+    text: 반 배정
     type: square
-  - 만세-
-- - text: 미야무라는 몇 반이지?
+    w: 87
+    x: 32
+    y: 48
+  - h: 79
+    text: 만세-
+    w: 37
+    x: 39
+    y: 122
+- - h: 119
+    text: 미야무라는 몇 반이지?
     type: thought
-  - 어-...
-  - 1반, 1반 걸려라...!!
-- - 아, 나도 1반이네
-  - 그럼 옆반인가-
-  - 으아아악
-  - <b>좋았어-!!</b> 나도 1반이다-!!
-- - 미야무라!! 나도 1반이야! 굉장하지? 굉장하지 않아!!? <big>사랑인가!?</big>
-  - text: 움찔
+    w: 68
+    x: 270
+    y: 278
+  - h: 80
+    text: 어-...
+    w: 31
+    x: 116
+    y: 280
+  - h: 161
+    radius: 80
+    text: 1반, 1반 걸려라...!!
+    w: 42
+    x: 23
+    y: 279
+- - h: 82
+    text: 아, 나도 1반이네
+    w: 74
+    x: 257
+    y: 529
+  - h: 84
+    text: 그럼 옆반인가-
+    vertical: true
+    w: 14
+    x: 325
+    y: 633
+  - h: 93
+    rotate: 31
+    text: 으아아악
+    w: 32
+    x: 181
+    y: 590
+  - h: 200
+    text: <b>좋았어-!!</b> 나도 1반이다-!!
+    w: 88
+    x: 35
+    y: 533
+- - h: 69
+    radius: 8
+    text: 미야무라!! 나도 1반이야! 굉장하지? 굉장하지 않아!!?
+    w: 151
+    x: 182
+    y: 784
+  - h: 31
+    size: 1.6
+    text: 사랑인가!?
+    w: 138
+    x: 178
+    y: 852
+  - h: 53
+    text: 움찔
     type: plain
-  - 사... 사랑...
+    w: 38
+    x: 184
+    y: 916
+  - h: 73
+    text: 사... 사랑...
+    w: 30
+    x: 92
+    y: 792
 hm001_030/007/hori_138.gif:
-- - text: 뭐? 엑~... 미야무라도 1반인데~...
+- - h: 152
+    text: 뭐? 엑~... 미야무라도 1반인데~...
     type: plain
-  - text: 소근소근
+    w: 69
+    x: 251
+    y: 44
+  - h: 53
+    text: 소근소근
     type: stroke
-  - text: 이시카와도 1반이라니까 갑자기
+    w: 68
+    x: 240
+    y: 196
+  - background: '#4ccde4'
+    h: 91
+    text: 이시카와도 1반이라니까 갑자기
     type: plain
-  - text: 「사랑의 힘」이라고 소리 질렀어
+    w: 136
+    x: 7
+    y: 29
+  - background: '#4ccde4'
+    h: 72
+    radius: 23
+    text: 「사랑의 힘」이라고 소리 질렀어
     type: plain
-  - text: 으엑-!!
+    w: 80
+    x: 15
+    y: 112
+  - h: 79
+    text: 으엑-!!
     type: plain
-  - text: 뭐야 호모잖아!!
+    w: 22
+    x: 108
+    y: 130
+  - background: '#4ccde4'
+    h: 32
+    text: 뭐야 호모잖아!!
     type: plain
-  - text: 소근
+    w: 77
+    x: 10
+    y: 184
+  - background: '#4ccde4'
+    h: 42
+    text: 소근
     type: stroke
-- - text: 설마, 저 둘이 그런 사이야?
+    w: 49
+    x: 16
+    y: 217
+- - background: '#4ccde4'
+    h: 130
+    text: 설마, 저 둘이 그런 사이야?
     type: plain
-  - text: 소곤 소곤 소곤
+    w: 36
+    x: 278
+    y: 294
+  - background: '#4ccde4'
+    h: 62
+    rotate: -38
+    size: 1.5
+    text: 소곤
     type: stroke
-  - text: 응- 그래도 미야무라가 움찔하지 않았니...?
+    w: 55
+    x: 278
+    y: 444
+  - background: '#4ccde4'
+    h: 66
+    rotate: -40
+    size: 1.5
+    text: 소곤
+    type: stroke
+    w: 54
+    x: 238
+    y: 412
+  - background: '#4ccde4'
+    h: 52
+    radius: 0
+    rotate: -32
+    size: 1.5
+    text: 소곤
+    type: stroke
+    w: 61
+    x: 170
+    y: 389
+  - background: '#4ccde4'
+    h: 104
+    radius: 0
+    text: 응- 그래도 미야무라가 움찔하지 않았니...?
     type: plain
-  - text: 이시카와가 적극적인가봐
+    w: 55
+    x: 207
+    y: 287
+  - background: '#4ccde4'
+    h: 107
+    radius: 5
+    text: 이시카와가 적극적인가봐
     type: plain
-  - text: 아- 나 이시카와 약간 맘에 두고 있었는데......
+    w: 69
+    x: 133
+    y: 284
+  - background: '#4ccde4'
+    h: 112
+    radius: 23
+    text: 아- 나 이시카와 약간 맘에 두고 있었는데......
     type: plain
+    w: 74
+    x: 57
+    y: 281
   - '// 원문: 異様に'
-  - text: 그러고 보면 요즘 사이 좋지, 이상하게
+  - background: '#4ccde4'
+    h: 1
+    text: 그러고 보면 요즘 사이 좋지, 이상하게
     type: plain
-  - 사랑~!!
+    w: 1
+    x: -201
+    y: -1176
+  - h: 23
+    rotate: 31
+    text: 사랑
+    vertical: true
+    w: 23
+    x: 50
+    y: 409
 - - 미야무라! 몇반이야?
   - 앗! 왜 울먹거리고 있어!?
   - 뒤에서 수근거리는걸...
@@ -119,3 +281,4 @@ hm001_030/007/hori_140.gif:
     type: plain
   - text: 호리가 좋아한댔으니까 본 건데......!!
     type: square
+
